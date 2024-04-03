@@ -42,22 +42,22 @@ export default function HomePage() {
     alert: () => (
       <ModelContent
         headerName={getTitle()}
-        content="-ฟังก์ขันโชว์ป๊อปอับแจ้งเตือน"
+        content="-Function to show popup notifications"
         selectedMenu={selectedMenu}
-        widgetContent="ได้ทำการสร้าง function ที่หน้า widgetContent"
+        widgetContent="Created a function on the widgetContent page."
         functionName="alert()"
-        indexContext="Index.html ได้สร้าง body และนำ function alert() มาใช้กับ body ที่สร้าง"
-        exampleContent={`การนำมาใช้ใส่พารามิเตอร์ที่ต้องการ เช่น alertObj.show("paramiter")`}
+        indexContext="Index.html creates a body and applies the alert() function to the created body."
+        exampleContent={`Used to enter desired parameters such as alertObj.show("paramiter")`}
       />
     ),
 
     messageBox: () => (
       <ModelContent
         headerName="messageBox()"
-        content="-ฟังก์ขันโชว์ป๊อปอับบอล๊คเป็นการเขียน javascript ในหน้า widget.js เพื่อนำไปใช้งานได้ทุกหน้า"
+        content="-The Pop-A-Block show function is written in javascript in the widget.js page so that it can be used on every page."
         functionName="messageBox()"
         selectedMenu={selectedMenu}
-        indexContext="ในส่วนของหน้า Index.html ได้มีการนำ function messageBox() มาใช้"
+        indexContext="In the Index.html page, the messageBox() function has been used."
       />
     ),
 

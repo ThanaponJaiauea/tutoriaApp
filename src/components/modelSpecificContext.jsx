@@ -47,8 +47,8 @@ export default function ModelSpecificContext({headerName, content}) {
         <div className="py-4">
           <h3 className="text-[23px]">this.init</h3>
           <p>
-            -เป็นการเรียกใช้หน้า login.html แล้วจะมีการเรียกใช้ onClick หรือ
-            เรียกใช้ function ที่เขียนไว้มาใช้ในนี้
+            -It calls the login.html page and then onClick is called or Call the
+            function written here.
           </p>
         </div>
 
@@ -62,9 +62,7 @@ export default function ModelSpecificContext({headerName, content}) {
       <div className="bg-[#E7E9EB] w-[96%] m-auto rounded-lg py-[8px] px-[20px] mt-5">
         <div className="py-4">
           <h3 className="text-[23px]">this.checkLoginStatusWithRefreshToken</h3>
-          <p>
-            -ตรวจสอบว่ามี token หรือไม่ ถ้าไม่มีก็จะสิ้นสุดการทำงานของฟังก์ชัน
-          </p>
+          <p>-Checks if there is a token. If not, the function will end.</p>
         </div>
 
         <div className="bg-[#ffff] flex flex-col p-2 rounded-lg">
