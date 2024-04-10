@@ -110,12 +110,10 @@ export function AlertWidget() {
     <div className="flex flex-col gap-4">
       {/* init */}
       <div className="px-4">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">init</span>
-          </span>{" "}
-          {`= function () {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">init</span>
+        </span>{" "}
+        {`= function () {`}
         <p>{`$("#alert").css({`}</p>
         <p>{`display: "none",`}</p>
         <p>{`width: $(window).width(),`}</p>
@@ -129,12 +127,10 @@ export function AlertWidget() {
 
       {/* show */}
       <div className="px-4">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">show</span>
-          </span>{" "}
-          {`= function (msg) {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">show</span>
+        </span>{" "}
+        {`= function (msg) {`}
         <p>{`$("#alertMsg").html(msg)`}</p>
         <p>{`$("#alert").css({display: "flex"})`}</p>
         <p>{`}`}</p>
@@ -142,24 +138,20 @@ export function AlertWidget() {
 
       {/* unShow */}
       <div className="px-4">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">unShow</span>
-          </span>{" "}
-          {`= function () {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">unShow</span>
+        </span>{" "}
+        {`= function () {`}
         <p>{`$("#alert").css({display: "none"})`}</p>
         <p>{`}`}</p>
       </div>
 
       {/* unShowAlert */}
       <div className="px-4">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">unShowAlert</span>
-          </span>{" "}
-          {`= function () {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">unShowAlert</span>
+        </span>{" "}
+        {`= function () {`}
         <p>{`$("#alert").css({display: "none"}`}</p>
         <p>{`$("$("#alertMsg").html("")"}`}</p>
         <p>{`}`}</p>
@@ -226,12 +218,10 @@ export function ResObjWidget() {
 
       {/* this.init */}
       <div className="mt-2">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">init</span>
-          </span>{" "}
-          {`= function () {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">init</span>
+        </span>{" "}
+        {`= function () {`}
         <p className="ml-4"> {`if (mResUrl) {`}</p>
         <p className="ml-4"> {`resUrl = mResUrl`}</p>
         <p className="ml-4"> {`}`}</p>
@@ -240,12 +230,10 @@ export function ResObjWidget() {
 
       {/* this.setSuccessFun */}
       <div className="mt-2">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">setSuccessFun</span>
-          </span>{" "}
-          {`= function (mSuccessFun) {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">setSuccessFun</span>
+        </span>{" "}
+        {`= function (mSuccessFun) {`}
         <p className="ml-4"> {`if (mSuccessFun) {`}</p>
         <p className="ml-4"> {`successFun = mSuccessFun`}</p>
         <p className="ml-4"> {`}`}</p>
@@ -254,12 +242,10 @@ export function ResObjWidget() {
 
       {/* this.setErrorFun */}
       <div className="mt-2">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">setErrorFun</span>
-          </span>{" "}
-          {`= function (mErrorFun) {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">setErrorFun</span>
+        </span>{" "}
+        {`= function (mErrorFun) {`}
         <p className="ml-4"> {`if (mErrorFun) {`}</p>
         <p className="ml-4"> {`errorFun = mErrorFun`}</p>
         <p className="ml-4"> {`}`}</p>
@@ -268,12 +254,10 @@ export function ResObjWidget() {
 
       {/* this.load */}
       <div className="mt-2">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">load</span>
-          </span>{" "}
-          {`= function () {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">load</span>
+        </span>{" "}
+        {`= function () {`}
         <p className="ml-8">{`$.ajax({`}</p>
         <p className="ml-12">{`type: "get",`}</p>
         <p className="ml-12">{`url: resUrl,`}</p>
@@ -300,25 +284,20 @@ export function ResObjWidget() {
 
       {/* this.getResData */}
       <div className="mt-2">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">getResData</span>
-          </span>{" "}
-          {`= function () {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">getResData</span>
+        </span>{" "}
+        {`= function () {`}
         <p className="ml-4">{`return resData`}</p>
-
         <p> {`}`}</p>
       </div>
 
       {/* this.showHtml */}
       <div className="mt-2">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">showHtml</span>
-          </span>{" "}
-          {`= function (path,divId) {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">showHtml</span>
+        </span>{" "}
+        {`= function (path,divId) {`}
         <p className="ml-4">{`if (resData != null) {`}</p>
         <p className="ml-6">{`var resStr = String(resData[path])`}</p>
         <p className="ml-6">{`$("#" + divId).append(base64.decode(resStr))`}</p>
@@ -511,12 +490,10 @@ export function PageInitExampleBody() {
 export function PageInitExampleScript() {
   return (
     <div className="px-4">
-      <p>
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">init</span>
-        </span>{" "}
-        {`= function () {`}
-      </p>
+      <span className="text-[#0000CD]">
+        this.<span className="text-[#e3d786]">init</span>
+      </span>{" "}
+      {`= function () {`}
       <p className="ml-8">{`pageInit("name_page");`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
@@ -574,12 +551,10 @@ export function HeaderInitExampleScript() {
     <div
       className="w-full"
       style={{overflowWrap: "break-word"}}>
-      <p>
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">init</span>
-        </span>{" "}
-        {`= function () {`}
-      </p>
+      <span className="text-[#0000CD]">
+        this.<span className="text-[#e3d786]">init</span>
+      </span>{" "}
+      {`= function () {`}
       <p className="full">{`headerInit("name_page","HeaderInitPage");`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
@@ -610,12 +585,10 @@ export function PageShowExampleBody() {
 export function PageShowExampleScript() {
   return (
     <div className="w-full flex flex-col flex-wrap">
-      <p>
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">init</span>
-        </span>{" "}
-        {`= function () {`}
-      </p>
+      <span className="text-[#0000CD]">
+        this.<span className="text-[#e3d786]">init</span>
+      </span>{" "}
+      {`= function () {`}
       <p className="full">{`pageShow("go_next_page");`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
@@ -651,12 +624,10 @@ export function PageUnShowExampleBody() {
 export function PageUnShowExampleScript() {
   return (
     <div className="w-full flex flex-col flex-wrap">
-      <p>
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">init</span>
-        </span>{" "}
-        {`= function () {`}
-      </p>
+      <span className="text-[#0000CD]">
+        this.<span className="text-[#e3d786]">init</span>
+      </span>{" "}
+      {`= function () {`}
       <p className="ml-4">{`$("#forgotPass").click(function () {`}</p>
       <p className="ml-4">pageShow("forgotPassPage")</p>
       <p className="ml-4">pageUnShow("loginPage")</p>
@@ -812,12 +783,10 @@ export function MessagePageWidget() {
       style={{overflowWrap: "break-word"}}>
       {/* this.init */}
       <div className="ml-2">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">init</span>
-          </span>
-          {`= function () {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">init</span>
+        </span>
+        {`= function () {`}
 
         <p className="ml-2">{`$("#messagePage").css({`}</p>
         <p className="ml-2">{`display: "none",`}</p>
@@ -828,12 +797,11 @@ export function MessagePageWidget() {
 
       {/* this.show */}
       <div className="ml-2">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">show</span>
-          </span>
-          {`= function (msgContent, cancelFun) {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">show</span>
+        </span>
+        {`= function (msgContent, cancelFun) {`}
+
         <p className="ml-2">{`$("#messagePage").css({`}</p>
         <p className="ml-4">{`display: "flex", left: 0`}</p>
         <p className="ml-4">{`})`}</p>
@@ -862,12 +830,11 @@ export function MessagePageWidget() {
 
       {/* this.unShow */}
       <div className="ml-2">
-        <p>
-          <span className="text-[#0000CD]">
-            this.<span className="text-[#e3d786]">unShow</span>
-          </span>
-          {`= function () {`}
-        </p>
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">unShow</span>
+        </span>
+        {`= function () {`}
+
         <p className="ml-2">{`$("#messagePage").css({`}</p>
         <p className="ml-4">{`display: "none"`}</p>
         <p className="ml-2">{`})`}</p>
