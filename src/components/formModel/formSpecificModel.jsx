@@ -1,11 +1,12 @@
 /** @format */
 import {AiOutlineCaretDown, AiOutlineCaretUp} from "react-icons/ai"
+import DropdownList from "../dropdownList"
 
 export default function FormSpecificModel({
   headerName,
   setOpenSpecificModel,
   openSpecificModel,
-  openSpecificModelHomeHtml,
+  open,
   selectedMenu,
   selectedNavbar,
   onClick,
@@ -28,15 +29,11 @@ export default function FormSpecificModel({
               onClick={onClick}
               className="w-full h-[40px] text-base font-bold flex items-center gap-2 cursor-pointer">
               <h1>{headerName}</h1>
-              {!openSpecificModelHomeHtml ? (
-                <AiOutlineCaretDown />
-              ) : (
-                <AiOutlineCaretUp />
-              )}
+              {!open ? <AiOutlineCaretDown /> : <AiOutlineCaretUp />}
             </li>
           </div>
 
-          {openSpecificModelHomeHtml && (
+          {open && (
             <div className="flex flex-col gap-2 justify-center px-2">
               {data
                 ?.filter((item) => item.category === "homeHtml")

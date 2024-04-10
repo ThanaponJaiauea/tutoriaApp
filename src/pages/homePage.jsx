@@ -570,7 +570,7 @@ export default function HomePage() {
               onClick={() =>
                 setOpenSpecificModelHomeHtml(!openSpecificModelHomeHtml)
               }
-              openSpecificModelHomeHtml={openSpecificModelHomeHtml}
+              open={openSpecificModelHomeHtml}
             />
           </ul>
         </nav>
@@ -608,7 +608,7 @@ export default function HomePage() {
             onClick={() =>
               setOpenSpecificModelHomeHtml(!openSpecificModelHomeHtml)
             }
-            openSpecificModelHomeHtml={openSpecificModelHomeHtml}
+            open={openSpecificModelHomeHtml}
           />
         </div>
         <style jsx>{`
