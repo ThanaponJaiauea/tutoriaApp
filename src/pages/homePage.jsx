@@ -4,7 +4,6 @@ import {useState} from "react"
 import {Drawer} from "antd"
 import ModelContent from "../components/modelContent"
 import useSelectedNavbar from "../hooks/useSelectedNavbar"
-import {AiOutlineCaretDown, AiOutlineCaretUp} from "react-icons/ai"
 import FormGeneralModel from "../components/formModel/formlGeneralModel"
 import FormSpecificModel from "../components/formModel/formSpecificModel"
 

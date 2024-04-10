@@ -25,19 +25,6 @@ export default function FormSpecificModel({
 
       {openSpecificModel && selectedNavbar === "SolarApp" && (
         <>
-          {/* homeHtml */}
-          <div>
-            <DropdownList
-              selectedMenu={selectedMenu}
-              headerName="Home.htlm"
-              category="homeHtml"
-              open={openHomeHtml}
-              onClick={setOpenHomeHtml}
-              data={data}
-              handleModelClick={handleModelClick}
-            />
-          </div>
-
           {/* adddatalogger.html */}
           <div>
             <DropdownList
@@ -46,6 +33,19 @@ export default function FormSpecificModel({
               category="adddatalogger"
               open={openAdddatalogger}
               onClick={setOpenAdddatalogger}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* homeHtml */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Home.htlm"
+              category="homeHtml"
+              open={openHomeHtml}
+              onClick={setOpenHomeHtml}
               data={data}
               handleModelClick={handleModelClick}
             />
