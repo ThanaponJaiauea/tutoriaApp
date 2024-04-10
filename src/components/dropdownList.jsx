@@ -1,6 +1,15 @@
 /** @format */
 import {AiOutlineCaretDown, AiOutlineCaretUp} from "react-icons/ai"
-export default function DropdownList() {
+
+export default function DropdownList({
+  headerName,
+  open,
+  onClick,
+  data,
+  selectedMenu,
+  handleModelClick,
+  category,
+}) {
   return (
     <div>
       <div className="w-full h-[40px] flex items-center justify-start p-4 cursor-pointer ">
@@ -8,18 +17,14 @@ export default function DropdownList() {
           onClick={onClick}
           className="w-full h-[40px] text-base font-bold flex items-center gap-2 cursor-pointer">
           <h1>{headerName}</h1>
-          {!openSpecificModelHomeHtml ? (
-            <AiOutlineCaretDown />
-          ) : (
-            <AiOutlineCaretUp />
-          )}
+          {!open ? <AiOutlineCaretDown /> : <AiOutlineCaretUp />}
         </li>
       </div>
 
-      {openSpecificModelHomeHtml && (
+      {open && (
         <div className="flex flex-col gap-2 justify-center px-2">
           {data
-            ?.filter((item) => item.category === "homeHtml")
+            ?.filter((item) => item.category === category)
             .map((el, idx) => (
               <div
                 key={idx}

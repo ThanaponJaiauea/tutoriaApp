@@ -18,8 +18,11 @@ export default function HomePage() {
   // console.log("openSpecificModel", openSpecificModel)
 
   // open Hoem.html
-  const [openSpecificModelHomeHtml, setOpenSpecificModelHomeHtml] =
-    useState(false)
+  const [openHomeHtml, setOpenHomeHtml] = useState(false)
+
+  // open adddatalogger
+  const [openAdddatalogger, setOpenAdddatalogger] = useState(false)
+  // console.log("openAdddatalogger", openAdddatalogger)
 
   const handleModelClick = (menu) => {
     setSelectedMenu(menu)
@@ -141,12 +144,24 @@ export default function HomePage() {
       category: "homeHtml",
     },
 
-    //  Login
+    //  Adddatalogger
     {
-      name: "Login.html",
+      name: "validateInput()",
       type: "specificModel",
-      key: "loginHtml",
-      category: "loginHtml",
+      key: "validateInput",
+      category: "adddatalogger",
+    },
+    {
+      name: "AddDate()",
+      type: "specificModel",
+      key: "AddDate",
+      category: "adddatalogger",
+    },
+    {
+      name: "CreateDevice()",
+      type: "specificModel",
+      key: "CreateDevice",
+      category: "adddatalogger",
     },
   ]
 
@@ -531,6 +546,8 @@ export default function HomePage() {
         htmlCheck="show"
       />
     ),
+
+    //Adddatalogger
   }
 
   return (
@@ -561,16 +578,17 @@ export default function HomePage() {
             {/* Specific Model */}
             <FormSpecificModel
               data={solarAppData}
-              headerName="Home.htlm"
               setOpenSpecificModel={setOpenSpecificModel}
               openSpecificModel={openSpecificModel}
               selectedNavbar={selectedNavbar}
               selectedMenu={selectedMenu}
               handleModelClick={handleModelClick}
-              onClick={() =>
-                setOpenSpecificModelHomeHtml(!openSpecificModelHomeHtml)
+              setOpenHomeHtml={() => setOpenHomeHtml(!openHomeHtml)}
+              setOpenAdddatalogger={() =>
+                setOpenAdddatalogger(!openAdddatalogger)
               }
-              open={openSpecificModelHomeHtml}
+              openHomeHtml={openHomeHtml}
+              openAdddatalogger={openAdddatalogger}
             />
           </ul>
         </nav>
@@ -599,16 +617,17 @@ export default function HomePage() {
           {/* Specific Model */}
           <FormSpecificModel
             data={solarAppData}
-            headerName="Home.htlm"
             setOpenSpecificModel={setOpenSpecificModel}
             openSpecificModel={openSpecificModel}
             selectedNavbar={selectedNavbar}
             selectedMenu={selectedMenu}
             handleModelClick={handleModelClick}
-            onClick={() =>
-              setOpenSpecificModelHomeHtml(!openSpecificModelHomeHtml)
+            setOpenHomeHtml={() => setOpenHomeHtml(!openHomeHtml)}
+            setOpenAdddatalogger={() =>
+              setOpenAdddatalogger(!openAdddatalogger)
             }
-            open={openSpecificModelHomeHtml}
+            openHomeHtml={openHomeHtml}
+            openAdddatalogger={openAdddatalogger}
           />
         </div>
         <style jsx>{`

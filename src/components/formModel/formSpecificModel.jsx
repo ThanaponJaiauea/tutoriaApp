@@ -3,15 +3,16 @@ import {AiOutlineCaretDown, AiOutlineCaretUp} from "react-icons/ai"
 import DropdownList from "../dropdownList"
 
 export default function FormSpecificModel({
-  headerName,
   setOpenSpecificModel,
   openSpecificModel,
-  open,
+  openHomeHtml,
   selectedMenu,
   selectedNavbar,
-  onClick,
+  setOpenHomeHtml,
+  setOpenAdddatalogger,
   data,
   handleModelClick,
+  openAdddatalogger,
 }) {
   return (
     <div>
@@ -23,35 +24,33 @@ export default function FormSpecificModel({
       </li>
 
       {openSpecificModel && selectedNavbar === "SolarApp" && (
-        <div>
-          <div className="w-full h-[40px] flex items-center justify-start p-4 cursor-pointer ">
-            <li
-              onClick={onClick}
-              className="w-full h-[40px] text-base font-bold flex items-center gap-2 cursor-pointer">
-              <h1>{headerName}</h1>
-              {!open ? <AiOutlineCaretDown /> : <AiOutlineCaretUp />}
-            </li>
+        <>
+          {/* homeHtml */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Home.htlm"
+              category="homeHtml"
+              open={openHomeHtml}
+              onClick={setOpenHomeHtml}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
           </div>
 
-          {open && (
-            <div className="flex flex-col gap-2 justify-center px-2">
-              {data
-                ?.filter((item) => item.category === "homeHtml")
-                .map((el, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => handleModelClick(el?.key)}
-                    className={`w-full p-2 cursor-pointer ${
-                      selectedMenu === el?.key
-                        ? "bg-[#04AA6D] text-[#ffff] "
-                        : "hover:bg-gray-100 text-black"
-                    }`}>
-                    <p>{el.name}</p>
-                  </div>
-                ))}
-            </div>
-          )}
-        </div>
+          {/* adddatalogger.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Adddatalogger.htlm"
+              category="adddatalogger"
+              open={openAdddatalogger}
+              onClick={setOpenAdddatalogger}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+        </>
       )}
     </div>
   )
