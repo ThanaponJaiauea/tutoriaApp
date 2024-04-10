@@ -43,7 +43,7 @@ import {
   PageUnShowWidget,
   ResObjIndexScript,
   ResObjWidget,
-} from "./functionDataText"
+} from "../components/functionDataText"
 import AlertTryit from "./tryitFunction/alertTryit"
 import HeaderInitTryit from "./tryitFunction/headerInitTryit"
 import PageShowTryit from "./tryitFunction/pageShowTryit"
