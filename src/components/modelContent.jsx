@@ -2,11 +2,33 @@
 
 import MessageBoxTryit from "./tryitFunction/messageBoxTryit"
 import {
+  Addda_talogger_addDate,
+  Addda_talogger_createDevice,
+  Addda_talogger_validateInput,
   AlertExample,
   AlertIndex,
   AlertScript,
   AlertWidget,
   Base64,
+  Cancel_order_getItemAll,
+  Cancel_order_sentCancelOrder,
+  ChangePasswordHtml,
+  Coin_history_calPage,
+  Coin_history_getRedeemHis,
+  Coin_history_pagination_coins,
+  Coins_coinsCheckToken,
+  Coins_getPointCoinsn,
+  Configuration_con,
+  Configuration_updateDevice,
+  Confirm_order_calTotal,
+  Confirm_order_cleanDataDefualt,
+  Confirm_order_getAddress,
+  Confirm_order_getCodeDisCountMember,
+  Confirm_order_getCodeDisCountVoucher,
+  Confirm_order_getOrder,
+  Confirm_order_getStatePayment,
+  Confirm_order_postOrderNow,
+  Confirm_order_setVoucherId,
   DivMessageBox,
   DivMessageBoxExampleCode,
   DivMessageBoxScript,
@@ -78,8 +100,18 @@ export default function ModelContent({
   content3p5,
   content3p6,
   content4,
+  content4p1,
+  content4p2,
+  content4p3,
+  content4p4,
   content5,
   content6,
+  content7,
+  content8,
+  content9,
+  content10,
+  content11,
+  content12,
   base64,
   base64Context,
   base64Context0,
@@ -170,8 +202,18 @@ export default function ModelContent({
               {content3p5 && <p>{content3p5}</p>}
               {content3p6 && <p>{content3p6}</p>}
               {content4 && <p>{content4}</p>}
+              {content4p1 && <p>{content4p1}</p>}
+              {content4p2 && <p>{content4p2}</p>}
+              {content4p3 && <p>{content4p3}</p>}
+              {content4p4 && <p>{content4p4}</p>}
               {content5 && <p>{content5}</p>}
               {content6 && <p>{content6}</p>}
+              {content7 && <p>{content7}</p>}
+              {content8 && <p>{content8}</p>}
+              {content9 && <p>{content9}</p>}
+              {content10 && <p>{content10}</p>}
+              {content11 && <p>{content11}</p>}
+              {content12 && <p>{content12}</p>}
             </div>
           </div>
 
@@ -194,6 +236,43 @@ export default function ModelContent({
             )}
             {selectedMenu === "getAllProduct" && <Home_html_getAllProduct />}
             {selectedMenu === "getCheckIn" && <Home_html_getCheckIn />}
+            {selectedMenu === "validateInput" && (
+              <Addda_talogger_validateInput />
+            )}
+            {selectedMenu === "AddDate" && <Addda_talogger_addDate />}
+            {selectedMenu === "CreateDevice" && <Addda_talogger_createDevice />}
+            {selectedMenu === "getItemAll" && <Cancel_order_getItemAll />}
+            {selectedMenu === "sentCancelOrder" && (
+              <Cancel_order_sentCancelOrder />
+            )}
+            {selectedMenu === "changePassword" && <ChangePasswordHtml />}
+            {selectedMenu === "getRedeemHis" && <Coin_history_getRedeemHis />}
+            {selectedMenu === "pagination_coins" && (
+              <Coin_history_pagination_coins />
+            )}
+
+            {selectedMenu === "calPage" && <Coin_history_calPage />}
+            {selectedMenu === "CoinsCheckToken" && <Coins_coinsCheckToken />}
+            {selectedMenu === "getPointCoins" && <Coins_getPointCoinsn />}
+            {selectedMenu === "updateDevice" && <Configuration_updateDevice />}
+            {selectedMenu === "Con" && <Configuration_con />}
+            {selectedMenu === "getOrder" && <Confirm_order_getOrder />}
+            {selectedMenu === "getStatePayment" && (
+              <Confirm_order_getStatePayment />
+            )}
+            {selectedMenu === "setVoucherId" && <Confirm_order_setVoucherId />}
+            {selectedMenu === "postOrderNow" && <Confirm_order_postOrderNow />}
+            {selectedMenu === "getAddress" && <Confirm_order_getAddress />}
+            {selectedMenu === "getCodeDisCountVoucher" && (
+              <Confirm_order_getCodeDisCountVoucher />
+            )}
+            {selectedMenu === "getCodeDisCountMember" && (
+              <Confirm_order_getCodeDisCountMember />
+            )}
+            {selectedMenu === "calTotal" && <Confirm_order_calTotal />}
+            {selectedMenu === "cleanDataDefualt" && (
+              <Confirm_order_cleanDataDefualt />
+            )}
             <p>{`}`}</p>
             <span className="text-[#A52A2A]">&lt;/script&gt;</span>
           </div>

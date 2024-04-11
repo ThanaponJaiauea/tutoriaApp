@@ -16,9 +16,7 @@ export function FunctionMessageBoxText() {
       </div>
 
       {/* show */}
-      <div
-        className="px-4"
-        style={{overflowWrap: "break-word"}}>
+      <div className="px-4 break-words">
         <p>{`this.show = function (msgContent, cancelFun) {`}</p>
         <p>{`$("#messagePage").css({display: "flex", left: 0})`}</p>
         <p>{`$("#msgPageContent")`}</p>
@@ -49,9 +47,7 @@ export function FunctionMessageBoxText() {
 //Index MessageBox Body
 export function DivMessageBox() {
   return (
-    <div
-      className="px-4"
-      style={{overflowWrap: "break-word"}}>
+    <div className="px-4 break-words">
       <p>{`<div id="messageBox">`}</p>
       <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}</p>
       <p className="ml-4">{`<div id="messageBoxBg" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
@@ -91,9 +87,7 @@ export function DivMessageBoxScript() {
 //Index MessageBox exampleCode
 export function DivMessageBoxExampleCode() {
   return (
-    <div
-      className="px-4"
-      style={{overflowWrap: "break-word"}}>
+    <div className="px-4 break-words">
       <p>{` msgObj.show("messageBox()"), function () {`}</p>
       <p>{`pageUnShow("reportPage")`}</p>
       <p>{`pageShow("loginPage")")`}</p>
@@ -548,9 +542,7 @@ export function HeaderInitWidget() {
 //HeaderInit  Example script
 export function HeaderInitExampleScript() {
   return (
-    <div
-      className="w-full"
-      style={{overflowWrap: "break-word"}}>
+    <div className="w-full break-words">
       <span className="text-[#0000CD]">
         this.<span className="text-[#e3d786]">init</span>
       </span>{" "}
@@ -674,9 +666,7 @@ export function DocumentAddEventListenerWidget() {
 //GetAbsTimeWidget Widget
 export function GetAbsTimeWidget() {
   return (
-    <div
-      className="w-full"
-      style={{overflowWrap: "break-word"}}>
+    <div className="w-full break-words">
       <p>{`try {`}</p>
       <p>{`if (time.toString().length == 10) {`}</p>
       <p className="ml-4">time = time * 1000</p>
@@ -778,9 +768,7 @@ export function LoaderExampleScript() {
 // messagePage Widget
 export function MessagePageWidget() {
   return (
-    <div
-      className="flex flex-col gap-2"
-      style={{overflowWrap: "break-word"}}>
+    <div className="flex flex-col gap-2 break-words">
       {/* this.init */}
       <div className="ml-2">
         <span className="text-[#0000CD]">
@@ -989,13 +977,13 @@ export function Home_html_homeCheckToken() {
 //getProfile
 export function Home_html_getProfile() {
   return (
-    <div className="w-full">
+    <div className="w-full break-words">
       <div>
         <p> var Token = localStorage.getItem('token')</p>
         <p> const obj = JSON.parse(Token);</p>
       </div>
 
-      <div style={{overflowWrap: "break-word"}}>
+      <div>
         <p>{`$.ajax({`}</p>
         <p>{`type: "get",`}</p>
         <p>{`url: API_SERVER + "/v1/account/profile",`}</p>
@@ -1082,9 +1070,7 @@ export function Home_html_getProfile() {
 // sendApi
 export function Home_html_sendApi() {
   return (
-    <div
-      className="ml-4 flex flex-col gap-4"
-      style={{overflowWrap: "break-word"}}>
+    <div className="ml-4 flex flex-col gap-4 break-words">
       <div>
         <p>
           var selectedValue =
@@ -1161,9 +1147,7 @@ export function Home_html_sendApi() {
 // checklocalStorage
 export function Home_html_checklocalStorage() {
   return (
-    <div
-      className="ml-4"
-      style={{overflowWrap: "break-word"}}>
+    <div className="ml-4 break-words">
       <div className="ml-2">
         <p>{`var simulatedData = localStorage.getItem('Simulated');`}</p>
         <p>{`console.log(simulatedData == "true", "simulatedData");`}</p>
@@ -1185,9 +1169,7 @@ export function Home_html_checklocalStorage() {
 // checkSimulated
 export function Home_html_checkSimulated() {
   return (
-    <div
-      className="ml-4"
-      style={{overflowWrap: "break-word"}}>
+    <div className="ml-4 break-words">
       <div className="ml-2">
         <p>{`var getToken = window.localStorage.getItem("token");`}</p>
         <p>{`var token = JSON.parse(getToken);`}</p>
@@ -1230,9 +1212,7 @@ export function Home_html_checkSimulated() {
 // getRecommendProduct
 export function Home_html_getRecommendProduct() {
   return (
-    <div
-      className="ml-4"
-      style={{overflowWrap: "break-word"}}>
+    <div className="ml-4 break-words">
       <div className="ml-2">
         <p>{`var getToken = window.localStorage.getItem("token");`}</p>
         <p>{`var token = JSON.parse(getToken);`}</p>
@@ -1303,9 +1283,7 @@ export function Home_html_getRecommendProduct() {
 //getAllProduct
 export function Home_html_getAllProduct() {
   return (
-    <div
-      className="ml-4"
-      style={{overflowWrap: "break-word"}}>
+    <div className="ml-4 break-words">
       <div className="ml-2">
         <p>{`var getToken = window.localStorage.getItem("token");`}</p>
         <p>{`var token = JSON.parse(getToken);`}</p>
@@ -1387,9 +1365,7 @@ export function Home_html_getAllProduct() {
 //getCheckIn
 export function Home_html_getCheckIn() {
   return (
-    <div
-      className="ml-4"
-      style={{overflowWrap: "break-word"}}>
+    <div className="ml-4 break-words">
       <div className="ml-2">
         <p>{`var getToken = window.localStorage.getItem("token");`}</p>
         <p>{`var token = JSON.parse(getToken);`}</p>
@@ -1509,522 +1485,1092 @@ export function Home_html_getCheckIn() {
   )
 }
 
-// Login Scrupt
-export function LoginScript() {
+// Adddatalogger
+//validateInput
+export function Addda_talogger_validateInput() {
   return (
-    <div className="px-4">
-      <p>{`var loginObj = new login()`}</p>
-      <p>{`loginObj.init();`}</p>
-      <p>{`function login() {`}</p>
-      <p className="ml-4">{`var isAgree = false`}</p>
+    <div className="ml-4 flex flex-col gap-2">
+      <p>inputField.value = inputField.value.replace(/[^0-9a-zA-Z]/g, "")</p>
+    </div>
+  )
+}
 
-      {/* this.init */}
+//AddDate
+export function Addda_talogger_addDate() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p> var intervalID = setInterval(addDate, 1000)</p>
+
       <div>
-        <p className="ml-4">{`this.init = function () {`}</p>
-        <p className="ml-8">{`callApp("ask_deviceId")`}</p>
-        <p className="ml-8">{`askDeviceIdFun()`}</p>
-        <p className="ml-8">{`setAllUILang("login")`}</p>
-        <p className="ml-8">{`pageInit("loginPage")`}</p>
-        <p className="ml-8">{`$("#pic_lang").attr("src", picRes["logoLang.png"])`}</p>
-        <p className="ml-8">{`$("#login_phone").attr("src", picRes["mail.png"])`}</p>
-        <p className="ml-8">{`$("#login_pass").attr("src", picRes["password.png"])`}</p>
-        <p className="ml-8">{`$("#eyeiconclose_login").attr("src", picRes["eyeiconclose.png"])`}</p>
-        <p className="ml-8">{`$("#logo_face").attr("src", picRes["logo_face.png"])`}</p>
-        <p className="ml-8">{`$("#logo_google").attr("src", picRes["logo_google.png"])`}</p>
-        <p className="ml-8">{`$("#logo_apple").attr("src", picRes["logo_apple.png"])`}</p>
-        <p className="ml-8">{`$("#back_tohome").attr("src", picRes["arrow_back.png"])`}</p>
-        <p className="ml-4">{`$("#scroll_login").css({width: w, height: 0.8 * h, position: "absolute"})`}</p>
-        <p className="ml-4">{`myScroll = new IScroll("#scroll_login", {probeType: 1, mouseWheel: true})`}</p>
+        <p>{`function addDate() {`}</p>
+        <p>var currentDate = new Date()</p>
+        <p>var year = currentDate.getFullYear()</p>
+        <p>var month = currentDate.getMonth() + 1</p>
+        <p>var date = currentDate.getDate()</p>
+        <p>var hours = currentDate.getHours()</p>
+        <p>var minutes = currentDate.getMinutes()</p>
+        <p>var seconds = currentDate.getSeconds()</p>
+        <p>{`month = month < 10 ? 0{month} : month`}</p>
+        <p>{`date = date < 10 ? 0{date} : date`}</p>
+        <p>{`hours = hours < 10 ? 0{hours} : hours`}</p>
+        <p>{`minutes = minutes < 10 ? 0{minutes} : minutes`}</p>
+        <p>{`seconds = seconds < 10 ? 0{seconds} : seconds`}</p>
+        <p>{`var formattedTime = {year}-{month}-{date} {hours}:{minutes}:{seconds}`}</p>
+        <p>$("#device_occurredtime").attr("placeholder", formattedTime)</p>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
 
-        <p className="ml-4">{`$("#back_tohome").click(function () {`}</p>
-        <p className="ml-8">{`$("#detail_but_now_bottom").css("display", "none")`}</p>
-        <p className="ml-8">{`pageUnShow("loginPage")`}</p>
-        <p className="ml-8">{`mainObj.menuhome()`}</p>
+//CreateDevice
+export function Addda_talogger_createDevice() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <div>
+        <p>getToken = window.localStorage.getItem("token")</p>
+        <p>token = JSON.parse(getToken)</p>
+        <p>var timestamp = Date.now()</p>
+      </div>
+
+      <div>
+        <p>{`var mData = {`}</p>
+        <p>pn: $("#device_pin").val(),</p>
+        <p>name: $("#device_name").val(),</p>
+        <p>type: $("#device_type").val(),</p>
+        <p>power: $("#device_power").val(),</p>
+        <p>model: "Wi-Fi Plug Pro",</p>
+        <p>firmware: "3.5.1.3",</p>
+        <p>address: $("#device_address").val(),</p>
+        <p>occurredTime: timestamp,</p>
+        <p>panel: $("#device_panel").val(),</p>
+        <p>status: $("#device_status").val(),</p>
+        <p>{`}`}</p>
+      </div>
+
+      <div>
+        <p>{`$.ajax({`}</p>
+        <p>type: "post",</p>
+        <p>url: API_SERVER + "/v1/solarDevice",</p>
+        <p>data: JSON.stringify(mData),</p>
+        <p>{`headers: {`}</p>
+        <p>{`Authorization: "Bearer " + token.token,`}</p>
+        <p>{`"Content-Type": "application/json",`}</p>
+        <p>{`}`},</p>
+        <p>dataType: "json",</p>
+        <p>async: true,</p>
+        <p>timeout: 100000,</p>
+        <p>{`success: function (data) {`}</p>
+        <p>{`if (data.code === 0) {`}</p>
+        <p>{`setTimeout(() => {`}</p>
+        <p>loaderObj.unShow()</p>
+        <p>{`msgObj4.show("The device was added successfully.", function () {`}</p>
+        <p>msgObj4.unShow()</p>
+        <p>dataloggerObj.clearInput()</p>
+        <p>pageUnShow("dataloggerPage")</p>
+        <p>pageShow("my_devivePage")</p>
+        <p>my_deviveObj.getMyDevice()</p>
+        <p>monitorObj.GetSolarDeviceAll()</p>
+        <p>{`}, 500)`}</p>
+        <p>{`} else {`}</p>
+        <p>msgPageObj.show(getStatusCode(data.code))</p>
+        <p>{`}`}</p>
+        <p>{`}`}</p>
+        <p>error: function (xmlhttprequest, error) {},</p>
+        <p>{`})`}</p>
+      </div>
+    </div>
+  )
+}
+
+// cancel_order.html
+//getItemAll
+export function Cancel_order_getItemAll() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>getDataCancel = dataItem</p>
+      <p>$("#itemName_cancel").text(dataItem.name)</p>
+      <p>$("#itemImage_cancel").attr("src", API_SERVER + dataItem.image)</p>
+      <p>$("#price_cancel").text(dataItem.price + " ฿")</p>
+      <p>$("#itemCancel_Quantity").text("Quantity x " + dataItem.quantity)</p>
+    </div>
+  )
+}
+
+//sentCancelOrder
+export function Cancel_order_sentCancelOrder() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <div>
+        <p className="ml-4">{`var oid = dataItem`}</p>
+        <p className="ml-4">{`var detail = $("#detail_text").val()`}</p>
+        <p className="ml-4">{`var selectedValue = $("#account_reasonChoice").val()`}</p>
+        <p className="ml-4">{`var getToken = localStorage.getItem("token")`}</p>
+        <p className="ml-4">{`var token = JSON.parse(getToken)`}</p>
+      </div>
+
+      <div>
+        <p className="ml-4">{`if (!selectedValue || !detail) {`}</p>
+        <p className="ml-8">{`msgPageObj.show("Please fill out all the required information.")`}</p>
+        <p className="ml-8">{`return`}</p>
+        <p className="ml-4">{`}`}</p>
+      </div>
+
+      <div>
+        <p className="ml-4">{`if (!selectedValue) {`}</p>
+        <p className="ml-8">{`msgPageObj.show("Please select a reason before canceling the order.")`}</p>
+        <p className="ml-8">{`return`}</p>
+        <p className="ml-4">{`}`}</p>
+      </div>
+
+      <div>
+        <p className="ml-4">{`var mData = {`}</p>
+        <p className="ml-8">{`oid: oid,`}</p>
+        <p className="ml-8">{`reason: selectedValue,`}</p>
+        <p className="ml-8">{`detail: detail,`}</p>
+        <p className="ml-4">{`}`}</p>
+      </div>
+
+      <div>
+        <p className="ml-4">{`$.ajax({`}</p>
+        <p className="ml-8">{`type: "PUT",`}</p>
+        <p className="ml-8">{`url: API_SERVER + "/v1/orders/cancel",`}</p>
+        <p className="ml-8">{`headers: {`}</p>
+        <p className="ml-12">{`Authorization: "Bearer " + token.token,`}</p>
+        <p className="ml-8">{`},`}</p>
+        <p className="ml-8">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-8">{`contentType: "application/json",`}</p>
+        <p className="ml-8">{`dataType: "json",`}</p>
+        <p className="ml-8">{`async: true,`}</p>
+        <p className="ml-8">{`timeout: 100000,`}</p>
+        <p className="ml-8">{`beforeSend: function (xmlhttprequest) {},`}</p>
+        <p className="ml-8">{`success: function (data) {`}</p>
+        <p className="ml-12">{`msgObjSub.show("Order cancelled successfully", function () {`}</p>
+        <p className="ml-16">{`msgObjSub.unShow()`}</p>
+        <p className="ml-16">{`pageUnShow("cancel_orderPage")`}</p>
+        <p className="ml-16">{`$("#detail_text").val("")`}</p>
+        <p className="ml-16">{`$("#account_reasonChoice").val("")`}</p>
+        <p className="ml-12">{`})`}</p>
+        <p className="ml-8">{`},`}</p>
+        <p className="ml-8">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-12">{`loaderObj.unShow()`}</p>
+        <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code))`}</p>
+        <p className="ml-12">{`msgPageObj.show(NSLang("sys.serverError"))`}</p>
+        <p className="ml-8">{`},`}</p>
         <p className="ml-4">{`})`}</p>
+      </div>
+    </div>
+  )
+}
 
-        <p className="ml-4">{`$("#forgotPass").click(function () {`}</p>
-        <p className="ml-8">{`pageShow("forgotPassPage")`}</p>
-        <p className="ml-8">{`pageUnShow("loginPage")`}</p>
-        <p className="ml-4">{`})`}</p>
+// changePassword.html
+export function ChangePasswordHtml() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <div>
+        <p className="ml-4">{`var oldPass = $('#currentPass').val()`}</p>
+        <p className="ml-4">{`var newPass = $('#passwordNew').val()`}</p>
+        <p className="ml-4">{`var renewPass = $('#changeConPass').val()`}</p>
+      </div>
 
-        <p className="ml-4">{`$("#regisAcc").click(function () {`}</p>
-        <p className="ml-8">{`pageShow("registerPage")`}</p>
-        <p className="ml-4">{`})`}</p>
+      <div>
+        <p className="ml-4">{`if (oldPass == newPass) {`}</p>
+        <p className="ml-8">{`$('#msgPageContent').css({ 'text-align': 'center' });`}</p>
+        <p className="ml-8">{`msgPageObj.show('Sorry, your new password cannot be the same as the current password');`}</p>
+        <p className="ml-4">{`}`}</p>
+      </div>
 
-        <p className="ml-4">{`$("#goRegisterBtn").click(function () {`}</p>
-        <p className="ml-8">{`msgObj2.show(`}</p>
-        <p className="ml-12">{`NSLang("login.regiss"),`}</p>
-        <p className="ml-12">{`function () {`}</p>
-        <p className="ml-16">{`msgObj2.unShow()`}</p>
-        <p className="ml-16">{`pageShow("registerPage")`}</p>
-        <p className="ml-12">{`},`}</p>
-        <p className="ml-12">{`function () {`}</p>
-        <p className="ml-16">{`pageShow("registerShopPage")`}</p>
-        <p className="ml-16">{`msgObj2.unShow()`}</p>
+      <div>
+        <p className="ml-4">{`if (newPass != renewPass) {`}</p>
+        <p className="ml-8">{`$('#msgPageContent').css({ 'text-align': 'center' });`}</p>
+        <p className="ml-8">{`msgPageObj.show('New password does not match confirm new password');`}</p>
+        <p className="ml-4">{`}`}</p>
+      </div>
+
+      <div>
+        {" "}
+        <p className="ml-4">{`if (oldPass == "" || newPass == "" || renewPass == "") {`}</p>
+        <p className="ml-8">{`$('#msgPageContent').css({ 'text-align': 'center' });`}</p>
+        <p className="ml-8">{`msgPageObj.show('请输入您的当前密码、新密码和确认密码');`}</p>
+        <p className="ml-4">{`}`}</p>
+      </div>
+
+      <div>
+        <p className="ml-4">{`if ((oldPass != "") && (newPass != "") && (renewPass != "") && (newPass == renewPass) && (newPass != oldPass)) {`}</p>
+      </div>
+
+      <div>
+        <p className="ml-8">{`$('#msgContent').css({ 'width': '85%' });`}</p>
+        <p className="ml-8">{`msgObj.show('Are you sure you want to change your password?', function () {`}</p>
+        <p className="ml-12">{`msgObj.unShow();`}</p>
+      </div>
+
+      <div>
+        <p className="ml-12">{`var mData = {`}</p>
+        <p className="ml-16">{`"cur": oldPass,`}</p>
+        <p className="ml-16">{`"latest": newPass,`}</p>
         <p className="ml-12">{`}`}</p>
-        <p className="ml-8">{`)`}</p>
-        <p className="ml-4">{`})`}</p>
+      </div>
 
-        <p className="ml-4">{`$("#login_span2").click(function () {`}</p>
-        <p className="ml-8">{`pageShow("forgotPassPage")`}</p>
-        <p className="ml-4">{`})`}</p>
+      <div>
+        <p className="ml-12">{`$.ajax({`}</p>
+        <p className="ml-16">{`type: "PATCH",`}</p>
+        <p className="ml-16">{`url: API_SERVER + "/v1/account/password",`}</p>
+        <p className="ml-16">{`headers: {`}</p>
+        <p className="ml-20">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-16">{`},`}</p>
+        <p className="ml-16">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-16">{`contentType: "application/json",`}</p>
+        <p className="ml-16">{`dataType: "json",`}</p>
+        <p className="ml-16">{`async: true,`}</p>
+        <p className="ml-16">{`timeout: 100000,`}</p>
+        <p className="ml-16">{`beforeSend: function (xmlhttprequest) {`}</p>
+        <p className="ml-20">{`},`}</p>
+      </div>
 
-        <p className="ml-4">{`$("#show_lang").click(function () {`}</p>
-        <p className="ml-8">{`$("#select_lang").css({display: "flex"})`}</p>
-        <p className="ml-4">{`})`}</p>
+      <div>
+        <p className="ml-16">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-20">{`loaderObj.unShow();`}</p>
+        <p className="ml-20">{`msgPageObj.show(NSLang('sys.serverError'))`}</p>
+        <p className="ml-20">{`cleanInput();`}</p>
+        <p className="ml-16">{`},`}</p>
+        <p className="ml-12">{`});`}</p>
+      </div>
 
-        <p className="ml-4">{`$("#lang_en").click(function () {`}</p>
-        <p className="ml-8">{`$("#select_lang").css({display: "none"})`}</p>
-        <p className="ml-8">{`$("#show_lang").html("EN")`}</p>
-        <p className="ml-8">{`localStorage.setItem("Language", "en")`}</p>
-        <p className="ml-8">{`langCode = "en"`}</p>
-        <p className="ml-8">{`setAllPageLang()`}</p>
-        <p className="ml-4">{`})`}</p>
+      <div>
+        <p className="ml-8">{`}, function () {`}</p>
+        <p className="ml-12">{`cleanInput();`}</p>
+        <p className="ml-12">{`msgPageObj.unShow();`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-4">{`}`}</p>
+      </div>
+    </div>
+  )
+}
 
-        <p className="ml-4">{`$("#lang_th").click(function () {`}</p>
-        <p className="ml-8">{`$("#select_lang").css({display: "none"})`}</p>
-        <p className="ml-8">{`$("#show_lang").html("TH")`}</p>
-        <p className="ml-8">{`localStorage.setItem("Language", "th")`}</p>
-        <p className="ml-8">{`langCode = "th"`}</p>
-        <p className="ml-8">{`setAllPageLang()`}</p>
-        <p className="ml-4">{`})`}</p>
-
-        <p className="ml-4">{`$("#lang_zh").click(function () {`}</p>
-        <p className="ml-8">{`$("#select_lang").css({display: "none"})`}</p>
-        <p className="ml-8">{`$("#show_lang").html("ZH")`}</p>
-        <p className="ml-8">{`localStorage.setItem("Language", "zh")`}</p>
-        <p className="ml-8">{`langCode = "zh"`}</p>
-        <p className="ml-8">{`setAllPageLang()`}</p>
-        <p className="ml-4">{`})`}</p>
-
-        <p className="ml-4">{`$("#eyeiconclose_login").click(function () {`}</p>
-        <p className="ml-8">{`var password_user = document.getElementById("password")`}</p>
-        <p className="ml-8">{`if (password_user.type === "password") {`}</p>
-        <p className="ml-12">{`password_user.type = "text"`}</p>
-        <p className="ml-12">{`$("#eyeiconclose_login").attr("src", picRes["eyeicon.png"])`}</p>
-        <p className="ml-8">{`} else {`}</p>
-        <p className="ml-12">{`password_user.type = "password"`}</p>
-        <p className="ml-12">{`$("#eyeiconclose_login").attr("src", picRes["eyeiconclose.png"])`}</p>
-        <p className="ml-8">{`}`}</p>
-        <p className="ml-4">{`})`}</p>
-
-        <p className="ml-4">{`$("#loginBtn").click(function () {`}</p>
-        <p className="ml-8">{`callApp("ask_deviceId")`}</p>
-        <p className="ml-8">{`$("#checkBtnAgreementBtnLogin").prop("checked", function () {`}</p>
-        <p className="ml-12">{`mData = {`}</p>
-        <p className="ml-16">{`username: $("#mobileLogin").val(),`}</p>
-        <p className="ml-16">{`password: $("#password").val(),`}</p>
-        <p className="ml-12">{`}`}</p>
-        <p className="ml-12">{`localStorage.setItem("rememberPass", JSON.stringify(mData))`}</p>
-        <p className="ml-8">{`})`}</p>
-        <p className="ml-8">{`if ($("#mobileLogin").val() == "" && $("#password").val() == "") {`}</p>
-        <p className="ml-12">{`msgPageObj.show(NSLang("login.fill"))`}</p>
-        <p className="ml-8">{`}`}</p>
-        <p className="ml-8">{`if ($("#mobileLogin").val() == "" && $("#password").val() != "") {`}</p>
-        <p className="ml-12">{`msgPageObj.show(NSLang("login.mail"))`}</p>
-        <p className="ml-8">{`}`}</p>
-        <p className="ml-8">{`if ($("#mobileLogin").val() != "" && $("#password").val() == "") {`}</p>
-        <p className="ml-12">{`msgPageObj.show(NSLang("login.password"))`}</p>
-        <p className="ml-8">{`}`}</p>
-        <p className="ml-8">{`if ($("#mobileLogin").val() != "" && $("#password").val() != "") {`}</p>
-        <p className="ml-12">{`loaderObj.show()`}</p>
-        <p className="ml-12">{`setTimeout(function () {`}</p>
-        <p className="ml-16">{`loginFun()`}</p>
-        <p className="ml-12">{`}, 1000)`}</p>
-        <p className="ml-8">{`}`}</p>
-        <p className="ml-4">{`})`}</p>
-
-        <p className="ml-4">{`function loginFun() {`}</p>
-        <p className="ml-8">{`var mData = {`}</p>
-        <p className="ml-12">{`name: $("#mobileLogin").val(),`}</p>
-        <p className="ml-12">{`password: $("#password").val(),`}</p>
-        <p className="ml-8">{`}`}</p>
-
-        <p className="ml-8">{`if (deviceId) {`}</p>
-        <p className="ml-12">{`mData = {`}</p>
-        <p className="ml-16">{`name: $("#mobileLogin").val(),`}</p>
-        <p className="ml-16">{`password: $("#password").val(),`}</p>
-        <p className="ml-12">{`}`}</p>
-        <p className="ml-8">{`}`}</p>
-
-        <p className="ml-8">{`$.ajax({`}</p>
-        <p className="ml-12">{`type: "post",`}</p>
-        <p className="ml-12">{`url: API_SERVER + "/v1/auth/login",`}</p>
-        <p className="ml-12">{`data: JSON.stringify(mData),`}</p>
-        <p className="ml-12">{`contentType: "application/json",`}</p>
-        <p className="ml-12">{`dataType: "json",`}</p>
-        <p className="ml-12">{`async: true,`}</p>
-        <p className="ml-12">{`timeout: 100000,`}</p>
-        <p className="ml-12">{`beforeSend: function (xmlhttprequest) {},`}</p>
-        <p className="ml-12">{`success: function (data) {`}</p>
-        <p className="ml-16">{`loaderObj.unShow()`}</p>
-        <p className="ml-16">{`if (data.code == 0) {`}</p>
-        <p className="ml-20">{`// location.reload();`}</p>
-        <p className="ml-20">{`cleanInput()`}</p>
-        <p className="ml-20">{`var tokenObj = data.result`}</p>
-        <p className="ml-20">{`localStorage.setItem("token", JSON.stringify(tokenObj))`}</p>
-        <p className="ml-20">{`localStorage.setItem("savedUser", $("#mobileLogin").val())`}</p>
-        <p className="ml-20">{`homeObj.init()`}</p>
-        <p className="ml-20">{`mainObj.checkIsLogin()`}</p>
-        <p className="ml-20">{`$("#notificationPage").css({display: "block"})`}</p>
+// coin_history.html
+export function Coin_history_getRedeemHis() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <div>
+        <p>{`if (count_page == null) {`}</p>
+        <p>{`count_page = 1`}</p>
+        <p>{`}`}</p>
+        <p>{`var limitPage = 15`}</p>
+        <p>{`var checkType`}</p>
+        <p>{`switch (CoinsType) {`}</p>
+        <p>{`case "All":`}</p>
+        <p>{`checkType = \`?limit=\${limitPage}&&page=\${count_page}\``}</p>
+        <p>{`break;`}</p>
+        <p>{`case 'Receive':`}</p>
+        <p>{`checkType = \`?type=510,520,530,540&&limit=\${limitPage}&&page=\${count_page}\``}</p>
+        <p>{`break;`}</p>
+        <p>{`case 10:`}</p>
+        <p>{`checkType = \`?type=10&&limit=\${limitPage}&&page=\${count_page}\``}</p>
+        <p>{`break;`}</p>
+        <p>{`case 20:`}</p>
+        <p>{`checkType = \`?type=20&&limit=\${limitPage}&&page=\${count_page}\``}</p>
+        <p>{`break;`}</p>
+        <p>{`}`}</p>
+        <p>{`var str = ""`}</p>
+        <p>{`getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`token = JSON.parse(getToken);`}</p>
+        <p>{`$.ajax({`}</p>
+        <p>{`type: 'get',`}</p>
+        <p>{`url: API_SERVER + \`/v1/wallet/coin/history\${checkType}\`,`}</p>
+        <p>{`headers: {`}</p>
+        <p>{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p>{`},`}</p>
+        <p>{`async: true,`}</p>
+        <p>{`timeout: 100000,`}</p>
+        <p>{`success: function (data) {`}</p>
+        <p>{`loaderObj.unShow();`}</p>
+        <p>{`if (data.code == 0) {`}</p>
+        <p>{`if (data.result.length == 0) {`}</p>
+        <p>{`str += '<div style="height: 100px; color: #303030; font-weight: bold; font-size: 14px;"class="flexCenter">'`}</p>
+        <p>{`str += '<img src="./pic/Monitor/Icon-YojoSolar-Nodata.png" style="width:80px; height:80px;">'`}</p>
+        <p>{`str += '</div>'`}</p>
+        <p>{`$("#loop_transation_show_redeem").html(str);`}</p>
+        <p>{`$(".pagination_coins").css({ "display": "none" });`}</p>
+        <p>{`} else {`}</p>
+        <p>{`$(".pagination_coins").css({ "display": "flex" });`}</p>
+        <p>{`$.each(data.result, function (index, data) {`}</p>
+        <p>{`var typeTran`}</p>
+        <p>{`var typeTranColor`}</p>
+        <p>{`var stateTran`}</p>
+        <p>{`var stateColor`}</p>
+        <p>{`var time = moment(data.cdt).format("YYYY-MM-DD | hh:mm:ss");`}</p>
+        <p>{`var formattedPoint = data.point.toLocaleString(undefined, {`}</p>
+        <p>{`minimumFractionDigits: 2,`}</p>
+        <p>{`maximumFractionDigits: 2`}</p>
+        <p>{`});`}</p>
+        <p>{`var Symbol`}</p>
+        <p>{`var Display`}</p>
+        <p>{`var OrderNameTitle`}</p>
+        <p>{`var OrderName`}</p>
+        <p>{`switch (data.type) {`}</p>
+        <p>{`case 10:`}</p>
+        <p>{`typeTran = "Redeem"`}</p>
+        <p>{`typeTranColor = "#FE813B"`}</p>
+        <p>{`Symbol = '-'`}</p>
+        <p>{`Display = 'none'`}</p>
+        <p>{`break;`}</p>
+        <p>{`case 20:`}</p>
+        <p>{`typeTran = "Buy order"`}</p>
+        <p>{`typeTranColor = "#FC5353"`}</p>
+        <p>{`Symbol = '-'`}</p>
+        <p>{`Display = 'flex'`}</p>
+        <p>{`OrderName = data.oid`}</p>
+        <p>{`OrderNameTitle = 'Order no.'`}</p>
+        <p>{`break;`}</p>
+        <p>{`case 30:`}</p>
+        <p>{`typeTran = "Refund order"`}</p>
+        <p>{`typeTranColor = "#4CD462"`}</p>
+        <p>{`Symbol = '+'`}</p>
+        <p>{`Display = 'flex'`}</p>
+        <p>{`OrderName = data.oid`}</p>
+        <p>{`OrderNameTitle = 'Order no.'`}</p>
+        <p>{`break;`}</p>
+        <p>{`case 510:`}</p>
+        <p>{`typeTran = "Order quantity"`}</p>
+        <p>{`typeTranColor = "#3B78FE"`}</p>
+        <p>{`Symbol = '+'`}</p>
+        <p>{`Display = 'flex'`}</p>
+        <p>{`OrderName = data.oid`}</p>
+        <p>{`OrderNameTitle = 'Order no.'`}</p>
+        <p>{`break;`}</p>
+        <p>{`case 520:`}</p>
+        <p>{`typeTran = "Order amount"`}</p>
+        <p>{`typeTranColor = "#3B78FE"`}</p>
+        <p>{`Symbol = '+'`}</p>
+        <p>{`Display = 'flex'`}</p>
+        <p>{`OrderName = data.oid`}</p>
+        <p>{`OrderNameTitle = 'Order no.'`}</p>
+        <p>{`break;`}</p>
+        <p>{`case 530:`}</p>
+        <p>{`typeTran = "Invite code"`}</p>
+        <p>{`typeTranColor = "#3B78FE"`}</p>
+        <p>{`Symbol = '+'`}</p>
+        <p>{`Display = 'flex'`}</p>
+        <p>{`OrderName = data.invitation.length > 10 ? data.invitation.substring(0, 10) + "..." : data.invitation`}</p>
+        <p>{`OrderNameTitle = 'User :'`}</p>
+        <p>{`break;`}</p>
+        <p>{`case 540:`}</p>
+        <p>{`typeTran = "Check-in"`}</p>
+        <p>{`typeTranColor = "#3B78FE"`}</p>
+        <p>{`Symbol = '+'`}</p>
+        <p>{`Display = 'none'`}</p>
+        <p>{`break;`}</p>
+        <p>{`case 550:`}</p>
+        <p>{`typeTran = "Energy consumption"`}</p>
+        <p>{`typeTranColor = "#3B78FE"`}</p>
+        <p>{`Symbol = '+'`}</p>
+        <p>{`Display = 'none'`}</p>
+        <p>{`break;`}</p>
+        <p>{`}`}</p>
+        <p>{`switch (data.state) {`}</p>
+        <p>{`case 10:`}</p>
+        <p>{`stateTran = "Pending"`}</p>
+        <p>{`stateColor = "#FE813B"`}</p>
+        <p>{`break;`}</p>
+        <p>{`case 20:`}</p>
+        <p>{`stateTran = "Completed"`}</p>
+        <p>{`stateColor = "#4CD462"`}</p>
+        <p>{`break;`}</p>
+        <p>{`case 30:`}</p>
+        <p>{`stateTran = "Failed"`}</p>
+        <p>{`stateColor = "#FF5247"`}</p>
+        <p>{`break;`}</p>
+        <p>{`}`}</p>
+        <p>{`str += '<div style="width: 90%; height: 60px; border: 1px solid #3636361A; box-shadow: 2px 2px 3px 1px #0000001A;display: flex; flex-direction: row;align-items: center; justify-content: space-between;">'`}</p>
+        <p>{`...`}</p>
+        <p>{`str += '</div>'`}</p>
+        <p>{`});`}</p>
+        <p>{`$("#loop_transation_show_redeem").html(str);`}</p>
+        <p>{`myScroll = new IScroll('#coin_history_Scroller', { probeType: 1, mouseWheel: true });`}</p>
         <p className="ml-16">{`} else {`}</p>
-        <p className="ml-20">{`msgPageObj.show(getStatusCode(data.code))`}</p>
-        <p className="ml-16">{`}`}</p>
-        <p className="ml-12">{`},`}</p>
-        <p className="ml-12">{`error: function (xmlhttprequest, error) {`}</p>
-        <p className="ml-16">{`loaderObj.unShow()`}</p>
-        <p className="ml-16">{`msgPageObj.show("服务器链接问题")`}</p>
-        <p className="ml-12">{`},`}</p>
-        <p className="ml-12">{`complete: function () {},`}</p>
-        <p className="ml-8">{`})`}</p>
-
-        <p className="ml-8">{`function cleanInput() {`}</p>
-        <p className="ml-12">{`$("#username").val("")`}</p>
-        <p className="ml-12">{`$("#password").val("")`}</p>
-        <p className="ml-8">{`}`}</p>
-        <p className="ml-4">{`}`}</p>
-
-        <p className="ml-4">{`}`}</p>
+        <p>{`loaderObj.unShow();`}</p>
+        <p>{`msgPageObj.show(getStatusCode(data.code))`}</p>
+        <p>{`}`}</p>
+        <p>{`},`}</p>
+        <p>{`error: function (xmlhttprequest, error) {`}</p>
+        <p>{`loaderObj.unShow();`}</p>
+        <p>{`msgPageObj.show(NSLang('sys.serverError'))`}</p>
+        <p>{`},`}</p>
+        <p>{`})`}</p>
       </div>
+    </div>
+  )
+}
 
-      {/* this.checkLoginStatusWithRefreshToken */}
-      <div className="mt-10">
-        <p className="ml-4">{`this.checkLoginStatusWithRefreshToken = function () {`}</p>
-        <p className="ml-8">{`if (token == null) {`}</p>
-        <p className="ml-12">{`return`}</p>
-        <p className="ml-8">{`}`}</p>
-
-        <p className="ml-8">{`var mData = {token: token.refresh}`}</p>
-
-        <p className="ml-8">{`$.ajax({`}</p>
-        <p className="ml-12">{`type: "post",`}</p>
-        <p className="ml-12">{`url: API_SERVER + "/v1/auth/refresh",`}</p>
-        <p className="ml-12">{`data: JSON.stringify(mData),`}</p>
-        <p className="ml-12">{`contentType: "application/json",`}</p>
-        <p className="ml-12">{`dataType: "json",`}</p>
-        <p className="ml-12">{`async: true,`}</p>
-        <p className="ml-12">{`timeout: 100000,`}</p>
-        <p className="ml-12">{`beforeSend: function (xmlhttprequest) {},`}</p>
-        <p className="ml-12">{`success: function (data) {`}</p>
-        <p className="ml-16">{`if (data.code == 0) {`}</p>
-        <p className="ml-20">{`console.log("===>refresh success")`}</p>
-        <p className="ml-20">{`var tokenObj = data.result`}</p>
-        <p className="ml-20">{`localStorage.setItem("token", JSON.stringify(tokenObj))`}</p>
-        <p className="ml-20">{`var tokenLocal = localStorage.getItem("token")`}</p>
-        <p className="ml-20">{`if (tokenLocal != null) {`}</p>
-        <p className="ml-24">{`token = JSON.parse(tokenLocal)`}</p>
-        <p className="ml-20">{`}`}</p>
-        <p className="ml-20">{`pageUnShow("loginPage")`}</p>
-        <p className="ml-16">{`} else {`}</p>
-        <p className="ml-20">{`console.log("===>refresh fail")`}</p>
-        <p className="ml-16">{`}`}</p>
-        <p className="ml-12">{`},`}</p>
-        <p className="ml-12">{`error: function (xmlhttprequest, error) {`}</p>
-        <p className="ml-16">{`console.log(error)`}</p>
-        <p className="ml-12">{`},`}</p>
-        <p className="ml-12">{`complete: function () {},`}</p>
-        <p className="ml-8">{`})`}</p>
-
-        <p className="ml-4">{`}`}</p>
-      </div>
-
-      {/* askDeviceIdFun */}
-      <div className="mt-10">
-        <p>
-          极光推送可能拿不到设备id，多次请求确保可以拿到
-          อาจไม่สามารถรับรหัสอุปกรณ์ได้
-          โปรดส่งคำขอหลายรายการเพื่อให้แน่ใจว่าสามารถรับได้
-        </p>
-
-        <p className="ml-4">{`function askDeviceIdFun() {`}</p>
-        <p className="ml-8">{`if (checkIsAndroid()) {`}</p>
-        <p className="ml-12">{`setTimeout(function () {`}</p>
-        <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-        <p className="ml-12">{`}, 1000)`}</p>
-        <p className="ml-12">{`setTimeout(function () {`}</p>
-        <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-        <p className="ml-12">{`}, 3000)`}</p>
-        <p className="ml-12">{`setTimeout(function () {`}</p>
-        <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-        <p className="ml-12">{`}, 5000)`}</p>
-        <p className="ml-12">{`setTimeout(function () {`}</p>
-        <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-        <p className="ml-12">{`}, 7000)`}</p>
-        <p className="ml-12">{`setTimeout(function () {`}</p>
-        <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-        <p className="ml-12">{`}, 9000)`}</p>
-        <p className="ml-12">{`setTimeout(function () {`}</p>
-        <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-        <p className="ml-12">{`}, 11000)`}</p>
-        <p className="ml-12">{`setTimeout(function () {`}</p>
-        <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-        <p className="ml-12">{`}, 13000)`}</p>
-        <p className="ml-12">{`setTimeout(function () {`}</p>
-        <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-        <p className="ml-12">{`}, 15000)`}</p>
-        <p className="ml-8">{`}`}</p>
-        <p className="ml-4">{`}`}</p>
-      </div>
+//pagination_coins
+export function Coin_history_pagination_coins() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`loaderObj.show()`}</p>
+      <p>{`var element = $(".pagination_coins ul");`}</p>
+      <p>{`var page = 1;`}</p>
+      <p>{`console.log(totalPages + "Total page");`}</p>
+      <p>{`setTimeout(() => {`}</p>
+      <p>{`createpagination_coins(totalPages, page);`}</p>
+      <p>{`}, 400);`}</p>
+      <p>{`function createpagination_coins(totalPages, currentPage) {`}</p>
+      <p className="ml-4">{`loaderObj.unShow()`}</p>
+      <p className="ml-4">{`var liTag = '';`}</p>
+      <p className="ml-4">{`var active;`}</p>
+      <p className="ml-4">{`var beforePage = currentPage - 1;`}</p>
+      <p className="ml-4">{`var afterPage = currentPage + 1;`}</p>
+      <p className="ml-4">{`count_page = currentPage`}</p>
+      <p className="ml-4">{`if (totalPages <= 5) {`}</p>
+      <p className="ml-8">{`for (var plength = 1; plength <= totalPages; plength++) {`}</p>
+      <p className="ml-12">{`active = currentPage == plength ? "active" : "";`}</p>
+      <p className="ml-12">{`liTag += '<li class="numb ' + active + '"><span>' + plength + '</span></li>';`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-4">{`} else {`}</p>
+      <p className="ml-8">{`if (currentPage > 1) {`}</p>
+      <p className="ml-12">{`liTag += '<li class="btn prev_c"><span><i class="fas fa-angle-left"></i> <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 7L9 12L14 17" stroke="#3B78FE" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>';`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-8">{`if (currentPage > 2) {`}</p>
+      <p className="ml-12">{`liTag += '<li class="first numb"><span>1</span></li>';`}</p>
+      <p className="ml-12">{`if (currentPage > 3) {`}</p>
+      <p className="ml-16">{`liTag += '<li class="dots"><span>...</span></li>';`}</p>
+      <p className="ml-12">{`}`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-8">{`if (currentPage == totalPages) {`}</p>
+      <p className="ml-12">{`beforePage = beforePage - 2;`}</p>
+      <p className="ml-8">{`} else if (currentPage == totalPages - 1) {`}</p>
+      <p className="ml-12">{`beforePage = beforePage - 1;`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-8">{`if (currentPage == 1) {`}</p>
+      <p className="ml-12">{`afterPage = afterPage + 2;`}</p>
+      <p className="ml-8">{`} else if (currentPage == 2) {`}</p>
+      <p className="ml-12">{`afterPage = afterPage + 1;`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-8">{`for (var plength = beforePage; plength <= afterPage; plength++) {`}</p>
+      <p className="ml-12">{`if (plength > totalPages || plength < 1) {`}</p>
+      <p className="ml-16">{`continue;`}</p>
+      <p className="ml-12">{`}`}</p>
+      <p className="ml-12">{`if (currentPage == plength) {`}</p>
+      <p className="ml-16">{`active = "active";`}</p>
+      <p className="ml-12">{`} else {`}</p>
+      <p className="ml-16">{`active = "";`}</p>
+      <p className="ml-12">{`}`}</p>
+      <p className="ml-12">{`liTag += '<li class="numb ' + active + ' " ><span>' + plength + '</span></li>';`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-8">{`if (currentPage < totalPages - 1) {`}</p>
+      <p className="ml-12">{`if (currentPage < totalPages - 2) {`}</p>
+      <p className="ml-16">{`liTag += '<li class="dots"><span>...</span></li>';`}</p>
+      <p className="ml-12">{`}`}</p>
+      <p className="ml-12">{`liTag += '<li class="last numb"><span>' + totalPages + '</span></li>';`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-8">{`if (currentPage < totalPages) {`}</p>
+      <p className="ml-12">{`liTag += '<li class="btn next_c"><span> <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 17L15 12L10 7" stroke="#3B78FE" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round"/></svg>  <i class="fas fa-angle-right"></i></span></li>';`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-4">{`element.html(liTag);`}</p>
+      <p className="ml-4">{`element.find('.prev_c').click(function () {`}</p>
+      <p className="ml-8">{`createpagination_coins(totalPages, currentPage - 1);`}</p>
+      <p className="ml-8">{`loaderObj.show();`}</p>
+      <p className="ml-8">{`coin_historyObj.getRedeemHis()`}</p>
+      <p className="ml-4">{`});`}</p>
+      <p className="ml-4">{`element.find('.numb').click(function () {`}</p>
+      <p className="ml-8">{`createpagination_coins(totalPages, parseInt($(this).text()));`}</p>
+      <p className="ml-8">{`loaderObj.show();`}</p>
+      <p className="ml-8">{`coin_historyObj.getRedeemHis()`}</p>
+      <p className="ml-4">{`});`}</p>
+      <p className="ml-4">{`$('.next_c').unbind()`}</p>
+      <p className="ml-4">{`element.find('.next_c').click(function () {`}</p>
+      <p className="ml-8">{`createpagination_coins(totalPages, currentPage + 1);`}</p>
+      <p className="ml-8">{`loaderObj.show();`}</p>
+      <p className="ml-8">{`coin_historyObj.getRedeemHis()`}</p>
+      <p className="ml-4">{`});`}</p>
       <p>{`}`}</p>
     </div>
   )
 }
 
-// Login.html Init
-export function LoginScriptInit() {
+// calPage
+export function Coin_history_calPage() {
   return (
-    <div>
-      <p className="ml-4">{`this.init = function () {`}</p>
-      <p className="ml-8">{`callApp("ask_deviceId")`}</p>
-      <p className="ml-8">{`askDeviceIdFun()`}</p>
-      <p className="ml-8">{`setAllUILang("login")`}</p>
-      <p className="ml-8">{`pageInit("loginPage")`}</p>
-      <p className="ml-8">{`$("#pic_lang").attr("src", picRes["logoLang.png"])`}</p>
-      <p className="ml-8">{`$("#login_phone").attr("src", picRes["mail.png"])`}</p>
-      <p className="ml-8">{`$("#login_pass").attr("src", picRes["password.png"])`}</p>
-      <p className="ml-8">{`$("#eyeiconclose_login").attr("src", picRes["eyeiconclose.png"])`}</p>
-      <p className="ml-8">{`$("#logo_face").attr("src", picRes["logo_face.png"])`}</p>
-      <p className="ml-8">{`$("#logo_google").attr("src", picRes["logo_google.png"])`}</p>
-      <p className="ml-8">{`$("#logo_apple").attr("src", picRes["logo_apple.png"])`}</p>
-      <p className="ml-8">{`$("#back_tohome").attr("src", picRes["arrow_back.png"])`}</p>
-      <p className="ml-4">{`$("#scroll_login").css({width: w, height: 0.8 * h, position: "absolute"})`}</p>
-      <p className="ml-4">{`myScroll = new IScroll("#scroll_login", {probeType: 1, mouseWheel: true})`}</p>
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`getToken = localStorage.getItem('token');`}</p>
+      <p>{`token = JSON.parse(getToken);`}</p>
+      <p>{`$.ajax({`}</p>
+      <p>{`type: 'get',`}</p>
+      <p>{`url: API_SERVER + '/v1/wallet/coin/history/?limit=100000',`}</p>
+      <p>{`headers: {`}</p>
+      <p>{`'Authorization': 'Bearer ' + token.token,`}</p>
+      <p>{`},`}</p>
+      <p>{`async: true,`}</p>
+      <p>{`timeout: 100000,`}</p>
+      <p>{`success: function (data) {`}</p>
+      <p className="ml-4">{`if (data.code == 0) {`}</p>
+      <p className="ml-8">{`var TypeReceive = data.result.filter(data => data.type == 510 || data.type == 520 || data.type == 530 || data.type == 540);`}</p>
+      <p className="ml-8">{`var TypeRedeem = data.result.filter(data => data.type == 10);`}</p>
+      <p className="ml-8">{`var TypeBuy = data.result.filter(data => data.type == 20);`}</p>
+      <p className="ml-8">{`console.log("Call page receive" + TypeRedeem);`}</p>
+      <p className="ml-8">{`switch (type) {`}</p>
+      <p className="ml-12">{`case "All":`}</p>
+      <p className="ml-16">{`totalPages = Math.ceil(data.records / 15);`}</p>
+      <p className="ml-16">{`break;`}</p>
+      <p className="ml-12">{`case "Receive":`}</p>
+      <p className="ml-16">{`totalPages = Math.ceil(TypeReceive.length / 15);`}</p>
+      <p className="ml-16">{`break;`}</p>
+      <p className="ml-12">{`case 10:`}</p>
+      <p className="ml-16">{`totalPages = Math.ceil(TypeRedeem.length / 15);`}</p>
+      <p className="ml-16">{`break;`}</p>
+      <p className="ml-12">{`case 20:`}</p>
+      <p className="ml-16">{`totalPages = Math.ceil(TypeBuy.length / 15);`}</p>
+      <p className="ml-16">{`break;`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-8">{`coin_historyObj.pagination_coins();`}</p>
+      <p className="ml-4">{`} else {`}</p>
+      <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+      <p className="ml-4">{`}`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+      <p className="ml-8">{`loaderObj.unShow();`}</p>
+      <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p>{`});`}</p>
+    </div>
+  )
+}
 
-      <p className="ml-4">{`$("#back_tohome").click(function () {`}</p>
-      <p className="ml-8">{`$("#detail_but_now_bottom").css("display", "none")`}</p>
-      <p className="ml-8">{`pageUnShow("loginPage")`}</p>
-      <p className="ml-8">{`mainObj.menuhome()`}</p>
-      <p className="ml-4">{`})`}</p>
+// coins.html
+// coinsCheckToken
+export function Coins_coinsCheckToken() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <div>
+        <p>getToken = window.localStorage.getItem("token")</p>
+        <p>token = JSON.parse(getToken)</p>
+      </div>
 
-      <p className="ml-4">{`$("#forgotPass").click(function () {`}</p>
-      <p className="ml-8">{`pageShow("forgotPassPage")`}</p>
-      <p className="ml-8">{`pageUnShow("loginPage")`}</p>
-      <p className="ml-4">{`})`}</p>
+      <div>
+        <p>{`if (token == null) {`}</p>
+        <p>{`} else {`}</p>
+        <p>{`getPointCoins()`}</p>
+        <p>{`}`}</p>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
 
-      <p className="ml-4">{`$("#regisAcc").click(function () {`}</p>
-      <p className="ml-8">{`pageShow("registerPage")`}</p>
-      <p className="ml-4">{`})`}</p>
-
-      <p className="ml-4">{`$("#goRegisterBtn").click(function () {`}</p>
-      <p className="ml-8">{`msgObj2.show(`}</p>
-      <p className="ml-12">{`NSLang("login.regiss"),`}</p>
-      <p className="ml-12">{`function () {`}</p>
-      <p className="ml-16">{`msgObj2.unShow()`}</p>
-      <p className="ml-16">{`pageShow("registerPage")`}</p>
-      <p className="ml-12">{`},`}</p>
-      <p className="ml-12">{`function () {`}</p>
-      <p className="ml-16">{`pageShow("registerShopPage")`}</p>
-      <p className="ml-16">{`msgObj2.unShow()`}</p>
-      <p className="ml-12">{`}`}</p>
-      <p className="ml-8">{`)`}</p>
-      <p className="ml-4">{`})`}</p>
-
-      <p className="ml-4">{`$("#login_span2").click(function () {`}</p>
-      <p className="ml-8">{`pageShow("forgotPassPage")`}</p>
-      <p className="ml-4">{`})`}</p>
-
-      <p className="ml-4">{`$("#show_lang").click(function () {`}</p>
-      <p className="ml-8">{`$("#select_lang").css({display: "flex"})`}</p>
-      <p className="ml-4">{`})`}</p>
-
-      <p className="ml-4">{`$("#lang_en").click(function () {`}</p>
-      <p className="ml-8">{`$("#select_lang").css({display: "none"})`}</p>
-      <p className="ml-8">{`$("#show_lang").html("EN")`}</p>
-      <p className="ml-8">{`localStorage.setItem("Language", "en")`}</p>
-      <p className="ml-8">{`langCode = "en"`}</p>
-      <p className="ml-8">{`setAllPageLang()`}</p>
-      <p className="ml-4">{`})`}</p>
-
-      <p className="ml-4">{`$("#lang_th").click(function () {`}</p>
-      <p className="ml-8">{`$("#select_lang").css({display: "none"})`}</p>
-      <p className="ml-8">{`$("#show_lang").html("TH")`}</p>
-      <p className="ml-8">{`localStorage.setItem("Language", "th")`}</p>
-      <p className="ml-8">{`langCode = "th"`}</p>
-      <p className="ml-8">{`setAllPageLang()`}</p>
-      <p className="ml-4">{`})`}</p>
-
-      <p className="ml-4">{`$("#lang_zh").click(function () {`}</p>
-      <p className="ml-8">{`$("#select_lang").css({display: "none"})`}</p>
-      <p className="ml-8">{`$("#show_lang").html("ZH")`}</p>
-      <p className="ml-8">{`localStorage.setItem("Language", "zh")`}</p>
-      <p className="ml-8">{`langCode = "zh"`}</p>
-      <p className="ml-8">{`setAllPageLang()`}</p>
-      <p className="ml-4">{`})`}</p>
-
-      <p className="ml-4">{`$("#eyeiconclose_login").click(function () {`}</p>
-      <p className="ml-8">{`var password_user = document.getElementById("password")`}</p>
-      <p className="ml-8">{`if (password_user.type === "password") {`}</p>
-      <p className="ml-12">{`password_user.type = "text"`}</p>
-      <p className="ml-12">{`$("#eyeiconclose_login").attr("src", picRes["eyeicon.png"])`}</p>
+//getPointCoins
+export function Coins_getPointCoinsn() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`var getToken = localStorage.getItem("token");`}</p>
+      <p>{`var token = JSON.parse(getToken);`}</p>
+      <p>{`$.ajax({`}</p>
+      <p className="ml-4">{`type: "get",`}</p>
+      <p className="ml-4">{`url: API_SERVER + "/v1/membership",`}</p>
+      <p className="ml-4">{`headers: {`}</p>
+      <p className="ml-8">{`Authorization: "Bearer " + token.token,`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`contentType: "application/json",`}</p>
+      <p className="ml-4">{`async: true,`}</p>
+      <p className="ml-4">{`timeout: 100000,`}</p>
+      <p className="ml-4">{`success: function (data) {`}</p>
+      <p className="ml-8">{`loaderObj.unShow();`}</p>
+      <p className="ml-8">{`if (data.code == 0) {`}</p>
+      <p className="ml-12">{`console.log(data.result);`}</p>
+      <p className="ml-12">{`var reward1 = parseFloat(data.result.numberOrders) >= 100 ? 100 : parseFloat(data.result.numberOrders);`}</p>
+      <p className="ml-12">{`var reward2 = parseFloat(data.result.orderTotals) >= 100 ? 100 : parseFloat(data.result.orderTotals);`}</p>
+      <p className="ml-12">{`var reward3 = parseFloat(data.result.inviteCodes) >= 100 ? 100 : parseFloat(data.result.inviteCodes);`}</p>
+      <p className="ml-12">{`var reward4 = parseFloat(data.result.electricity) >= 100 ? 100 : parseFloat(data.result.electricity);`}</p>
+      <p className="ml-12">{`var reward5 = parseFloat(data.result.checkIn) >= 100 ? 100 : parseFloat(data.result.checkIn);`}</p>
+      <p className="ml-12">{`$("#w_progress_shop").css({width: reward1 + "%"});`}</p>
+      <p className="ml-12">{`$("#show_num_w_progress_shop").text(parseFloat(data.result.numberOrders));`}</p>
+      <p className="ml-12">{`$("#w_progress_shop_total").css({width: reward2 + "%"});`}</p>
+      <p className="ml-12">{`$("#show_num_w_progress_shop_total").text(parseFloat(data.result.orderTotals));`}</p>
+      <p className="ml-12">{`$("#w_progress_invite").css({width: reward3 + "%"});`}</p>
+      <p className="ml-12">{`$("#w_progress_invite_text").text(parseFloat(data.result.inviteCodes));`}</p>
+      <p className="ml-12">{`$("#w_progress_energy").css({width: reward4 + "%"});`}</p>
+      <p className="ml-12">{`$("#w_progress_energy_text").text(parseFloat(data.result.electricity));`}</p>
+      <p className="ml-12">{`$("#w_progress_checkin").css({width: reward5 + "%"});`}</p>
+      <p className="ml-12">{`$("#w_progress_checkin_text").text(parseFloat(data.result.checkIn));`}</p>
       <p className="ml-8">{`} else {`}</p>
-      <p className="ml-12">{`password_user.type = "password"`}</p>
-      <p className="ml-12">{`$("#eyeiconclose_login").attr("src", picRes["eyeiconclose.png"])`}</p>
+      <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code));`}</p>
       <p className="ml-8">{`}`}</p>
-      <p className="ml-4">{`})`}</p>
-
-      <p className="ml-4">{`$("#loginBtn").click(function () {`}</p>
-      <p className="ml-8">{`callApp("ask_deviceId")`}</p>
-      <p className="ml-8">{`$("#checkBtnAgreementBtnLogin").prop("checked", function () {`}</p>
-      <p className="ml-12">{`mData = {`}</p>
-      <p className="ml-16">{`username: $("#mobileLogin").val(),`}</p>
-      <p className="ml-16">{`password: $("#password").val(),`}</p>
-      <p className="ml-12">{`}`}</p>
-      <p className="ml-12">{`localStorage.setItem("rememberPass", JSON.stringify(mData))`}</p>
-      <p className="ml-8">{`})`}</p>
-      <p className="ml-8">{`if ($("#mobileLogin").val() == "" && $("#password").val() == "") {`}</p>
-      <p className="ml-12">{`msgPageObj.show(NSLang("login.fill"))`}</p>
-      <p className="ml-8">{`}`}</p>
-      <p className="ml-8">{`if ($("#mobileLogin").val() == "" && $("#password").val() != "") {`}</p>
-      <p className="ml-12">{`msgPageObj.show(NSLang("login.mail"))`}</p>
-      <p className="ml-8">{`}`}</p>
-      <p className="ml-8">{`if ($("#mobileLogin").val() != "" && $("#password").val() == "") {`}</p>
-      <p className="ml-12">{`msgPageObj.show(NSLang("login.password"))`}</p>
-      <p className="ml-8">{`}`}</p>
-      <p className="ml-8">{`if ($("#mobileLogin").val() != "" && $("#password").val() != "") {`}</p>
-      <p className="ml-12">{`loaderObj.show()`}</p>
-      <p className="ml-12">{`setTimeout(function () {`}</p>
-      <p className="ml-16">{`loginFun()`}</p>
-      <p className="ml-12">{`}, 1000)`}</p>
-      <p className="ml-8">{`}`}</p>
-      <p className="ml-4">{`})`}</p>
-
-      <p className="ml-4">{`function loginFun() {`}</p>
-      <p className="ml-8">{`var mData = {`}</p>
-      <p className="ml-12">{`name: $("#mobileLogin").val(),`}</p>
-      <p className="ml-12">{`password: $("#password").val(),`}</p>
-      <p className="ml-8">{`}`}</p>
-
-      <p className="ml-8">{`if (deviceId) {`}</p>
-      <p className="ml-12">{`mData = {`}</p>
-      <p className="ml-16">{`name: $("#mobileLogin").val(),`}</p>
-      <p className="ml-16">{`password: $("#password").val(),`}</p>
-      <p className="ml-12">{`}`}</p>
-      <p className="ml-8">{`}`}</p>
-
-      <p className="ml-8">{`$.ajax({`}</p>
-      <p className="ml-12">{`type: "post",`}</p>
-      <p className="ml-12">{`url: API_SERVER + "/v1/auth/login",`}</p>
-      <p className="ml-12">{`data: JSON.stringify(mData),`}</p>
-      <p className="ml-12">{`contentType: "application/json",`}</p>
-      <p className="ml-12">{`dataType: "json",`}</p>
-      <p className="ml-12">{`async: true,`}</p>
-      <p className="ml-12">{`timeout: 100000,`}</p>
-      <p className="ml-12">{`beforeSend: function (xmlhttprequest) {},`}</p>
-      <p className="ml-12">{`success: function (data) {`}</p>
-      <p className="ml-16">{`loaderObj.unShow()`}</p>
-      <p className="ml-16">{`if (data.code == 0) {`}</p>
-      <p className="ml-20">{`// location.reload();`}</p>
-      <p className="ml-20">{`cleanInput()`}</p>
-      <p className="ml-20">{`var tokenObj = data.result`}</p>
-      <p className="ml-20">{`localStorage.setItem("token", JSON.stringify(tokenObj))`}</p>
-      <p className="ml-20">{`localStorage.setItem("savedUser", $("#mobileLogin").val())`}</p>
-      <p className="ml-20">{`homeObj.init()`}</p>
-      <p className="ml-20">{`mainObj.checkIsLogin()`}</p>
-      <p className="ml-20">{`$("#notificationPage").css({display: "block"})`}</p>
-      <p className="ml-16">{`} else {`}</p>
-      <p className="ml-20">{`msgPageObj.show(getStatusCode(data.code))`}</p>
-      <p className="ml-16">{`}`}</p>
-      <p className="ml-12">{`},`}</p>
-      <p className="ml-12">{`error: function (xmlhttprequest, error) {`}</p>
-      <p className="ml-16">{`loaderObj.unShow()`}</p>
-      <p className="ml-16">{`msgPageObj.show("服务器链接问题")`}</p>
-      <p className="ml-12">{`},`}</p>
-      <p className="ml-12">{`complete: function () {},`}</p>
-      <p className="ml-8">{`})`}</p>
-
-      <p className="ml-8">{`function cleanInput() {`}</p>
-      <p className="ml-12">{`$("#username").val("")`}</p>
-      <p className="ml-12">{`$("#password").val("")`}</p>
-      <p className="ml-8">{`}`}</p>
-      <p className="ml-4">{`}`}</p>
-
-      <p className="ml-4">{`}`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`error: function (error) {`}</p>
+      <p className="ml-8">{`loaderObj.unShow();`}</p>
+      <p className="ml-8">{`msgPageObj.show(NSLang("sys.serverError"));`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p>{`});`}</p>
     </div>
   )
 }
 
-// Login.html checkLoginStatusWithRefreshToken
-export function LoginScriptCheckLoginStatusWithRefreshToken() {
+// Configuration.html
+// updateDevice
+export function Configuration_updateDevice() {
   return (
-    <div>
-      <p className="ml-4">{`this.checkLoginStatusWithRefreshToken = function () {`}</p>
-      <p className="ml-8">{`if (token == null) {`}</p>
-      <p className="ml-12">{`return`}</p>
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+      <p>{`var token = JSON.parse(getToken);`}</p>
+      <p>{`var timestamp = Date.now();`}</p>
+      <p>{`var mData = {`}</p>
+      <p className="ml-4">{`id: ID,`}</p>
+      <p className="ml-4">{`pn: $("#update_pin").val(),`}</p>
+      <p className="ml-4">{`name: $("#update_name").val(),`}</p>
+      <p className="ml-4">{`type: $("#update_type").val(),`}</p>
+      <p className="ml-4">{`power: $("#update_power").val(),`}</p>
+      <p className="ml-4">{`model: "Wi-Fi Plug Pro",`}</p>
+      <p className="ml-4">{`firmware: "3.5.1.3",`}</p>
+      <p className="ml-4">{`address: $("#update_address").val(),`}</p>
+      <p className="ml-4">{`occurredTime: timestamp,`}</p>
+      <p className="ml-4">{`panel: $("#update_panel").val(),`}</p>
+      <p className="ml-4">{`status: $("#update_status").val(),`}</p>
+      <p>{`};`}</p>
+      <p>{`console.log(mData);`}</p>
+      <p>{`$.ajax({`}</p>
+      <p className="ml-4">{`type: "PUT",`}</p>
+      <p className="ml-4">{`url: API_SERVER + "/v1/solarDevice",`}</p>
+      <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+      <p className="ml-4">{`headers: {`}</p>
+      <p className="ml-8">{`Authorization: "Bearer " + token.token,`}</p>
+      <p className="ml-8">{`"Content-Type": "application/json",`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`dataType: "json",`}</p>
+      <p className="ml-4">{`async: true,`}</p>
+      <p className="ml-4">{`timeout: 100000,`}</p>
+      <p className="ml-4">{`success: function (data) {`}</p>
+      <p className="ml-8">{`if (data.code === 0) {`}</p>
+      <p className="ml-12">{`setTimeout(() => {`}</p>
+      <p className="ml-16">{`loaderObj.unShow();`}</p>
+      <p className="ml-16">{`msgObj4.show("The update was successful.", function () {`}</p>
+      <p className="ml-20">{`msgObj4.unShow();`}</p>
+      <p className="ml-20">{`my_deviveObj.getMyDevice();`}</p>
+      <p className="ml-20">{`monitorObj.GetSolarDeviceAll();`}</p>
+      <p className="ml-20">{`pageUnShow("ConfigurationPage");`}</p>
+      <p className="ml-20">{`pageShow("my_devivePage");`}</p>
+      <p className="ml-12">{`}, 500);`}</p>
+      <p className="ml-8">{`} else {`}</p>
+      <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+      <p className="ml-12">{`loaderObj.unShow();`}</p>
       <p className="ml-8">{`}`}</p>
-
-      <p className="ml-8">{`var mData = {token: token.refresh}`}</p>
-
-      <p className="ml-8">{`$.ajax({`}</p>
-      <p className="ml-12">{`type: "post",`}</p>
-      <p className="ml-12">{`url: API_SERVER + "/v1/auth/refresh",`}</p>
-      <p className="ml-12">{`data: JSON.stringify(mData),`}</p>
-      <p className="ml-12">{`contentType: "application/json",`}</p>
-      <p className="ml-12">{`dataType: "json",`}</p>
-      <p className="ml-12">{`async: true,`}</p>
-      <p className="ml-12">{`timeout: 100000,`}</p>
-      <p className="ml-12">{`beforeSend: function (xmlhttprequest) {},`}</p>
-      <p className="ml-12">{`success: function (data) {`}</p>
-      <p className="ml-16">{`if (data.code == 0) {`}</p>
-      <p className="ml-20">{`console.log("===>refresh success")`}</p>
-      <p className="ml-20">{`var tokenObj = data.result`}</p>
-      <p className="ml-20">{`localStorage.setItem("token", JSON.stringify(tokenObj))`}</p>
-      <p className="ml-20">{`var tokenLocal = localStorage.getItem("token")`}</p>
-      <p className="ml-20">{`if (tokenLocal != null) {`}</p>
-      <p className="ml-24">{`token = JSON.parse(tokenLocal)`}</p>
-      <p className="ml-20">{`}`}</p>
-      <p className="ml-20">{`pageUnShow("loginPage")`}</p>
-      <p className="ml-16">{`} else {`}</p>
-      <p className="ml-20">{`console.log("===>refresh fail")`}</p>
-      <p className="ml-16">{`}`}</p>
-      <p className="ml-12">{`},`}</p>
-      <p className="ml-12">{`error: function (xmlhttprequest, error) {`}</p>
-      <p className="ml-16">{`console.log(error)`}</p>
-      <p className="ml-12">{`},`}</p>
-      <p className="ml-12">{`complete: function () {},`}</p>
-      <p className="ml-8">{`})`}</p>
-
-      <p className="ml-4">{`}`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`error: function (xmlhttprequest, error) {},`}</p>
+      <p>{`});`}</p>
     </div>
   )
 }
 
-export function LoginScriPtaskDeviceIdFun() {
+// Configuration_con
+export function Configuration_con() {
   return (
-    <div>
-      <p>
-        极光推送可能拿不到设备id，多次请求确保可以拿到
-        อาจไม่สามารถรับรหัสอุปกรณ์ได้
-        โปรดส่งคำขอหลายรายการเพื่อให้แน่ใจว่าสามารถรับได้
-      </p>
-
-      <p className="ml-4">{`function askDeviceIdFun() {`}</p>
-      <p className="ml-8">{`if (checkIsAndroid()) {`}</p>
-      <p className="ml-12">{`setTimeout(function () {`}</p>
-      <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-      <p className="ml-12">{`}, 1000)`}</p>
-      <p className="ml-12">{`setTimeout(function () {`}</p>
-      <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-      <p className="ml-12">{`}, 3000)`}</p>
-      <p className="ml-12">{`setTimeout(function () {`}</p>
-      <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-      <p className="ml-12">{`}, 5000)`}</p>
-      <p className="ml-12">{`setTimeout(function () {`}</p>
-      <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-      <p className="ml-12">{`}, 7000)`}</p>
-      <p className="ml-12">{`setTimeout(function () {`}</p>
-      <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-      <p className="ml-12">{`}, 9000)`}</p>
-      <p className="ml-12">{`setTimeout(function () {`}</p>
-      <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-      <p className="ml-12">{`}, 11000)`}</p>
-      <p className="ml-12">{`setTimeout(function () {`}</p>
-      <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-      <p className="ml-12">{`}, 13000)`}</p>
-      <p className="ml-12">{`setTimeout(function () {`}</p>
-      <p className="ml-16">{`callApp("ask_deviceId")`}</p>
-      <p className="ml-12">{`}, 15000)`}</p>
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`ID = id;`}</p>
+      <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+      <p>{`var token = JSON.parse(getToken);`}</p>
+      <p>{`$.ajax({`}</p>
+      <p className="ml-4">{`type: "get",`}</p>
+      <p className="ml-4">{`url: API_SERVER + "/v1/solarDevice/" + ID,`}</p>
+      <p className="ml-4">{`headers: {`}</p>
+      <p className="ml-8">{`Authorization: "Bearer " + token.token,`}</p>
+      <p className="ml-8">{`"Content-Type": "application/json",`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`dataType: "json",`}</p>
+      <p className="ml-4">{`async: true,`}</p>
+      <p className="ml-4">{`timeout: 100000,`}</p>
+      <p className="ml-4">{`success: function (data) {`}</p>
+      <p className="ml-8">{`if (data.code === 0) {`}</p>
+      <p className="ml-12">{`var Update = data.result;`}</p>
+      <p className="ml-12">{`$("#update_pin").val(Update.pn);`}</p>
+      <p className="ml-12">{`$("#update_name").val(Update.name);`}</p>
+      <p className="ml-12">{`$("#update_address").val(Update.address);`}</p>
+      <p className="ml-12">{`$("#update_panel").val(Update.panel);`}</p>
+      <p className="ml-12">{`addDate(Update.occurredTime);`}</p>
+      <p className="ml-12">{`var intervalID = setInterval(addDate, 1000);`}</p>
+      <p className="ml-12">{`function addDate() {`}</p>
+      <p className="ml-16">{`var currentDate = new Date();`}</p>
+      <p className="ml-16">{`var year = currentDate.getFullYear();`}</p>
+      <p className="ml-16">{`var month = currentDate.getMonth() + 1;`}</p>
+      <p className="ml-16">{`var date = currentDate.getDate();`}</p>
+      <p className="ml-16">{`var hours = currentDate.getHours();`}</p>
+      <p className="ml-16">{`var minutes = currentDate.getMinutes();`}</p>
+      <p className="ml-16">{`var seconds = currentDate.getSeconds();`}</p>
+      <p className="ml-16">{`month = month < 10 ? "0" + month : month;`}</p>
+      <p className="ml-16">{`date = date < 10 ? "0" + date : date;`}</p>
+      <p className="ml-16">{`hours = hours < 10 ? "0" + hours : hours;`}</p>
+      <p className="ml-16">{`minutes = minutes < 10 ? "0" + minutes : minutes;`}</p>
+      <p className="ml-16">{`seconds = seconds < 10 ? "0" + seconds : seconds;`}</p>
+      <p className="ml-16">{`var formattedTime = year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;`}</p>
+      <p className="ml-16">{`$("#update_occurredtime").attr("placeholder", formattedTime);`}</p>
+      <p className="ml-12">{`}`}</p>
+      <p className="ml-8">{`} else {`}</p>
+      <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code));`}</p>
       <p className="ml-8">{`}`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`error: function (xmlhttprequest, error) {},`}</p>
+      <p>{`});`}</p>
+    </div>
+  )
+}
+
+// confirm_order.html
+//getOrder
+export function Confirm_order_getOrder() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`walletObj.getUserData();`}</p>
+      <p>{`$('#yojo_Coin').text("฿ 0");`}</p>
+      <p>{`var coins = parseFloat($('#coins_show_order').text());`}</p>
+      <p>{`if (coins == 0) {`}</p>
+      <p className="ml-4">{`$('#checkbox_toggle').prop('disabled', true);`}</p>
+      <p>{`} else {`}</p>
+      <p className="ml-4">{`$('#checkbox_toggle').prop('disabled', false);`}</p>
+      <p>{`}`}</p>
+      <p>{`$('#checkbox_toggle').unbind().change(function () {`}</p>
+      <p className="ml-4">{`$('#show_total_price_order').text("฿ 0");`}</p>
+      <p className="ml-4">{`var coinsDis = $('#coins_show_order').text();`}</p>
+      <p className="ml-4">{`var coinsDisFromat = parseFloat(coinsDis.replace(/,/g, '')); // Remove comma`}</p>
+      <p className="ml-4">{`if ($(this).prop('checked')) {`}</p>
+      <p className="ml-8">{`oldData.useCoin = true;`}</p>
+      <p className="ml-8">{`SetCoins = coinsDisFromat;`}</p>
+      <p className="ml-8">{`$('#yojo_Coin').text("฿  -" + coinsDis);`}</p>
+      <p className="ml-4">{`} else {`}</p>
+      <p className="ml-8">{`oldData.useCoin = false;`}</p>
+      <p className="ml-8">{`SetCoins = 0;`}</p>
+      <p className="ml-8">{`$('#yojo_Coin').text("฿ 0");`}</p>
+      <p className="ml-8">{`// $("#products_buy_order").off("click");`}</p>
       <p className="ml-4">{`}`}</p>
+      <p className="ml-4">{`calTotal();`}</p>
+      <p>{`})`}</p>
+      <p>{`$('#discount_member').unbind().change(function () {`}</p>
+      <p className="ml-4">{`if ($(this).prop('checked')) {`}</p>
+      <p className="ml-8">{`var memDis = parseFloat($('#member_status_discount_money').text());`}</p>
+      <p className="ml-8">{`MemberDis = memDis;`}</p>
+      <p className="ml-8">{`setStateIDMemberDis = true;`}</p>
+      <p className="ml-4">{`} else {`}</p>
+      <p className="ml-8">{`MemberDis = 0;`}</p>
+      <p className="ml-8">{`setStateIDMemberDis = null;`}</p>
+      <p className="ml-4">{`}`}</p>
+      <p className="ml-4">{`calTotal();`}</p>
+      <p>{`})`}</p>
+      <p>{`str = "";`}</p>
+      <p>{`$('#Delivery_order_price').text('฿ ' + data.fee.toLocaleString());`}</p>
+      <p>{`$('#Total_orders').text('฿ ' + data.total.toLocaleString());`}</p>
+      <p>{`$.each(data.items, function (index, data) {`}</p>
+      <p className="ml-4">{`str += '<div style="background:#fff; border:2px solid #3B78FE; height: 90px; width: 100%; box-shadow: 2px 2px 3px 1px #0000001A; border-radius: 8px;"class="flexCenter">';`}</p>
+      <p className="ml-4">{`str += '<div style="width: 90%; height: 85%;" class="flexCenter">';`}</p>
+      <p className="ml-4">{`str += '<div style="width: 30%;" class="flexCenter">';`}</p>
+      <p className="ml-4">{`str += '<img src=" ' + (API_SERVER + data.image) + '" alt="" style="width: auto; height: 70px;">';`}</p>
+      <p className="ml-4">{`str += '</div>';`}</p>
+      <p className="ml-4">{`str += '<div style="width: 70%; height: 80%;" class="flexSpac_c">';`}</p>
+      <p className="ml-4">{`str += '<span style="width: 100%; font-size: 14px; padding-left:10px;" >' + data.name + '</span>';`}</p>
+      <p className="ml-4">{`str += '<div style="width: 100%; text-align: end;" class="flexEnd">';`}</p>
+      <p className="ml-4">{`str += '<span style="color: #3B78FE; font-size: 16px; font-weight: bold;">Quantity x  ' + data.quantity + '</span>';`}</p>
+      <p className="ml-4">{`str += '</div>';`}</p>
+      <p className="ml-4">{`str += '</div>';`}</p>
+      <p className="ml-4">{`str += '</div>';`}</p>
+      <p>{`});`}</p>
+      <p>{`$("#list_order_select").html(str);`}</p>
+      <p>{`myScroll = new IScroll('#scroller_confirm_order', { probeType: 1, mouseWheel: true });`}</p>
+      <p>{`payTotal = data.payTotal;`}</p>
+      <p>{`calTotal();`}</p>
+      <p>{`$("#products_buy_order").unbind().click(function () {`}</p>
+      <p className="ml-4">{`msgObj3.show("Do you confirm your purchase?", function () {`}</p>
+      <p className="ml-8">{`msgObj3.unShow();`}</p>
+      <p className="ml-8">{`postOrderNow(oldData);`}</p>
+      <p className="ml-4">{`});`}</p>
+      <p>{`});`}</p>
+    </div>
+  )
+}
+
+// getStatePayment
+export function Confirm_order_getStatePayment() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>checkStateMethodPayment = method</p>
+      <p>calTotal()</p>
+    </div>
+  )
+}
+
+// setVoucherId
+export function Confirm_order_setVoucherId() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>setStateIDVouncherDis = id</p>
+      <p>VoucherDis = discount</p>
+      <p>calTotal()</p>
+    </div>
+  )
+}
+
+// postOrderNow
+export function Confirm_order_postOrderNow() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`loaderObj.show();`}</p>
+      <p>{`var getToken = localStorage.getItem("token");`}</p>
+      <p>{`var token = JSON.parse(getToken);`}</p>
+      <p>{`data.orderNow = false;`}</p>
+      <p>{`data.paymentMethod = checkStateMethodPayment;`}</p>
+      <p>{`data.voucherId = setStateIDVouncherDis;`}</p>
+      <p>{`data.useDiscountLevel = setStateIDMemberDis;`}</p>
+      <p>{`var mData = data;`}</p>
+      <p>{`$.ajax({`}</p>
+      <p className="ml-4">{`type: "post",`}</p>
+      <p className="ml-4">{`url: API_SERVER + "/v1/orders",`}</p>
+      <p className="ml-4">{`headers: {`}</p>
+      <p className="ml-8">{`Authorization: "Bearer " + token.token,`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+      <p className="ml-4">{`contentType: "application/json",`}</p>
+      <p className="ml-4">{`dataType: "json",`}</p>
+      <p className="ml-4">{`async: true,`}</p>
+      <p className="ml-4">{`timeout: 100000,`}</p>
+      <p className="ml-4">{`beforeSend: function (xmlhttprequest) { },`}</p>
+      <p className="ml-4">{`success: function (data) {`}</p>
+      <p className="ml-8">{`loaderObj.unShow();`}</p>
+      <p className="ml-8">{`if (data.code == 0) {`}</p>
+      <p className="ml-12">{`if (checkStateMethodPayment == 10) {`}</p>
+      <p className="ml-16">{`msgObj4.show("Payment successful. Order completed.", function () {`}</p>
+      <p className="ml-20">{`pageUnShow("confirm_orderPage")`}</p>
+      <p className="ml-20">{`pageUnShow("productCartPage")`}</p>
+      <p className="ml-20">{`pageUnShow("productDetailPage")`}</p>
+      <p className="ml-20">{`productCartObj.showCart();`}</p>
+      <p className="ml-20">{`walletObj.getUserData();`}</p>
+      <p className="ml-20">{`cleanDataDefualt()`}</p>
+      <p className="ml-16">{`})`}</p>
+      <p className="ml-12">{`} else if (checkStateMethodPayment == 20) {`}</p>
+      <p className="ml-16">{`pageShow("payment_method2Page")`}</p>
+      <p className="ml-16">{`payment_method2Obj.genQR(data.result.oid);`}</p>
+      <p className="ml-16">{`productCartObj.showCart();`}</p>
+      <p className="ml-16">{`walletObj.getUserData();`}</p>
+      <p className="ml-16">{`cleanDataDefualt()`}</p>
+      <p className="ml-12">{`}`}</p>
+      <p className="ml-8">{`} else {`}</p>
+      <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code))`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+      <p className="ml-8">{`loaderObj.unShow();`}</p>
+      <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'))`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p>{`});`}</p>
+    </div>
+  )
+}
+
+// getAddress
+export function Confirm_order_getAddress() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`var getToken = localStorage.getItem("token");`}</p>
+      <p>{`var token = JSON.parse(getToken);`}</p>
+      <p>{`$.ajax({`}</p>
+      <p className="ml-4">{`type: "get",`}</p>
+      <p className="ml-4">{`url: API_SERVER + "/v1/deliveryAddress/main",`}</p>
+      <p className="ml-4">{`headers: {`}</p>
+      <p className="ml-8">{`Authorization: "Bearer " + token.token,`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`contentType: "application/json",`}</p>
+      <p className="ml-4">{`dataType: "json",`}</p>
+      <p className="ml-4">{`async: true,`}</p>
+      <p className="ml-4">{`timeout: 100000,`}</p>
+      <p className="ml-4">{`beforeSend: function (xmlhttprequest) { },`}</p>
+      <p className="ml-4">{`success: function (data) {`}</p>
+      <p className="ml-8">{`loaderObj.unShow();`}</p>
+      <p className="ml-8">{`if (data.code == 0) {`}</p>
+      <p className="ml-12">{`console.log("address");`}</p>
+      <p className="ml-12">{`$('#order_name').text(data.result.name);`}</p>
+      <p className="ml-12">{`$('#order_number').text(data.result.mobile);`}</p>
+      <p className="ml-12">{`$('#order_address').text(data.result.address);`}</p>
+      <p className="ml-12">{`$('#order_post').text(data.result.postcode);`}</p>
+      <p className="ml-12">{`$('#show_address_to_shipping').css("display", "flex");`}</p>
+      <p className="ml-8">{`} else {`}</p>
+      <p className="ml-12">{`if (data.code == 4109) {`}</p>
+      <p className="ml-16">{`$('#show_address_to_shipping').css("display", "none");`}</p>
+      <p className="ml-16">{`msgObj3.show("You haven't added a delivery address, please add an address.", function () {`}</p>
+      <p className="ml-20">{`msgObj3.unShow();`}</p>
+      <p className="ml-20">{`pageShow('locationAddressPage');`}</p>
+      <p className="ml-20">{`locationAddressObj.call();`}</p>
+      <p className="ml-16">{`}, function () {`}</p>
+      <p className="ml-20">{`msgObj3.unShow();`}</p>
+      <p className="ml-20">{`pageUnShow('confirm_orderPage');`}</p>
+      <p className="ml-16">{`});`}</p>
+      <p className="ml-12">{`} else {`}</p>
+      <p className="ml-16">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+      <p className="ml-12">{`}`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+      <p className="ml-8">{`loaderObj.unShow();`}</p>
+      <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'))`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p>{`});`}</p>
+    </div>
+  )
+}
+
+//getCodeDisCountVoucher
+export function Confirm_order_getCodeDisCountVoucher() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`var getToken = localStorage.getItem("token");`}</p>
+      <p>{`var token = JSON.parse(getToken);`}</p>
+      <p>{`var collect_voucher = []`}</p>
+      <p>{`$.ajax({`}</p>
+      <p className="ml-4">{`type: "get",`}</p>
+      <p className="ml-4">{`url: API_SERVER + "/v1/voucher?page=1&limit=100",`}</p>
+      <p className="ml-4">{`headers: {`}</p>
+      <p className="ml-8">{`Authorization: "Bearer " + token.token,`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`contentType: "application/json",`}</p>
+      <p className="ml-4">{`dataType: "json",`}</p>
+      <p className="ml-4">{`async: true,`}</p>
+      <p className="ml-4">{`timeout: 100000,`}</p>
+      <p className="ml-4">{`beforeSend: function (xmlhttprequest) { },`}</p>
+      <p className="ml-4">{`success: function (data) {`}</p>
+      <p className="ml-8">{`loaderObj.unShow();`}</p>
+      <p className="ml-8">{`if (data.code == 0) {`}</p>
+      <p className="ml-12">{`var VoucherAll = data.result.filter(data => data.type === 10);`}</p>
+      <p className="ml-12">{`collect_voucher.push(VoucherAll);`}</p>
+      <p className="ml-12">{`voucherObj.call(collect_voucher[0]);`}</p>
+      <p className="ml-8">{`} else {`}</p>
+      <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+      <p className="ml-8">{`loaderObj.unShow();`}</p>
+      <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p>{`});`}</p>
+    </div>
+  )
+}
+
+// getCodeDisCountMember
+export function Confirm_order_getCodeDisCountMember() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`var getToken = localStorage.getItem("token");`}</p>
+      <p>{`var token = JSON.parse(getToken);`}</p>
+      <p>{`$.ajax({`}</p>
+      <p className="ml-4">{`type: "get",`}</p>
+      <p className="ml-4">{`url: API_SERVER + "/v1/levelVoucher",`}</p>
+      <p className="ml-4">{`headers: {`}</p>
+      <p className="ml-8">{`Authorization: "Bearer " + token.token,`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`contentType: "application/json",`}</p>
+      <p className="ml-4">{`dataType: "json",`}</p>
+      <p className="ml-4">{`async: true,`}</p>
+      <p className="ml-4">{`timeout: 100000,`}</p>
+      <p className="ml-4">{`beforeSend: function (xmlhttprequest) { },`}</p>
+      <p className="ml-4">{`success: function (data) {`}</p>
+      <p className="ml-8">{`loaderObj.unShow();`}</p>
+      <p className="ml-8">{`if (data.code == 0) {`}</p>
+      <p className="ml-12">{`console.log(data.result);`}</p>
+      <p className="ml-12">{`var TypeMember = data.result;`}</p>
+      <p className="ml-12">{`var membeLevel;`}</p>
+      <p className="ml-12">{`if (TypeMember == null) {`}</p>
+      <p className="ml-16">{`$("#select_code_discount").css({ "display": "none" });`}</p>
+      <p className="ml-12">{`} else {`}</p>
+      <p className="ml-16">{`$("#select_code_discount").css({ "display": "flex" });`}</p>
+      <p className="ml-16">{`var formattedNumber = TypeMember.discount.toLocaleString(undefined, {`}</p>
+      <p className="ml-20">{`minimumFractionDigits: 2,`}</p>
+      <p className="ml-20">{`maximumFractionDigits: 2`}</p>
+      <p className="ml-16">{`});`}</p>
+      <p className="ml-16">{`switch (TypeMember.level) {`}</p>
+      <p className="ml-20">{`case 0:`}</p>
+      <p className="ml-24">{`membeLevel = "Member Classic";`}</p>
+      <p className="ml-24">{`break;`}</p>
+      <p className="ml-20">{`case 10:`}</p>
+      <p className="ml-24">{`membeLevel = "Member Silver";`}</p>
+      <p className="ml-24">{`break;`}</p>
+      <p className="ml-20">{`case 20:`}</p>
+      <p className="ml-24">{`membeLevel = "Member Gold";`}</p>
+      <p className="ml-24">{`break;`}</p>
+      <p className="ml-20">{`case 30:`}</p>
+      <p className="ml-24">{`membeLevel = "Member Platinum";`}</p>
+      <p className="ml-24">{`break;`}</p>
+      <p className="ml-16">{`}`}</p>
+      <p className="ml-16">{`$('#member_status_discount').text(membeLevel);`}</p>
+      <p className="ml-16">{`$('#member_status_discount_money').text(formattedNumber);`}</p>
+      <p className="ml-12">{`}`}</p>
+      <p className="ml-8">{`} else {`}</p>
+      <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+      <p className="ml-8">{`}`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+      <p className="ml-8">{`loaderObj.unShow();`}</p>
+      <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+      <p className="ml-4">{`},`}</p>
+      <p>{`});`}</p>
+    </div>
+  )
+}
+
+// calTotal
+export function Confirm_order_calTotal() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`var discount = parseFloat($('#show_voucher_dis_order').text());`}</p>
+      <p>{`console.log(`}</p>
+      <p className="ml-4">{`{`}</p>
+      <p className="ml-8">{`"coins===>": SetCoins,`}</p>
+      <p className="ml-8">{`"VoucherDiscount===>": discount,`}</p>
+      <p className="ml-8">{`"MemberDisCount===>": MemberDis,`}</p>
+      <p className="ml-8">{`"TotalPay===>": payTotal,`}</p>
+      <p className="ml-8">{`"SetMemberDisCount===>": setStateIDMemberDis,`}</p>
+      <p className="ml-8">{`"SetVoucherDiscount===>": setStateIDVouncherDis,`}</p>
+      <p className="ml-8">{`"SetMethodPayment===>": checkStateMethodPayment`}</p>
+      <p className="ml-4">{`});`}</p>
+      <p>{`if (setStateIDMemberDis == true) {`}</p>
+      <p className="ml-4">{`var MemDis = ($('#member_status_discount_money').text());`}</p>
+      <p className="ml-4">{`var MemDisFromat = parseFloat(MemDis.replace(/,/g, '')); // Remove comma`}</p>
+      <p className="ml-4">{`MemberDis = MemDisFromat;`}</p>
+      <p>{`} else {`}</p>
+      <p className="ml-4">{`MemberDis = 0;`}</p>
+      <p>{`}`}</p>
+      <p>{`var totalPayment = payTotal - SetCoins - discount - MemberDis;`}</p>
+      <p>{`console.log(discount, MemberDis, "kkkk");`}</p>
+      <p>{`var formattedNumberDis = (discount + MemberDis).toLocaleString(undefined, {`}</p>
+      <p className="ml-4">{`minimumFractionDigits: 2,`}</p>
+      <p className="ml-4">{`maximumFractionDigits: 2`}</p>
+      <p>{`});`}</p>
+      <p>{`if (discount + MemberDis == 0) {`}</p>
+      <p className="ml-4">{`console.log("lkkfgsfsdf");`}</p>
+      <p className="ml-4">{`$('#show_total_discount').text("0");`}</p>
+      <p>{`} else {`}</p>
+      <p className="ml-4">{`$('#show_total_discount').text("-" + formattedNumberDis);`}</p>
+      <p>{`}`}</p>
+      <p>{`console.log("<<<======Totol Payment :" + totalPayment + "=====>>>");`}</p>
+      <p>{`var formattedNumber = totalPayment.toLocaleString(undefined, {`}</p>
+      <p className="ml-4">{`minimumFractionDigits: 2,`}</p>
+      <p className="ml-4">{`maximumFractionDigits: 2`}</p>
+      <p>{`});`}</p>
+      <p>{`$('#show_total_price_order').text(formattedNumber + ' ฿');`}</p>
+    </div>
+  )
+}
+
+// cleanDataDefualt
+export function Confirm_order_cleanDataDefualt() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`productCartObj.showCart();`}</p>
+      <p>{`$("#products_buy").css({ "background": "rgb(187 173 173)" });`}</p>
+      <p>{`$("#products_buy").off("click");`}</p>
+      <p>{`$("#checkbox_toggle").prop('checked', false);`}</p>
+      <p>{`$("#show_total_price").html('฿ 0');`}</p>
+      <p>{`$('#show_total_price_order').text('฿ 0');`}</p>
+      <p>{`$('#payment_method_select_show').text('Yojo Wallet');`}</p>
+      <p>{`$('#show_voucher_dis_order').text('0');`}</p>
+      <p>{`$('#member_status_discount_money').text('0');`}</p>
+      <p>{`checkStateMethodPayment = 10;`}</p>
+      <p>{`setStateIDVouncherDis = null;`}</p>
+      <p>{`setStateIDMemberDis = null;`}</p>
+      <p>{`SetCoins = 0;`}</p>
+      <p>{`$("#yojo_wallet_radio").prop("checked", true);`}</p>
+      <p>{`$("#discount_member").prop("checked", false);`}</p>
     </div>
   )
 }
