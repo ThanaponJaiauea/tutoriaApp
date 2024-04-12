@@ -1,6 +1,6 @@
 /** @format */
 
-import MessageBoxTryit from "./tryitFunction/messageBoxTryit"
+import MessageBoxTryit from "./tryitFunction/messageBoxTryit";
 import {
   Addda_talogger_addDate,
   Addda_talogger_createDevice,
@@ -65,14 +65,14 @@ import {
   PageUnShowWidget,
   ResObjIndexScript,
   ResObjWidget,
-} from "../components/functionDataText"
+} from "../components/FunctionDataText";
 
-import AlertTryit from "./tryitFunction/alertTryit"
-import HeaderInitTryit from "./tryitFunction/headerInitTryit"
-import PageShowTryit from "./tryitFunction/pageShowTryit"
-import PageUnShowTryit from "./tryitFunction/pageUnShowTryit"
-import LoaderTryit from "./tryitFunction/loaderTryit"
-import MessagePage from "./tryitFunction/messagePageTryit"
+import AlertTryit from "./tryitFunction/alertTryit";
+import HeaderInitTryit from "./tryitFunction/headerInitTryit";
+import PageShowTryit from "./tryitFunction/pageShowTryit";
+import PageUnShowTryit from "./tryitFunction/pageUnShowTryit";
+import LoaderTryit from "./tryitFunction/loaderTryit";
+import MessagePage from "./tryitFunction/messagePageTryit";
 
 export default function ModelContent({
   headerName,
@@ -403,5 +403,5 @@ export default function ModelContent({
         </div>
       ) : null}
     </div>
-  )
+  );
 }
