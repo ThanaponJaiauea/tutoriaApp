@@ -1,8 +1,8 @@
 /** @format */
-import {AiOutlineCaretDown, AiOutlineCaretUp} from "react-icons/ai"
-import DropdownList from "../dropdownList"
+import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
+import DropdownList from "../dropdownList";
 
-export default function FormSpecificModel({
+export default function FormModelSolarApp({
   setOpenSpecificModel,
   openSpecificModel,
   openHomeHtml,
@@ -16,6 +16,8 @@ export default function FormSpecificModel({
   setOpenCoins,
   setOpenConfiguration,
   setOpenConfirm,
+  setOpenCustomer,
+  setOpenDataCustomerDetails,
   data,
   handleModelClick,
   openAdddatalogger,
@@ -25,13 +27,16 @@ export default function FormSpecificModel({
   openCoins,
   openConfiguration,
   openConfirm,
+  openCustomer,
+  openDataCustomerDetails,
 }) {
   return (
     <div>
       <li
         onClick={() => setOpenSpecificModel(!openSpecificModel)}
-        className="w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer">
-        <h1>Specific Model</h1>
+        className="w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer"
+      >
+        <h1>Solar App</h1>
 
         {!openSpecificModel ? <AiOutlineCaretDown /> : <AiOutlineCaretUp />}
       </li>
@@ -129,6 +134,32 @@ export default function FormSpecificModel({
             />
           </div>
 
+          {/*   // customer.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="customer.html"
+              category="customer"
+              open={openCustomer}
+              onClick={setOpenCustomer}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/*   // data_customer_details.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="data_cus_details.html"
+              category="data_customer_details"
+              open={openDataCustomerDetails}
+              onClick={setOpenDataCustomerDetails}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
           {/* homeHtml */}
           <div>
             <DropdownList
@@ -144,5 +175,5 @@ export default function FormSpecificModel({
         </>
       )}
     </div>
-  )
+  );
 }

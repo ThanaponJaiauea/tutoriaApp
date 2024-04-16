@@ -41,7 +41,7 @@ export function FunctionMessageBoxText() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //Index MessageBox Body
@@ -71,7 +71,7 @@ export function DivMessageBox() {
       <p className="ml-12">{`</div>`}</p>
       <p>{`</div>`}</p>
     </div>
-  )
+  );
 }
 
 //Index MessageBox Script
@@ -81,7 +81,7 @@ export function DivMessageBoxScript() {
       <p>{`var msgObj = new messageBox();`}</p>
       <p>{`msgObj.init();`}</p>
     </div>
-  )
+  );
 }
 
 //Index MessageBox exampleCode
@@ -95,7 +95,7 @@ export function DivMessageBoxExampleCode() {
       <p>{`msgObj.unShow();`}</p>
       <p>{`})`}</p>
     </div>
-  )
+  );
 }
 
 // alert() Widget.js
@@ -151,7 +151,7 @@ export function AlertWidget() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // alert() Index Body
@@ -165,7 +165,7 @@ export function AlertIndex() {
         <p>{`</div>`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //Index Alert Script
@@ -175,7 +175,7 @@ export function AlertScript() {
       <p>{`var alertObj = new alert();`}</p>
       <p>{`alertObj.init();`}</p>
     </div>
-  )
+  );
 }
 
 // alert Example
@@ -187,7 +187,7 @@ export function AlertExample() {
         alertObj.unShow()
       }, 500);`}</p>
     </div>
-  )
+  );
 }
 
 // resObj Widget.js
@@ -197,15 +197,19 @@ export function ResObjWidget() {
       <p>
         <span className="text-[#0000CD]">var</span> {`resUrl = "res.json"`}
       </p>
+
       <p>
         <span className="text-[#0000CD]">var</span> {`resData = null`}
       </p>
+
       <p>
         <span className="text-[#0000CD]">var</span> {`base64 = new Base64()`}
       </p>
+
       <p>
         <span className="text-[#0000CD]">var</span> {`successFun = null`}
       </p>
+
       <p>
         <span className="text-[#0000CD]">var</span> {`errorFun = null`}
       </p>
@@ -299,7 +303,7 @@ export function ResObjWidget() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // base64
@@ -424,7 +428,7 @@ export function Base64() {
       <p className="ml-8">{`}`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
-  )
+  );
 }
 
 // resObj Index.html script
@@ -452,7 +456,7 @@ export function ResObjIndexScript() {
         <p className="ml-4">{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //pageInit()
@@ -467,7 +471,7 @@ export function PageInit() {
       <p className="ml-4">{`top: 0,`}</p>
       <p className="ml-4">{`})`}</p>
     </div>
-  )
+  );
 }
 
 //PageInit  Example Body
@@ -477,21 +481,21 @@ export function PageInitExampleBody() {
       <p>{`<div id="name_page">`}</p>
       <p>{`</div>`}</p>
     </div>
-  )
+  );
 }
 
 //PageInit  Example script
 export function PageInitExampleScript() {
   return (
     <div className="px-4">
-      <span className="text-[#0000CD]">
+      <p className="text-[#0000CD]">
         this.<span className="text-[#e3d786]">init</span>
-      </span>{" "}
+      </p>{" "}
       {`= function () {`}
       <p className="ml-8">{`pageInit("name_page");`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
-  )
+  );
 }
 
 // HeaderInit Widget
@@ -536,7 +540,7 @@ export function HeaderInitWidget() {
       <p>{`})`}</p>
       <p className="mt-1">{`$(".back_arrow").attr("src", picRes["arrow_back.png"])`}</p>
     </div>
-  )
+  );
 }
 
 //HeaderInit  Example script
@@ -550,7 +554,7 @@ export function HeaderInitExampleScript() {
       <p className="full">{`headerInit("name_page","HeaderInitPage");`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
-  )
+  );
 }
 
 //PageShow Widget
@@ -559,7 +563,7 @@ export function PageShowWidget() {
     <div>
       <p className="ml-8">{`$("#" + pageId).transition({x: w,},PAGETIMEOUT)`}</p>
     </div>
-  )
+  );
 }
 
 //pageShow  Example Body
@@ -570,7 +574,7 @@ export function PageShowExampleBody() {
       <p className="ml-4">current Page</p>
       <p>{`</div>`}</p>
     </div>
-  )
+  );
 }
 
 //pageShow  Example Script
@@ -584,7 +588,7 @@ export function PageShowExampleScript() {
       <p className="full">{`pageShow("go_next_page");`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
-  )
+  );
 }
 
 //pageUnShow Widget
@@ -593,7 +597,7 @@ export function PageUnShowWidget() {
     <div>
       <p className="ml-8">{`$("#" + pageId).transition({x: 0,},PAGETIMEOUT)`}</p>
     </div>
-  )
+  );
 }
 
 //pageUnShow  Example Body
@@ -609,7 +613,7 @@ export function PageUnShowExampleBody() {
             </div>`}</p>
       <p>{`</div>`}</p>
     </div>
-  )
+  );
 }
 
 //pageUnShow  Example Script
@@ -626,7 +630,7 @@ export function PageUnShowExampleScript() {
       <p className="ml-4">{`}`}</p>
       <p>{`}`}</p>
     </div>
-  )
+  );
 }
 
 //pageUnShow Widget
@@ -660,7 +664,7 @@ export function DocumentAddEventListenerWidget() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //GetAbsTimeWidget Widget
@@ -685,7 +689,7 @@ export function GetAbsTimeWidget() {
       <p>{`} catch (e) { throw e }`}</p>
       <p>{`}`}</p>
     </div>
-  )
+  );
 }
 
 //Loader Widget
@@ -724,26 +728,26 @@ export function LoaderWidget() {
       <p>{`this.show = function () {`}</p>
       <p>{`$("#loader").css({display: "block"})`}</p>
       <p>{`spiner.spin(document.getElementById`}</p>
-      <p>("loader"))</p>
+      <p>("loader")</p>
       <p>{`}`}</p>
       <p>{`this.unShow = function () {`}</p>
       <p>{`spiner.spin()`}</p>
       <p>{`$("#loader").css({display: "none"})`}</p>
       <p>{`}`}</p>
     </div>
-  )
+  );
 }
 
 //Loader  Index Body
 export function LoaderIndexBody() {
   return (
-    <div className="ml-4">
+    <div className="ml-4 break-words">
       <p>{`<div id="loader"`}</p>
-      <p>{`tyle="display: none;z-index: 999;position: absolute;left: 0px;top: 0px;background-color: #000000;opacity: 0.4;justify-content: center;align-items: center;">
+      <p className="ml-4">{`style="display: none;z-index: 999;position: absolute;left: 0px;top: 0px;background-color: #000000;opacity: 0.4;justify-content: center;align-items: center;">
 `}</p>
       <p>{`</div>`}</p>
     </div>
-  )
+  );
 }
 
 //Loader  Index Script
@@ -753,7 +757,7 @@ export function LoaderIndexScript() {
       <p>var loaderObj = new loader();</p>
       <p>msgObj.init();</p>
     </div>
-  )
+  );
 }
 
 //Loader  Example Script
@@ -762,7 +766,7 @@ export function LoaderExampleScript() {
     <div>
       <p>loaderObj.show();</p>
     </div>
-  )
+  );
 }
 
 // messagePage Widget
@@ -829,7 +833,7 @@ export function MessagePageWidget() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //MessagePage Index Body
@@ -860,7 +864,7 @@ export function MessagePageIndexBody() {
       <p>{`<div>`}</p>
       <p>{`<div>`}</p>
     </div>
-  )
+  );
 }
 
 //MessagePage Index Script
@@ -870,7 +874,7 @@ export function MessagePageIndexScript() {
       <p>var msgPageObj = new messagePage();</p>
       <p>msgPageObj.init();</p>
     </div>
-  )
+  );
 }
 
 //MessagePage Example Script
@@ -879,7 +883,7 @@ export function MessagePageExampleScript() {
     <div className="ml-4">
       <p>msgPageObj.show("messagePage")</p>
     </div>
-  )
+  );
 }
 
 // home.html
@@ -913,7 +917,7 @@ export function Home_html_count() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // HomeCheckToken
@@ -971,7 +975,7 @@ export function Home_html_homeCheckToken() {
         <p className="ml-2">{`productCartObj.call()`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //getProfile
@@ -1064,7 +1068,7 @@ export function Home_html_getProfile() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // sendApi
@@ -1141,7 +1145,7 @@ export function Home_html_sendApi() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // checklocalStorage
@@ -1163,7 +1167,7 @@ export function Home_html_checklocalStorage() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // checkSimulated
@@ -1206,7 +1210,7 @@ export function Home_html_checkSimulated() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // getRecommendProduct
@@ -1277,7 +1281,7 @@ export function Home_html_getRecommendProduct() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //getAllProduct
@@ -1359,7 +1363,7 @@ export function Home_html_getAllProduct() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //getCheckIn
@@ -1482,17 +1486,17 @@ export function Home_html_getCheckIn() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // Adddatalogger
 //validateInput
 export function Addda_talogger_validateInput() {
   return (
-    <div className="ml-4 flex flex-col gap-2">
+    <div className="ml-4 flex flex-col gap-2 ">
       <p>inputField.value = inputField.value.replace(/[^0-9a-zA-Z]/g, "")</p>
     </div>
-  )
+  );
 }
 
 //AddDate
@@ -1520,7 +1524,7 @@ export function Addda_talogger_addDate() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //CreateDevice
@@ -1580,7 +1584,7 @@ export function Addda_talogger_createDevice() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // cancel_order.html
@@ -1594,7 +1598,7 @@ export function Cancel_order_getItemAll() {
       <p>$("#price_cancel").text(dataItem.price + " ฿")</p>
       <p>$("#itemCancel_Quantity").text("Quantity x " + dataItem.quantity)</p>
     </div>
-  )
+  );
 }
 
 //sentCancelOrder
@@ -1660,7 +1664,7 @@ export function Cancel_order_sentCancelOrder() {
         <p className="ml-4">{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // changePassword.html
@@ -1745,7 +1749,7 @@ export function ChangePasswordHtml() {
         <p className="ml-4">{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // coin_history.html
@@ -1900,7 +1904,7 @@ export function Coin_history_getRedeemHis() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //pagination_coins
@@ -1985,7 +1989,7 @@ export function Coin_history_pagination_coins() {
       <p className="ml-4">{`});`}</p>
       <p>{`}`}</p>
     </div>
-  )
+  );
 }
 
 // calPage
@@ -2033,7 +2037,7 @@ export function Coin_history_calPage() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // coins.html
@@ -2054,7 +2058,7 @@ export function Coins_coinsCheckToken() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //getPointCoins
@@ -2101,7 +2105,7 @@ export function Coins_getPointCoinsn() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // Configuration.html
@@ -2156,7 +2160,7 @@ export function Configuration_updateDevice() {
       <p className="ml-4">{`error: function (xmlhttprequest, error) {},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // Configuration_con
@@ -2208,7 +2212,7 @@ export function Configuration_con() {
       <p className="ml-4">{`error: function (xmlhttprequest, error) {},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // confirm_order.html
@@ -2279,7 +2283,7 @@ export function Confirm_order_getOrder() {
       <p className="ml-4">{`});`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // getStatePayment
@@ -2289,7 +2293,7 @@ export function Confirm_order_getStatePayment() {
       <p>checkStateMethodPayment = method</p>
       <p>calTotal()</p>
     </div>
-  )
+  );
 }
 
 // setVoucherId
@@ -2300,7 +2304,7 @@ export function Confirm_order_setVoucherId() {
       <p>VoucherDis = discount</p>
       <p>calTotal()</p>
     </div>
-  )
+  );
 }
 
 // postOrderNow
@@ -2356,7 +2360,7 @@ export function Confirm_order_postOrderNow() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // getAddress
@@ -2407,7 +2411,7 @@ export function Confirm_order_getAddress() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 //getCodeDisCountVoucher
@@ -2444,7 +2448,7 @@ export function Confirm_order_getCodeDisCountVoucher() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // getCodeDisCountMember
@@ -2505,7 +2509,7 @@ export function Confirm_order_getCodeDisCountMember() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // calTotal
@@ -2549,7 +2553,7 @@ export function Confirm_order_calTotal() {
       <p>{`});`}</p>
       <p>{`$('#show_total_price_order').text(formattedNumber + ' ฿');`}</p>
     </div>
-  )
+  );
 }
 
 // cleanDataDefualt
@@ -2572,5 +2576,359 @@ export function Confirm_order_cleanDataDefualt() {
       <p>{`$("#yojo_wallet_radio").prop("checked", true);`}</p>
       <p>{`$("#discount_member").prop("checked", false);`}</p>
     </div>
-  )
+  );
+}
+
+//  customer.html
+//getDataCustPurchaseReportStat
+export function Customer_getDataCustPurchaseReportStats() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>getToken = window.localStorage.getItem('token');</p>
+      <p>token = JSON.parse(getToken);</p>
+      <p>var str = ''</p>
+      <p>{`$.ajax({`}</p>
+      <p>type: "get",</p>
+      <p>url: API_SERVER + `/v1/staticReport/customerPurchaseReportStatics`,</p>
+      <p>{`headers: {`}</p>
+      <p>
+        {" "}
+        'Authorization': 'Bearer ' + token.token,"Content-Type":
+        "application/json",
+      </p>
+      <p>{`},`}</p>
+      <p>dataType: "json",</p>
+      <p>async: true,</p>
+      <p>timeout: 100000,</p>
+      <p>{`success: function (data) {`}</p>
+      <p>{`if (data.code === 0) {`}</p>
+      <p>loaderObj.unShow();</p>
+      <p>{`if (data.result.length == 0) {`}</p>
+      <p>{`$("#bg_chert_total_gender").css({ display: "none" });`}</p>
+      <p>{`$("#bg_chert_Age_gender").css({ display: "none" });`}</p>
+      <p>{`} else {`}</p>
+      <p>{`$("#bg_chert_total_gender").css({ display: "block" });`}</p>
+      <p>{`$("#bg_chert_Age_gender").css({ display: "block" });`}</p>
+      <p>DataCustomer = data.result;</p>
+      <p>customerObj.ChartMethod(data.result);</p>
+      <p>customerObj.ChartGender(data.result);</p>
+      <p>var Yojo = "";</p>
+      <p>var USDT = "";</p>
+      <p>{`if (data.result.paymentMethod == 10) {`}</p>
+      <p>Yojo = "Yojo Wallet";</p>
+      <p>{`} else {`}</p>
+      <p>USDT = "USDT";</p>
+      <p>{`}`}</p>
+      <p>{`function convertNumber(number) {`}</p>
+      <p>{`if (number > 1000) {`}</p>
+      <p>{`var kCount = Math.floor(number / 1000);`}</p>
+      <p>return kCount + "k";</p>
+      <p>{`} else {`}</p>
+      <p>return number.toString();</p>
+      <p>{`}`}</p>
+      <p>{`}`}</p>
+      <p>{`var result = convertNumber(data.result.paymentMethod[1].totalPaymentMethod);`}</p>
+      <p>{`var USDT = convertNumber(data.result.paymentMethod[0].totalPaymentMethod);`}</p>
+      <p>{`var totalCustomer = convertNumber(data.result.totalCustomer);`}</p>
+      <p>{`var male = convertNumber(data.result.gender.male);`}</p>
+      <p>{`var female = convertNumber(data.result.gender.female);`}</p>
+      <p>{`$("#product_customer").text(data.result.products.length);`}</p>
+      <p>{`$("#gender_customer").text(2);`}</p>
+      <p>{`$("#payment_medhod").text(data.result.paymentMethod.length);`}</p>
+      <p>{`$("#total_customer").text(totalCustomer);`}</p>
+      <p>{`$("#gender_male_customer").text(male);`}</p>
+      <p>{`$("#gender_female_customer").text(female);`}</p>
+      <p>{`$("#min_age_customer").text(data.result.age.min);`}</p>
+      <p>{`$("#max_age_customer").text(data.result.age.max);`}</p>
+      <p>{`$("#yojowallet_customer").text(result);`}</p>
+      <p>{`$("#usdt_customer").text(USDT);`}</p>
+      <p>{`data.result.products.forEach(function (items) {`}</p>
+      <p>{`str += <div style = "width: 90%; margin: 0 auto; display: flex;justify-content: space-between; font-size: 10px;" > ;`}</p>
+      <p>{`str += <span style="color:  #303030; ">{items.name}</span>;`}</p>
+      <p>{`str += <span style="color:  #9F9F9F;">{items.quantity}</span>;`}</p>
+      <p>{`str += </div >;`}</p>
+      <p>{`str += <div style = "width: 90%; margin: 0 auto;">;`}</p>
+      <p>{`str += <img style="width: 100%; height:1px; margin: 0 auto;" src="./pic/icons/line.png"></img> ;`}</p>
+      <p>{`str += <div style="height: 3px;"></div> ;`}</p>
+      <p>{`str += </div >;`}</p>
+      <p>{`});`}</p>
+      <p>{`$("#content_customer").html(str);`}</p>
+      <p>{`myScroll = new IScroll("#customerScroller", {`}</p>
+      <p>{`probeType: 1,`}</p>
+      <p>{`mouseWheel: true,`}</p>
+      <p>{`});`}</p>
+      <p>{`}`}</p>
+      <p>{`else {`}</p>
+      <p>{`msgPageObj.show(getStatusCode(data.code));`}</p>
+      <p>{`DataMale = 0;`}</p>
+      <p>{`DataFemale = 0;`}</p>
+      <p>{`customerObj.ChartGender();`}</p>
+      <p>{`$("#bg_chert_total_gender").css({ display: "none" });`}</p>
+      <p>{`$("#bg_chert_Age_gender").css({ display: "none" });`}</p>
+      <p>{`loaderObj.unShow();`}</p>
+      <p>{`}`}</p>
+      <p>{`},`}</p>
+      <p>{`error: function (xmlhttprequest, error) {`}</p>
+      <p>{`loaderObj.unShow();`}</p>
+      <p>{`DataMale = 0;`}</p>
+      <p>{`DataFemale = 0;`}</p>
+      <p>{`$("#bg_chert_total_gender").css({ display: "none" });`}</p>
+      <p>{`$("#bg_chert_Age_gender").css({ display: "none" });`}</p>
+      <p>{`customerObj.ChartGender();`}</p>
+      <p>{`},`}</p>
+      <p>{`});`}</p>
+    </div>
+  );
+}
+
+//showChartTotalCustomer
+export function Customer_showChartTotalCustomer() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <div>
+        <p>var chartDom = document.getElementById("char_customer");</p>
+        <p>var myChart = echarts.init(chartDom);</p>
+      </div>
+
+      <div>
+        <p>{`option = {`}</p>
+        <p>{`tooltip: {`}</p>
+        <p>{`trigger: "item",`}</p>
+        <p>{` },`}</p>
+        <p>{` legend: {`}</p>
+        <p>{`top: "5%",`}</p>
+        <p>{`left: "center",`}</p>
+        <p>{`selectedMode: false,`}</p>
+        <p>{`},`}</p>
+        <p>{`series: [`}</p>
+        <p>{`{`}</p>
+        <p>{`name: "Access From",`}</p>
+        <p>{`type: "pie",`}</p>
+        <p>{`radius: ["20%", "40%"],`}</p>
+        <p>{`center: ["50%", "70%"],`}</p>
+        <p>{`startAngle: 180,`}</p>
+        <p>{`label: {`}</p>
+        <p>{`show: true,`}</p>
+        <p>{`formatter(param) {`}</p>
+        <p>{`return param.name + " (" + param.percent * 2 + "%)";`}</p>
+        <p>{`},`}</p>
+        <p>{`},`}</p>
+        <p>{`data: [`}</p>
+        <p>{`{ value: 1048 },`}</p>
+        <p>{`{ value: 735 },`}</p>
+        <p>{`{ value: 580 },`}</p>
+        <p>{`{`}</p>
+        <p>{`value: 1048 + 735 + 580,`}</p>
+        <p>{`itemStyle: {`}</p>
+        <p>{`color: "none",`}</p>
+        <p>{`decal: {`}</p>
+        <p>{`symbol: "none",`}</p>
+        <p>{`},`}</p>
+        <p>{`},`}</p>
+        <p>{`label: {`}</p>
+        <p>{`show: false,`}</p>
+        <p>{`},`}</p>
+        <p>{`},`}</p>
+        <p>{`],`}</p>
+        <p>{`},`}</p>
+        <p>{`],`}</p>
+        <p>{`};`}</p>
+      </div>
+
+      <div>
+        <p>{`option && myChart.setOption(option);`}</p>
+      </div>
+    </div>
+  );
+}
+
+//ChartMethod
+export function Customer_ChartMethod() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div>
+        <p>{`function convertNumber(number) {`}</p>
+        <p className="ml-4">{`if (number > 1000) {`}</p>
+        <p className="ml-6">var kCount = Math.floor(number / 1000);</p>
+        <p className="ml-6">{`return kCount + " k";`}</p>
+        <p className="ml-4">{` } else {`}</p>
+        <p className="ml-6">return number.toString();</p>
+        <p className="ml-4">{`}`}</p>
+        <p className="ml-2">{`}`}</p>
+      </div>
+
+      <div>
+        <p>var max = convertNumber(data.totalPriceByGender[1].totalPrice);</p>
+        <p>var min = convertNumber(data.totalPriceByGender[0].totalPrice);</p>
+        <p>{`$("#total_price_gender").text("$" + min);`}</p>
+        <p>{`$("#total_price_gender_2").text("$" + max);`}</p>
+      </div>
+
+      <div>
+        <p>var chartDom1 = document.getElementById("chart_method");</p>
+        <p>var myChart1 = echarts.init(chartDom1);</p>
+      </div>
+
+      <div>
+        <p>{`option = {`}</p>
+        <p className="ml-2">{`tooltip: {`}</p>
+        <p className="ml-4">{`trigger: "axis",`}</p>
+        <p className="ml-4">{`axisPointer: {`}</p>
+        <p className="ml-6">{`type: "shadow",`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-2">{`legend: {},`}</p>
+        <p className="ml-2">{`grid: {`}</p>
+        <p className="ml-4">{`left: "3%",`}</p>
+        <p className="ml-4">{`right: "4%",`}</p>
+        <p className="ml-4">{`bottom: "10%",`}</p>
+        <p className="ml-4">{`height: "90%",`}</p>
+        <p className="ml-4">{`containLabel: true,`}</p>
+        <p className="ml-2">{`},`}</p>
+        <p className="ml-2">{`xAxis: {`}</p>
+        <p className="ml-4">{`type: "value",`}</p>
+        <p className="ml-4">{`boundaryGap: [0],`}</p>
+        <p className="ml-4">{`axisLabel: {`}</p>
+        <p className="ml-6">{`formatter: function (value) {`}</p>
+        <p className="ml-8">{`return convertNumber(value);`}</p>
+        <p className="ml-6">{`},`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-2">{`},`}</p>
+        <p className="ml-2">{`yAxis: {`}</p>
+        <p className="ml-4">{`type: "category",`}</p>
+        <p className="ml-4">{`data: ["Male", "Female"],`}</p>
+        <p className="ml-2">{`},`}</p>
+        <p className="ml-2">{`series: [`}</p>
+        <p className="ml-4">{`{`}</p>
+        <p className="ml-6">{`type: "bar",`}</p>
+        <p className="ml-6">{`data: [`}</p>
+        <p className="ml-8">{`{data.totalPriceByGender[1].totalPrice},`}</p>
+        <p className="ml-8">{`{data.totalPriceByGender[0].totalPrice},`}</p>
+        <p className="ml-6">{`],`}</p>
+        <p className="ml-6">{`itemStyle: {`}</p>
+        <p className="ml-8">{`color: function (params) {`}</p>
+        <p className="ml-10">{`if (params.name === "Female") {`}</p>
+        <p className="ml-12">{`return "#3BBDC4"; // สีฟ้า`}</p>
+        <p className="ml-10">{`} else if (params.name === "Male") {`}</p>
+        <p className="ml-12">{`return "#A2D2FC"; // สีเขียวอ่อน`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-8">{`},`}</p>
+        <p className="ml-6">{`label: {`}</p>
+        <p className="ml-8">{`show: true,`}</p>
+        <p className="ml-8">{`position: "right",`}</p>
+        <p className="ml-8">{`formatter: function (params) {`}</p>
+        <p className="ml-10">{`return convertNumber(params.value);`}</p>
+        <p className="ml-8">{`},`}</p>
+        <p className="ml-6">{`},`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-2">{`],`}</p>
+        <p>{`};`}</p>
+      </div>
+
+      <div>
+        {" "}
+        <p>{`option && myChart1.setOption(option);`}</p>
+      </div>
+    </div>
+  );
+}
+
+//ChartGender
+export function Customer_ChartGender() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div>
+        <p>{`var chartDom2 = document.getElementById("chart_gender");`}</p>
+        <p>{`var myChart2 = echarts.init(chartDom2);`}</p>
+        <p>{`DataMale = data.averageAgeByGender[1].averageAge;`}</p>
+        <p>{`DataFemale = data.averageAgeByGender[0].averageAge;`}</p>
+        <p>{`option = {`}</p>
+        <p className="ml-2">{`grid: {`}</p>
+        <p className="ml-4">{`left: "3%",`}</p>
+        <p className="ml-4">{`right: "10%",`}</p>
+        <p className="ml-4">{`bottom: "0%",`}</p>
+        <p className="ml-4">{`height: "110px",`}</p>
+        <p className="ml-4">{`containLabel: true,`}</p>
+        <p className="ml-2">{`},`}</p>
+        <p className="ml-2">{`xAxis: {`}</p>
+        <p className="ml-4">{`type: "category",`}</p>
+        <p className="ml-4">{`data: ["Female", "Male"],`}</p>
+        <p className="ml-4">{`axisLabel: {`}</p>
+        <p className="ml-6">{`fontSize: 8,`}</p>
+        <p className="ml-6">{`rotate: 0,`}</p>
+        <p className="ml-6">{`interval: 0,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-2">{`},`}</p>
+        <p className="ml-2">{`yAxis: {`}</p>
+        <p className="ml-4">{`type: "value",`}</p>
+        <p className="ml-4">{`axisLabel: {`}</p>
+        <p className="ml-6">{`fontSize: 8,`}</p>
+        <p className="ml-6">{`rotate: 0,`}</p>
+        <p className="ml-6">{`interval: 0,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-2">{`},`}</p>
+        <p className="ml-2">{`series: [`}</p>
+        <p className="ml-4">{`{`}</p>
+        <p className="ml-6">{`type: "bar",`}</p>
+        <p className="ml-6">{`data: [`}</p>
+        <p className="ml-8">{`DataFemale,`}</p>
+        <p className="ml-8">{`DataMale,`}</p>
+        <p className="ml-6">{`],`}</p>
+        <p className="ml-6">{`itemStyle: {`}</p>
+        <p className="ml-8">{`color: function (params) {`}</p>
+        <p className="ml-10">{`if (params.name === "Female") {`}</p>
+        <p className="ml-12">{`return "#3BBDC4"; // สีฟ้า`}</p>
+        <p className="ml-10">{`} else if (params.name === "Male") {`}</p>
+        <p className="ml-12">{`return "#A2D2FC"; // สีเขียวอ่อน`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-8">{`},`}</p>
+        <p className="ml-6">{`},`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`};`}</p>
+        <p>{`option && myChart2.setOption(option);`}</p>
+      </div>
+    </div>
+  );
+}
+
+//updateSalesData
+export function Customer_updateSalesData() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div>
+        <p>{`const salesData = [`}</p>
+        <p className="ml-2">{`{`}</p>
+        <p className="ml-4">{`month: "C10004",`}</p>
+        <p className="ml-4">{`itemsSold: "$ 1,500.4",`}</p>
+        <p className="ml-4">{`itemsSold1: 100,`}</p>
+        <p className="ml-4">{`itemsSold2: "Credit Card",`}</p>
+        <p className="ml-2">{`},`}</p>
+        <p className="ml-2">{`{`}</p>
+        <p className="ml-4">{`month: "C10004",`}</p>
+        <p className="ml-4">{`itemsSold: "$ 1,500.4",`}</p>
+        <p className="ml-4">{`itemsSold1: 120,`}</p>
+        <p className="ml-4">{`itemsSold2: "Credit Card",`}</p>
+        <p className="ml-2">{`},`}</p>
+        <p className="ml-2">{`{ month: "C10004", itemsSold: 120, itemsSold1: 110, itemsSold2: 60 },`}</p>
+        <p className="ml-2">{`{ month: "C10004", itemsSold: 130, itemsSold1: 105, itemsSold2: 70 },`}</p>
+        <p className="ml-2">{`{ month: "C10004", itemsSold: 110, itemsSold1: 95, itemsSold2: 55 },`}</p>
+        <p className="ml-2">{`{ month: "C10004", itemsSold: 140, itemsSold1: 130, itemsSold2: 75 },`}</p>
+        <p className="ml-2">{`{ month: "C10004", itemsSold: 90, itemsSold1: 80, itemsSold2: 40 },`}</p>
+        <p>{`];`}</p>
+      </div>
+
+      <div>
+        <p>{`const salesDataBody = $("#salesDataBody1");`}</p>
+        <p>{`salesDataBody.empty(); // Clear existing data`}</p>
+        <p>{`$.each(salesData, (index, entry) => {`}</p>
+        <p className="ml-2">{`const row = $("<tr>").append(`}</p>
+        <p className="ml-4">{`$("<td>").css("text-align", "center").text(entry.month),`}</p>
+        <p className="ml-4">{`$("<td>").css("text-align", "center").text(entry.itemsSold),`}</p>
+        <p className="ml-4">{`$("<td>").css("text-align", "center").text(entry.itemsSold1),`}</p>
+        <p className="ml-4">{`$("<td>").css("text-align", "center").text(entry.itemsSold2)`}</p>
+        <p className="ml-2">{`);`}</p>
+        <p className="ml-2">{`salesDataBody.append(row);`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  );
 }

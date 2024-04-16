@@ -29,6 +29,11 @@ import {
   Confirm_order_getStatePayment,
   Confirm_order_postOrderNow,
   Confirm_order_setVoucherId,
+  Customer_ChartGender,
+  Customer_ChartMethod,
+  Customer_getDataCustPurchaseReportStats,
+  Customer_showChartTotalCustomer,
+  Customer_updateSalesData,
   DivMessageBox,
   DivMessageBoxExampleCode,
   DivMessageBoxScript,
@@ -87,6 +92,7 @@ export default function ModelContent({
   widgetContent4,
   exampleContent,
   exampleBody,
+  contentModelStructure,
   content,
   content1,
   content2,
@@ -133,14 +139,15 @@ export default function ModelContent({
   indexContext5,
   htmlCheck,
   headerHtml,
+  headers,
 }) {
-  // console.log("selectedMenu", selectedMenu)
   return (
     <div className="w-full py-4">
       {/* Header */}
       <div className="w-[96%] m-auto flex flex-col gap-2">
-        <h1 className="text-[30px] font-bold">SolarApp Tutorial</h1>
+        <h1 className="text-[30px] font-bold">{headers}</h1>
         <h1 className="text-[23px] font-bold">{headerHtml}</h1>
+        {contentModelStructure && <p>{contentModelStructure}</p>}
       </div>
 
       {/* Widget */}
@@ -184,8 +191,8 @@ export default function ModelContent({
 
       {/* HTML  */}
       {htmlCheck === "show" ? (
-        <div className="w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5">
-          <div className="w-full py-4">
+        <div className="w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5 break-words">
+          <div className="w-full py-4 ">
             <h3 className="text-[23px] font-bold">{headerName}</h3>
             <p>{content}</p>
 
@@ -219,10 +226,8 @@ export default function ModelContent({
 
           <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
             <span className="text-[#A52A2A]">&lt;script&gt;</span>
-            <p className="ml-4">
-              <span className="text-[#0000CD]">function</span>{" "}
-              {`${functionName} {`}
-            </p>
+            <span className="ml-4 text-[#0000CD]">function</span>{" "}
+            <p className="ml-4"> {`${functionName} {`}</p>
             {selectedMenu === "count" && <Home_html_count />}
             {selectedMenu === "HomeCheckToken" && <Home_html_homeCheckToken />}
             {selectedMenu === "getProfile" && <Home_html_getProfile />}
@@ -250,7 +255,6 @@ export default function ModelContent({
             {selectedMenu === "pagination_coins" && (
               <Coin_history_pagination_coins />
             )}
-
             {selectedMenu === "calPage" && <Coin_history_calPage />}
             {selectedMenu === "CoinsCheckToken" && <Coins_coinsCheckToken />}
             {selectedMenu === "getPointCoins" && <Coins_getPointCoinsn />}
@@ -273,7 +277,16 @@ export default function ModelContent({
             {selectedMenu === "cleanDataDefualt" && (
               <Confirm_order_cleanDataDefualt />
             )}
-            <p>{`}`}</p>
+            {selectedMenu === "GetDataCustPurchaseReportStats" && (
+              <Customer_getDataCustPurchaseReportStats />
+            )}
+            {selectedMenu === "showChartTotalCustomer" && (
+              <Customer_showChartTotalCustomer />
+            )}
+            {selectedMenu === "ChartMethod" && <Customer_ChartMethod />}
+            {selectedMenu === "ChartGender" && <Customer_ChartGender />}
+            {selectedMenu === "updateSalesData" && <Customer_updateSalesData />}
+            <p className="ml-4">{`}`}</p>
             <span className="text-[#A52A2A]">&lt;/script&gt;</span>
           </div>
         </div>
@@ -301,9 +314,7 @@ export default function ModelContent({
 
           <div className="w-full flex flex-col gap-4">
             <div className="bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-              <p>
-                <Base64 />
-              </p>
+              <Base64 />
             </div>
           </div>
         </div>
@@ -337,13 +348,11 @@ export default function ModelContent({
             <div className=" bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
               <div>
                 <span className="text-[#A52A2A]">&lt;script&gt;</span>
-                <p className="ml-4">
-                  {selectedMenu === "messageBox" && <DivMessageBoxScript />}
-                  {selectedMenu === "alert" && <AlertScript />}
-                  {selectedMenu === "resObj" && <ResObjIndexScript />}
-                  {selectedMenu === "loader" && <LoaderIndexScript />}
-                  {selectedMenu === "messagePage" && <MessagePageIndexScript />}
-                </p>
+                {selectedMenu === "messageBox" && <DivMessageBoxScript />}
+                {selectedMenu === "alert" && <AlertScript />}
+                {selectedMenu === "resObj" && <ResObjIndexScript />}
+                {selectedMenu === "loader" && <LoaderIndexScript />}
+                {selectedMenu === "messagePage" && <MessagePageIndexScript />}
 
                 <span className="text-[#A52A2A]">&lt;/script&gt;</span>
               </div>
@@ -364,12 +373,14 @@ export default function ModelContent({
           {exampleBody ? (
             <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg">
               <span className="text-[#A52A2A]">&lt;body&gt;</span>
-              <p className="ml-4">
+
+              <div className="ml-4">
                 {selectedMenu === "pageInit" && <PageInitExampleBody />}
                 {selectedMenu === "headerInit" && <PageInitExampleBody />}
                 {selectedMenu === "pageShow" && <PageShowExampleBody />}
                 {selectedMenu === "pageUnShow" && <PageUnShowExampleBody />}
-              </p>
+              </div>
+
               <span className="text-[#A52A2A]">&lt;/body&gt;</span>
             </div>
           ) : null}
@@ -377,16 +388,14 @@ export default function ModelContent({
           {/*Example script */}
           <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg">
             <span className="text-[#A52A2A]">&lt;script&gt;</span>
-            <p className="ml-4">
-              {selectedMenu === "messageBox" && <DivMessageBoxExampleCode />}
-              {selectedMenu === "alert" && <AlertExample />}
-              {selectedMenu === "pageInit" && <PageInitExampleScript />}
-              {selectedMenu === "headerInit" && <HeaderInitExampleScript />}
-              {selectedMenu === "pageShow" && <PageShowExampleScript />}
-              {selectedMenu === "pageUnShow" && <PageUnShowExampleScript />}
-              {selectedMenu === "loader" && <LoaderExampleScript />}
-              {selectedMenu === "messagePage" && <MessagePageExampleScript />}
-            </p>
+            {selectedMenu === "messageBox" && <DivMessageBoxExampleCode />}
+            {selectedMenu === "alert" && <AlertExample />}
+            {selectedMenu === "pageInit" && <PageInitExampleScript />}
+            {selectedMenu === "headerInit" && <HeaderInitExampleScript />}
+            {selectedMenu === "pageShow" && <PageShowExampleScript />}
+            {selectedMenu === "pageUnShow" && <PageUnShowExampleScript />}
+            {selectedMenu === "loader" && <LoaderExampleScript />}
+            {selectedMenu === "messagePage" && <MessagePageExampleScript />}
             <span className="text-[#A52A2A]">&lt;/script&gt;</span>
           </div>
 
