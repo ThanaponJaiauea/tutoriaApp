@@ -1,11 +1,11 @@
 /** @format */
 
-import { useState } from "react";
-import { Drawer } from "antd";
-import ModelContent from "../components/modelContent";
-import useSelectedNavbar from "../hooks/useSelectedNavbar";
-import FormModelStructure from "../components/formModel/formModelStructure";
-import FormModelSolarApp from "../components/formModel/formModelSolarApp";
+import {useState} from "react"
+import {Drawer} from "antd"
+import ModelContent from "../components/modelContent"
+import useSelectedNavbar from "../hooks/useSelectedNavbar"
+import FormModelStructure from "../components/formModel/formModelStructure"
+import FormModelSolarApp from "../components/formModel/formModelSolarApp"
 
 export default function HomePage() {
   const {
@@ -14,49 +14,82 @@ export default function HomePage() {
     setOpenDrawer,
     selectedMenu,
     setSelectedMenu,
-  } = useSelectedNavbar();
+  } = useSelectedNavbar()
 
   // console.log("selectedNavbar", selectedNavbar);
-  // console.log("selectedMenu", selectedMenu);
+  // console.log("selectedMenu", selectedMenu)
 
-  const [openGeneralModel, setOpenGeneralModel] = useState(false);
-  const [openSpecificModel, setOpenSpecificModel] = useState(false);
+  const [openGeneralModel, setOpenGeneralModel] = useState(false)
+  const [openSpecificModel, setOpenSpecificModel] = useState(false)
   // console.log("openSpecificModel", openSpecificModel)
 
   // open Hoem.html
-  const [openHomeHtml, setOpenHomeHtml] = useState(false);
+  const [openHomeHtml, setOpenHomeHtml] = useState(false)
 
   // open adddatalogger
-  const [openAdddatalogger, setOpenAdddatalogger] = useState(false);
+  const [openAdddatalogger, setOpenAdddatalogger] = useState(false)
   // console.log("openAdddatalogger", openAdddatalogger)
 
   // open cancelOrder
-  const [openCancelOrder, setOpenCancelOrder] = useState(false);
+  const [openCancelOrder, setOpenCancelOrder] = useState(false)
 
   // open Changepassword
-  const [openChangepassword, setOpenChangepassword] = useState(false);
+  const [openChangepassword, setOpenChangepassword] = useState(false)
 
   // open CoinHistory
-  const [openCoinHistory, setOpenCoinHistory] = useState(false);
+  const [openCoinHistory, setOpenCoinHistory] = useState(false)
 
   // open coins
-  const [openCoins, setOpenCoins] = useState(false);
+  const [openCoins, setOpenCoins] = useState(false)
 
   // open Configuration
-  const [openConfiguration, setOpenConfiguration] = useState(false);
+  const [openConfiguration, setOpenConfiguration] = useState(false)
 
   // open confirm
-  const [openConfirm, setOpenConfirm] = useState(false);
+  const [openConfirm, setOpenConfirm] = useState(false)
   // open customer
-  const [openCustomer, setOpenCustomer] = useState(false);
+  const [openCustomer, setOpenCustomer] = useState(false)
 
   // open data_customer_details
-  const [openDataCustomerDetails, setOpenDataCustomerDetails] = useState(false);
+  const [openDataCustomerDetails, setOpenDataCustomerDetails] = useState(false)
 
-  const handleModelClick = menu => {
-    setSelectedMenu(menu);
-    setOpenDrawer(false);
-  };
+  // open data_customer
+  const [opendataCustomer, setOpendataCustomer] = useState(false)
+
+  // open deletedatalogger
+  const [openDeletedatalogger, setOpenDeletedatalogger] = useState(false)
+
+  // open distributor
+  const [openDistributor, setOpenDistributor] = useState(false)
+
+  // open editAddress
+  const [openEditAddress, setOpenEditAddress] = useState(false)
+
+  // open forgotpass
+  const [openForgotpass, setOpenForgotpass] = useState(false)
+
+  // open inCome
+  const [openInCome, setOpenInCome] = useState(false)
+
+  // open lang
+  const [openLang, setOpenLang] = useState(false)
+
+  // open level
+  const [openLevel, setOpenLevel] = useState(false)
+
+  // open locationAddress
+  const [openLocationAddress, setOpenLocationAddress] = useState(false)
+
+  // open login
+  const [openLogin, setOpenLogin] = useState(false)
+
+  // open main
+  const [openMain, setOpenMain] = useState(false)
+
+  const handleModelClick = (menu) => {
+    setSelectedMenu(menu)
+    setOpenDrawer(false)
+  }
 
   // data  solarAppData
   const solarAppData = [
@@ -302,7 +335,233 @@ export default function HomePage() {
       key: "GetDataCustomerDetail",
       category: "data_customer_details",
     },
-  ];
+
+    // data_customer.html
+    {
+      name: "GetDataCustomer()",
+      type: "specificModel",
+      key: "GetDataCustomer",
+      category: "data_customer",
+    },
+
+    //   // deletedatalogger.html
+    {
+      name: "getDeviceAll()",
+      type: "specificModel",
+      key: "getDeviceAll",
+      category: "deletedatalogger",
+    },
+
+    // distributor.html
+    {
+      name: "distributorFun()",
+      type: "specificModel",
+      key: "distributorFun",
+      category: "distributor",
+    },
+    {
+      name: "PreviewImg()",
+      type: "specificModel",
+      key: "PreviewImg",
+      category: "distributor",
+    },
+    {
+      name: "PreviewImg_2()",
+      type: "specificModel",
+      key: "PreviewImg_2",
+      category: "distributor",
+    },
+    {
+      name: "CreateDistributor()",
+      type: "specificModel",
+      key: "CreateDistributor",
+      category: "distributor",
+    },
+
+    //  edit_address.html
+    {
+      name: "DeleteAddress()",
+      type: "specificModel",
+      key: "DeleteAddress",
+      category: "editAddress",
+    },
+    {
+      name: "EditAddress()",
+      type: "specificModel",
+      key: "EditAddress",
+      category: "editAddress",
+    },
+    {
+      name: "GetAddressID()",
+      type: "specificModel",
+      key: "GetAddressID",
+      category: "editAddress",
+    },
+
+    // forgotpass.html
+    {
+      name: "forgotPass()",
+      type: "specificModel",
+      key: "forgotPass",
+      category: "forgotpass",
+    },
+    {
+      name: "sendOTP_Forgot()",
+      type: "specificModel",
+      key: "sendOTP_Forgot",
+      category: "forgotpass",
+    },
+
+    // inCome.html
+    {
+      name: "getSelectedYear()",
+      type: "specificModel",
+      key: "getSelectedYear",
+      category: "inCome",
+    },
+    {
+      name: "getSelectedMonth()",
+      type: "specificModel",
+      key: "getSelectedMonth",
+      category: "inCome",
+    },
+    {
+      name: "getIncomeAndExpenditureDetails()",
+      type: "specificModel",
+      key: "getIncomeAndExpenditureDetails",
+      category: "inCome",
+    },
+    {
+      name: "createNewInput()",
+      type: "specificModel",
+      key: "createNewInput",
+      category: "inCome",
+    },
+    {
+      name: "updateIncomeBeforeTaxes()",
+      type: "specificModel",
+      key: "updateIncomeBeforeTaxes",
+      category: "inCome",
+    },
+
+    // lang.html
+    {
+      name: "setAllPageLang()",
+      type: "specificModel",
+      key: "setAllPageLang",
+      category: "lang",
+    },
+    {
+      name: "setAllUILang()",
+      type: "specificModel",
+      key: "setAllUILang",
+      category: "lang",
+    },
+    {
+      name: "NSLang()",
+      type: "specificModel",
+      key: "NSLang",
+      category: "lang",
+    },
+    {
+      name: "getStatusCode()",
+      type: "specificModel",
+      key: "getStatusCode",
+      category: "lang",
+    },
+
+    // level.html
+    {
+      name: "openTab()",
+      type: "specificModel",
+      key: "openTab",
+      category: "level",
+    },
+
+    // locationAddress.html
+    {
+      name: "GetAddress()",
+      type: "specificModel",
+      key: "GetAddress",
+      category: "locationAddress",
+    },
+
+    // login.html
+    {
+      name: "checkLoginWithRefreshToken()",
+      type: "specificModel",
+      key: "checkLoginWithRefreshToken",
+      category: "login",
+    },
+    {
+      name: "askDeviceIdFun()",
+      type: "specificModel",
+      key: "askDeviceIdFun",
+      category: "login",
+    },
+
+    // main.html
+    {
+      name: "menuhome()",
+      type: "specificModel",
+      key: "menuhome",
+      category: "main",
+    },
+    {
+      name: "menumonitor()",
+      type: "specificModel",
+      key: "menumonitor",
+      category: "main",
+    },
+    {
+      name: "menuwallet()",
+      type: "specificModel",
+      key: "menuwallet",
+      category: "main",
+    },
+    {
+      name: "menusetting()",
+      type: "specificModel",
+      key: "menusetting",
+      category: "main",
+    },
+    {
+      name: "unShowMenuPage()",
+      type: "specificModel",
+      key: "unShowMenuPage",
+      category: "main",
+    },
+    {
+      name: "checkIsLogin()",
+      type: "specificModel",
+      key: "checkIsLogin",
+      category: "main",
+    },
+    {
+      name: "updateLoginStatus()",
+      type: "specificModel",
+      key: "updateLoginStatus",
+      category: "main",
+    },
+    {
+      name: "getLocalToken()",
+      type: "specificModel",
+      key: "getLocalToken",
+      category: "main",
+    },
+    {
+      name: "refreshToken()",
+      type: "specificModel",
+      key: "refreshToken",
+      category: "main",
+    },
+    {
+      name: "refreshTokenFun()",
+      type: "specificModel",
+      key: "refreshTokenFun",
+      category: "main",
+    },
+  ]
 
   // data  modelStructure
   const modelStructure = [
@@ -363,110 +622,178 @@ export default function HomePage() {
       key: "messagePage",
     },
     ,
-  ];
+  ]
 
   const getTitle = () => {
     switch (selectedMenu) {
       case "alert":
-        return "alert()";
+        return "alert()"
       case "messageBox":
-        return "messageBox()";
+        return "messageBox()"
       case "login":
-        return "Login.html";
+        return "Login.html"
       case "resObj":
-        return "resObj()";
+        return "resObj()"
       case "pageInit":
-        return "pageInit()";
+        return "pageInit()"
       case "headerInit":
-        return "headerInit()";
+        return "headerInit()"
       case "pageShow":
-        return "pageShow()";
+        return "pageShow()"
       case "pageUnShow":
-        return "pageUnShow()";
+        return "pageUnShow()"
       case "documentAddEventListener":
-        return "document.addEventListener()";
+        return "document.addEventListener()"
       case "getAbsTime":
-        return "getAbsTime()";
+        return "getAbsTime()"
       case "loader":
-        return "loader()";
+        return "loader()"
       case "messagePage":
-        return "messagePage()";
+        return "messagePage()"
       case "count":
-        return "count()";
+        return "count()"
       case "HomeCheckToken":
-        return "HomeCheckToken()";
+        return "HomeCheckToken()"
       case "getProfile":
-        return "getProfile()";
+        return "getProfile()"
       case "sendApi":
-        return "sendApi()";
+        return "sendApi()"
       case "checklocalStorage":
-        return "checklocalStorage()";
+        return "checklocalStorage()"
       case "checkSimulated":
-        return "checkSimulated()";
+        return "checkSimulated()"
       case "getRecommendProduct":
-        return "getRecommendProduct()";
+        return "getRecommendProduct()"
       case "getAllProduct":
-        return "getAllProduct()";
+        return "getAllProduct()"
       case "getCheckIn":
-        return "getCheckIn()";
+        return "getCheckIn()"
       case "validateInput":
-        return "validateInput()";
+        return "validateInput()"
       case "AddDate":
-        return "AddDate()";
+        return "AddDate()"
       case "CreateDevice":
-        return "CreateDevice()";
+        return "CreateDevice()"
       case "getItemAll":
-        return "getItemAll()";
+        return "getItemAll()"
       case "sentCancelOrder":
-        return "sentCancelOrder()";
+        return "sentCancelOrder()"
       case "changePassword":
-        return "changePassword()";
+        return "changePassword()"
       case "getRedeemHis":
-        return "getRedeemHis()";
+        return "getRedeemHis()"
       case "pagination_coins":
-        return "pagination_coins()";
+        return "pagination_coins()"
       case "calPage":
-        return "calPage()";
+        return "calPage()"
       case "CoinsCheckToken":
-        return "CoinsCheckToken()";
+        return "CoinsCheckToken()"
       case "getPointCoins":
-        return "getPointCoins()";
+        return "getPointCoins()"
       case "updateDevice":
-        return "updateDevice()";
+        return "updateDevice()"
       case "Con":
-        return "Con()";
+        return "Con()"
       case "getOrder":
-        return "getOrder()";
+        return "getOrder()"
       case "getStatePayment":
-        return "getStatePayment()";
+        return "getStatePayment()"
       case "setVoucherId":
-        return "setVoucherId()";
+        return "setVoucherId()"
       case "postOrderNow":
-        return "postOrderNow()";
+        return "postOrderNow()"
       case "getAddress":
-        return "getAddress()";
+        return "getAddress()"
       case "getCodeDisCountVoucher":
-        return "getCodeDisCountVoucher()";
+        return "getCodeDisCountVoucher()"
       case "getCodeDisCountMember":
-        return "getCodeDisCountMember()";
+        return "getCodeDisCountMember()"
       case "calTotal":
-        return "calTotal()";
+        return "calTotal()"
       case "cleanDataDefualt":
-        return "cleanDataDefualt()";
+        return "cleanDataDefualt()"
       case "GetDataCustPurchaseReportStats":
-        return "GetDataCustPurchaseReportStats()";
+        return "GetDataCustPurchaseReportStats()"
       case "showChartTotalCustomer":
-        return "showChartTotalCustomer()";
+        return "showChartTotalCustomer()"
       case "ChartMethod":
-        return "ChartMethod()";
+        return "ChartMethod()"
       case "ChartGender":
-        return "ChartGender()";
+        return "ChartGender()"
       case "updateSalesData":
-        return "updateSalesData()";
+        return "updateSalesData()"
+      case "GetDataCustomer":
+        return "GetDataCustomer()"
+      case "getDeviceAll":
+        return "getDeviceAll()"
+      case "distributorFun":
+        return "distributorFun()"
+      case "PreviewImg":
+        return "PreviewImg()"
+      case "PreviewImg_2":
+        return "PreviewImg_2()"
+      case "CreateDistributor":
+        return "CreateDistributor()"
+      case "DeleteAddress":
+        return "DeleteAddress()"
+      case "EditAddress":
+        return "EditAddress()"
+      case "GetAddressID":
+        return "GetAddressID()"
+      case "forgotPass":
+        return "forgotPass()"
+      case "sendOTP_Forgot":
+        return "sendOTP_Forgot()"
+      case "getSelectedYear":
+        return "getSelectedYear()"
+      case "getSelectedMonth":
+        return "getSelectedMonth()"
+      case "getIncomeAndExpenditureDetails":
+        return "getIncomeAndExpenditureDetails()"
+      case "createNewInput":
+        return "createNewInput()"
+      case "updateIncomeBeforeTaxes":
+        return "updateIncomeBeforeTaxes()"
+      case "setAllPageLang":
+        return "setAllPageLang()"
+      case "setAllUILang":
+        return "setAllUILang()"
+      case "NSLang":
+        return "NSLang()"
+      case "getStatusCode":
+        return "getStatusCode()"
+      case "openTab":
+        return "openTab()"
+      case "GetAddress":
+        return "GetAddress()"
+      case "checkLoginWithRefreshToken":
+        return "checkLoginWithRefreshToken()"
+      case "askDeviceIdFun":
+        return "askDeviceIdFun()"
+      case "menuhome":
+        return "menuhome()"
+      case "menumonitor":
+        return "menumonitor()"
+      case "menuwallet":
+        return "menuwallet()"
+      case "menusetting":
+        return "menusetting()"
+      case "unShowMenuPage":
+        return "unShowMenuPage()"
+      case "checkIsLogin":
+        return "checkIsLogin()"
+      case "updateLoginStatus":
+        return "updateLoginStatus()"
+      case "getLocalToken":
+        return "getLocalToken()"
+      case "refreshToken":
+        return "refreshToken()"
+      case "refreshTokenFun":
+        return "refreshTokenFun()"
       default:
-        return "";
+        return ""
     }
-  };
+  }
 
   const menuComponentsSolarApp = {
     // Specific Model
@@ -1153,14 +1480,566 @@ export default function HomePage() {
         headers="Solar App"
         headerHtml="customer.html"
         headerName="GetDataCustomerDetail (data)"
-        content="-GetDataCustomerDetail (data)"
+        content="-ฟังก์ชันนี้ใช้ในการแสดงข้อมูลลูกค้าที่ได้รับมาในรูปแบบของ HTML elements โดยมีขั้นตอนหลักคือ"
+        content1="1.ใช้ jQuery selector เพื่อเข้าถึงและแก้ไขข้อความของ HTML elements ต่างๆ โดยใส่ข้อมูลลูกค้าลงไป"
+        content2="2.แสดงข้อมูล ID, ชื่อ, เบอร์โทรศัพท์, อีเมล, เพศ โดยมีเงื่อนไขเพื่อแปลงรหัสเพศเป็นข้อความที่เข้าใจง่าย (ชาย, หญิง, หรือเครื่องหมายขีด)"
+        content3="3.แสดงรายละเอียดการสั่งซื้อ, รายละเอียดการชำระเงิน และรายละเอียดข้อความเพิ่มเติมอื่นๆ เช่น ข้อเสนอ, การรับประกัน, ร้องเรียน เป็นต้น"
+        content4="ผู้ใช้งานจะได้เห็นข้อมูลลูกค้าที่แสดงอยู่ในหน้าเว็บ ซึ่งแสดงข้อมูลต่างๆ ของลูกค้าอย่างละเอียดและเข้าใจง่าย"
         functionName="GetDataCustomerDetail (data)"
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheck="show"
       />
     ),
-  };
+
+    // data_customer.html
+    GetDataCustomer: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="data_customer.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชันนี้ใช้ในการดึงข้อมูลลูกค้าจากเซิร์ฟเวอร์และแสดงในรูปแบบของรายการบนหน้าเว็บ โดยมีขั้นตอนหลักคือ"
+        content1="1.ดึง token จาก local storage เพื่อใช้ในการทำ request ไปยัง API server."
+        content2="2.สร้าง HTML elements สำหรับแสดงข้อมูลลูกค้า โดยใช้ข้อมูลที่ได้จาก response ของ API"
+        content3="3.ตรวจสอบว่ามีข้อมูลลูกค้าหรือไม่ หากไม่มีจะแสดงภาพหรือข้อความแจ้งเตือนให้ผู้ใช้ทราบ"
+        content4="4.จัดการการคลิกเพื่อดูข้อมูลเพิ่มเติมของลูกค้า โดยสร้าง event listener ที่สั่งให้ดึงข้อมูลเพิ่มเติมและแสดงในหน้าเว็บ data_customer_detailsPage"
+        content5="5.แสดงรายการข้อมูลลูกค้าในหน้าเว็บและใช้ iScroll เพื่อให้สามารถเลื่อนหน้าจอได้"
+        functionName="GetDataCustomer()"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // deletedatalogger.html
+    getDeviceAll: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Data_customer.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชันนี้ใช้ในการดึงข้อมูลอุปกรณ์ทั้งหมดจากเซิร์ฟเวอร์และแสดงในรูปแบบของรายการบนหน้าเว็บ โดยมีขั้นตอนหลักคือ:"
+        content1="1.ดึง token จาก local storage เพื่อใช้ในการทำ request ไปยัง API server"
+        content2="2.สร้าง HTML elements สำหรับแสดงข้อมูลอุปกรณ์ โดยใช้ข้อมูลที่ได้จาก response ของ API"
+        content3="3.ตรวจสอบว่ามีอุปกรณ์หรือไม่ หากไม่มีจะแสดงข้อความแจ้งเตือนให้ผู้ใช้ทราบ"
+        content4="4.สร้าง event listener สำหรับการเลือกลบอุปกรณ์ โดยเมื่อมีการเลือกลบจะถูกเพิ่มลงใน array `SelectID_forRemove` และเมื่อยกเลิกการเลือกลบจะถูกลบออกจาก array นี้"
+        content5="5.เมื่อมีการคลิกที่ปุ่ม 'Delete Device' และมีอุปกรณ์ที่ถูกเลือกไว้ให้แสดงข้อความยืนยันการลบ และเมื่อยืนยันแล้วจะทำการลบอุปกรณ์ที่ถูกเลือกออกจากฐานข้อมูล"
+        content6="6.หลังจากการลบอุปกรณ์เสร็จสิ้น จะทำการดึงข้อมูลอุปกรณ์ใหม่และแสดงใหม่อีกครั้ง"
+        functionName="getDeviceAll()"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // distributor.html
+    distributorFun: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Distributor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชันนี้ใช้ในการจัดการกับการคลิกที่ปุ่มและการเลือกไฟล์ โดยมีขั้นตอนหลักคือ"
+        content1="1.เมื่อคลิกที่ปุ่ม 'ID Card' หรือ 'Passport' จะทำการเปลี่ยนสีพื้นหลังของปุ่มทั้งสอง เพื่อแสดงให้เห็นว่าปุ่มไหนถูกเลือก และกำหนดค่าให้กับตัวแปร selectedOption เพื่อบ่งชี้ว่าประเภทเอกสารที่ถูกเลือกคืออะไร"
+        content2="2.เมื่อคลิกที่ปุ่ม 'Back' จะทำการล้างข้อมูลของรูปภาพที่อัพโหลดไว้ก่อนหน้านี้"
+        content3="3.เมื่อคลิกที่ปุ่ม 'distributorBtn' จะเรียกใช้ฟังก์ชัน CreateDistributor จาก object distributorObj"
+        content4={`4.เมื่อมีการเลือกไฟล์ที่จะอัพโหลด (จาก input ที่มี id="fileInput" หรือ "fileInput2") จะแสดงชื่อของไฟล์ที่ถูกเลือกในรูปแบบของข้อความแจ้งเตือน`}
+        functionName="distributorFun()"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    PreviewImg: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Distributor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชันนี้ใช้ในการแสดงตัวอย่างของรูปภาพที่ถูกเลือกจาก input ที่มี id='fileInput' โดยมีขั้นตอนหลักคือ"
+        content1="1.เมื่อมีการเลือกไฟล์จาก input จะทำการตรวจสอบว่าไฟล์ที่เลือกเป็นไฟล์รูปภาพหรือไม่ และโหลดไฟล์รูปภาพนั้นให้แสดงตัวอย่าง"
+        content2="2.เมื่อไฟล์รูปถูกเลือกและถูกโหลดเสร็จสิ้น จะแสดงรูปภาพตัวอย่างของไฟล์ที่ถูกเลือกใน preview area พร้อมทั้งแสดงปุ่ม 'Close' เพื่อลบรูปภาพที่ถูกเลือกและปุ่ม 'Upload' เพื่ออัพโหลดไฟล์"
+        content3="3.เมื่อคลิกที่รูปภาพตัวอย่าง จะเปิดโมดัลเพื่อแสดงรูปภาพในขนาดขยายใหญ่"
+        content4="4.เมื่อไฟล์ถูกอัพโหลดสำเร็จ จะสร้างลิงค์ของไฟล์และเก็บไว้ในตัวแปร imgIdCard"
+        functionName="PreviewImg()"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    PreviewImg_2: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Distributor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชันนี้ใช้ในการแสดงตัวอย่างของรูปภาพที่ถูกเลือกจาก input ที่มี id='fileInput_2' โดยมีขั้นตอนหลักคือ:"
+        content1="1.เมื่อมีการเลือกไฟล์จาก input จะทำการตรวจสอบว่าไฟล์ที่เลือกเป็นไฟล์รูปภาพหรือไม่ และโหลดไฟล์รูปภาพนั้นให้แสดงตัวอย่าง"
+        content2="2.เมื่อไฟล์รูปถูกเลือกและถูกโหลดเสร็จสิ้น จะแสดงรูปภาพตัวอย่างของไฟล์ที่ถูกเลือกใน preview area พร้อมทั้งแสดงปุ่ม 'Close' เพื่อลบรูปภาพที่ถูกเลือกและปุ่ม 'Upload' เพื่ออัพโหลดไฟล์"
+        content3="3.เมื่อคลิกที่รูปภาพตัวอย่าง จะเปิดโมดัลเพื่อแสดงรูปภาพในขนาดขยายใหญ่"
+        content4="4.เมื่อไฟล์ถูกอัพโหลดสำเร็จ จะสร้างลิงค์ของไฟล์และเก็บไว้ในตัวแปร imgCommercial"
+        content5="ผู้ใช้จะได้เห็นการแสดงตัวอย่างของรูปภาพที่ถูกเลือก และสามารถคลิกที่รูปภาพเพื่อดูในขนาดขยายใหญ่ได้ นอกจากนี้ยังสามารถลบรูปภาพที่เลือกได้โดยการคลิกที่ปุ่ม 'Close'"
+        functionName="PreviewImg_2()"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    CreateDistributor: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Distributor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชันนี้ใช้ในการสร้างผู้แทนจำหน่าย (Distributor) โดยมีขั้นตอนหลักคือ"
+        content1="1.ดึงข้อมูลจากฟอร์มที่ผู้ใช้กรอกเข้ามา เช่น ชื่อร้าน, เจ้าของร้าน, ที่อยู่, อีเมล, เบอร์โทรศัพท์, เลขบัตรประชาชน, รูปภาพบัตรประชาชน, และรูปภาพเอกสารเพื่อตรวจสอบตัวตน"
+        content2="2.ตรวจสอบว่าข้อมูลทั้งหมดถูกกรอกครบหรือไม่ หากข้อมูลใดข้อมูลหนึ่งขาดหาก จะแสดงข้อความแจ้งเตือนให้ผู้ใช้กรอกข้อมูลให้ครบถ้วน"
+        content3="3.ตรวจสอบความถูกต้องของหมายเลขโทรศัพท์ที่กรอก เพื่อให้มีความยาวระหว่าง 6 ถึง 15 ตัวอักษร"
+        content4="4.สร้างข้อมูลและทำการส่งคำขอสร้างผู้แทนจำหน่ายไปยังเซิร์ฟเวอร์ และรับข้อมูลการตอบกลับ เพื่อแสดงผลการทำงานตามคำขอ เช่น สำเร็จหรือไม่ และแสดงข้อความแจ้งเตือนให้ผู้ใช้ทราบในกรณีที่เกิดข้อผิดพลาดหรือข้อความสำคัญอื่นๆ"
+        functionName="CreateDistributor()"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    //  edit_address.html
+    DeleteAddress: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Edit_address.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชันนี้ใช้ในการลบที่อยู่จัดส่งที่มี ID ที่ระบุออกจากระบบ"
+        content1="1.ดึงข้อมูล Token จาก Local Storage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง"
+        content2="2.ส่งคำขอ DELETE ไปยังเซิร์ฟเวอร์เพื่อลบที่อยู่จัดส่งที่มี ID ที่ระบุ"
+        content3="3.ตรวจสอบคำตอบที่ได้จากเซิร์ฟเวอร์ หากการลบเสร็จสมบูรณ์โดยไม่มีข้อผิดพลาด (code === 0) จะแสดงข้อความแจ้งเตือนว่าการลบสำเร็จ และทำการอัพเดทหน้าเว็บ ถ้าเกิดข้อผิดพลาดจะแสดงข้อความแจ้งเตือนเกี่ยวกับข้อผิดพลาดนั้น"
+        content4="4.ในกรณีที่เกิดข้อผิดพลาดหรือข้อความสำคัญอื่นๆ ที่เกี่ยวข้องกับการส่งคำขอ จะแสดงข้อความแจ้งเตือนเกี่ยวกับข้อผิดพลาดนั้น"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    EditAddress: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Edit_address.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน EditAddress() ใช้ในการแก้ไขข้อมูลที่อยู่จัดส่งที่มี ID ที่ระบุ"
+        content1="1.ดึงข้อมูล Token จาก Local Storage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง"
+        content2="2.สร้างข้อมูลที่จะส่งไปยังเซิร์ฟเวอร์เพื่อแก้ไข โดยรวมถึง ID ของที่อยู่ที่ต้องการแก้ไขและข้อมูลใหม่ที่ต้องการให้แก้ไข"
+        content3="3.ส่งคำขอ PUT ไปยังเซิร์ฟเวอร์เพื่อแก้ไขข้อมูลที่อยู่จัดส่ง"
+        content4="4.ตรวจสอบคำตอบที่ได้จากเซิร์ฟเวอร์ หากการแก้ไขเสร็จสมบูรณ์โดยไม่มีข้อผิดพลาด (code === 0) จะแสดงข้อความแจ้งเตือนว่าการแก้ไขสำเร็จ และทำการอัพเดทหน้าเว็บ ถ้าเกิดข้อผิดพลาดจะแสดงข้อความแจ้งเตือนเกี่ยวกับข้อผิดพลาดนั้น"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    GetAddressID: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Edit_address.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน GetAddressID(ById) ใช้ในการดึงข้อมูลที่อยู่จัดส่งโดยใช้ ID ที่ระบุ"
+        content1="1.รับ ID ที่ต้องการดึงข้อมูลที่อยู่จัดส่งมาเป็นพารามิเตอร์ของฟังก์ชัน (ById)"
+        content2="2.กำหนดค่าตัวแปร ID_edit เป็น ID ที่ระบุเพื่อใช้ในการส่งคำขอดึงข้อมูล"
+        content3="3.ดึง Token จาก Local Storage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง"
+        content4="4.ส่งคำขอ GET ไปยังเซิร์ฟเวอร์เพื่อดึงข้อมูลที่อยู่จัดส่งโดยใช้ ID ที่ระบุ"
+        content5="5.หากคำขอดึงข้อมูลสำเร็จ (code === 0) จะนำข้อมูลที่ได้มาแสดงในฟอร์มแก้ไขที่ตรงกับแต่ละฟิลด์ ถ้าเกิดข้อผิดพลาดจะแสดงข้อความแจ้งเตือนเกี่ยวกับข้อผิดพลาดนั้น"
+        functionName="GetAddressID(ById)"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // forgotpass.html
+    forgotPass: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Edit_address.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน forgotPass() ใช้ในกระบวนการลืมรหัสผ่าน"
+        content1="1.แสดง loader เพื่อแสดงการโหลดข้อมูล"
+        content2="2.รับค่าอีเมล, OTP และรหัสผ่านใหม่จากฟอร์ม"
+        content3="3.สร้างข้อมูลที่ต้องการส่งไปยังเซิร์ฟเวอร์โดยใช้ email, OTP และ password"
+        content4="4.ส่งคำขอ POST ไปยังเซิร์ฟเวอร์เพื่อร้องขอการลืมรหัสผ่านโดยใช้ API ที่กำหนดไว้"
+        content5="5.เมื่อคำขอสำเร็จ (code === 0) แสดงข้อความแจ้งเตือนว่ารหัสผ่านถูกตั้งใหม่เรียบร้อยแล้วและนำผู้ใช้ไปยังหน้าเข้าสู่ระบบ"
+        content6="6.หากเกิดข้อผิดพลาดในการส่งคำขอ (code !== 0) จะแสดงข้อความแจ้งเตือนเกี่ยวกับข้อผิดพลาดนั้น"
+        content7="7.ฟังก์ชัน cleanInput() จะใช้เพื่อล้างค่าที่ป้อนเข้าในฟอร์มหลังจากกระบวนการรีเซ็ตรหัสผ่านเสร็จสิ้น"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    sendOTP_Forgot: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Edit_address.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน sendOTP_Forgot() ใช้ในการส่ง OTP ในกระบวนการลืมรหัสผ่าน"
+        content1="1.รับค่าอีเมลที่ผู้ใช้ป้อนในฟอร์ม"
+        content2="2.กำหนดประเภทของการส่ง OTP เป็น 20"
+        content3="3.สร้างข้อมูลที่ต้องการส่งไปยังเซิร์ฟเวอร์โดยใช้อีเมลและประเภทของการส่ง OTP"
+        content4="4.ส่งคำขอ POST ไปยังเซิร์ฟเวอร์เพื่อขอ OTP โดยใช้ API ที่กำหนดไว้"
+        content5="5.เมื่อคำขอสำเร็จ (code === 0) เริ่มการนับถอยหลังจากนับเวลาและแสดง OTP ให้ผู้ใช้โดยใช้ฟังก์ชัน `startCountdow`"
+        content6="6.เมื่อเวลานับถอยหลังสิ้นสุด แสดงช่องให้ผู้ใช้ป้อน OTP และเริ่มการนับถอยหลังอีกครั้งหากผู้ใช้ต้องการส่ง OTP อีกครั้ง"
+        content7="7.หากเกิดข้อผิดพลาดในการส่งคำขอ (code !== 0) แสดงข้อความแจ้งเตือนเกี่ยวกับข้อผิดพลาดนั้น"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // inCome.html
+    getSelectedYear: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="InCome.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getSelectedYear() ใช้ในการดึงปีปัจจุบันและแสดงบนหน้าเว็บ"
+        content1="1.สร้างวัตถุ `currentDate1` เพื่อเก็บวันที่และเวลาปัจจุบัน"
+        content2="2.ดึงปีปัจจุบันโดยใช้เมธอด `getFullYear()` ของวัตถุ `currentDate1`"
+        content3="3.สร้าง HTML สตริง `str` เพื่อแสดงปีปัจจุบันในรูปแบบ `<span>${currentYear1}</span>` เพื่อแสดงเฉพาะปี"
+        content4={`4.เพิ่มการฟังก์ชันเมื่อคลิกปุ่ม "ปีถัดไป" (#nextYear) เพื่อเพิ่มค่าปีปัจจุบันและอัปเดตปฏิทิน`}
+        content5={`5.เพิ่มการฟังก์ชันเมื่อคลิกปุ่ม "ปีก่อนหน้า" (#prevYear) เพื่อลดค่าปีปัจจุบันและอัปเดตปฏิทิน`}
+        content6="6.สร้างฟังก์ชัน updateCalendar() เพื่ออัปเดต HTML เมื่อมีการเปลี่ยนแปลงในปีปัจจุบัน และนำ str มาใส่ใน $('#calendarGetYear')"
+        content7="7.ทำการแสดงปีปัจจุบันในปฏิทินโดยใช้ $('#calendarGetYear').html(str) เพื่อแสดงปีเริ่มต้นเมื่อหน้าเว็บโหลดครั้งแรก"
+        content8="คลิกปุ่ม 'ปีถัดไป' หรือ 'ปีก่อนหน้า' จะทำให้ปีปัจจุบันเปลี่ยนแปลงและปฏิทินถูกอัปเดตใหม่เพื่อแสดงปีที่เปลี่ยนแปลงล่าสุด"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getSelectedMonth: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="InCome.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getSelectedMonth() ใช้ในการดึงเดือนปัจจุบันและแสดงชื่อของเดือนนั้น"
+        content1="1.สร้างวัตถุ currentDate เพื่อเก็บวันที่และเวลาปัจจุบัน"
+        content2="2.ใช้เมธอด getMonth() เพื่อดึงหมายเลขของเดือนปัจจุบันจากวัตถุ currentDate"
+        content3="3.ใช้ Intl.DateTimeFormat() เพื่อแปลงหมายเลขของเดือนเป็นชื่อเดือน (เช่น January, February) โดยใช้รูปแบบ month: 'long'"
+        content4="4.สร้าง HTML สตริง str เพื่อแสดงชื่อของเดือนปัจจุบันในรูปแบบ <span>${monthName}</span> เพื่อแสดงเฉพาะชื่อของเดือน"
+        content5="5.เพิ่มการฟังก์ชันเมื่อคลิกปุ่ม 'เดือนถัดไป' (#nextMonth) เพื่อเพิ่มค่าเดือนปัจจุบันและอัปเดตปฏิทิน"
+        content6="6.เพิ่มการฟังก์ชันเมื่อคลิกปุ่ม 'เดือนก่อนหน้า' (#prevMonth) เพื่อลดค่าเดือนปัจจุบันและอัปเดตปฏิทิน"
+        content7="7.สร้างฟังก์ชัน updateCalendar1() เพื่ออัปเดต HTML เมื่อมีการเปลี่ยนแปลงในเดือนปัจจุบัน โดยอัปเดตชื่อของเดือนใหม่ และนำ str มาใส่ใน $('#calendarGetMonth')"
+        content8="8.ทำการแสดงชื่อของเดือนปัจจุบันในปฏิทินโดยใช้ $('#calendarGetMonth').html(str) เพื่อแสดงเดือนเริ่มต้นเมื่อหน้าเว็บโหลดครั้งแรก"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getIncomeAndExpenditureDetails: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="InCome.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getIncomeAndExpenditureDetails() ใช้ในการดึงรายละเอียดเกี่ยวกับรายได้และค่าใช้จ่าย"
+        content1="1.ดึง token จาก local storage เพื่อใช้ในการทำการร้องขอข้อมูล"
+        content2="2.ทำการส่งคำร้องขอเพื่อขอรายละเอียดเกี่ยวกับรายได้และค่าใช้จ่ายไปยังเซิร์ฟเวอร์"
+        content3="3.ในกรณีที่คำร้องขอสำเร็จ (code === 0) คำนวณยอดรวมของรายรับและรายจ่ายโดยใช้ reduce() เพื่อนำมารวมกัน"
+        content4="4.แสดงข้อมูลรายรับและรายจ่ายในส่วนของเนื้อหาที่กำหนดไว้ใน HTML (#sales_content และ #expenses_content)"
+        content5="5.แสดงยอดรวมของรายรับและรายจ่ายที่ได้จากการคำนวณ (#total_income และ #total_expenses)"
+        content6="6.คำนวณรายได้ก่อนหักภาษีโดยลบยอดรายจ่ายจากยอดรายรับ (income_before_taxes) และแสดงในหน้าเว็บ"
+        content7="7.แสดงรายได้สุทธิ (#total_net_income) ซึ่งในกรณีนี้เท่ากับรายได้ก่อนหักภาษีเนื่องจากไม่มีการคำนวณภาษีในตัวอย่างนี้"
+        content8="8.ในกรณีที่คำร้องขอไม่สำเร็จ (code !== 0) แสดงข้อผิดพลาดที่เกิดขึ้น"
+        content9="9.หลังจากที่คำร้องขอเสร็จสิ้นหรือเกิดข้อผิดพลาด loaderObj จะถูกปิด"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    createNewInput: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="InCome.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน createNewInput() ใช้ในการสร้าง元素 <input> ใหม่โดยมีลักษณะดังนี้"
+        content1="1.type: 'number': กำหนดประเภทของ input เป็นตัวเลข เพื่อให้ผู้ใช้สามารถป้อนข้อมูลตัวเลขเท่านั้นได้"
+        content2="2.class: '': ไม่กำหนด class เพิ่มเติม"
+        content3="3.style: กำหนดสไตล์ของ input"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    updateIncomeBeforeTaxes: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="InCome.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน updateIncomeBeforeTaxes มีการดำเนินการดังนี้"
+        content1="1.แปลงข้อมูลทั้งหมดของรายได้รวม (total_income) และค่าใช้จ่ายรวม (total_expenses) จากข้อความที่แสดงบนหน้าเว็บเป็นตัวเลข โดยทำการลบเครื่องหมาย '฿ ' และลบเครื่องหมายคอมมา (,) แล้วแปลงเป็นจำนวนทศนิยม หากไม่สามารถแปลงได้ให้กำหนดค่าเป็น 0"
+        content2="2.คำนวณรายได้ก่อนภาษีโดยลบค่าใช้จ่ายรวม (totalExpenses) จากรายได้รวม (totalIncome) เพื่อหาผลลัพธ์"
+        content3="3.แสดงผลลัพธ์รายได้ก่อนภาษีที่คำนวณได้ใหม่โดยใช้การเรียกใช้ฟังก์ชัน toLocaleString เพื่อแสดงเลขทศนิยมด้วยการจัดรูปแบบตามค่าที่กำหนด และเติมคำว่า '฿ ' ข้างหน้า"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // lang.html
+    setAllPageLang: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน setAllPageLang ใช้ในการตั้งค่าภาษาสำหรับหน้าทั้งหมดในแอปพลิเคชัน โดยการเรียกใช้"
+        content1="1.ฟังก์ชัน setAllUILang สำหรับแต่ละหน้าดังนี้"
+        content2={`"getstart","login","forgotPass","register","main","cart","detail_product","homePage","setting","final"`}
+        content3="การเรียกใช้ setAllUILang จะเป็นการตั้งค่าภาษาสำหรับหน้านั้นๆ โดยทำการโหลดข้อมูลภาษาจากไฟล์หรือแหล่งข้อมูลที่กำหนดไว้ล่วงหน้าแล้วแล้วใช้ในการแสดงผลบนหน้าเว็บในภาษาที่ถูกต้องตามการตั้งค่า"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    setAllUILang: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน setAllUILang() ใช้ในการตั้งค่าข้อความแสดงผลในหน้าต่างๆ ของแอปพลิเคชันตามภาษาที่กำหนด เมื่อมีการเรียกใช้งานฟังก์ชันนี้ โดยส่งพารามิเตอร์ page เข้าไป เพื่อระบุหน้าที่ต้องการตั้งค่าภาษา"
+        content1="1.ในแต่ละเคสของ switch จะมีการกำหนดข้อความแสดงผลของแต่ละ element ในหน้านั้นๆ โดยใช้ NSLang เพื่อดึงข้อความภาษาที่ต้องการตาม key ที่กำหนด"
+        content2="2.หลังจากนั้นจะนำข้อความที่ได้มาแสดงผลใน element ต่างๆ ของหน้านั้นๆ โดยการใช้ html() เพื่อกำหนดข้อความใหม่ในแต่ละ element"
+        content3="3.การเรียกใช้งาน NSLang จะช่วยในการแสดงผลข้อความในภาษาที่ถูกต้องตามการตั้งค่าที่กำหนดไว้ล่วงหน้าแล้วในระบบ"
+        content4="4.การตั้งค่าข้อความใหม่จะเป็นการอัพเดทหน้าเว็บให้เป็นภาษาที่ถูกต้องตามการตั้งค่า"
+        functionName="setAllUILang(page)"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    NSLang: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน NSLang ใช้ในการค้นหาและคืนค่าข้อความจากตัวแปร NSLangArr โดยใช้คีย์ inStr เพื่อค้นหาข้อความที่ต้องการในภาษาที่ตั้งค่าไว้ล่วงหน้า หากไม่พบข้อความที่ต้องการหรือเกิดข้อผิดพลาดขณะค้นหา ฟังก์ชันจะคืนค่า inStr เป็นค่าเริ่มต้น"
+        content1="1.ในบรรทัดแรกของฟังก์ชัน NSLang จะพยายามดึงข้อความจากตัวแปร NSLangArr โดยใช้คีย์ inStr และ langCode ซึ่งเป็นตัวแปรที่ระบุภาษาที่ต้องการให้แสดงผล"
+        content2="2.หากพบข้อความที่ต้องการจะคืนค่าข้อความนั้น"
+        content3="3.หากไม่พบข้อความหรือเกิดข้อผิดพลาดขณะค้นหา ฟังก์ชันจะคืนค่า inStr เป็นค่าเริ่มต้นหรือค่าที่ส่งเข้ามาตามที่เกิดขึ้นในบริบทนั้นๆ ในการค้นหาข้อความ"
+        functionName="NSLang(inStr)"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getStatusCode: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getStatusCode ใช้ในการค้นหาและคืนค่าข้อความสถานะจากตัวแปร statusCodesArr โดยใช้คีย์ code เพื่อค้นหาข้อความสถานะที่ต้องการแสดงผล หากไม่พบข้อความสถานะที่ต้องการหรือเกิดข้อผิดพลาดขณะค้นหา ฟังก์ชันจะคืนค่า thisCode เป็นค่าเริ่มต้นหรือค่าที่ส่งเข้ามาตามที่เกิดขึ้นในบริบทนั้นๆ ในการค้นหาข้อความสถานะ"
+        content1="1.ในบรรทัดแรกของฟังก์ชัน getStatusCode จะเก็บค่า code ที่ส่งเข้ามาในตัวแปร thisCode"
+        content2="2.จากนั้นฟังก์ชันจะพยายามค้นหาข้อความสถานะจากตัวแปร statusCodesArr โดยใช้คีย์ thisCode และ langCode ซึ่งเป็นตัวแปรที่ระบุภาษาที่ต้องการให้แสดงผล"
+        content3="3.หากพบข้อความสถานะที่ต้องการจะคืนค่าข้อความนั้น"
+        content4="4.หากไม่พบข้อความสถานะหรือเกิดข้อผิดพลาดขณะค้นหา ฟังก์ชันจะคืนค่า thisCode เป็นค่าเริ่มต้นหรือค่าที่ส่งเข้ามาตามที่เกิดขึ้นในบริบทนั้นๆ ในการค้นหาข้อความสถานะ"
+        functionName="getStatusCode(code)"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // level.html
+    openTab: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน openTab() ใช้ในการแสดงแท็บที่ถูกเลือกโดยรับชื่อแท็บเป็นพารามิเตอร์ tabName และซ่อนแท็บที่ไม่ได้ถูกเลือก และแสดงแท็บที่ถูกเลือก"
+        content1="1.เริ่มต้นด้วยการรับชื่อแท็บที่ต้องการแสดงเป็นพารามิเตอร์ `tabName`"
+        content2="2.ฟังก์ชันจะดึงอ็อบเจกต์ของแท็บทั้งหมดที่มีคลาส 'tabcontent' และซ่อนทั้งหมด"
+        content3="3.จากนั้นฟังก์ชันจะดึงอ็อบเจกต์ของลิงก์แท็บทั้งหมดที่มีคลาส 'tablinks' และลบคลาส 'actived' ที่มีอยู่"
+        content4="4.ต่อมาฟังก์ชันจะแสดงแท็บที่ถูกเลือกโดยเพิ่มค่า display ให้เป็น 'block' และเพิ่มคลาส 'actived' เข้าไปในลิงก์แท็บที่เกี่ยวข้อง"
+        content5="5.ดังนั้นแท็บที่ไม่ได้ถูกเลือกจะถูกซ่อนและลิงก์ที่ไม่ได้ถูกเลือกจะไม่มีคลาส 'actived' และแท็บที่ถูกเลือกจะแสดงผลและลิงก์ที่เกี่ยวข้องจะมีคลาส 'actived'"
+        functionName="openTab(tabName)"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // locationAddress.html
+    GetAddress: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน GetAddress ใช้ในการดึงข้อมูลที่อยู่จัดส่ง โดยใช้ token เพื่อทำการตรวจสอบสิทธิ์การเข้าถึง หลังจากนั้นจะแสดงข้อมูลที่อยู่ทั้งหมดในหน้าเว็บโดยใช้ HTML และ CSS เพื่อแสดงผลอย่างเหมาะสม"
+        content1="1.รับ token จาก localStorage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง API"
+        content2="2.เตรียมตัวแปรสำหรับเก็บข้อมูลที่อยู่และการเลือก ID สำหรับที่อยู่"
+        content3="3.เริ่มต้นโดยล้างเนื้อหาใน #content_address เพื่อเตรียมตัวสำหรับการแสดงข้อมูลใหม่"
+        content4="4.ส่งคำขอ AJAX เพื่อดึงข้อมูลที่อยู่จากเซิร์ฟเวอร์"
+        content5="5.หากคำขอสำเร็จและไม่มีข้อมูลที่อยู่ในระบบ จะแสดงข้อความ 'No Address' ในส่วนของ #content_address"
+        content6="6.หากมีข้อมูลที่อยู่ จะแสดงข้อมูลแต่ละรายการในรูปแบบที่กำหนดด้วย HTML และ CSS"
+        content7="7.ตรวจสอบว่าแท็บใดเป็นที่อยู่หลัก และปรับแต่งสไตล์การแสดงผลให้เหมาะสม"
+        content8="8.สร้างการจัดการเหตุการณ์เมื่อคลิกที่แท็บหรือปุ่มแก้ไขที่อยู่"
+        content9="9.หากมีการเปลี่ยนแปลงในที่อยู่หลัก จะส่งคำขอ PATCH ไปยังเซิร์ฟเวอร์เพื่อปรับเป็นที่อยู่หลัก"
+        content10="10.แสดงข้อความเมื่อการเปลี่ยนแปลงถูกยอมรับหรือไม่สำเร็จ"
+        content11="11.แสดงข้อความข้อผิดพลาดเมื่อการร้องขอสูญเสียหรือไม่สำเร็จ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // login.html
+    checkLoginWithRefreshToken: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Login.html"
+        headerName="checkLoginStatusWithRefreshToken()"
+        content="-เป็นฟังก์ชัน checkLoginStatusWithRefreshToken() ที่ใช้สำหรับตรวจสอบสถานะการเข้าสู่ระบบโดยใช้ Refresh Token เพื่อขอ Token ใหม่เมื่อ Token เดิมหมดอายุ โดยมีขั้นตอนดังนี้:"
+        content1="1.ตรวจสอบว่ามี Token หรือไม่ ถ้าไม่มีก็จะไม่ดำเนินการต่อ"
+        content2="2.สร้างข้อมูลที่จะส่งในการร้องขอ Refresh Token โดยใช้ Refresh Token เดิม"
+        content3="3.ทำการส่งคำขอไปยังเซิร์ฟเวอร์ API เพื่อขอ Token ใหม่โดยใช้ AJAX"
+        content4="4.หากคำขอสำเร็จ (success) โปรแกรมจะเก็บ Token ใหม่ที่ได้รับลงใน Local Storage และอัปเดตค่า Token ในตัวแปร token"
+        content5="5.ซ่อนหน้า loginPage หากสำเร็จ"
+        content6="6.หากเกิดข้อผิดพลาดในการร้องขอ (error) จะแสดงข้อผิดพลาดในคอนโซล"
+        functionName="checkLoginStatusWithRefreshToken()"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    askDeviceIdFun: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Login.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน askDeviceIdFun นี้ใช้สำหรับขอ Device ID จากแอปพลิเคชัน โดยมีขั้นตอนดังนี้"
+        content1="1.ตรวจสอบว่าเป็นอุปกรณ์แอนดรอยด์หรือไม่ ถ้าใช่ก็จะเริ่มการขอ Device ID"
+        content2={`2.ใช้ setTimeout เพื่อเรียกฟังก์ชัน callApp("ask_deviceId") ทุกๆ 1 วินาทีตั้งแต่หลังจากนี้เพื่อขอ Device ID`}
+        content3="3.การเรียก callApp('ask_deviceId') จะเกิดขึ้นทุกๆ 2 วินาทีเพื่อรวมเวลาที่เรียกไปทั้งหมดไว้ในช่วงเวลาที่มีช่องว่าง"
+        content4="โดยการใช้ setTimeout ในลูปเหล่านี้จะช่วยให้แอปพลิเคชันมีเวลาพอสมควรในการตอบกลับขอ Device ID โดยไม่ทำให้แอปพลิเคชันขัดข้องหรือติดค้างไปกับการร้องขอ Device ID นี้แต่เพียงแค่ใช้เวลาสั้นๆ ในการเรียกเท่านั้น"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // main.html
+    menuhome: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Main.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน menuhome ทำหน้าที่เปิดหน้าเว็บไซต์หลักโดยมีขั้นตอนดังนี้"
+        content1="1.เรียกฟังก์ชัน unShowMenuPage เพื่อซ่อนหน้าเมนูทั้งหมด"
+        content2={`2.ซ่อนองค์ประกอบที่มี id เป็น "setting_Datalogger" และ "MonitorScroller" โดยใช้ CSS ในการเปลี่ยนแปลงค่า display เป็น "none"`}
+        content3={`3.ซ่อนเมนูที่เปิดอยู่ด้วยการเปลี่ยนคลาสขององค์ประกอบที่มีคลาส "menuOnClass" เป็น "none" และ "menuOffClass" เป็น "block"`}
+        content4={`4.แสดงเมนูหน้าหลักที่มี id เป็น "menuHome" และซ่อนเมนูที่มี id เป็น "menuHome2" โดยใช้ CSS ในการเปลี่ยนแปลงค่า display`}
+        content5={`5.เปลี่ยนสีและขนาดตัวอักษรของข้อความในเมนูด้วยการใช้ CSS`}
+        content6={`6.เปลี่ยนสีพื้นหลังของหน้าเว็บไซต์ด้วยการใช้ CSS`}
+        content7={`7.เรียกฟังก์ชัน init และ call จากอ็อบเจ็กต์ homeObj`}
+        content8="ซึ่งการเรียกฟังก์ชัน init และ call จาก homeObj น่าจะเป็นการเรียกฟังก์ชันเพื่อเริ่มต้นและดำเนินการต่อตามลำดับที่เกี่ยวข้องกับหน้าหลักของเว็บไซต์"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    menumonitor: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Main.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน menumonitor มีหน้าที่เปิดหน้า Monitor โดยมีขั้นตอนดังนี้"
+        content1="1.เรียกใช้ฟังก์ชัน unShowMenuPage เพื่อซ่อนหน้าเมนูทั้งหมด"
+        content2={`2.ซ่อนองค์ประกอบที่มี id เป็น "setting_Datalogger" โดยใช้ CSS ในการเปลี่ยนแปลงค่า display เป็น "none"`}
+        content3={`3.แสดงองค์ประกอบที่มี id เป็น "MonitorScroller" โดยใช้ CSS ในการเปลี่ยนแปลงค่า display เป็น "flex" เพื่อแสดงในรูปแบบแนวนอน`}
+        content4={`4.ซ่อนองค์ประกอบที่มี id เป็น "newsPopup" และ "popupNews_1" โดยใช้ CSS ในการเปลี่ยนแปลงค่า display เป็น "none"`}
+        content5={`5.ซ่อนเมนูที่เปิดอยู่ด้วยการเปลี่ยนคลาสขององค์ประกอบที่มีคลาส "menuOnClass" เป็น "none" และ "menuOffClass" เป็น "block"`}
+        content6={`6.แสดงเมนูที่มี id เป็น "menumonitor" และซ่อนเมนูที่มี id เป็น "menumonitor2" โดยใช้ CSS ในการเปลี่ยนแปลงค่า display`}
+        content7={`7.เปลี่ยนสีและขนาดตัวอักษรของข้อความในเมนูด้วยการใช้ CSS`}
+        content8={`8.เปลี่ยนสีพื้นหลังของหน้าเว็บไซต์ด้วยการใช้ CSS`}
+        content9={`9.ซ่อนหน้าต่าง popup ที่เป็นส่วนของการช้อปปิ้งด้วยการเปลี่ยนค่า display เป็น "none"`}
+        content10={`10.เรียกใช้ฟังก์ชัน init และ call จากอ็อบเจ็กต์ monitorObj โดยสามารถเริ่มต้นและดำเนินการต่อตามลำดับที่เกี่ยวข้องกับหน้า Monitor ของเว็บไซต์ได้`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    menuwallet: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Main.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน menuwallet มีหน้าที่เปิดหน้า Wallet โดยมีขั้นตอนดังนี้"
+        content1="1.เรียกใช้ฟังก์ชัน unShowMenuPage เพื่อซ่อนหน้าเมนูทั้งหมด"
+        content2={`2.ซ่อนองค์ประกอบที่มี id เป็น "setting_Datalogger" และ "MonitorScroller" โดยใช้ CSS ในการเปลี่ยนแปลงค่า display เป็น "none"`}
+        content3={`ซ่อนเมนูที่เปิดอยู่ด้วยการเปลี่ยนคลาสขององค์ประกอบที่มีคลาส "menuOnClass" เป็น "none" และ "menuOffClass" เป็น "block"`}
+        content4={`4.แสดงเมนูที่มี id เป็น "menuwallet" และซ่อนเมนูที่มี id เป็น "menuwallet2" โดยใช้ CSS ในการเปลี่ยนแปลงค่า display`}
+        content5={`5.เปลี่ยนสีและขนาดตัวอักษรของข้อความในเมนูด้วยการใช้ CSS`}
+        content6={`6.เปลี่ยนสีพื้นหลังของหน้าเว็บไซต์ด้วยการใช้ CSS`}
+        content7={`7.เรียกใช้ฟังก์ชัน init และ call จากอ็อบเจ็กต์ walletObj เพื่อเริ่มต้นและดำเนินการต่อตามลำดับที่เกี่ยวข้องกับหน้า Wallet ของเว็บไซต์`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    menusetting: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Main.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน menusetting มีหน้าที่เปิดหน้า Setting โดยมีขั้นตอนดังนี้"
+        content1="1.เรียกใช้ฟังก์ชัน unShowMenuPage เพื่อซ่อนหน้าเมนูทั้งหมด"
+        content2={`2.ซ่อนองค์ประกอบที่มี id เป็น "setting_Datalogger" และ "MonitorScroller" โดยใช้ CSS ในการเปลี่ยนแปลงค่า display เป็น "none"`}
+        content3={`3.ซ่อนเมนูที่เปิดอยู่ด้วยการเปลี่ยนคลาสขององค์ประกอบที่มีคลาส "menuOnClass" เป็น "none" และ "menuOffClass" เป็น "block"`}
+        content4={`4.แสดงเมนูที่มี id เป็น "menuSetting" และซ่อนเมนูที่มี id เป็น "menuSetting2" โดยใช้ CSS ในการเปลี่ยนแปลงค่า display`}
+        content5="5.เปลี่ยนสีและขนาดตัวอักษรของข้อความในเมนูด้วยการใช้ CSS"
+        content6="6.เปลี่ยนสีพื้นหลังของหน้าเว็บไซต์ด้วยการใช้ CSS"
+        content7="7.เรียกใช้ฟังก์ชัน init และ call จากอ็อบเจ็กต์ settingObj เพื่อเริ่มต้นและดำเนินการต่อตามลำดับที่เกี่ยวข้องกับหน้า Setting ของเว็บไซต์"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    unShowMenuPage: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Main.html"
+        headerName={getTitle()}
+        content="ฟังก์ชัน unShowMenuPage มีหน้าที่ซ่อนหน้าเมนูทั้งหมดและเคลื่อนย้ายองค์ประกอบของเมนูกลับไปที่ตำแหน่งเริ่มต้นดังนี้"
+        content1={`1.ใช้ jQuery เลือกทุกองค์ประกอบที่มีคลาส "menuPage" และ "menuHeader" โดยใช้เมธอด each เพื่อวนลูปทุกองค์ประกอบนี้`}
+        content2={`สำหรับแต่ละองค์ประกอบ ใช้ transition ของ jQuery เพื่อเคลื่อนย้ายตำแหน่ง x กลับไปที่ 0 ในระยะเวลา 0 มิลลิวินาที ซึ่งจะทำให้องค์ประกอบเคลื่อนที่กลับไปยังตำแหน่งเริ่มต้นทันทีโดยไม่มีการเคลื่อนที่ที่สามารถมองเห็นได้`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+  }
 
   const menuComponentModelStructure = {
     alert: () => (
@@ -1334,7 +2213,7 @@ export default function HomePage() {
         exampleContent="messagePage"
       />
     ),
-  };
+  }
 
   return (
     <div className="w-full h-full lg:flex">
@@ -1383,6 +2262,20 @@ export default function HomePage() {
                 }
                 setOpenConfirm={() => setOpenConfirm(!openConfirm)}
                 setOpenCustomer={() => setOpenCustomer(!openCustomer)}
+                setOpenDataCustomerDetails={() =>
+                  setOpenDataCustomerDetails(!openDataCustomerDetails)
+                }
+                setOpendataCustomer={() =>
+                  setOpendataCustomer(!opendataCustomer)
+                }
+                setOpenDeletedatalogger={() =>
+                  setOpenDeletedatalogger(!openDeletedatalogger)
+                }
+                setOpenDistributor={() => setOpenDistributor(!openDistributor)}
+                setOpenEditAddress={() => setOpenEditAddress(!openEditAddress)}
+                setOpenForgotpass={() => setOpenForgotpass(!openForgotpass)}
+                setOpenInCome={() => setOpenInCome(!openInCome)}
+                setOpenLang={() => setOpenLang(!openLang)}
                 openHomeHtml={openHomeHtml}
                 openAdddatalogger={openAdddatalogger}
                 openCancelOrder={openCancelOrder}
@@ -1392,6 +2285,14 @@ export default function HomePage() {
                 openConfiguration={openConfiguration}
                 openConfirm={openConfirm}
                 openCustomer={openCustomer}
+                openDataCustomerDetails={openDataCustomerDetails}
+                opendataCustomer={opendataCustomer}
+                openDeletedatalogger={openDeletedatalogger}
+                openDistributor={openDistributor}
+                openEditAddress={openEditAddress}
+                openForgotpass={openForgotpass}
+                openInCome={openInCome}
+                openLang={openLang}
               />
             )}
           </ul>
@@ -1419,8 +2320,7 @@ export default function HomePage() {
         width={240}
         onClose={() => setOpenDrawer(false)}
         open={openDrawer}
-        className="custom-drawer"
-      >
+        className="custom-drawer">
         <div className="flex  flex-col gap-2">
           {/* Model structure */}
           {selectedNavbar === "Model structure" && (
@@ -1461,6 +2361,21 @@ export default function HomePage() {
               setOpenDataCustomerDetails={() =>
                 setOpenDataCustomerDetails(!openDataCustomerDetails)
               }
+              setOpendataCustomer={() => setOpendataCustomer(!opendataCustomer)}
+              setOpenDeletedatalogger={() =>
+                setOpenDeletedatalogger(!openDeletedatalogger)
+              }
+              setOpenDistributor={() => setOpenDistributor(!openDistributor)}
+              setOpenEditAddress={() => setOpenEditAddress(!openEditAddress)}
+              setOpenForgotpass={() => setOpenForgotpass(!openForgotpass)}
+              setOpenInCome={() => setOpenInCome(!openInCome)}
+              setOpenLang={() => setOpenLang(!openLang)}
+              setOpenLevel={() => setOpenLevel(!openLevel)}
+              setOpenLocationAddress={() =>
+                setOpenLocationAddress(!openLocationAddress)
+              }
+              setOpenLogin={() => setOpenLogin(!openLogin)}
+              setOpenMain={() => setOpenMain(!openMain)}
               openHomeHtml={openHomeHtml}
               openAdddatalogger={openAdddatalogger}
               openCancelOrder={openCancelOrder}
@@ -1471,6 +2386,17 @@ export default function HomePage() {
               openConfirm={openConfirm}
               openCustomer={openCustomer}
               openDataCustomerDetails={openDataCustomerDetails}
+              opendataCustomer={opendataCustomer}
+              openDeletedatalogger={openDeletedatalogger}
+              openDistributor={openDistributor}
+              openEditAddress={openEditAddress}
+              openForgotpass={openForgotpass}
+              openInCome={openInCome}
+              openLang={openLang}
+              openLevel={openLevel}
+              openLocationAddress={openLocationAddress}
+              openLogin={openLogin}
+              openMain={openMain}
             />
           )}
         </div>
@@ -1482,5 +2408,5 @@ export default function HomePage() {
         `}</style>
       </Drawer>
     </div>
-  );
+  )
 }

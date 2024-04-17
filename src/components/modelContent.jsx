@@ -1,6 +1,6 @@
 /** @format */
 
-import MessageBoxTryit from "./tryitFunction/messageBoxTryit";
+import MessageBoxTryit from "./tryitFunction/messageBoxTryit"
 import {
   Addda_talogger_addDate,
   Addda_talogger_createDevice,
@@ -34,10 +34,22 @@ import {
   Customer_getDataCustPurchaseReportStats,
   Customer_showChartTotalCustomer,
   Customer_updateSalesData,
+  Data_customer_details_getDataCustomerDetail,
+  Data_customer_getDataCustomer,
+  Deletedatalogger_getDeviceAll,
+  Distributor_PreviewImg,
+  Distributor_PreviewImg2,
+  Distributor_createDistributor,
+  Distributor_distributorFun,
   DivMessageBox,
   DivMessageBoxExampleCode,
   DivMessageBoxScript,
   DocumentAddEventListenerWidget,
+  EditAddress_deleteAddress,
+  EditAddress_editAddress,
+  EditAddress_getAddressID,
+  Forgotpass_forgotPass,
+  Forgotpass_sendOTP_forgot,
   FunctionMessageBoxText,
   GetAbsTimeWidget,
   HeaderInitExampleScript,
@@ -51,10 +63,28 @@ import {
   Home_html_getRecommendProduct,
   Home_html_homeCheckToken,
   Home_html_sendApi,
+  InCome_createNewInput,
+  InCome_getIncomeAndExpenditureDetails,
+  InCome_getSelectedMonth,
+  InCome_getSelectedYear,
+  InCome_updateIncomeBeforeTaxes,
+  Lang_getStatusCode,
+  Lang_nsLang,
+  Lang_setAllPageLang,
+  Lang_setAllUILang,
+  Level_openTab,
   LoaderExampleScript,
   LoaderIndexBody,
   LoaderIndexScript,
   LoaderWidget,
+  LocationAddress_getAddress,
+  Login_askDeviceIdFun,
+  Login_checkLoginWithRefreshToken,
+  Main_menuhome,
+  Main_menumonitor,
+  Main_menusetting,
+  Main_menuwallet,
+  Main_unShowMenuPage,
   MessagePageExampleScript,
   MessagePageIndexBody,
   MessagePageIndexScript,
@@ -70,14 +100,14 @@ import {
   PageUnShowWidget,
   ResObjIndexScript,
   ResObjWidget,
-} from "../components/FunctionDataText";
+} from "../components/FunctionDataText"
 
-import AlertTryit from "./tryitFunction/alertTryit";
-import HeaderInitTryit from "./tryitFunction/headerInitTryit";
-import PageShowTryit from "./tryitFunction/pageShowTryit";
-import PageUnShowTryit from "./tryitFunction/pageUnShowTryit";
-import LoaderTryit from "./tryitFunction/loaderTryit";
-import MessagePage from "./tryitFunction/messagePageTryit";
+import AlertTryit from "./tryitFunction/alertTryit"
+import HeaderInitTryit from "./tryitFunction/headerInitTryit"
+import PageShowTryit from "./tryitFunction/pageShowTryit"
+import PageUnShowTryit from "./tryitFunction/pageUnShowTryit"
+import LoaderTryit from "./tryitFunction/loaderTryit"
+import MessagePage from "./tryitFunction/messagePageTryit"
 
 export default function ModelContent({
   headerName,
@@ -286,6 +316,52 @@ export default function ModelContent({
             {selectedMenu === "ChartMethod" && <Customer_ChartMethod />}
             {selectedMenu === "ChartGender" && <Customer_ChartGender />}
             {selectedMenu === "updateSalesData" && <Customer_updateSalesData />}
+            {selectedMenu === "GetDataCustomerDetail" && (
+              <Data_customer_details_getDataCustomerDetail />
+            )}
+            {selectedMenu === "GetDataCustomer" && (
+              <Data_customer_getDataCustomer />
+            )}
+            {selectedMenu === "getDeviceAll" && (
+              <Deletedatalogger_getDeviceAll />
+            )}
+            {selectedMenu === "distributorFun" && (
+              <Distributor_distributorFun />
+            )}
+            {selectedMenu === "PreviewImg" && <Distributor_PreviewImg />}
+            {selectedMenu === "PreviewImg_2" && <Distributor_PreviewImg2 />}
+            {selectedMenu === "CreateDistributor" && (
+              <Distributor_createDistributor />
+            )}
+            {selectedMenu === "DeleteAddress" && <EditAddress_deleteAddress />}
+            {selectedMenu === "EditAddress" && <EditAddress_editAddress />}
+            {selectedMenu === "GetAddressID" && <EditAddress_getAddressID />}
+            {selectedMenu === "forgotPass" && <Forgotpass_forgotPass />}
+            {selectedMenu === "sendOTP_Forgot" && <Forgotpass_sendOTP_forgot />}
+            {selectedMenu === "getSelectedYear" && <InCome_getSelectedYear />}
+            {selectedMenu === "getSelectedMonth" && <InCome_getSelectedMonth />}
+            {selectedMenu === "getIncomeAndExpenditureDetails" && (
+              <InCome_getIncomeAndExpenditureDetails />
+            )}
+            {selectedMenu === "createNewInput" && <InCome_createNewInput />}
+            {selectedMenu === "updateIncomeBeforeTaxes" && (
+              <InCome_updateIncomeBeforeTaxes />
+            )}
+            {selectedMenu === "setAllPageLang" && <Lang_setAllPageLang />}
+            {selectedMenu === "setAllUILang" && <Lang_setAllUILang />}
+            {selectedMenu === "NSLang" && <Lang_nsLang />}
+            {selectedMenu === "getStatusCode" && <Lang_getStatusCode />}
+            {selectedMenu === "openTab" && <Level_openTab />}
+            {selectedMenu === "GetAddress" && <LocationAddress_getAddress />}
+            {selectedMenu === "checkLoginWithRefreshToken" && (
+              <Login_checkLoginWithRefreshToken />
+            )}
+            {selectedMenu === "askDeviceIdFun" && <Login_askDeviceIdFun />}
+            {selectedMenu === "menuhome" && <Main_menuhome />}
+            {selectedMenu === "menumonitor" && <Main_menumonitor />}
+            {selectedMenu === "menuwallet" && <Main_menuwallet />}
+            {selectedMenu === "menusetting" && <Main_menusetting />}
+            {selectedMenu === "unShowMenuPage" && <Main_unShowMenuPage />}
             <p className="ml-4">{`}`}</p>
             <span className="text-[#A52A2A]">&lt;/script&gt;</span>
           </div>
@@ -412,5 +488,5 @@ export default function ModelContent({
         </div>
       ) : null}
     </div>
-  );
+  )
 }
