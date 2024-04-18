@@ -80,15 +80,43 @@ import {
   LocationAddress_getAddress,
   Login_askDeviceIdFun,
   Login_checkLoginWithRefreshToken,
+  Main_checkIsLogin,
+  Main_getLocalToken,
   Main_menuhome,
   Main_menumonitor,
   Main_menusetting,
   Main_menuwallet,
+  Main_refreshToken,
+  Main_refreshTokenFun,
   Main_unShowMenuPage,
+  Main_updateLoginStatus,
+  MemberTier_createMemberTier,
+  MemberTier_getMemberTier,
   MessagePageExampleScript,
   MessagePageIndexBody,
   MessagePageIndexScript,
   MessagePageWidget,
+  Monitor_getBill,
+  Monitor_getDataMonitor,
+  Monitor_getSelectedDay,
+  Monitor_getSelectedMonthMonitor,
+  Monitor_getSolarDeviceAll,
+  Monitor_luxVal,
+  Monitor_monitorCheckToken,
+  Monitor_openTabbill,
+  Monitor_randomValueMonitorNoLogin,
+  Monitor_restartPin,
+  Monitor_ws,
+  My_devices_getMyDevice,
+  New_address_createAddress,
+  New_address_validateInput,
+  Notification_getNotification,
+  Notification_pagination,
+  Order_info_cancel_cancelOrder,
+  Order_info_cancel_getOid,
+  Order_info_cancel_refund_cancelOrder_order_info_cancel_refund,
+  Order_info_cancel_refund_getOid,
+  Order_info_cancel_refund_sendRefund,
   PageInit,
   PageInitExampleBody,
   PageInitExampleScript,
@@ -125,9 +153,12 @@ export default function ModelContent({
   contentModelStructure,
   content,
   content1,
+  content1p1,
+  content1p2,
   content2,
   content2p1,
   content2p2,
+  content2p3,
   content3,
   content3p1,
   content3p2,
@@ -228,9 +259,12 @@ export default function ModelContent({
 
             <div className="mt-2 flex flex-col gap-2">
               {content1 && <p>{content1}</p>}
+              {content1p1 && <p>{content1p1}</p>}
+              {content1p2 && <p>{content1p2}</p>}
               {content2 && <p>{content2}</p>}
               {content2p1 && <p>{content2p1}</p>}
               {content2p2 && <p>{content2p2}</p>}
+              {content2p3 && <p>{content2p3}</p>}
               {content3 && <p>{content3}</p>}
               {content3p1 && <p>{content3p1}</p>}
               {content3p2 && <p>{content3p2}</p>}
@@ -362,6 +396,56 @@ export default function ModelContent({
             {selectedMenu === "menuwallet" && <Main_menuwallet />}
             {selectedMenu === "menusetting" && <Main_menusetting />}
             {selectedMenu === "unShowMenuPage" && <Main_unShowMenuPage />}
+            {selectedMenu === "checkIsLogin" && <Main_checkIsLogin />}
+            {selectedMenu === "updateLoginStatus" && <Main_updateLoginStatus />}
+            {selectedMenu === "getLocalToken" && <Main_getLocalToken />}
+            {selectedMenu === "refreshToken" && <Main_refreshToken />}
+            {selectedMenu === "refreshTokenFun" && <Main_refreshTokenFun />}
+            {selectedMenu === "getMemberTier" && <MemberTier_getMemberTier />}
+            {selectedMenu === "createMemberTier" && (
+              <MemberTier_createMemberTier />
+            )}
+            {selectedMenu === "monitorCheckToken" && (
+              <Monitor_monitorCheckToken />
+            )}
+            {selectedMenu === "RestartPin" && <Monitor_restartPin />}
+            {selectedMenu === "GetBill" && <Monitor_getBill />}
+            {selectedMenu === "GetSolarDeviceAll" && (
+              <Monitor_getSolarDeviceAll />
+            )}
+            {selectedMenu === "GetDataMonitor" && <Monitor_getDataMonitor />}
+            {selectedMenu === "WS" && <Monitor_ws />}
+            {selectedMenu === "getSelectedMonthMonitor" && (
+              <Monitor_getSelectedMonthMonitor />
+            )}
+            {selectedMenu === "getSelectedDay" && <Monitor_getSelectedDay />}
+            {selectedMenu === "openTabbill" && <Monitor_openTabbill />}
+            {selectedMenu === "RandomValueMonitorNoLogin" && (
+              <Monitor_randomValueMonitorNoLogin />
+            )}
+            {selectedMenu === "luxVal" && <Monitor_luxVal />}
+            {selectedMenu === "getMyDevice" && <My_devices_getMyDevice />}
+            {selectedMenu === "validateInputNewAddress" && (
+              <New_address_validateInput />
+            )}
+            {selectedMenu === "CreateAddress" && <New_address_createAddress />}
+            {selectedMenu === "pagination" && <Notification_pagination />}
+            {selectedMenu === "GetNotification" && (
+              <Notification_getNotification />
+            )}
+            {selectedMenu === "getOid" && <Order_info_cancel_refund_getOid />}
+            {selectedMenu === "sendRefund" && (
+              <Order_info_cancel_refund_sendRefund />
+            )}
+            {selectedMenu === "cancelOrder_order_info_cancel_refund" && (
+              <Order_info_cancel_refund_cancelOrder_order_info_cancel_refund />
+            )}
+            {selectedMenu === "getOid_order_info_cancel" && (
+              <Order_info_cancel_getOid />
+            )}
+            {selectedMenu === "cancelOrder_order_info_cancel" && (
+              <Order_info_cancel_cancelOrder />
+            )}
             <p className="ml-4">{`}`}</p>
             <span className="text-[#A52A2A]">&lt;/script&gt;</span>
           </div>

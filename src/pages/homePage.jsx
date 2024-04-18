@@ -86,6 +86,27 @@ export default function HomePage() {
   // open main
   const [openMain, setOpenMain] = useState(false)
 
+  // open memberTier
+  const [openMemberTier, setOpenMemberTier] = useState(false)
+
+  // opne monitor
+  const [openMonitor, setOpenMonitor] = useState(false)
+
+  // open myDevices
+  const [openMyDevices, setOpenMyDevices] = useState(false)
+
+  // open NewAddress
+  const [openNewAddress, setOpenNewAddress] = useState(false)
+
+  // open notification
+  const [openNotification, setOpenNotification] = useState(false)
+
+  // open  order_info_cancel_refund
+  const [openOrderInfoCancelRefund, setOpenOrderInfoCancelRefund] =
+    useState(false)
+
+  const [openOrderInfoCancel, setOpenOrderInfoCancel] = useState(false)
+
   const handleModelClick = (menu) => {
     setSelectedMenu(menu)
     setOpenDrawer(false)
@@ -561,6 +582,158 @@ export default function HomePage() {
       key: "refreshTokenFun",
       category: "main",
     },
+
+    // memberTier.html
+    {
+      name: "getMemberTier()",
+      type: "specificModel",
+      key: "getMemberTier",
+      category: "memberTier",
+    },
+    {
+      name: "createMemberTier()",
+      type: "specificModel",
+      key: "createMemberTier",
+      category: "memberTier",
+    },
+
+    // monitor.html
+    {
+      name: "monitorCheckToken()",
+      type: "specificModel",
+      key: "monitorCheckToken",
+      category: "monitor",
+    },
+    {
+      name: "RestartPin()",
+      type: "specificModel",
+      key: "RestartPin",
+      category: "monitor",
+    },
+    {
+      name: "GetBill()",
+      type: "specificModel",
+      key: "GetBill",
+      category: "monitor",
+    },
+    {
+      name: "GetSolarDeviceAll()",
+      type: "specificModel",
+      key: "GetSolarDeviceAll",
+      category: "monitor",
+    },
+    {
+      name: "GetDataMonitor()",
+      type: "specificModel",
+      key: "GetDataMonitor",
+      category: "monitor",
+    },
+    {
+      name: "WS()",
+      type: "specificModel",
+      key: "WS",
+      category: "monitor",
+    },
+    {
+      name: "getSelectedMonth()",
+      type: "specificModel",
+      key: "getSelectedMonthMonitor",
+      category: "monitor",
+    },
+    {
+      name: "getSelectedDay()",
+      type: "specificModel",
+      key: "getSelectedDay",
+      category: "monitor",
+    },
+    {
+      name: "openTabbill()",
+      type: "specificModel",
+      key: "openTabbill",
+      category: "monitor",
+    },
+    {
+      name: "RandomValueMonitorNoLogin()",
+      type: "specificModel",
+      key: "RandomValueMonitorNoLogin",
+      category: "monitor",
+    },
+    {
+      name: "luxVal()",
+      type: "specificModel",
+      key: "luxVal",
+      category: "monitor",
+    },
+
+    //my_devices.html
+    {
+      name: "getMyDevice()",
+      type: "specificModel",
+      key: "getMyDevice",
+      category: "myDevices",
+    },
+
+    // new_address.html
+    {
+      name: "validateInput()",
+      type: "specificModel",
+      key: "validateInputNewAddress",
+      category: "newAddress",
+    },
+    {
+      name: "CreateAddress()",
+      type: "specificModel",
+      key: "CreateAddress",
+      category: "newAddress",
+    },
+
+    // notification.html
+    {
+      name: "pagination()",
+      type: "specificModel",
+      key: "pagination",
+      category: "notification",
+    },
+    {
+      name: "GetNotification()",
+      type: "specificModel",
+      key: "GetNotification",
+      category: "notification",
+    },
+
+    // order_info_cancel_refund.html
+    {
+      name: "getOid()",
+      type: "specificModel",
+      key: "getOid",
+      category: "orderInfoCancelRefund",
+    },
+    {
+      name: "sendRefund()",
+      type: "specificModel",
+      key: "sendRefund",
+      category: "orderInfoCancelRefund",
+    },
+    {
+      name: "cancelOrder()",
+      type: "specificModel",
+      key: "cancelOrder_order_info_cancel_refund",
+      category: "orderInfoCancelRefund",
+    },
+
+    // order_info_cancel.html
+    {
+      name: "getOid()",
+      type: "specificModel",
+      key: "getOid_order_info_cancel",
+      category: "orderInfoCancel",
+    },
+    {
+      name: "cancelOrder()",
+      type: "specificModel",
+      key: "cancelOrder_order_info_cancel",
+      category: "orderInfoCancel",
+    },
   ]
 
   // data  modelStructure
@@ -621,6 +794,7 @@ export default function HomePage() {
       type: "generalModel",
       key: "messagePage",
     },
+
     ,
   ]
 
@@ -790,6 +964,52 @@ export default function HomePage() {
         return "refreshToken()"
       case "refreshTokenFun":
         return "refreshTokenFun()"
+      case "getMemberTier":
+        return "getMemberTier()"
+      case "createMemberTier":
+        return "createMemberTier(data)"
+      case "monitorCheckToken":
+        return "monitorCheckToken()"
+      case "RestartPin":
+        return "RestartPin(id)"
+      case "GetBill":
+        return "GetBill(type, day, month, year)"
+      case "GetSolarDeviceAll":
+        return "GetSolarDeviceAll(getText)"
+      case "GetDataMonitor":
+        return "GetDataMonitor()"
+      case "WS":
+        return "WS()"
+      case "getSelectedMonthMonitor":
+        return "getSelectedMonth()"
+      case "getSelectedDay":
+        return "getSelectedDay()"
+      case "openTabbill":
+        return "openTabbill(tab)"
+      case "RandomValueMonitorNoLogin":
+        return "RandomValueMonitorNoLogin()"
+      case "luxVal":
+        return "luxVal()"
+      case "getMyDevice":
+        return "getMyDevice()"
+      case "validateInputNewAddress":
+        return "validateInput()"
+      case "CreateAddress":
+        return "CreateAddress()"
+      case "pagination":
+        return "pagination()"
+      case "GetNotification":
+        return "GetNotification(currentPage)"
+      case "getOid":
+        return "getOid(id, dataMain, dataItem, stateName)"
+      case "sendRefund":
+        return "sendRefund(SendCancelRefund)"
+      case "cancelOrder_order_info_cancel_refund":
+        return "cancelOrder(dataItem)"
+      case "getOid_order_info_cancel":
+        return "getOid(id, dataMain, dataItem)"
+      case "cancelOrder_order_info_cancel":
+        return "cancelOrder(dataItem)"
       default:
         return ""
     }
@@ -2039,6 +2259,539 @@ export default function HomePage() {
         htmlCheck="show"
       />
     ),
+
+    checkIsLogin: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Main.html"
+        headerName={getTitle()}
+        content="ฟังก์ชัน checkIsLogin ดูเหมือนจะตรวจสอบสถานะการเข้าสู่ระบบของผู้ใช้ โดยมีขั้นตอนดังนี้"
+        content1="1.เรียกใช้ฟังก์ชัน getLocalToken เพื่อดึงข้อมูล Token จาก Local Storage"
+        content2="2.เรียกใช้ฟังก์ชัน updateLoginStatus เพื่ออัปเดตสถานะการเข้าสู่ระบบ"
+        content3="3.ตรวจสอบว่า Token มีค่าหรือไม่ หากมีค่าแสดงว่าผู้ใช้เข้าสู่ระบบอยู่ จะดำเนินการดังนี้"
+        content3p1="3.1.เรียกใช้ฟังก์ชัน init และ call จากอ็อบเจ็กต์ homeObj เพื่อเริ่มต้นและดำเนินการต่อตามลำดับที่เกี่ยวข้องกับหน้าหลักของเว็บไซต์"
+        content3p2="3.2.ซ่อนส่วนที่เกี่ยวข้องกับการซื้อขายและสินทรัพย์โดยใช้ CSS เปลี่ยนแปลงค่า display เป็น 'none'"
+        content4="4.ถ้าไม่มี Token หมายความว่าผู้ใช้ยังไม่ได้เข้าสู่ระบบ จะแสดงหน้าหลัก (homePage) และเรียกใช้ฟังก์ชัน call จากอ็อบเจ็กต์ homeObj"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    updateLoginStatus: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Main.html"
+        headerName={getTitle()}
+        content="ฟังก์ชัน updateLoginStatus() ดำเนินการตรวจสอบสถานะการเข้าสู่ระบบของผู้ใช้ โดยมีขั้นตอนดังนี้"
+        content1="1.ตั้งค่าตัวแปร isLogin เป็น false เริ่มต้น"
+        content2="ถ้า Token มีค่า (ไม่เป็น null) จะดำเนินการตรวจสอบเงื่อนไขเพื่อเช็คว่า Token ยังใช้งานได้อยู่หรือไม่"
+        content2p1="2.1.หาก Token มีค่า expire หมายถึง Token มีเวลาหมดอายุ จะดำเนินการตรวจสอบว่าเวลาปัจจุบันน้อยกว่าเวลาที่ Token หมดอายุหรือไม่"
+        content2p2="2.2.ถ้าเป็นเช่นนั้น จะกำหนดค่า isLogin เป็น true เพื่อระบุว่าผู้ใช้มีการเข้าสู่ระบบ"
+        content2p3="2.3.ถ้าเวลาปัจจุบันมากกว่าหรือเท่ากับเวลาที่ Token หมดอายุ จะเรียกใช้ฟังก์ชัน refreshToken จาก mainObj เพื่อทำการรีเฟรช Token"
+        content3="3.หลังจากตรวจสอบสถานะการเข้าสู่ระบบเสร็จสิ้น จะดำเนินการตามเงื่อนไขดังนี้"
+        content3p1="3.1.ถ้า isLogin เป็น true (คือผู้ใช้มีการเข้าสู่ระบบ) จะเรียกใช้ฟังก์ชัน menuhome จาก mainObj เพื่อแสดงเมนูหน้าหลักและซ่อนหน้าล็อกอิน"
+        content3p2="3.2.ถ้า isLogin เป็น false (คือผู้ใช้ยังไม่ได้เข้าสู่ระบบหรือ Token หมดอายุ) จะซ่อนหน้าล็อกอินและเรียกใช้ฟังก์ชัน call จาก homeObj เพื่อแสดงหน้าหลัก"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getLocalToken: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Main.html"
+        headerName={getTitle()}
+        content="ฟังก์ชัน getLocalToken มีหน้าที่ดึงข้อมูล Token จาก Local Storage และเก็บไว้ในตัวแปร token ดังนี้"
+        content1="1.ใช้เมทอด getItem() ของ localStorage เพื่อดึงข้อมูลที่มีชื่อ 'token' ออกมา"
+        content2="2.ตรวจสอบว่า tokenLocal ไม่เป็น null (หมายถึงมีข้อมูล Token ใน Local Storage) และทำการดึงข้อมูลออกมาในรูปแบบ JSON โดยใช้ JSON.parse()"
+        content3="3.หากมี Token ใน Local Storage จะเก็บค่าในตัวแปร token เพื่อให้สามารถใช้ได้ในฟังก์ชันอื่นๆในโปรแกรม"
+        content4="ดังนั้นฟังก์ชันนี้จะทำหน้าที่เตรียมข้อมูล Token ให้พร้อมใช้งานโดยการดึงจาก Local Storage ในทุกครั้งที่มีการเรียกใช้งาน"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    refreshToken: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Main.html"
+        headerName={getTitle()}
+        content="ฟังก์ชัน refreshToken() มีหน้าที่เรียกใช้ฟังก์ชัน refreshTokenFun เพื่อรีเฟรช Token โดยตั้งค่าให้ทำงานตามระยะเวลาที่กำหนดดังนี้"
+        content1="1.ตรวจสอบว่ามีตัวแปร refreshTokenTimer หรือไม่ หากมีก็จะทำการล้างการเรียกใช้งานที่เกี่ยวข้องออกจากนั้นโดยใช้ clearInterval เพื่อป้องกันการเรียกใช้งานซ้ำ"
+        content2="2.ตั้งค่าตัวแปร refreshTokenTimer เป็น setInterval เพื่อเรียกใช้งานฟังก์ชัน refreshTokenFun ทุก ๆ 1800000 มิลลิวินาที (หรือ 30 นาที)"
+        content3="ดังนั้นฟังก์ชันนี้จะทำให้ refreshTokenFun ถูกเรียกใช้งานเป็นระยะเวลาที่กำหนดเพื่อรีเฟรช Token และทำให้ผู้ใช้สามารถยังคงเข้าสู่ระบบได้โดยไม่ต้องทำการลงชื่อเข้าใช้ใหม่ในช่วงเวลาที่กำหนด"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    refreshTokenFun: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Main.html"
+        headerName={getTitle()}
+        content="ฟังก์ชัน refreshTokenFun() มีหน้าที่ทำการรีเฟรช Token โดยดำเนินการตามขั้นตอนต่อไปนี้"
+        content1="1.ตรวจสอบว่า Token มีค่าเป็น null หรือไม่ หากเป็น null จะแสดงหน้า startPage และจบการทำงานของฟังก์ชันโดยการ return"
+        content2="2.สร้างข้อมูลที่จะส่งไปยัง API สำหรับการรีเฟรช Token โดยใช้ refreshToken จาก Token ปัจจุบัน"
+        content3="3.ตั้งค่าตัวแปร isRefreshTokenFinish เป็น false เพื่อระบุว่าการรีเฟรช Token ยังไม่เสร็จสิ้น"
+        content4={`4.ทำการส่ง request ไปยัง API โดยใช้ jQuery.ajax โดยระบุประเภทเป็น "post" และ URL เป็น API_SERVER + "/v1/auth/refresh" พร้อมส่งข้อมูลในรูปแบบ JSON และกำหนดค่า contentType เป็น "application/json"`}
+        content5="5.ในกรณีที่ request สำเร็จ (success) และได้รับข้อมูลที่ถูกต้อง (data.code == 0) จะทำการอัปเดต Token ใหม่ใน Local Storage และตรวจสอบว่าการรีเฟรช Token เสร็จสิ้นแล้วโดยการตั้งค่า isRefreshTokenFinish เป็น true"
+        content6="6.ในกรณีที่ request ไม่สำเร็จ (error) จะทำการแสดงข้อผิดพลาดที่เกิดขึ้นใน console log โดยใช้ console.log(error)"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // memberTier.html
+    getMemberTier: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="MemberTier.html"
+        headerName={getTitle()}
+        content="ฟังก์ชัน getMemberTier() มีหน้าที่ทำการเรียกข้อมูลระดับสมาชิก (member tier) จาก API โดยใช้ Token ที่เก็บไว้ใน Local Storage เพื่อทำการยืนยันการรับสิทธิ์ โดยมีขั้นตอนดังนี้"
+        content1="1.ดึงข้อมูล Token จาก Local Storage โดยใช้ localStorage.getItem('token') เพื่อนำไปใช้ในการส่งคำขอ API"
+        content2="2.แปลงข้อมูล Token จากรูปแบบ JSON ให้อยู่ในรูปแบบของ Object โดยใช้ JSON.parse(Token)"
+        content3="3.สร้างคำขอไปยัง API โดยใช้ jQuery.ajax โดยระบุประเภทเป็น 'get' และ URL เป็น API_SERVER + '/v1/membership/levelMaintain' พร้อมกับตั้งค่า header ในส่วนของ 'Authorization' ด้วยค่า 'Bearer ' + obj.token เพื่อส่ง Token ไปยังเซิร์ฟเวอร์เพื่อยืนยันการรับสิทธิ์"
+        content4="4.ในกรณีที่คำขอสำเร็จ (success) และได้รับข้อมูลที่ถูกต้อง (data.code == 0) จะดำเนินการสร้างระดับสมาชิก (member tier) โดยใช้ข้อมูลที่ได้รับมาและแสดงผลลัพธ์ที่ได้ใน console ด้วย console.log(item)"
+        content5={`5.ในกรณีที่คำขอไม่สำเร็จ (error) จะแสดงข้อความผิดพลาดที่เกิดขึ้นในหน้าเว็บไซต์ โดยใช้ msgPageObj.show(NSLang("sys.serverError"))`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    createMemberTier: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="MemberTier.html"
+        headerName={getTitle()}
+        content="ฟังก์ชัน createMemberTier() ใช้สำหรับสร้างข้อมูลระดับสมาชิก (member tier) ขึ้นมาแสดงในหน้าเว็บไซต์ โดยมีขั้นตอนดังนี้"
+        content1="1.ตรวจสอบระดับสมาชิก (levelState) ของข้อมูลที่ได้รับ"
+        content2="2.ในแต่ละระดับสมาชิก มีการกำหนดรูปภาพและสีของข้อมูลต่าง ๆ ตามที่กำหนดไว้"
+        content3="3.คำนวณเปอร์เซ็นต์ของค่าที่ได้รับเทียบกับค่าสูงสุดที่เป็นไปได้ในแต่ละระดับ"
+        content4="4.สร้าง HTML สำหรับแสดงข้อมูลของแต่ละรายการ (progress bar) ที่เกี่ยวข้องกับระดับสมาชิก"
+        content5="5.เพิ่ม HTML ที่สร้างไว้ลงในส่วนของ #memberLevel ในหน้าเว็บไซต์"
+        content6="6.โดยสรุปแล้วฟังก์ชันนี้ใช้สำหรับสร้างและแสดงข้อมูลระดับสมาชิกในหน้าเว็บไซต์โดยเรียกใช้งานแบบกำหนดเงื่อนไขตามระดับของสมาชิกแต่ละระดับที่ได้รับมาจาก API อย่างง่าย และเข้าใจง่ายด้วยการแสดงผลในรูปแบบ progress bar ที่สวยงามและมีความหมายในแต่ละระดับ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    //monitor.html
+    monitorCheckToken: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Monitor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน monitorCheckToken() มีหน้าที่ตรวจสอบ Token ที่เก็บไว้ใน Local Storage และดำเนินการตามเงื่อนไขต่อไปนี้"
+        content1={`1.ดึงข้อมูล Token จาก Local Storage โดยใช้ window.localStorage.getItem("token") และแปลงข้อมูลเป็น Object ด้วย JSON.parse(getToken)`}
+        content2={`2.ตรวจสอบว่า Token มีค่าเป็น null หรือไม่ หากเป็น null จะแสดงผลลัพธ์ที่เกี่ยวข้องในส่วนของหน้าจอที่ไม่ได้ลงชื่อเข้าใช้ (monitor_nologin)`}
+        content3={`3.หาก Token ไม่เป็น null จะแสดงผลลัพธ์ที่เกี่ยวข้องในส่วนของหน้าจอที่ลงชื่อเข้าใช้แล้ว (monitor_login) และดำเนินการต่อไปดังนี้`}
+        content3p1={`3.1.เชื่อมต่อ WebSocket (WS) ไปยังเซิร์ฟเวอร์โดยใช้ Token ที่ได้รับ`}
+        content3p2={`3.2.สร้างอินสแตนซ์ของ IScroll เพื่อทำให้หน้าจอมีการเลื่อนได้`}
+        content3p3={`3.3.ดึงข้อมูลการติดตามผ่านการเรียกใช้ฟังก์ชัน GetDataMonitor, GetSolarDeviceAll, WS, และ luxVal จากอ็อบเจ็กต์ monitorObj`}
+        content4="ฟังก์ชันนี้มีหน้าที่ทำการตรวจสอบสถานะ Token และดำเนินการตามเงื่อนไขที่กำหนดเพื่อแสดงผลลัพธ์ที่เหมาะสมในหน้าจอของแอปพลิเคชัน"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    RestartPin: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Monitor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน RestartPin() มีหน้าที่สำหรับส่งคำขอที่ร้องขอให้เซิร์ฟเวอร์เริ่มต้นการทำงานของอุปกรณ์ (device) โดยมีขั้นตอนดังนี้"
+        content1="1.ง Token จาก Local Storage โดยใช้ window.localStorage.getItem('token') และแปลงข้อมูลเป็น Object ด้วย JSON.parse(getToken)"
+        content2="2.สร้างคำขอไปยัง API โดยใช้ jQuery.ajax โดยระบุประเภทเป็น 'PATCH' และ URL เป็น API_SERVER + /v1/solarDevice/restart/${IdRestart} โดย IdRestart จะถูกใช้ในการสร้าง URL นี้"
+        content3="3.ตั้งค่า header สำหรับคำขอโดยใช้ Token และประเภทข้อมูลเป็น 'application/json'"
+        content4="4.ในกรณีที่คำขอสำเร็จ (success) และได้รับข้อมูลที่ถูกต้อง (data.code === 0) จะแสดงข้อความ 'Successfully Restart Device' และดำเนินการดึงข้อมูลอุปกรณ์ทั้งหมดที่เกี่ยวข้องกับพลังงานแสงอาทิตย์ด้วยการเรียกใช้ monitorObj.GetSolarDeviceAll()"
+        content5="5.ในกรณีที่คำขอไม่สำเร็จ (error) หรือเกิดข้อผิดพลาดในการส่งคำขอ จะแสดงข้อความผิดพลาดที่เกิดขึ้นโดยใช้ loaderObj.unShow() เพื่อปิดการแสดง Loader หากมีการแสดงอยู่"
+        content6="ฟังก์ชันนี้มีหน้าที่ทำการส่งคำขอให้เซิร์ฟเวอร์เริ่มต้นการทำงานของอุปกรณ์โดยใช้ Token ที่มีอยู่ใน Local Storage และจัดการกับผลลัพธ์ที่ได้ในแต่ละกรณีโดยเหมาะสม"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    GetBill: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Monitor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน GetBill() ใช้สำหรับดึงข้อมูลบิลการใช้พลังงานไฟฟ้าของอุปกรณ์พลังงานแสงอาทิตย์ โดยมีการทำงานตามขั้นตอนดังนี้"
+        content1="1.ดึง Token จาก Local Storage และแปลงข้อมูลเป็น Object ด้วย window.localStorage.getItem('token') และ JSON.parse(getToken)"
+        content2="2.กำหนด API ที่ใช้ในการเรียกข้อมูลบิลตามประเภท (type) ที่ระบุ โดยมีเงื่อนไขตามประเภทดังนี้"
+        content2p1="2.1.type == 10: ดึงข้อมูลบิลทั้งหมด"
+        content2p2="2.2.type == 20: ดึงข้อมูลบิลตามเดือนและปีที่ระบุ"
+        content2p3="2.3.type == 30: ดึงข้อมูลบิลตามวันที่ระบุ"
+        content3="3.ส่งคำขอไปยัง API โดยใช้ jQuery.ajax โดยระบุประเภทเป็น 'GET' และ URL เป็น API_SERVER + API ที่ได้กำหนด"
+        content4="4.ตั้งค่า header สำหรับคำขอโดยใช้ Token และประเภทข้อมูลเป็น 'application/json'"
+        content5="5.ในกรณีที่คำขอสำเร็จ (success) และได้รับข้อมูลที่ถูกต้อง (data.code === 0) จะแสดงผลลัพธ์ของข้อมูลบิลในส่วนที่เกี่ยวข้องในหน้าเว็บไซต์ ตามประเภทของข้อมูลที่ร้องขอ"
+        content6="6.ในกรณีที่คำขอไม่สำเร็จ (error) หรือเกิดข้อผิดพลาดในการส่งคำขอ จะแสดงข้อความผิดพลาดที่เกิดขึ้นโดยใช้ loaderObj.unShow() เพื่อปิดการแสดง Loader หากมีการแสดงอยู่"
+        content7="ฟังก์ชันนี้มีหน้าที่ทำการดึงข้อมูลบิลการใช้พลังงานไฟฟ้าของอุปกรณ์พลังงานแสงอาทิตย์โดยใช้ Token ที่มีอยู่ใน Local Storage และจัดการกับผลลัพธ์ที่ได้ในแต่ละกรณีโดยเหมาะสม"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    GetSolarDeviceAll: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Monitor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน GetSolarDeviceAll() มีหน้าที่ดึงข้อมูลอุปกรณ์โซล่าร์ทั้งหมดที่เชื่อมต่อและมีการลงทะเบียนไว้จากเซิร์ฟเวอร์ โดยใช้ Token ที่เก็บอยู่ใน Local Storage เพื่อทำการส่งคำขอไปยังเซิร์ฟเวอร์และขอข้อมูลอุปกรณ์โซล่าร์ทั้งหมดเพื่อแสดงบนหน้าเว็บไซต์ กระบวนการทำงานมีดังนี้"
+        content1="1.ดึง Token จาก Local Storage และแปลงข้อมูลเป็น Object ด้วย window.localStorage.getItem('token') และ JSON.parse(getToken)"
+        content2="2.สร้างคำขอ AJAX โดยระบุประเภทเป็น 'GET' และ URL เป็น API_SERVER + '/v1/solarDevice' เพื่อขอข้อมูลอุปกรณ์โซล่าร์ทั้งหมด"
+        content3="3.ตั้งค่า header สำหรับคำขอโดยใช้ Token และประเภทข้อมูลเป็น 'application/json'"
+        content4="4.ในกรณีที่คำขอสำเร็จ (success) จะทำการตรวจสอบจำนวนอุปกรณ์โซล่าร์ทั้งหมดที่ได้รับ ถ้าไม่มีอุปกรณ์โซล่าร์เลยจะแสดงข้อความ 'No device' และทำการปรับการแสดงผลบางอย่างตามเงื่อนไข"
+        content5="5.ในกรณีที่มีอุปกรณ์โซล่าร์อยู่ จะทำการแสดงข้อมูลของแต่ละอุปกรณ์โซล่าร์ที่ได้รับ และทำการเช็คสถานะของอุปกรณ์โซล่าร์แต่ละตัวว่าเปิดหรือปิดอยู่ โดยทำการตั้งค่าและปรับปรุงการแสดงผลตามเงื่อนไข"
+        content6="6.สำหรับแต่ละอุปกรณ์โซล่าร์ที่แสดง จะมีการสร้างฟังก์ชัน SelectDevicePin เพื่อให้สามารถเลือกตั้งค่าอุปกรณ์โซล่าร์หลักได้ โดยในฟังก์ชันนี้จะมีการส่งคำขอ PATCH ไปยังเซิร์ฟเวอร์เพื่อตั้งอุปกรณ์โซล่าร์ที่เลือกเป็นหลักและทำการปรับปรุงการแสดงผลบนหน้าเว็บไซต์ตามเงื่อนไขที่กำหนด"
+        content7="ฟังก์ชันนี้มีหน้าที่ทำการดึงข้อมูลอุปกรณ์โซล่าร์ทั้งหมดที่เชื่อมต่อและแสดงผลข้อมูลอย่างเหมาะสมบนหน้าเว็บไซต์ และมีการจัดการเช็คสถานะของอุปกรณ์โซล่าร์แต่ละตัวในการแสดงผล"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    GetDataMonitor: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Monitor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน GetDataMonitor() มีหน้าที่ดึงข้อมูลการตรวจสอบของอุปกรณ์มอนิเตอร์โดยใช้ Token จาก Local Storage และทำการส่งคำขอไปยังเซิร์ฟเวอร์เพื่อขอข้อมูล โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง Token จาก Local Storage และแปลงข้อมูลเป็น Object ด้วย window.localStorage.getItem('token') และ JSON.parse(getToken)"
+        content2="2.สร้างคำขอ AJAX โดยระบุประเภทเป็น 'GET' และ URL เป็น API_SERVER + '/v1/solarDevice/data' เพื่อขอข้อมูลการตรวจสอบ"
+        content3="3.ตั้งค่า header สำหรับคำขอโดยใช้ Token และประเภทข้อมูลเป็น 'application/json'"
+        content4="4.ในกรณีที่คำขอสำเร็จ (success) และได้รับข้อมูลที่ถูกต้อง (data.code === 0) จะทำการแสดงผลลัพธ์ข้อมูลการตรวจสอบบนหน้าเว็บไซต์ โดยใช้ข้อมูลที่ได้รับ"
+        content5="5.ในกรณีที่คำขอไม่สำเร็จ (error) หรือเกิดข้อผิดพลาดในการส่งคำขอ จะแสดงข้อความผิดพลาดที่เกิดขึ้นโดยใช้ loaderObj.unShow() เพื่อปิดการแสดง Loader หากมีการแสดงอยู่"
+        content6="ฟังก์ชันนี้มีหน้าที่ทำการดึงข้อมูลการตรวจสอบของอุปกรณ์มอนิเตอร์โดยใช้ Token ที่มีอยู่ใน Local Storage และจัดการกับผลลัพธ์ที่ได้ในกรณีที่คำขอสำเร็จและไม่สำเร็จอย่างเหมาะสม"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    WS: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Monitor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน WS มีหน้าที่เชื่อมต่อ WebSocket และทำการจัดการกับข้อมูลที่ได้รับผ่าน WebSocket โดยมีกระบวนการทำงานดังนี้"
+        content1="1.เมื่อ WebSocket เชื่อมต่อเปิดได้ (onopen) จะไม่มีการทำงานเพิ่มเติมในฟังก์ชันนี้"
+        content2="2.เมื่อได้รับข้อความผ่าน WebSocket (onmessage) จะทำการแปลงข้อความที่รับเข้ามาเป็นรูปแบบที่เหมาะสมโดยใช้ wsFormat.parseMsg(e.data, funWs) และเรียกใช้ฟังก์ชัน funWs โดยส่งข้อมูล header และ body เข้าไป"
+        content3="3.ในฟังก์ชัน funWs จะตรวจสอบ header เพื่อดูว่าข้อมูลที่ได้รับมามี target เป็นอะไร และดำเนินการตามเงื่อนไขที่กำหนด"
+        content4="4.หาก target เป็น '/v1/server/notifications' จะทำการแสดงข้อความแจ้งเตือน"
+        content5="5.หาก target เป็น '/v1/server/solarData' จะทำการอัปเดตข้อมูลโซล่าร์ที่ได้รับใหม่และแสดงผลบนหน้าเว็บไซต์ตามฟอร์แมตที่กำหนด"
+        content6="6.หาก target เป็น '/v1/server/solarDeviceAlert' จะทำการอัปเดตข้อมูลการเตือนเกี่ยวกับอุปกรณ์โซล่าร์"
+        content7="7.หาก target เป็น '/v1/server/auth' จะทำการปรับปรุง Token หรือทำการออกจากระบบตามเงื่อนไขที่กำหนด"
+        content8="8.เมื่อ WebSocket เชื่อมต่อปิด (onclose) จะไม่มีการทำงานเพิ่มเติมในฟังก์ชันนี้"
+        content9="9.เมื่อเกิดข้อผิดพลาดในการเชื่อมต่อ WebSocket (onerror) จะทำการแสดงข้อผิดพลาดและดำเนินการเชื่อมต่อใหม่ตามเงื่อนไขที่กำหนด"
+        content10="ฟังก์ชัน WS นี้มีความสำคัญในการเชื่อมต่อและรับส่งข้อมูลผ่าน WebSocket และทำการจัดการกับข้อมูลให้เหมาะสมเพื่อแสดงผลบนหน้าเว็บไซต์ได้อย่างถูกต้อง"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getSelectedMonthMonitor: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Monitor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getSelectedMonth() นี้ใช้ในการแสดงเดือนปัจจุบันและบิลของเดือนนั้น โดยมีการอัปเดตเมื่อผู้ใช้คลิกปุ่มเดือนถัดไปหรือก่อนหน้านั้นดังนี้"
+        content1="1.การเริ่มต้น: เริ่มต้นด้วยการกำหนดค่าตัวแปรเพื่อเก็บปีปัจจุบัน ดัชนีของเดือนปัจจุบัน และชื่อของเดือนปัจจุบัน จากนั้นสร้างสตริงที่มีชื่อเดือนและปีและแสดงบนหน้าเว็บไซต์ รวมถึงเรียกใช้ฟังก์ชัน `GetBill` เพื่อดึงข้อมูลบิลสำหรับเดือนปัจจุบัน"
+        content2="2.ปุ่มถัดไปและก่อนหน้า: เพิ่มตัวจัดการเหตุการณ์คลิกกับปุ่มถัดไปและก่อนหน้า โดยเมื่อคลิก ปุ่มเหล่านี้จะอัปเดตดัชนีของเดือนปัจจุบันและปีตามที่เห็นว่าเหมาะสม และเรียกใช้ฟังก์ชัน `updateCalendar`"
+        content3="3.ฟังก์ชันอัปเดตปฏิทิน: ฟังก์ชันนี้อัปเดตการแสดงผลของปฏิทินด้วยเดือนและปีใหม่ โดยตรวจสอบว่าเดือนปัจจุบันเป็นเดือนเดียวกับเดือนใหม่หรือไม่ และปรับการแสดงผลของปุ่มถัดไปตามนั้น จากนั้นอัปเดตชื่อเดือนที่แสดง ดึงข้อมูลบิลสำหรับเดือนใหม่ และอัปเดตข้อมูลบิลที่แสดง"
+        content4="4.การเริ่มต้นการแสดงผลปฏิทิน: ในท้ายที่สุด ฟังก์ชันนี้จะแสดงผลปฏิทินเริ่มต้นโดยการกำหนดเนื้อหา HTML ขององค์ประกอบปฏิทินด้วยสตริงที่สร้างขึ้น"
+        content5="โดยรวมแล้ว ฟังก์ชันนี้ทำให้ผู้ใช้สามารถนำทางระหว่างเดือน ดูบิลที่เกี่ยวข้อง และเห็นข้อมูลบิลที่อัปเดตบนหน้าเว็บไซต์ได้อย่างมีประสิทธิภาพ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getSelectedDay: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Monitor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getSelectedDay() นี้ใช้ในการแสดงวันปัจจุบันและบิลของวันนั้น โดยมีการอัปเดตเมื่อผู้ใช้คลิกปุ่มวันถัดไปหรือก่อนหน้าดังนี้"
+        content1="1.การเริ่มต้น: เริ่มต้นด้วยการกำหนดค่าของวันที่ปัจจุบัน ปีปัจจุบัน ดัชนีของเดือนปัจจุบัน และชื่อของเดือนปัจจุบัน จากนั้นสร้างสตริงที่มีรูปแบบวันที่และแสดงบนหน้าเว็บไซต์ รวมถึงเรียกใช้ฟังก์ชัน `GetBill` เพื่อดึงข้อมูลบิลสำหรับวันปัจจุบัน"
+        content2="2.ปุ่มถัดไปและก่อนหน้า: เพิ่มตัวจัดการเหตุการณ์คลิกกับปุ่มวันถัดไปและก่อนหน้า โดยเมื่อคลิก ปุ่มเหล่านี้จะอัปเดตวันที่ปัจจุบันตามที่เห็นว่าเหมาะสม และเรียกใช้ฟังก์ชัน `updateCalendarDay`"
+        content3="4.ฟังก์ชันอัปเดตปฏิทิน: ฟังก์ชันนี้อัปเดตการแสดงผลของปฏิทินด้วยวันที่และเดือนและปีใหม่ โดยตรวจสอบว่าวันที่ปัจจุบันเป็นวันเดียวกับวันใหม่หรือไม่ และปรับการแสดงผลของปุ่มถัดไปตามนั้น จากนั้นอัปเดตวันที่และเวลาที่แสดง"
+        content4="4.การเริ่มต้นการแสดงผลปฏิทิน: ในท้ายที่สุด ฟังก์ชันนี้จะแสดงผลปฏิทินเริ่มต้นโดยการกำหนดเนื้อหา HTML ขององค์ประกอบปฏิทินด้วยสตริงที่สร้างขึ้น"
+        content5="ผู้ใช้สามารถใช้ฟังก์ชันนี้เพื่อดูบิลและข้อมูลที่เกี่ยวข้องกับวันที่เฉพาะได้อย่างสะดวกและรวดเร็ว"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    openTabbill: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Monitor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน openTabbill() นี้ใช้ในการเปิดแท็บต่างๆในส่วนของบิล โดยทำงานตามขั้นตอนดังนี้"
+        content1={`ตรวจสอบและเรียกใช้ฟังก์ชันที่เกี่ยวข้องกับแต่ละแท็บ: ฟังก์ชันนี้รับพารามิเตอร์ tab เพื่อระบุว่าต้องการเปิดแท็บไหน หาก tab เป็น "Month" จะเรียกใช้ getSelectedMonth เพื่อแสดงแท็บบิลเดือนปัจจุบัน หาก tab เป็น "Day" จะเรียกใช้ getSelectedDay เพื่อแสดงแท็บบิลของวันปัจจุบัน และหาก tab เป็น "Total" จะเรียกใช้ GetBill เพื่อดึงข้อมูลบิลทั้งหมด`}
+        content2={`2.ปรับการแสดงผลแท็บ: ฟังก์ชันจะซ่อนเนื้อหาของแท็บทั้งหมดด้วยการตั้งค่า display: "none" และลบคลาส "actived" จากทุกๆ ลิงก์แท็บ จากนั้นจึงแสดงเนื้อหาของแท็บที่ถูกเลือกและเพิ่มคลาส "actived" ให้กับลิงก์แท็บนั้นๆ`}
+        content3="ดังนั้น ผู้ใช้สามารถใช้ฟังก์ชันนี้เพื่อสลับการแสดงข้อมูลบิลต่างๆ รวมถึงดูข้อมูลบิลเดือนปัจจุบัน บิลของวันปัจจุบัน และข้อมูลบิลทั้งหมดได้อย่างสะดวกและรวดเร็ว"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    RandomValueMonitorNoLogin: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Monitor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน RandomValueMonitorNoLogin() ใช้สำหรับสร้างค่าสุ่มเพื่อนำมาแสดงบนหน้าจอโดยไม่ต้องเข้าสู่ระบบ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.การสร้างตัวเลขสุ่ม: ใช้ฟังก์ชัน getRandomNumber เพื่อสร้างตัวเลขสุ่มในช่วงที่กำหนด โดยฟังก์ชันนี้จะคืนค่าเลขสุ่มในช่วงตามที่ระบุในพารามิเตอร์ min และ max"
+        content2="2.การสร้างค่าสุ่มและแสดงบนหน้าจอ: ใช้ฟังก์ชัน generateRandomNumbers เพื่อสร้างค่าสุ่มและแสดงผลบนหน้าจอ โดยรายการขององค์ประกอบที่ต้องการแสดงค่าสุ่มถูกเก็บไว้ในตัวแปร elements และจะวนลูปผ่านทุกๆ องค์ประกอบในรายการนั้นเพื่อกำหนดค่าสุ่มให้กับแต่ละองค์ประกอบโดยใช้ฟังก์ชัน getRandomNumber."
+        content3="3.การเรียกฟังก์ชันเป็นระยะเวลา: ใช้ setInterval เพื่อเรียกใช้ฟังก์ชัน generateRandomNumbers ในระยะเวลาที่กำหนด (ในที่นี้คือทุก 2 วินาที) และเก็บ ID ของ interval ที่สร้างขึ้นไว้ใน this.intervalID เพื่อใช้ในการยกเลิก interval ในการเรียกใช้ clearInterval ในขั้นตอนถัดไปเมื่อมีการเรียกใช้ฟังก์ชันใหม่อีกครั้งเพื่อป้องกันไม่ให้มีการเรียกซ้อน interval ซึ่งอาจทำให้เกิดปัญหาในการทำงานของเว็บไซต์ได้"
+        content4="ดังนั้นฟังก์ชันนี้จะทำให้ข้อมูลบนหน้าจอเปลี่ยนแปลงอย่างสุ่มทุก 2 วินาทีโดยไม่ต้องมีการเข้าสู่ระบบ ซึ่งจะเป็นประโยชน์สำหรับการทดสอบหรือการพัฒนาโปรแกรมในขั้นตอนเริ่มต้นที่ไม่ต้องการข้อมูลจริงจากเซิร์ฟเวอร์"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    luxVal: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Monitor.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน luxVal() นี้ใช้สำหรับการคำนวณและแสดงค่าความสว่าง (Lux) โดยขึ้นอยู่กับเวลาปัจจุบัน เนื่องจากค่าความสว่างในธรรมชาติมักมีการเปลี่ยนแปลงตามเวลาของวัน ดังนั้นฟังก์ชันจะคำนวณและอัปเดตค่าความสว่างทุกๆ ชั่วโมงโดยใช้เวลาปัจจุบัน เพื่อให้ข้อมูลสมจริงที่สุดตามเวลาขณะนั้น"
+        content1="1.ฟังก์ชัน getLuxByTime: ใช้เวลาปัจจุบันเพื่อคำนวณค่าความสว่างที่สมจริงตามช่วงเวลาของวัน โดยกำหนดค่าความสว่างตามช่วงเวลาที่แตกต่างกัน เช่น ตอนกลางวันค่าความสว่างจะสูง ส่วนในช่วงเย็นหรือกลางคืนค่าความสว่างจะต่ำลง"
+        content2="2.ฟังก์ชัน updateLuxEveryHour: ทำหน้าที่อัปเดตค่าความสว่างทุกๆ ชั่วโมงโดยเรียกใช้ฟังก์ชัน getLuxByTime เพื่อรับค่าความสว่างใหม่ทุกครั้งที่มีการอัปเดต"
+        content3="3.การเรียกใช้ฟังก์ชัน: เรียกใช้ฟังก์ชัน updateLuxEveryHour ทันทีเมื่อหน้าเว็บโหลดเสร็จ และเรียกใช้ setInterval เพื่ออัปเดตค่าความสว่างทุก 5 นาที (หรือ 1000 * 60 * 5 มิลลิวินาที) เพื่อให้ข้อมูลความสว่างมีความคงที่ที่สุดและอัปเดตตลอดเวลาที่เป็นไปได้ โดยการใช้ setInterval จะช่วยให้ข้อมูลที่แสดงบนหน้าจอมีความแม่นยำและเป็นปัจจุบันอยู่เสมอ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    //my_devices.html
+    getMyDevice: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="My_devices.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getMyDevice() นี้ใช้สำหรับดึงข้อมูลอุปกรณ์ที่เชื่อมต่อกับระบบโซลาร์เพาเวอร์ โดยการเรียกใช้งาน API /v1/solarDevice เพื่อรับข้อมูลอุปกรณ์ และนำข้อมูลที่ได้มาแสดงผลบนหน้าเว็บไซต์"
+        content1="1.ริ่มต้นด้วยการเรียกใช้งาน API โดยใช้ jQuery.ajax เพื่อส่งคำขอไปยังเซิร์ฟเวอร์ เพื่อรับข้อมูลอุปกรณ์โซลาร์เพาเวอร์"
+        content2="2.เมื่อคำขอสำเร็จแล้ว จะตรวจสอบสถานะของข้อมูลที่ส่งกลับมา ถ้าสถานะเป็น 0 (หมายถึงไม่มีข้อมูล) จะแสดงข้อความ 'No Device' แสดงว่าไม่มีอุปกรณ์ที่เชื่อมต่อ"
+        content3="3.หากมีข้อมูลอุปกรณ์ที่ส่งกลับมา จะนำข้อมูลดังกล่าวมาแสดงผลทีละรายการ โดยจะแสดงรายละเอียดของแต่ละอุปกรณ์ เช่น ชื่ออุปกรณ์ หมายเลขซีเรียล (PN) และที่อยู่"
+        content4="4.สำหรับแต่ละอุปกรณ์ จะมีตัวเลือกในการคลิกเพื่อดูข้อมูลเพิ่มเติมหรือปรับแต่งการตั้งค่า โดยการคลิกที่ไอคอน 'Mode_edit' ที่ติดอยู่ด้านบนของแต่ละอุปกรณ์"
+        content5="5.นอกจากนี้ยังมีการจัดการการคลิกเพื่อเลือกอุปกรณ์ เพื่อให้สามารถดำเนินการต่อไปได้ เช่น การเลือกอุปกรณ์เพียงรายการเดียวจากชุดข้อมูล"
+        content6="6.ท้ายที่สุด จะมีการใช้งาน IScroll เพื่อให้สามารถเลื่อนหน้าจอเพื่อดูรายการอุปกรณ์ที่มากเกินไปได้"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // new_address.html
+    validateInputNewAddress: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="New_address.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน validateInput นี้ใช้สำหรับตรวจสอบและกำหนดค่าข้อมูลที่ป้อนเข้ามาในช่องข้อมูลบางช่องให้ถูกต้องตามเงื่อนไขที่กำหนด โดยทำการกรองอักขระที่ไม่ต้องการออกไป และจำกัดความยาวของข้อมูลให้อยู่ในรูปแบบที่ถูกต้องด้วยการตัดความยาวให้เหลือตามเงื่อนไขที่กำหนดไว้"
+        content1="1.ตรวจสอบและกำหนดค่ารหัสไปรษณีย์ (`postcode_address และ postcode_edit_address`)"
+        content1p1={`1.1.ก่อนที่จะกำหนดค่าให้กับตัวแปร postcode_address และ postcode_edit_address จะทำการกรองอักขระที่ไม่ใช่ตัวเลขออกไป โดยใช้เมทอด replace และ Regular Expression /[^0-9]/g`}
+        content1p2={`1.2.หลังจากนั้นจะตรวจสอบความยาวของข้อมูล หากมีความยาวมากกว่า 5 ตัวอักษร จะทำการตัดข้อมูลให้เหลือเพียง 5 ตัวอักษรโดยใช้เมทอด slice`}
+        content2={`2.รวจสอบและกำหนดค่าหมายเลขโทรศัพท์ (mobile_address และ mobile_edit_address)`}
+        content2p1={`2.1.การดำเนินการในส่วนนี้เหมือนกับการตรวจสอบและกำหนดค่ารหัสไปรษณีย์ โดยกรองอักขระที่ไม่ใช่ตัวเลขออกไป และจำกัดความยาวของข้อมูลให้อยู่ในรูปแบบที่ถูกต้องโดยตัดความยาวให้เหลือตามเงื่อนไขที่กำหนดไว้`}
+        content3={`ดังนั้น ฟังก์ชันนี้จะช่วยให้ข้อมูลที่ผู้ใช้ป้อนเข้ามาในช่องข้อมูลสามารถตรวจสอบและถูกต้องตามเงื่อนไขที่กำหนดไว้ก่อนที่จะถูกนำไปใช้งานต่อไป`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    CreateAddress: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="New_address.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน CreateAddress() นี้ถูกใช้เพื่อสร้างที่อยู่ใหม่ในระบบ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง Token จาก local storage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง API"
+        content2="2.สร้าง Object mData ที่มีข้อมูลเกี่ยวกับที่อยู่ใหม่ที่ต้องการเพิ่ม"
+        content3="3.ทำการส่งข้อมูลที่อยู่ใหม่ไปยังเซิร์ฟเวอร์ผ่าน AJAX request"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // notification.html
+    pagination: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Notification.html"
+        headerName={getTitle()}
+        content="-โค้ดนี้ใช้สร้างการแบ่งหน้า (pagination) โดยใช้ข้อมูลเกี่ยวกับจำนวนหน้าทั้งหมดและหน้าปัจจุบันเพื่อสร้างปุ่มแบ่งหน้าที่เหมาะสม ดังนี้"
+        content1="1.กำหนดตัวแปร element เพื่ออ้างอิงถึง Element HTML ที่มีคลาส .pagination ul"
+        content2="2.เริ่มต้นฟังก์ชัน createPagination โดยรับพารามิเตอร์ totalPages และ currentPage ซึ่งเป็นจำนวนหน้าทั้งหมดและหน้าปัจจุบันตามลำดับ"
+        content3="3.สร้าง HTML สำหรับปุ่มแบ่งหน้าโดยใช้ค่าของ totalPages และ currentPage และเก็บไว้ในตัวแปร liTag"
+        content4="4.กำหนดคลาส active ให้กับปุ่มที่เป็นหน้าปัจจุบัน"
+        content5="5.กำหนดการทำงานของปุ่ม prev, numb, และ next โดยใช้ฟังก์ชัน click เพื่อสร้างการแบ่งหน้าใหม่โดยอ้างอิงถึงหน้าปัจจุบันและจำนวนหน้าทั้งหมด"
+        content6="6.แสดงผล HTML ที่สร้างไว้ใน element"
+        content7="7.กำหนดการแสดงผลที่เกิดขึ้นเมื่อกดปุ่ม prev, numb, และ next ซึ่งรวมถึงการโหลดข้อมูลโดยใช้ loaderObj.show() และการเรียกใช้ฟังก์ชัน GetNotification() ของ notificationObj"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    GetNotification: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Notification.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน GetNotification() ใช้สำหรับการดึงข้อมูลการแจ้งเตือนจากเซิร์ฟเวอร์ API โดยอ้างอิงจาก token ของผู้ใช้ และหน้าปัจจุบันที่กำลังแสดง (currentPage) เพื่อนำมาแสดงผลในหน้าเว็บไซต์ ดังนี้"
+        content1="1.ดึง token ของผู้ใช้จาก local storage และแปลงเป็น JSON object"
+        content2="2.ตรวจสอบหน้าปัจจุบันที่กำลังแสดง ถ้าไม่ได้ระบุหรือว่างเปล่า ให้กำหนดให้เป็นหน้าแรก (page 1)"
+        content3="3.สร้างอาร์เรย์ lengths ที่เก็บค่าของจำนวนหน้าที่เป็นไปได้"
+        content4="4.วนลูปเพื่อตรวจสอบความยาวของหน้าปัจจุบันและปรับปรุงค่าให้ถูกต้อง"
+        content5="5.กำหนดตัวแปรสำหรับเก็บข้อความแจ้งเตือนและคำนวณหน้าที่เรียกดูข้อมูล"
+        content6="6.สร้างฟังก์ชัน Notification() เพื่อดึงข้อมูลการแจ้งเตือนจากเซิร์ฟเวอร์ API โดยใช้ AJAX request และแสดงผลข้อมูลที่ได้รับ"
+        content7="7.ตรวจสอบผลลัพธ์ที่ได้รับจากการเรียก API เพื่อแสดงผลในหน้าเว็บไซต์ โดยรวมถึงการจัดการเมื่อไม่มีข้อมูลหรือเกิดข้อผิดพลาด"
+        content8="8.อัปเดตหน้าเว็บไซต์เมื่อข้อมูลถูกโหลดหรือมีการอัปเดต โดยใช้ jQuery เพื่อแสดงผลในตำแหน่งที่เหมาะสม"
+        content9="9.สร้างการจัดการเหตุการณ์เมื่อผู้ใช้คลิกที่รายการแจ้งเตือน เพื่อแสดงรายละเอียดเพิ่มเติมและทำการทำเครื่องหมายว่าอ่านแล้ว"
+        content10="10.สร้างฟังก์ชัน Read() เพื่อทำเครื่องหมายว่าอ่านแล้วเมื่อผู้ใช้เข้าดูข้อมูลแจ้งเตือน และส่ง request ไปยังเซิร์ฟเวอร์ API เพื่อทำการอัปเดตสถานะของการแจ้งเตือน"
+        content11="11.สุดท้ายคืนค่า loaderObj.unShow() เพื่อซ่อน Loader เมื่อข้อมูลถูกโหลดหรือมีการอัปเดตสำเร็จ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // order_info_cancel_refund.html
+    getOid: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_info_cancel_refund.html"
+        headerName={getTitle()}
+        content="-เป็นฟังก์ชัน getOid(id, dataMain, dataItem, stateName) ที่มีหน้าที่รับข้อมูลเพื่อแสดงบนหน้าเว็บ โดยมีการทำงานหลายอย่างดังนี้"
+        content1="1.กำหนดค่าตัวแปร SendCancelRefund เป็นข้อมูลที่ถูกส่งเข้ามาผ่านพารามิเตอร์ dataItem"
+        content2={`2.กำหนดรูปภาพให้กับ element ที่มี id "cancel_refund_image" โดยใช้ URL จาก API_SERVER และข้อมูล image จาก dataItem`}
+        content3={`3.กำหนดข้อความราคาให้กับ element ที่มี id "price_cancel_refund" จากข้อมูล price ใน dataItem`}
+        content4={`4.กำหนดข้อความชื่อสินค้าให้กับ element ที่มี id "name_cancel" จากข้อมูล name ใน dataItem`}
+        content5={`5.กำหนดข้อความวันเวลาการคืนเงินให้กับ element ที่มี class "refundTime" จากข้อมูล refundTime ใน dataMain`}
+        content6={`6.กำหนดข้อความจำนวนสินค้าที่จะยกเลิกให้กับ element ที่มี id "Quantity_cancel_refund" จากข้อมูล quantity ใน dataItem`}
+        content7={`7.กำหนดข้อมูลของผู้รับสินค้าให้กับ element ที่มี id "cancel_refund_name_delivery", "cancel_refund_mobile_name_delivery", และ "cancel_refund_address_delivery" จากข้อมูลใน dataMain`}
+        content8={`8.กำหนดข้อมูลอื่นๆ เช่นเลขที่ออเดอร์ วันที่สั่งซื้อ และวิธีการชำระเงิน จากข้อมูลใน dataMain และ dataItem ต่างๆ`}
+        content9={`นอกจากนี้ยังมีการตรวจสอบ stateName เพื่อแสดงสถานะของการคืนเงิน และกำหนดค่า CSS เพื่อแสดง/ซ่อนส่วนต่างๆ ของหน้าเว็บตามสถานะที่ได้รับจาก stateName โดยใช้ jQuery ในการเลือกและปรับแต่ง element บนหน้าเว็บตามเงื่อนไขของ stateName`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    sendRefund: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_info_cancel_refund.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชันนี้ใช้สำหรับส่งคำขอยกเลิกการคืนเงินโดยใช้ข้อมูล SendCancelRefund ที่ได้รับมาเป็นพารามิเตอร์ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึงข้อมูล oid จาก SendCancelRefund เพื่อใช้เป็นพารามิเตอร์ใน URL ของการส่งคำขอยกเลิก"
+        content2="2.ดึง Token จาก localStorage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง API"
+        content3="3.ดึง Token จาก localStorage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง APIทำการส่งคำขอ HTTP PUT ไปยัง API_SERVER โดยระบุ URL เป็น /v1/orders/refund/cancel/ ตามด้วย oid ที่ได้จากขั้นตอนที่ 1"
+        content4="4.ระบุ header ในคำขอด้วย Token ที่ได้จากขั้นตอนที่ 2 และระบุ Content-Type เป็น application/json"
+        content5="5.ระบุการทำงานของคำขอในฐานะ asynchronous และระบุเวลาในการรอคำตอบจากเซิร์ฟเวอร์เป็น 100000 milliseconds"
+        content6="6.ระบุการดำเนินการที่ต้องทำก่อนทำการส่งคำขอ (beforeSend) และการจัดการเมื่อคำขอสำเร็จ (success) หรือเกิดข้อผิดพลาด (error)"
+        content7={`7.ในส่วนของการจัดการเมื่อคำขอสำเร็จ (success) จะทำการซ่อน loader และแสดงข้อความ "Cancel Refund Successfully." หรือ "The request has been processed and cannot be cancelled." ตามผลลัพธ์ที่ได้จากเซิร์ฟเวอร์`}
+        content8="ฟังก์ชันนี้มีไวยากรณ์ที่สะอาดและมีการจัดการข้อผิดพลาดอย่างเหมาะสม เพื่อให้ผู้ใช้สามารถทราบสถานะของคำขอได้อย่างชัดเจน"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    cancelOrder_order_info_cancel_refund: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_info_cancel_refund.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน cancelOrder() รับพารามิเตอร์ dataItem ซึ่งเป็นข้อมูลที่ใช้ในการยกเลิกคำสั่งซื้อ ฟังก์ชันนี้ทำงานโดยเรียกใช้เมทอด getItemAll ของอ็อบเจกต์ cancel_orderObj และส่ง dataItem เข้าไปในเมทอดดังกล่าว เพื่อประมวลผลการยกเลิกคำสั่งซื้อต่อไป"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    //order_info_cancel.html
+    getOid_order_info_cancel: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_info_cancel.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getOid นี้ใช้สำหรับเติมข้อมูลลงใน element ต่างๆ บนหน้าเว็บด้วยข้อมูลที่ได้รับมาจาก dataMain และ dataItem ดังนี้"
+        content1={`1.กำหนด URL ของรูปภาพให้กับ element ที่มี ID "cancel_image" ด้วย URL ที่สร้างจากค่าคงที่ API_SERVER และข้อมูลรูปภาพจาก dataItem`}
+        content2={`2.กำหนดข้อความใน element ที่มี ID "price_cancel" เป็นราคาจาก dataItem, ต่อด้วย " ฿" (คาดว่าเป็นสัญลักษณ์ของสกุลเงิน)`}
+        content3={`3.กำหนดข้อความใน element ที่มี ID "name_cancel" เป็นชื่อสินค้าจาก dataItem`}
+        content4={`4.กำหนดวิธีการชำระเงินจาก dataMain และอัพเดตข้อความใน element ที่มี ID "payment_cancel" ตามที่กำหนด`}
+        content5={`5.กำหนดข้อความใน element ที่มี ID "Quantity_cancel" เป็นจำนวนสินค้าจาก dataItem, นำหน้าด้วย "Quantity x "`}
+        content6={`6.กำหนดข้อมูลเกี่ยวกับการจัดส่ง เช่น ชื่อผู้รับ, เบอร์โทรศัพท์, และที่อยู่จาก dataMain ลงใน element ที่เกี่ยวข้อง`}
+        content7={`7.จัดรูปแบบและกำหนดเวลาของการสั่งซื้อ, เวลาที่จ่ายเงิน, และเวลาจัดส่ง (หากมี) ให้กับ element ที่เกี่ยวข้อง โดยใช้ moment.js`}
+        content8={`ฟังก์ชันนี้ทำหน้าที่เติมข้อมูลที่เกี่ยวข้องกับคำสั่งซื้อลงในหน้าเว็บเพื่อให้ผู้ใช้สามารถดูข้อมูลและรายละเอียดของคำสั่งซื้อได้อย่างชัดเจนและสะดวกสบาย`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    cancelOrder_order_info_cancel: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_info_cancel.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน cancelOrder() รับพารามิเตอร์ dataItem ซึ่งเป็นข้อมูลที่ใช้ในการยกเลิกคำสั่งซื้อ ฟังก์ชันนี้ทำงานโดยเรียกใช้เมทอด getItemAll ของอ็อบเจกต์ cancel_orderObj และส่ง dataItem เข้าไปในเมทอดดังกล่าว เพื่อประมวลผลการยกเลิกคำสั่งซื้อต่อไป"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
   }
 
   const menuComponentModelStructure = {
@@ -2276,6 +3029,15 @@ export default function HomePage() {
                 setOpenForgotpass={() => setOpenForgotpass(!openForgotpass)}
                 setOpenInCome={() => setOpenInCome(!openInCome)}
                 setOpenLang={() => setOpenLang(!openLang)}
+                setOpenLevel={() => setOpenLevel(!openLevel)}
+                setOpenLocationAddress={() =>
+                  setOpenLocationAddress(!openLocationAddress)
+                }
+                setOpenLogin={() => setOpenLogin(!openLogin)}
+                setOpenMain={() => setOpenMain(!openMain)}
+                setOpenMemberTier={() => setOpenMemberTier(!openMemberTier)}
+                setOpenMonitor={() => setOpenMonitor(!openMonitor)}
+                setOpenMyDevices={() => setOpenMyDevices(!openMyDevices)}
                 openHomeHtml={openHomeHtml}
                 openAdddatalogger={openAdddatalogger}
                 openCancelOrder={openCancelOrder}
@@ -2293,6 +3055,13 @@ export default function HomePage() {
                 openForgotpass={openForgotpass}
                 openInCome={openInCome}
                 openLang={openLang}
+                openLevel={openLevel}
+                openLocationAddress={openLocationAddress}
+                openLogin={openLogin}
+                openMain={openMain}
+                openMemberTier={openMemberTier}
+                openMonitor={openMonitor}
+                openMyDevices={openMyDevices}
               />
             )}
           </ul>
@@ -2376,6 +3145,17 @@ export default function HomePage() {
               }
               setOpenLogin={() => setOpenLogin(!openLogin)}
               setOpenMain={() => setOpenMain(!openMain)}
+              setOpenMemberTier={() => setOpenMemberTier(!openMemberTier)}
+              setOpenMonitor={() => setOpenMonitor(!openMonitor)}
+              setOpenMyDevices={() => setOpenMyDevices(!openMyDevices)}
+              setOpenNewAddress={() => setOpenNewAddress(!openNewAddress)}
+              setOpenNotification={() => setOpenNotification(!openNotification)}
+              setOpenOrderInfoCancelRefund={() =>
+                setOpenOrderInfoCancelRefund(!openOrderInfoCancelRefund)
+              }
+              setOpenOrderInfoCancel={() =>
+                setOpenOrderInfoCancel(!openOrderInfoCancel)
+              }
               openHomeHtml={openHomeHtml}
               openAdddatalogger={openAdddatalogger}
               openCancelOrder={openCancelOrder}
@@ -2397,6 +3177,13 @@ export default function HomePage() {
               openLocationAddress={openLocationAddress}
               openLogin={openLogin}
               openMain={openMain}
+              openMemberTier={openMemberTier}
+              openMonitor={openMonitor}
+              openMyDevices={openMyDevices}
+              openNewAddress={openNewAddress}
+              openNotification={openNotification}
+              openOrderInfoCancelRefund={openOrderInfoCancelRefund}
+              openOrderInfoCancel={openOrderInfoCancel}
             />
           )}
         </div>

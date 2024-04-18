@@ -29,6 +29,13 @@ export default function FormModelSolarApp({
   setOpenLocationAddress,
   setOpenLogin,
   setOpenMain,
+  setOpenMemberTier,
+  setOpenMonitor,
+  setOpenMyDevices,
+  setOpenNewAddress,
+  setOpenNotification,
+  setOpenOrderInfoCancelRefund,
+  setOpenOrderInfoCancel,
   data,
   handleModelClick,
   openAdddatalogger,
@@ -51,6 +58,13 @@ export default function FormModelSolarApp({
   openLocationAddress,
   openLogin,
   openMain,
+  openMemberTier,
+  openMonitor,
+  openMyDevices,
+  openNewAddress,
+  openNotification,
+  openOrderInfoCancelRefund,
+  openOrderInfoCancel,
 }) {
   return (
     <div>
@@ -332,6 +346,97 @@ export default function FormModelSolarApp({
               category="main"
               open={openMain}
               onClick={setOpenMain}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* memberTier.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="MemberTier.html"
+              category="memberTier"
+              open={openMemberTier}
+              onClick={setOpenMemberTier}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* monitor.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Monitor.html"
+              category="monitor"
+              open={openMonitor}
+              onClick={setOpenMonitor}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* my_devices.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="My_devices.html"
+              category="myDevices"
+              open={openMyDevices}
+              onClick={setOpenMyDevices}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* new_address.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="New_address.html"
+              category="newAddress"
+              open={openNewAddress}
+              onClick={setOpenNewAddress}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* notification.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Notification.html"
+              category="notification"
+              open={openNotification}
+              onClick={setOpenNotification}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/*  order_info_cancel_refund.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Order_info_cancel_refund.html"
+              category="orderInfoCancelRefund"
+              open={openOrderInfoCancelRefund}
+              onClick={setOpenOrderInfoCancelRefund}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* order_info_cancel.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Order_info_cancel.html"
+              category="orderInfoCancel"
+              open={openOrderInfoCancel}
+              onClick={setOpenOrderInfoCancel}
               data={data}
               handleModelClick={handleModelClick}
             />

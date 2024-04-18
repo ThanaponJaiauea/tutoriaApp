@@ -4464,3 +4464,2307 @@ export function Main_unShowMenuPage() {
     </div>
   )
 }
+
+// checkIsLogin
+export function Main_checkIsLogin() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`getLocalToken()`}</p>
+        <p>{`updateLoginStatus()`}</p>
+        <p>{`if (token != null) {`}</p>
+        <div className="ml-2">
+          <p>{`homeObj.init()`}</p>
+          <p>{`homeObj.call()`}</p>
+          <p>{`$("#tradeBody").css({display: "none"})`}</p>
+          <p>{`$("#assetsBody").css({display: "none"})`}</p>
+          <p>{`$("#assets").css({display: "none"})`}</p>
+        </div>
+        <p>{`} else {`}</p>
+        <div className="ml-2">
+          <p>{`pageShow("homePage")`}</p>
+          <p>{`homeObj.call()`}</p>
+        </div>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// updateLoginStatus
+export function Main_updateLoginStatus() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`var isLogin = false`}</p>
+        <p>{`if (token != null) {`}</p>
+        <div className="ml-2">
+          <p>{`var nowTimeStamp = new Date().getTime()`}</p>
+          <p>{`if (token.expire) {`}</p>
+          <div className="ml-2">
+            <p>{`var expireTime = token.expire * 1000`}</p>
+            <p>{`if (nowTimeStamp < expireTime) {`}</p>
+            <div className="ml-2">
+              <p>{`isLogin = true`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`mainObj.refreshToken()`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`if (isLogin) {`}</p>
+        <div className="ml-2">
+          <p>{`mainObj.menuhome()`}</p>
+          <p>{`pageUnShow("loginPage")`}</p>
+        </div>
+        <p>{`} else {`}</p>
+        <div className="ml-2">
+          <p>{`pageUnShow("loginPage")`}</p>
+          <p>{`homeObj.call()`}</p>
+        </div>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getLocalToken
+export function Main_getLocalToken() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`var tokenLocal = localStorage.getItem("token")`}</p>
+        <p>{`if (tokenLocal != null) {`}</p>
+        <div className="ml-2">
+          <p>{`token = JSON.parse(tokenLocal)`}</p>
+        </div>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// refreshToken
+export function Main_refreshToken() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`if (refreshTokenTimer) {`}</p>
+        <div className="ml-2">
+          <p>{`clearInterval(refreshTokenTimer)`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`refreshTokenTimer = setInterval(function () {`}</p>
+        <div className="ml-2">
+          <p>{`refreshTokenFun()`}</p>
+        </div>
+        <p>{`}, 1800000)`}</p>
+      </div>
+    </div>
+  )
+}
+
+// refreshTokenFun
+export function Main_refreshTokenFun() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`if (token == null) {`}</p>
+        <div className="ml-2">
+          <p>{`pageShow("startPage")`}</p>
+          <p>{`return`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`var mData = {token: token.refresh}`}</p>
+        <p>{`isRefreshTokenFinish = false`}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "post",`}</p>
+          <p>{`url: API_SERVER + "/v1/auth/refresh",`}</p>
+          <p>{`data: JSON.stringify(mData),`}</p>
+          <p>{`contentType: "application/json",`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`beforeSend: function (xmlhttprequest) {},`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`if (data.code == 0) {`}</p>
+            <div className="ml-2">
+              <p>{`var tokenObj = data.result`}</p>
+              <p>{`localStorage.setItem("token", JSON.stringify(tokenObj))`}</p>
+              <p>{`getLocalToken()`}</p>
+              <p>{`isRefreshTokenFinish = true`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`// mainObj.checkAjaxResult(data.code);`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xmlhttprequest, error) {`}</p>
+          <div className="ml-2">
+            <p>{`console.log(error)`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`complete: function () {},`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+    </div>
+  )
+}
+
+//memberTier.html
+//MemberTier_getMemberTier
+export function MemberTier_getMemberTier() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`var Token = localStorage.getItem('token')`}</p>
+        <p>{`const obj = JSON.parse(Token);`}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: 'get',`}</p>
+          <p>{`url: API_SERVER + '/v1/membership/levelMaintain',`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`'Authorization': 'Bearer ' + obj.token`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`if (data.code == 0) {`}</p>
+            <div className="ml-2">
+              <p>{`var item = data.result`}</p>
+              <p>{`memberTierObj.createMemberTier(item)`}</p>
+              <p>{`console.log(item);`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`msgPageObj.show(getStatusCode(data.code))`}</p>
+              <p>{`console.log('fail');`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xhr, status, error) {`}</p>
+          <div className="ml-2">
+            <p>{`msgPageObj.show(NSLang("sys.serverError"))`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// createMemberTier
+export function MemberTier_createMemberTier() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2 flex flex-col gap-4">
+        <div>
+          <p>{` $.each(data, function () {`}</p>
+        </div>
+
+        <div>
+          <div className="ml-2">
+            <p>{`var levelState = data.level`}</p>
+            <p>{`if (levelState === 0) {`}</p>
+            <div className="ml-2">
+              <p>{`$("#iconLevel").attr("src", "./pic/member/level1.png").css("width", "140px")`}</p>
+              <p>{`$("#classic1").css({`}</p>
+              <div className="ml-2">
+                <p>{`color: "white",`}</p>
+                <p>{`"font-weight": "bold",`}</p>
+                <p>{`"border-bottom": "2px solid #fff",`}</p>
+              </div>
+              <p>{`})`}</p>
+              <p>{`$(".progress-bar-fill").css(`}</p>
+              <div className="ml-2">
+                <p>{`"background", "linear-gradient(99.92deg, #F29447 -8.34%, #AA5E26 18.18%, #FFAB48 51.48%, #A15012 79.7%, #D88038 104.53%), #F29447")`}</p>
+              </div>
+            </div>
+            <p>{`} else if (levelState === 0) {`}</p>
+            <div className="ml-2">
+              <p>{`$(".progress-bar-fill").css("background", "red")`}</p>
+              <p>{`$("#iconLevel").attr("src", "./pic/member/level2.png").css("width", "140px")`}</p>
+              <p>{`$("#silver.tabshow").css({`}</p>
+              <div className="ml-2">
+                <p>{`color: "white",`}</p>
+                <p>{`"font-weight": "bold",`}</p>
+                <p>{`"border-bottom": "2px solid #fff",`}</p>
+              </div>
+              <p>{`})`}</p>
+            </div>
+            <p>{`} else if (levelState === 20) {`}</p>
+            <div className="ml-2">
+              <p>{`$("#iconLevel").attr("src", "./pic/member/level3.png").css("width", "140px")`}</p>
+              <p>{`$("#gold").css({`}</p>
+              <div className="ml-2">
+                <p>{`color: "white",`}</p>
+                <p>{`"font-weight": "bold",`}</p>
+                <p>{`"border-bottom": "2px solid #fff",`}</p>
+              </div>
+              <p>{`})`}</p>
+            </div>
+            <p>{`} else if (levelState === 30) {`}</p>
+            <div className="ml-2">
+              <p>{`$("#iconLevel").attr("src", "./pic/member/level4.png").css("width", "140px")`}</p>
+              <p>{`$("#platinum.tabshow").css({`}</p>
+              <div className="ml-2">
+                <p>{`color: "white",`}</p>
+                <p>{`"font-weight": "bold",`}</p>
+                <p>{`"border-bottom": "2px solid #fff",`}</p>
+              </div>
+              <p>{`})`}</p>
+              <p>{`$("#memberLevel").html(`}</p>
+              <div className="ml-2">
+                <p>{`"<div class='other-div'> <img src='./pic/member/level4-item.png' style='width: 200px;' alt=''></div>"`}</p>
+              </div>
+              <p>{`)`}</p>
+              <p>{`return // Exit the function early`}</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p>{`// Order Quantity`}</p>
+          <p>{`var maxCapacityOrderQuantity;`}</p>
+          <p>{`if (levelState === 0) {`}</p>
+          <div className="ml-2">
+            <p>{`maxCapacityOrderQuantity = 6;`}</p>
+          </div>
+          <p>{`} else if (levelState === 20) {`}</p>
+          <div className="ml-2">
+            <p>{`maxCapacityOrderQuantity = 200;`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`var currentAmountOrderQuantity = data.numberOrders;`}</p>
+          <p>{`var percentageOrderQuantity =`}</p>
+          <div className="ml-2">
+            <p>{`(currentAmountOrderQuantity / maxCapacityOrderQuantity) * 100;`}</p>
+          </div>
+        </div>
+
+        <div>
+          <p>{`// Order Amount`}</p>
+          <p>{`var maxCapacityOrderAmount;`}</p>
+          <p>{`if (levelState === 0) {`}</p>
+          <div className="ml-2">
+            <p>{`maxCapacityOrderAmount = 1500;`}</p>
+          </div>
+          <p>{`} else if (levelState === 20) {`}</p>
+          <div className="ml-2">
+            <p>{`maxCapacityOrderAmount = 1000;`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`var currentAmountOrderAmount = data.orderTotals;`}</p>
+          <p>{`var percentageOrderAmount =`}</p>
+          <div className="ml-2">
+            <p>{`(currentAmountOrderAmount / maxCapacityOrderAmount) * 100;`}</p>
+          </div>
+        </div>
+
+        <div>
+          <p>{`// Invitation Codes`}</p>
+          <p>{`var maxCapacityInvitationCodes;`}</p>
+          <p>{`if (levelState === 0) {`}</p>
+          <div className="ml-2">
+            <p>{`maxCapacityInvitationCodes = 6;`}</p>
+          </div>
+          <p>{`} else if (levelState === 20) {`}</p>
+          <div className="ml-2">
+            <p>{`maxCapacityInvitationCodes = 2000;`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`var currentAmountInvitationCodes = data.inviteCodes;`}</p>
+          <p>{`var percentageInvitationCodes =`}</p>
+          <div className="ml-2">
+            <p>{`(currentAmountInvitationCodes / maxCapacityInvitationCodes) * 100;`}</p>
+          </div>
+        </div>
+
+        <div>
+          <p>{`// Electricity Usage`}</p>
+          <p>{`var maxCapacityElectricityUsage;`}</p>
+          <p>{`if (levelState === 0) {`}</p>
+          <div className="ml-2">
+            <p>{`maxCapacityElectricityUsage = 500;`}</p>
+          </div>
+          <p>{`} else if (levelState === 20) {`}</p>
+          <div className="ml-2">
+            <p>{`maxCapacityElectricityUsage = 2000;`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`var currentAmountElectricityUsage = data.electricityCoin;`}</p>
+          <p>{`var percentageElectricityUsage =`}</p>
+          <div className="ml-2">
+            <p>{`(currentAmountElectricityUsage / maxCapacityElectricityUsage) * 100;`}</p>
+          </div>
+        </div>
+
+        <div>
+          <p>{`// Check In`}</p>
+          <p>{`var maxCapacityCheckIn;`}</p>
+          <p>{`if (levelState === 0) {`}</p>
+          <div className="ml-2">
+            <p>{`maxCapacityCheckIn = 60;`}</p>
+          </div>
+          <p>{`} else if (levelState === 20) {`}</p>
+          <div className="ml-2">
+            <p>{`maxCapacityCheckIn = 20;`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`var currentAmountCheckIn = data.checkIn;`}</p>
+          <p>{`var percentageCheckIn =`}</p>
+          <div className="ml-2">
+            <p>{`(currentAmountCheckIn / maxCapacityCheckIn) * 100;`}</p>
+          </div>
+        </div>
+
+        <div>
+          <p>{`function createProgressBar(name,maxCapacity,percentage) {`}</p>
+          <p>var progressBarHTML = `</p>
+          <p>{`<div class="progress-bar-container">`}</p>
+          <p>{`<ul class="label-level">`}</p>
+          <p>{`<li >{name}</li>`}</p>
+          <p>{`</ul>`}</p>
+          <p>{`<div class="current-level"><span class="current-amount">{currentAmount}</span>/{maxCapacity}</div>`}</p>
+          <p>{`<div class="progress-bar">`}</p>
+          <p>{`<div class="progress-bar-fill" style="width: [{percentage}%; {`}</p>
+          <p>levelState === 0</p>
+          <p>{`? "background: linear-gradient(99.92deg, #F29447 -8.34%, #AA5E26 18.18%, #FFAB48 51.48%, #A15012 79.7%, #D88038 104.53%), #F29447;"`}</p>
+          <p>: levelState === 10</p>
+          <p>{`? "background: linear-gradient(53deg, #9DAEB5 100%, #5F6D77 100%, #CBDFE6 100%, #97A1AC 100%, #6B7984 100%, #414A53 100%);"`}</p>
+          <p>: levelState === 20</p>
+          <p>{`? "background: linear-gradient(53deg, #F3A101 100%, #ED9503 100%, #F5C051 100%, #F8B001 100%, #EC963A 100%, #F5BB4E 100%);"`}</p>
+          <p>: ""</p>
+          <p>{`}"></div>`}</p>
+          <p>{`</div>`}</p>
+          <p>{`</div>`}</p>
+          <p>{`return progressBarHTML`}</p>
+          <p>{` }`}</p>
+        </div>
+
+        <div>
+          <p>{`// Append progress bars to #memberLevel`}</p>
+          <p>{`var memberHTML = ""`}</p>
+          <p>{`memberHTML += createProgressBar(`}</p>
+          <div className="ml-2">
+            <p>{`"Order Quantity",`}</p>
+            <p>{`maxCapacityOrderQuantity,`}</p>
+            <p>{`currentAmountOrderQuantity,`}</p>
+            <p>{`percentageOrderQuantity`}</p>
+          </div>
+          <p>{`)`}</p>
+          <p>{`memberHTML += createProgressBar(`}</p>
+          <div className="ml-2">
+            <p>{`"Order Amount",`}</p>
+            <p>{`maxCapacityOrderAmount,`}</p>
+            <p>{`currentAmountOrderAmount,`}</p>
+            <p>{`percentageOrderAmount`}</p>
+          </div>
+          <p>{`)`}</p>
+          <p>{`memberHTML += createProgressBar(`}</p>
+          <div className="ml-2">
+            <p>{`"Invitation Codes",`}</p>
+            <p>{`maxCapacityInvitationCodes,`}</p>
+            <p>{`currentAmountInvitationCodes,`}</p>
+            <p>{`percentageInvitationCodes`}</p>
+          </div>
+          <p>{`)`}</p>
+          <p>{`memberHTML += createProgressBar(`}</p>
+          <div className="ml-2">
+            <p>{`"Electricity Usage",`}</p>
+            <p>{`maxCapacityElectricityUsage,`}</p>
+            <p>{`currentAmountElectricityUsage,`}</p>
+            <p>{`percentageElectricityUsage`}</p>
+          </div>
+          <p>{`)`}</p>
+          <p>{`memberHTML += createProgressBar(`}</p>
+          <div className="ml-2">
+            <p>{`"Check In",`}</p>
+            <p>{`maxCapacityCheckIn,`}</p>
+            <p>{`currentAmountCheckIn,`}</p>
+            <p>{`percentageCheckIn`}</p>
+          </div>
+          <p>{`)`}</p>
+          <p>{`$("#memberLevel").html(memberHTML)`}</p>
+        </div>
+
+        <div>
+          <p>{`})`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// monitor.html
+//monitorCheckToken
+export function Monitor_monitorCheckToken() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`getToken = window.localStorage.getItem("token")`}</p>
+        <p>{`token = JSON.parse(getToken)`}</p>
+        <p>{`console.log(token)`}</p>
+        <p>{`if (token == null) {`}</p>
+        <div className="ml-2">
+          <p>{`$("#show_on_status_monitor").css({display: "none"})`}</p>
+          <p>{`$("#show_off_status_monitor").css({display: "none"})`}</p>
+          <p>{`$("#monitor_nologin").css({display: "flex"})`}</p>
+          <p>{`$("#monitor_login").css({display: "none"})`}</p>
+          <p>{`$("#copy_datalogger_text").css({display: "none"})`}</p>
+          <p>{`$("#MonitorScroller").css({display: "block"})`}</p>
+          <p>{`clearInterval(monitorObj.RandomValueMonitorNoLogin())`}</p>
+          <p>{`monitorObj.RandomValueMonitorNoLogin()`}</p>
+          <p>{`monitorObj.init()`}</p>
+          <p>{`myScroll = new IScroll("#monitorPage", {probeType: 1, mouseWheel: true})`}</p>
+        </div>
+        <p>{`} else {`}</p>
+        <div className="ml-2">
+          <p>{`$("#monitor_nologin").css({display: "none"})`}</p>
+          <p>{`$("#monitor_login").css({display: "flex"})`}</p>
+          <p>{`$("#MonitorScroller").css({display: "block"})`}</p>
+          <p>{`connectWS()`}</p>
+          <p>{`function connectWS() {`}</p>
+          <div className="ml-2">
+            <p>{`ws = new WebSocket(`}</p>
+            <div className="ml-2">
+              <p>{`"ws://18.143.194.72/solarWs/ws/session?Authorization=" + token.token`}</p>
+            </div>
+            <p>{`)`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`myScroll = new IScroll("#monitorPage", {probeType: 1, mouseWheel: true})`}</p>
+          <p>{`monitorObj.GetDataMonitor()`}</p>
+          <p>{`monitorObj.GetSolarDeviceAll()`}</p>
+          <p>{`monitorObj.WS()`}</p>
+          <p>{`monitorObj.luxVal()`}</p>
+        </div>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// RestartPin
+export function Monitor_restartPin() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`console.log(id)`}</p>
+        <p>{`var getToken = window.localStorage.getItem("token")`}</p>
+        <p>{`var token = JSON.parse(getToken)`}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "PATCH",`}</p>
+          <p>{`url: API_SERVER + \`/v1/solarDevice/restart/{IdRestart}\`,`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`Authorization: "Bearer " + token.token,`}</p>
+            <p>{`"Content-Type": "application/json",`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`if (data.code === 0) {`}</p>
+            <div className="ml-2">
+              <p>{`msgObj4.show("Successfully Restart Device", function () {`}</p>
+              <div className="ml-2">
+                <p>{`msgObj4.unShow()`}</p>
+                <p>{`monitorObj.GetSolarDeviceAll()`}</p>
+              </div>
+              <p>{`})`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`msgPageObj.show(getStatusCode(data.code))`}</p>
+              <p>{`loaderObj.unShow()`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xmlhttprequest, error) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow()`}</p>
+          </div>
+          <p>{`},`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+    </div>
+  )
+}
+
+// GetBill
+export function Monitor_getBill() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem("token")`}</p>
+        <p>{`var token = JSON.parse(getToken)`}</p>
+        <p>{`var API`}</p>
+        <p>{`if (type == 10) {`}</p>
+        <div className="ml-2">
+          <p>{`API = \`/v1/solarDevice/electricityBill?type=10\``}</p>
+        </div>
+        <p>{`} else if (type == 20) {`}</p>
+        <div className="ml-2">
+          <p>{`API = \`/v1/solarDevice/electricityBill?type=20&year={year}&month={month}\``}</p>
+        </div>
+        <p>{`} else if (type == 30) {`}</p>
+        <div className="ml-2">
+          <p>{`API = \`/v1/solarDevice/electricityBill?type=30&date={day}-{month}-{year}\``}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "get",`}</p>
+          <p>{`url: API_SERVER + API,`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`Authorization: "Bearer " + token.token,`}</p>
+            <p>{`"Content-Type": "application/json",`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`if (data.code === 0) {`}</p>
+            <div className="ml-2">
+              <p>{`if (type == 10) {`}</p>
+              <div className="ml-2">
+                <p>{`$("#total_unit").text(data.result.unit)`}</p>
+                <p>{`$("#total_bill").text(data.result.profitEnergyBill)`}</p>
+                <p>{`$("#total_save").text(data.result.profitEnergyBill)`}</p>
+              </div>
+              <p>{`}`}</p>
+              <p>{`if (type == 20) {`}</p>
+              <div className="ml-2">
+                <p>{`$("#month_unit").text(data.result.unit)`}</p>
+                <p>{`$("#month_bill").text(data.result.profitEnergyBill)`}</p>
+                <p>{`$("#month_save").text(data.result.profitEnergyBill)`}</p>
+              </div>
+              <p>{`}`}</p>
+              <p>{`if (type == 30) {`}</p>
+              <div className="ml-2">
+                <p>{`$("#day_unit").text(data.result.unit)`}</p>
+                <p>{`$("#day_bill").text(data.result.profitEnergyBill)`}</p>
+                <p>{`$("#day_save").text(data.result.profitEnergyBill)`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`loaderObj.unShow()`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xmlhttprequest, error) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow()`}</p>
+          </div>
+          <p>{`},`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+    </div>
+  )
+}
+
+//GetSolarDeviceAll
+export function Monitor_getSolarDeviceAll() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem("token")`}</p>
+        <p>{`var token = JSON.parse(getToken)`}</p>
+        <p>{`var str = ""`}</p>
+        <p>{`$("#check_status_monitor").prop("disabled", true)`}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "get",`}</p>
+          <p>{`url: API_SERVER + "/v1/solarDevice",`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`Authorization: "Bearer " + token.token,`}</p>
+            <p>{`"Content-Type": "application/json",`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`if (data.records === 0) {`}</p>
+            <div className="ml-2">
+              <p>{`$("#number_device").text("No device")`}</p>
+              <p>{`$("#show_off_status_monitor").css("display", "none")`}</p>
+              <p>{`$("#selected_number").css("width", "75px")`}</p>
+              <p>{`$("#device_pn_monitor").html("&nbsp;-")`}</p>
+              <p>{`$("#device_name_monitor").html("&nbsp;-")`}</p>
+              <p>{`$(".BG_switch").css({display: "none"})`}</p>
+              <p>{`$("#copy_datalogger_text").css({display: "none"})`}</p>
+              <p>{`$("#restart_datalogger").unbind()`}</p>
+              <p>{`$("#restart_datalogger").click(function () {`}</p>
+              <div className="ml-2">
+                <p>{`msgObj3.show(`}</p>
+                <div className="ml-2">
+                  <p>{`'<div style="margin-top: 10px;margin-bottom: 10px;"> <span style="font-size:12px;"> You haven't added a data logger. Please add a data logger to continue </span></div>',`}</p>
+                  <p>{`function () {`}</p>
+                  <div className="ml-2">
+                    <p>{`msgObj3.unShow()`}</p>
+                    <p>{`pageShow("dataloggerPage")`}</p>
+                  </div>
+                  <p>{`}`}</p>
+                </div>
+                <p>{`)`}</p>
+              </div>
+              <p>{`})`}</p>
+              <p>{`monitorObj.RandomValueMonitorNoLogin()`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`$("#selected_number").css("width", "100%")`}</p>
+              <p>{`$(".BG_switch").css({display: "flex"})`}</p>
+              <p>{`$("#copy_datalogger_text").css("display", "block")`}</p>
+              <p>{`$("#report_data").css("display", "flex")`}</p>
+              <p>{`$("#restart_datalogger").unbind()`}</p>
+              <p>{`$("#restart_datalogger").click(function () {`}</p>
+              <div className="ml-2">
+                <p>{`monitorObj.GetSolarDeviceAll()`}</p>
+                <p>{`var Pin = $("#number_device").val()`}</p>
+                <p>{`msgObj3.show(`}</p>
+                <div className="ml-2">
+                  <p>{`'<div>Do you sure to restart the Datalogger</div>',`}</p>
+                  <p>{`function () {`}</p>
+                  <div className="ml-2">
+                    <p>{`monitorObj.RestartPin(IdRestart)`}</p>
+                    <p>{`msgObj3.unShow()`}</p>
+                  </div>
+                  <p>{`}`}</p>
+                </div>
+                <p>{`)`}</p>
+              </div>
+            </div>
+          </div>
+          <p>{`if (data.code === 0) {`}</p>
+          <div className="ml-2">
+            <p>{`data.result.forEach(function (items) {`}</p>
+            <div className="ml-2">
+              <p>{`str += '<li id="Pin_' + items.id + '" style="padding: 5px 0px 5px 0px; display: flex; align-items: center; justify-content: center; width: 100%; height: auto; background: #ffffff; border: 1px solid rgba(59, 120, 254, 0.20); color: #383838;">'`}</p>
+              <p>{`str += '<img style="position: absolute; left: 5%; height: 20px; width: 20px; margin-right: 5px;" class="data_logger_class">'`}</p>
+              <p>{`str += '<span  id="wd_main_' + items.id + '"  style="width: 75%; margin: 0 auto; word-wrap: break-word;">'`}</p>
+              <p>{`str += '<span  id="wd_' + items.id + '" >'`}</p>
+              <p>{`var width = $("#wd_main_" + items.id).width()`}</p>
+              <p>{`var wd_main = $("#wd_" + items.id).width()`}</p>
+              <p>{`str += items.name`}</p>
+              <p>{`str += \`</span>\`}`}</p>
+              <p>{`str += \`</span>\`}`}</p>
+              <p>{`str += \`</li>\`}`}</p>
+              <p>{`if (items.main === true) {`}</p>
+              <div className="ml-2">
+                <p>{`if (items.status == 10) {`}</p>
+                <div className="ml-2">
+                  <p>{`$("#show_off_status_monitor").css("display", "none")`}</p>
+                  <p>{`$("#show_on_status_monitor").css("display", "block")`}</p>
+                  <p>{`$(".switch").css("background", "#4CD462")`}</p>
+                  <p>{`$(".BG-ON_OFF").css("background", "#EAFFED")`}</p>
+                  <p>{`$(".BG_switch").css("background", "radial-gradient(50% 50% at 50% 50%, #518259 0%, #B0FFBD 100%)")`}</p>
+                </div>
+                <p>{`} else {`}</p>
+                <div className="ml-2">
+                  <p>{`$("#show_off_status_monitor").css("display", "block")`}</p>
+                  <p>{`$("#show_on_status_monitor").css("display", "none")`}</p>
+                  <p>{`$(".switch").css("background", "#FF5247")`}</p>
+                  <p>{`$(".BG-ON_OFF").css("background", "#FFEAEA")`}</p>
+                  <p>{`$(".BG_switch").css("background", "radial-gradient(50% 50% at 50% 50%, #AA3C3C 0%, #FF9D9D 100%)")`}</p>
+                </div>
+                <p>{`}`}</p>
+                <p>{`$("#number_device").val(items.pn)`}</p>
+                <p>{`IdRestart = items.id`}</p>
+                <p>{`$("#device_pn_monitor").val(items.pn)`}</p>
+                <p>{`$("#device_name_monitor").val(items.name)`}</p>
+                <p>{`var divText = document.getElementById("number_device").textContent`}</p>
+                <p>{`var textLength = divText.length`}</p>
+                <p>{`if (textLength > 15) {`}</p>
+                <div className="ml-2">
+                  <p>{`var trimmedText = divText.substring(0, 15)`}</p>
+                </div>
+                <p>{`}`}</p>
+                <p>{`var device_name_monitor = document.getElementById("device_name_monitor").textContent`}</p>
+                <p>{`var textLength = device_name_monitor.length`}</p>
+                <p>{`if (textLength > 12) {`}</p>
+                <div className="ml-2">
+                  <p>{`var trimmedText = device_name_monitor.substring(0, 12)`}</p>
+                  <p>{`$("#device_name_monitor").text(trimmedText + "...")`}</p>
+                </div>
+                <p>{`}`}</p>
+                <p>{`var device_pin_monitor = document.getElementById("device_pn_monitor").value`}</p>
+                <p>{`var textLength_2 = device_pin_monitor.length`}</p>
+                <p>{`if (textLength_2 > 13) {`}</p>
+                <div className="ml-2">
+                  <p>{`var trimmedText_2 = device_pin_monitor.substring(0, 11)`}</p>
+                  <p>{`$("#device_pn_monitor").text(trimmedText_2 + "...")`}</p>
+                </div>
+                <p>{`}`}</p>
+              </div>
+            </div>
+            <p>{`setTimeout(() => {}, 500)`}</p>
+          </div>
+          <p>{`})`}</p>
+          <p>{`$("#option_number").html(str)`}</p>
+          <p>{`$(".data_logger_class").attr("src", picRes["data_logger.png"])`}</p>
+          <p>{`$.each(data.result, function (index, IdPin) {`}</p>
+          <div className="ml-2">
+            <p>{`var isDuplicate = SelectMyIDPin.some(function (item) {`}</p>
+            <div className="ml-2">
+              <p>{`return item.id === IdPin.id`}</p>
+            </div>
+            <p>{`})`}</p>
+            <p>{`if (!isDuplicate) {`}</p>
+            <div className="ml-2">
+              <p>{`SelectMyIDPin.push({`}</p>
+              <div className="ml-2">
+                <p>{`id: IdPin.id,`}</p>
+                <p>{`pn: IdPin.pn,`}</p>
+                <p>{`name: IdPin.name,`}</p>
+              </div>
+              <p>{`})`}</p>
+            </div>
+          </div>
+          <p>{`})`}</p>
+          <p>{`$.each(SelectMyIDPin, function (index, pn) {`}</p>
+          <div className="ml-2">
+            <p>{`$(`}</p>
+            <p>{`#Pin_{pn.id}`}</p>
+            <p>{`).unbind()`}</p>
+            <p>{`$(`}</p>
+            <p>{`#Pin_{pn.id}`}</p>
+            <p>{`).click(function (event) {`}</p>
+            <div className="ml-2">
+              <p>{`SelectDevicePin(pn.id, pn.pn, pn.name)`}</p>
+            </div>
+            <p>{`})`}</p>
+          </div>
+          <p>{`})`}</p>
+          <p>{`function SelectDevicePin(IdPIN, pin, name) {`}</p>
+          <div className="ml-2">
+            <p>{`var getToken = window.localStorage.getItem("token")`}</p>
+            <p>{`var token = JSON.parse(getToken)`}</p>
+            <p>{`$.ajax({`}</p>
+            <div className="ml-2">
+              <p>{`type: "PATCH",`}</p>
+              <p>{`url: API_SERVER + \`/v1/solarDevice/main/\${IdPIN}\`,`}</p>
+              <p>{`headers: {`}</p>
+              <div className="ml-2">
+                <p>{`Authorization: "Bearer " + token.token,`}</p>
+                <p>{`"Content-Type": "application/json",`}</p>
+              </div>
+              <p>{`},`}</p>
+              <p>{`dataType: "json",`}</p>
+              <p>{`async: true,`}</p>
+              <p>{`timeout: 100000,`}</p>
+              <p>{`success: function (data) {`}</p>
+              <div className="ml-2">
+                <p>{`if (data.code === 0) {`}</p>
+                <div className="ml-2">
+                  <p>{`notificationObj.GetNotification()`}</p>
+                  <p>{`monitorObj.GetSolarDeviceAll()`}</p>
+                  <p>{`monitorObj.GetDataMonitor()`}</p>
+                  <p>{`var device_name_monitor = document.getElementById("device_name_monitor").textContent`}</p>
+                  <p>{`var textLength = device_name_monitor.length`}</p>
+                  <p>{`if (textLength > 15) {`}</p>
+                  <div className="ml-2">
+                    <p>{`var trimmedText = device_name_monitor.substring(0, 15)`}</p>
+                    <p>{`$("#number_device").text(trimmedText + "...")`}</p>
+                  </div>
+                  <p>{`}`}</p>
+                  <p>{`var device_pin_monitor_2 = document.getElementById("device_pn_monitor").value`}</p>
+                  <p>{`var textLength_3 = device_pin_monitor_2.length`}</p>
+                  <p>{`if (textLength_3 > 15) {`}</p>
+                  <div className="ml-2">
+                    <p>{`var trimmedText_3 = device_pin_monitor_2.substring(0, 8)`}</p>
+                    <p>{`$("#device_pn_monitor").text(trimmedText_3 + "...")`}</p>
+                  </div>
+                  <p>{`}`}</p>
+                  <p>{`if (textLength_3 < 15) {`}</p>
+                  <div className="ml-2">
+                    <p>{`$("#device_pn_monitor").text(pin)`}</p>
+                    <p>{`console.log("test")`}</p>
+                  </div>
+                  <p>{`}`}</p>
+                </div>
+              </div>
+              <p>{`},`}</p>
+              <p>{`error: function (xmlhttprequest, error) {`}</p>
+              <div className="ml-2">
+                <p>{`loaderObj.unShow()`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`})`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`},`}</p>
+          <p>{`error: function (xmlhttprequest, error) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow()`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+    </div>
+  )
+}
+
+// GetDataMonitor
+export function Monitor_getDataMonitor() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem("token")`}</p>
+        <p>{`var token = JSON.parse(getToken)`}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "get",`}</p>
+          <p>{`url: API_SERVER + "/v1/solarDevice/data",`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`Authorization: "Bearer " + token.token,`}</p>
+            <p>{`"Content-Type": "application/json",`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`if (data.code === 0) {`}</p>
+            <div className="ml-2">
+              <p>{`if (data.result == null) {`}</p>
+              <div className="ml-2">
+                <p>{`$("#home_w").text("0")`}</p>
+                <p>{`$("#solar_w").text("0")`}</p>
+                <p>{`$("#Hz_w").text("0")`}</p>
+                <p>{`$("#HzTop_w").text("0")`}</p>
+                <p>{`$("#bat_w").text("0")`}</p>
+                <p>{`$("#book_w").text("0")`}</p>
+                <p>{`$("#Current_connected_load_power").text("0")`}</p>
+                <p>{`$("#Current_battery_percentage").text("0")`}</p>
+                <p>{`$("#PV_cumulative_power_generator").text("0")`}</p>
+                <p>{`$("#PV_cumulative_power_generator_per_day").text("0")`}</p>
+                <p>{`$("#PV_changing_power").text("0")`}</p>
+                <p>{`$("#earnProfitEnergyBill").text("0")`}</p>
+                <p>{`$("#Inverter_voltage").text("0")`}</p>
+                <p>{`$("#battop_w").text("0")`}</p>
+                <p>{`//// report`}</p>
+                <p>{`$("#power_charging_report").text("0")`}</p>
+                <p>{`$("#current_battery_report").text("0")`}</p>
+                <p>{`$("#current_load_power_report").text("0")`}</p>
+                <p>{`$("#PV_changing_power_report").text("0")`}</p>
+                <p>{`$("#PV_cumulative_power_generator_report").text("0")`}</p>
+                <p>{`$("#power_charging_report_2").text("0")`}</p>
+                <p>{`$("#PV_cumulative_power_generator_per_day_report").text("0")`}</p>
+                <p>{`$("#current_load_power_report_2").text("0")`}</p>
+                <p>{`$("#time_show_device").css({display: "none"})`}</p>
+              </div>
+              <p>{`} else {`}</p>
+              <div className="ml-2">
+                <p>{`$("#time_show_device").css({display: "block"})`}</p>
+                <p>{`var timestamp = data.result.time`}</p>
+                <p>{`var date = new Date(timestamp)`}</p>
+                <p>{`var year = date.getFullYear()`}</p>
+                <p>{`var month = ("0" + (date.getMonth() + 1)).slice(-2)`}</p>
+                <p>{`var day = ("0" + date.getDate()).slice(-2)`}</p>
+                <p>{`var hours = ("0" + date.getHours()).slice(-2)`}</p>
+                <p>{`var minutes = ("0" + date.getMinutes()).slice(-2)`}</p>
+                <p>{`var seconds = ("0" + date.getSeconds()).slice(-2)`}</p>
+                <p>{`var formattedDateTime =`}</p>
+                <div className="ml-2">
+                  <p>{`year + "-" + month + "-" + day + " | " + hours + ":" + minutes + ":" + seconds`}</p>
+                </div>
+                <p>{`$("#time_show_device").text(formattedDateTime)`}</p>
+                <p>{`$("#battop_w").text(data.result.batteryDischargeCurrent)`}</p>
+                <p>{`$("#home_w").text(data.result.currentLoadPower)`}</p>
+                <p>{`$("#solar_w").text(data.result.powerCharging)`}</p>
+                <p>{`$("#Hz_w").text(data.result.outPutFrequency)`}</p>
+                <p>{`function convertNumber(number) {`}</p>
+                <div className="ml-2">
+                  <p>{`if (number > 1000) {`}</p>
+                  <div className="ml-2">
+                    <p>{`var kCount = Math.floor(number / 1000)`}</p>
+                    <p>{`return kCount + "k"`}</p>
+                  </div>
+                  <p>{`} else {`}</p>
+                  <div className="ml-2">
+                    <p>{`return number.toString()`}</p>
+                  </div>
+                  <p>{`}`}</p>
+                </div>
+                <p>{`}`}</p>
+                <p>{`var result = convertNumber(data.result.outPutLoad)`}</p>
+                <p>{`$("#HzTop_w").text(result)`}</p>
+                <p>{`$("#bat_w").text(data.result.currentBattery)`}</p>
+                <p>{`$("#book_w").text(data.result.totalPowerOutputOnTheDay)`}</p>
+                <p>{`////////////////////////////////////////////////`}</p>
+                <p>{`$("#Current_connected_load_power").text(data.result.currentLoadPower)`}</p>
+                <p>{`$("#PV_cumulative_power_generator").text(data.result.pvCumulativePowerGenerator)`}</p>
+                <p>{`$("#PV_cumulative_power_generator_per_day").text(data.result.pvCumulativePowerDay)`}</p>
+                <p>{`var number = data.result.earnProfitEnergyBill`}</p>
+                <p>{`var roundedNumber = number.toFixed(2)`}</p>
+                <p>{`$("#PV_changing_power").text(data.result.powerCharging)`}</p>
+                <p>{`$("#Current_battery_percentage").text(data.result.currentBattery)`}</p>
+                <p>{`$("#earnProfitEnergyBill").text(roundedNumber)`}</p>
+                <p>{`$("#Inverter_voltage").text(data.result.inverterVol)`}</p>
+                <p>{`//// report`}</p>
+                <p>{`$("#power_charging_report").text(data.result.powerCharging)`}</p>
+                <p>{`$("#current_battery_report").text(data.result.currentBattery)`}</p>
+                <p>{`$("#current_load_power_report").text(data.result.currentLoadPower)`}</p>
+                <p>{`$("#PV_changing_power_report").text(data.result.powerCharging)`}</p>
+                <p>{`$("#PV_cumulative_power_generator_report").text(data.result.pvCumulativePowerGenerator)`}</p>
+                <p>{`$("#power_charging_report_2").text(data.result.powerCharging)`}</p>
+                <p>{`$("#PV_cumulative_power_generator_per_day_report").text(data.result.pvCumulativePowerDay)`}</p>
+                <p>{`$("#current_load_power_report_2").text(data.result.currentLoadPower)`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xmlhttprequest, error) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow()`}</p>
+          </div>
+          <p>{`},`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+    </div>
+  )
+}
+
+// WS
+export function Monitor_ws() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2 flex flex-col gap-4">
+        <div>
+          <p>{`// websocket connected`}</p>
+          <p>{`ws.onopen = function (e) {}`}</p>
+          <p>{`// websocket received message`}</p>
+          <p>{`ws.onmessage = async function (e) {`}</p>
+          <div className="ml-2">
+            <p>{`window.wsFormat.parseMsg(e.data, funWs)`}</p>
+            <p>{`funWs(Header, Body)`}</p>
+          </div>
+        </div>
+
+        <div>
+          <p>{`function funWs(header, body) {`}</p>
+          <p>{`var target = header.target`}</p>
+          <p>{`if (target === "/v1/server/notifications") {`}</p>
+          <div className="ml-2">
+            <p>{`console.log("====>/v1/server/notifications")`}</p>
+            <p>{`// Something to do -> show msg`}</p>
+          </div>
+          <p>{`} else if (target === "/v1/server/solarData") {`}</p>
+          <div className="ml-2">
+            <p>{`// console.log('====>/v1/server/solarData',body);`}</p>
+            <p>{`$("#battop_w").text(body.batteryDischargeCurrent)`}</p>
+            <p>{`$("#home_w").text(body.currentLoadPower)`}</p>
+            <p>{`$("#solar_w").text(body.powerCharging)`}</p>
+            <p>{`$("#Hz_w").text(body.outPutFrequency)`}</p>
+            <p>{`function convertNumber(number) {`}</p>
+            <div className="ml-2">
+              <p>{`if (number > 1000) {`}</p>
+              <div className="ml-2">
+                <p>{`var kCount = Math.floor(number / 1000)`}</p>
+                <p>{`return kCount + "k"`}</p>
+              </div>
+              <p>{`} else {`}</p>
+              <div className="ml-2">
+                <p>{`return number.toString()`}</p>
+              </div>
+            </div>
+            <p>{`}`}</p>
+            <p>{`var result = convertNumber(body.outPutLoad)`}</p>
+            <p>{`$("#HzTop_w").text(result)`}</p>
+            <p>{`$("#bat_w").text(body.currentBattery)`}</p>
+            <p>{`$("#book_w").text(body.totalPowerOutputOnTheDay)`}</p>
+            <p>{`$("#Current_connected_load_power").text(body.currentLoadPower)`}</p>
+            <p>{`$("#Current_battery_percentage").text(body.currentBattery)`}</p>
+            <p>{`$("#PV_cumulative_power_generator").text(body.pvCumulativePowerGenerator)`}</p>
+            <p>{`$("#PV_cumulative_power_generator_per_day").text(body.pvCumulativePowerDay)`}</p>
+            <p>{`$("#PV_changing_power").text(body.powerCharging)`}</p>
+            <p>{`var number = body.earnProfitEnergyBill`}</p>
+            <p>{`var roundedNumber = number.toFixed(2)`}</p>
+            <p>{`$("#earnProfitEnergyBill").text(roundedNumber)`}</p>
+            <p>{`$("#Inverter_voltage").text(body.inverterVol)`}</p>
+            <p>{`var timestamp = body.time`}</p>
+            <p>{`var date = new Date(timestamp)`}</p>
+            <p>{`var year = date.getFullYear()`}</p>
+            <p>{`var month = ("0" + (date.getMonth() + 1)).slice(-2)`}</p>
+            <p>{`var day = ("0" + date.getDate()).slice(-2)`}</p>
+            <p>{`var hours = ("0" + date.getHours()).slice(-2)`}</p>
+            <p>{`var minutes = ("0" + date.getMinutes()).slice(-2)`}</p>
+            <p>{`var seconds = ("0" + date.getSeconds()).slice(-2)`}</p>
+            <p>{`var formattedDateTime = year + "-" + month + "-" + day + " | " + hours + ":" + minutes + ":" + seconds`}</p>
+            <p>{`$("#time_show_device").text(formattedDateTime)`}</p>
+            <p>{`// report data`}</p>
+            <p>{`$("#power_charging_report").text(body.powerCharging)`}</p>
+            <p>{`$("#current_battery_report").text(body.currentBattery)`}</p>
+            <p>{`$("#current_load_power_report").text(body.currentLoadPower)`}</p>
+            <p>{`$("#PV_changing_power_report").text(body.powerCharging)`}</p>
+            <p>{`$("#PV_cumulative_power_generator_report").text(body.pvCumulativePowerGenerator)`}</p>
+            <p>{`$("#power_charging_report_2").text(body.powerCharging)`}</p>
+            <p>{`$("#PV_cumulative_power_generator_per_day_report").text(body.pvCumulativePowerDay)`}</p>
+            <p>{`$("#current_load_power_report_2").text(body.currentLoadPower)`}</p>
+            <p>{`// update monitor data`}</p>
+          </div>
+          <p>{`} else if (target === "/v1/server/solarDeviceAlert") {`}</p>
+          <div className="ml-2">
+            <p>{`// console.log('====>/v1/server/solarDeviceAlert');`}</p>
+            <p>{`// update solar device alert`}</p>
+          </div>
+          <p>{`} else if (target === "/v1/server/auth") {`}</p>
+          <div className="ml-2">
+            <p>{`// console.log('====>/v1/server/auth');`}</p>
+            <p>{`// Something to do -> refresh token || logout`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+
+        <div>
+          <p>{`// websocket closed`}</p>
+          <p>{`ws.onclose = function (e) {`}</p>
+          <div className="ml-2">
+            <p>{`console.log("==================close================")`}</p>
+            <p>{`// Something to do`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <div>
+          <p>{`// websocket error`}</p>
+          <p>{`ws.onerror = function (e) {`}</p>
+          <div className="ml-2">
+            <p>{`console.log(e)`}</p>
+            <p>{`// Something to do -> reconnect`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// getSelectedMonthMonitor
+export function Monitor_getSelectedMonthMonitor() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`var currentDate = new Date()`}</p>
+        <p>{`var currentYear = currentDate.getFullYear()`}</p>
+        <p>{`var currentMonthIndex = currentDate.getMonth()`}</p>
+        <p>{`var currentMonth = currentMonthIndex + 1`}</p>
+        <p>{`var monthName = new Intl.DateTimeFormat("en-EN", {month: "long"}).format(`}</p>
+        <div className="ml-2">
+          <p>{`currentDate`}</p>
+        </div>
+        <p>{`)`}</p>
+        <p>{`var str = <span>{monthName} {currentYear}</span>`}</p>
+        <p>{`monitorObj.GetBill(20, 0, currentMonth, currentYear)`}</p>
+        <p>{`$("#next")`}</p>
+        <div className="ml-2">
+          <p>{`.unbind()`}</p>
+          <p>{`.click(function () {`}</p>
+          <div className="ml-2">
+            <p>{`currentMonthIndex++`}</p>
+            <p>{`if (currentMonthIndex > 11) {`}</p>
+            <div className="ml-2">
+              <p>{`currentMonthIndex = 0`}</p>
+              <p>{`currentYear++`}</p>
+            </div>
+            <p>{`}`}</p>
+            <p>{`updateCalendar()`}</p>
+          </div>
+          <p>{`})`}</p>
+        </div>
+        <p>{`$("#prev")`}</p>
+        <div className="ml-2">
+          <p>{`.unbind()`}</p>
+          <p>{`.click(function () {`}</p>
+          <div className="ml-2">
+            <p>{`currentMonthIndex--`}</p>
+            <p>{`if (currentMonthIndex < 0) {`}</p>
+            <div className="ml-2">
+              <p>{`currentMonthIndex = 11`}</p>
+              <p>{`currentYear--`}</p>
+            </div>
+            <p>{`}`}</p>
+            <p>{`updateCalendar()`}</p>
+          </div>
+          <p>{`})`}</p>
+        </div>
+        <p>{`function updateCalendar() {`}</p>
+        <div className="ml-2">
+          <p>{`var newDate = new Date(currentYear, currentMonthIndex, 1)`}</p>
+          <p>{`var newMonthName = new Intl.DateTimeFormat("en-EN", {`}</p>
+          <div className="ml-2">
+            <p>{`month: "long",`}</p>
+          </div>
+          <p>{`}).format(newDate)`}</p>
+          <p>{`var newMonthNumber = newDate.getMonth() + 1`}</p>
+          <p>{`console.log(newMonthName, "currentYear")`}</p>
+          <p>{`if (currentYear == currentYear && monthName == newMonthName) {`}</p>
+          <div className="ml-2">
+            <p>{`$("#next").css("display", "none")`}</p>
+          </div>
+          <p>{`} else {`}</p>
+          <div className="ml-2">
+            <p>{`$("#next").css("display", "block")`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`str = <span>{newMonthName} {currentYear}</span>`}</p>
+          <p>{`$("#calendarGen").html(str)`}</p>
+          <p>{`monitorObj.GetBill(20, 0, newMonthNumber, currentYear)`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`// Initial calendar rendering`}</p>
+        <p>{`$("#calendarGen").html(str)`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getSelectedDay
+export function Monitor_getSelectedDay() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`var currentDateTap = new Date()`}</p>
+        <p>{`var currentDateDay = currentDateTap.getDate()`}</p>
+        <p>{`var currentYearDay = currentDateTap.getFullYear()`}</p>
+        <p>{`var currentMonthIndexDay = currentDateTap.getMonth()`}</p>
+        <p>{`var currentMonthDay = currentMonthIndexDay + 1`}</p>
+        <p>{`if (currentMonthDay < 10) {`}</p>
+        <div className="ml-2">
+          <p>{`currentMonthDay = "0" + currentMonthDay`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`if (currentDateDay < 10) {`}</p>
+        <div className="ml-2">
+          <p>{`currentDateDay = "0" + currentDateDay`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`var monthNameDay = new Intl.DateTimeFormat("en-EN", {`}</p>
+        <div className="ml-2">
+          <p>{`month: "long",`}</p>
+        </div>
+        <p>{`}).format(currentDateTap)`}</p>
+        <p>{`var str = <span> {currentYearDay}-{currentMonthDay}-{currentDateDay}</span>`}</p>
+        <p>{`monitorObj.GetBill(30, currentYearDay, currentMonthDay, currentDateDay)`}</p>
+        <p>{`$("#nextDay")`}</p>
+        <div className="ml-2">
+          <p>{`.unbind()`}</p>
+          <p>{`.click(function () {`}</p>
+          <div className="ml-2">
+            <p>{`currentDateTap.setDate(currentDateTap.getDate() + 1)`}</p>
+            <p>{`updateCalendarDay()`}</p>
+          </div>
+          <p>{`})`}</p>
+        </div>
+        <p>{`$("#prevDay")`}</p>
+        <div className="ml-2">
+          <p>{`.unbind()`}</p>
+          <p>{`.click(function () {`}</p>
+          <div className="ml-2">
+            <p>{`currentDateTap.setDate(currentDateTap.getDate() - 1)`}</p>
+            <p>{`updateCalendarDay()`}</p>
+          </div>
+          <p>{`})`}</p>
+        </div>
+        <p>{`function updateCalendarDay() {`}</p>
+        <div className="ml-2">
+          <p>{`var newMonthNameDay = new Intl.DateTimeFormat("en-EN", {`}</p>
+          <div className="ml-2">
+            <p>{`month: "long",`}</p>
+          </div>
+          <p>{`}).format(currentDateTap)`}</p>
+          <p>{`var newYearDay = currentDateTap.getFullYear()`}</p>
+          <p>{`var newMonthDay = currentDateTap.getMonth() + 1`}</p>
+          <p>{`var newDay = currentDateTap.getDate()`}</p>
+          <p>{`if (newMonthDay < 10) {`}</p>
+          <div className="ml-2">
+            <p>{`newMonthDay = "0" + newMonthDay`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`if (newDay < 10) {`}</p>
+          <div className="ml-2">
+            <p>{`newDay = "0" + newDay`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`monitorObj.GetBill(30, newYearDay, newMonthDay, newDay)`}</p>
+          <p>{`if (`}</p>
+          <div className="ml-2">
+            <p>{`currentDateDay === newDay &&`}</p>
+            <p>{`currentMonthDay === newMonthDay &&`}</p>
+            <p>{`currentYearDay === newYearDay`}</p>
+          </div>
+          <p>{`) {`}</p>
+          <div className="ml-2">
+            <p>{`$("#nextDay").css({display: "none"})`}</p>
+          </div>
+          <p>{`} else {`}</p>
+          <div className="ml-2">
+            <p>{`$("#nextDay").css({display: "block"})`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`str = <span>{newYearDay}-{newMonthDay}-{newDay}</span>`}</p>
+          <p>{`$("#calendarGenDayTap").html(str)`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`$("#calendarGenDayTap").html(str)`}</p>
+      </div>
+    </div>
+  )
+}
+
+// openTabbill
+export function Monitor_openTabbill() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        {`if (tab == "Month") {`}
+        <div className="ml-2">{`monitorObj.getSelectedMonth()`}</div>
+        <div className="ml-2">{`$("#next").css({display: "none"})`}</div>
+        {`}`}
+        {`if (tab == "Day") {`}
+        <div className="ml-2">{`monitorObj.getSelectedDay()`}</div>
+        <div className="ml-2">{`$("#nextDay").css({display: "none"})`}</div>
+        {`}`}
+        {`if (tab == "Total") {`}
+        <div className="ml-2">{`monitorObj.GetBill(10)`}</div>
+        {`}`}
+        {`var i`}
+        {`var tabcontentbill = document.getElementsByClassName("billcontent")`}
+        {`for (i = 0; i < tabcontentbill.length; i++) {`}
+        <div className="ml-2">{`tabcontentbill[i].style.display = "none"`}</div>
+        {`}`}
+        {`var tablinksbill = document.getElementsByClassName("bill")`}
+        {`for (i = 0; i < tablinksbill.length; i++) {`}
+        <div className="ml-2">
+          {`tablinksbill[i].classList.remove("actived")`}
+        </div>
+        {`}`}
+        {`document.getElementById(tab + "Tab").style.display = "block"`}
+        {`document.getElementById(tab).classList.add("actived")`}
+      </div>
+    </div>
+  )
+}
+
+// RandomValueMonitorNoLogin
+export function Monitor_randomValueMonitorNoLogin() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2 flex flex-col gap-4">
+        <div>
+          <p>{`function getRandomNumber(min, max) {`}</p>
+          <p>{`return Math.floor(Math.random() * (max - min + 1)) + min`}</p>
+          <p>{`}`}</p>
+        </div>
+
+        <div>
+          <p>{`function generateRandomNumbers() {`}</p>
+          <div className="ml-2">
+            <p>{`var elements = [`}</p>
+            <div className="ml-2">
+              <p>{`"#battop_w",`}</p>
+              <p>{`"#home_w",`}</p>
+              <p>{`"#solar_w",`}</p>
+              <p>{`"#Hz_w",`}</p>
+              <p>{`"#HzTop_w",`}</p>
+              <p>{`"#bat_w",`}</p>
+              <p>{`"#book_w",`}</p>
+              <p>{`"#Current_connected_load_power",`}</p>
+              <p>{`"#Current_battery_percentage",`}</p>
+              <p>{`"#PV_cumulative_power_generator",`}</p>
+              <p>{`"#PV_cumulative_power_generator_per_day",`}</p>
+              <p>{`"#PV_changing_power",`}</p>
+              <p>{`"#earnProfitEnergyBill",`}</p>
+              <p>{`"#Inverter_voltage",`}</p>
+              <p>{`"#power_charging_report",`}</p>
+              <p>{`"#current_battery_report",`}</p>
+              <p>{`"#current_load_power_report",`}</p>
+              <p>{`"#PV_changing_power_report",`}</p>
+              <p>{`"#PV_cumulative_power_generator_report",`}</p>
+              <p>{`"#power_charging_report_2",`}</p>
+              <p>{`"#PV_cumulative_power_generator_per_day_report",`}</p>
+              <p>{`"#current_load_power_report_2",`}</p>
+            </div>
+            <p>{`];`}</p>
+            <p>{`elements.forEach(function (element) {`}</p>
+            <div className="ml-2">
+              <p>{`$(element).text(getRandomNumber(0, 100))`}</p>
+            </div>
+            <p>{`});`}</p>
+            <p>{`$("#time_show_device").css({display: "none"})`}</p>
+          </div>
+
+          <p>{`}`}</p>
+        </div>
+
+        <div>
+          <p>clearInterval(this.intervalID)</p>
+          <p>this.intervalID = setInterval(generateRandomNumbers, 2000)</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// luxVal
+export function Monitor_luxVal() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2 flex flex-col gap-4">
+        <div>
+          <p>{`function getLuxByTime() {`}</p>
+          <div className="ml-2">
+            <p>{`var currentTime = new Date()`}</p>
+            <p>{`var hours = currentTime.getHours()`}</p>
+            <p>{`var minutes = currentTime.getMinutes()`}</p>
+            <p>{`let luxValue = 0`}</p>
+            <p>{`if (hours >= 0 && hours < 5) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 10`}</p>
+            </div>
+            <p>{`} else if (hours === 5) {`}</p>
+            <div className="ml-2">
+              <p>{`if (minutes < 1) {`}</p>
+              <div className="ml-2">
+                <p>{`luxValue = 10`}</p>
+              </div>
+              <p>{`} else {`}</p>
+              <div className="ml-2">
+                <p>{`luxValue = 100`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`} else if (hours === 6) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 1000`}</p>
+            </div>
+            <p>{`} else if (hours === 7) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 5000`}</p>
+            </div>
+            <p>{`} else if (hours === 8) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 10000`}</p>
+            </div>
+            <p>{`} else if (hours === 9) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 30000`}</p>
+            </div>
+            <p>{`} else if (hours === 10) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 50000`}</p>
+            </div>
+            <p>{`} else if (hours === 11) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 80000`}</p>
+            </div>
+            <p>{`} else if (hours >= 12 && hours < 15) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 100000`}</p>
+            </div>
+            <p>{`} else if (hours === 15) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 80000`}</p>
+            </div>
+            <p>{`} else if (hours === 16) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 50000`}</p>
+            </div>
+            <p>{`} else if (hours === 17) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 1000`}</p>
+            </div>
+            <p>{`} else if (hours === 18) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 100`}</p>
+            </div>
+            <p>{`} else if (hours >= 19 && hours <= 23) {`}</p>
+            <div className="ml-2">
+              <p>{`luxValue = 10`}</p>
+            </div>
+            <p>{`}`}</p>
+            <p>{`return luxValue`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+
+        <div>
+          <p>{`function updateLuxEveryHour() {`}</p>
+          <p>{`var currentLux = getLuxByTime()`}</p>
+          <p>{`$("#center_lux").text(currentLux)`}</p>
+          <p>updateLuxEveryHour()</p>
+          <p>setInterval(updateLuxEveryHour, 1000 * 60 * 5)</p>
+          <p>{`}`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// my_devices.html
+// getMyDevice
+export function My_devices_getMyDevice() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`var str = '';`}</p>
+        <p>{`var SelectMyID = [];`}</p>
+        <p>{`var SelectIDForUpdate = [];`}</p>
+        <p>{`$("#content_datete").html('');`}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: 'get',`}</p>
+          <p>{`url: API_SERVER + '/v1/solarDevice',`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`Authorization: 'Bearer ' + token.token,`}</p>
+            <p>{`'Content-Type': 'application/json',`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`dataType: 'json',`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`if (data.code === 0) {`}</p>
+            <div className="ml-2">
+              <p>{`if (data.records === 0) {`}</p>
+              <div className="ml-2">
+                <p>{`str += (`}</p>
+                <p>{`<div style={{`}</p>
+                <div className="ml-2">
+                  <p>{`justifyContent: 'center',`}</p>
+                  <p>{`alignItems: 'center',`}</p>
+                  <p>{`color: '#504acc',`}</p>
+                  <p>{`display: 'flex',`}</p>
+                  <p>{`width: '90%',`}</p>
+                  <p>{`margin: '0 auto',`}</p>
+                  <p>{`height: '111px',`}</p>
+                  <p>{`borderRadius: '4px',`}</p>
+                  <p>{`background: '#FFF',`}</p>
+                  <p>{`boxShadow: '2px 2px 3px 0px rgba(0, 0, 0, 0.10)',`}</p>
+                  <p>{`}}>`}</p>
+                </div>
+                <p>{`No Device`}</p>
+                <p>{`</div>`}</p>
+                <p>{`);`}</p>
+                <p>{`$("#my_devive_content").html(str);`}</p>
+              </div>
+              <p>{`} else {`}</p>
+              <div className="ml-2">
+                <p>{`data.result.forEach(function (items) {`}</p>
+                <div className="ml-2">
+                  <p>{`var shortenedName =`}</p>
+                  <p>{`items.name.length <= 10 ? items.name : items.name.substring(0, 7) + '...';`}</p>
+                  <p>{`var shortenedPN =`}</p>
+                  <p>{`items.pn.length <= 10 ? items.pn : items.pn.substring(0, 7) + '...';`}</p>
+                  <p>{`var shortenedAddress =`}</p>
+                  <p>{`items.address.length <= 10 ? items.address : items.address.substring(0, 7) + '...';`}</p>
+                  <p>{`str += (`}</p>
+                  <p>{`<div id={'my_' + items.id} style={{`}</p>
+                  <div className="ml-2">
+                    <p>{`alignItems: 'center',`}</p>
+                    <p>{`display: 'flex',`}</p>
+                    <p>{`width: '90%',`}</p>
+                    <p>{`margin: '0 auto',`}</p>
+                    <p>{`height: '120px',`}</p>
+                    <p>{`borderRadius: '4px',`}</p>
+                    <p>{`background: '#FFF',`}</p>
+                    <p>{`boxShadow: '2px 2px 3px 0px rgba(0, 0, 0, 0.10)',`}</p>
+                    <p>{`}}>`}</p>
+                  </div>
+                  {/* Rest of the code skipped for brevity */}
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Rest of the code skipped for brevity */}
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// new_address.html
+// validateInput
+export function New_address_validateInput() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var postcode_address = document.getElementById('postcode_address');`}</p>
+        <p>{`var mobile_address = document.getElementById('mobile_address');`}</p>
+        <p>{`var mobile_edit_address = document.getElementById('mobile_edit_address');`}</p>
+        <p>{`var postcode_edit_address = document.getElementById('postcode_edit_address');`}</p>
+
+        <p>{`postcode_address.value = postcode_address.value.replace(/[^0-9]/g, '');`}</p>
+        <p>{`if (postcode_address.value.length > 5) {`}</p>
+        <div className="ml-2">
+          <p>{`postcode_address.value = postcode_address.value.slice(0, 5);`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`postcode_edit_address.value = postcode_edit_address.value.replace(/[^0-9]/g, '');`}</p>
+        <p>{`if (postcode_edit_address.value.length > 5) {`}</p>
+        <div className="ml-2">
+          <p>{`postcode_edit_address.value = postcode_edit_address.value.slice(0, 5);`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`mobile_address.value = mobile_address.value.replace(/[^0-9]/g, '');`}</p>
+        <p>{`if (mobile_address.value.length > 10) {`}</p>
+        <div className="ml-2">
+          <p>{`mobile_address.value = mobile_address.value.slice(0, 10);`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`mobile_edit_address.value = mobile_edit_address.value.replace(/[^0-9]/g, '');`}</p>
+        <p>{`if (mobile_edit_address.value.length > 10) {`}</p>
+        <div className="ml-2">
+          <p>{`mobile_edit_address.value = mobile_edit_address.value.slice(0, 10);`}</p>
+        </div>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// CreateAddress
+export function New_address_createAddress() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`var mData = {`}</p>
+        <div className="ml-2">
+          <p>{`name: $("#name_address").val(),`}</p>
+          <p>{`address: $("#address_address").val(),`}</p>
+          <p>{`postcode: $("#postcode_address").val(),`}</p>
+          <p>{`mobile: $("#mobile_address").val(),`}</p>
+        </div>
+        <p>{`};`}</p>
+        <p>{`console.log(mData);`}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "post",`}</p>
+          <p>{`url: API_SERVER + "/v1/deliveryAddress",`}</p>
+          <p>{`data: JSON.stringify(mData),`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`Authorization: 'Bearer ' + token.token,`}</p>
+            <p>{`"Content-Type": "application/json",`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`if (data.code === 0) {`}</p>
+            <div className="ml-2">
+              <p>{`setTimeout(() => {`}</p>
+              <div className="ml-2">
+                <p>{`loaderObj.unShow();`}</p>
+                <p>{`msgObj4.show('Address added successfully', function () {`}</p>
+                <div className="ml-2">
+                  <p>{`msgObj4.unShow();`}</p>
+                  <p>{`new_addressObj.clearInput();`}</p>
+                  <p>{`pageUnShow("new_addressPage");`}</p>
+                  <p>{`pageShow("locationAddressPage");`}</p>
+                  <p>{`locationAddressObj.GetAddress();`}</p>
+                  <p>{`confirm_orderObj.getAddress();`}</p>
+                </div>
+                <p>{`});`}</p>
+              </div>
+              <p>{`}, 500);`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`msgPageObj.show(getStatusCode(data.code));`}</p>
+              <p>{`loaderObj.unShow();`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xmlhttprequest, error) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// notification.html
+// pagination
+export function Notification_pagination() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <div>
+          <p>var element = $(".pagination ul")</p>
+          <p>var page = 1</p>
+          <p>createPagination(totalPages, page)</p>
+        </div>
+
+        <div>
+          <p>{`function createPagination(totalPages, currentPage) {`}</p>
+          <div className="ml-2">
+            <p>{`var liTag = ""`}</p>
+            <p>{`var active`}</p>
+            <p>{`var beforePage = currentPage - 1`}</p>
+            <p>{`var afterPage = currentPage + 1`}</p>
+            <p>{`if (currentPage > 1) {`}</p>
+            <div className="ml-2">
+              <p>{`liTag += \`<li class="btn prev"><span><i class="fas fa-angle-left"></i> <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 7L9 12L14 17" stroke="#3B78FE" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>\``}</p>
+            </div>
+            <p>{`}`}</p>
+            <p>{`if (currentPage > 2) {`}</p>
+            <div className="ml-2">
+              <p>{`liTag += \`<li class="first numb"><span>1</span></li>\``}</p>
+              <p>{`if (currentPage > 3) {`}</p>
+              <div className="ml-2">
+                <p>{`liTag += \`<li class="dots"><span>...</span></li>\``}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`}`}</p>
+            <p>{`if (currentPage == totalPages) {`}</p>
+            <div className="ml-2">
+              <p>{`beforePage = beforePage - 2`}</p>
+            </div>
+            <p>{`} else if (currentPage == totalPages - 1) {`}</p>
+            <div className="ml-2">
+              <p>{`beforePage = beforePage - 1`}</p>
+            </div>
+            <p>{`}`}</p>
+            <p>{`if (currentPage == 1) {`}</p>
+            <div className="ml-2">
+              <p>{`afterPage = afterPage + 2`}</p>
+            </div>
+            <p>{`} else if (currentPage == 2) {`}</p>
+            <div className="ml-2">
+              <p>{`afterPage = afterPage + 1`}</p>
+            </div>
+            <p>{`}`}</p>
+            <p>{`for (var plength = beforePage; plength <= afterPage; plength++) {`}</p>
+            <div className="ml-2">
+              <p>{`if (plength > totalPages || plength < 1) {`}</p>
+              <div className="ml-2">
+                <p>{`continue`}</p>
+              </div>
+              <p>{`}`}</p>
+              <p>{`if (currentPage == plength) {`}</p>
+              <div className="ml-2">
+                <p>{`active = "active"`}</p>
+              </div>
+              <p>{`} else {`}</p>
+              <div className="ml-2">
+                <p>{`active = ""`}</p>
+              </div>
+              <p>{`}`}</p>
+              <p>{`liTag += \`<li class="numb $\{active\} " ><span>$\{plength\}</span></li>\``}</p>
+            </div>
+            <p>{`}`}</p>
+            <p>{`console.log(currentPage, totalPages - 2, "dfertsf")`}</p>
+            <p>{`if (currentPage < totalPages - 1) {`}</p>
+            <div className="ml-2">
+              <p>{`if (currentPage < totalPages - 2) {`}</p>
+              <div className="ml-2">
+                <p>{`liTag += \`<li class="dots"><span>...</span></li>\``}</p>
+              </div>
+              <p>{`}`}</p>
+              <p>{`liTag += \`<li class="last numb"><span>$\{totalPages\}</span></li>\``}</p>
+            </div>
+            <p>{`}`}</p>
+            <p>{`if (currentPage < totalPages) {`}</p>
+            <div className="ml-2">
+              <p>{`liTag += \`<li class="btn next"><span> <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 17L15 12L10 7" stroke="#3B78FE" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round"/></svg>  <i class="fas fa-angle-right"></i></span></li>\``}</p>
+            </div>
+            <p>{`}`}</p>
+            <p>{`element.html(liTag)`}</p>
+            <p>{`element.find(".prev").click(function () {`}</p>
+            <div className="ml-2">
+              <p>{`createPagination(totalPages, currentPage - 1)`}</p>
+              <p>{`loaderObj.show()`}</p>
+              <p>{`notificationObj.GetNotification()`}</p>
+            </div>
+            <p>{`})`}</p>
+            <p>{`element.find(".numb").click(function () {`}</p>
+            <div className="ml-2">
+              <p>{`createPagination(totalPages, parseInt($(this).text()))`}</p>
+              <p>{`loaderObj.show()`}</p>
+              <p>{`notificationObj.GetNotification()`}</p>
+            </div>
+            <p>{`})`}</p>
+            <p>{`$(".next").unbind()`}</p>
+            <p>{`element.find(".next").click(function () {`}</p>
+            <div className="ml-2">
+              <p>{`createPagination(totalPages, currentPage + 1)`}</p>
+              <p>{`loaderObj.show()`}</p>
+              <p>{`notificationObj.GetNotification()`}</p>
+            </div>
+            <p>{`})`}</p>
+          </div>
+
+          <p>{`}`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// GetNotification
+export function Notification_getNotification() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <div>
+          <p>{`getToken = window.localStorage.getItem("token")`}</p>
+          <p>{`token = JSON.parse(getToken)`}</p>
+          <p>{`var count_page = $(".active").text()`}</p>
+          <p>{`console.log(count_page, "count_page")`}</p>
+          <p>{`if (count_page === null || count_page.trim() === "") {`}</p>
+          <div className="ml-2">
+            <p>{`count_page = 1`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`var lengths = []`}</p>
+          <p>{`for (var i = 2; i <= 1000; i += 2) {`}</p>
+          <div className="ml-2">
+            <p>{`lengths.push(i)`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`for (var i = 0; i < lengths.length; i++) {`}</p>
+          <div className="ml-2">
+            <p>{`if (count_page.length == lengths[i]) {`}</p>
+            <div className="ml-2">
+              <p>{`var number = count_page`}</p>
+              <p>{`var result = number.substring(0, number.length - lengths[i] / 2)`}</p>
+              <p>{`count_page = result`}</p>
+              <p>{`break // เมื่อเจอความยาวที่ตรงกันให้หยุดลูป`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`console.log(count_page)`}</p>
+          <p>{`var str_error = ""`}</p>
+          <p>{`var coutnotify = []`}</p>
+          <p>{`var loadDatanotify = 1`}</p>
+          <p>{`var limitnotify = 20`}</p>
+          <p>{`var pageCount = 1`}</p>
+          <p>{`Notification()`}</p>
+        </div>
+
+        <div>
+          <p>{`function Notification() {`}</p>
+          <div className="ml-2">
+            <p>{`var str = ""`}</p>
+            <p>{`$.ajax({`}</p>
+            <div className="ml-2">
+              <p>{`type: "get",`}</p>
+              <p>{`url: API_SERVER + "/v1/solarDevice/deviceAlert?page=" + count_page + "&limit=" + limitnotify,`}</p>
+              <p>{`headers: {`}</p>
+              <div className="ml-2">
+                <p>{`Authorization: "Bearer " + token.token,`}</p>
+                <p>{`"Content-Type": "application/json",`}</p>
+              </div>
+              <p>{`},`}</p>
+              <p>{`dataType: "json",`}</p>
+              <p>{`async: true,`}</p>
+              <p>{`timeout: 100000,`}</p>
+              <p>{`success: function (data) {`}</p>
+              <div className="ml-2">
+                <p>{`if (data.code === 4030) {`}</p>
+                <div className="ml-2">
+                  <p>{`$(".pagination").css({display: "none"})`}</p>
+                </div>
+                <p>{`}`}</p>
+                <p>{`if (data.code === 0) {`}</p>
+                <div className="ml-2">
+                  <p>{`totalPages = Math.floor(data.records / limitnotify)`}</p>
+                  <p>{`if (data.records === 0) {`}</p>
+                  <div className="ml-2">
+                    <p>{`loaderObj.unShow()`}</p>
+                    <p>{`$("#back_cart_product_monitor").css({display: "none"})`}</p>
+                    <p>{`str += '<div style="height: 300px; display: flex;" class="flexCenter">'`}</p>
+                    <p>{`str += '<img class="no-found"  style="width: 100px;">'`}</p>
+                    <p>{`str += "</div>"`}</p>
+                    <p>{`$("#content_notification").html(str)`}</p>
+                    <p>{`$("#content_alert").html(str)`}</p>
+                    <p>{`$(".no-found").attr("src", "./pic/Monitor/Icon-YojoSolar-Nodata.png")`}</p>
+                    <p>{`$(".pagination").css({display: "none"})`}</p>
+                    <p>{`$("#contennt_alert_nologin").css({display: "none"})`}</p>
+                  </div>
+                  <p>{`} else {`}</p>
+                  <div className="ml-2">
+                    <p>{`$(".pagination").css({display: "flex"})`}</p>
+                    <p>{`data.result[0].list.forEach(function (items) {`}</p>
+                    <div className="ml-2">
+                      <p>{`if (items.status === 50 || items.status === 40) {`}</p>
+                      <div className="ml-2">
+                        <p>{`coutnotify.push(items)`}</p>
+                        <p>{`var timestamp = items.alertTime`}</p>
+                        <p>{`var date = new Date(timestamp)`}</p>
+                        <p>{`var year = date.getFullYear()`}</p>
+                        <p>{`var month = ("0" + (date.getMonth() + 1)).slice(-2)`}</p>
+                        <p>{`var day = ("0" + date.getDate()).slice(-2)`}</p>
+                        <p>{`var hours = ("0" + date.getHours()).slice(-2)`}</p>
+                        <p>{`var minutes = ("0" + date.getMinutes()).slice(-2)`}</p>
+                        <p>{`var seconds = ("0" + date.getSeconds()).slice(-2)`}</p>
+                        <p>{`var formattedDateTime = year + "-" + month + "-" + day + " | " + hours + ":" + minutes + ":" + seconds`}</p>
+                        <p>{`var code1 = items.codes[1] !== undefined ? items.codes[1] : ""`}</p>
+                        <p>{`var code2 = items.codes[2] !== undefined ? items.codes[2] : ""`}</p>
+                        <p>{`var code3 = items.codes[0] !== undefined ? items.codes[0] : ""`}</p>
+                        <p>{`str_error += '<div class="box_notification_' + items.id + '" style="width: 90%; padding: 10px; margin: 0 auto; height: 110px; border-radius: 4px;border: 1px solid #FF7A18;background: #FFDFC8;box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.10); position: relative;">'`}</p>
+                        <p>{`str_error += items.read ? "" : '<div class="read_' + items.id + '" style="background: #FF5247; width: 10px; height: 10px; border-radius: 50%; position: absolute;top: -5px;left: -4px;"></div>'`}</p>
+                        <p>{`str_error += '<div style="width: 100%; display: flex; align-items: center;">'`}</p>
+                        <p>{`str_error += '<div class="box_status_' + items.id + '" style=" width:50%;  padding-left: 3px;padding-right: 3px;border-radius: 2px;border: 1px solid #FF7A18; display: flex; height:25px; justify-content: center;align-items: center;gap: 10px; margin-right: 10px; ">'`}</p>
+                        <p>{`str_error += '<span style="color: #FF7A18; font-weight:bold;" class="text_status_' + items.id + '"> Trouble solved</span>'`}</p>
+                        <p>{`str_error += "</div>"`}</p>
+                        <p>{`str_error += '<div  style="width: 50%; color: #FF7A18;font-size: 14px;" class="text_status_code' + items.id + '">Low battery shutdown</div><span style="color: #9F9F9F ; font-size: 10px;"></span>'`}</p>
+                        <p>{`str_error += "</div>"`}</p>
+                        <p>{`str_error += '<div style="height: 15px;"></div>'`}</p>
+                        <p>{`str_error += '<div style="width: 100%; display: flex; align-items: center;  margin-left: 5px;position: relative;">'`}</p>
+                        <p>{`str_error += '<div style="width: 95%;  display:  flex;width: 112px; align-items: center;gap: 10px;  ">'`}</p>
+                        <p>{`str_error += '<span style="color:#000000; ">Alarm code : </span>'`}</p>
+                        <p>{`str_error += "</div>"`}</p>
+                        <p>{`str_error += '<div style="color: #303030; display: flex;"> ' + code3 + ' ' + code2 + ' ' + code1 + ' </div>'`}</p>
+                        <p>{`str_error += "</div>"`}</p>
+                        <p>{`str_error += '<div style="width: 100%; display: flex; align-items: center;">'`}</p>
+                        <p>{`str_error += '<div style=" margin-bottom: 10px; width: 95%; display: flex; align-items: center;     gap:10px; ">'`}</p>
+                        <p>{`str_error += '<div style=" display: flex;align-items: center;">'`}</p>
+                        <p>{`str_error += ' <img style="height: 27px; width: 30px; margin-right: 5px; " class="cal_start" alt="">'`}</p>
+                        <p>{`str_error += '<span style="color:#9F9F9F;  font-size: 12px;">' + formattedDateTime + '</span>'`}</p>
+                        <p>{`str_error += "</div>"`}</p>
+                        <p>{`str_error += '<span style="color:#9F9F9F;  font-size: 12px;">Pin : ' + items.devicePn + '</span>'`}</p>
+                        <p>{`str_error += "</div>"`}</p>
+                        <p>{`str_error += "</div>"`}</p>
+                        <p>{`str_error += '<div style="height: 5px;"></div>'`}</p>
+                        <p>{`$("#content_notification").html(str_error)`}</p>
+                      </div>
+                      <p>{`}`}</p>
+                    </div>
+                    <p>{`})`}</p>
+                    <p>{`var myArray = []`}</p>
+                    <p>{`myArray.push(data.result)`}</p>
+                    <p>{`var count = 0`}</p>
+                    <p>{`myArray[0].forEach((item) => {`}</p>
+                    <div className="ml-2">
+                      <p>{`if (!item.read) {`}</p>
+                      <div className="ml-2">
+                        <p>{`count++`}</p>
+                      </div>
+                    </div>
+                    <p>{`})`}</p>
+                    <p>{`if (count == 0) {`}</p>
+                    <div className="ml-2">
+                      <p>{`$("#back_cart_product_monitor").css({display: "none"})`}</p>
+                    </div>
+                    <p>{`} else {`}</p>
+                    <div className="ml-2">
+                      <p>{`$("#back_cart_product_monitor").css({display: "block"})`}</p>
+                      <p>{`$("#number_cart_product_detail_monitor").text(data.result[0].unreadCount)`}</p>
+                      <p>{`setTimeout(() => {`}</p>
+                      <div className="ml-2">
+                        <p>{`$("#back_cart_product_monitor").css({display: "block"})`}</p>
+                      </div>
+                      <p>{`}, 200)`}</p>
+                    </div>
+                    <p>{`}`}</p>
+                    <p>{`data.result[0].list.forEach(function (items) {`}</p>
+                    <div className="ml-2">
+                      <p>{`var timestamp = items.alertTime`}</p>
+                      <p>{`var date = new Date(timestamp)`}</p>
+                      <p>{`var year = date.getFullYear()`}</p>
+                      <p>{`var month = ("0" + (date.getMonth() + 1)).slice(-2)`}</p>
+                      <p>{`var day = ("0" + date.getDate()).slice(-2)`}</p>
+                      <p>{`var hours = ("0" + date.getHours()).slice(-2)`}</p>
+                      <p>{`var minutes = ("0" + date.getMinutes()).slice(-2)`}</p>
+                      <p>{`var seconds = ("0" + date.getSeconds()).slice(-2)`}</p>
+                      <p>{`var formattedDateTime = year + "-" + month + "-" + day + " | " + hours + ":" + minutes + ":" + seconds`}</p>
+                      <p>{`var code1 = items.codes[1] !== undefined ? items.codes[1] : ""`}</p>
+                      <p>{`var code2 = items.codes[2] !== undefined ? items.codes[2] : ""`}</p>
+                      <p>{`var code3 = items.codes[0] !== undefined ? items.codes[0] : ""`}</p>
+                      <p>{`str += '<div class="box_notification_' + items.id + '" style="width: 90%; padding: 10px; margin:  0 auto; height: 110px; border-radius: 4px;border: 1px solid #FF7A18;background: #FFDFC8;  position: relative;box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.10);">'`}</p>
+                      <p>{`str += items.read ? "" : '<div class="read_' + items.id + '" style="background: #FF5247; width: 10px; height: 10px; border-radius: 50%; position: absolute;top: -5px;left: -4px;"></div>'`}</p>
+                      <p>{`str += '<div style="width: 100%; display: flex; align-items: center;">'`}</p>
+                      <p>{`str += '<div class="box_status_' + items.id + '" style=" width:50%;  padding-left: 3px;padding-right: 3px;border-radius: 2px;border: 1px solid #FF7A18; display: flex; height:25px; justify-content: center;align-items: center;gap: 10px; margin-right: 10px; ">'`}</p>
+                      <p>{`str += '<span style="color: #FF7A18; font-weight:bold;" class="text_status_' + items.id + '"> Trouble solved</span>'`}</p>
+                      <p>{`str += "</div>"`}</p>
+                      <p>{`str += '<div  style="width: 50%; color: #FF7A18;font-size: 14px;" class="text_status_code' + items.id + '">Low battery shutdown</div><span style="color: #9F9F9F ; font-size: 10px;"></span>'`}</p>
+                      <p>{`str += "</div>"`}</p>
+                      <p>{`str += '<div style="height: 15px;"></div>'`}</p>
+                      <p>{`str += '<div style="width: 100%; display: flex; align-items: center;  margin-left: 5px; position: relative;">'`}</p>
+                      <p>{`str += '<div style="width: 95%;  display:  flex;width: 112px; align-items: center;gap: 10px;  ">'`}</p>
+                      <p>{`str += '<span style="color:#000000; ">Alarm code : </span>'`}</p>
+                      <p>{`str += "</div>"`}</p>
+                      <p>{`str += '<div style="color: #303030; display: flex;"> ' + code3 + ' ' + code2 + ' ' + code1 + ' </div>'`}</p>
+                      <p>{`str += "</div>"`}</p>
+                      <p>{`str += '<div style="width: 100%; display: flex; align-items: center;">'`}</p>
+                      <p>{`str += '<div style=" margin-bottom: 10px; width: 95%; display: flex; align-items: center;     gap:10px; ">'`}</p>
+                      <p>{`str += '<div style=" display: flex;align-items: center;">'`}</p>
+                      <p>{`str += ' <img style="height: 27px; width: 30px; margin-right: 5px; " class="cal_start" alt="">'`}</p>
+                      <p>{`str += '<span style="color:#9F9F9F;  font-size: 12px;">' + formattedDateTime + '</span>'`}</p>
+                      <p>{`str += "</div>"`}</p>
+                      <p>{`str += '<span style="color:#9F9F9F;  font-size: 12px;">Pin : ' + items.devicePn + '</span>'`}</p>
+                      <p>{`str += "</div>"`}</p>
+                      <p>{`str += "</div>"`}</p>
+                      <p>{`str += "</div>"`}</p>
+                      <p>{`str += '<div style="height: 5px;"></div>'`}</p>
+                    </div>
+                    <p>{`$("#content_notification").html(str)`}</p>
+                  </div>
+                  <p>{`var myArray = []`}</p>
+                  <p>{`myArray.push(data.result)`}</p>
+                  <p>{`var count = 0`}</p>
+                  <p>{`myArray[0].forEach((item) => {`}</p>
+                  <div className="ml-2">
+                    <p>{`if (!item.read) {`}</p>
+                    <div className="ml-2">
+                      <p>{`count++`}</p>
+                    </div>
+                  </div>
+                  <p>{`})`}</p>
+                  <p>{`if (count == 0) {`}</p>
+                  <div className="ml-2">
+                    <p>{`$("#back_cart_product_monitor").css({display: "none"})`}</p>
+                  </div>
+                  <p>{`} else {`}</p>
+                  <div className="ml-2">
+                    <p>{`$("#back_cart_product_monitor").css({display: "block"})`}</p>
+                    <p>{`$("#number_cart_product_detail_monitor").text(data.result[0].unreadCount)`}</p>
+                    <p>{`setTimeout(() => {`}</p>
+                    <div className="ml-2">
+                      <p>{`$("#back_cart_product_monitor").css({display: "block"})`}</p>
+                    </div>
+                    <p>{`}, 200)`}</p>
+                  </div>
+                  <p>{`}`}</p>
+                  <p>{`data.result[0].list.forEach(function (items) {`}</p>
+                  <div className="ml-2">
+                    <p>{`var timestamp = items.alertTime`}</p>
+                    <p>{`var date = new Date(timestamp)`}</p>
+                    <p>{`var year = date.getFullYear()`}</p>
+                    <p>{`var month = ("0" + (date.getMonth() + 1)).slice(-2)`}</p>
+                    <p>{`var day = ("0" + date.getDate()).slice(-2)`}</p>
+                    <p>{`var hours = ("0" + date.getHours()).slice(-2)`}</p>
+                    <p>{`var minutes = ("0" + date.getMinutes()).slice(-2)`}</p>
+                    <p>{`var seconds = ("0" + date.getSeconds()).slice(-2)`}</p>
+                    <p>{`var formattedDateTime = year + "-" + month + "-" + day + " | " + hours + ":" + minutes + ":" + seconds`}</p>
+                    <p>{`var code1 = items.codes[1] !== undefined ? items.codes[1] : ""`}</p>
+                    <p>{`var code2 = items.codes[2] !== undefined ? items.codes[2] : ""`}</p>
+                    <p>{`var code3 = items.codes[0] !== undefined ? items.codes[0] : ""`}</p>
+                    <p>{`str += '<div class="box_notification_' + items.id + '" style="width: 90%; padding: 10px; margin:  0 auto; height: 110px; border-radius: 4px;border: 1px solid #FF7A18;background: #FFDFC8;  position: relative;box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.10);">'`}</p>
+                    <p>{`str += items.read ? "" : '<div class="read_' + items.id + '" style="background: #FF5247; width: 10px; height: 10px; border-radius: 50%; position: absolute;top: -5px;left: -4px;"></div>'`}</p>
+                    <p>{`str += '<div style="width: 100%; display: flex; align-items: center;">'`}</p>
+                    <p>{`str += '<div class="box_status_' + items.id + '" style=" width:50%;  padding-left: 3px;padding-right: 3px;border-radius: 2px;border: 1px solid #FF7A18; display: flex; height:25px; justify-content: center;align-items: center;gap: 10px; margin-right: 10px; ">'`}</p>
+                    <p>{`str += '<span style="color: #FF7A18; font-weight:bold;" class="text_status_' + items.id + '"> Trouble solved</span>'`}</p>
+                    <p>{`str += "</div>"`}</p>
+                    <p>{`str += '<div  style="width: 50%; color: #FF7A18;font-size: 14px;" class="text_status_code' + items.id + '">Low battery shutdown</div><span style="color: #9F9F9F ; font-size: 10px;"></span>'`}</p>
+                    <p>{`str += "</div>"`}</p>
+                    <p>{`str += '<div style="height: 15px;"></div>'`}</p>
+                    <p>{`str += '<div style="width: 100%; display: flex; align-items: center;  margin-left: 5px; position: relative;">'`}</p>
+                    <p>{`str += '<div style="width: 95%;  display:  flex;width: 112px; align-items: center;gap: 10px;  ">'`}</p>
+                    <p>{`str += '<span style="color:#000000; ">Alarm code : </span>'`}</p>
+                    <p>{`str += "</div>"`}</p>
+                    <p>{`str += '<div style="color: #303030; display: flex;"> ' + code3 + ' ' + code2 + ' ' + code1 + ' </div>'`}</p>
+                    <p>{`str += "</div>"`}</p>
+                    <p>{`str += '<div style="width: 100%; display: flex; align-items: center;">'`}</p>
+                    <p>{`str += '<div style=" margin-bottom: 10px; width: 95%; display: flex; align-items: center;     gap:10px; ">'`}</p>
+                    <p>{`str += '<div style=" display: flex;align-items: center;">'`}</p>
+                    <p>{`str += ' <img style="height: 27px; width: 30px; margin-right: 5px; " class="cal_start" alt="">'`}</p>
+                    <p>{`str += '<span style="color:#9F9F9F;  font-size: 12px;">' + formattedDateTime + '</span>'`}</p>
+                    <p>{`str += "</div>"`}</p>
+                    <p>{`str += '<span style="color:#9F9F9F;  font-size: 12px;">Pin : ' + items.devicePn + '</span>'`}</p>
+                    <p>{`str += "</div>"`}</p>
+                    <p>{`str += "</div>"`}</p>
+                    <p>{`str += "</div>"`}</p>
+                    <p>{`str += '<div style="height: 5px;"></div>'`}</p>
+                  </div>
+                  <p>{`$("#content_alert").html(str)`}</p>
+                </div>
+              </div>
+            </div>
+            <p>{`}`}</p>
+            <p>{`}`}</p>
+            <p>{`});`}</p>
+          </div>
+
+          <p>{`}`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+//  order_info_cancel_refund.html
+// getOid
+export function Order_info_cancel_refund_getOid() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var SendCancelRefund = dataItem;`}</p>
+        <p>{`$("#cancel_refund_image").attr("src", API_SERVER + dataItem.image);`}</p>
+        <p>{`$("#price_cancel_refund").text(dataItem.price + " ฿");`}</p>
+        <p>{`$("#name_cancel").text(dataItem.name);`}</p>
+
+        <p>{`var formattedDateTime =`}</p>
+        <p>{`  dataMain.refundTime !== null`}</p>
+        <p>{`    ? moment(dataMain.refundTime).format("YYYY-MM-DD | hh:mm")`}</p>
+        <p>{`    : "-";`}</p>
+        <p>{`$(".refundTime").text(formattedDateTime);`}</p>
+
+        <p>{`$("#Quantity_cancel_refund").text("Quantity x " + dataItem.quantity);`}</p>
+        <p>{`$("#cancel_refund_name_delivery").text(dataMain.name);`}</p>
+        <p>{`$("#cancel_refund_mobile_name_delivery").text(dataMain.mobile);`}</p>
+
+        <p>{`$("#cancel_refund_address_delivery").text(dataMain.address);`}</p>
+        <p>{`$("#cancel_order_refund_id").text(dataMain.id);`}</p>
+        <p>{`$("#teacking_number_cancel_refund").text(dataMain.tracking);`}</p>
+        <p>{`var OrderTime = moment(dataMain.cdt).format("YYYY-MM-DD | hh:mm:ss");`}</p>
+        <p>{`$("#cancel_refund_Order_time").text(OrderTime);`}</p>
+
+        <p>{`var paidTime = moment(dataItem.paidTime).format("YYYY-MM-DD | hh:mm:ss");`}</p>
+        <p>{`$("#cancel_refund_paidTime").text(paidTime);`}</p>
+
+        <p>{`var deliveryTime = moment(dataItem.deliveryTime).format("YYYY-MM-DD | hh:mm:ss");`}</p>
+        <p>{`$("#cancel_refund_deliveryTime").text(deliveryTime);`}</p>
+
+        <p>{`paymentMethod = dataMain.paymentMethod;`}</p>
+        <p>{`if (paymentMethod == 10) {`}</p>
+        <div className="ml-2">
+          <p>{`$("#payment_cancel_refund").text("Yojo wallet");`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`if (paymentMethod == 20) {`}</p>
+        <div className="ml-2">
+          <p>{`$("#payment_cancel_refund").text("USDT");`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`if (paymentMethod == 30) {`}</p>
+        <div className="ml-2">
+          <p>{`$("#payment_cancel_refund").text("Promptpay");`}</p>
+        </div>
+        <p>{`}`}</p>
+
+        <p>{`var deliveryTime = dataMain.deliveryTime ? moment(dataMain.deliveryTime).format("YYYY-MM-DD | hh:mm:ss") : "";`}</p>
+        <p>{`console.log(deliveryTime);`}</p>
+        <p>{`$("#cancel_refund_deliveryTime").text(deliveryTime);`}</p>
+        <p>{`console.log(stateName, "help");`}</p>
+
+        <p>{`// Default state`}</p>
+        <p>{`$(`}</p>
+        <div className="ml-2">
+          <p>{`"#Refund_Request, #Refund_Request1, #Return_to_sender, #Return_to_sender1, #Refund_Return_Authorized, #Refund_Return_Authorized1, #Refund_Return_Completed, #Refund_Return_Completed1, #Refund_Return_Rejected, #Refund_Return_Rejected1"`}</p>
+        </div>
+        <p>{`).css({display: "none"});`}</p>
+
+        <p>{`if (stateName == 2) {`}</p>
+        <div className="ml-2">
+          <p>{`// Return to Sender state`}</p>
+          <p>{`$("#Return_to_sender, #Return_to_sender1").css({display: "flex"});`}</p>
+        </div>
+        <p>{`} else if (stateName == 3) {`}</p>
+        <div className="ml-2">
+          <p>{`// Refund Return Authorized state`}</p>
+          <p>{`$("#Refund_Return_Authorized, #Refund_Return_Authorized1").css({display: "flex"});`}</p>
+        </div>
+        <p>{`} else if (stateName == 4) {`}</p>
+        <div className="ml-2">
+          <p>{`// Refund Return Completed state`}</p>
+          <p>{`$("#Refund_Return_Completed, #Refund_Return_Completed1").css({display: "flex"});`}</p>
+        </div>
+        <p>{`} else if (stateName == 5) {`}</p>
+        <div className="ml-2">
+          <p>{`// Refund Return Rejected state`}</p>
+          <p>{`$("#Refund_Return_Rejected, #Refund_Return_Rejected1").css({display: "flex"});`}</p>
+        </div>
+        <p>{`} else {`}</p>
+        <div className="ml-2">
+          <p>{`// Default: Refund Request state`}</p>
+          <p>{`$("#Refund_Request, #Refund_Request1").css({display: "flex"});`}</p>
+          <p>{`$(`}</p>
+          <div className="ml-2">
+            <p>{`"#Refund_Return_Authorized, #Refund_Return_Authorized1, #Return_to_sender, #Return_to_sender1, #Refund_Return_Completed, #Refund_Return_Completed1, #Refund_Return_Rejected, #Refund_Return_Rejected1"`}</p>
+          </div>
+          <p>{`).css({display: "none"});`}</p>
+        </div>
+        <p>{`}`}</p>
+
+        <p>{`myScroll = new IScroll("#order_info_cancel_refundScroller", {`}</p>
+        <div className="ml-2">
+          <p>{`probeType: 1,`}</p>
+          <p>{`mouseWheel: true,`}</p>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// sendRefund
+export function Order_info_cancel_refund_sendRefund() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var oid = SendCancelRefund.oid;`}</p>
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "PUT",`}</p>
+          <p>{`url: API_SERVER + "/v1/orders/refund/cancel/" + oid,`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`Authorization: "Bearer " + token.token,`}</p>
+            <p>{`"Content-Type": "application/json",`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`beforeSend: function (xmlhttprequest) {},`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+            <p>{`if (data.code == 0) {`}</p>
+            <div className="ml-2">
+              <p>{`msgObjSub.show("Cancel Refund Successfully.", function () {`}</p>
+              <div className="ml-2">
+                <p>{`msgObjSub.unShow();`}</p>
+              </div>
+              <p>{`});`}</p>
+            </div>
+            <p>{`} else if (data.code == 4117) {`}</p>
+            <div className="ml-2">
+              <p>{`msgPageObj.show(`}</p>
+              <div className="ml-2">
+                <p>{`"The request has been processed and cannot be cancelled.",`}</p>
+                <p>{`function () {`}</p>
+                <div className="ml-2">
+                  <p>{`msgPageObj.unShow();`}</p>
+                </div>
+                <p>{`}`}</p>
+              </div>
+              <p>{`);`}</p>
+            </div>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xmlhttprequest, error) {},`}</p>
+          <p>{`complete: function () {},`}</p>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// cancelOrder_order_info_cancel_refund
+export function Order_info_cancel_refund_cancelOrder_order_info_cancel_refund() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`cancel_orderObj.getItemAll(dataItem)`}</p>
+      </div>
+    </div>
+  )
+}
+
+// order_info_cancel.html
+// getOid
+export function Order_info_cancel_getOid() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`$("#cancel_image").attr("src", API_SERVER + dataItem.image);`}</p>
+        <p>{`$("#price_cancel").text(dataItem.price + " ฿");`}</p>
+        <p>{`$("#name_cancel").text(dataItem.name);`}</p>
+
+        <p>{`paymentMethod = dataMain.paymentMethod;`}</p>
+        <p>{`if (paymentMethod == 10) {`}</p>
+        <div className="ml-2">
+          <p>{`$("#payment_cancel").text("Yojo wallet");`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`if (paymentMethod == 20) {`}</p>
+        <div className="ml-2">
+          <p>{`$("#payment_cancel").text("USDT");`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`if (paymentMethod == 30) {`}</p>
+        <div className="ml-2">
+          <p>{`$("#payment_cancel").text("Promptpay");`}</p>
+        </div>
+        <p>{`}`}</p>
+
+        <p>{`$("#Quantity_cancel").text("Quantity x " + dataItem.quantity);`}</p>
+        <p>{`$("#cancel_name_delivery").text(dataMain.name);`}</p>
+        <p>{`$("#cancel_mobile_name_delivery").text(dataMain.mobile);`}</p>
+        <p>{`$("#cancel_address_delivery").text(dataMain.address);`}</p>
+        <p>{`$("#cancel_order_id").text(dataMain.id);`}</p>
+        <p>{`var OrderTime = moment(dataMain.cdt).format("YYYY-MM-DD | hh:mm:ss");`}</p>
+        <p>{`$("#cancel_Order_time").text(OrderTime);`}</p>
+
+        <p>{`var paidTime = moment(dataItem.paidTime).format("YYYY-MM-DD | hh:mm:ss");`}</p>
+        <p>{`$("#cancel_paidTime").text(paidTime);`}</p>
+
+        <p>{`var deliveryTime = dataMain.deliveryTime ? moment(dataMain.deliveryTime).format("YYYY-MM-DD | hh:mm:ss") : "";`}</p>
+        <p>{`console.log(deliveryTime);`}</p>
+        <p>{`$("#cancel_deliveryTime").text(deliveryTime);`}</p>
+      </div>
+    </div>
+  )
+}
+
+// cancelOrder
+export function Order_info_cancel_cancelOrder() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`cancel_orderObj.getItemAll(dataItem)`}</p>
+      </div>
+    </div>
+  )
+}
