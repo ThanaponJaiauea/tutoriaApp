@@ -112,11 +112,19 @@ import {
   New_address_validateInput,
   Notification_getNotification,
   Notification_pagination,
+  OrderState10_getOid,
+  OrderStateShip_getOid,
   Order_info_cancel_cancelOrder,
   Order_info_cancel_getOid,
   Order_info_cancel_refund_cancelOrder_order_info_cancel_refund,
   Order_info_cancel_refund_getOid,
   Order_info_cancel_refund_sendRefund,
+  Order_info_received_cancelOrder,
+  Order_info_received_getOid,
+  Order_info_received_getTimeline,
+  Order_info_waitRceive_getOid,
+  Order_info_waitRceive_getTimeline,
+  Order_info_waitRceive_sendReceipt,
   PageInit,
   PageInitExampleBody,
   PageInitExampleScript,
@@ -126,6 +134,24 @@ import {
   PageUnShowExampleBody,
   PageUnShowExampleScript,
   PageUnShowWidget,
+  PaymentStatistic_chartPaymentStatistic,
+  PaymentStatistic_exportCSVPayment,
+  PaymentStatistic_getPaymentStatistic,
+  Payment_method2_addSlipPayment,
+  Payment_method2_genQR,
+  Payment_method2_start_stimer,
+  Payment_method2_updateSlipPayment,
+  Payment_method_selectPayment,
+  ProductCart_confirmOrder,
+  ProductCart_delete_id,
+  ProductCart_showCart,
+  ProductCart_show_cart,
+  ProductCart_sumPrice,
+  ProductCart_update_quantity,
+  Productdetail_checkLogin,
+  Productdetail_confirmOrderBuy,
+  Productdetail_getDetailProduct,
+  PurchaseReport_getSalesData,
   ResObjIndexScript,
   ResObjWidget,
 } from "../components/FunctionDataText"
@@ -173,7 +199,14 @@ export default function ModelContent({
   content4p4,
   content5,
   content6,
+  content6p1,
+  content6p2,
+  content6p3,
+  content6p4,
+  content6p5,
   content7,
+  content7p1,
+  content7p2,
   content8,
   content9,
   content10,
@@ -267,9 +300,9 @@ export default function ModelContent({
               {content2p3 && <p>{content2p3}</p>}
               {content3 && <p>{content3}</p>}
               {content3p1 && <p>{content3p1}</p>}
-              {content3p2 && <p>{content3p2}</p>}
               {content3p3 && <p>{content3p3}</p>}
               {content3p4 && <p>{content3p4}</p>}
+              {content3p2 && <p>{content3p2}</p>}
               {content3p5 && <p>{content3p5}</p>}
               {content3p6 && <p>{content3p6}</p>}
               {content4 && <p>{content4}</p>}
@@ -279,7 +312,14 @@ export default function ModelContent({
               {content4p4 && <p>{content4p4}</p>}
               {content5 && <p>{content5}</p>}
               {content6 && <p>{content6}</p>}
+              {content6p1 && <p>{content6p1}</p>}
+              {content6p2 && <p>{content6p2}</p>}
+              {content6p3 && <p>{content6p3}</p>}
+              {content6p4 && <p>{content6p4}</p>}
+              {content6p5 && <p>{content6p5}</p>}
               {content7 && <p>{content7}</p>}
+              {content7p1 && <p>{content7p1}</p>}
+              {content7p2 && <p>{content7p2}</p>}
               {content8 && <p>{content8}</p>}
               {content9 && <p>{content9}</p>}
               {content10 && <p>{content10}</p>}
@@ -446,6 +486,69 @@ export default function ModelContent({
             {selectedMenu === "cancelOrder_order_info_cancel" && (
               <Order_info_cancel_cancelOrder />
             )}
+            {selectedMenu === "order_info_received_getOid" && (
+              <Order_info_received_getOid />
+            )}
+            {selectedMenu === "order_info_received_cancelOrder" && (
+              <Order_info_received_cancelOrder />
+            )}
+            {selectedMenu === "order_info_received_getTimeline" && (
+              <Order_info_received_getTimeline />
+            )}
+            {selectedMenu === "order_info_waitRceive_sendReceipt" && (
+              <Order_info_waitRceive_sendReceipt />
+            )}
+            {selectedMenu === "order_info_waitRceive_getOid" && (
+              <Order_info_waitRceive_getOid />
+            )}
+            {selectedMenu === "order_info_waitRceive_getTimeline" && (
+              <Order_info_waitRceive_getTimeline />
+            )}
+            {selectedMenu === "orderState10_cancelOrder" && (
+              <Order_info_received_cancelOrder />
+            )}
+            {selectedMenu === "orderState10_getOid" && <OrderState10_getOid />}
+            {selectedMenu === "orderStateShip_cancelOrder" && (
+              <Order_info_received_cancelOrder />
+            )}
+            {selectedMenu === "orderStateShip_getOid" && (
+              <OrderStateShip_getOid />
+            )}
+            {selectedMenu === "selectPayment" && (
+              <Payment_method_selectPayment />
+            )}
+            {selectedMenu === "genQR" && <Payment_method2_genQR />}
+            {selectedMenu === "start_timer" && <Payment_method2_start_stimer />}
+            {selectedMenu === "AddSlipPayment" && (
+              <Payment_method2_addSlipPayment />
+            )}
+            {selectedMenu === "UpdateSlipPayment" && (
+              <Payment_method2_updateSlipPayment />
+            )}
+            {selectedMenu === "GetPaymentStatistic" && (
+              <PaymentStatistic_getPaymentStatistic />
+            )}
+            {selectedMenu === "ChartPaymentStatistic" && (
+              <PaymentStatistic_chartPaymentStatistic />
+            )}
+            {selectedMenu === "ExportCSVPayment" && (
+              <PaymentStatistic_exportCSVPayment />
+            )}
+            {selectedMenu === "showCart" && <ProductCart_showCart />}
+            {selectedMenu === "show_cart" && <ProductCart_show_cart />}
+            {selectedMenu === "update_quantity" && (
+              <ProductCart_update_quantity />
+            )}
+            {selectedMenu === "delete_id" && <ProductCart_delete_id />}
+            {selectedMenu === "sumPrice" && <ProductCart_sumPrice />}
+            {selectedMenu === "confirmOrder" && <ProductCart_confirmOrder />}
+            {selectedMenu === "confirmOrderBuy" && (
+              <Productdetail_confirmOrderBuy />
+            )}
+            {selectedMenu === "getDetailProduct" && (
+              <Productdetail_getDetailProduct />
+            )}
+            {selectedMenu === "GetSalesData" && <PurchaseReport_getSalesData />}
             <p className="ml-4">{`}`}</p>
             <span className="text-[#A52A2A]">&lt;/script&gt;</span>
           </div>

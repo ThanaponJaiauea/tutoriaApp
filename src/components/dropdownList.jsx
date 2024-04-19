@@ -16,8 +16,13 @@ export default function DropdownList({
         <li
           onClick={onClick}
           className="w-full h-[40px] text-base font-bold flex items-center justify-between gap-2 cursor-pointer">
-          <h1>{headerName}</h1>
-          {!open ? <AiOutlineCaretDown /> : <AiOutlineCaretUp />}
+          <div className="line-clamp-1 w-4/5">
+            <h1>{headerName}</h1>
+          </div>
+
+          <div className="w-1/5 flex justify-end items-center">
+            {!open ? <AiOutlineCaretDown /> : <AiOutlineCaretUp />}
+          </div>
         </li>
       </div>
 

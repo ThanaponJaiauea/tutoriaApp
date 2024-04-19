@@ -36,6 +36,16 @@ export default function FormModelSolarApp({
   setOpenNotification,
   setOpenOrderInfoCancelRefund,
   setOpenOrderInfoCancel,
+  setOpenOrderInfoReceived,
+  setOpenOrderInfoWaitRceive,
+  setOpenOrderState10,
+  setOpenOrderStateShip,
+  setOpenPaymentMethod,
+  setOpenPaymentMethod2,
+  setOpenPaymentStatistic,
+  setOpenProductCart,
+  setOpenProductdetail,
+  setOpenPurchaseReport,
   data,
   handleModelClick,
   openAdddatalogger,
@@ -65,6 +75,16 @@ export default function FormModelSolarApp({
   openNotification,
   openOrderInfoCancelRefund,
   openOrderInfoCancel,
+  openOrderInfoReceived,
+  openOrderInfoWaitRceive,
+  openOrderState10,
+  openOrderStateShip,
+  openPaymentMethod,
+  openPaymentMethod2,
+  openPaymentStatistic,
+  openProductCart,
+  openProductdetail,
+  openPurchaseReport,
 }) {
   return (
     <div>
@@ -108,7 +128,7 @@ export default function FormModelSolarApp({
           <div>
             <DropdownList
               selectedMenu={selectedMenu}
-              headerName="Changepassword"
+              headerName="Changepassword.html"
               category="changepassword"
               open={openChangepassword}
               onClick={setOpenChangepassword}
@@ -437,6 +457,136 @@ export default function FormModelSolarApp({
               category="orderInfoCancel"
               open={openOrderInfoCancel}
               onClick={setOpenOrderInfoCancel}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* order_info_received.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Order_info_received.html"
+              category="orderInfoReceived"
+              open={openOrderInfoReceived}
+              onClick={setOpenOrderInfoReceived}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* order_info_waitRceive.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Order_info_waitRceive.html"
+              category="orderInfoWaitRceive"
+              open={openOrderInfoWaitRceive}
+              onClick={setOpenOrderInfoWaitRceive}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* order_state_10.html  */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Order_state_10.html"
+              category="orderState10"
+              open={openOrderState10}
+              onClick={setOpenOrderState10}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* order_state_ship.html  */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Order_state_ship.html"
+              category="orderStateShip"
+              open={openOrderStateShip}
+              onClick={setOpenOrderStateShip}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* payment_method.html  */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Payment_method.html"
+              category="paymentMethod"
+              open={openPaymentMethod}
+              onClick={setOpenPaymentMethod}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* payment_method2.html  */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Payment_method2.html"
+              category="paymentMethod2"
+              open={openPaymentMethod2}
+              onClick={setOpenPaymentMethod2}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* paymentStatistic.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="PaymentStatistic.html"
+              category="paymentStatistic"
+              open={openPaymentStatistic}
+              onClick={setOpenPaymentStatistic}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* productCart.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="ProductCart.html"
+              category="productCart"
+              open={openProductCart}
+              onClick={setOpenProductCart}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* productdetail.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Productdetail.html"
+              category="productdetail"
+              open={openProductdetail}
+              onClick={setOpenProductdetail}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/*  purchaseReport.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="purchaseReport.html"
+              category="purchaseReport"
+              open={openPurchaseReport}
+              onClick={setOpenPurchaseReport}
               data={data}
               handleModelClick={handleModelClick}
             />

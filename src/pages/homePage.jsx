@@ -105,7 +105,38 @@ export default function HomePage() {
   const [openOrderInfoCancelRefund, setOpenOrderInfoCancelRefund] =
     useState(false)
 
+  // open orderInfoCancel
   const [openOrderInfoCancel, setOpenOrderInfoCancel] = useState(false)
+
+  // open orderInfoReceived
+  const [openOrderInfoReceived, setOpenOrderInfoReceived] = useState(false)
+
+  // open order_info_waitRceive
+  const [openOrderInfoWaitRceive, setOpenOrderInfoWaitRceive] = useState(false)
+
+  // open orderState10
+  const [openOrderState10, setOpenOrderState10] = useState(false)
+
+  // open orderStateShip
+  const [openOrderStateShip, setOpenOrderStateShip] = useState(false)
+
+  // open paymentMethod
+  const [openPaymentMethod, setOpenPaymentMethod] = useState(false)
+
+  // open paymentMethod2
+  const [openPaymentMethod2, setOpenPaymentMethod2] = useState(false)
+
+  // open paymentStatistic
+  const [openPaymentStatistic, setOpenPaymentStatistic] = useState(false)
+
+  // open productCart
+  const [openProductCart, setOpenProductCart] = useState(false)
+
+  // open productdetail
+  const [openProductdetail, setOpenProductdetail] = useState(false)
+
+  // open purchaseReport
+  const [openPurchaseReport, setOpenPurchaseReport] = useState(false)
 
   const handleModelClick = (menu) => {
     setSelectedMenu(menu)
@@ -734,6 +765,224 @@ export default function HomePage() {
       key: "cancelOrder_order_info_cancel",
       category: "orderInfoCancel",
     },
+
+    // order_info_received.html
+    {
+      name: "getOid()",
+      type: "specificModel",
+      key: "order_info_received_getOid",
+      category: "orderInfoReceived",
+    },
+    {
+      name: "cancelOrder()",
+      type: "specificModel",
+      key: "order_info_received_cancelOrder",
+      category: "orderInfoReceived",
+    },
+    {
+      name: "getTimeline()",
+      type: "specificModel",
+      key: "order_info_received_getTimeline",
+      category: "orderInfoReceived",
+    },
+
+    // order_info_waitRceive.html
+    {
+      name: "sendReceipt()",
+      type: "specificModel",
+      key: "order_info_waitRceive_sendReceipt",
+      category: "orderInfoWaitRceive",
+    },
+    {
+      name: "getOid()",
+      type: "specificModel",
+      key: "order_info_waitRceive_getOid",
+      category: "orderInfoWaitRceive",
+    },
+    {
+      name: "getTimeline()",
+      type: "specificModel",
+      key: "order_info_waitRceive_getTimeline",
+      category: "orderInfoWaitRceive",
+    },
+
+    // order_state_10.html
+    {
+      name: "cancelOrder()",
+      type: "specificModel",
+      key: "orderState10_cancelOrder",
+      category: "orderState10",
+    },
+    {
+      name: "getOid()",
+      type: "specificModel",
+      key: "orderState10_getOid",
+      category: "orderState10",
+    },
+
+    // order_state_ship.html
+    {
+      name: "cancelOrder()",
+      type: "specificModel",
+      key: "orderStateShip_cancelOrder",
+      category: "orderStateShip",
+    },
+    {
+      name: "getOid()",
+      type: "specificModel",
+      key: "orderStateShip_getOid",
+      category: "orderStateShip",
+    },
+
+    // payment_method.html
+    {
+      name: "selectPayment()",
+      type: "specificModel",
+      key: "selectPayment",
+      category: "paymentMethod",
+    },
+
+    // payment_method2.html
+    {
+      name: "genQR()",
+      type: "specificModel",
+      key: "genQR",
+      category: "paymentMethod2",
+    },
+    {
+      name: "start_timer()",
+      type: "specificModel",
+      key: "start_timer",
+      category: "paymentMethod2",
+    },
+    {
+      name: "AddSlipPayment()",
+      type: "specificModel",
+      key: "AddSlipPayment",
+      category: "paymentMethod2",
+    },
+    {
+      name: "UpdateSlipPayment()",
+      type: "specificModel",
+      key: "UpdateSlipPayment",
+      category: "paymentMethod2",
+    },
+
+    // paymentStatistic.html
+    {
+      name: "GetPaymentStatistic()",
+      type: "specificModel",
+      key: "GetPaymentStatistic",
+      category: "paymentStatistic",
+    },
+    {
+      name: "ChartPaymentStatistic()",
+      type: "specificModel",
+      key: "ChartPaymentStatistic",
+      category: "paymentStatistic",
+    },
+    {
+      name: "ExportCSVPayment()",
+      type: "specificModel",
+      key: "ExportCSVPayment",
+      category: "paymentStatistic",
+    },
+
+    // productCart.html
+    {
+      name: "showCart()",
+      type: "specificModel",
+      key: "showCart",
+      category: "productCart",
+    },
+    {
+      name: "show_cart()",
+      type: "specificModel",
+      key: "show_cart",
+      category: "productCart",
+    },
+    {
+      name: "update_quantity()",
+      type: "specificModel",
+      key: "update_quantity",
+      category: "productCart",
+    },
+    {
+      name: "delete_id()",
+      type: "specificModel",
+      key: "delete_id",
+      category: "productCart",
+    },
+    {
+      name: "sumPrice()",
+      type: "specificModel",
+      key: "sumPrice",
+      category: "productCart",
+    },
+    {
+      name: "confirmOrder()",
+      type: "specificModel",
+      key: "confirmOrder",
+      category: "productCart",
+    },
+
+    // productdetail.html
+    {
+      name: "confirmOrderBuy()",
+      type: "specificModel",
+      key: "confirmOrderBuy",
+      category: "productdetail",
+    },
+    {
+      name: "getDetailProduct()",
+      type: "specificModel",
+      key: "getDetailProduct",
+      category: "productdetail",
+    },
+    {
+      name: "checkLogin()",
+      type: "specificModel",
+      key: "checkLogin",
+      category: "productdetail",
+    },
+
+    // purchaseReport.html
+    {
+      name: "GetSalesData()",
+      type: "specificModel",
+      key: "GetSalesData",
+      category: "purchaseReport",
+    },
+    {
+      name: "CreateTableReport()",
+      type: "specificModel",
+      key: "CreateTableReport",
+      category: "purchaseReport",
+    },
+    {
+      name: "CreateTableQuarter()",
+      type: "specificModel",
+      key: "CreateTableQuarter",
+      category: "purchaseReport",
+    },
+    {
+      name: "getSelectedMonthpurchase()",
+      type: "specificModel",
+      key: "getSelectedMonthpurchase",
+      category: "purchaseReport",
+    },
+    {
+      name: "showChart()",
+      type: "specificModel",
+      key: "showChart",
+      category: "purchaseReport",
+    },
+    {
+      name: "ExportCSV()",
+      type: "specificModel",
+      key: "ExportCSV",
+      category: "purchaseReport",
+    },
   ]
 
   // data  modelStructure
@@ -794,8 +1043,6 @@ export default function HomePage() {
       type: "generalModel",
       key: "messagePage",
     },
-
-    ,
   ]
 
   const getTitle = () => {
@@ -1010,6 +1257,72 @@ export default function HomePage() {
         return "getOid(id, dataMain, dataItem)"
       case "cancelOrder_order_info_cancel":
         return "cancelOrder(dataItem)"
+      case "order_info_received_getOid":
+        return "getOid(id, dataMain, dataItem)"
+      case "order_info_received_cancelOrder":
+        return "cancelOrder(dataItem)"
+      case "order_info_received_getTimeline":
+        return "getTimeline(timeline)"
+      case "order_info_waitRceive_sendReceipt":
+        return "sendReceipt(id)"
+      case "order_info_waitRceive_getOid":
+        return "getOid(id, dataMain, dataItem)"
+      case "order_info_waitRceive_getTimeline":
+        return "getTimeline(timeline)"
+      case "orderState10_cancelOrder":
+        return "cancelOrder(dataItem)"
+      case "orderState10_getOid":
+        return "getOid(id, dataMain, dataItem)"
+      case "orderStateShip_cancelOrder":
+        return "cancelOrder(dataItem)"
+      case "orderStateShip_getOid":
+        return "getOid(id, dataMain, dataItem)"
+      case "selectPayment":
+        return "selectPayment()"
+      case "genQR":
+        return "genQR(qr)"
+      case "start_timer":
+        return "start_timer(time)"
+      case "AddSlipPayment":
+        return "AddSlipPayment(file)"
+      case "UpdateSlipPayment":
+        return "UpdateSlipPayment(Img)"
+      case "GetPaymentStatistic":
+        return "GetPaymentStatistic(year)"
+      case "ChartPaymentStatistic":
+        return "ChartPaymentStatistic()"
+      case "ExportCSVPayment":
+        return "ExportCSVPayment()"
+      case "showCart":
+        return "showCart()"
+      case "show_cart":
+        return "show_cart(data)"
+      case "update_quantity":
+        return "update_quantity(id, quantity, price, quantity2)"
+      case "delete_id":
+        return "delete_id(id)"
+      case "sumPrice":
+        return "sumPrice()"
+      case "confirmOrder":
+        return "confirmOrder()"
+      case "confirmOrderBuy":
+        return "confirmOrderBuy()"
+      case "getDetailProduct":
+        return "getDetailProduct(id)"
+      case "checkLogin":
+        return "checkLogin()"
+      case "GetSalesData":
+        return "GetSalesData(showAll, year)"
+      case "CreateTableReport":
+        return "CreateTableReport()"
+      case "CreateTableQuarter":
+        return "CreateTableQuarter()"
+      case "getSelectedMonthpurchase":
+        return "getSelectedMonthpurchase()"
+      case "showChart":
+        return "showChart()"
+      case "ExportCSV":
+        return "ExportCSV()"
       default:
         return ""
     }
@@ -2792,6 +3105,574 @@ export default function HomePage() {
         htmlCheck="show"
       />
     ),
+
+    // order_info_received.html
+    order_info_received_getOid: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_info_received.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getOid() นี้ทำหน้าที่เติมข้อมูลลงใน element ต่างๆ บนหน้าเว็บด้วยข้อมูลที่ได้รับมาจาก dataMain และ dataItem ดังนี้"
+        content1="1.กำหนดค่าข้อมูลที่ได้รับจาก dataItem เป็น getDataReceipt และ sendDataRefund"
+        content2="2.กำหนดค่าวิธีการชำระเงินที่ได้รับจาก dataMain ให้กับตัวแปร paymentMethod"
+        content3="3.กำหนดค่าสถานะการจัดส่งที่ได้รับจาก dataMain ให้กับตัวแปร deliveryStateReceive"
+        content4={`4.กำหนดค่ารูปภาพให้กับ element ที่มี ID "received_image" ด้วย URL ที่สร้างจากค่าคงที่ API_SERVER และข้อมูลรูปภาพจาก dataItem`}
+        content5="5.กำหนดข้อความใน element ที่มี ID 'price_received' เป็นราคาจาก dataItem"
+        content6="6.กำหนดข้อความใน element ที่มี ID 'name_received' เป็นชื่อสินค้าจาก dataItem"
+        content7="7.กำหนดข้อความใน element ที่มี ID 'teacking_number_received' เป็นหมายเลขติดตามจาก dataMain"
+        content8="8.กำหนดข้อความใน element ที่มี ID 'Quantity_received' เป็นจำนวนสินค้าจาก dataItem"
+        content9="9.กำหนดข้อมูลเกี่ยวกับการจัดส่ง เช่น ชื่อผู้รับ, เบอร์โทรศัพท์, และที่อยู่จาก dataMain ลงใน element ที่เกี่ยวข้อง"
+        content10="10.กำหนดข้อมูลเกี่ยวกับการชำระเงินจาก dataMain ให้กับ element ที่มี ID 'payment_received'"
+        content11="11.จัดรูปแบบและกำหนดเวลาของการสั่งซื้อ, เวลาที่จ่ายเงิน, และเวลาจัดส่ง (หากมี) ให้กับ element ที่เกี่ยวข้อง โดยใช้ moment.js"
+        content12="ฟังก์ชันนี้มีหน้าที่เติมข้อมูลที่เกี่ยวข้องกับการรับสินค้าลงในหน้าเว็บ เพื่อให้ผู้ใช้สามารถดูข้อมูลและรายละเอียดของการรับสินค้าได้อย่างชัดเจนและสะดวกสบาย"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    order_info_received_cancelOrder: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_info_received.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน cancelOrder นี้ทำหน้าที่เรียกใช้เมท็อด getItemAll ของอ็อบเจกต์ cancel_orderObj โดยส่ง dataItem เข้าไปเพื่อประมวลผลการยกเลิกคำสั่งซื้อ ดังนั้นฟังก์ชันนี้จะส่งข้อมูลใน dataItem ไปยัง getItemAll เพื่อดำเนินการต่อในกระบวนการยกเลิกคำสั่งซื้อที่เหมาะสม"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    order_info_received_getTimeline: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_info_received.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getTimeline นี้ใช้สำหรับแสดงข้อมูลการเคลื่อนไหวของการจัดส่งในรูปแบบแถบเวลา (timeline) บนหน้าเว็บ โดยทำงานดังนี้"
+        content1="1.วนลูปผ่านทุกๆรายการใน timeline เพื่อจัดรูปแบบข้อมูลเวลาให้อยู่ในรูปแบบที่ต้องการ และกำหนด ID ของ element ที่จะนำข้อมูลเข้าไป (elementId) โดยอ้างอิงจาก deliveryState ของแต่ละรายการใน timeline"
+        content2="2.นำข้อมูลเวลาที่ได้มาจากการจัดรูปแบบแล้วมาเพิ่มเข้าไปใน element ที่มี ID ตามที่กำหนด โดยการใช้ jQuery ในการเพิ่มข้อมูล"
+        content3="3.กำหนดสีและรูปไอคอนสถานะการจัดส่งให้กับ element ต่างๆ โดยใช้การเปรียบเทียบค่า deliveryStateReceive กับค่าที่กำหนดไว้"
+        content4="4.ทำการเปลี่ยนแปลงสีและรูปไอคอนตามสถานะการจัดส่งของรายการที่กำลังถูกติดตามโดยใช้ jQuery ดังนั้นผู้ใช้สามารถเห็นสถานะของการจัดส่งได้อย่างชัดเจนในแต่ละช่วงเวลา"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // order_info_waitRceive.html
+    order_info_waitRceive_sendReceipt: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_info_waitRceive.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน sendReceipt นี้ใช้สำหรับส่งคำขอยืนยันการรับสินค้าไปยังเซิร์ฟเวอร์ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง Token จาก localStorage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง API"
+        content2="2.ส่งคำขอ HTTP PUT ไปยัง API_SERVER โดยระบุ URL เป็น /v1/orders/receipt/ ตามด้วย id ที่รับเข้ามาเป็นพารามิเตอร์"
+        content3="3.ระบุ header ในคำขอด้วย Token ที่ได้จากขั้นตอนที่ 1 และระบุ Content-Type เป็น application/json"
+        content4="4.ระบุการทำงานของคำขอในฐานะ asynchronous และระบุเวลาในการรอคำตอบจากเซิร์ฟเวอร์เป็น 100000 milliseconds"
+        content5="5.ระบุการดำเนินการที่ต้องทำก่อนทำการส่งคำขอ (beforeSend) และการจัดการเมื่อคำขอสำเร็จ (success) หรือเกิดข้อผิดพลาด (error)"
+        content6={`6.นส่วนของการจัดการเมื่อคำขอสำเร็จ (success) จะทำการซ่อน loader และแสดงข้อความ "Accepted Successfully" พร้อมทำการซ่อนหน้าต่างที่เกี่ยวข้องและปรับปรุงข้อมูลออร์เดอร์โดยเรียกใช้เมทอด settingOrderObj.getAll(12)`}
+        content7={`7.ในกรณีที่มีข้อผิดพลาด จะแสดงข้อความ "You have already confirmed receipt of the product" และทำการปรับสีพื้นหลังของ element ที่มี id "accepted" ให้เป็นสีเทา`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    order_info_waitRceive_getOid: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_info_waitRceive.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getOid นี้ใช้สำหรับแสดงข้อมูลรายละเอียดของคำสั่งซื้อในสถานะ 'รอรับสินค้า' บนหน้าเว็บ โดยทำงานดังนี้"
+        content1="1.กำหนดค่า getDataReceipt เป็นข้อมูลสินค้าจาก dataItem และ deliveryState เป็นสถานะการจัดส่งจาก dataMain"
+        content2={`2.กำหนด URL ของรูปภาพสินค้าให้กับ element ที่มี ID "waitRceive_image" โดยใช้ URL ที่ได้จาก API_SERVER รวมกับ URL ของรูปภาพจาก dataItem`}
+        content3={`3.กำหนดข้อความราคาสินค้าให้กับ element ที่มี ID "price_waitRceive" จากข้อมูลราคาใน dataItem`}
+        content4={`4.กำหนดชื่อสินค้าให้กับ element ที่มี ID "name_waitRceive" จากข้อมูลชื่อสินค้าใน dataItem`}
+        content5={`5.กำหนดหมายเลขติดตามสินค้าให้กับ element ที่มี ID "tracking_number_wait" จากข้อมูลใน dataMain`}
+        content6={`6.กำหนดวิธีการชำระเงินให้กับ element ที่มี ID "payment_waitRceive" โดยตรวจสอบค่า paymentMethod จาก dataMain และกำหนดข้อความตามชนิดของวิธีการชำระเงิน`}
+        content7={`7.กำหนดจำนวนสินค้าให้กับ element ที่มี ID "Quantity_waitRceive" จากข้อมูลจำนวนสินค้าใน dataItem`}
+        content8={`8.กำหนดข้อมูลผู้รับสินค้า เช่น ชื่อ, เบอร์โทรศัพท์, และที่อยู่ให้กับ element ที่เกี่ยวข้อง`}
+        content9={`9.กำหนดเวลาที่สั่งซื้อ, เวลาที่จ่ายเงิน, และเวลาที่จัดส่ง (หากมี) ให้กับ element ที่เกี่ยวข้อง โดยใช้ moment.js`}
+        content10={`10.ฟังก์ชันนี้มีหน้าที่แสดงข้อมูลรายละเอียดของคำสั่งซื้อที่อยู่ในสถานะ "รอรับสินค้า" บนหน้าเว็บ เพื่อให้ผู้ใช้สามารถตรวจสอบข้อมูลและรายละเอียดของคำสั่งซื้อได้อย่างชัดเจนและสะดวกสบาย`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    order_info_waitRceive_getTimeline: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_info_waitRceive.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getTimeline นี้ใช้สำหรับแสดงข้อมูลการเคลื่อนไหวของการจัดส่งในรูปแบบแถบเวลา (timeline) บนหน้าเว็บ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ใช้วงวน for เพื่อวนลูปผ่านทุกรายการใน timeline เพื่อดึงข้อมูลเวลาและสถานะการจัดส่ง"
+        content2="2.จัดรูปแบบข้อมูลเวลาให้อยู่ในรูปแบบที่ต้องการด้วย moment.js และสร้าง elementId จากการประกอบ ID ของ element ตาม deliveryState ของแต่ละรายการใน timeline"
+        content3="3.เพิ่มข้อมูลเวลาที่จัดรูปแบบแล้วลงใน element ที่มี ID ตามที่กำหนด"
+        content4="4.กำหนดสีและรูปไอคอนสถานะการจัดส่งของแต่ละรายการ โดยเรียกใช้ jQuery เพื่อเข้าถึง element ตาม ID และตรวจสอบสถานะการจัดส่ง (deliveryState) ของแต่ละรายการ และกำหนดสีและรูปไอคอนตามค่าของ deliveryState ที่ตรวจสอบได้"
+        content5="5.ฟังก์ชันนี้จะเพิ่มข้อมูลการเคลื่อนไหวของการจัดส่งลงในแถบเวลาบนหน้าเว็บ และแสดงสถานะการจัดส่งของแต่ละรายการให้ผู้ใช้สามารถเข้าใจและติดตามได้อย่างชัดเจน"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // order_state_10.html
+    orderState10_cancelOrder: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_state_10.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน cancelOrder นี้ทำหน้าที่เรียกใช้เมท็อด getItemAll ของอ็อบเจกต์ cancel_orderObj โดยส่ง dataItem เข้าไปเพื่อประมวลผลการยกเลิกคำสั่งซื้อ ดังนั้นฟังก์ชันนี้จะส่งข้อมูลใน dataItem ไปยัง getItemAll เพื่อดำเนินการต่อในกระบวนการยกเลิกคำสั่งซื้อที่เหมาะสม"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    orderState10_getOid: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_state_10.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getOid นี้ทำหน้าที่แสดงข้อมูลรายละเอียดของรายการสินค้าในสถานะ 10 บนหน้าเว็บ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.กำหนด URL ของรูปภาพสินค้าให้กับ element ที่มี ID 'item_image' โดยใช้ URL ที่ได้จาก API_SERVER รวมกับ URL ของรูปภาพจาก dataItem"
+        content2="2.กำหนดข้อความราคาสินค้าให้กับ element ที่มี ID 'price_state10' จากข้อมูลราคาใน dataItem"
+        content3="3.กำหนดชื่อสินค้าให้กับ element ที่มี ID 'item_Name' จากข้อมูลชื่อสินค้าใน dataItem"
+        content4="4.กำหนดจำนวนสินค้าให้กับ element ที่มี ID 'item_Quantity' จากข้อมูลจำนวนสินค้าใน dataItem"
+        content5="5.กำหนดข้อมูลผู้รับสินค้า เช่น ชื่อ, เบอร์โทรศัพท์, และที่อยู่ให้กับ element ที่เกี่ยวข้อง"
+        content6="6.กำหนดหมายเลขคำสั่งซื้อให้กับ element ที่มี ID 'order_id' จากข้อมูลใน dataMain"
+        content7="7.กำหนดเวลาที่สั่งซื้อให้กับ element ที่มี ID 'Order_time' โดยใช้ moment.js"
+        content8={`8.กำหนดวิธีการชำระเงินให้กับ element ที่มี ID "payment_state10" โดยตรวจสอบค่า paymentMethod จาก dataMain และกำหนดข้อความตามชนิดของวิธีการชำระเงิน`}
+        content9={`9.กำหนดการทำงานเมื่อคลิกที่ปุ่ม "Pay Now" โดยใช้เมทอด .click() เพื่อแสดงหน้าการชำระเงินและสร้าง QR code ด้วยเมทอด genQR() ของอ็อบเจกต์ payment_method2Obj โดยส่งพารามิเตอร์ id ของรายการสินค้าที่จะชำระเงินด้วยด้วย`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // order_state_ship.html
+    orderStateShip_cancelOrder: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_state_ship.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน cancelOrder นี้ทำหน้าที่เรียกใช้เมท็อด getItemAll ของอ็อบเจกต์ cancel_orderObj โดยส่ง dataItem เข้าไปเพื่อประมวลผลการยกเลิกคำสั่งซื้อ ดังนั้นฟังก์ชันนี้จะส่งข้อมูลใน dataItem ไปยัง getItemAll เพื่อดำเนินการต่อในกระบวนการยกเลิกคำสั่งซื้อที่เหมาะสม"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    orderStateShip_getOid: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Order_state_ship.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getOid นี้ทำหน้าที่แสดงข้อมูลรายละเอียดของรายการสินค้าที่จัดส่งอยู่บนหน้าเว็บ โดยมีขั้นตอนการทำงานดังนี้"
+        content1={`1.กำหนด URL ของรูปภาพสินค้าให้กับ element ที่มี ID "item_image_ship" โดยใช้ URL ที่ได้จาก API_SERVER รวมกับ URL ของรูปภาพจาก dataItem`}
+        content2={`2.กำหนดข้อความราคาสินค้าให้กับ element ที่มี ID "price_ship" จากข้อมูลราคาใน dataItem`}
+        content3={`3.กำหนดชื่อสินค้าให้กับ element ที่มี ID "item_Name_ship" จากข้อมูลชื่อสินค้าใน dataItem`}
+        content4={`4.กำหนดจำนวนสินค้าให้กับ element ที่มี ID "item_Quantity_ship" จากข้อมูลจำนวนสินค้าใน dataItem`}
+        content5={`5.กำหนดข้อมูลผู้รับสินค้า เช่น ชื่อ, เบอร์โทรศัพท์ ให้กับ element ที่เกี่ยวข้อง`}
+        content6={`6.กำหนดหมายเลขคำสั่งซื้อให้กับ element ที่มี ID "order_id_ship" จากข้อมูลใน dataMain`}
+        content7={`7.กำหนดเวลาที่สั่งซื้อ และเวลาที่จ่ายเงิน ให้กับ element ที่เกี่ยวข้อง โดยใช้ moment.js`}
+        content8={`8.กำหนดวิธีการชำระเงินให้กับ element ที่มี ID "payment_ship" โดยตรวจสอบค่า paymentMethod จาก dataMain และกำหนดข้อความตามชนิดของวิธีการชำระเงิน`}
+        content9={`9.กำหนดการทำงานเมื่อคลิกที่ปุ่ม "Contact" โดยใช้เมทอด .click() เพื่อแสดงหน้าการตั้งค่าบริการ (settingServicePage) ที่เกี่ยวข้อง`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // payment_method.html
+    selectPayment: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Payment_method.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน selectPayment นี้ใช้สำหรับการเลือกวิธีการชำระเงินที่ต้องการในหน้าเว็บ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.เรียกใช้เมทอด getStatePayment() ของ confirm_orderObj เพื่ออัปเดตสถานะการชำระเงิน โดยส่งค่า 10 เข้าไปเพื่อให้แสดงสถานะการชำระเงินที่เป็น Yojo Wallet เริ่มต้น"
+        content2="2.ตั้งค่าการตรวจจับเหตุการณ์เมื่อมีการเปลี่ยนแปลงในการเลือกวิธีการชำระเงิน โดยใช้ .change() เมื่อมีการเปลี่ยนแปลงใน input ที่มีชื่อ 'payment_select'"
+        content3="3.เมื่อมีการเปลี่ยนแปลงในการเลือกวิธีการชำระเงิน จะดึงค่าของวิธีการชำระเงินที่เลือกมาแสดงใน element ที่มี ID 'payment_method_select_show'"
+        content4="4.ใช้คำสั่ง switch-case เพื่อตรวจสอบว่าวิธีการชำระเงินที่เลือกคืออะไร และเรียกใช้เมทอด getStatePayment() ของ confirm_orderObj เพื่ออัปเดตสถานะการชำระเงินตามที่เลือกไว้"
+        content5="ฟังก์ชันนี้ช่วยให้ผู้ใช้สามารถเลือกวิธีการชำระเงินที่ต้องการและแสดงสถานะการชำระเงินได้อย่างสะดวกสบาย"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // payment_method2.html
+    genQR: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Payment_method2.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน genQR ใช้สำหรับสร้าง QR code สำหรับการชำระเงิน โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง token จาก local storage เพื่อใช้ในการยืนยันตัวตน"
+        content2="2.กำหนด OIDOrder เป็นค่าที่ได้รับมาเพื่อใช้ในการสร้าง QR code"
+        content3="3.ทำการส่งคำขอ HTTP PUT ไปยังเซิร์ฟเวอร์ที่ระบุ URL ที่เป็น /v1/orders/payment/${qr} เพื่อทำการอัปเดตสถานะการชำระเงินของคำสั่งซื้อที่มี OID เป็นค่า qr"
+        content4="4.ตั้งค่าหัวข้อ Authorization ใน request header โดยใช้ token ที่ได้จากขั้นตอนที่ 1"
+        content5="5.กำหนด content type เป็น application/json"
+        content6="6.ในกรณีที่สำเร็จ ฟังก์ชันจะนำ QR code ที่ได้จากข้อมูลที่ได้รับมาแสดงใน element ที่มี ID 'payment_qr' และแสดงรายละเอียดอื่นๆ เช่น ยอดชำระเงินและที่อยู่ wallet ของผู้รับชำระเงิน"
+        content7="7.หากมีข้อผิดพลาดขณะส่งคำขอ ฟังก์ชันจะแสดงข้อความข้อผิดพลาดที่เกิดขึ้นด้วยการใช้ msgPageObj.show(NSLang('sys.serverError'))"
+        content8="ดังนั้น ฟังก์ชันนี้จะทำการสร้าง QR code สำหรับการชำระเงินและแสดงรายละเอียดที่เกี่ยวข้องในหน้าเว็บให้กับผู้ใช้ โดยอัตโนมัติ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    start_timer: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Payment_method2.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน start_timer ทำหน้าที่เริ่มการนับเวลาถอยหลังเมื่อได้รับเวลาที่กำหนดมาแล้ว โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ล้างข้อความที่อยู่ใน element ที่มี ID 'payment_cdt' เพื่อล้างข้อความเก่าออก"
+        content2="2.กำหนดการเริ่มการหยุดการนับเวลาเมื่อคลิกที่ element ที่มี ID 'payment_method2_header_left' โดยใช้ .click() เพื่อให้การนับเวลาหยุดทันที"
+        content3="3.ใช้ setInterval เพื่อสร้างการเรียกใช้ฟังก์ชันทุกๆ 1 วินาที เพื่อนับเวลาถอยหลัง"
+        content4="4.นับเวลาที่เหลือระหว่างเวลาที่กำหนดกับเวลาปัจจุบัน และแปลงให้อยู่ในรูปของ 'mm:ss' โดยใช้ moment.js"
+        content5="5.แสดงเวลาที่เหลือใน element ที่มี ID 'payment_cdt'"
+        content6={`6.หากเวลาหมด แสดงข้อความเตือนว่า "The QR code used for payment has expired. Please make a new transaction" และทำการซ่อนหน้าต่างที่เปิดอยู่ และแสดงหน้ารายการสินค้าใหม่โดยใช้ productCartObj.showCart() และคลิกที่ปุ่มที่มี ID "10" เพื่อแสดงสินค้าที่มีสถานะการสั่งซื้อเป็น 10 อีกครั้ง`}
+        content7="7.หากเหลือเวลาอีก 1 นาที (60 วินาที) ให้เปลี่ยนสีข้อความให้เป็นสีเหลือง"
+        content8="ดังนั้น ฟังก์ชันนี้จะทำการนับเวลาถอยหลังและแสดงผลในหน้าเว็บ และในกรณีที่เวลาหมด จะแสดงข้อความเตือนและทำการซ่อนหน้าต่างที่เปิดอยู่อัตโนมัติ เพื่อให้ผู้ใช้ทำการทำรายการใหม่ได้ในทันที"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    AddSlipPayment: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Payment_method2.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน AddSlipPayment ใช้สำหรับอัปโหลดไฟล์ใบเสร็จการชำระเงินผ่าน AJAX โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง token จาก local storage เพื่อใช้ในการยืนยันตัวตน"
+        content2="2.สร้าง FormData object เพื่อเก็บข้อมูลไฟล์ที่ต้องการอัปโหลดและเพิ่มไฟล์ที่เลือกเข้าไปใน formData"
+        content3="3.แสดง loader เพื่อแสดงว่ากำลังดำเนินการอัปโหลด"
+        content4="4.ส่งคำขอ HTTP PUT ไปยังเซิร์ฟเวอร์ที่ระบุ URL ที่เป็น /v1/files พร้อมส่ง token ใน header"
+        content5="5.กำหนด content type เป็น false เนื่องจากใช้ FormData จะเก็บไฟล์แบบ multipart/form-data ที่มี content type อื่นๆ"
+        content6="6.ส่งข้อมูลที่อยู่ใน formData ไปยังเซิร์ฟเวอร์"
+        content7="7.ในกรณีที่สำเร็จ ฟังก์ชันจะซ่อน loader แสดงว่าการอัปโหลดเสร็จสมบูรณ์ และหากได้รับข้อมูลไฟล์สำเร็จ (code == 0) จะทำการดึง URL ของไฟล์ที่อัปโหลดเพื่อทำการอัปเดตการชำระเงินด้วยการเรียกใช้ฟังก์ชัน UpdateSlipPayment"
+        content8="8.หากมีข้อผิดพลาดขณะส่งคำขอ ฟังก์ชันจะแสดงข้อความเตือนว่ามีข้อผิดพลาดเกิดขึ้นที่เซิร์ฟเวอร์"
+        content9="ดังนั้น ฟังก์ชันนี้ช่วยให้ผู้ใช้สามารถอัปโหลดไฟล์ใบเสร็จการชำระเงินได้และดำเนินการต่อไปในกรณีที่สำเร็จหรือมีข้อผิดพลาดอย่างเหมาะสม"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    UpdateSlipPayment: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Payment_method2.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน UpdateSlipPayment ใช้สำหรับอัปเดตข้อมูลการชำระเงินด้วยการส่งไฟล์ใบเสร็จที่อัปโหลดไปยังเซิร์ฟเวอร์ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง token จาก local storage เพื่อใช้ในการยืนยันตัวตน"
+        content2="2.สร้างข้อมูลที่ต้องการส่งไปยังเซิร์ฟเวอร์เพื่ออัปเดตการชำระเงิน โดยมี OIDOrder เป็น OID ของคำสั่งซื้อและ Img เป็น URL ของไฟล์ใบเสร็จที่อัปโหลดไว้"
+        content3="3.ส่งคำขอ HTTP PUT ไปยังเซิร์ฟเวอร์ที่ระบุ URL ที่เป็น /v1/orders/payment/apply พร้อมส่ง token ใน header"
+        content4="4.กำหนด content type เป็น 'application/json' เนื่องจากข้อมูลที่ส่งไปเป็น JSON object"
+        content5="5.ส่งข้อมูล JSON ที่อยู่ใน mData ไปยังเซิร์ฟเวอร์"
+        content6="6.ในกรณีที่สำเร็จ ฟังก์ชันจะซ่อน loader แสดงว่าการอัปเดตการชำระเงินเสร็จสมบูรณ์ และแสดงข้อความแจ้งเตือนว่าการอัปเดตเสร็จสมบูรณ์"
+        content7="7.หากมีข้อผิดพลาดขณะส่งคำขอ ฟังก์ชันจะแสดงข้อความเตือนว่ามีข้อผิดพลาดเกิดขึ้นที่เซิร์ฟเวอร์"
+        content8="ดังนั้น ฟังก์ชันนี้ช่วยให้ผู้ใช้สามารถอัปเดตข้อมูลการชำระเงินด้วยการส่งไฟล์ใบเสร็จที่อัปโหลดได้และดำเนินการต่อไปในกรณีที่สำเร็จหรือมีข้อผิดพลาดอย่างเหมาะสม"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // paymentStatistic.html
+    GetPaymentStatistic: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PaymentStatistic.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน GetPaymentStatistic ใช้สำหรับดึงข้อมูลสถิติการชำระเงินจากเซิร์ฟเวอร์โดยระบุปีที่ต้องการดึงข้อมูล โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง token จาก local storage เพื่อใช้ในการยืนยันตัวตน"
+        content2="2.สร้างคำขอ HTTP GET ไปยังเซิร์ฟเวอร์ที่ระบุ URL โดยระบุปีที่ต้องการดึงข้อมูลใน parameter year"
+        content3="3.ส่ง token และ content type ใน header ของคำขอ"
+        content4="4.กำหนดรูปแบบข้อมูลที่ต้องการรับคือ JSON"
+        content5={`5.ในกรณีที่สำเร็จ ฟังก์ชันจะตรวจสอบว่ามีข้อมูลการชำระเงินในปีนั้นหรือไม่ หากไม่มีข้อมูลจะแสดงข้อความว่า "ไม่พบข้อมูล" และซ่อนกราฟ แต่หากมีข้อมูลจะนำข้อมูลไปแสดงบนกราฟโดยเรียกใช้ฟังก์ชัน ChartPaymentStatistic`}
+        content6="6.ในกรณีที่เกิดข้อผิดพลาดขณะส่งคำขอ ฟังก์ชันจะแสดงข้อความเตือนว่ามีข้อผิดพลาดเกิดขึ้นที่เซิร์ฟเวอร์"
+        content7="7.เมื่อคำขอสำเร็จหรือเกิดข้อผิดพลาด ฟังก์ชันจะซ่อน loader เพื่อแสดงว่าดำเนินการเสร็จสมบูรณ์ หรือแสดงว่าเกิดข้อผิดพลาดแล้วถูกแสดงข้อความเตือน"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    ChartPaymentStatistic: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PaymentStatistic.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน ChartPaymentStatistic ใช้สร้างกราฟแสดงข้อมูลสถิติการชำระเงินโดยใช้ข้อมูลที่ได้รับมาจากเซิร์ฟเวอร์ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.สร้างตัวแปร chartDom เพื่อระบุ DOM element ที่จะแสดงกราฟ"
+        content2="2.สร้างออบเจ็กต์ของกราฟโดยใช้ echarts และกำหนดให้กราฟแสดงบนตัวแปร chartDom"
+        content3="3.ดึงข้อมูลจากตัวแปร DataPayment และนำมาเก็บไว้ในตัวแปร jsonData"
+        content4="4.สร้างอาร์เรย์ xAxisData และ seriesData เพื่อใช้เก็บข้อมูลที่จะนำมาแสดงบนกราฟ"
+        content5="5.ใช้ jQuery เพื่อวนลูปผ่านข้อมูลใน jsonData เพื่อสร้างข้อมูลที่จะใช้แสดงบนแกน x และแกน y ของกราฟ"
+        content6="6.สร้าง options สำหรับกราฟโดยกำหนดค่าต่าง ๆ ดังนี้"
+        content6p1="6.1.grid: กำหนดขอบเขตของกราฟ"
+        content6p2="6.2.legend: กำหนดให้แสดง legend"
+        content6p3="6.3.xAxis: กำหนดแกน x ของกราฟ"
+        content6p4="6.4.yAxis: กำหนดแกน y ของกราฟ"
+        content6p5="6.5series: กำหนดค่าข้อมูลในกราฟ"
+        content7="7.ใช้เงื่อนไข option && myChart.setOption(option) เพื่อตรวจสอบว่า option มีค่าหรือไม่ ถ้ามีจะกำหนด option ให้กับกราฟที่สร้างขึ้น"
+        content8="ดังนั้นฟังก์ชันนี้เป็นส่วนที่สร้างกราฟแสดงข้อมูลสถิติการชำระเงินโดยใช้ข้อมูลที่ได้รับมาจากเซิร์ฟเวอร์และแสดงบนหน้าเว็บไซต์ในรูปแบบของกราฟแท่ง"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    ExportCSVPayment: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PaymentStatistic.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน ExportCSVPayment ใช้สร้างไฟล์ CSV จากข้อมูลการชำระเงินที่มีอยู่และทำการดาวน์โหลดไฟล์ CSV นั้น ๆ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.กำหนดข้อมูลที่จะนำมาแปลงเป็น CSV ในตัวแปร data"
+        content2="2.สร้างฟังก์ชัน convertToCSV(data) เพื่อแปลงข้อมูลในรูปแบบ JSON เป็น CSV โดย"
+        content2p1="2.1.สร้าง header โดยใช้ชื่อของ properties ในออบเจ็กต์ JSON และรวมเป็นสตริงแบบ CSV"
+        content2p2="2.2.สร้างแถวข้อมูลโดยวนลูปผ่านข้อมูลแต่ละออบเจ็กต์ แปลงเป็นสตริงแบบ CSV และรวมเป็นสตริงของแถวเดียวกัน"
+        content3="3.สร้างฟังก์ชัน downloadCSV(csv, filename) เพื่อสร้างไฟล์ CSV และทำการดาวน์โหลด โดย"
+        content3p1="3.1.สร้างข้อมูล CSV ในรูปแบบของ data URI"
+        content3p2="3.2.ร้าง element <a> เพื่อลิงก์ไปยังข้อมูล CSV และกำหนด attribute href เป็นข้อมูล CSV และ download เป็นชื่อไฟล์"
+        content3p3="3.3.คลิกที่ element <a> เพื่อดาวน์โหลดไฟล์ CSV"
+        content4="4.สร้างไฟล์ CSV โดยเรียกใช้ฟังก์ชัน convertToCSV(data) เพื่อแปลงข้อมูลเป็น CSV และทำการดาวน์โหลดไฟล์ CSV โดยกำหนดชื่อไฟล์ตามปัจจุบันของวันที่และรูปแบบ 'Yojosolar Payment Statistic-YYYY-MM-DD.csv'"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // productCart.html
+    showCart: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PaymentStatistic.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน showCart ใช้สำหรับแสดงรายการสินค้าในตะกร้าของลูกค้า โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.เคลียร์เนื้อหาของ element #show_cart เพื่อเตรียมการแสดงรายการสินค้าใหม่"
+        content2={`2.ดึงข้อมูลของตะกร้าสินค้าจาก local storage โดยใช้ localStorage.getItem("Cart") และแปลงข้อมูลเป็นออบเจ็กต์ JSON ด้วย JSON.parse()`}
+        content3="3.กำหนดตัวแปรสำหรับเก็บข้อมูลรวมทั้งหมดและราคาทั้งหมดของสินค้า"
+        content4="4.สร้างอาเรย์ที่เป็นเซ็ต (Set) เพื่อเก็บรหัสสินค้าที่ไม่ซ้ำกัน"
+        content5="5.เรียกใช้ AJAX เพื่อเรียกข้อมูลของตะกร้าสินค้าจากเซิร์ฟเวอร์ โดยกำหนด URL และ headers ที่จำเป็นและระบุว่าจะใช้วิธีการส่งคำขอแบบ async"
+        content6="6.ในการสำเร็จของการขอข้อมูล AJAX"
+        content6p1="6.1.ตรวจสอบรหัสของข้อมูลที่ส่งกลับ หากเท่ากับ 0 แสดงว่าสามารถแสดงข้อมูลได้"
+        content6p2="6.2.เรียกใช้ฟังก์ชัน show_cart(data.result) เพื่อแสดงรายการสินค้า"
+        content6p3="6.3.หากไม่เท่ากับ 0 ให้แสดงข้อความผิดพลาด"
+        content7="7.ในกรณีที่เกิดข้อผิดพลาดในการเชื่อมต่อ"
+        content7p1="7.1.สั่งให้ loaderObj ปิดการแสดงผล"
+        content7p2="7.2.แสดงข้อความผิดพลาดที่เกิดขึ้นในการเชื่อมต่อกับเซิร์ฟเวอร์"
+        content8="ฟังก์ชันนี้ดึงข้อมูลของตะกร้าสินค้าจากเซิร์ฟเวอร์โดยใช้ AJAX เพื่อแสดงในหน้าเว็บไซต์ เมื่อมีข้อผิดพลาดในการเรียกข้อมูล ฟังก์ชันจะแสดงข้อความผิดพลาดที่เกิดขึ้น โดยการใช้ msgPageObj.show() ด้วยข้อความผิดพลาดที่ได้จาก getStatusCode(data.code) ซึ่งอาจจะเป็นข้อความเกี่ยวกับข้อผิดพลาดที่มาจากเซิร์ฟเวอร์หรือข้อผิดพลาดในการเชื่อมต่อเครือข่าย ทำให้ผู้ใช้ทราบถึงสถานะการเชื่อมต่อและปัญหาที่เกิดขึ้นได้อย่างชัดเจน การใช้ loaderObj เพื่อแสดงสถานะการโหลดช่วยให้ผู้ใช้รู้ว่าระบบกำลังทำงานอยู่ และเมื่อเสร็จสิ้นการทำงานแล้ว loaderObj จะถูกปิดอัตโนมัติ เพื่อให้ผู้ใช้เห็นได้ว่าข้อมูลได้รับการโหลดเสร็จสิ้นแล้ว ดังนั้นฟังก์ชันนี้ช่วยให้ผู้ใช้ได้รับข้อมูลของตะกร้าสินค้าอย่างถูกต้องและรวดเร็วอีกด้วย!"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    show_cart: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PaymentStatistic.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน show_cart นี้ใช้สำหรับแสดงรายการสินค้าในตะกร้าของลูกค้า โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ตรวจสอบขนาดของข้อมูลที่ได้รับ หากไม่มีรายการสินค้าใดๆ จะแสดงภาพไอคอนที่บอกว่าไม่มีสินค้าและซ่อนปุ่มที่เกี่ยวข้อง"
+        content2="2.หากมีรายการสินค้า"
+        content2p1="2.1.แสดงจำนวนรายการสินค้าทั้งหมด"
+        content2p2="2.2.สร้างโครงสร้าง HTML สำหรับแสดงรายการสินค้าโดยใช้ข้อมูลที่ได้รับมาจากเซิร์ฟเวอร์"
+        content2p3="2.3.เก็บข้อมูลเกี่ยวกับรายการสินค้าไว้ในตัวแปร collect_data เพื่อให้ง่ายต่อการดำเนินการต่อไป"
+        content3="3.นำ HTML ที่สร้างมาแสดงใน element #show_cart"
+        content4="4.ตั้งค่ารูปภาพของปุ่มเพิ่มและลบจำนวนสินค้า และกำหนดเหตุการณ์เมื่อมีการคลิกที่ปุ่มเหล่านั้น"
+        content5="5.ปรับข้อความในปุ่มและตัวเลือกต่างๆ ให้ตรงกับภาษาที่กำหนด"
+        content6="6.สร้างการสนับสนุนการเลื่อนแบบไดนามิกสำหรับการแสดงผลหน้าจอ และทำการสร้างเหตุการณ์เมื่อมีการเลื่อนหน้าจอขึ้นหรือลง"
+        content7="7.กำหนดการทำงานเมื่อมีการเปลี่ยนแปลงในรายการสินค้า โดยเรียกใช้ฟังก์ชัน sumPrice() เพื่อคำนวณราคาทั้งหมดของสินค้าที่ถูกเลือก"
+        content8="8.จัดการเหตุการณ์เมื่อมีการคลิกที่ปุ่มลบสินค้า และสั่งให้ลบสินค้าที่เกี่ยวข้องด้วยฟังก์ชัน delete_id()"
+        content9="ฟังก์ชันนี้ช่วยให้ผู้ใช้สามารถดูรายการสินค้าในตะกร้าของตนได้อย่างสะดวกและง่ายดาย และทำให้สามารถทำการเพิ่มหรือลบรายการสินค้าได้อย่างสะดวกมากขึ้น!"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    update_quantity: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PaymentStatistic.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน update_quantity นี้ใช้สำหรับอัปเดตจำนวนสินค้าในตะกร้าของผู้ใช้ เมื่อมีการคลิกปุ่มเพิ่มหรือลดจำนวนสินค้าในรายการ"
+        content1="1.ก่อนทุกอย่างฟังก์ชันนี้จะเรียกข้อมูลจำนวนสินค้าที่มีอยู่ในปัจจุบันในตะกร้าด้วยการเลือกข้อมูลจาก element #all_quantity{id} ซึ่งเป็นตำแหน่งที่แสดงจำนวนสินค้า"
+        content2="2.จากนั้นฟังก์ชันจะสร้างข้อมูลที่จะส่งไปยังเซิร์ฟเวอร์ในรูปแบบ JSON โดยระบุ id ของสินค้าและจำนวนที่ต้องการเปลี่ยนแปลง"
+        content3="3.ส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์เพื่ออัปเดตข้อมูลสินค้าในตะกร้า"
+        content4="4.หลังจากได้รับการตอบรับจากเซิร์ฟเวอร์แล้ว ฟังก์ชันจะทำการตรวจสอบว่าคำขออัปเดตสำเร็จหรือไม่ หากสำเร็จจะทำการอัปเดตจำนวนสินค้าและราคาที่แสดงบนหน้าจอ และเรียกฟังก์ชัน sumPrice() เพื่อคำนวณราคาทั้งหมดของสินค้าใหม่"
+        content5="5.หากไม่สำเร็จ ฟังก์ชันจะตรวจสอบรหัสข้อผิดพลาดและแสดงข้อความแจ้งเตือนที่เหมาะสม"
+        content6="ฟังก์ชันนี้ช่วยให้ผู้ใช้สามารถเพิ่มหรือลดจำนวนสินค้าในตะกร้าได้อย่างสะดวกและง่ายดาย!"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    delete_id: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PaymentStatistic.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน delete_id นี้ใช้สำหรับลบสินค้าออกจากตะกร้าของผู้ใช้"
+        content1="1.เมื่อผู้ใช้คลิกที่ปุ่มลบสินค้า ฟังก์ชันนี้จะถูกเรียก"
+        content2="2.ฟังก์ชันจะสร้างคำขอ AJAX เพื่อลบสินค้าออกจากตะกร้าโดยระบุ id ของสินค้าที่ต้องการลบ"
+        content3="3.ส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์เพื่อลบสินค้า"
+        content4="4.มื่อได้รับการตอบรับจากเซิร์ฟเวอร์ ฟังก์ชันจะตรวจสอบว่าการลบสำเร็จหรือไม่ หากสำเร็จจะแสดงข้อความยืนยันการลบสินค้าและเรียกฟังก์ชัน productCartObj.showCart() เพื่อปรับปรุงหน้าตะกร้าของผู้ใช้"
+        content5="5.หากไม่สำเร็จ ฟังก์ชันจะแสดงข้อความแจ้งเตือนที่เหมาะสม"
+        content6="ฟังก์ชันนี้ช่วยให้ผู้ใช้สามารถลบสินค้าออกจากตะกร้าได้อย่างสะดวกและง่ายดาย!"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    sumPrice: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PaymentStatistic.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน sumPrice นี้ใช้สำหรับคำนวณราคารวมของสินค้าที่ถูกเลือกในตะกร้าและแสดงราคารวมทั้งหมดให้กับผู้ใช้"
+        content1="1.ฟังก์ชันจะสร้างตัวแปร sum ขึ้นมาเพื่อเก็บค่าราคารวมของสินค้า"
+        content2="2.ฟังก์ชันจะวนลูปผ่านสินค้าที่ถูกเลือกทั้งหมด และนำมูลค่าของสินค้าแต่ละรายการมาบวกเพิ่มเข้าสู่ตัวแปร sum"
+        content3="3.หากมีสินค้าที่ถูกเลือก ฟังก์ชันจะเปลี่ยนสีพื้นหลังของปุ่ม 'ซื้อสินค้า' เป็นสีเขียวเพื่อแสดงว่าสามารถคลิกได้"
+        content4="4.ฟังก์ชันจะเพิ่มการตรวจสอบคลิกเพื่อยืนยันการสั่งซื้อเมื่อคลิกที่ปุ่ม 'ซื้อสินค้า'"
+        content5="5.ฟังก์ชันจะแสดงราคารวมทั้งหมดให้แก่ผู้ใช้"
+        content6="ฟังก์ชันนี้ช่วยให้ผู้ใช้เห็นราคารวมของสินค้าในตะกร้าและสามารถกดปุ่ม 'ซื้อสินค้า' เพื่อดำเนินการสั่งซื้อได้!"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    confirmOrder: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PaymentStatistic.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน confirmOrder มีหน้าที่ดำเนินการยืนยันการสั่งซื้อสินค้าที่มีอยู่ในตะกร้าของผู้ใช้"
+        content1="1.ฟังก์ชันจะสร้างตัวแปร item เพื่อเก็บข้อมูลของสินค้าที่ผู้ใช้เลือกในตะกร้า"
+        content2="2.ฟังก์ชันจะวนลูปผ่านสินค้าที่ถูกเลือกทั้งหมด และนำข้อมูลสินค้าแต่ละรายการมาเพิ่มเข้าสู่ตัวแปร item ในรูปแบบของออบเจกต์ที่มีคุณสมบัติ pid และ quantity"
+        content3="3.เมื่อข้อมูลสินค้าทั้งหมดถูกเก็บไว้ใน item ฟังก์ชันจะแสดงการโหลดโดยใช้ loaderObj.show()"
+        content4="4.ฟังก์ชันจะดึง Token ที่เก็บอยู่ใน localStorage เพื่อนำมาใช้ในการยืนยันการสั่งซื้อ"
+        content5="5.ข้อมูลเกี่ยวกับการสั่งซื้อสินค้ารวมถึงรายการสินค้าที่ผู้ใช้เลือกจะถูกส่งไปยัง API ผ่าน HTTP POST รูปแบบ JSON"
+        content6="6.เมื่อการส่งข้อมูลสำเร็จและไม่เกิดข้อผิดพลาด ฟังก์ชันจะปิดการแสดงโหลดด้วย loaderObj.unShow() และเรียกใช้ฟังก์ชัน getOrder และ call ซึ่งสร้างเงื่อนไขการแสดงผลสำหรับหน้ารายละเอียดการสั่งซื้อและแสดงป้ายสถานะการสั่งซื้อที่มีรายการใหม่โดยใช้ข้อมูลที่ได้รับจากการยืนยันการสั่งซื้อ"
+        content7="ฟังก์ชันนี้ช่วยให้ผู้ใช้สามารถยืนยันการสั่งซื้อสินค้าได้ด้วยความสะดวก!"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    //productdetail.html
+    confirmOrderBuy: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Productdetail.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน confirmOrderBuy ทำหน้าที่ยืนยันการซื้อสินค้าทันทีที่ผู้ใช้กดปุ่มซื้อสินค้า"
+        content1="1.ฟังก์ชันจะเรียกใช้ตัวแปร pidBuy และ quantityBuy เพื่อเก็บรหัสสินค้าและปริมาณที่ต้องการซื้อ"
+        content2="2.จากนั้นฟังก์ชันจะสร้างอาร์เรย์ item ซึ่งเก็บข้อมูลของสินค้าที่ต้องการซื้อ"
+        content3="3.เมื่อข้อมูลถูกเก็บไว้ใน item ฟังก์ชันจะแสดงการโหลดโดยใช้ loaderObj.show()"
+        content4="4.ฟังก์ชันจะดึง Token ที่เก็บอยู่ใน localStorage เพื่อนำมาใช้ในการยืนยันการสั่งซื้อ"
+        content5="5.ข้อมูลเกี่ยวกับการสั่งซื้อสินค้ารวมถึงรายการสินค้าที่ผู้ใช้เลือกจะถูกส่งไปยัง API ผ่าน HTTP POST รูปแบบ JSON"
+        content6="6.มื่อการส่งข้อมูลสำเร็จและไม่เกิดข้อผิดพลาด ฟังก์ชันจะปิดการแสดงโหลดด้วย loaderObj.unShow() และเรียกใช้ฟังก์ชัน getOrder และ call ซึ่งสร้างเงื่อนไขการแสดงผลสำหรับหน้ารายละเอียดการสั่งซื้อและแสดงป้ายสถานะการสั่งซื้อที่มีรายการใหม่โดยใช้ข้อมูลที่ได้รับจากการยืนยันการสั่งซื้อ"
+        content7="งนั้นฟังก์ชัน confirmOrderBuy ทำให้ผู้ใช้สามารถซื้อสินค้าได้โดยไม่ต้องยืนยันการสั่งซื้อซ้ำอีกครั้ง!"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getDetailProduct: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Productdetail.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getDetailProduct มีหน้าที่แสดงรายละเอียดสินค้า"
+        content1="1.เริ่มต้นด้วยการตั้งค่าภาษา UI และสร้างตัวแปร str เพื่อเก็บ HTML ที่จะแสดงรายละเอียดสินค้า"
+        content2="2.สร้างสไลด์เพื่อแสดงภาพสินค้าทั้งหมด โดยวนลูปผ่านภาพแต่ละภาพที่มีอยู่ใน id.images และเพิ่ม HTML สำหรับแต่ละภาพลงในสไลด์"
+        content3="3.สร้าง HTML สำหรับชื่อสินค้าและราคา"
+        content4="4.สร้าง HTML สำหรับคำอธิบายสินค้า"
+        content5="5.แทรก HTML ทั้งหมดลงใน $('#productDetailBody')"
+        content6="6.กำหนดค่าราคาสำหรับปุ่ม 'Add to Cart' และ 'Buy Now'"
+        content7="7.กำหนดข้อมูลสินค้าและภาพให้กับตัวแปรที่ใช้เก็บข้อมูลสำหรับการสั่งซื้อ"
+        content8="8.สร้างอินสแตนซ์ของ IScroll เพื่อให้สามารถเลื่อนเนื้อหาได้"
+        content9="9.ตั้งค่าการคลิกที่ปุ่ม 'Add to Cart' เพื่อเพิ่มสินค้าลงในตะกร้าสินค้า"
+        content10="10.ทำการตรวจสอบการเข้าสู่ระบบ หากยังไม่ได้เข้าสู่ระบบ จะแสดงข้อความแจ้งเตือนและให้ผู้ใช้เข้าสู่ระบบ"
+        content11="11.ากผู้ใช้เข้าสู่ระบบแล้ว ฟังก์ชันจะส่งข้อมูลการเพิ่มสินค้าลงในตะกร้าไปยังเซิร์ฟเวอร์ผ่าน AJAX POST และแสดงข้อความเมื่อสินค้าถูกเพิ่มลงในตะกร้าสำเร็จหรือเกิดข้อผิดพลาด"
+        content12="ดังนั้นฟังก์ชัน getDetailProduct จัดการแสดงรายละเอียดของสินค้าและเพิ่มสินค้าลงในตะกร้าสินค้าได้โดยอัตโนมัติ!"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    checkLogin: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Productdetail.html"
+        headerName={getTitle()}
+        content="-checkLogin ฟังก์ชันทำหน้าที่ตรวจสอบว่าผู้ใช้เข้าสู่ระบบแล้วหรือยัง โดยดูค่าของ token ใน localStorage"
+        content1="1.ถ้าไม่มี token ใน localStorage (ค่า CHECK เป็น null) แสดงว่าผู้ใช้ยังไม่ได้เข้าสู่ระบบ จึงจะทำการซ่อนส่วนของ HTML ที่เกี่ยวข้องกับผู้ใช้ที่ยังไม่ได้เข้าสู่ระบบและแสดงส่วนที่เกี่ยวข้องกับการเข้าสู่ระบบ"
+        content2="2.ถ้ามี token ใน localStorage (ค่า CHECK ไม่ใช่ null) แสดงว่าผู้ใช้เข้าสู่ระบบแล้ว จึงจะทำการแสดงส่วนของ HTML ที่เกี่ยวข้องกับผู้ใช้ที่เข้าสู่ระบบและซ่อนส่วนที่เกี่ยวข้องกับการเข้าสู่ระบบ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // purchaseReport.html
+    GetSalesData: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PurchaseReport.html"
+        headerName={getTitle()}
+        content="-GetSalesData"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
   }
 
   const menuComponentModelStructure = {
@@ -3156,6 +4037,32 @@ export default function HomePage() {
               setOpenOrderInfoCancel={() =>
                 setOpenOrderInfoCancel(!openOrderInfoCancel)
               }
+              setOpenOrderInfoReceived={() =>
+                setOpenOrderInfoReceived(!openOrderInfoReceived)
+              }
+              setOpenOrderInfoWaitRceive={() =>
+                setOpenOrderInfoWaitRceive(!openOrderInfoWaitRceive)
+              }
+              setOpenOrderState10={() => setOpenOrderState10(!openOrderState10)}
+              setOpenOrderStateShip={() =>
+                setOpenOrderStateShip(!openOrderStateShip)
+              }
+              setOpenPaymentMethod={() =>
+                setOpenPaymentMethod(!openPaymentMethod)
+              }
+              setOpenPaymentMethod2={() =>
+                setOpenPaymentMethod2(!openPaymentMethod2)
+              }
+              setOpenPaymentStatistic={() =>
+                setOpenPaymentStatistic(!openPaymentStatistic)
+              }
+              setOpenProductCart={() => setOpenProductCart(!openProductCart)}
+              setOpenProductdetail={() =>
+                setOpenProductdetail(!openProductdetail)
+              }
+              setOpenPurchaseReport={() =>
+                setOpenPurchaseReport(!openPurchaseReport)
+              }
               openHomeHtml={openHomeHtml}
               openAdddatalogger={openAdddatalogger}
               openCancelOrder={openCancelOrder}
@@ -3184,6 +4091,16 @@ export default function HomePage() {
               openNotification={openNotification}
               openOrderInfoCancelRefund={openOrderInfoCancelRefund}
               openOrderInfoCancel={openOrderInfoCancel}
+              openOrderInfoReceived={openOrderInfoReceived}
+              openOrderInfoWaitRceive={openOrderInfoWaitRceive}
+              openOrderState10={openOrderState10}
+              openOrderStateShip={openOrderStateShip}
+              openPaymentMethod={openPaymentMethod}
+              openPaymentMethod2={openPaymentMethod2}
+              openPaymentStatistic={openPaymentStatistic}
+              openProductCart={openProductCart}
+              openProductdetail={openProductdetail}
+              openPurchaseReport={openPurchaseReport}
             />
           )}
         </div>
