@@ -46,6 +46,15 @@ export default function FormModelSolarApp({
   setOpenProductCart,
   setOpenProductdetail,
   setOpenPurchaseReport,
+  setOpenRedeem,
+  setOpenRefund,
+  setOpenRegister,
+  setOpenReportdatalogger,
+  setOpenSettingAccount,
+  setOpenSettingOrder,
+  setOpenSetting,
+  setOpenStart,
+  setOpenTopup,
   data,
   handleModelClick,
   openAdddatalogger,
@@ -85,6 +94,15 @@ export default function FormModelSolarApp({
   openProductCart,
   openProductdetail,
   openPurchaseReport,
+  openRedeem,
+  openRefund,
+  openRegister,
+  openReportdatalogger,
+  openSettingAccount,
+  openSettingOrder,
+  openSetting,
+  openStart,
+  openTopup,
 }) {
   return (
     <div>
@@ -587,6 +605,123 @@ export default function FormModelSolarApp({
               category="purchaseReport"
               open={openPurchaseReport}
               onClick={setOpenPurchaseReport}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* redeem.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Redeem.html"
+              category="redeem"
+              open={openRedeem}
+              onClick={setOpenRedeem}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* refund.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Refund.html"
+              category="refund"
+              open={openRefund}
+              onClick={setOpenRefund}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/*register.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Register.html"
+              category="register"
+              open={openRegister}
+              onClick={setOpenRegister}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/*reportdatalogger.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Reportdatalogger.html"
+              category="reportdatalogger"
+              open={openReportdatalogger}
+              onClick={setOpenReportdatalogger}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* setting_account.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Setting_account.html"
+              category="settingAccount"
+              open={openSettingAccount}
+              onClick={setOpenSettingAccount}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/*  setting_order.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Setting_order.html"
+              category="settingOrder"
+              open={openSettingOrder}
+              onClick={setOpenSettingOrder}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* open setting.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Setting.html"
+              category="setting"
+              open={openSetting}
+              onClick={setOpenSetting}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* start.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Start.html"
+              category="start"
+              open={openStart}
+              onClick={setOpenStart}
+              data={data}
+              handleModelClick={handleModelClick}
+            />
+          </div>
+
+          {/* topup.html */}
+          <div>
+            <DropdownList
+              selectedMenu={selectedMenu}
+              headerName="Topup.html"
+              category="topup"
+              open={openTopup}
+              onClick={setOpenTopup}
               data={data}
               handleModelClick={handleModelClick}
             />

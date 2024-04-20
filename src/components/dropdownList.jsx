@@ -10,6 +10,15 @@ export default function DropdownList({
   handleModelClick,
   category,
 }) {
+  const handleScroll = (key) => {
+    handleModelClick(key)
+    
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+
   return (
     <div>
       <div className="w-[90%] h-[40px] flex items-center justify-start p-4 cursor-pointer ">
@@ -33,7 +42,7 @@ export default function DropdownList({
             .map((el, idx) => (
               <div
                 key={idx}
-                onClick={() => handleModelClick(el?.key)}
+                onClick={() => handleScroll(el?.key)}
                 className={`w-full p-2 cursor-pointer ${
                   selectedMenu === el?.key
                     ? "bg-[#04AA6D] text-[#ffff] "

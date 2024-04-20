@@ -8234,5 +8234,4280 @@ export function Productdetail_checkLogin() {
 // purchaseReport.html
 //GetSalesData
 export function PurchaseReport_getSalesData() {
-  return <div className="ml-4 break-words"></div>
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "get",`}</p>
+          <p>{`url: API_SERVER + "/v1/staticReport/distributor?year=" + year,`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`Authorization: "Bearer " + token.token,`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`contentType: "application/json",`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`beforeSend: function (xmlhttprequest) { },`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`if (data.code === 0) {`}</p>
+            <div className="ml-2">
+              <p>{`if (data.result === null) {`}</p>
+              <div className="ml-2">
+                <p>{`$("#no_found_table").attr('src', './pic/Monitor/Icon-YojoSolar-Nodata.png');`}</p>
+                <p>{`$("#salesTableBody").css({ "display": "none" });`}</p>
+                <p>{`$("#salesQuarter").css({ "display": "none" });`}</p>
+                <p>{`$("#boxchart").css({ "display": "none" });`}</p>
+                <p>{`$("#next_month_report_static").css({ "display": "none" });`}</p>
+                <p>{`$("#back_month_report_static").css({ "display": "none" });`}</p>
+                <p>{`$("#Btn_month").css({ "display": "none" });`}</p>
+                <p>{`$("#no_found_table").css({ "display": "flex" });`}</p>
+                <p>{`$("#no_found_table_Quarter").css({ "display": "flex" });`}</p>
+              </div>
+              <p>{`} else {`}</p>
+              <div className="ml-2">
+                <p>{`$(".select-date-purchase").css({ "display": "flex" });`}</p>
+                <p>{`$("#next_month_report_static").css({ "display": "flex" });`}</p>
+                <p>{`$("#boxchart").css({ "display": "flex" });`}</p>
+                <p>{`$("#Btn_month").css({ "display": "flex" });`}</p>
+                <p>{`$("#salesQuarter").css({ "display": "block" });`}</p>
+                <p>{`$("#salesTableBody").css({ "display": "block" });`}</p>
+                <p>{`$("#no_found_table").css({ "display": "none" });`}</p>
+                <p>{`$("#no_found_table_Quarter").css({ "display": "none" });`}</p>
+                <p>{`dataReport = data.result.monthlyData;`}</p>
+                <p>{`dataQuarter = data.result.quarterlyTotals;`}</p>
+                <p>{`AllDataReport = data.result;`}</p>
+                <p>{`purchaseReportObj.showChart();`}</p>
+                <p>{`if (dataReport !== undefined) {`}</p>
+                <div className="ml-2">
+                  <p>{`purchaseReportObj.CreateTableReport();`}</p>
+                </div>
+                <p>{`} else {`}</p>
+                <div className="ml-2">
+                  <p>{`$("#salesTableBody").css({ "display": "none" });`}</p>
+                  <p>{`$("#no_found_table").css({ "display": "flex" });`}</p>
+                </div>
+                <p>{`}`}</p>
+                <p>{`if (dataQuarter !== undefined) {`}</p>
+                <div className="ml-2">
+                  <p>{`purchaseReportObj.CreateTableQuarter();`}</p>
+                </div>
+                <p>{`} else {`}</p>
+                <div className="ml-2">
+                  <p>{`$("#salesQuarter").css({ "display": "block" });`}</p>
+                  <p>{`$("#no_found_table_Quarter").css({ "display": "flex" });`}</p>
+                </div>
+                <p>{`}`}</p>
+              </div>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`$("#boxchart").css({ "display": "none" });`}</p>
+              <p>{`$("#Btn_month").css({ "display": "none" });`}</p>
+            </div>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xmlhttprequest, error) {`}</p>
+          <div className="ml-2">
+            <p>{`$("#boxchart").css({ "display": "none" });`}</p>
+            <p>{`$("#Btn_month").css({ "display": "none" });`}</p>
+            <p>{`loaderObj.unShow();`}</p>
+            <p>{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+          </div>
+          <p>{`},`}</p>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// CreateTableReport
+export function PurchaseReport_createTableReport() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2 flex flex-col gap-4">
+        <div>
+          <p>{`var tableBody = document.getElementById('salesTableBody');`}</p>
+          <p>{`$("#back_month_report_static").css({ "display": "none" })`}</p>
+          <p>{`if (dataReport.length === 0) {`}</p>
+          <div className="ml-2">
+            <p>{`$("#no_found_table").attr('src', './pic/Monitor/Icon-YojoSolar-Nodata.png');`}</p>
+            <p>{`$("#salesTableBody").css({ "display": "none" })`}</p>
+            <p>{`$("#no_found_table").css({ "display": "flex" })`}</p>
+          </div>
+          <p>{`} else {`}</p>
+          <div className="ml-2">
+            <p>{`$("#salesTableBody").css({ "display": "block" })`}</p>
+            <p>{`$("#no_found_table").css({ "display": "none" })`}</p>
+            <p>{`dataReport.forEach(function (data) {`}</p>
+            <div className="ml-2">
+              <p>{`data.list.forEach(function (item) {`}</p>
+              <div className="ml-2">
+                <p>{`if (!categoryHeaders.includes(item.category)) {`}</p>
+                <div className="ml-2">
+                  <p>{`categoryHeaders.push(item.category);`}</p>
+                </div>
+                <p>{`}`}</p>
+              </div>
+              <p>{`});`}</p>
+            </div>
+            <p>{`});`}</p>
+            <p>{`var headerRow = "<tr>";`}</p>
+            <p>{`headerRow += "<th class='header-table'>Category</th>";`}</p>
+            <p>{`var monthsToShow = 6;`}</p>
+            <p>{`var currentMonthIndex = 0;`}</p>
+            <p>{`updateTable(currentMonthIndex);`}</p>
+            <p>{`$("#next_month_report_static").click(function () {`}</p>
+            <div className="ml-2">
+              <p>{`if (currentMonthIndex + monthsToShow < dataReport.length) {`}</p>
+              <div className="ml-2">
+                <p>{`$("#next_month_report_static").css({ "display": "none" })`}</p>
+                <p>{`$("#back_month_report_static").css({ "display": "flex" })`}</p>
+                <p>{`currentMonthIndex += monthsToShow;`}</p>
+                <p>{`updateTable(currentMonthIndex);`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`});`}</p>
+            <p>{`$("#back_month_report_static").click(function () {`}</p>
+            <div className="ml-2">
+              <p>{`$("#back_month_report_static").css({ "display": "none" })`}</p>
+              <p>{`$("#next_month_report_static").css({ "display": "flex" })`}</p>
+              <p>{`if (currentMonthIndex > 0) {`}</p>
+              <div className="ml-2">
+                <p>{`currentMonthIndex -= monthsToShow;`}</p>
+                <p>{`updateTable(currentMonthIndex);`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`});`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+
+        <div>
+          <p>{`function updateTable(startIndex) {`}</p>
+          <div>
+            <p>{`var headerRow = "<tr>";`}</p>
+            <p>{`headerRow += "<th class='header-table'>Category</th>";`}</p>
+            <p>{`for (var i = startIndex; i < startIndex + monthsToShow; i++) {`}</p>
+            <div className="ml-2">
+              <p>{`if (i < dataReport.length) {`}</p>
+              <div className="ml-2">
+                <p>{`headerRow += "<th class='header-table'>" + dataReport[i].monthName + "</th>";`}</p>
+              </div>
+            </div>
+            <p>{`}`}</p>
+            <p>{`headerRow += "<th class='header-table' style='color: #F0D33A'>TOTAL</th>";`}</p>
+            <p>{`headerRow += "</tr>";`}</p>
+            <p>{`tableBody.innerHTML = headerRow;`}</p>
+            <p>{`categoryHeaders.forEach(function (category) {`}</p>
+            <div className="ml-2">
+              <p>{`var row = "<tr>";`}</p>
+              <p>{`row += "<td class='header-table main-report'>" + category + "</td>";`}</p>
+              <p>{`for (var i = startIndex; i < startIndex + monthsToShow; i++) {`}</p>
+              <div className="ml-2">
+                <p>{`if (i < dataReport.length) {`}</p>
+                <div className="ml-2">
+                  <p>{`var item = dataReport[i].list.find(function (item) {`}</p>
+                  <div className="ml-2">
+                    <p>{`return item.category === category;`}</p>
+                  </div>
+                  <p>{`});`}</p>
+                  <p>{`if (item) {`}</p>
+                  <div className="ml-2">
+                    <p>{`row += "<td class='bg-row'>" + item.count + "</td>";`}</p>
+                  </div>
+                  <p>{`} else {`}</p>
+                  <div className="ml-2">
+                    <p>{`row += "<td class='bg-row'>0</td>";`}</p>
+                  </div>
+                  <p>{`}`}</p>
+                </div>
+              </div>
+              <p>{`}`}</p>
+              <p>{`var total = dataReport.slice(startIndex, startIndex + monthsToShow).reduce(function (acc, cur) {`}</p>
+              <div className="ml-2">
+                <p>{`var item = cur.list.find(function (item) {`}</p>
+                <div className="ml-2">
+                  <p>{`return item.category === category;`}</p>
+                </div>
+                <p>{`});`}</p>
+                <p>{`return acc + (item ? item.count : 0);`}</p>
+              </div>
+              <p>{`}, 0);`}</p>
+              <p>{`row += "<td class='bg-row'>" + total + "</td>";`}</p>
+              <p>{`row += "</tr>";`}</p>
+              <p>{`tableBody.innerHTML += row;`}</p>
+            </div>
+            <p>{`});`}</p>
+          </div>
+
+          <div>
+            <p>{`function updateTable(startIndex) {`}</p>
+
+            <p>{`var headerRow = $("<tr>").append("<th class='header-table'>Category</th>");`}</p>
+            <p>{`for (var i = startIndex; i < startIndex + monthsToShow; i++) {`}</p>
+            <div className="ml-2">
+              <p>{`if (i < dataReport.length) {`}</p>
+              <div className="ml-2">
+                <p>{`headerRow.append("<th class='header-table'>" + dataReport[i].monthName + "</th>");`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`}`}</p>
+            <p>{`headerRow.append("<th class='header-table' style='color: #F0D33A'>TOTAL</th>");`}</p>
+            <p>{`$("#tableBody").empty().append(headerRow);`}</p>
+
+            <p>{`categoryHeaders.forEach(function (category) {`}</p>
+            <div className="ml-2">
+              <p>{`var row = $("<tr>").append("<td class='header-table'>" + category + "</td>");`}</p>
+              <p>{`for (var i = startIndex; i < startIndex + monthsToShow; i++) {`}</p>
+              <div className="ml-2">
+                <p>{`if (i < dataReport.length) {`}</p>
+                <div className="ml-2">
+                  <p>{`var item = dataReport[i].list.find(function (item) {`}</p>
+                  <div className="ml-2">
+                    <p>{`return item.category === category;`}</p>
+                  </div>
+                  <p>{`});`}</p>
+                  <p>{`if (item) {`}</p>
+                  <div className="ml-2">
+                    <p>{`row.append("<td class='bg-row'>" + item.count + "</td>");`}</p>
+                  </div>
+                  <p>{`} else {`}</p>
+                  <div className="ml-2">
+                    <p>{`row.append("<td class='bg-row'>0</td>");`}</p>
+                  </div>
+                  <p>{`}`}</p>
+                </div>
+                <p>{`}`}</p>
+              </div>
+              <p>{`}`}</p>
+              <p>{`var total = dataReport.slice(startIndex, startIndex + monthsToShow).reduce(function (acc, cur) {`}</p>
+              <div className="ml-2">
+                <p>{`var item = cur.list.find(function (item) {`}</p>
+                <div className="ml-2">
+                  <p>{`return item.category === category;`}</p>
+                </div>
+                <p>{`});`}</p>
+                <p>{`return acc + (item ? item.count : 0);`}</p>
+              </div>
+              <p>{`}, 0);`}</p>
+              <p>{`row.append("<td class='bg-row'>" + total + "</td>");`}</p>
+              <p>{`$("#tableBody").append(row);`}</p>
+            </div>
+            <p>{`});`}</p>
+
+            <p>{`}`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+
+        <div>
+          <p>{`   $("#purchaseReportScroller").css({ "width": w, "height": h - 75, "overflow": "hidden", "background-color": "#E3F5FF" });`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// CreateTableQuarter
+export function PurchaseReport_createTableQuarter() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`// var salesQuarter = $('#salesQuarter');`}</p>
+        <p>{`var tableBody = document.getElementById('salesQuarter');`}</p>
+        <p>{`var categoryHeadersQuarter = [];`}</p>
+        <p>{`if (dataQuarter.length === 0) {`}</p>
+        <div className="ml-2">
+          <p>{`$("#no_found_table_Quarter").attr('src', './pic/Monitor/Icon-YojoSolar-Nodata.png');`}</p>
+          <p>{`$("#salesQuarter").css({ "display": "none" })`}</p>
+          <p>{`$("#no_found_table_Quarter").css({ "display": "flex" })`}</p>
+        </div>
+        <p>{`} else {`}</p>
+        <div className="ml-2">
+          <p>{`$("#salesQuarter").css({ "display": "block" })`}</p>
+          <p>{`$("#no_found_table_Quarter").css({ "display": "none" })`}</p>
+          <p>{`dataQuarter.forEach(function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`data.list.forEach(function (item) {`}</p>
+            <div className="ml-2">
+              <p>{`if (!categoryHeadersQuarter.includes(item.category)) {`}</p>
+              <div className="ml-2">
+                <p>{`categoryHeadersQuarter.push(item.category);`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`});`}</p>
+          </div>
+          <p>{`});`}</p>
+          <p>{`var headerRow = "<tr>";`}</p>
+          <p>{`headerRow += "<th class='header-table'>Category</th>";`}</p>
+          <p>{`dataQuarter.forEach(function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`headerRow += "<th class='header-table '>" + data.quarterName + "</th>";`}</p>
+          </div>
+          <p>{`});`}</p>
+          <p>{`headerRow += "<th class='header-table' style='color: #F0D33A'>TOTAL</th>";`}</p>
+          <p>{`headerRow += "</tr>";`}</p>
+          <p>{`tableBody.innerHTML = headerRow;`}</p>
+          <p>{`categoryHeadersQuarter.forEach(function (category) {`}</p>
+          <div className="ml-2">
+            <p>{`var row = "<tr>";`}</p>
+            <p>{`row += "<td class='header-table main-report'>" + category + "</td>";`}</p>
+            <p>{`dataQuarter.forEach(function (data) {`}</p>
+            <div className="ml-2">
+              <p>{`var item = data.list.find(function (item) {`}</p>
+              <div className="ml-2">
+                <p>{`return item.category === category;`}</p>
+              </div>
+              <p>{`});`}</p>
+              <p>{`if (item) {`}</p>
+              <div className="ml-2">
+                <p>{`row += "<td class='bg-row'>" + item.count + "</td>";`}</p>
+              </div>
+              <p>{`} else {`}</p>
+              <div className="ml-2">
+                <p>{`row += "<td class='bg-row'>0</td>";`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`});`}</p>
+            <p>{`var total = dataQuarter.reduce(function (acc, cur) {`}</p>
+            <div className="ml-2">
+              <p>{`var item = cur.list.find(function (item) {`}</p>
+              <div className="ml-2">
+                <p>{`return item.category === category;`}</p>
+              </div>
+              <p>{`});`}</p>
+              <p>{`return acc + (item ? item.count : 0);`}</p>
+            </div>
+            <p>{`}, 0);`}</p>
+            <p>{`row += "<td class='bg-row'>" + total + "</td>";`}</p>
+            <p>{`row += "</tr>";`}</p>
+            <p>{`tableBody.innerHTML += row;`}</p>
+          </div>
+          <p>{`});`}</p>
+        </div>
+        <p>{`$("#purchaseReportScroller").css({ "width": w, "height": h - 75, "overflow": "hidden", "background-color": "#E3F5FF" });`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getSelectedMonthpurchase
+export function PurchaseReport_getSelectedMonthpurchase() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var currentDate1 = new Date();`}</p>
+        <p>{`var currentYear1 = currentDate1.getFullYear();`}</p>
+        <p>{`var currentDate = new Date();`}</p>
+        <p>{`var currentYear = currentDate.getFullYear();`}</p>
+        <p>{`if (currentYear <= currentYear1) {`}</p>
+        <div className="ml-2">
+          <p>{`$("#next1").css({ "display": "none" })`}</p>
+        </div>
+        <p>{`} else {`}</p>
+        <div className="ml-2">
+          <p>{`$("#next1").css({ "display": "flex" })`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`$('#yearSelect').change(function () {`}</p>
+
+        <div className="ml-2">
+          <p>{`var selectedYear = $(this).val();`}</p>
+          <p>{`console.log('Selected year:', selectedYear);`}</p>
+          <p>{`purchaseReportObj.GetSalesData(false, selectedYear);`}</p>
+          <p>{`myScroll = new IScroll('#purchaseReportScroller', { probeType: 1, mouseWheel: true });`}</p>
+          <p>{`currentYear1 = selectedYear;`}</p>
+          <p>{`$('#calendarGen1').text(selectedYear);`}</p>
+        </div>
+        <p>{`});`}</p>
+        <p>{`var str = <span>{currentYear1}</span>; // Display only the year`}</p>
+        <p>{`$('#yearSelect').text(currentYear1);`}</p>
+        <p>{`purchaseReportObj.GetSalesData(false, currentYear1);`}</p>
+        <p>{`$('#next1').unbind();`}</p>
+        <p>{`$('#next1').click(function () {`}</p>
+        <div className="ml-2">
+          <p>{`currentYear1++;`}</p>
+          <p>{`updateCalendar();`}</p>
+        </div>
+        <p>{`});`}</p>
+        <p>{`$('#prev1').unbind();`}</p>
+        <p>{`$('#prev1').click(function () {`}</p>
+        <div className="ml-2">
+          <p>{`currentYear1--;`}</p>
+          <p>{`updateCalendar();`}</p>
+        </div>
+        <p>{`});`}</p>
+        <p>{`function updateCalendar() {`}</p>
+        <div className="ml-2">
+          <p>{`var currentDate = new Date();`}</p>
+          <p>{`var currentYear = currentDate.getFullYear();`}</p>
+          <p>{`if (currentYear <= currentYear1) {`}</p>
+          <div className="ml-2">
+            <p>{`$("#next1").css({ "display": "none" })`}</p>
+          </div>
+          <p>{`} else {`}</p>
+          <div className="ml-2">
+            <p>{`$("#next1").css({ "display": "flex" })`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`str = <span>{currentYear1}</span>; // Update to display only the year`}</p>
+          <p>{`$('#calendarGen1').html(str);`}</p>
+          <p>{`purchaseReportObj.GetSalesData(false, currentYear1);`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`$('#calendarGen1').html(str);`}</p>
+      </div>
+    </div>
+  )
+}
+
+// showChart
+export function PurchaseReport_showChart() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var chartDom = document.getElementById('char_flow1');`}</p>
+        <p>{`var myChart = echarts.init(chartDom);`}</p>
+        <p>{`var categoryHeadersQuarter = [];`}</p>
+        <p>{`var salesData = dataQuarter;`}</p>
+        <p>{`var firstHalfYear = [];`}</p>
+        <p>{`var secondHalfYear = [];`}</p>
+        <p>{`var nameCategory = [];`}</p>
+        <p>{`for (var i = 0; i < salesData.length; i++) {`}</p>
+        <div className="ml-2">
+          <p>{`var quarter = salesData[i];`}</p>
+          <p>{`if (quarter.list.length > 0) {`}</p>
+          <div className="ml-2">
+            <p>{`for (var j = 0; j < quarter.list.length; j++) {`}</p>
+            <div className="ml-2">
+              <p>{`var product = quarter.list[j];`}</p>
+              <p>{`if (quarter.quarter === 1 || quarter.quarter === 2) {`}</p>
+              <div className="ml-2">
+                <p>{`firstHalfYear.push(product.count);`}</p>
+              </div>
+              <p>{`} else if (quarter.quarter === 3 || quarter.quarter === 4) {`}</p>
+              <div className="ml-2">
+                <p>{`secondHalfYear.push(product.count);`}</p>
+              </div>
+              <p>{`}`}</p>
+              <p>{`nameCategory.push(product.category);`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`} else {`}</p>
+          <div className="ml-2">
+            <p>{`console.log("No sales data available for this quarter.");`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`var DataName = [];`}</p>
+        <p>{`categoryHeadersQuarter.forEach(function (category) {`}</p>
+        <div className="ml-2">
+          <p>{`DataName.push(category);`}</p>
+        </div>
+        <p>{`});`}</p>
+        <p>{`var option;`}</p>
+        <p>{`option = {`}</p>
+        <div className="ml-2">
+          <p>{`grid: {`}</p>
+          <div className="ml-2">
+            <p>{`left: '15%',  // เพิ่ม padding ด้านซ้าย`}</p>
+            <p>{`right: '10%', // เพิ่ม padding ด้านขวา`}</p>
+            <p>{`top: '10%',   // เพิ่ม padding ด้านบน`}</p>
+            <p>{`bottom: '10%', // เพิ่ม padding ด้านล่าง`}</p>
+            <p>{`height: '60%' // กำหนดความสูงของกราฟ`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`legend: {`}</p>
+          <div className="ml-2">
+            <p>{`show: true, // เพิ่มคำสั่งนี้เพื่อแสดง legend`}</p>
+            <p>{`data: ['First Half Year', 'Second Half Year']`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`xAxis: {`}</p>
+          <div className="ml-2">
+            <p>{`type: 'category',`}</p>
+            <p>{`data: nameCategory, // กำหนดข้อมูล nameCategory ให้กับ x-axis`}</p>
+            <p>{`axisLabel: {`}</p>
+            <div className="ml-2">
+              <p>{`interval: 0, // แสดงข้อความทุกตัวบนแกน x`}</p>
+              <p>{`rotate: 0, // เปลี่ยนค่า rotate เป็น 0 เพื่อให้ข้อความไม่เอียง`}</p>
+              <p>{`fontSize: 8,`}</p>
+              <p>{`formatter: function (value) {`}</p>
+              <div className="ml-2">
+                <p>{`if (value.length > 8) {`}</p>
+                <div className="ml-2">
+                  <p>{`var formattedValue = '';`}</p>
+                  <p>{`for (var i = 0; i < value.length; i += 8) {`}</p>
+                  <div className="ml-2">
+                    <p>{`formattedValue += value.substring(i, i + 8) + '\\n';`}</p>
+                  </div>
+                  <p>{`}`}</p>
+                  <p>{`return formattedValue.trim(); // ลบช่องว่างที่ขึ้นต้นหรือลงท้าย`}</p>
+                </div>
+                <p>{`} else {`}</p>
+                <div className="ml-2">
+                  <p>{`return value;`}</p>
+                </div>
+                <p>{`}`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`yAxis: {`}</p>
+          <div className="ml-2">
+            <p>{`type: 'value',`}</p>
+            <p>{`axisLabel: {`}</p>
+            <div className="ml-2">
+              <p>{`formatter: function (value) {`}</p>
+              <div className="ml-2">
+                <p>{`return Math.round(value);`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`series: [`}</p>
+          <div className="ml-2">
+            <p>{`{`}</p>
+            <div className="ml-2">
+              <p>{`type: 'bar',`}</p>
+              <p>{`name: 'First Half Year', // ปรับชื่อให้ตรงกับ legend data`}</p>
+              <p>{`data: firstHalfYear,`}</p>
+              <p>{`itemStyle: {`}</p>
+              <div className="ml-2">
+                <p>{`borderRadius: [10, 10, 0, 0],`}</p>
+                <p>{`color: "#3BBDC4"`}</p>
+              </div>
+              <p>{`},`}</p>
+            </div>
+            <p>{`},`}</p>
+            <p>{`{`}</p>
+            <div className="ml-2">
+              <p>{`type: 'bar',`}</p>
+              <p>{`name: 'Second Half Year', // ปรับชื่อให้ตรงกับ legend data`}</p>
+              <p>{`data: secondHalfYear,`}</p>
+              <p>{`itemStyle: {`}</p>
+              <div className="ml-2">
+                <p>{`borderRadius: [10, 10, 0, 0],`}</p>
+                <p>{`color: "#A2D2FC"`}</p>
+              </div>
+              <p>{`},`}</p>
+            </div>
+            <p>{`},`}</p>
+          </div>
+          <p>{`]`}</p>
+        </div>
+        <p>{`};`}</p>
+        <p>{`option && myChart.setOption(option);`}</p>
+        <p>{`myScroll = new IScroll('#purchaseReportScroller', { probeType: 1, mouseWheel: true });`}</p>
+      </div>
+    </div>
+  )
+}
+
+// ExportCSV
+export function PurchaseReport_exportCSV() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var data = dataReport;`}</p>
+        <p>{`var categories = new Set();`}</p>
+        <p>{`var months = [];`}</p>
+        <p>{`data.forEach(function (entry) {`}</p>
+        <div className="ml-2">
+          <p>{`entry.list.forEach(function (item) {`}</p>
+          <div className="ml-2">
+            <p>{`categories.add(item.category);`}</p>
+          </div>
+          <p>{`});`}</p>
+          <p>{`months.push(entry.monthName);`}</p>
+        </div>
+        <p>{`});`}</p>
+        <p>{`var sortedCategories = Array.from(categories).sort();`}</p>
+        <p>{`var csvContent = [];`}</p>
+        <p>{`var headerRow = ['Month', ...months];`}</p>
+        <p>{`csvContent.push(headerRow);`}</p>
+        <p>{`sortedCategories.forEach(function (category) {`}</p>
+        <div className="ml-2">
+          <p>{`var row = [category];`}</p>
+          <p>{`months.forEach(function (month) {`}</p>
+          <div className="ml-2">
+            <p>{`var monthCount = 0;`}</p>
+            <p>{`data.forEach(function (entry) {`}</p>
+            <div className="ml-2">
+              <p>{`if (entry.monthName === month) {`}</p>
+              <div className="ml-2">
+                <p>{`entry.list.forEach(function (item) {`}</p>
+                <div className="ml-2">
+                  <p>{`if (item.category === category) {`}</p>
+                  <div className="ml-2">
+                    <p>{`monthCount += item.count;`}</p>
+                  </div>
+                  <p>{`}`}</p>
+                </div>
+                <p>{`});`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`});`}</p>
+            <p>{`row.push(monthCount);`}</p>
+          </div>
+          <p>{`});`}</p>
+          <p>{`csvContent.push(row);`}</p>
+        </div>
+        <p>{`});`}</p>
+        <p>{`var csvString = csvContent.map(row => row.join(',')).join('\\n');`}</p>
+        <p>{`var currentDate = new Date();`}</p>
+        <p>{`var year = currentDate.getFullYear();`}</p>
+        <p>{`var month = ('0' + (currentDate.getMonth() + 1)).slice(-2);`}</p>
+        <p>{`var day = ('0' + currentDate.getDate()).slice(-2);`}</p>
+        <p>{`var formattedDate = \`\${year}-\${month}-\${day}\`;`}</p>
+        <p>{`var blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });`}</p>
+        <p>{`var downloadLink = document.createElement('a');`}</p>
+        <p>{`downloadLink.href = URL.createObjectURL(blob);`}</p>
+        <p>{`downloadLink.download = \`Yojosolar Purchase Report-\${formattedDate}.csv\`;`}</p>
+        <p>{`document.body.appendChild(downloadLink);`}</p>
+        <p>{`downloadLink.click();`}</p>
+        <p>{`document.body.removeChild(downloadLink);`}</p>
+      </div>
+    </div>
+  )
+}
+
+// redeem.html
+//RedeemCheckToken
+export function Redeem_redeemCheckToken() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`token = JSON.parse(getToken);`}</p>
+        <p>{`if (token == null) {`}</p>
+        <div className="ml-2">
+          <p>{`$('#input_redeem_coins').css({ "visibility": "hidden" })`}</p>
+        </div>
+        <p>{`} else {`}</p>
+        <div className="ml-2">
+          <p>{`$('#input_redeem_coins').css({ "visibility": "visible" })`}</p>
+          <p>{`$("#input_redeem_coins").on("input", function () {`}</p>
+          <div className="ml-2">
+            <p>{`checkNoInput();`}</p>
+          </div>
+          <p>{`});`}</p>
+          <p>{`$('#select_all_coins').unbind().click(function () {`}</p>
+          <div className="ml-2">
+            <p>{`var allCoins = parseFloat($("#redeem_coins").text());`}</p>
+            <p>{`$('#input_redeem_coins').val(allCoins);`}</p>
+            <p>{`$("#output_redeem_coins").text(allCoins);`}</p>
+            <p>{`checkNoInput();`}</p>
+          </div>
+          <p>{`});`}</p>
+        </div>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// checkNoInput
+export function Redeem_checkNoInput() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var input_amount = $("#input_redeem_coins").val();`}</p>
+        <p>{`if (input_amount === "") {`}</p>
+        <div className="ml-2">
+          <p>{`$('#submit_redeem_coins').prop("disabled", true).css({ "background": "rgb(187, 173, 173)", "border": "none" });`}</p>
+          <p>{`$('#output_redeem_coins').css({ "color": "#8e8e8e" });`}</p>
+          <p>{`$("#submit_redeem_coins").off("click");`}</p>
+        </div>
+        <p>{`} else {`}</p>
+        <div className="ml-2">
+          <p>{`$('#submit_redeem_coins').prop("disabled", false).css({ "background": "#3B78FE", "border": "1px solid #3B78FE" });`}</p>
+          <p>{`$('#output_redeem_coins').css({ "color": "#000" });`}</p>
+          <p>{`$('#submit_redeem_coins').unbind().click(function () {`}</p>
+          <div className="ml-2">
+            <p>{`var input_amount = $("#input_redeem_coins").val();`}</p>
+            <p>{`if (input_amount == "") {`}</p>
+            <div className="ml-2">
+              <p>{`msgPageObj.show("Please fill complete information");`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`postRedeem();`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`});`}</p>
+        </div>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// postRedeem
+export function Redeem_postRedeem() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`var input_amount = parseFloat($("#input_redeem_coins").val());`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p>{`    "amount": input_amount,`}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: 'POST',`}</p>
+          <p>{`url: API_SERVER + '/v1/wallet/coin/redeem',`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`'Authorization': 'Bearer ' + token.token,`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`data: JSON.stringify(mData),`}</p>
+          <p>{`contentType: 'application/json',`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+            <p>{`if (data.code == 0) {`}</p>
+            <div className="ml-2">
+              <p>{`msgObj4.show('Redeem coins successfully');`}</p>
+              <p>{`walletObj.getUserData();`}</p>
+              <p>{`cleanInput();`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`msgPageObj.show(getStatusCode(data.code));`}</p>
+            </div>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (error) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+            <p>{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+          </div>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// refund.html
+// getData
+export function Refund_getData() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`getDataSendRefund = dataItem`}</p>
+        <p>{`$('#refund_image').attr('src', API_SERVER + dataItem.image);`}</p>
+        <p>{`$('#price_refund').text(dataItem.price + ' ฿')`}</p>
+        <p>{`$('#name_refund').text(dataItem.name)`}</p>
+        <p>{`$('#Quantity_refund').text('Quantity x ' + dataItem.quantity)`}</p>
+      </div>
+    </div>
+  )
+}
+
+// sendRefund
+export function Refund_sendRefund() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var oid = getDataSendRefund.oid`}</p>
+        <p>{`var pid = getDataSendRefund.pid`}</p>
+        <p>{`var selectedValue = $('#refund_reasonChoice').val();`}</p>
+        <p>{`var detail = $('#detail_reason').val()`}</p>
+        <p>{`if (oid == '' || pid == '' || selectedValue == '' || detail == '' || imgCommercial == '') {`}</p>
+        <div className="ml-2">
+          <p>{`var mData = {`}</p>
+          <div className="ml-2">
+            <p>{`"oid": oid,`}</p>
+            <p>{`"pids": [pid],`}</p>
+            <p>{`"reason": selectedValue,`}</p>
+            <p>{`"detail": detail,`}</p>
+            <p>{`"image": imgCommercial`}</p>
+          </div>
+          <p>{`msgPageObj.show(<div>Please fill out all the required information.</div>);`}</p>
+        </div>
+        <p>{`} else {`}</p>
+        <div className="ml-2">
+          <p>{`getToken = window.localStorage.getItem('token');`}</p>
+          <p>{`token = JSON.parse(getToken);`}</p>
+          <p>{`var mData = {`}</p>
+          <div className="ml-2">
+            <p>{`"oid": oid,`}</p>
+            <p>{`"pids": [pid],`}</p>
+            <p>{`"reason": selectedValue,`}</p>
+            <p>{`"detail": detail,`}</p>
+            <p>{`"image": imgCommercial`}</p>
+          </div>
+          <p>{`$.ajax({`}</p>
+          <div className="ml-2">
+            <p>{`type: "PUT",`}</p>
+            <p>{`url: API_SERVER + "/v1/orders/refund",`}</p>
+            <p>{`data: JSON.stringify(mData),`}</p>
+            <p>{`dataType: "json",`}</p>
+            <p>{`headers: {`}</p>
+            <div className="ml-2">
+              <p>{`'Authorization': 'Bearer ' + token.token,`}</p>
+              <p>{`"Content-Type": "application/json",`}</p>
+            </div>
+            <p>{`},`}</p>
+            <p>{`async: true,`}</p>
+            <p>{`timeout: 100000,`}</p>
+            <p>{`beforeSend: function (xmlhttprequest) {`}</p>
+            <p>{`},`}</p>
+            <p>{`success: function (data) {`}</p>
+            <div className="ml-2">
+              <p>{`loaderObj.unShow();`}</p>
+              <p>{`if (data.code == 0) {`}</p>
+              <div className="ml-2">
+                <p>{`msgObjSub.show(('Refund Successfully.'), function () {`}</p>
+                <div className="ml-2">
+                  <p>{`msgObjSub.unShow();`}</p>
+                </div>
+                <p>{`})`}</p>
+                <p>{`cleanInput()`}</p>
+              </div>
+              <p>{`} else {`}</p>
+              <div className="ml-2">
+                <p>{`$('#accepted').css({ "background-color": "#C6C6C6" })`}</p>
+                <p>{`msgPageObj.show("You have previously cancelled a request for product return and refund.")`}</p>
+              </div>
+            </div>
+            <p>{`},`}</p>
+            <p>{`error: function (xmlhttprequest, error) {`}</p>
+            <p>{`},`}</p>
+            <p>{`complete: function () {`}</p>
+            <p>{`}`}</p>
+          </div>
+          <p>{`});`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// PreviewImg_refund
+export function Refund_previewImg_refund() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`$('#fileInput_refund').unbind();`}</p>
+        <p>{`$('#fileInput_refund').on('change', function () {`}</p>
+        <div className="ml-2">
+          <p>{`var fileInput = this;`}</p>
+          <p>{`var file = fileInput.files[0];`}</p>
+          <p>{`var preview = $('#preview_refund');`}</p>
+          <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+          <p>{`var token = JSON.parse(getToken);`}</p>
+          <p>{`console.log(file, "fline upload_refund");`}</p>
+          <p>{`if (file && file.type.match('image.*')) {`}</p>
+          <div className="ml-2">
+            <p>{`var reader = new FileReader();`}</p>
+            <p>{`reader.onload = function (e) {`}</p>
+            <div className="ml-2">
+              <p>{`var img = $('<img>').attr('src', e.target.result).css({`}</p>
+              <div className="ml-2">
+                <p>{`'width': '180px',`}</p>
+                <p>{`'height': '200px'`}</p>
+              </div>
+              <p>{`});`}</p>
+              <p>{`preview.empty().append(img).css('display', 'block');`}</p>
+              <p>{`$('#close_shop_img_refund').on('click', function () {`}</p>
+              <div className="ml-2">
+                <p>{`$('#uploadIcon_refund').css('display', 'flex');`}</p>
+                <p>{`preview.css('display', 'none');`}</p>
+                <p>{`img.attr('src', '');`}</p>
+                <p>{`$('#close_shop_img_refund').css('display', 'none');`}</p>
+                <p>{`fileInput.value = ''; // Clear file input value`}</p>
+                <p>{`console.log(file, "ลบไฟล์");`}</p>
+                <p>{`imgCommercial = ''`}</p>
+              </div>
+              <p>{`});`}</p>
+            </div>
+            <p>{`reader.readAsDataURL(file);`}</p>
+            <p>{`$('#uploadIcon_refund').css({ "display": "none" });`}</p>
+            <p>{`$('#close_shop_img_refund').css({ "display": "block" });`}</p>
+            <p>{`var formData = new FormData();`}</p>
+            <p>{`formData.append('file', file, 'compress', false);`}</p>
+            <p>{`$.ajax({`}</p>
+            <div className="ml-2">
+              <p>{`type: "PUT",`}</p>
+              <p>{`url: API_SERVER + "/v1/files",`}</p>
+              <p>{`data: formData,`}</p>
+              <p>{`headers: {`}</p>
+              <div className="ml-2">
+                <p>{`'Authorization': 'Bearer ' + token.token`}</p>
+              </div>
+              <p>{`},`}</p>
+              <p>{`processData: false, // Prevent jQuery from processing data`}</p>
+              <p>{`contentType: false, // Set content type to false`}</p>
+              <p>{`timeout: 100000,`}</p>
+              <p>{`success: function (data) {`}</p>
+              <div className="ml-2">
+                <p>{`if (data.code === 0) {`}</p>
+                <div className="ml-2">
+                  <p>{`imgCommercial = data.result.link`}</p>
+                  <p>{`// Handle success if needed`}</p>
+                </div>
+                <p>{`} else {`}</p>
+                <div className="ml-2">
+                  <p>{`msgPageObj.show(getStatusCode(data.code));`}</p>
+                </div>
+              </div>
+              <p>{`},`}</p>
+              <p>{`error: function (xhr, status, error) {`}</p>
+              <div className="ml-2">
+                <p>{`console.error(xhr, status, error);`}</p>
+                <p>{`loaderObj.unShow();`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`});`}</p>
+          </div>
+          <p>{`} else {`}</p>
+          <div className="ml-2">
+            <p>{`preview.html('<span style="color: red;">Selected file is not an image.</span>');`}</p>
+          </div>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// register.html
+//registerFun
+export function Register_registerFun() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2 flex flex-col gap-4">
+        <div>
+          <p>{`loaderObj.show();`}</p>
+          <p>{`var email = $("#regis_mail").val();`}</p>
+          <p>{`var OTP = $("#regis_mail_OTP").val();`}</p>
+          <p>{`var users = $("#UsersRegis").val();`}</p>
+          <p>{`var mobile = $("#mobileRegis").val();`}</p>
+          <p>{`var password = $("#r_password_user").val();`}</p>
+          <p>{`var inviteCode = $("#invite_Code_user").val();`}</p>
+          <p>{``}</p>
+          <p>{`var mData = {`}</p>
+          <p>{`    "email": email,`}</p>
+          <p>{`    "otp": OTP,`}</p>
+          <p>{`    "mobile": mobile,`}</p>
+          <p>{`    "name": users,`}</p>
+          <p>{`    "password": password,`}</p>
+          <p>{`    "inviteCode": inviteCode,`}</p>
+          <p>{`    "deviceId": null,`}</p>
+          <p>{`    "platform": null`}</p>
+          <p>{`}`}</p>
+          <p>{``}</p>
+          <p>{`$.ajax({`}</p>
+          <p>{`    type: "post",`}</p>
+          <p>{`    url: API_SERVER + "/v1/auth/signUp",`}</p>
+          <p>{`    data: JSON.stringify(mData),`}</p>
+          <p>{`    headers: {`}</p>
+          <p>{`        "Content-Type": "application/json",`}</p>
+          <p>{`    },`}</p>
+          <p>{`    dataType: "json",`}</p>
+          <p>{`    async: true,`}</p>
+          <p>{`    timeout: 100000,`}</p>
+          <p>{`    beforeSend: function (xmlhttprequest) {`}</p>
+          <p>{`    },`}</p>
+          <p>{`    success: function (data) {`}</p>
+          <p>{`        loaderObj.unShow();`}</p>
+          <p>{`        if (data.code == 0) {`}</p>
+          <p>{`            registerObj.cleanInput();`}</p>
+          <p>{`            msgObj4.show(('You have successfully registered an account'), function () {`}</p>
+          <p>{`                msgObj4.unShow();`}</p>
+          <p>{`                pageShow('loginPage')`}</p>
+          <p>{`            })`}</p>
+          <p>{`            $('.tryRegis').click(function () {`}</p>
+          <p>{`                msgPageObj.unShow();`}</p>
+          <p>{`            })`}</p>
+          <p>{`            setTimeout(function () {`}</p>
+          <p>{`                pageUnShow('registerPage');`}</p>
+          <p>{`            }, 1000)`}</p>
+          <p>{`        }`}</p>
+          <p>{`        else {`}</p>
+          <p>{`            msgPageObj.show(getStatusCode(data.code))`}</p>
+          <p>{`        }`}</p>
+          <p>{`    },`}</p>
+          <p>{`    error: function (xmlhttprequest, error) {`}</p>
+          <p>{`        console.log('error');`}</p>
+          <p>{`        loaderObj.unShow();`}</p>
+          <p>{`        msgPageObj.show(NSLang('sys.serverError'))`}</p>
+          <p>{`        cleanInput();`}</p>
+          <p>{`    },`}</p>
+          <p>{`    complete: function () {`}</p>
+          <p>{`    }`}</p>
+          <p>{`});`}</p>
+        </div>
+
+        <div>
+          <p>{`function cleanInput() {`}</p>
+          <p>$("#mobileRegis").val('');</p>
+          <p>$("#r_password_user").val('');</p>
+          <p>$("#r_password_again_user").val('');</p>
+          <p>$("#inviteCode").val('');</p>
+          <p>{`}`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// SendOTP
+export function Register_sendOTP() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var email = $("#regis_mail").val();`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p>{`    "email": email,`}</p>
+        <p>{`    "type": 10,`}</p>
+        <p>{`}`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p>{`    type: "post",`}</p>
+        <p>{`    url: API_SERVER + "/v1/email-verification/send",`}</p>
+        <p>{`    data: JSON.stringify(mData),`}</p>
+        <p>{`    headers: {`}</p>
+        <p>{`        "Content-Type": "application/json",`}</p>
+        <p>{`    },`}</p>
+        <p>{`    dataType: "json",`}</p>
+        <p>{`    async: true,`}</p>
+        <p>{`    timeout: 100000,`}</p>
+        <p>{`    beforeSend: function (xmlhttprequest) {`}</p>
+        <p>{`    },`}</p>
+        <p>{`    success: function (data) {`}</p>
+        <p>{`        loaderObj.unShow();`}</p>
+        <p>{`        if (data.code == 0) {`}</p>
+        <p>{`            function startCountdown(duration, display) {`}</p>
+        <p>{`                $('#send_OTP').off("click")`}</p>
+        <p>{`                var timer = duration, minutes, seconds;`}</p>
+        <p>{`                const interval = setInterval(function () {`}</p>
+        <p>{`                    minutes = parseInt(timer / 60, 10);`}</p>
+        <p>{`                    seconds = parseInt(timer % 60, 10);`}</p>
+        <p>{``}</p>
+        <p>{`                    minutes = minutes < 10 ? "0" + minutes : minutes;`}</p>
+        <p>{`                    seconds = seconds < 10 ? "0" + seconds : seconds;`}</p>
+        <p>{``}</p>
+        <p>{`                    display.textContent = minutes + ":" + seconds;`}</p>
+        <p>{`                    console.log(minutes + ":" + seconds);`}</p>
+        <p>{`                    $('#timer').text(display.textContent)`}</p>
+        <p>{``}</p>
+        <p>{`                    if (--timer < 0) {`}</p>
+        <p>{`                        clearInterval(interval);`}</p>
+        <p>{``}</p>
+        <p>{`                        OTPCountdown();`}</p>
+        <p>{`                    }`}</p>
+        <p>{`                }, 1000);`}</p>
+        <p>{`            }`}</p>
+        <p>{`            function OTPCountdown() {`}</p>
+        <p>{`                $('#OTP_user').css({ "display": "flex" })`}</p>
+        <p>{`                $('#timer').css({ "display": "none" })`}</p>
+        <p>{`                $("#send_OTP").click(function () {`}</p>
+        <p>{`                    var email = $("#regis_mail").val().trim(); // Trim to remove leading/trailing whitespace`}</p>
+        <p>{`                    if (email === '') {`}</p>
+        <p>{`                        msgPageObj.show(\`<div>Please enter your email to request an OTP code</div>\`);`}</p>
+        <p>{`                    } else {`}</p>
+        <p>{`                        var gmailPattern = /[a-z0-9._%+-]+@.+\.com/;`}</p>
+        <p>{`                        if (!gmailPattern.test(email)) {`}</p>
+        <p>{`                            msgPageObj.show(\`<div>Please enter a valid email address.</div>\`);`}</p>
+        <p>{`                        } else {`}</p>
+        <p>{`                            $('#OTP_user').css({ "display": "none" })`}</p>
+        <p>{`                            $('#timer').css({ "display": "flex" })`}</p>
+        <p>{`                            loaderObj.show();`}</p>
+        <p>{`                            registerObj.SendOTP();`}</p>
+        <p>{`                        }`}</p>
+        <p>{`                    }`}</p>
+        <p>{``}</p>
+        <p>{`                });`}</p>
+        <p>{`            }`}</p>
+        <p>{`            var seconds = data.result.expire; // Assuming data.result.expire contains the total number of seconds`}</p>
+        <p>{`            var totalMilliseconds = seconds;`}</p>
+        <p>{`            var totalSeconds = totalMilliseconds / 1000; // 1 วินาทีมี 1000 มิลลิวินาที`}</p>
+        <p>{`            console.log(totalSeconds);`}</p>
+        <p>{`            var totalMinutes = totalSeconds / 60; // 1 นาทีมี 60 วินาที`}</p>
+        <p>{`            console.log(totalMinutes);`}</p>
+        <p>{`            var totalMinutes_convert = totalMinutes;`}</p>
+        <p>{`            var totalSeconds_convert = totalMinutes * 60; // 1`}</p>
+        <p>{`            var timerDisplay = document.getElementById("timer");`}</p>
+        <p>{`            startCountdown(totalSeconds_convert - 2, timerDisplay);`}</p>
+        <p>{`            loaderObj.unShow()`}</p>
+        <p>{`            msgPageObj.show(\`<div>Please Check OTP from email <span style="color:#3B78FE;">{email}</span></div>\`)`}</p>
+        <p>{`        }`}</p>
+        <p>{`        else {`}</p>
+        <p>{`            loaderObj.unShow()`}</p>
+        <p>{`            msgPageObj.show(getStatusCode(data.code))`}</p>
+        <p>{`        }`}</p>
+        <p>{`    },`}</p>
+        <p>{`    error: function (xmlhttprequest, error) {`}</p>
+        <p>{`        loaderObj.unShow()`}</p>
+        <p>{``}</p>
+        <p>{`        loaderObj.unShow();`}</p>
+        <p>{`        msgPageObj.show(NSLang('sys.serverError'))`}</p>
+        <p>{`        registerObj.cleanInput();`}</p>
+        <p>{``}</p>
+        <p>{`    },`}</p>
+        <p>{`    complete: function () {`}</p>
+        <p>{`    }`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// reportdatalogger.html
+//CreateHTML
+export function Reportdatalogger_createHTML() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var setDataId = []`}
+        {`var reportData = [`}
+        <div className="ml-2">
+          {`{number: 1, label: "Grid input voltage", id: "gridInputVol", unit: "V"},`}
+          {`{number: 2, label: "Grid frequency", id: "gridFrequency", unit: "Hz"},`}
+          {`{number: 3, label: "Load percentage", id: "loadPercentage", unit: "%"},`}
+          {`{number: 4, label: "Load half ratio", id: "loadHalf", unit: "%"},`}
+          ...
+        </div>
+        {`]`}
+        <div className="ml-2">
+          {`$(document).click(function (event) {`}
+          <div className="ml-2">
+            {`if (!$(event.target).closest('[id^="img_show_"]').length) {`}
+            <div className="ml-2">
+              {`// Close all images with IDs starting with "img_show_"`}
+              {`$('img[id^="img_show_"]').attr("src", "./pic/Monitor/question.png")`}
+              {`$.each(reportData, function (index, data) {`}
+              <div className="ml-2">
+                {`$(#img_show_detail_{data.number}).fadeOut(100)`}
+              </div>
+              {`})`}
+            </div>
+            {`}`}
+          </div>
+          {`})`}
+        </div>
+        {`var reportContainer = document.getElementById("reportContainer")`}
+        {`reportData.forEach(({number, label, id, unit}) => {`}
+        <div className="ml-2">
+          {`var detailDiv = document.createElement("div")`}
+          {`detailDiv.className = "box-report-detail"`}
+          {`detailDiv.className += box-report-detail_{number}`}
+          {`detailDiv.innerHTML = <div id="detail_box_{number}" style=" position: relative;width: 100%;display: flex;justify-content: space-between;"><span style='width: 60%;'>{label}</span><span class="flexCenter"><span><span id="{id}"></span>&nbsp;{unit}</span> `}
+          <div className="ml-2">
+            {`<img id="img_show_{number}" class="img-question"></span>`}
+            {`<div id="img_show_detail_{number}" style=" display:none; position: absolute; width: 300px; height: 50px;     right: -13px;top: 22px; align-items: center; z-index:3;">`}
+            <div className="ml-2">
+              {`<div style="z-index: 2; font-size: 10px;width: 90%;margin: 0 auto;height: 100%;top: 15px;position: absolute;flex-direction: column;left: 5%;font-size: 12px;" class="content_detail_text">`}
+            </div>
+            {`</div>`}
+            {`<img   class="BG_content-detail"src="./pic/Monitor/box-chat-monitor.png" style="width: 100%;  position: absolute;  top:0">`}
+          </div>
+          {`</div></div>`}
+          {`reportContainer.appendChild(detailDiv)`}
+        </div>
+        {`})`}
+        {`$.each(reportData, function (index, data) {`}
+        <div className="ml-2">
+          {/* {`$(#img_show_{data.number}).click(function () {`} */}
+          <div className="ml-2">
+            {`$(img[id^="img_show_"]:not(#img_show_{data.number})).attr(src", "./pic/Monitor/question.png")`}
+            {`$(#img_show_{data.number}).attr("src", "./pic/Monitor/question_on.png")`}
+            {`$(#img_show_detail_{data.number}).hide().fadeIn(300)`}
+            {`$("[id^=img_show_detail_]")`}
+            <div className="ml-2">
+              {`.not(#img_show_detail_{data.number}).css({display: "none"})`}
+            </div>
+            {`if (data.number === 1) {`}
+            <div className="ml-2">
+              {`$(".content_detail_text").html(<span style="color: #ffffff;" class="content_text"> The Voltage is it</span><span style="color: #F0D33A;" class="content_text_bottom">supplied to the system</span><span style="color: #ffffff;" class="content_text">  from the electrical grid.</span>)`}
+              {`$(".BG_content-detail").css({height: "55px"})`}
+            </div>
+            ...
+          </div>
+          {`})`}
+        </div>
+        {`})`}
+        {`$("#img_show_31").off("click")`}
+        {`$("#img_show_31").css("display", "none")`}
+      </div>
+    </div>
+  )
+}
+
+// GetReportData
+export function Reportdatalogger_getReportData() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var CHECK = localStorage.getItem("token")`}
+        {`if (CHECK == null) {`}
+        <div className="ml-2">
+          {`function getRandomValue(min, max) {`}
+          <div className="ml-2">
+            {`return Math.floor(Math.random() * (max - min + 1)) + min`}
+          </div>
+          {`}`}
+          {`// สุ่มค่าและกำหนดค่าให้กับแต่ละฟิลด์`}
+          {`fields.forEach((field) => {`}
+          <div className="ml-2">
+            {`var randomValue = getRandomValue(0, 100) // สุ่มค่าจาก 0 ถึง 100`}
+            {`$(#{field}).text(randomValue) // กำหนดค่าสุ่มให้กับฟิลด์ที่มี ID ที่ระบุ`}
+          </div>
+          {`})`}
+        </div>
+        {`} else {`}
+        <div className="ml-2">
+          {`getToken = window.localStorage.getItem("token")`}
+          {`token = JSON.parse(getToken)`}
+          {`$.ajax({`}
+          <div className="ml-2">
+            {`type: "get",`}
+            {`url: API_SERVER + /v1/reportData/detail?devicePn={pin}&date={year}-{month}-{day}&page=1&limit=10,`}
+            {`headers: {`}
+            <div className="ml-2">
+              {`Authorization: "Bearer " + token.token,`}
+              {`"Content-Type": "application/json",`}
+            </div>
+            {`},`}
+            {`dataType: "json",`}
+            {`async: true,`}
+            {`timeout: 100000,`}
+            {`success: function (data) {`}
+            <div className="ml-2">
+              {`if (data.code === 0) {`}
+              <div className="ml-2">
+                {`loaderObj.unShow()`}
+                {`if (data.record == 0) {`}
+                <div className="ml-2">
+                  {`fields.forEach((field) => $(#{field}).text("0"))`}
+                </div>
+                {`} else {`}
+                <div className="ml-2">
+                  {`fields.forEach((field) => $(#{field}).text(data.result[0][field]))`}
+                </div>
+                {`}`}
+              </div>
+              {`}`}
+              {`if (data.code === 4324) {`}
+              <div className="ml-2">
+                {`fields.forEach((field) => $(#{field}).text("0"))`}
+              </div>
+              {`}`}
+              {`if (data.code === 4319) {`}
+              <div className="ml-2">
+                {`fields.forEach((field) => $(#{field}).text(Math.floor(Math.random() * 100))) // สุ่มเลขจำนวนเต็มในช่วง 0-99`}
+              </div>
+              {`} else {`}
+              <div className="ml-2">
+                {`// msgPageObj.show(getStatusCode(data.code))`}
+                {`loaderObj.unShow()`}
+              </div>
+              {`}`}
+            </div>
+            {`},`}
+            {`error: function (xmlhttprequest, error) {`}
+            <div className="ml-2">{`loaderObj.unShow()`}</div>
+            {`},`}
+          </div>
+          {`})`}
+        </div>
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// getSelectedDate
+export function Reportdatalogger_getSelectedDate() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2 flex flex-col gap-4">
+        <div>
+          <div className="ml-2">
+            <p>{`var currentDateTap = new Date()`}</p>
+            <p>{`var currentDateDay = (currentDateTap.getDate() < 10 ? "0" : "") + currentDateTap.getDate()`}</p>
+            <p>{`var currentYearDay = currentDateTap.getFullYear()`}</p>
+            <p>{`var currentMonthIndexDay = (currentDateTap.getMonth() < 9 ? "0" : "") + (currentDateTap.getMonth() + 1)`}</p>
+            <p>{`var currentMonthIndexDay_show = currentDateTap.getMonth() + 1 // Adding 1 to start from month 1 instead of month 0`}</p>
+            <p>{`var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]`}</p>
+            <p>{`var currentMonthText = months[currentMonthIndexDay_show - 1] // Corrected variable name`}</p>
+            <p>{`var monthNameDay = new Intl.DateTimeFormat("en-EN", { month: "long" }).format(currentDateTap)`}</p>
+            <p>{`var str_date = "<span>" + currentDateDay + "</span>"`}</p>
+            <p>{`var str_month = "<span>" + currentMonthText + "</span>"`}</p>
+            <p>{`var str_year = "<span>" + currentYearDay + "</span>"`}</p>
+            <p>{`$(".next_report").css({display: "none"})`}</p>
+            <p>{`$(".month_report").html(str_month)`}</p>
+            <p>{`$(".day_report").html(str_date)`}</p>
+            <p>{`$(".year_report").html(str_year)`}</p>
+            <p>{`$(".next_report").unbind().click(function () {`}</p>
+            <div className="ml-2">
+              <p>{`var CHECK = localStorage.getItem("token")`}</p>
+              <p>{`if (CHECK == null) {`}</p>
+              <div className="ml-2">
+                <p>{`msgObj.show(NSLang("You are not currently logged in. Please log in to continue  "), function () {`}</p>
+                <div className="ml-2">
+                  <p>{`pageUnShow("reportPage")`}</p>
+                  <p>{`pageShow("loginPage")`}</p>
+                  <p>{`$("#setting_Datalogger_nologin").css({display: "none"})`}</p>
+                  <p>{`msgObj.unShow()`}</p>
+                </div>
+                <p>{`})`}</p>
+              </div>
+              <p>{`} else {`}</p>
+              <div className="ml-2">
+                <p>{`currentDateTap.setDate(currentDateTap.getDate() + 1)`}</p>
+                <p>{`updateCalendarDay(type, pin)`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`})`}</p>
+            <p>{`$(".prev_report").unbind().click(function () {`}</p>
+            <div className="ml-2">
+              <p>{`var CHECK = localStorage.getItem("token")`}</p>
+              <p>{`if (CHECK == null) {`}</p>
+              <div className="ml-2">
+                <p>{`msgObj.show(NSLang("You are not currently logged in. Please log in to continue  "), function () {`}</p>
+                <div className="ml-2">
+                  <p>{`pageUnShow("reportPage")`}</p>
+                  <p>{`pageShow("loginPage")`}</p>
+                  <p>{`$("#setting_Datalogger_nologin").css({display: "none"})`}</p>
+                  <p>{`msgObj.unShow()`}</p>
+                </div>
+                <p>{`})`}</p>
+              </div>
+              <p>{`} else {`}</p>
+              <div className="ml-2">
+                <p>{`currentDateTap.setDate(currentDateTap.getDate() - 1)`}</p>
+                <p>{`updateCalendarDay(type, pin)`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`})`}</p>
+          </div>
+        </div>
+
+        <div>
+          <p>{`function updateCalendarDay(type, pin) {`}</p>
+          <p>{`var newMonthNameDay = new Intl.DateTimeFormat("en-EN", {
+    month: "long",
+  }).format(currentDateTap)`}</p>
+          <p>{`var newYearDay = currentDateTap.getFullYear()`}</p>
+          <p>{`var newMonthDay = (currentDateTap.getMonth() + 1)
+    .toString()
+    .padStart(2, "0")`}</p>
+          <p>{`var newDayOfDay = currentDateTap.getDate().toString().padStart(2, "0")`}</p>
+          <p>{`var show_text_month = currentDateTap.getMonth() + 1 // Adding 1 to start from month 1 instead of month 0`}</p>
+          <p>{`var currentMonthText_update = months[show_text_month - 1] // Corrected variable name`}</p>
+          <p>{`if (
+    newDayOfDay == currentDateDay &&
+    newYearDay == currentYearDay &&
+    newMonthDay == currentMonthIndexDay
+  ) {`}</p>
+          <div className="ml-2">
+            <p>{`$(".next_report").css({display: "none"})`}</p>
+          </div>
+          <p>{`} else {`}</p>
+          <div className="ml-2">
+            <p>{`$(".next_report").css({display: "flex"})`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`str_date = "<span>" + newDayOfDay + "</span>"`}</p>
+          <p>{`str_month = "<span>" + currentMonthText_update + "</span>"`}</p>
+          <p>{`str_year = "<span>" + newYearDay + "</span>"`}</p>
+          <p>{`$(".day_report").html(str_date)`}</p>
+          <p>{`$(".month_report").html(str_month)`}</p>
+          <p>{`$(".year_report").html(str_year)`}</p>
+          <p>{`if (type === 10) {`}</p>
+          <div className="ml-2">
+            <p>{`reportObj.chartFlowDay(`}</p>
+            <p>{`type,`}</p>
+            <p>{`newYearDay,`}</p>
+            <p>{`newMonthDay,`}</p>
+            <p>{`newDayOfDay,`}</p>
+            <p>{`pin`}</p>
+            <p>{`)`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`if (type === 20) {`}</p>
+          <div className="ml-2">
+            <p>{`reportObj.chartFlowMonth(`}</p>
+            <p>{`type,`}</p>
+            <p>{`newYearDay,`}</p>
+            <p>{`newMonthDay,`}</p>
+            <p>{`newDayOfDay,`}</p>
+            <p>{`pin`}</p>
+            <p>{`)`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`if (type === 30) {`}</p>
+          <div className="ml-2">
+            <p>{`reportObj.chartFlowYear(`}</p>
+            <p>{`type,`}</p>
+            <p>{`newYearDay,`}</p>
+            <p>{`newMonthDay,`}</p>
+            <p>{`newDayOfDay,`}</p>
+            <p>{`pin`}</p>
+            <p>{`)`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`if (type === 40) {`}</p>
+          <div className="ml-2">
+            <p>{`reportObj.chartFlowTotal(type, pin)`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`if (type === 50) {`}</p>
+          <div className="ml-2">
+            <p>{`reportObj.chargePower(newYearDay, newMonthDay, newDayOfDay, pin)`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`reportObj.GetReportData(newYearDay, newMonthDay, newDayOfDay, pin)`}</p>
+          <p>{`}`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// openTabreportCart
+export function Reportdatalogger_openTabreportCart() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`console.log(tabreportCart, "tabreportCart")`}</p>
+        <p>{`if (tabreportCart === "DayCart") {`}</p>
+        <div className="ml-2">
+          <p>{`$("#all_select_date").css({display: "flex"})`}</p>
+          <p>{`$(".month_report").css({display: "flex"})`}</p>
+          <p>{`$(".year_report").css({display: "flex"})`}</p>
+          <p>{`$(".day_report").css({display: "flex"})`}</p>
+          <p>{`$("#tab_select_date").text("date :")`}</p>
+          <p>{`setTimeout(() => {`}</p>
+          <div className="ml-2">
+            <p>{`var Pin = $("#device_pn_monitor").val()`}</p>
+            <p>{`reportObj.getSelectedDate(10, Pin)`}</p>
+          </div>
+          <p>{`}, 300)`}</p>
+          <p>{`var CHECK_LOGIN = localStorage.getItem("token")`}</p>
+          <p>{`if (CHECK_LOGIN == null) {`}</p>
+          <div className="ml-2">
+            <p>{`reportObj.chartNOlogin(10)`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`if (tabreportCart === "MonthCart") {`}</p>
+        <div className="ml-2">
+          <p>{`$("#all_select_date").css({display: "flex"})`}</p>
+          <p>{`$(".month_report").css({display: "flex"})`}</p>
+          <p>{`$(".year_report").css({display: "flex"})`}</p>
+          <p>{`$(".day_report").css({display: "none"})`}</p>
+          <p>{`var Pin = $("#device_pn_monitor").val()`}</p>
+          <p>{`$("#tab_select_date").text("month :")`}</p>
+          <p>{`var CHECK_LOGIN = localStorage.getItem("token")`}</p>
+          <p>{`if (CHECK_LOGIN == null) {`}</p>
+          <div className="ml-2">
+            <p>{`reportObj.chartNOloginMonthcart(20)`}</p>
+          </div>
+          <p>{`} else {`}</p>
+          <div className="ml-2">
+            <p>{`reportObj.getSelectedDate(20, Pin)`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`if (tabreportCart === "YearCart") {`}</p>
+        <div className="ml-2">
+          <p>{`$("#all_select_date").css({display: "flex"})`}</p>
+          <p>{`$(".day_report").css({display: "none"})`}</p>
+          <p>{`$(".month_report").css({display: "none"})`}</p>
+          <p>{`var Pin = $("#device_pn_monitor").val()`}</p>
+          <p>{`$("#tab_select_date").text("year :")`}</p>
+          <p>{`var CHECK_LOGIN = localStorage.getItem("token")`}</p>
+          <p>{`if (CHECK_LOGIN == null) {`}</p>
+          <div className="ml-2">
+            <p>{`reportObj.chartNOloginYearhcart(20)`}</p>
+          </div>
+          <p>{`} else {`}</p>
+          <div className="ml-2">
+            <p>{`reportObj.getSelectedDate(30, Pin)`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`if (tabreportCart === "TotalCart") {`}</p>
+        <div className="ml-2">
+          <p>{`$("#all_select_date").css({display: "none"})`}</p>
+          <p>{`var Pin = $("#device_pn_monitor").val()`}</p>
+          <p>{`var CHECK_LOGIN = localStorage.getItem("token")`}</p>
+          <p>{`if (CHECK_LOGIN == null) {`}</p>
+          <div className="ml-2">
+            <p>{`reportObj.chartNOloginTotalhcart()`}</p>
+            <p>{`// reportObj.chartNOlogin(10)`}</p>
+          </div>
+          <p>{`} else {`}</p>
+          <div className="ml-2">
+            <p>{`reportObj.getSelectedDate(40, Pin)`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`var i`}</p>
+        <p>{`var tabcontentreportCart = document.getElementsByClassName("tabcontentreportCart")`}</p>
+        <p>{`for (i = 0; i < tabcontentreportCart.length; i++) {`}</p>
+        <div className="ml-2">
+          <p>{`tabcontentreportCart[i].style.display = "none"`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`var tablinksreportCart = document.getElementsByClassName("tablinksreportCart")`}</p>
+        <p>{`for (i = 0; i < tablinksreportCart.length; i++) {`}</p>
+        <div className="ml-2">
+          <p>{`tablinksreportCart[i].classList.remove("actived")`}</p>
+        </div>
+        <p>{`}`}</p>
+        <p>{`document.getElementById(tabreportCart + "Tab").style.display = "block"`}</p>
+        <p>{`document.getElementById(tabreportCart).classList.add("activedCart")`}</p>
+      </div>
+    </div>
+  )
+}
+
+//openTabreport
+export function Reportdatalogger_openTabreport() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var CHECK = localStorage.getItem("token")`}</p>
+        <p>{`if (CHECK == null) {`}</p>
+        <p>{`$("#contennt_alert_nologin").css({display: "block"})`}</p>
+        <p>{`}`}</p>
+        <p>{`if (token != null) {`}</p>
+        <div className="ml-2">
+          <p>{`$("#all_select_date").css({display: "flex"})`}</p>
+          <p>{`$(".month_report").css({display: "flex"})`}</p>
+          <p>{`$(".year_report").css({display: "flex"})`}</p>
+          <p>{`$(".day_report").css({display: "flex"})`}</p>
+          <p>{`reportObj.chartNOlogin(10, Pin)`}</p>
+          <p>{`if (myScroll) {`}</p>
+          <div className="ml-2">
+            <p>{`myScroll.destroy()`}</p>
+            <p>{`myScroll = null`}</p>
+          </div>
+          <p>{`setTimeout(() => {`}</p>
+          <div className="ml-2">
+            <p>{`myScroll = new IScroll("#scroller_report", {`}</p>
+            <div className="ml-2">
+              <p>{`probeType: 1,`}</p>
+              <p>{`mouseWheel: true,`}</p>
+            </div>
+            <p>{`})`}</p>
+          </div>
+          <p>{`}, 100)`}</p>
+        </div>
+        <p>{`} else if (tabreport == "Chart") {`}</p>
+        <div className="ml-2">
+          <p>{`reportObj.chartNOlogin(10, Pin)`}</p>
+          <p>{`$("#DayCart").click()`}</p>
+          <p>{`if (myScroll) {`}</p>
+          <div className="ml-2">
+            <p>{`myScroll.destroy()`}</p>
+            <p>{`myScroll = null`}</p>
+          </div>
+          <p>{`setTimeout(() => {`}</p>
+          <div className="ml-2">
+            <p>{`myScroll = new IScroll("#scroller_report", {`}</p>
+            <div className="ml-2">
+              <p>{`probeType: 1,`}</p>
+              <p>{`mouseWheel: true,`}</p>
+            </div>
+            <p>{`})`}</p>
+          </div>
+          <p>{`}, 100)`}</p>
+        </div>
+        <p>{`} else if (tabreport === "Flow") {`}</p>
+        <div className="ml-2">
+          <p>{`$(".pagination").css({display: "none"})`}</p>
+          <p>{`$("#FlowTab").height(0)`}</p>
+          <p>{`myScroll = new IScroll("#scroller_report", {`}</p>
+          <div className="ml-2">
+            <p>{`probeType: 1,`}</p>
+            <p>{`mouseWheel: true,`}</p>
+          </div>
+          <p>{`})`}</p>
+          <p>{`setTimeout(() => {`}</p>
+          <div className="ml-2">
+            <p>{`if (myScroll) {`}</p>
+            <div className="ml-2">
+              <p>{`myScroll.destroy()`}</p>
+              <p>{`myScroll = null`}</p>
+            </div>
+          </div>
+          <p>{`}, 100)`}</p>
+          <p>{`setTimeout(() => {`}</p>
+          <div className="ml-2">
+            <p>{`myScroll = new IScroll("#scroller_report_flow", {`}</p>
+            <div className="ml-2">
+              <p>{`probeType: 1,`}</p>
+              <p>{`mouseWheel: true,`}</p>
+            </div>
+            <p>{`})`}</p>
+          </div>
+          <p>{`}, 100)`}</p>
+        </div>
+        <p>{`} else if (tabreport == "Analysis") {`}</p>
+        <div className="ml-2">
+          <p>{`$("#contennt_alert_nologin").css({display: "block"})`}</p>
+          <p>{`reportObj.chartNOlogin(10, Pin)`}</p>
+          <p>{`if (myScroll) {`}</p>
+          <div className="ml-2">
+            <p>{`myScroll.destroy()`}</p>
+            <p>{`myScroll = null`}</p>
+          </div>
+          <p>{`setTimeout(() => {`}</p>
+          <div className="ml-2">
+            <p>{`myScroll = new IScroll("#scroller_report", {`}</p>
+            <div className="ml-2">
+              <p>{`probeType: 1,`}</p>
+              <p>{`mouseWheel: true,`}</p>
+            </div>
+            <p>{`})`}</p>
+          </div>
+          <p>{`}, 100)`}</p>
+          <p>{`reportObj.chargePowerNOlogin()`}</p>
+        </div>
+        <p>{`} else if (tabreport == "Alart") {`}</p>
+        <div className="ml-2">
+          <p>{`reportObj.chartNOlogin(10, Pin)`}</p>
+          <p>{`if (myScroll) {`}</p>
+          <div className="ml-2">
+            <p>{`myScroll.destroy()`}</p>
+            <p>{`myScroll = null`}</p>
+          </div>
+          <p>{`setTimeout(() => {`}</p>
+          <div className="ml-2">
+            <p>{`myScroll = new IScroll("#scroller_report", {`}</p>
+            <div className="ml-2">
+              <p>{`probeType: 1,`}</p>
+              <p>{`mouseWheel: true,`}</p>
+            </div>
+            <p>{`})`}</p>
+          </div>
+          <p>{`}, 100)`}</p>
+        </div>
+        <p>{`} else {`}</p>
+        <div className="ml-2">
+          <p>{`var i`}</p>
+          <p>{`var tabcontentreport = document.getElementsByClassName("tabcontentreport")`}</p>
+          <p>{`for (i = 0; i < tabcontentreport.length; i++) {`}</p>
+          <div className="ml-2">
+            <p>{`tabcontentreport[i].style.display = "none"`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`var tablinksreport = document.getElementsByClassName("tablinksreport")`}</p>
+          <p>{`for (i = 0; i < tablinksreport.length; i++) {`}</p>
+          <div className="ml-2">
+            <p>{`tablinksreport[i].classList.remove("actived")`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`document.getElementById(tabreport + "Tab").style.display = "block"`}</p>
+          <p>{`document.getElementById(tabreport).classList.add("actived")`}</p>
+        </div>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// chartFlowDay
+export function Reportdatalogger_chartFlowDay() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <div>
+          {`var CHECK = localStorage.getItem("token")`}
+          {`if (CHECK == null) {`}
+          {`} else {`}
+          <div>
+            {`var screenWidth = window.innerWidth`}
+            {`var w = screenWidth`}
+            {`$("#chart_flow_day").css({width: w - 68, height: "300px"})`}
+            {`var Grand_y`}
+            {`var Show_graphSetDataPvPower = []`}
+            {`var Show_graphSetDataCurrent = []`}
+            {`var chartDom = document.getElementById("chart_flow_day")`}
+            {`var myChart = echarts.init(chartDom)`}
+            {`getToken = window.localStorage.getItem("token")`}
+            {`token = JSON.parse(getToken)`}
+            {`var API`}
+            {`if (type === 10) {`}
+            <div>
+              {`API = /v1/reportData/powerChart?devicePn={pin}&type={type}&date={year}-{month}-{day}`}
+            </div>
+            {`}`}
+          </div>
+
+          <div className="ml-2">
+            {`$.ajax({`}
+            <div className="ml-2">
+              {`type: "get",`}
+              {`url: API_SERVER + API,`}
+              {`headers: {`}
+              <div className="ml-2">
+                {`Authorization: "Bearer " + token.token,`}
+                {`"Content-Type": "application/json",`}
+              </div>
+              {`},`}
+              {`dataType: "json",`}
+              {`async: true,`}
+              {`timeout: 100000,`}
+              {`success: function (data) {`}
+              <div className="ml-2">
+                {`if (data.code === 4319) {`}
+                <div className="ml-2">
+                  {`$(".unit-x").css({display: "flex"})`}
+                  {`$(".unit-y").css({display: "flex"})`}
+                  {`$("#chart_flow_day").css({display: "flex"})`}
+                  {`$("#chart_flow_day_no_data").css({display: "none"})`}
+                  {`$("#box_power_chart").css({background: "#fff"})`}
+                  {`$("#DayCartTab").css({background: "#fff"})`}
+                  {`reportObj.chartNOlogin()`}
+                </div>
+                {`}`}
+                {`if (data.code === 0) {`}
+                <div className="ml-2">
+                  {`loaderObj.unShow()`}
+                  {`if (data.records === 0) {`}
+                  <div className="ml-2">
+                    {`$("#chart_flow_day").css({display: "none"})`}
+                    {`$(".unit-x").css({display: "none"})`}
+                    {`$(".unit-y").css({display: "none"})`}
+                    {`$("#chart_flow_day_no_data").css({display: "flex"})`}
+                    {`$("#box_power_chart").css({background: "none"})`}
+                    {`$("#DayCartTab").css({background: "none"})`}
+                  </div>
+                  {`} else {`}
+                  <div className="ml-2">
+                    {`$(".unit-x").css({display: "flex"})`}
+                    {`$(".unit-y").css({display: "flex"})`}
+                    {`$("#chart_flow_day").css({display: "flex"})`}
+                    {`$("#chart_flow_day_no_data").css({display: "none"})`}
+                    {`$("#box_power_chart").css({background: "#fff"})`}
+                    {`$("#DayCartTab").css({background: "#fff"})`}
+                  </div>
+                  {`}`}
+                  {`var setTime = []`}
+                  {`var setDataPvPower = []`}
+                  {`var setDataCurrent = []`}
+                  {`var dateTime = []`}
+                  {`$.each(data.result, function (index, Data) {`}
+                  <div className="ml-2">
+                    {`dateTime.push({`}
+                    {`Time: Data.cdt,`}
+                    {`current_load: Data.currentLoadPower,`}
+                    {`pvPower: Data.pvPowerGeneration,`}
+                    {`})`}
+                  </div>
+                  {`})`}
+                  {`$.each(dateTime, function (index, DataShow) {`}
+                  <div className="ml-2">
+                    {`var date = new Date(DataShow.Time)`}
+                    {`var hours = date.getHours()`}
+                    {`setTime.push(hours)`}
+                    {`setDataPvPower.push(DataShow.pvPower)`}
+                    {`setDataCurrent.push(DataShow.current_load)`}
+                  </div>
+                  {`})`}
+                  {`var newSetTime = []`}
+                  {`for (var i = setTime.length - 1; i >= 0; i--) {`}
+                  <div className="ml-2">{`newSetTime.push(setTime[i])`}</div>
+                  {`}`}
+                  {`var newSetDataPvPower = []`}
+                  {`for (var i = setDataPvPower.length - 1; i >= 0; i--) {`}
+                  <div className="ml-2">
+                    {`newSetDataPvPower.push(setDataPvPower[i])`}
+                  </div>
+                  {`}`}
+                  {`var newSetDataCurrent = []`}
+                  {`for (var i = setDataCurrent.length - 1; i >= 0; i--) {`}
+                  <div className="ml-2">
+                    {`newSetDataCurrent.push(setDataCurrent[i])`}
+                  </div>
+                  {`}`}
+                  {`Grand_y = newSetTime`}
+                  {`Show_graphSetDataPvPower = newSetDataPvPower`}
+                  {`Show_graphSetDataCurrent = newSetDataCurrent`}
+
+                  {`option = {`}
+                  <div className="ml-2">
+                    {`tooltip: {`}
+                    <div className="ml-2">
+                      {`trigger: "axis",`}
+                      {`formatter: function (params) {`}
+                      <div className="ml-2">
+                        {`var tooltipText = params[0].axisValueLabel + "<br/>"`}
+                        {`tooltipText += '<span style="color:' + params[0].color + '">&#9632;</span> ' + params[0].data + "<br/>"`}
+                        {`tooltipText += '<span style="color:' + params[1].color + '">&#9632;</span> ' + params[1].data`}
+                        {`return tooltipText`}
+                      </div>
+                      {`},`}
+                    </div>
+                    {`},`}
+                    {`legend: {`}
+                    <div className="ml-2">
+                      {`data: [`}
+                      <div className="ml-2">
+                        {`{name: "Current load power", textStyle: {color: "#23D37F"}},`}
+                        {`{name: "PV power generation on the day", textStyle: {color: "#F6841B"}},`}
+                      </div>
+                      {`],`}
+                    </div>
+                    {`},`}
+                    {`grid: {`}
+                    <div className="ml-2">
+                      {`left: "3%",`}
+                      {`right: "4%",`}
+                      {`bottom: "3%",`}
+                      {`containLabel: true,`}
+                    </div>
+                    {`},`}
+                    {`xAxis: {`}
+                    <div className="ml-2">
+                      {`type: "category",`}
+                      {`boundaryGap: false,`}
+                      {`data: Grand_y,`}
+                      {`axisLabel: {`}
+                      <div className="ml-2">{`color: "#3B78FE",`}</div>
+                      {`},`}
+                      {`splitLine: {`}
+                      <div className="ml-2">
+                        {`show: true,`}
+                        {`lineStyle: {`}
+                        <div className="ml-2">
+                          {`border: "1px solid #3B78FE1A",`}
+                          {`type: "solid",`}
+                        </div>
+                        {`},`}
+                      </div>
+                      {`},`}
+                    </div>
+                    {`},`}
+                    {`yAxis: {`}
+                    <div className="ml-2">
+                      {`type: "value",`}
+                      {`axisLabel: {`}
+                      <div className="ml-2">{`color: "#3B78FE",`}</div>
+                      {`},`}
+                    </div>
+                    {`},`}
+                    {`series: [`}
+                    <div className="ml-2">
+                      {`{`}
+                      <div className="ml-2">
+                        {`name: "PV power generation on the day",`}
+                        {`type: "line",`}
+                        {`stack: null,`}
+                        {`data: Show_graphSetDataPvPower,`}
+                        {`label: {`}
+                        <div className="ml-2">
+                          {`show: false,`}
+                          {`position: "top",`}
+                        </div>
+                        {`},`}
+                        {`itemStyle: {`}
+                        <div className="ml-2">{`color: "#F6841B",`}</div>
+                        {`},`}
+                      </div>
+                      {`},`}
+                      {`{`}
+                      <div className="ml-2">
+                        {`name: "Current load power",`}
+                        {`type: "line",`}
+                        {`stack: null,`}
+                        {`data: Show_graphSetDataCurrent,`}
+                        {`label: {`}
+                        <div className="ml-2">
+                          {`show: false,`}
+                          {`position: "top",`}
+                        </div>
+                        {`},`}
+                        {`itemStyle: {`}
+                        <div className="ml-2">{`color: "#23D37F",`}</div>
+                        {`},`}
+                      </div>
+                      {`},`}
+                    </div>
+                    {`],`}
+                  </div>
+                  {`}`}
+                  {`option && myChart.setOption(option)`}
+                </div>
+                {`} else {`}
+                <div className="ml-2">{`loaderObj.unShow()`}</div>
+                {`}`}
+              </div>
+              {`},`}
+              {`error: function (xmlhttprequest, error) {`}
+              <div className="ml-2">{`loaderObj.unShow()`}</div>
+              {`},`}
+            </div>
+            {`})`}
+          </div>
+
+          {`}`}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// chartFlowMonth
+export function Reportdatalogger_chartFlowMonth() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var Grand_y;`}
+        {`var Show_graphSetDataPvPower = [];`}
+        {`var Show_graphSetDataCurrent = [];`}
+        {`var chartDom = document.getElementById("chart_flow_month");`}
+        {`var myChart = echarts.init(chartDom);`}
+        {`getToken = window.localStorage.getItem("token");`}
+        {`token = JSON.parse(getToken);`}
+        {`var API;`}
+        {`if (type === 20) {`}
+        <div className="ml-2">
+          {`API = /v1/reportData/powerChart?devicePn={pin}&type={type}&year={year}&month={month};`}
+        </div>
+        {"}"}
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: "get",`}
+          {`url: API_SERVER + API,`}
+          {`headers: {`}
+          <div className="ml-2">
+            {`Authorization: "Bearer " + token.token,`}
+            {`"Content-Type": "application/json",`}
+          </div>
+          {`},`}
+          {`dataType: "json",`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`if (data.code === 4319) {`}
+            <div className="ml-2">
+              {`$(".unit-x").css({display: "flex"});`}
+              {`$(".unit-y").css({display: "flex"});`}
+              {`$("#chart_flow_month").css({display: "flex"});`}
+              {`$("#chart_flow_month_no_data").css({display: "none"});`}
+              {`$("#box_power_chart").css({background: "#fff"});`}
+              {`$("#MonthCartTab").css({background: "#fff"});`}
+              {`reportObj.chartNOloginMonthcart();`}
+            </div>
+            {`}`}
+            {`if (data.code === 0) {`}
+            <div className="ml-2">
+              {`loaderObj.unShow();`}
+              {`if (data.records === 0) {`}
+              <div className="ml-2">
+                {`$("#chart_flow_month").css({display: "none"});`}
+                {`$("#chart_flow_month_no_data").css({display: "flex"});`}
+                {`$(".unit-x").css({display: "none"});`}
+                {`$(".unit-y").css({display: "none"});`}
+                {`$("#box_power_chart").css({background: "none"});`}
+                {`$("#MonthCartTab").css({background: "none"});`}
+              </div>
+              {`} else {`}
+              <div className="ml-2">
+                {`$(".unit-x").css({display: "flex"});`}
+                {`$(".unit-y").css({display: "flex"});`}
+                {`$("#chart_flow_month").css({display: "flex"});`}
+                {`$("#chart_flow_month_no_data").css({display: "none"});`}
+                {`$("#box_power_chart").css({background: "#fff"});`}
+                {`$("#MonthCartTab").css({background: "#fff"});`}
+              </div>
+              {`}`}
+              {`var setTime = [];`}
+              {`var setDataPvPower = [];`}
+              {`var setDataCurrent = [];`}
+              {`var dateTime = [];`}
+              {`$.each(data.result, function (index, Data) {`}
+              <div className="ml-2">
+                {`dateTime.push({`}
+                <div className="ml-2">
+                  {`Time: Data.cdt,`}
+                  {`current_load: Data.currentLoadPower,`}
+                  {`pvPower: Data.pvPowerGeneration,`}
+                </div>
+                {`});`}
+              </div>
+              {`});`}
+              {`$.each(dateTime, function (index, DataShow) {`}
+              <div className="ml-2">
+                {`var date = new Date(DataShow.Time);`}
+                {`var day = date.getDate();`}
+                {`setTime.push(day);`}
+                {`setDataPvPower.push(DataShow.pvPower);`}
+                {`setDataCurrent.push(DataShow.current_load);`}
+              </div>
+              {`});`}
+              {`var newSetTime = [];`}
+              {`for (var i = setTime.length - 1; i >= 0; i--) {`}
+              <div className="ml-2">{`newSetTime.push(setTime[i]);`}</div>
+              {`}`}
+              {`var newSetDataPvPower = [];`}
+              {`for (var i = setDataPvPower.length - 1; i >= 0; i--) {`}
+              <div className="ml-2">
+                {`newSetDataPvPower.push(setDataPvPower[i]);`}
+              </div>
+              {`}`}
+              {`var newSetDataCurrent = [];`}
+              {`for (var i = setDataCurrent.length - 1; i >= 0; i--) {`}
+              <div className="ml-2">
+                {`newSetDataCurrent.push(setDataCurrent[i]);`}
+              </div>
+              {`}`}
+              {`Grand_y = newSetTime;`}
+              {`Show_graphSetDataPvPower = newSetDataPvPower;`}
+              {`Show_graphSetDataCurrent = newSetDataCurrent;`}
+              {`option = {`}
+              <div className="ml-2">
+                {`tooltip: {`}
+                <div className="ml-2">
+                  {`trigger: "axis",`}
+                  {`formatter: function (params) {`}
+                  <div className="ml-2">
+                    {`var tooltipText = params[0].axisValueLabel + "<br/>";`}
+                    {`tooltipText += '<span style="color:' + params[0].color + '">&#9632;</span> ' + params[0].data + "<br/>";`}
+                    {`tooltipText += '<span style="color:' + params[1].color + '">&#9632;</span> ' + params[1].data;`}
+                    {`return tooltipText;`}
+                  </div>
+                  {`},`}
+                </div>
+                {`},`}
+                {`legend: {`}
+                <div className="ml-2">
+                  {`data: [`}
+                  <div className="ml-2">
+                    {`{name: "Current load power", textStyle: {color: "#23D37F"}},`}
+                    <div className="ml-2">
+                      {`{`}
+                      <div className="ml-2">
+                        {`name: "PV power generation on the day",`}
+                        {`textStyle: {color: "#F6841B"},`}
+                      </div>
+                      {`},`}
+                    </div>
+                  </div>
+                  {`],`}
+                </div>
+                {`},`}
+                {`grid: {`}
+                <div className="ml-2">
+                  {`left: "3%",`}
+                  {`right: "4%",`}
+                  {`bottom: "3%",`}
+                  {`containLabel: true,`}
+                </div>
+                {`},`}
+                {`xAxis: {`}
+                <div className="ml-2">
+                  {`type: "category",`}
+                  {`boundaryGap: false,`}
+                  {`data: Grand_y,`}
+                  {`axisLabel: {`}
+                  <div className="ml-2">{`color: "#3B78FE",`}</div>
+                  {`},`}
+                  {`splitLine: {`}
+                  <div className="ml-2">
+                    {`show: true,`}
+                    {`lineStyle: {`}
+                    <div className="ml-2">
+                      {`border: "1px solid #3B78FE1A",`}
+                      {`type: "solid",`}
+                    </div>
+                    {`},`}
+                  </div>
+                  {`},`}
+                </div>
+                {`},`}
+                {`yAxis: {`}
+                <div className="ml-2">
+                  {`type: "value",`}
+                  {`axisLabel: {`}
+                  <div className="ml-2">{`color: "#3B78FE",`}</div>
+                  {`},`}
+                </div>
+                {`},`}
+                {`series: [`}
+                <div className="ml-2">
+                  {`{`}
+                  <div className="ml-2">
+                    {`name: "PV power generation on the day",`}
+                    {`type: "line",`}
+                    {`stack: null,`}
+                    {`data: Show_graphSetDataPvPower,`}
+                    {`label: {`}
+                    <div className="ml-2">
+                      {`show: false,`}
+                      {`position: "top",`}
+                    </div>
+                    {`},`}
+                    {`itemStyle: {`}
+                    <div className="ml-2">{`color: "#F6841B",`}</div>
+                    {`},`}
+                  </div>
+                  {`},`}
+                  {`{`}
+                  <div className="ml-2">
+                    {`name: "Current load power",`}
+                    {`type: "line",`}
+                    {`stack: null,`}
+                    {`data: Show_graphSetDataCurrent,`}
+                    {`label: {`}
+                    <div className="ml-2">
+                      {`show: false,`}
+                      {`position: "top",`}
+                    </div>
+                    {`},`}
+                    {`itemStyle: {`}
+                    <div className="ml-2">{`color: "#23D37F",`}</div>
+                    {`},`}
+                  </div>
+                  {`},`}
+                </div>
+                {`],`}
+              </div>
+              {`};`}
+              {`option && myChart.setOption(option);`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`// msgPageObj.show(getStatusCode(data.code));`}
+              {`loaderObj.unShow();`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">{`loaderObj.unShow();`}</div>
+          {`},`}
+        </div>
+        {`});`}
+      </div>
+    </div>
+  )
+}
+
+// chartFlowYear
+export function Reportdatalogger_chartFlowYear() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var Grand_y;`}
+        {`var Show_graphSetDataPvPower = [];`}
+        {`var Show_graphSetDataCurrent = [];`}
+        {`var chartDom = document.getElementById("chart_flow_year");`}
+        {`var myChart = echarts.init(chartDom);`}
+        {`getToken = window.localStorage.getItem("token");`}
+        {`token = JSON.parse(getToken);`}
+        {`var API;`}
+        {`if (type === 30) {`}
+        <div className="ml-2">
+          {`API = /v1/reportData/powerChart?devicePn={pin}&type={type}&year={year};`}
+        </div>
+        {"}"}
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: "get",`}
+          {`url: API_SERVER + API,`}
+          {`headers: {`}
+          <div className="ml-2">
+            {`Authorization: "Bearer " + token.token,`}
+            {`"Content-Type": "application/json",`}
+          </div>
+          {`},`}
+          {`dataType: "json",`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`if (data.code === 4319) {`}
+            <div className="ml-2">
+              {`$(".unit-x").css({display: "flex"});`}
+              {`$(".unit-y").css({display: "flex"});`}
+              {`$("#chart_flow_year").css({display: "flex"});`}
+              {`$("#chart_flow_year_no_data").css({display: "none"});`}
+              {`$("#box_power_chart").css({background: "#fff"});`}
+              {`$("#YearCartTab").css({background: "#fff"});`}
+              {`reportObj.chartNOloginYearhcart();`}
+            </div>
+            {`}`}
+            {`if (data.code === 0) {`}
+            <div className="ml-2">
+              {`loaderObj.unShow();`}
+              {`if (data.records === 0) {`}
+              <div className="ml-2">
+                {`$(".unit-x").css({display: "none"});`}
+                {`$(".unit-y").css({display: "none"});`}
+                {`$("#chart_flow_year").css({display: "none"});`}
+                {`$("#chart_flow_year_no_data").css({display: "flex"});`}
+                {`$("#box_power_chart").css({background: "none"});`}
+                {`$("#YearCartTab").css({background: "none"});`}
+              </div>
+              {`} else {`}
+              <div className="ml-2">
+                {`$(".unit-x").css({display: "flex"});`}
+                {`$(".unit-y").css({display: "flex"});`}
+                {`$("#chart_flow_year").css({display: "flex"});`}
+                {`$("#chart_flow_year_no_data").css({display: "none"});`}
+                {`$("#box_power_chart").css({background: "#fff"});`}
+                {`$("#YearCartTab").css({background: "#fff"});`}
+              </div>
+              {`}`}
+              {`var setTime = [];`}
+              {`var setDataPvPower = [];`}
+              {`var setDataCurrent = [];`}
+              {`var dateTime = [];`}
+              {`$.each(data.result, function (index, Data) {`}
+              <div className="ml-2">
+                {`dateTime.push({`}
+                <div className="ml-2">
+                  {`Time: Data.cdt,`}
+                  {`current_load: Data.currentLoadPower,`}
+                  {`pvPower: Data.pvPowerGeneration,`}
+                </div>
+                {`});`}
+              </div>
+              {`});`}
+              {`$.each(dateTime, function (index, DataShow) {`}
+              <div className="ml-2">
+                {`var date = new Date(DataShow.Time);`}
+                {`var month = date.getMonth() + 1;`}
+                {`setTime.push(month);`}
+                {`setDataPvPower.push(DataShow.pvPower);`}
+                {`setDataCurrent.push(DataShow.current_load);`}
+              </div>
+              {`});`}
+              {`var newSetTime = [];`}
+              {`for (var i = setTime.length - 1; i >= 0; i--) {`}
+              <div className="ml-2">{`newSetTime.push(setTime[i]);`}</div>
+              {`}`}
+              {`var newSetDataPvPower = [];`}
+              {`for (var i = setDataPvPower.length - 1; i >= 0; i--) {`}
+              <div className="ml-2">
+                {`newSetDataPvPower.push(setDataPvPower[i]);`}
+              </div>
+              {`}`}
+              {`var newSetDataCurrent = [];`}
+              {`for (var i = setDataCurrent.length - 1; i >= 0; i--) {`}
+              <div className="ml-2">
+                {`newSetDataCurrent.push(setDataCurrent[i]);`}
+              </div>
+              {`}`}
+              {`Grand_y = newSetTime;`}
+              {`Show_graphSetDataPvPower = newSetDataPvPower;`}
+              {`Show_graphSetDataCurrent = newSetDataCurrent;`}
+              {`option = {`}
+              <div className="ml-2">
+                {`tooltip: {`}
+                <div className="ml-2">
+                  {`trigger: "axis",`}
+                  {`formatter: function (params) {`}
+                  <div className="ml-2">
+                    {`var tooltipText = params[0].axisValueLabel + "<br/>";`}
+                    {`tooltipText += '<span style="color:' + params[0].color + '">&#9632;</span> ' + params[0].data + "<br/>";`}
+                    {`tooltipText += '<span style="color:' + params[1].color + '">&#9632;</span> ' + params[1].data;`}
+                    {`return tooltipText;`}
+                  </div>
+                  {`},`}
+                </div>
+                {`},`}
+                {`legend: {`}
+                <div className="ml-2">
+                  {`data: [`}
+                  <div className="ml-2">
+                    {`{name: "Current load power", textStyle: {color: "#23D37F"}},`}
+                    <div className="ml-2">
+                      {`{`}
+                      <div className="ml-2">
+                        {`name: "PV power generation on the day",`}
+                        {`textStyle: {color: "#F6841B"},`}
+                      </div>
+                      {`},`}
+                    </div>
+                  </div>
+                  {`],`}
+                </div>
+                {`},`}
+                {`grid: {`}
+                <div className="ml-2">
+                  {`left: "3%",`}
+                  {`right: "4%",`}
+                  {`bottom: "3%",`}
+                  {`containLabel: true,`}
+                </div>
+                {`},`}
+                {`xAxis: {`}
+                <div className="ml-2">
+                  {`type: "category",`}
+                  {`boundaryGap: false,`}
+                  {`data: Grand_y,`}
+                  {`axisLabel: {`}
+                  <div className="ml-2">{`color: "#3B78FE",`}</div>
+                  {`},`}
+                  {`splitLine: {`}
+                  <div className="ml-2">
+                    {`show: true,`}
+                    {`lineStyle: {`}
+                    <div className="ml-2">
+                      {`border: "1px solid #3B78FE1A",`}
+                      {`type: "solid",`}
+                    </div>
+                    {`},`}
+                  </div>
+                  {`},`}
+                </div>
+                {`},`}
+                {`yAxis: {`}
+                <div className="ml-2">
+                  {`type: "value",`}
+                  {`axisLabel: {`}
+                  <div className="ml-2">{`color: "#3B78FE",`}</div>
+                  {`},`}
+                </div>
+                {`},`}
+                {`series: [`}
+                <div className="ml-2">
+                  {`{`}
+                  <div className="ml-2">
+                    {`name: "PV power generation on the day",`}
+                    {`type: "line",`}
+                    {`stack: null,`}
+                    {`data: Show_graphSetDataPvPower,`}
+                    {`label: {`}
+                    <div className="ml-2">
+                      {`show: false,`}
+                      {`position: "top",`}
+                    </div>
+                    {`},`}
+                    {`itemStyle: {`}
+                    <div className="ml-2">{`color: "#F6841B",`}</div>
+                    {`},`}
+                  </div>
+                  {`},`}
+                  {`{`}
+                  <div className="ml-2">
+                    {`name: "Current load power",`}
+                    {`type: "line",`}
+                    {`stack: null,`}
+                    {`data: Show_graphSetDataCurrent,`}
+                    {`label: {`}
+                    <div className="ml-2">
+                      {`show: false,`}
+                      {`position: "top",`}
+                    </div>
+                    {`},`}
+                    {`itemStyle: {`}
+                    <div className="ml-2">{`color: "#23D37F",`}</div>
+                    {`},`}
+                  </div>
+                  {`},`}
+                </div>
+                {`],`}
+              </div>
+              {`};`}
+              {`option && myChart.setOption(option);`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`// msgPageObj.show(getStatusCode(data.code));`}
+              {`loaderObj.unShow();`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">{`loaderObj.unShow();`}</div>
+          {`},`}
+        </div>
+        {`});`}
+      </div>
+    </div>
+  )
+}
+
+// chartFlowTotal
+export function Reportdatalogger_chartFlowTotal() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var Grand_y;`}
+        {`var Show_graphSetDataPvPower = [];`}
+        {`var Show_graphSetDataCurrent = [];`}
+        {`var chartDom = document.getElementById("chart_flow_total");`}
+        {`var myChart = echarts.init(chartDom);`}
+        {`getToken = window.localStorage.getItem("token");`}
+        {`token = JSON.parse(getToken);`}
+        {`var API;`}
+        {`if (type === 40) {`}
+        <div className="ml-2">
+          {`API = /v1/reportData/powerChart?devicePn={pin}&type={type};`}
+        </div>
+        {"}"}
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: "get",`}
+          {`url: API_SERVER + API,`}
+          {`headers: {`}
+          <div className="ml-2">
+            {`Authorization: "Bearer " + token.token,`}
+            {`"Content-Type": "application/json",`}
+          </div>
+          {`},`}
+          {`dataType: "json",`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`if (data.code === 4319) {`}
+            <div className="ml-2">
+              {`$(".unit-x").css({display: "flex"});`}
+              {`$(".unit-y").css({display: "flex"});`}
+              {`$("#chart_flow_total").css({display: "flex"});`}
+              {`$("#chart_flow_total_no_data").css({display: "none"});`}
+              {`$("#box_power_chart").css({background: "#fff"});`}
+              {`$("#TotalCartTab").css({background: "#fff"});`}
+              {`reportObj.chartNOloginTotalhcart();`}
+            </div>
+            {`}`}
+            {`if (data.code === 0) {`}
+            <div className="ml-2">
+              {`loaderObj.unShow();`}
+              {`if (data.records === 0) {`}
+              <div className="ml-2">
+                {`$(".unit-x").css({display: "none"});`}
+                {`$(".unit-y").css({display: "none"});`}
+                {`$("#chart_flow_total").css({display: "none"});`}
+                {`$("#chart_flow_total_no_data").css({display: "flex"});`}
+                {`$("#box_power_chart").css({background: "none"});`}
+                {`$("#TotalCartTab").css({background: "none"});`}
+              </div>
+              {`} else {`}
+              <div className="ml-2">
+                {`$(".unit-x").css({display: "flex"});`}
+                {`$(".unit-y").css({display: "flex"});`}
+                {`$("#chart_flow_total").css({display: "flex"});`}
+                {`$("#chart_flow_total_no_data").css({display: "none"});`}
+                {`$("#box_power_chart").css({background: "#fff"});`}
+                {`$("#TotalCartTab").css({background: "#fff"});`}
+              </div>
+              {`}`}
+              {`var setTime = [];`}
+              {`var setDataPvPower = [];`}
+              {`var setDataCurrent = [];`}
+              {`var dateTime = [];`}
+              {`$.each(data.result, function (index, Data) {`}
+              <div className="ml-2">
+                {`dateTime.push({`}
+                <div className="ml-2">
+                  {`Time: Data.cdt,`}
+                  {`current_load: Data.currentLoadPower,`}
+                  {`pvPower: Data.pvPowerGeneration,`}
+                </div>
+                {`});`}
+              </div>
+              {`});`}
+              {`$.each(dateTime, function (index, DataShow) {`}
+              <div className="ml-2">
+                {`var date = new Date(DataShow.Time);`}
+                {`var month = date.getMonth() + 1;`}
+                {`setTime.push(month);`}
+                {`setDataPvPower.push(DataShow.pvPower);`}
+                {`setDataCurrent.push(DataShow.current_load);`}
+              </div>
+              {`});`}
+              {`var newSetTime = [];`}
+              {`for (var i = setTime.length - 1; i >= 0; i--) {`}
+              <div className="ml-2">{`newSetTime.push(setTime[i]);`}</div>
+              {`}`}
+              {`var newSetDataPvPower = [];`}
+              {`for (var i = setDataPvPower.length - 1; i >= 0; i--) {`}
+              <div className="ml-2">
+                {`newSetDataPvPower.push(setDataPvPower[i]);`}
+              </div>
+              {`}`}
+              {`var newSetDataCurrent = [];`}
+              {`for (var i = setDataCurrent.length - 1; i >= 0; i--) {`}
+              <div className="ml-2">
+                {`newSetDataCurrent.push(setDataCurrent[i]);`}
+              </div>
+              {`}`}
+              {`Grand_y = newSetTime;`}
+              {`Show_graphSetDataPvPower = newSetDataPvPower;`}
+              {`Show_graphSetDataCurrent = newSetDataCurrent;`}
+              {`option = {`}
+              <div className="ml-2">
+                {`tooltip: {`}
+                <div className="ml-2">
+                  {`trigger: "axis",`}
+                  {`formatter: function (params) {`}
+                  <div className="ml-2">
+                    {`var tooltipText = params[0].axisValueLabel + "<br/>";`}
+                    {`tooltipText += '<span style="color:' + params[0].color + '">&#9632;</span> ' + params[0].data + "<br/>";`}
+                    {`tooltipText += '<span style="color:' + params[1].color + '">&#9632;</span> ' + params[1].data;`}
+                    {`return tooltipText;`}
+                  </div>
+                  {`},`}
+                </div>
+                {`},`}
+                {`legend: {`}
+                <div className="ml-2">
+                  {`data: [`}
+                  <div className="ml-2">
+                    {`{name: "Current load power", textStyle: {color: "#23D37F"}},`}
+                    <div className="ml-2">
+                      {`{`}
+                      <div className="ml-2">
+                        {`name: "PV power generation on the day",`}
+                        {`textStyle: {color: "#F6841B"},`}
+                      </div>
+                      {`},`}
+                    </div>
+                  </div>
+                  {`],`}
+                </div>
+                {`},`}
+                {`grid: {`}
+                <div className="ml-2">
+                  {`left: "3%",`}
+                  {`right: "4%",`}
+                  {`bottom: "3%",`}
+                  {`containLabel: true,`}
+                </div>
+                {`},`}
+                {`xAxis: {`}
+                <div className="ml-2">
+                  {`type: "category",`}
+                  {`boundaryGap: false,`}
+                  {`data: Grand_y,`}
+                  {`axisLabel: {`}
+                  <div className="ml-2">{`color: "#3B78FE",`}</div>
+                  {`},`}
+                  {`splitLine: {`}
+                  <div className="ml-2">
+                    {`show: true,`}
+                    {`lineStyle: {`}
+                    <div className="ml-2">
+                      {`border: "1px solid #3B78FE1A",`}
+                      {`type: "solid",`}
+                    </div>
+                    {`},`}
+                  </div>
+                  {`},`}
+                </div>
+                {`},`}
+                {`yAxis: {`}
+                <div className="ml-2">
+                  {`type: "value",`}
+                  {`axisLabel: {`}
+                  <div className="ml-2">{`color: "#3B78FE",`}</div>
+                  {`},`}
+                </div>
+                {`},`}
+                {`series: [`}
+                <div className="ml-2">
+                  {`{`}
+                  <div className="ml-2">
+                    {`name: "PV power generation on the day",`}
+                    {`type: "line",`}
+                    {`stack: null,`}
+                    {`data: Show_graphSetDataPvPower,`}
+                    {`label: {`}
+                    <div className="ml-2">
+                      {`show: false,`}
+                      {`position: "top",`}
+                    </div>
+                    {`},`}
+                    {`itemStyle: {`}
+                    <div className="ml-2">{`color: "#F6841B",`}</div>
+                    {`},`}
+                  </div>
+                  {`},`}
+                  {`{`}
+                  <div className="ml-2">
+                    {`name: "Current load power",`}
+                    {`type: "line",`}
+                    {`stack: null,`}
+                    {`data: Show_graphSetDataCurrent,`}
+                    {`label: {`}
+                    <div className="ml-2">
+                      {`show: false,`}
+                      {`position: "top",`}
+                    </div>
+                    {`},`}
+                    {`itemStyle: {`}
+                    <div className="ml-2">{`color: "#23D37F",`}</div>
+                    {`},`}
+                  </div>
+                  {`},`}
+                </div>
+                {`],`}
+              </div>
+              {`};`}
+              {`option && myChart.setOption(option);`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`// msgPageObj.show(getStatusCode(data.code));`}
+              {`loaderObj.unShow();`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">{`loaderObj.unShow();`}</div>
+          {`},`}
+        </div>
+        {`});`}
+      </div>
+    </div>
+  )
+}
+
+// chargePower
+export function Reportdatalogger_chargePower() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var screenWidth = window.innerWidth;`}
+        {`var w = screenWidth;`}
+        <div className="ml-2">
+          {`$("#charge_power").css({width: w - 68, height: "300px"});`}
+        </div>
+        {`var chartDom = document.getElementById("charge_power");`}
+        {`var myChart = echarts.init(chartDom);`}
+        {`getToken = window.localStorage.getItem("token");`}
+        {`token = JSON.parse(getToken);`}
+        {`var API = /v1/reportData/chargePower?devicePn={pin}&date={year}-{month}-{day};`}
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: "get",`}
+          {`url: API_SERVER + API,`}
+          {`headers: {`}
+          <div className="ml-2">
+            {`Authorization: "Bearer " + token.token,`}
+            {`"Content-Type": "application/json",`}
+          </div>
+          {`},`}
+          {`dataType: "json",`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`if (data.code === 4319) {`}
+            <div className="ml-2">
+              {`$(".unit-x").css({display: "flex"});`}
+              {`$(".unit-y").css({display: "flex"});`}
+              {`$("#charge_power").css({display: "flex"});`}
+              {`$("#charge_power_no_data").css({display: "none"});`}
+              {`$("#box_charge_power").css({background: "#fff"});`}
+              {`reportObj.chargePowerNOlogin();`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`$("#box_charge_power").css({background: "#fff"});`}
+              {`$("#charge_power_no_data").css({display: "none"});`}
+              {`$("#charge_power").css({display: "flex"});`}
+            </div>
+            {`}`}
+            {`if (data.code === 0) {`}
+            <div className="ml-2">
+              {`loaderObj.unShow();`}
+              {`if (data.records === 0) {`}
+              <div className="ml-2">
+                {`$("#charge_power").css({display: "none"});`}
+                {`$(".unit-x").css({display: "none"});`}
+                {`$(".unit-y").css({display: "none"});`}
+                {`$("#charge_power_no_data").css({display: "flex"});`}
+                {`$("#box_charge_power").css({background: "none"});`}
+              </div>
+              {`} else {`}
+              <div className="ml-2">
+                {`$(".unit-x").css({display: "flex"});`}
+                {`$(".unit-y").css({display: "flex"});`}
+                {`$("#charge_power").css({display: "flex"});`}
+                {`$("#charge_power_no_data").css({display: "none"});`}
+                {`$("#box_charge_power").css({background: "#fff"});`}
+              </div>
+              {`}`}
+              {`var setTime = [];`}
+              {`var setDataPvPower = [];`}
+              {`var setDataCurrent = [];`}
+              {`var dateTime = [];`}
+              {`$.each(data.result, function (index, Data) {`}
+              <div className="ml-2">
+                {`dateTime.push({`}
+                <div className="ml-2">
+                  {`Time: Data.cdt,`}
+                  {`PV_charging_power: Data.pvChargingPower,`}
+                </div>
+                {`});`}
+              </div>
+              {`});`}
+              {`$.each(dateTime, function (index, DataShow) {`}
+              <div className="ml-2">
+                {`var date = new Date(DataShow.Time);`}
+                {`var hours = date.getHours();`}
+                {`setTime.push(hours);`}
+                {`setDataCurrent.push(DataShow.PV_charging_power);`}
+              </div>
+              {`});`}
+              {`var newSetTime = [];`}
+              {`for (var i = setTime.length - 1; i >= 0; i--) {`}
+              <div className="ml-2">{`newSetTime.push(setTime[i]);`}</div>
+              {`}`}
+              {`var newSetDataCurrent = [];`}
+              {`for (var i = setDataCurrent.length - 1; i >= 0; i--) {`}
+              <div className="ml-2">
+                {`newSetDataCurrent.push(setDataCurrent[i]);`}
+              </div>
+              {`}`}
+              {`Grand_y = newSetTime;`}
+              {`Show_graphSetDataCurrent = newSetDataCurrent;`}
+              {`option = {`}
+              <div className="ml-2">
+                {`tooltip: {`}
+                <div className="ml-2">
+                  {`trigger: "axis",`}
+                  {`formatter: function (params) {`}
+                  <div className="ml-2">
+                    {`var tooltipText = params[0].axisValueLabel + "<br/>";`}
+                    {`tooltipText += '<span style="color:' + params[0].color + '">&#9632;</span> ' + params[0].data + "<br>";`}
+                    {`return tooltipText;`}
+                  </div>
+                  {`},`}
+                </div>
+                {`},`}
+                {`legend: {`}
+                <div className="ml-2">
+                  {`data: [`}
+                  <div className="ml-2">
+                    {`{name: "PV charging power", textStyle: {color: "#472BF0"}},`}
+                  </div>
+                  {`],`}
+                </div>
+                {`},`}
+                {`grid: {`}
+                <div className="ml-2">
+                  {`left: "3%",`}
+                  {`right: "4%",`}
+                  {`bottom: "3%",`}
+                  {`containLabel: true,`}
+                </div>
+                {`},`}
+                {`xAxis: {`}
+                <div className="ml-2">
+                  {`type: "category",`}
+                  {`boundaryGap: false,`}
+                  {`data: Grand_y,`}
+                  {`axisLabel: {`}
+                  <div className="ml-2">{`color: "#3B78FE",`}</div>
+                  {`},`}
+                  {`splitLine: {`}
+                  <div className="ml-2">
+                    {`show: true,`}
+                    {`lineStyle: {`}
+                    <div className="ml-2">
+                      {`border: "1px solid #3B78FE1A",`}
+                      {`type: "solid",`}
+                    </div>
+                    {`},`}
+                  </div>
+                  {`},`}
+                </div>
+                {`},`}
+                {`yAxis: {`}
+                <div className="ml-2">
+                  {`type: "value",`}
+                  {`axisLabel: {`}
+                  <div className="ml-2">{`color: "#3B78FE",`}</div>
+                  {`},`}
+                </div>
+                {`},`}
+                {`series: [`}
+                <div className="ml-2">
+                  {`{`}
+                  <div className="ml-2">
+                    {`name: "PV charging power",`}
+                    {`type: "line",`}
+                    {`stack: null,`}
+                    {`data: Show_graphSetDataCurrent,`}
+                    {`label: {`}
+                    <div className="ml-2">
+                      {`show: false,`}
+                      {`position: "top",`}
+                    </div>
+                    {`},`}
+                    {`itemStyle: {`}
+                    <div className="ml-2">{`color: "#472BF0",`}</div>
+                    {`},`}
+                  </div>
+                  {`},`}
+                </div>
+                {`],`}
+              </div>
+              {`};`}
+              {`option && myChart.setOption(option);`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`// msgPageObj.show(getStatusCode(data.code));`}
+              {`loaderObj.unShow();`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">{`loaderObj.unShow();`}</div>
+          {`},`}
+        </div>
+        {`});`}
+      </div>
+    </div>
+  )
+}
+
+// chartNOlogin
+export function Reportdatalogger_chartNOlogin() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`tooltip: {`}
+        <div className="ml-2">
+          {`trigger: "axis",`}
+          {`formatter: function (params) {`}
+          <div className="ml-2">
+            {`var tooltipText = params[0].axisValueLabel + "<br/>";`}
+            {`tooltipText += '<span style="color:' + params[0].color + '">&#9632;</span> ' + params[0].data + "<br/>";`}
+            {`tooltipText += '<span style="color:' + params[1].color + '">&#9632;</span> ' + params[1].data;`}
+            {`return tooltipText;`}
+          </div>
+          {`},`}
+        </div>
+        {`},`}
+        {`legend: {`}
+        <div className="ml-2">
+          {`data: [`}
+          <div className="ml-2">
+            {`{name: "Current load power", textStyle: {color: "#23D37F"}},`}
+            <div className="ml-2">
+              {`{`}
+              <div className="ml-2">
+                {`name: "PV power generation on the day",`}
+                {`textStyle: {color: "#F6841B"},`}
+              </div>
+              {`},`}
+            </div>
+          </div>
+          {`],`}
+        </div>
+        {`},`}
+        {`grid: {`}
+        <div className="ml-2">
+          {`left: "3%",`}
+          {`right: "4%",`}
+          {`bottom: "3%",`}
+          {`containLabel: true,`}
+        </div>
+        {`},`}
+        {`xAxis: {`}
+        <div className="ml-2">
+          {`type: "category",`}
+          {`boundaryGap: false,`}
+          {`data: ["2", "4", "6", "8", "10", "12", "14"],`}
+          {`axisLabel: {`}
+          <div className="ml-2">{`color: "#3B78FE",`}</div>
+          {`},`}
+          {`splitLine: {`}
+          <div className="ml-2">
+            {`show: true,`}
+            {`lineStyle: {`}
+            <div className="ml-2">
+              {`border: "1px solid #3B78FE1A",`}
+              {`type: "solid",`}
+            </div>
+            {`},`}
+          </div>
+          {`},`}
+        </div>
+        {`},`}
+        {`yAxis: {`}
+        <div className="ml-2">
+          {`type: "value",`}
+          {`axisLabel: {`}
+          <div className="ml-2">{`color: "#3B78FE",`}</div>
+          {`},`}
+        </div>
+        {`},`}
+        {`series: [`}
+        <div className="ml-2">
+          {`{`}
+          <div className="ml-2">
+            {`name: "PV power generation on the day",`}
+            {`type: "line",`}
+            {`stack: null,`}
+            {`data: data_series,`}
+            {`label: {`}
+            <div className="ml-2">
+              {`show: false,`}
+              {`position: "top",`}
+            </div>
+            {`},`}
+            {`itemStyle: {`}
+            <div className="ml-2">{`color: "#F6841B",`}</div>
+            {`},`}
+          </div>
+          {`},`}
+          {`{`}
+          <div className="ml-2">
+            {`name: "Current load power",`}
+            {`type: "line",`}
+            {`stack: null,`}
+            {`data: [220, 182, 191, 234, 290, 330, 310],`}
+            {`label: {`}
+            <div className="ml-2">
+              {`show: false,`}
+              {`position: "top",`}
+            </div>
+            {`},`}
+            {`itemStyle: {`}
+            <div className="ml-2">{`color: "#23D37F",`}</div>
+            {`},`}
+          </div>
+          {`},`}
+        </div>
+        {`],`}
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// chartNOloginMonthcart
+export function Reportdatalogger_chartNOloginMonthcart() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var screenWidth = window.innerWidth;`}
+        {`var w = screenWidth;`}
+        {`$("#chart_flow_month").css({width: w - 68, height: "300px"});`}
+        {`var chartDom = document.getElementById("chart_flow_month");`}
+        {`var myChart = echarts.init(chartDom);`}
+        {`var option;`}
+        {`option = {`}
+        <div className="ml-2">
+          {`tooltip: {`}
+          <div className="ml-2">
+            {`trigger: "axis",`}
+            {`formatter: function (params) {`}
+            <div className="ml-2">
+              {`var tooltipText = params[0].axisValueLabel + "<br/>";`}
+              {`tooltipText += '<span style="color:' + params[0].color + '">&#9632;</span> ' + params[0].data + "<br/>";`}
+              {`tooltipText += '<span style="color:' + params[1].color + '">&#9632;</span> ' + params[1].data;`}
+              {`return tooltipText;`}
+            </div>
+            {`},`}
+          </div>
+          {`},`}
+          {`legend: {`}
+          <div className="ml-2">
+            {`data: [`}
+            <div className="ml-2">
+              {`{name: "Current load power", textStyle: {color: "#23D37F"}},`}
+              <div className="ml-2">
+                {`{`}
+                <div className="ml-2">
+                  {`name: "PV power generation on the day",`}
+                  {`textStyle: {color: "#F6841B"},`}
+                </div>
+                {`},`}
+              </div>
+            </div>
+            {`],`}
+          </div>
+          {`},`}
+          {`grid: {`}
+          <div className="ml-2">
+            {`left: "3%",`}
+            {`right: "4%",`}
+            {`bottom: "3%",`}
+            {`containLabel: true,`}
+          </div>
+          {`},`}
+          {`xAxis: {`}
+          <div className="ml-2">
+            {`type: "category",`}
+            {`boundaryGap: false,`}
+            {`data: ["2", "4", "6", "8", "10", "12", "14"],`}
+            {`axisLabel: {`}
+            <div className="ml-2">{`color: "#3B78FE",`}</div>
+            {`},`}
+            {`splitLine: {`}
+            <div className="ml-2">
+              {`show: true,`}
+              {`lineStyle: {`}
+              <div className="ml-2">
+                {`border: "1px solid #3B78FE1A",`}
+                {`type: "solid",`}
+              </div>
+              {`},`}
+            </div>
+            {`},`}
+          </div>
+          {`},`}
+          {`yAxis: {`}
+          <div className="ml-2">
+            {`type: "value",`}
+            {`axisLabel: {`}
+            <div className="ml-2">{`color: "#3B78FE",`}</div>
+            {`},`}
+          </div>
+          {`},`}
+          {`series: [`}
+          <div className="ml-2">
+            {`{`}
+            <div className="ml-2">
+              {`name: "PV power generation on the day",`}
+              {`type: "line",`}
+              {`stack: null,`}
+              {`data: [220, 182, 191, 234, 290, 330, 310],`}
+              {`label: {`}
+              <div className="ml-2">
+                {`show: false,`}
+                {`position: "top",`}
+              </div>
+              {`},`}
+              {`itemStyle: {`}
+              <div className="ml-2">{`color: "#F6841B",`}</div>
+              {`},`}
+            </div>
+            {`},`}
+            {`{`}
+            <div className="ml-2">
+              {`name: "Current load power",`}
+              {`type: "line",`}
+              {`stack: null,`}
+              {`data: [150, 232, 201, 154, 190, 330, 410],`}
+              {`label: {`}
+              <div className="ml-2">
+                {`show: false,`}
+                {`position: "top",`}
+              </div>
+              {`},`}
+              {`itemStyle: {`}
+              <div className="ml-2">{`color: "#23D37F",`}</div>
+              {`},`}
+            </div>
+            {`},`}
+          </div>
+          {`],`}
+        </div>
+        {`};`}
+        {`option && myChart.setOption(option);`}
+      </div>
+    </div>
+  )
+}
+
+// chartNOloginYearhcart
+export function Reportdatalogger_chartNOloginYearhcart() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var screenWidth = window.innerWidth;`}
+        {`var w = screenWidth;`}
+        {`$("#chart_flow_total").css({width: w - 68, height: "300px"});`}
+        {`var chartDom = document.getElementById("chart_flow_year");`}
+        {`var myChart = echarts.init(chartDom);`}
+        {`var option;`}
+        {`option = {`}
+        <div className="ml-2">
+          {`tooltip: {`}
+          <div className="ml-2">
+            {`trigger: "axis",`}
+            {`formatter: function (params) {`}
+            <div className="ml-2">
+              {`var tooltipText = params[0].axisValueLabel + "<br/>";`}
+              {`tooltipText += '<span style="color:' + params[0].color + '">&#9632;</span> ' + params[0].data + "<br/>";`}
+              {`tooltipText += '<span style="color:' + params[1].color + '">&#9632;</span> ' + params[1].data;`}
+              {`return tooltipText;`}
+            </div>
+            {`},`}
+          </div>
+          {`},`}
+          {`legend: {`}
+          <div className="ml-2">
+            {`data: [`}
+            <div className="ml-2">
+              {`{name: "Current load power", textStyle: {color: "#23D37F"}},`}
+              <div className="ml-2">
+                {`{`}
+                <div className="ml-2">
+                  {`name: "PV power generation on the day",`}
+                  {`textStyle: {color: "#F6841B"},`}
+                </div>
+                {`},`}
+              </div>
+            </div>
+            {`],`}
+          </div>
+          {`},`}
+          {`grid: {`}
+          <div className="ml-2">
+            {`left: "3%",`}
+            {`right: "4%",`}
+            {`bottom: "3%",`}
+            {`containLabel: true,`}
+          </div>
+          {`},`}
+          {`xAxis: {`}
+          <div className="ml-2">
+            {`type: "category",`}
+            {`boundaryGap: false,`}
+            {`data: ["2", "4", "6", "8", "10", "12", "14"],`}
+            {`axisLabel: {`}
+            <div className="ml-2">{`color: "#3B78FE",`}</div>
+            {`},`}
+            {`splitLine: {`}
+            <div className="ml-2">
+              {`show: true,`}
+              {`lineStyle: {`}
+              <div className="ml-2">
+                {`border: "1px solid #3B78FE1A",`}
+                {`type: "solid",`}
+              </div>
+              {`},`}
+            </div>
+            {`},`}
+          </div>
+          {`},`}
+          {`yAxis: {`}
+          <div className="ml-2">
+            {`type: "value",`}
+            {`axisLabel: {`}
+            <div className="ml-2">{`color: "#3B78FE",`}</div>
+            {`},`}
+          </div>
+          {`},`}
+          {`series: [`}
+          <div className="ml-2">
+            {`{`}
+            <div className="ml-2">
+              {`name: "PV power generation on the day",`}
+              {`type: "line",`}
+              {`stack: null,`}
+              {`data: [675, 124, 893, 234, 412, 310, 767],`}
+              {`label: {`}
+              <div className="ml-2">
+                {`show: false,`}
+                {`position: "top",`}
+              </div>
+              {`},`}
+              {`itemStyle: {`}
+              <div className="ml-2">{`color: "#F6841B",`}</div>
+              {`},`}
+            </div>
+            {`},`}
+            {`{`}
+            <div className="ml-2">
+              {`name: "Current load power",`}
+              {`type: "line",`}
+              {`stack: null,`}
+              {`data: [150, 232, 201, 154, 190, 330, 410],`}
+              {`label: {`}
+              <div className="ml-2">
+                {`show: false,`}
+                {`position: "top",`}
+              </div>
+              {`},`}
+              {`itemStyle: {`}
+              <div className="ml-2">{`color: "#23D37F",`}</div>
+              {`},`}
+            </div>
+            {`},`}
+          </div>
+          {`],`}
+        </div>
+        {`};`}
+        {`option && myChart.setOption(option);`}
+      </div>
+    </div>
+  )
+}
+
+// chartNOloginTotalhcart
+export function Reportdatalogger_chartNOloginTotalhcart() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var screenWidth = window.innerWidth;`}
+        {`var w = screenWidth;`}
+        {`console.log("tests");`}
+        {`$("#chart_flow_total").css({width: w - 68, height: "300px"});`}
+        {`var chartDom = document.getElementById("chart_flow_total");`}
+        {`var myChart = echarts.init(chartDom);`}
+        {`var option;`}
+        {`option = {`}
+        <div className="ml-2">
+          {`tooltip: {`}
+          <div className="ml-2">
+            {`trigger: "axis",`}
+            {`formatter: function (params) {`}
+            <div className="ml-2">
+              {`var tooltipText = params[0].axisValueLabel + "<br/>";`}
+              {`tooltipText += '<span style="color:' + params[0].color + '">&#9632;</span> ' + params[0].data + "<br/>";`}
+              {`tooltipText += '<span style="color:' + params[1].color + '">&#9632;</span> ' + params[1].data;`}
+              {`return tooltipText;`}
+            </div>
+            {`},`}
+          </div>
+          {`},`}
+          {`legend: {`}
+          <div className="ml-2">
+            {`data: [`}
+            <div className="ml-2">
+              {`{name: "Current load power", textStyle: {color: "#23D37F"}},`}
+              <div className="ml-2">
+                {`{`}
+                <div className="ml-2">
+                  {`name: "PV power generation on the day",`}
+                  {`textStyle: {color: "#F6841B"},`}
+                </div>
+                {`},`}
+              </div>
+            </div>
+            {`],`}
+          </div>
+          {`},`}
+          {`grid: {`}
+          <div className="ml-2">
+            {`left: "3%",`}
+            {`right: "4%",`}
+            {`bottom: "3%",`}
+            {`containLabel: true,`}
+          </div>
+          {`},`}
+          {`xAxis: {`}
+          <div className="ml-2">
+            {`type: "category",`}
+            {`boundaryGap: false,`}
+            {`data: ["2", "4", "6", "8", "10", "12", "14"],`}
+            {`axisLabel: {`}
+            <div className="ml-2">{`color: "#3B78FE",`}</div>
+            {`},`}
+            {`splitLine: {`}
+            <div className="ml-2">
+              {`show: true,`}
+              {`lineStyle: {`}
+              <div className="ml-2">
+                {`border: "1px solid #3B78FE1A",`}
+                {`type: "solid",`}
+              </div>
+              {`},`}
+            </div>
+            {`},`}
+          </div>
+          {`},`}
+          {`yAxis: {`}
+          <div className="ml-2">
+            {`type: "value",`}
+            {`axisLabel: {`}
+            <div className="ml-2">{`color: "#3B78FE",`}</div>
+            {`},`}
+          </div>
+          {`},`}
+          {`series: [`}
+          <div className="ml-2">
+            {`{`}
+            <div className="ml-2">
+              {`name: "PV power generation on the day",`}
+              {`type: "line",`}
+              {`stack: null,`}
+              {`data: [400, 224, 593, 234, 412, 310, 767],`}
+              {`label: {`}
+              <div className="ml-2">
+                {`show: false,`}
+                {`position: "top",`}
+              </div>
+              {`},`}
+              {`itemStyle: {`}
+              <div className="ml-2">{`color: "#F6841B",`}</div>
+              {`},`}
+            </div>
+            {`},`}
+            {`{`}
+            <div className="ml-2">
+              {`name: "Current load power",`}
+              {`type: "line",`}
+              {`stack: null,`}
+              {`data: [550, 232, 201, 154, 190, 330, 410],`}
+              {`label: {`}
+              <div className="ml-2">
+                {`show: false,`}
+                {`position: "top",`}
+              </div>
+              {`},`}
+              {`itemStyle: {`}
+              <div className="ml-2">{`color: "#23D37F",`}</div>
+              {`},`}
+            </div>
+            {`},`}
+          </div>
+          {`],`}
+        </div>
+        {`};`}
+        {`option && myChart.setOption(option);`}
+      </div>
+    </div>
+  )
+}
+
+// chargePowerNOlogin
+export function Reportdatalogger_chargePowerNOlogin() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`console.log("test");`}
+        {`var screenWidth = window.innerWidth;`}
+        {`var w = screenWidth;`}
+        {`$("#charge_power").css({width: w - 68, height: "300px"});`}
+        {`var chartDom = document.getElementById("charge_power");`}
+        {`var myChart = echarts.init(chartDom);`}
+        {`var option;`}
+        {`option = {`}
+        <div className="ml-2">
+          {`tooltip: {`}
+          <div className="ml-2">
+            {`trigger: "axis",`}
+            {`formatter: function (params) {`}
+            <div className="ml-2">
+              {`var tooltipText = params[0].axisValueLabel + "<br/>";`}
+              {`tooltipText += '<span style="color:' + params[0].color + '">&#9632;</span> ' + params[0].data + "<br>";`}
+              {`return tooltipText;`}
+            </div>
+            {`},`}
+          </div>
+          {`},`}
+          {`legend: {`}
+          <div className="ml-2">
+            {`data: [`}
+            <div className="ml-2">
+              {`{name: "PV charging power", textStyle: {color: "#472BF0"}},`}
+            </div>
+            {`],`}
+          </div>
+          {`},`}
+          {`grid: {`}
+          <div className="ml-2">
+            {`left: "3%",`}
+            {`right: "4%",`}
+            {`bottom: "3%",`}
+            {`containLabel: true,`}
+          </div>
+          {`},`}
+          {`xAxis: {`}
+          <div className="ml-2">
+            {`type: "category",`}
+            {`data: ["2", "4", "6", "8", "10", "12", "14"],`}
+            {`axisLabel: {`}
+            <div className="ml-2">{`color: "#3B78FE",`}</div>
+            {`},`}
+            {`splitLine: {`}
+            <div className="ml-2">
+              {`show: true,`}
+              {`lineStyle: {`}
+              <div className="ml-2">
+                {`border: "1px solid #3B78FE1A",`}
+                {`type: "solid",`}
+              </div>
+              {`},`}
+            </div>
+            {`},`}
+          </div>
+          {`},`}
+          {`yAxis: {`}
+          <div className="ml-2">
+            {`type: "value",`}
+            {`axisLabel: {`}
+            <div className="ml-2">{`color: "#3B78FE",`}</div>
+            {`},`}
+          </div>
+          {`},`}
+          {`series: [`}
+          <div className="ml-2">
+            {`{`}
+            <div className="ml-2">
+              {`name: "PV charging power",`}
+              {`type: "line",`}
+              {`stack: null,`}
+              {`data: [120, 132, 101, 134, 90, 230, 210],`}
+              {`label: {`}
+              <div className="ml-2">
+                {`show: false,`}
+                {`position: "top",`}
+              </div>
+              {`},`}
+              {`itemStyle: {`}
+              <div className="ml-2">{`color: "#472BF0",`}</div>
+              {`},`}
+            </div>
+            {`},`}
+          </div>
+          {`],`}
+        </div>
+        {`};`}
+        {`option && myChart.setOption(option);`}
+      </div>
+    </div>
+  )
+}
+
+// setting_account.html
+//settingAccountCheckToken
+export function Setting_account_settingAccountCheckToken() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>var token = localStorage.getItem("token")</p>
+        <p>{`if (token == null) {`}</p>
+        <p>{`} else {// getProfile()
+        // getInviteCode()
+      }`}</p>
+      </div>
+    </div>
+  )
+}
+
+// updateProfile
+export function Setting_account_updateProfile() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var Token = localStorage.getItem("token");`}
+        {`var obj = JSON.parse(Token);`}
+
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: "put",`}
+          {`url: API_SERVER + "/v1/account/profile",`}
+          {`headers: {`}
+          <div className="ml-2">{`Authorization: "Bearer " + obj.token,`}</div>
+          {`},`}
+          {`contentType: "application/json",`}
+          {`data: JSON.stringify(User),`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`if (data.code == 0) {`}
+            <div className="ml-2">
+              {`msgPageObj.show(NSLang("Successfully changed"));`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`msgPageObj.show(getStatusCode(data.code));`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">
+            {`console.log("Error updating profile:", error);`}
+            {`msgPageObj.show(NSLang("error"));`}
+            {`// Additional error handling if needed`}
+          </div>
+          {`},`}
+          {`complete: function () {`}
+          <div className="ml-2">
+            {`// Any cleanup code you want to execute after the request completes`}
+          </div>
+          {`},`}
+          {`});`}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// AddAvatar
+export function Setting_account_addAvatar() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var Token = localStorage.getItem("token");`}
+        {`var obj = JSON.parse(Token);`}
+
+        {`var formData = new FormData();`}
+        {`formData.append("file", file);`}
+        {`loaderObj.show();`}
+
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: "put",`}
+          {`url: API_SERVER + "/v1/files",`}
+          {`headers: {`}
+          <div className="ml-2">{`Authorization: "Bearer " + obj.token,`}</div>
+          {`},`}
+          {`contentType: false,`}
+          {`data: formData,`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`processData: false,`}
+
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`loaderObj.unShow();`}
+            {`if (data.code == 0) {`}
+            <div className="ml-2">
+              {`Img = data.result.link;`}
+              {`$(".profile_pic").attr("src", API_SERVER + Img);`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`msgPageObj.show(getStatusCode(data.code));`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">
+            {`loaderObj.unShow();`}
+            {`msgPageObj.show(NSLang("sys.serverError"));`}
+          </div>
+          {`},`}
+          {`});`}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// UpdateAvatar
+export function Setting_account_updateAvatar() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var Token = localStorage.getItem("token");`}
+        {`var obj = JSON.parse(Token);`}
+        {`mData = {`}
+        <div className="ml-2">{`avatar: Img,`}</div>
+        {`};`}
+        {`console.log(mData);`}
+
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: "PATCH",`}
+          {`url: API_SERVER + "/v1/account/avatar",`}
+          {`headers: {`}
+          <div className="ml-2">{`Authorization: "Bearer " + obj.token,`}</div>
+          {`},`}
+          {`contentType: "application/json",`}
+          {`data: JSON.stringify(mData),`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`loaderObj.unShow();`}
+            {`if (data.code == 0) {`}
+            <div className="ml-2">{`console.log("update avatar done");`}</div>
+            {`} else {`}
+            <div className="ml-2">
+              {`msgPageObj.show(getStatusCode(data.code));`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">
+            {`loaderObj.unShow();`}
+            {`msgPageObj.show(NSLang("sys.serverError"));`}
+          </div>
+          {`},`}
+          {`});`}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// settingOrder.html
+// getAll
+export function SettingOrder_getAll() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <div>
+          <p>{`function getTimeLine(id) {`}</p>
+          <div className="ml-2">
+            {/* Retrieve token from localStorage and parse it */}
+            {`var getToken = window.localStorage.getItem("token")`}
+            {`var token = JSON.parse(getToken)`}
+            {/* Make an AJAX request */}
+            {`$.ajax({`}
+            <div className="ml-2">
+              {`type: "get",`}
+              {`url: API_SERVER + "/v1/orders/delivery/" + id,`}
+              {`headers: {`}
+              <div className="ml-2">
+                {`'Authorization': 'Bearer ' + token.token`}
+              </div>
+              {`},`}
+              {`contentType: "application/json",`}
+              {`dataType: "json",`}
+              {`async: true,`}
+              {`timeout: 100000,`}
+              {`beforeSend: function (xmlhttprequest) { },`}
+              {`success: function (data) {`}
+              <div className="ml-2">
+                {/* Handle success response */}
+                {`if (data.code == 0) {`}
+                <div className="ml-2">
+                  {`order_info_waitRceiveObj.getTimeline(data.result);`}
+                  {`order_info_receivedObj.getTimeline(data.result);`}
+                </div>
+                {`} else {`}
+                <div className="ml-2">{/* Handle other cases */}</div>
+                {`}`}
+              </div>
+              {`},`}
+              {`error: function (xhr, status, error) {`}
+              <div className="ml-2">
+                {/* Handle error */}
+                {`loaderObj.unShow();`}
+              </div>
+              {`}`}
+            </div>
+            {`});`}
+            {/* forgotPassPage */}
+          </div>
+
+          <p>{`}`}</p>
+        </div>
+
+        <div>
+          {`var collect_data = [];`}
+          {`var getToken = window.localStorage.getItem("token");`}
+          {`var token = JSON.parse(getToken);`}
+          {`var stateEdit;`}
+          {`var stateDelivery;`}
+          {`var pair = true;`}
+          {`if (state === 10) {`}
+          <div className="ml-2">
+            {`stateEdit = [10];`}
+            {`stateDelivery = [];`}
+          </div>
+          {`} else if (state === 11) {`}
+          <div className="ml-2">
+            {`stateEdit = [12, 20];`}
+            {`stateDelivery = [];`}
+          </div>
+          {`} else if (state === 12) {`}
+          <div className="ml-2">
+            {`stateEdit = [21];`}
+            {`stateDelivery = [99, 30, 10];`}
+            {`// setTimeout(() => {`}
+            {`//     getDelivery()`}
+            {`// }, 300);`}
+          </div>
+          {`} else if (state === 13) {`}
+          <div className="ml-2">
+            {`stateEdit = [];`}
+            {`stateDelivery = [0];`}
+            {`// setTimeout(() => {`}
+            {`//     getDelivery0()`}
+            {`// }, 300);`}
+          </div>
+          {`} else if (state === 14) {`}
+          <div className="ml-2">
+            {`stateEdit = [11, 30, 31, 32];`}
+            {`stateDelivery = [];`}
+          </div>
+          {`} else if (state === 15) {`}
+          <div className="ml-2">
+            {`stateEdit = [40, 41, 42, 43];`}
+            {`stateDelivery = [20];`}
+            {`pair = false;`}
+            {`// setTimeout(() => {`}
+            {`//     getDeliveryRefund()`}
+            {`// }, 300);`}
+          </div>
+          {`} else {`}
+          <div className="ml-2">{`stateEdit = state;`}</div>
+          {`}`}
+          {`$.ajax({`}
+          <div className="ml-2">
+            {`type: 'get',`}
+            {`url: API_SERVER + '/v1/orders?state=' + stateEdit + '&delivery=' + stateDelivery + '&pair=' + pair + '&page=1&limit=100',`}
+            {`headers: {`}
+            <div className="ml-2">
+              {`'Authorization': 'Bearer ' + token.token,`}
+            </div>
+            {`},`}
+            {`async: true,`}
+            {`timeout: 100000,`}
+            {`success: function (data) {`}
+            <div className="ml-2">
+              {`if (data.code == 0) {`}
+              <div className="ml-2">
+                {`// Clear the content of #Order1Tab`}
+                {`$("#Order1Tab").html("");`}
+                {`if (data.records == 0) {`}
+                <div className="ml-2">
+                  {`$("#Order1Tab").html('<img src="./pic/Monitor/Icon-YojoSolar-Nodata.png" style="width: 30%;">');`}
+                </div>
+                {`}`}
+                {`data.result.forEach(function (item) {`}
+                <div className="ml-2">
+                  {`item.items.forEach(function (product) {`}
+                  <div className="ml-2">
+                    {`var stateName;`}
+                    {`var stateRefund;`}
+                    {`var stateNamedelivery;`}
+                    {`if (stateEdit == 0 && item.deliveryState == 0) {`}
+                    <div className="ml-2">{`stateName = "Completed";`}</div>
+                    {`} else {`}
+                    <div className="ml-2">
+                      {`if (item.state == 10) {`}
+                      <div className="ml-2">
+                        {`stateName = "Pending Payment";`}
+                      </div>
+                      {`} else if (item.state == 11) {`}
+                      <div className="ml-2">{`stateName = "Cancelled";`}</div>
+                      {`} else if (item.state == 12) {`}
+                      <div className="ml-2">{`stateName = "Cancelled";`}</div>
+                      {`} else if (item.state == 0) {`}
+                      <div className="ml-2">{`stateName = "Completed";`}</div>
+                      {`} else if (item.state == 20) {`}
+                      <div className="ml-2">{`stateName = "Processing";`}</div>
+                      {`} else if (item.state == 21) {`}
+                      <div className="ml-2">{`stateName = "Shipped";`}</div>
+                      {`} else if (item.state == 22) {`}
+                      <div className="ml-2">{`stateName = "Shipped";`}</div>
+                      {`} else if (item.state == 30) {`}
+                      <div className="ml-2">{`stateName = "Cancelled";`}</div>
+                      {`} else if (item.state == 31) {`}
+                      <div className="ml-2">{`stateName = "Cancelled";`}</div>
+                      {`} else if (item.state == 32) {`}
+                      <div className="ml-2">{`stateName = "Cancelled";`}</div>
+                      {`} else if (item.state == 40) {`}
+                      <div className="ml-2">
+                        {`stateName = "Refund/Return Request";`}
+                        {`stateRefund = 1;`}
+                      </div>
+                      {`} else if (item.state == 41) {`}
+                      <div className="ml-2">
+                        {`stateName = "Refund/Return Authorized";`}
+                        {`stateRefund = 3;`}
+                      </div>
+                      {`} else if (item.state == 42) {`}
+                      <div className="ml-2">
+                        {`stateName = "Return/Return Completed";`}
+                        {`stateRefund = 4;`}
+                      </div>
+                      {`} else if (item.state == 43) {`}
+                      <div className="ml-2">
+                        {`stateName = "Refund/Return Rejected";`}
+                        {`stateRefund = 5;`}
+                      </div>
+                      {`} else if (item.state == 44) {`}
+                      <div className="ml-2">
+                        {`stateName = "Refund/Return Request Cancelled";`}
+                      </div>
+                      {`} else if (item.state == 45) {`}
+                      <div className="ml-2">{`stateName = "Refunded";`}</div>
+                      {`} else if (item.state == 46) {`}
+                      <div className="ml-2">
+                        {`stateName = "Refund Return Completed";`}
+                        {`stateRefund = 4;`}
+                      </div>
+                      {`} else if (item.state == 47) {`}
+                      <div className="ml-2">
+                        {`stateName = "Refund Return Rejected";`}
+                        {`stateRefund = 5;`}
+                      </div>
+                      {`} else if (item.deliveryState == 99) {`}
+                      <div className="ml-2">
+                        {`stateNamedelivery = "Failed Delivery Attempt";`}
+                      </div>
+                      {`} else if (item.deliveryState == 0) {`}
+                      <div className="ml-2">
+                        {`stateNamedelivery = "Delivered";`}
+                      </div>
+                      {`} else if (item.deliveryState == 10) {`}
+                      <div className="ml-2">
+                        {`stateNamedelivery = "Out for Delivery";`}
+                      </div>
+                      {`} else if (item.deliveryState == 20) {`}
+                      <div className="ml-2">
+                        {`stateNamedelivery = "Returned to Sender";`}
+                      </div>
+                      {`} else if (item.stateName == 30) {`}
+                      <div className="ml-2">
+                        {`stateNamedelivery = "Delayed";`}
+                      </div>
+                      {`} else {`}
+                      <div className="ml-2">{`stateName = "Failed";`}</div>
+                      {`}`}
+                    </div>
+                    {`}`}
+                    {`var str = '<div id="conten' + product.oid + '" style="border-bottom:1px solid #0000002e;display: flex;justify-content: space-evenly;align-items: center;width: 100%;background: #fff;padding: 15px 0"><div style="width: 40%; display: flex;justify-content: center;"><img src="' + API_SERVER + product.image + '" style="width: 100px;height:100px;" alt=""></div><div style="font-size: 12px;font-weight: bold;padding-right: 30px;line-height: 20px;width: 70%;"><div>' + product.name + '</div><div style="display: flex;justify-content: space-between;font-size: 14px; gap:10px;align-items: center;"><span style="color: #00000026;width: 55%;">Quantity x ' + product.quantity + '</span><span style="color: #739FFF;text-align: center;" class="trackingItem">Tracking ></span></div><div style="display: flex;justify-content: space-between;font-size: 14px; gap:10px;align-items: center;"><span style="width: 55%;">Price ' + product.price + '฿</span><span style="color: #4FCF6B;text-align: end;">' + stateName + '</span></div></div></div>';`}
+                    {`collect_data.push({ "id": product.oid, "statetype": item.state, "stateDelivery": item.deliveryState, "dataMain": item, "dataItem": product, "stateRefund": stateRefund });`}
+                    {`$("#Order1Tab").append(str);`}
+                  </div>
+                  {`});`}
+                </div>
+                {`});`}
+              </div>
+              {`myScroll1 = new IScroll('#settingOrder1Scroller', { probeType: 1, mouseWheel: true });`}
+              {`console.log(collect_data);`}
+              {`$.each(collect_data, function (index, id) {`}
+              <div className="ml-2">
+                {`$('#conten' + id.id).unbind().click(function () {`}
+                <div className="ml-2">
+                  {`if (id.statetype == 10 && state == 10) {`}
+                  <div className="ml-2">
+                    {`pageShow('order_state_10Page');`}
+                    {`order_state_10Obj.getOid(id.id, id.dataMain, id.dataItem);`}
+                    {`order_state_10Obj.cancelOrder(id.dataItem);`}
+                  </div>
+                  {`}`}
+                  {`if ((id.statetype == 12 || id.statetype == 20) && state == 11) {`}
+                  <div className="ml-2">
+                    {`pageShow('order_state_shipPage');`}
+                    {`order_state_shipObj.getOid(id.id, id.dataMain, id.dataItem);`}
+                    {`order_state_shipObj.cancelOrder(id.dataItem);`}
+                  </div>
+                  {`}`}
+                  {`if ((id.statetype == 21 || id.stateDelivery == 99 || id.stateDelivery == 30 || id.stateDelivery == 10) && state == 12) {`}
+                  <div className="ml-2">
+                    {`$("#cdt_deliveryState_0").empty();`}
+                    {`$("#cdt_deliveryState_10").empty();`}
+                    {`$("#cdt_deliveryState_30").empty();`}
+                    {`$("#cdt_deliveryState_99").empty();`}
+                    {`pageShow('order_info_waitRceivePage');`}
+                    {`getTimeLine(id.id);`}
+                    {`order_info_waitRceiveObj.getOid(id.id, id.dataMain, id.dataItem);`}
+                  </div>
+                  {`}`}
+                  {`if ((id.statetype == 0 || id.stateDelivery == 0) && state == 13) {`}
+                  <div className="ml-2">
+                    {`$("#cdt_deliveryState_received0").empty();`}
+                    {`$("#cdt_deliveryState_received10").empty();`}
+                    {`$("#cdt_deliveryState_received30").empty();`}
+                    {`$("#cdt_deliveryState_received99").empty();`}
+                    {`getTimeLine(id.id);`}
+                    {`pageShow('order_info_receivedPage');`}
+                    {`order_info_receivedObj.getOid(id.id, id.dataMain, id.dataItem);`}
+                    {`order_info_receivedObj.cancelOrder(id.dataItem);`}
+                  </div>
+                  {`}`}
+                  {`if ((id.statetype == 11 || id.statetype == 30 || id.statetype == 31 | id.statetype == 32) && state == 14) {`}
+                  <div className="ml-2">
+                    {`pageShow('order_info_cancelPage');`}
+                    {`order_info_cancelObj.getOid(id.id, id.dataMain, id.dataItem);`}
+                    {`order_info_cancelObj.cancelOrder(id.dataItem);`}
+                  </div>
+                  {`}`}
+                  {`if ((id.statetype >= 40 && id.statetype <= 44 || id.stateDelivery == 20) && state == 15) {`}
+                  <div className="ml-2">
+                    {`pageShow('order_info_cancel_refundPage');`}
+                    {`order_info_cancel_refundObj.getOid(id.id, id.dataMain, id.dataItem, id.stateRefund);`}
+                    {`order_info_cancel_refundObj.cancelOrder(id.dataItem);`}
+                  </div>
+                  {`}`}
+                  {`console.log(state, "state");`}
+                </div>
+                {`});`}
+              </div>
+              {`});`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`$("#Order1Tab").html("");`}
+              {`msgPageObj.show(getStatusCode(data.code));`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">{`loaderObj.unShow();`}</div>
+          <div className="ml-2">{`msgPageObj.show(NSLang('sys.serverError'));`}</div>
+          {`},`}
+          {`});`}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// scroller
+export function SettingOrder_scroller() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`$("#settingOrder1Scroller").css({ "width": w, "height": h - 110, "overflow": "hidden", "background-color": "#E3F5FF", });`}</p>
+        <p>{` myScroll1 = new IScroll('#settingOrder1Scroller', { probeType: 1, mouseWheel: true });`}</p>
+      </div>
+    </div>
+  )
+}
+
+// setting.html
+//SettingCheckToken
+export function Setting_SettingCheckToken() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {/* Retrieve token from localStorage and parse it */}
+        {`getToken = localStorage.getItem('token');`}
+        {`token = JSON.parse(getToken);`}
+        {/* Log the token */}
+        {`console.log(token);`}
+        {/* Check if token is null */}
+        {`if (token == null) {`}
+        <div className="ml-2">
+          {`$("#loginPage").transition({ x: w }, 0);`}
+          {`$('#logout').off("click");`}
+          {`$('#logoutGroup').css({ "background-color": "#C6C6C6" })`}
+        </div>
+        {`} else {`}
+        <div className="ml-2">
+          {`$('#logoutGroup').css({ "background-color": "#FF5247" })`}
+        </div>
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// getQRcode
+export function Setting_getQRcode() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var Token = localStorage.getItem('token')`}
+        {`const obj = JSON.parse(Token);`}
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: 'get',`}
+          {`url: API_SERVER + '/v1/inviteCode',`}
+          {`headers: {`}
+          <div className="ml-2">{`'Authorization': 'Bearer ' + obj.token`}</div>
+          {`},`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`if (data.code == 0) {`}
+            <div className="ml-2">
+              {`console.log(data.result);`}
+              {`$("#input_InvitationCode").text(data.result.inviteCode)`}
+              {`$("#InvitationCode").text(data.result.inviteCode)`}
+              {`$("#qr_image").attr('src', data.result.qrCode).css({transform: 'scale(1.2)'})`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`msgPageObj.show(getStatusCode(data.code))`}
+              {`console.log('fail');`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xhr, status, error) {`}
+          <div className="ml-2">
+            {`msgPageObj.show(NSLang("sys.serverError"))`}
+          </div>
+          {`}`}
+        </div>
+        {`})`}
+      </div>
+    </div>
+  )
+}
+
+// start.html
+//init
+export function Start_init() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`pageInit("startPage");`}
+        {`slideImg();`}
+        {`setAllUILang('getstart');`}
+        {`$("#startPage").css({ "height": h });`}
+        {`$('#start_login').click(function () {`}
+        <div className="ml-2">{`pageShow('loginPage')`}</div>
+        {`})`}
+        {`function slideImg() {`}
+        <div className="ml-2">
+          {`let slideIndex = 1;`}
+          {`showSlides(slideIndex);`}
+          {`$('#nextSlide').click(function () {`}
+          <div className="ml-2">{`showSlides(slideIndex += 1);`}</div>
+          {`});`}
+          {`$('#nextSlide2').click(function () {`}
+          <div className="ml-2">{`showSlides(slideIndex += 1);`}</div>
+          {`});`}
+          {`$('.slideImg1').click(function () {`}
+          <div className="ml-2">{`showSlides(slideIndex = 1);`}</div>
+          {`});`}
+          {`$('.slideImg2').click(function () {`}
+          <div className="ml-2">{`showSlides(slideIndex = 2);`}</div>
+          {`});`}
+          {`$('.slideImg3').click(function () {`}
+          <div className="ml-2">{`showSlides(slideIndex = 3);`}</div>
+          {`});`}
+          {`function showSlides(n) {`}
+          <div className="ml-2">
+            {`let i;`}
+            {`let slides = document.getElementsByClassName("mySlides");`}
+            {`let dots = document.getElementsByClassName("dot");`}
+            {`if (n > slides.length) { slideIndex = 1 }`}
+            {`if (n < 1) { slideIndex = slides.length }`}
+            {`for (i = 0; i < slides.length; i++) {`}
+            <div className="ml-2">{`slides[i].style.display = "none";`}</div>
+            {`}`}
+            {`for (i = 0; i < dots.length; i++) {`}
+            <div className="ml-2">
+              {`dots[i].className = dots[i].className.replace(" active", "");`}
+            </div>
+            {`}`}
+            {`slides[slideIndex - 1].style.display = "block";`}
+            {`dots[slideIndex - 1].className += " active";`}
+          </div>
+          {`}`}
+        </div>
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// topup.html
+//TopUpCheckToken
+export function Topup_topUpCheckToken() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`getToken = window.localStorage.getItem('token');`}
+        {`token = JSON.parse(getToken);`}
+        {`if (token == null) {`}
+        <div className="ml-2">
+          {`$('#input_top_up').css({ "visibility": "hidden" })`}
+          {`// $('#topup_select').html("<option selected>No data</option>"`}
+        </div>
+        {`} else {`}
+        <div className="ml-2">
+          {`$('#input_top_up').css({ "visibility": "visible" })`}
+          {`$("#input_top_up").on("input", function () {`}
+          <div className="ml-2">{`checkNoInput();`}</div>
+          {`});`}
+        </div>
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// checkNoInput
+export function Topup_checkNoInput() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var input_amount = $("#input_top_up").val();`}
+        {`console.log(input_amount);`}
+        {`if (input_amount === "") {`}
+        <div className="ml-2">
+          {`// Disable button and change styling`}
+          {`$('#topup_go_method').prop("disabled", true).css({ "background": "rgb(187, 173, 173)", "border": "none" });`}
+          {`$("#topup_go_method,#input_topup_upload_slip").off("click");`}
+        </div>
+        {`} else {`}
+        <div className="ml-2">
+          {`// Enable button and change styling`}
+          {`$('#topup_go_method').prop("disabled", false).css({ "background": "#3B78FE", "border": "1px solid #3B78FE" });`}
+          {`$('#topup_upload_slip').unbind().click(function () {`}
+          <div className="ml-2">
+            {`$('#input_topup_upload_slip').click();`}
+            {`$('#input_topup_upload_slip').unbind().on('change', function (event) {`}
+            <div className="ml-2">
+              {`var file = event.target.files[0];`}
+              {`AddSlipPayment(file);`}
+            </div>
+            {`});`}
+          </div>
+          {`});`}
+          {`$("#topup_go_method").unbind().click(function () {`}
+          <div className="ml-2">
+            {`if (parseFloat(input_amount) < 300) {`}
+            <div className="ml-2">
+              {`msgPageObj.show("Please top up with a minimum value of 300 Baht");`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">{`UpdateSlipPayment(Img);`}</div>
+            {`}`}
+          </div>
+          {`});`}
+        </div>
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// addSlipPayment
+export function Topup_addSlipPayment() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var input_amount = $("#input_top_up").val();`}
+        {`console.log(input_amount);`}
+        {`if (input_amount === "") {`}
+        <div className="ml-2">
+          {`// Disable button and change styling`}
+          {`$('#topup_go_method').prop("disabled", true).css({ "background": "rgb(187, 173, 173)", "border": "none" });`}
+          {`$("#topup_go_method,#input_topup_upload_slip").off("click");`}
+        </div>
+        {`} else {`}
+        <div className="ml-2">
+          {`// Enable button and change styling`}
+          {`$('#topup_go_method').prop("disabled", false).css({ "background": "#3B78FE", "border": "1px solid #3B78FE" });`}
+          {`$('#topup_upload_slip').unbind().click(function () {`}
+          <div className="ml-2">
+            {`$('#input_topup_upload_slip').click();`}
+            {`$('#input_topup_upload_slip').unbind().on('change', function (event) {`}
+            <div className="ml-2">
+              {`var file = event.target.files[0];`}
+              {`AddSlipPayment(file);`}
+            </div>
+            {`});`}
+          </div>
+          {`});`}
+          {`$("#topup_go_method").unbind().click(function () {`}
+          <div className="ml-2">
+            {`if (parseFloat(input_amount) < 300) {`}
+            <div className="ml-2">
+              {`msgPageObj.show("Please top up with a minimum value of 300 Baht");`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">{`UpdateSlipPayment(Img);`}</div>
+            {`}`}
+          </div>
+          {`});`}
+        </div>
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// updateSlipPayment
+export function Topup_updateSlipPayment() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var Token = localStorage.getItem('token');`}
+        {`var obj = JSON.parse(Token);`}
+        {`var amount = parseFloat($("#input_top_up").val())`}
+        {`mData = {`}
+        <div className="ml-2">
+          {`"amount": amount,`}
+          {`"image": Imgs`}
+        </div>
+        {`}`}
+        {`console.log(mData);`}
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: 'post',`}
+          {`url: API_SERVER + '/v1/payment/apply',`}
+          {`headers: {`}
+          <div className="ml-2">
+            {`'Authorization': 'Bearer ' + obj.token,`}
+          </div>
+          {`},`}
+          {`contentType: "application/json",`}
+          {`data: JSON.stringify(mData),`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`loaderObj.unShow()`}
+            {`if (data.code == 0) {`}
+            <div className="ml-2">
+              {`msgObj4.show("Payment slip has been successfully uploaded. Please wait for confirmation of your top up.", function () {`}
+              <div className="ml-2">
+                {`setTimeout(() => {`}
+                <div className="ml-2">
+                  {`msgObj4.unShow()`}
+                  {`walletObj.call()`}
+                  {`$('#input_top_up,#input_topup_upload_slip').val('')`}
+                  {`Img = null`}
+                  {`checkNoInput()`}
+                </div>
+                {`}, 200);`}
+              </div>
+              {`})`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`$('#input_top_up,#input_topup_upload_slip').val('')`}
+              {`Img = null`}
+              {`msgPageObj.show(getStatusCode(data.code))`}
+            </div>
+            {`}`}
+            {`$('#top_up_show_slip_upload').css({ "display": "none" })`}
+            {`$('#topup_upload_slip').css({ "display": "flex" })`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">
+            {`loaderObj.unShow()`}
+            {`msgPageObj.show(NSLang("sys.serverError"))`}
+          </div>
+          {`},`}
+        </div>
+        {`});`}
+      </div>
+    </div>
+  )
 }

@@ -151,9 +151,50 @@ import {
   Productdetail_checkLogin,
   Productdetail_confirmOrderBuy,
   Productdetail_getDetailProduct,
+  PurchaseReport_createTableQuarter,
+  PurchaseReport_createTableReport,
+  PurchaseReport_exportCSV,
   PurchaseReport_getSalesData,
+  PurchaseReport_getSelectedMonthpurchase,
+  PurchaseReport_showChart,
+  Redeem_checkNoInput,
+  Redeem_postRedeem,
+  Redeem_redeemCheckToken,
+  Refund_getData,
+  Refund_previewImg_refund,
+  Refund_sendRefund,
+  Register_registerFun,
+  Register_sendOTP,
+  Reportdatalogger_chargePower,
+  Reportdatalogger_chargePowerNOlogin,
+  Reportdatalogger_chartFlowDay,
+  Reportdatalogger_chartFlowMonth,
+  Reportdatalogger_chartFlowTotal,
+  Reportdatalogger_chartFlowYear,
+  Reportdatalogger_chartNOlogin,
+  Reportdatalogger_chartNOloginMonthcart,
+  Reportdatalogger_chartNOloginTotalhcart,
+  Reportdatalogger_chartNOloginYearhcart,
+  Reportdatalogger_createHTML,
+  Reportdatalogger_getReportData,
+  Reportdatalogger_getSelectedDate,
+  Reportdatalogger_openTabreport,
+  Reportdatalogger_openTabreportCart,
   ResObjIndexScript,
   ResObjWidget,
+  SettingOrder_getAll,
+  SettingOrder_scroller,
+  Setting_SettingCheckToken,
+  Setting_account_addAvatar,
+  Setting_account_settingAccountCheckToken,
+  Setting_account_updateAvatar,
+  Setting_account_updateProfile,
+  Setting_getQRcode,
+  Start_init,
+  Topup_addSlipPayment,
+  Topup_checkNoInput,
+  Topup_topUpCheckToken,
+  Topup_updateSlipPayment,
 } from "../components/FunctionDataText"
 
 import AlertTryit from "./tryitFunction/alertTryit"
@@ -198,6 +239,9 @@ export default function ModelContent({
   content4p3,
   content4p4,
   content5,
+  content5p1,
+  content5p2,
+  content5p3,
   content6,
   content6p1,
   content6p2,
@@ -208,6 +252,8 @@ export default function ModelContent({
   content7p1,
   content7p2,
   content8,
+  content8p1,
+  content8p2,
   content9,
   content10,
   content11,
@@ -311,6 +357,9 @@ export default function ModelContent({
               {content4p3 && <p>{content4p3}</p>}
               {content4p4 && <p>{content4p4}</p>}
               {content5 && <p>{content5}</p>}
+              {content5p1 && <p>{content5p1}</p>}
+              {content5p2 && <p>{content5p2}</p>}
+              {content5p3 && <p>{content5p3}</p>}
               {content6 && <p>{content6}</p>}
               {content6p1 && <p>{content6p1}</p>}
               {content6p2 && <p>{content6p2}</p>}
@@ -321,6 +370,8 @@ export default function ModelContent({
               {content7p1 && <p>{content7p1}</p>}
               {content7p2 && <p>{content7p2}</p>}
               {content8 && <p>{content8}</p>}
+              {content8p1 && <p>{content8p1}</p>}
+              {content8p2 && <p>{content8p2}</p>}
               {content9 && <p>{content9}</p>}
               {content10 && <p>{content10}</p>}
               {content11 && <p>{content11}</p>}
@@ -548,7 +599,95 @@ export default function ModelContent({
             {selectedMenu === "getDetailProduct" && (
               <Productdetail_getDetailProduct />
             )}
+            {selectedMenu === "checkLogin" && <Productdetail_checkLogin />}
             {selectedMenu === "GetSalesData" && <PurchaseReport_getSalesData />}
+            {selectedMenu === "CreateTableReport" && (
+              <PurchaseReport_createTableReport />
+            )}
+            {selectedMenu === "CreateTableQuarter" && (
+              <PurchaseReport_createTableQuarter />
+            )}
+            {selectedMenu === "getSelectedMonthpurchase" && (
+              <PurchaseReport_getSelectedMonthpurchase />
+            )}
+            {selectedMenu === "showChart" && <PurchaseReport_showChart />}
+            {selectedMenu === "ExportCSV" && <PurchaseReport_exportCSV />}
+            {selectedMenu === "RedeemCheckToken" && <Redeem_redeemCheckToken />}
+            {selectedMenu === "checkNoInput" && <Redeem_checkNoInput />}
+            {selectedMenu === "postRedeem" && <Redeem_postRedeem />}
+            {selectedMenu === "getData" && <Refund_getData />}
+            {selectedMenu === "sendRefund" && <Refund_sendRefund />}
+            {selectedMenu === "PreviewImg_refund" && (
+              <Refund_previewImg_refund />
+            )}
+            {selectedMenu === "registerFun" && <Register_registerFun />}
+            {selectedMenu === "SendOTP" && <Register_sendOTP />}
+            {selectedMenu === "CreateHTML" && <Reportdatalogger_createHTML />}
+            {selectedMenu === "GetReportData" && (
+              <Reportdatalogger_getReportData />
+            )}
+            {selectedMenu === "getSelectedDate" && (
+              <Reportdatalogger_getSelectedDate />
+            )}
+            {selectedMenu === "openTabreportCart" && (
+              <Reportdatalogger_openTabreportCart />
+            )}
+            {selectedMenu === "openTabreport" && (
+              <Reportdatalogger_openTabreport />
+            )}
+            {selectedMenu === "chartFlowDay" && (
+              <Reportdatalogger_chartFlowDay />
+            )}
+            {selectedMenu === "chartFlowMonth" && (
+              <Reportdatalogger_chartFlowMonth />
+            )}
+            {selectedMenu === "chartFlowYear" && (
+              <Reportdatalogger_chartFlowYear />
+            )}
+            {selectedMenu === "chartFlowTotal" && (
+              <Reportdatalogger_chartFlowTotal />
+            )}
+            {selectedMenu === "chargePower" && <Reportdatalogger_chargePower />}
+            {selectedMenu === "chartNOlogin" && (
+              <Reportdatalogger_chartNOlogin />
+            )}
+            {selectedMenu === "chartNOloginMonthcart" && (
+              <Reportdatalogger_chartNOloginMonthcart />
+            )}
+            {selectedMenu === "chartNOloginYearhcart" && (
+              <Reportdatalogger_chartNOloginYearhcart />
+            )}
+            {selectedMenu === "chartNOloginTotalhcart" && (
+              <Reportdatalogger_chartNOloginTotalhcart />
+            )}
+            {selectedMenu === "chargePowerNOlogin" && (
+              <Reportdatalogger_chargePowerNOlogin />
+            )}
+            {selectedMenu === "settingAccountCheckToken" && (
+              <Setting_account_settingAccountCheckToken />
+            )}
+            {selectedMenu === "updateProfile" && (
+              <Setting_account_updateProfile />
+            )}
+            {selectedMenu === "AddAvatar" && <Setting_account_addAvatar />}
+            {selectedMenu === "UpdateAvatar" && (
+              <Setting_account_updateAvatar />
+            )}
+            {selectedMenu === "getAll" && <SettingOrder_getAll />}
+            {selectedMenu === "scroller" && <SettingOrder_scroller />}
+            {selectedMenu === "SettingCheckToken" && (
+              <Setting_SettingCheckToken />
+            )}
+            {selectedMenu === "getQRcode" && <Setting_getQRcode />}
+            {selectedMenu === "startInit" && <Start_init />}
+            {selectedMenu === "TopUpCheckToken" && <Topup_topUpCheckToken />}
+            {selectedMenu === "topup_checkNoInput" && <Topup_checkNoInput />}
+            {selectedMenu === "topup_addSlipPayment" && (
+              <Topup_addSlipPayment />
+            )}
+            {selectedMenu === "topup_updateSlipPayment" && (
+              <Topup_updateSlipPayment />
+            )}
             <p className="ml-4">{`}`}</p>
             <span className="text-[#A52A2A]">&lt;/script&gt;</span>
           </div>

@@ -138,6 +138,33 @@ export default function HomePage() {
   // open purchaseReport
   const [openPurchaseReport, setOpenPurchaseReport] = useState(false)
 
+  // open redeem
+  const [openRedeem, setOpenRedeem] = useState(false)
+
+  // open refund
+  const [openRefund, setOpenRefund] = useState(false)
+
+  // open register
+  const [openRegister, setOpenRegister] = useState(false)
+
+  // open reportdatalogger
+  const [openReportdatalogger, setOpenReportdatalogger] = useState(false)
+
+  // open settingAccount
+  const [openSettingAccount, setOpenSettingAccount] = useState(false)
+
+  // open settingOrder
+  const [openSettingOrder, setOpenSettingOrder] = useState(false)
+
+  // open setting
+  const [openSetting, setOpenSetting] = useState(false)
+
+  // open start
+  const [openStart, setOpenStart] = useState(false)
+
+  // open topup
+  const [openTopup, setOpenTopup] = useState(false)
+
   const handleModelClick = (menu) => {
     setSelectedMenu(menu)
     setOpenDrawer(false)
@@ -983,6 +1010,241 @@ export default function HomePage() {
       key: "ExportCSV",
       category: "purchaseReport",
     },
+
+    // redeem.html
+    {
+      name: "RedeemCheckToken()",
+      type: "specificModel",
+      key: "RedeemCheckToken",
+      category: "redeem",
+    },
+    {
+      name: "checkNoInput()",
+      type: "specificModel",
+      key: "checkNoInput",
+      category: "redeem",
+    },
+    {
+      name: "postRedeem()",
+      type: "specificModel",
+      key: "postRedeem",
+      category: "redeem",
+    },
+
+    // refund.html
+    {
+      name: "getData()",
+      type: "specificModel",
+      key: "getData",
+      category: "refund",
+    },
+    {
+      name: "sendRefund()",
+      type: "specificModel",
+      key: "sendRefund",
+      category: "refund",
+    },
+    {
+      name: "PreviewImg_refund()",
+      type: "specificModel",
+      key: "PreviewImg_refund",
+      category: "refund",
+    },
+
+    // register.html
+    {
+      name: "registerFun()",
+      type: "specificModel",
+      key: "registerFun",
+      category: "register",
+    },
+
+    {
+      name: "SendOTP()",
+      type: "specificModel",
+      key: "SendOTP",
+      category: "register",
+    },
+
+    // reportdatalogger.html
+    {
+      name: "CreateHTML()",
+      type: "specificModel",
+      key: "CreateHTML",
+      category: "reportdatalogger",
+    },
+    {
+      name: "GetReportData()",
+      type: "specificModel",
+      key: "GetReportData",
+      category: "reportdatalogger",
+    },
+    {
+      name: "getSelectedDate()",
+      type: "specificModel",
+      key: "getSelectedDate",
+      category: "reportdatalogger",
+    },
+    {
+      name: "openTabreportCart()",
+      type: "specificModel",
+      key: "openTabreportCart",
+      category: "reportdatalogger",
+    },
+    {
+      name: "openTabreport()",
+      type: "specificModel",
+      key: "openTabreport",
+      category: "reportdatalogger",
+    },
+    {
+      name: "chartFlowDay()",
+      type: "specificModel",
+      key: "chartFlowDay",
+      category: "reportdatalogger",
+    },
+    {
+      name: "chartFlowMonth()",
+      type: "specificModel",
+      key: "chartFlowMonth",
+      category: "reportdatalogger",
+    },
+    {
+      name: "chartFlowYear()",
+      type: "specificModel",
+      key: "chartFlowYear",
+      category: "reportdatalogger",
+    },
+    {
+      name: "chartFlowTotal()",
+      type: "specificModel",
+      key: "chartFlowTotal",
+      category: "reportdatalogger",
+    },
+    {
+      name: "chargePower()",
+      type: "specificModel",
+      key: "chargePower",
+      category: "reportdatalogger",
+    },
+    {
+      name: "chartNOlogin()",
+      type: "specificModel",
+      key: "chartNOlogin",
+      category: "reportdatalogger",
+    },
+    {
+      name: "chartNOloginMonthcart()",
+      type: "specificModel",
+      key: "chartNOloginMonthcart",
+      category: "reportdatalogger",
+    },
+    {
+      name: "chartNOloginYearhcart()",
+      type: "specificModel",
+      key: "chartNOloginYearhcart",
+      category: "reportdatalogger",
+    },
+    {
+      name: "chartNOloginTotalhcart()",
+      type: "specificModel",
+      key: "chartNOloginTotalhcart",
+      category: "reportdatalogger",
+    },
+    {
+      name: "chargePowerNOlogin()",
+      type: "specificModel",
+      key: "chargePowerNOlogin",
+      category: "reportdatalogger",
+    },
+
+    //setting_account.html
+    {
+      name: "settingAccountCheckToken()",
+      type: "specificModel",
+      key: "settingAccountCheckToken",
+      category: "settingAccount",
+    },
+    {
+      name: "updateProfile()",
+      type: "specificModel",
+      key: "updateProfile",
+      category: "settingAccount",
+    },
+    {
+      name: "UpdateAvatar()",
+      type: "specificModel",
+      key: "AddAvatar",
+      category: "settingAccount",
+    },
+    {
+      name: "UpdateAvatar()",
+      type: "specificModel",
+      key: "UpdateAvatar",
+      category: "settingAccount",
+    },
+
+    // setting_order.html
+    {
+      name: "getAll()",
+      type: "specificModel",
+      key: "getAll",
+      category: "settingOrder",
+    },
+    {
+      name: "scroller()",
+      type: "specificModel",
+      key: "scroller",
+      category: "settingOrder",
+    },
+
+    // setting.html
+    {
+      name: "SettingCheckToken()",
+      type: "specificModel",
+      key: "SettingCheckToken",
+      category: "setting",
+    },
+    {
+      name: "getQRcode()",
+      type: "specificModel",
+      key: "getQRcode",
+      category: "setting",
+    },
+
+    // start.html
+    {
+      name: "init()",
+      type: "specificModel",
+      key: "startInit",
+      category: "start",
+    },
+
+    // topup.html
+    {
+      name: "TopUpCheckToken()",
+      type: "specificModel",
+      key: "TopUpCheckToken",
+      category: "topup",
+    },
+    {
+      name: "checkNoInput()",
+      type: "specificModel",
+      key: "topup_checkNoInput",
+      category: "topup",
+    },
+    {
+      name: "AddSlipPayment()",
+      type: "specificModel",
+      key: "topup_addSlipPayment",
+      category: "topup",
+    },
+    {
+      name: "UpdateSlipPayment()",
+      type: "specificModel",
+      key: "topup_updateSlipPayment",
+      category: "topup",
+    },
   ]
 
   // data  modelStructure
@@ -1323,6 +1585,78 @@ export default function HomePage() {
         return "showChart()"
       case "ExportCSV":
         return "ExportCSV()"
+      case "RedeemCheckToken":
+        return "RedeemCheckToken()"
+      case "checkNoInput":
+        return "checkNoInput()"
+      case "postRedeem":
+        return "postRedeem()"
+      case "getData":
+        return "getData(dataItem)"
+      case "sendRefund":
+        return "getData(getDataSendRefund)"
+      case "PreviewImg_refund":
+        return "PreviewImg_refund()"
+      case "registerFun":
+        return "registerFun()"
+      case "SendOTP":
+        return "SendOTP()"
+      case "CreateHTML":
+        return "CreateHTML()"
+      case "GetReportData":
+        return "GetReportData(year, month, day, pin)"
+      case "getSelectedDate":
+        return "getSelectedDate(type, pin)"
+      case "openTabreportCart":
+        return "openTabreportCart(tabreportCart)"
+      case "openTabreport":
+        return "openTabreport(tabreport)"
+      case "chartFlowDay":
+        return "chartFlowDay(type, year, month, day, pin)"
+      case "chartFlowMonth":
+        return "chartFlowMonth(type, year, month, day, pin)"
+      case "chartFlowYear":
+        return "chartFlowYear(type, year, month, day, pin)"
+      case "chartFlowTotal":
+        return "chartFlowTotal(type, pin)"
+      case "chargePower":
+        return "chargePower(year, month, day, pin)"
+      case "chartNOlogin":
+        return "chartNOlogin(type)"
+      case "chartNOloginMonthcart":
+        return "chartNOloginMonthcart(type)"
+      case "chartNOloginYearhcart":
+        return "chartNOloginYearhcart()"
+      case "chartNOloginTotalhcart":
+        return "chartNOloginTotalhcart()"
+      case "chargePowerNOlogin":
+        return "chargePowerNOlogin()"
+      case "settingAccountCheckToken":
+        return "settingAccountCheckToken()"
+      case "updateProfile":
+        return "updateProfile(User)"
+      case "AddAvatar":
+        return "AddAvatar(file)"
+      case "UpdateAvatar":
+        return "UpdateAvatar(Img)"
+      case "getAll":
+        return "getAll(state)"
+      case "scroller":
+        return "scroller()"
+      case "SettingCheckToken":
+        return "SettingCheckToken()"
+      case "getQRcode":
+        return "getQRcode()"
+      case "startInit":
+        return "init()"
+      case "TopUpCheckToken":
+        return "TopUpCheckToken()"
+      case "topup_checkNoInput":
+        return "checkNoInput()"
+      case "topup_addSlipPayment":
+        return "AddSlipPayment(file)"
+      case "topup_updateSlipPayment":
+        return "UpdateSlipPayment(Imgs)"
       default:
         return ""
     }
@@ -3666,7 +4000,850 @@ export default function HomePage() {
         headers="Solar App"
         headerHtml="PurchaseReport.html"
         headerName={getTitle()}
-        content="-GetSalesData"
+        content="-ฟังก์ชัน GetSalesData ทำการเรียกใช้งาน API เพื่อรับข้อมูลการขายจากฝั่งเซิร์ฟเวอร์ โดยใช้ปีที่กำหนดในพารามิเตอร์ year เป็นเงื่อนไข ภายในฟังก์ชันนี้มีขั้นตอนดังนี้"
+        content1="1.ทำการส่งคำขอ AJAX ไปยัง URL /v1/staticReport/distributor โดยมีการส่งปีที่กำหนดในพารามิเตอร์ year เป็นส่วนหนึ่งของ URL"
+        content2="2.ส่ง Header ของคำขอเพื่อให้เซิร์ฟเวอร์รับรองความถูกต้องด้วย Token ที่ได้รับจากการเข้าสู่ระบบ"
+        content3="3.กำหนดค่า Content-Type เป็น application/json"
+        content4="4.กำหนด DataType เป็น json"
+        content5="5.กำหนดค่า Async เป็น true เพื่อให้คำขอถูกส่งแบบไม่สะดุด"
+        content6="6.กำหนดเวลา Timeout สำหรับคำขอเป็น 100000 milliseconds (100 วินาที)"
+        content7="7.ส่งคำขอก่อนที่จะส่งไปยังเซิร์ฟเวอร์ (optional)"
+        content8="8.ถ้าคำขอสำเร็จ (status code 200) และข้อมูลที่ได้รับมีรหัส code เป็น 0 ฟังก์ชันจะดำเนินการตรวจสอบข้อมูลที่ได้รับ"
+        content9="9.ถ้าไม่มีข้อมูลที่ได้รับมา (ค่า result เป็น null) จะแสดงรูปภาพและซ่อนตารางการขายและกราฟ และแสดงข้อความว่าไม่พบข้อมูล"
+        content10="10.ถ้ามีข้อมูลที่ได้รับมา จะแสดงตารางการขายประจำเดือนและตารางการขายประจำไตรมาส และแสดงกราฟเส้นของข้อมูลการขาย โดยเรียกใช้ฟังก์ชันที่เกี่ยวข้องในการสร้างตารางและกราฟ"
+        content11="11.ถ้าการส่งคำขอไม่สำเร็จหรือเกิดข้อผิดพลาด ฟังก์ชันจะแสดงข้อความข้อผิดพลาดที่เกี่ยวข้อง"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    CreateTableReport: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PurchaseReport.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน CreateTableReport ใช้สำหรับสร้างตารางข้อมูลการขายเพื่อแสดงผลบนหน้าเว็บไซต์ โดยมีขั้นตอนดังนี้"
+        content1="1.ตรวจสอบความยาวของ dataReport และถ้ามีข้อมูลใน dataReport จะแสดงตารางการขาย หากไม่มีข้อมูลจะแสดงรูปภาพแสดงข้อความว่าไม่พบข้อมูล"
+        content2="2.สร้างบรรทัดหัวของตาราง โดยระบุชื่อเดือนที่ต้องการแสดงข้อมูล"
+        content3="3.กำหนดเหตุการณ์สำหรับปุ่ม 'Next Month' และ 'Back Month' เพื่อแสดงข้อมูลเดือนถัดไปหรือก่อนหน้า"
+        content4="4.สร้างฟังก์ชัน updateTable เพื่ออัปเดตตารางโดยกำหนดชื่อหัวคอลัมน์ และเพิ่มข้อมูลการขายของแต่ละหมวดหมู่ในแต่ละเดือนและคำนวณรวม"
+        content5="5.ในฟังก์ชัน updateTable มีการสร้างบรรทัดตารางใหม่โดยใช้ข้อมูลจาก dataReport และคำนวณค่ารวมของแต่ละหมวดหมู่"
+        content6="6.สุดท้ายนำข้อมูลที่ได้มาใส่ลงในตาราง และกำหนดความกว้างและความสูงของตาราง"
+        content7="7.โดยมีการใช้ jQuery ในการเลือก Element และทำการแสดงผลลัพธ์ของตารางและเหตุการณ์ปุ่มโดยใช้ CSS selector และการใส่ HTML โดยตรงใน jQuery ส่วนของ HTML และ CSS ถูกใช้เพื่อกำหนดลักษณะและสไตล์ของตารางและปุ่มแสดงผลให้มีความสวยงามและสอดคล้องกับการออกแบบของเว็บไซต์"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    CreateTableQuarter: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PurchaseReport.html"
+        headerName={getTitle()}
+        content="-CreateTableQuarter คือฟังก์ชันที่ใช้สร้างตารางข้อมูลการขายในแบบไตรมาสเพื่อแสดงผลบนหน้าเว็บไซต์ โดยมีขั้นตอนดังนี้"
+        content1="1.ตรวจสอบความยาวของ dataQuarter และถ้ามีข้อมูลใน dataQuarter จะแสดงตารางการขาย หากไม่มีข้อมูลจะแสดงรูปภาพแสดงข้อความว่าไม่พบข้อมูล"
+        content2="2.สร้างบรรทัดหัวของตาราง โดยระบุชื่อไตรมาสที่ต้องการแสดงข้อมูล"
+        content3="3.สร้างบรรทัดของตารางใหม่โดยใส่ข้อมูลการขายของแต่ละหมวดหมู่ในแต่ละไตรมาส และคำนวณรวมของแต่ละหมวดหมู่"
+        content4="4.ทำการนำข้อมูลที่ได้มาใส่ลงในตารางและกำหนดความกว้างและความสูงของตาราง"
+        content5="โดยมีการใช้ jQuery ในการเลือก Element และทำการแสดงผลลัพธ์ของตารางและการใช้งานข้อมูลโดยใช้ CSS selector และการใส่ HTML โดยตรงใน jQuery ส่วนของ HTML และ CSS ถูกใช้เพื่อกำหนดลักษณะและสไตล์ของตารางให้มีความสวยงามและสอดคล้องกับการออกแบบของเว็บไซต์"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getSelectedMonthpurchase: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PurchaseReport.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getSelectedMonthpurchase ใช้ในการเลือกเดือนและปีที่ต้องการดูข้อมูลการซื้อสินค้า โดยมีขั้นตอนดังนี้"
+        content1="1.หากปีปัจจุบันน้อยกว่าหรือเท่ากับปีปัจจุบัน + 1 จะซ่อนปุ่ม 'ถัดไป' ไม่ให้แสดง"
+        content2="2.เมื่อมีการเปลี่ยนแปลงในการเลือกปี จะดักจับเหตุการณ์เปลี่ยนแปลงและส่งปีที่ถูกเลือกไปยัง GetSalesData เพื่อดึงข้อมูลการขายใหม่"
+        content3="3.แสดงปีปัจจุบันที่ถูกเลือกที่ #yearSelect"
+        content4="4.เมื่อปีถัดไปถูกคลิก จะเพิ่ม 1 ปีไปยังปีปัจจุบันและอัปเดตปีที่แสดง"
+        content5="5.เมื่อปีก่อนหน้าถูกคลิก จะลด 1 ปีจากปีปัจจุบันและอัปเดตปีที่แสดง"
+        content6="6.การอัปเดตปีจะเกิดขึ้นเมื่อปีถูกเปลี่ยนและเมื่อหน้าเว็บโหลดครั้งแรก"
+        content7="7.การสร้างปีแรกโดยค่าเริ่มต้นโดยใช้ปีปัจจุบันที่ระบุไว้ใน currentYear1"
+        content8="ฟังก์ชันนี้จัดการการเลือกปีและการแสดงผลของปีที่เลือกเพื่อให้ผู้ใช้สามารถดูข้อมูลการขายในปีต่างๆ ได้อย่างสะดวกและง่ายแต่ละปี"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    showChart: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PurchaseReport.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน showChart ใช้ในการแสดงแผนภูมิกราฟิกด้วยไลบรารี ECharts ซึ่งมีขั้นตอนดังนี้"
+        content1="1.สร้างตัวแปร chartDom เพื่อระบุตำแหน่งของ DOM element ที่ใช้แสดงแผนภูมิ"
+        content2="2.สร้างตัวแปร myChart เพื่อสร้างแผนภูมิด้วยการใช้เมธอด init ของ ECharts กับ chartDom"
+        content3="3.ดึงข้อมูลการขายจากตัวแปร dataQuarter และกำหนดให้ salesData เป็นข้อมูลการขาย"
+        content4="4.สร้างรายการ firstHalfYear และ secondHalfYear เพื่อแยกข้อมูลการขายเป็นครึ่งปีแรกและครึ่งปีหลัง"
+        content5="5.สร้างรายการ nameCategory เพื่อเก็บชื่อประเภทสินค้าทั้งหมด"
+        content6="6.สร้าง option สำหรับแผนภูมิ โดยกำหนด grid, legend, xAxis, yAxis และ series"
+        content7="7.กำหนดค่า option และแสดงแผนภูมิโดยใช้เมธอด setOption ของ myChart"
+        content8="8.สร้าง iScroll เพื่อเป็นตัวควบคุมการเลื่อนข้อมูลบนหน้าจอ"
+        content9="ฟังก์ชันนี้ทำหน้าที่สร้างแผนภูมิแสดงข้อมูลการขายในครึ่งปีแรกและครึ่งปีหลังโดยใช้ข้อมูลจาก dataQuarter และแสดงบนหน้าเว็บด้วย ECharts พร้อมกับควบคุมการเลื่อนข้อมูลด้วย iScroll อีกด้วย"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    ExportCSV: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="PurchaseReport.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน ExportCSV นี้ใช้สำหรับสร้างไฟล์ CSV จากข้อมูลการขายที่เก็บไว้ในตัวแปร dataReport เพื่อให้ผู้ใช้สามารถดาวน์โหลดข้อมูลเพื่อนำไปใช้งานต่อได้ ดังนี้"
+        content1="1.สร้างตัวแปร categories เพื่อเก็บชื่อของหมวดหมู่สินค้าทั้งหมดแบบไม่ซ้ำกัน (unique)"
+        content2="2.สร้างตัวแปร months เพื่อเก็บชื่อของเดือนทั้งหมด"
+        content3="3.วนลูปผ่านข้อมูลใน dataReport เพื่อเพิ่มชื่อของหมวดหมู่สินค้าลงใน categories และเพิ่มชื่อของเดือนลงใน months"
+        content4="4.จัดเรียงชื่อหมวดหมู่สินค้าในลำดับตามตัวอักษร"
+        content5="5.สร้างเนื้อหาของไฟล์ CSV โดยเพิ่มแถวหัวของตาราง (header row) ที่ประกอบด้วยชื่อเดือนและแถวข้อมูล (data rows) ที่ประกอบด้วยชื่อหมวดหมู่สินค้าและจำนวนสินค้าที่ขายในแต่ละเดือน"
+        content6="6.แปลงเนื้อหาของไฟล์ CSV เป็นสตริง"
+        content7="7.สร้างลิงก์สำหรับดาวน์โหลดไฟล์ CSV โดยใช้ข้อมูลที่ได้จากขั้นตอนก่อนหน้า"
+        content8="8.สร้าง Blob เพื่อเก็บข้อมูล CSV ในรูปแบบไบนารี"
+        content9="9.สร้างและคลิกลิงก์ดาวน์โหลด"
+        content10="10.นำลิงก์ออกจาก DOM หลังจากดาวน์โหลดเสร็จสมบูรณ์"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // redeem.html
+    RedeemCheckToken: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Redeem.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน RedeemCheckToken มีหน้าที่ตรวจสอบการมีหรือไม่มี token ที่เก็บไว้ใน localStorage และดำเนินการตามเงื่อนไขดังนี้"
+        content1="1.ใช้ window.localStorage.getItem('token') เพื่อดึงค่า token ออกมาจาก localStorage"
+        content2="2.แปลงข้อมูล token จากสตริงเป็น JSON ด้วย JSON.parse(getToken)"
+        content3="3.ตรวจสอบว่า token มีค่าเป็น null หรือไม่ ถ้าใช่ จะซ่อนช่อง input ที่ใช้สำหรับการแลกเหรียญ (redeem coins)"
+        content4="4.ถ้า token มีค่าไม่เท่ากับ null จะแสดงช่อง input และกำหนดการทำงานในกรณีที่มีการป้อนข้อมูลเข้าไปในช่อง input โดยใช้เหตุการณ์ 'input'"
+        content5="5.นกรณีที่ผู้ใช้คลิกที่ปุ่ม 'select all coins' จะกำหนดค่าทั้งหมดในช่อง input เป็นจำนวนเหรียญที่สามารถแลกได้ทั้งหมดและแสดงผลลัพธ์ในช่องแสดงผลและตรวจสอบสถานะของการป้อนข้อมูลโดยใช้ฟังก์ชัน checkNoInput()"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    checkNoInput: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Redeem.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน checkNoInput ทำหน้าที่ตรวจสอบว่ามีการป้อนข้อมูลในช่อง input ที่ใช้สำหรับการแลกเหรียญ (redeem coins) หรือไม่ และปรับการทำงานของปุ่ม submit ตามเงื่อนไขดังนี้"
+        content1="1.ดึงค่าที่ป้อนเข้าไปในช่อง input โดยใช้ $('#input_redeem_coins').val();"
+        content2={`2.ถ้าค่าที่ป้อนมาเป็นสตริงว่างเปล่า จะทำการปิดใช้งานปุ่ม submit และเปลี่ยนสไตล์ของปุ่มเป็นสีเทา และเปลี่ยนสีของข้อความผลลัพธ์เป็นสีเทาด้วย $('#output_redeem_coins').css({ "color": "#8e8e8e" });`}
+        content3={`3.ถ้ามีการป้อนข้อมูลเข้าไป จะเปิดใช้งานปุ่ม submit และเปลี่ยนสไตล์ของปุ่มเป็นสีน้ำเงิน และเปลี่ยนสีของข้อความผลลัพธ์เป็นสีดำ`}
+        content4={`4.ติดตั้งตัวกำหนดการคลิกของปุ่ม submit โดยตรวจสอบว่ามีการป้อนข้อมูลหรือไม่ ถ้ามีจะทำการส่งข้อมูลไปยังฟังก์ชัน postRedeem() แต่ถ้าไม่มีจะแสดงข้อความ "Please fill complete information" โดยใช้ msgPageObj.show() และหยุดการทำงานของปุ่ม submit ด้วย $("#submit_redeem_coins").off("click");`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    postRedeem: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Redeem.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน postRedeem มีหน้าที่ส่งข้อมูลการแลกเหรียญไปยังเซิร์ฟเวอร์เพื่อดำเนินการตามคำขอ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึงข้อมูล token จาก local storage และแปลงให้อยู่ในรูปแบบ JSON"
+        content2="2.ดึงค่าจำนวนเหรียญที่ต้องการแลกจากช่อง input และแปลงให้อยู่ในรูปแบบเลขทศนิยม"
+        content3="3.สร้างข้อมูลที่จะส่งไปยังเซิร์ฟเวอร์ ซึ่งประกอบด้วยจำนวนเหรียญที่ต้องการแลก"
+        content4="4.ทำการส่งข้อมูลไปยังเซิร์ฟเวอร์โดยใช้ AJAX POST request โดยระบุ URL ของ API และส่ง token ไปใน header เพื่อทำการตรวจสอบสิทธิ์การเข้าถึง"
+        content5={`5.เมื่อรับข้อมูลคำตอบจากเซิร์ฟเวอร์เรียบร้อยแล้ว ทำการปิด loaderObj แสดงข้อความ "Redeem coins successfully" ด้วย msgObj4.show() และทำการอัปเดตข้อมูลของผู้ใช้ด้วยฟังก์ชัน walletObj.getUserData() และล้างข้อมูลในช่อง input ด้วย cleanInput()`}
+        content6={`6.หากเกิดข้อผิดพลาดในการส่งข้อมูลหรือตอบกลับจากเซิร์ฟเวอร์ ให้แสดงข้อความผิดพลาดที่เกี่ยวข้องผ่าน msgPageObj.show() และปิด loaderObj ด้วย loaderObj.unShow()`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // refund.html
+    getData: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Refund.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getData ทำหน้าที่รับข้อมูลสินค้าที่ต้องการทำการคืนเงิน (refund) และแสดงข้อมูลนี้ในหน้าเว็บไซต์ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.รับข้อมูลสินค้าที่ต้องการทำการคืนเงินผ่านพารามิเตอร์ dataItem และเก็บข้อมูลนี้ไว้ในตัวแปร getDataSendRefund เพื่อใช้ในการส่งข้อมูลคืนเงินในภายหลัง (ถ้ามี)"
+        content2="2.แสดงรูปภาพสินค้าที่ต้องการคืนเงินโดยกำหนด src attribute ของ element <img> ให้เป็น URL ของรูปภาพที่ได้รับจาก API_SERVER ร่วมกับข้อมูลรูปภาพจาก dataItem"
+        content3="3.แสดงราคาของสินค้าที่ต้องการคืนเงินโดยกำหนดข้อความใน element #price_refund เป็นราคาของสินค้า (รวมหน่วยเงิน)"
+        content4="4.แสดงชื่อของสินค้าที่ต้องการคืนเงินโดยกำหนดข้อความใน element #name_refund เป็นชื่อของสินค้า"
+        content5="5.แสดงจำนวนสินค้าที่ต้องการคืนเงินโดยกำหนดข้อความใน element #Quantity_refund เป็น 'Quantity x จำนวน' โดยจำนวนถูกดึงมาจากข้อมูล dataItem ที่เก็บไว้ก่อนหน้านี้"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    sendRefund: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Refund.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน sendRefund ใช้สำหรับส่งข้อมูลการคืนเงิน (refund) ไปยังเซิร์ฟเวอร์ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.รับข้อมูลสินค้าที่ต้องการคืนเงินผ่านพารามิเตอร์ getDataSendRefund ซึ่งรวมถึง oid (Order ID), pid (Product ID), ข้อมูลเหตุผลการคืนเงิน selectedValue (เหตุผลที่เลือก) และ detail (รายละเอียดเพิ่มเติม)"
+        content2="2.ตรวจสอบว่าข้อมูลที่ส่งไปครบถ้วนหรือไม่ หากข้อมูลบางส่วนขาดหายไป จะแสดงข้อความให้ผู้ใช้กรอกข้อมูลให้ครบถ้วน"
+        content3="3.หากข้อมูลครบถ้วน จะทำการสร้าง object mData เพื่อใส่ข้อมูลที่ได้รับและจะนำไปส่งใน request ไปยังเซิร์ฟเวอร์"
+        content4="4.ทำการส่ง request ไปยังเซิร์ฟเวอร์โดยใช้ jQuery AJAX และ method PUT ไปยัง URL ที่กำหนด"
+        content5="5.หาก request สำเร็จ (status code 200) แสดงข้อความ 'Refund Successfully.' และทำการล้างข้อมูล input ต่างๆ ด้วยฟังก์ชัน cleanInput"
+        content6="6.หาก request ไม่สำเร็จ แสดงข้อความแจ้งเตือนว่า 'You have previously cancelled a request for product return and refund.'"
+        content7="คำสั่ง beforeSend, error, และ complete ใช้สำหรับการจัดการก่อนส่ง request, กรณี error ที่เกิดขึ้น, และการจัดการหลังส่ง request ตามลำดับ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    PreviewImg_refund: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Refund.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน PreviewImg_refund ใช้สำหรับตั้งค่าการดูตัวอย่างรูปภาพที่ผู้ใช้เลือกอัปโหลดเพื่อคืนเงิน โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ตั้งค่าการตรวจสอบการเลือกไฟล์โดยใช้ event handler change บน input element #fileInput_refund ซึ่งจะทำงานเมื่อมีการเลือกไฟล์"
+        content2="2.เมื่อมีการเลือกไฟล์ จะตรวจสอบว่าไฟล์ที่เลือกเป็นไฟล์รูปภาพหรือไม่ โดยใช้ file.type.match('image.*')"
+        content3="3.หากเป็นไฟล์รูปภาพ จะทำการสร้าง FileReader เพื่ออ่านข้อมูลของไฟล์"
+        content4="4.เมื่ออ่านเสร็จสิ้น จะแสดงตัวอย่างของรูปภาพที่เลือกในตัว element #preview_refund และแสดงปุ่มปิดเพื่อลบรูป"
+        content5="5.หากผู้ใช้ต้องการลบรูปภาพที่เลือก สามารถคลิกที่ปุ่มปิดเพื่อลบรูป"
+        content6="6.นอกจากนี้ ฟังก์ชันยังจะทำการอัปโหลดไฟล์รูปภาพที่เลือกขึ้นไปยังเซิร์ฟเวอร์ โดยใช้ jQuery AJAX และ method PUT ไปยัง URL ที่กำหนด พร้อมส่ง token ใน header"
+        content7="7.เมื่ออัปโหลดเสร็จสิ้น และได้รับ response จากเซิร์ฟเวอร์ เช่น ลิงก์ของรูปภาพ จะเก็บข้อมูลไว้ในตัวแปร imgCommercial สำหรับการส่งข้อมูลคืนเงิน"
+        content8="8.หากไฟล์ที่เลือกไม่ใช่ไฟล์รูปภาพ จะแสดงข้อความแจ้งเตือนว่า 'Selected file is not an image.' ใน #preview_refund"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // register.html
+    registerFun: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Register.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน registerFun ใช้สำหรับลงทะเบียนผู้ใช้ใหม่ ดังนี้"
+        content1="1.ดึงค่าข้อมูลที่ผู้ใช้ป้อน เช่น อีเมล, OTP (รหัสยืนยันครั้งเดียว), ชื่อผู้ใช้, เบอร์โทรศัพท์มือถือ, รหัสผ่าน, และรหัสเชิญ"
+        content2="2.สร้างอ็อบเจ็กต์ข้อมูล (mData) ที่มีข้อมูลผู้ใช้เพื่อส่งไปยังเซิร์ฟเวอร์"
+        content3="3.ส่งคำขอ AJAX POST ไปยังเซิร์ฟเวอร์ที่ URL /v1/auth/signUp พร้อมกับข้อมูลผู้ใช้ในรูปแบบ JSON"
+        content4="4.จัดการกับการตอบกลับจากเซิร์ฟเวอร์"
+        content4p1="4.1.หากรหัสการตอบกลับเป็น 0 (หมายถึงสำเร็จ) จะแสดงข้อความสำเร็จ, ล้างช่องกรอกข้อมูล, และเปลี่ยนเส้นทางผู้ใช้ไปที่หน้าเข้าสู่ระบบหลังจากสักครู่"
+        content4p2="4.2.หากรหัสการตอบกลับไม่เท่ากับ 0, จะแสดงข้อความผิดพลาดขึ้นอยู่กับรหัสสถานะที่ได้รับ"
+        content5="5.จัดการกับข้อผิดพลาดที่อาจเกิดขึ้นในระหว่างคำขอ AJAX เช่น ข้อผิดพลาดจากเซิร์ฟเวอร์"
+        content6="6.กำหนดฟังก์ชันภายใน cleanInput เพื่อรีเซ็ตช่องกรอกข้อมูลหลังจากการลงทะเบียน"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    SendOTP: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Register.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน SendOTP ใช้สำหรับส่งรหัส OTP ไปยังอีเมลของผู้ใช้ ดังนี้"
+        content1="1.ดึงค่าอีเมลที่ผู้ใช้ป้อนในช่องกรอก"
+        content2="2.สร้างอ็อบเจ็กต์ข้อมูล (mData) ที่มีข้อมูลอีเมลและประเภท (type) เพื่อส่งไปยังเซิร์ฟเวอร์"
+        content3="3.ส่งคำขอ AJAX POST ไปยังเซิร์ฟเวอร์ที่ URL /v1/email-verification/send พร้อมกับข้อมูลในรูปแบบ JSON"
+        content4="4.จัดการกับการตอบกลับจากเซิร์ฟเวอร์"
+        content4p1="4.1.หากรหัสการตอบกลับเป็น 0 (หมายถึงสำเร็จ) จะแสดงข้อความสำเร็จและเริ่มนับถอยหลังเวลาต่อไป"
+        content4p2="4.2.หากรหัสการตอบกลับไม่เท่ากับ 0, จะแสดงข้อความผิดพลาดขึ้นอยู่กับรหัสสถานะที่ได้รับ"
+        content5="5.จัดการกับข้อผิดพลาดที่อาจเกิดขึ้นในระหว่างคำขอ AJAX เช่น ข้อผิดพลาดจากเซิร์ฟเวอร์"
+        content6="6.การนับถอยหลังเวลาจะทำงานโดยการเริ่มต้นฟังก์ชัน startCountdown ซึ่งจะเริ่มนับถอยหลังจากเวลาที่ได้รับจากเซิร์ฟเวอร์"
+        content7="7.เมื่อเวลานับถอยหลังสิ้นสุดลง ฟังก์ชัน OTPCountdown จะถูกเรียกเพื่อแสดงหน้าแบบฟอร์มให้ผู้ใช้ป้อน OTP อีกครั้งหรือคลิกที่ปุ่มส่ง OTP อีกครั้งหากต้องการส่งอีกครั้ง"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // reportdatalogger.html
+    CreateHTML: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน CreateHTML ใช้สร้าง HTML สำหรับแสดงข้อมูลรายงานของระบบ ดังนี้"
+        content1="1.สร้างตัวแปร setDataId เพื่อเก็บข้อมูล ID ของข้อมูลที่ถูกตั้งค่า"
+        content2="2.สร้างตัวแปร reportData เพื่อเก็บข้อมูลที่ใช้สำหรับสร้างรายงาน โดยประกอบด้วยข้อมูลเช่น หมายเลข, ป้ายกำกับ, ID, หน่วยวัด ซึ่งใช้ในการแสดงข้อมูล"
+        content3="3.เพิ่มการทำงานเมื่อคลิกที่เอกสารโดเมน โดยหากคลิกนอกพื้นที่ที่มี ID เริ่มต้นด้วย 'img_show_' จะทำการปิดรูปภาพทั้งหมดและซ่อนรายละเอียดทั้งหมด"
+        content4="4.สร้าง HTML สำหรับแสดงข้อมูลรายงาน โดยใช้ข้อมูลจาก reportData และแสดงรายละเอียดเมื่อคลิกที่รูปภาพปัจจุบัน"
+        content5="5.เพิ่มการจัดการเหตุการณ์เมื่อคลิกที่รูปภาพ โดยแสดงข้อความรายละเอียดตามข้อมูลที่กำหนด"
+        content6="6.ซ่อนรูปภาพที่มีหมายเลข 31 และปิดการจับเหตุการณ์คลิกที่รูปภาพนี้"
+        content7="7.สุดท้าย จัดการการแสดงรายละเอียดของข้อมูลเมื่อคลิกที่รูปภาพ โดยกำหนดสีของข้อความและสร้างข้อความรายละเอียดตามข้อมูลที่กำหนด"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    GetReportData: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน GetReportData มีวัตถุประสงค์เพื่อเรียกข้อมูลรายงานสำหรับอุปกรณ์ที่ระบุในวันที่และเดือนที่ระบุ เมื่อได้รับข้อมูลรายงานมาแล้ว จะนำข้อมูลนั้นไปแสดงบนหน้าเว็บ"
+        content1="1.เช็คค่าของตัวแปร CHECK ใน localStorage หากไม่มีค่าจะทำการสร้างข้อมูลสุ่มและกำหนดค่าให้กับฟิลด์ที่ระบุ"
+        content2="2.หากมีค่า token ใน localStorage จะทำการเรียกข้อมูลรายงานจากเซิร์ฟเวอร์โดยใช้ AJAX โดยส่งข้อมูลเพิ่มเติมเช่น devicePn, date, page, และ limit"
+        content3="3.ตรวจสอบการเรียกข้อมูลสำเร็จหรือไม่ หากสำเร็จจะนำข้อมูลที่ได้มาแสดงบนหน้าเว็บ หากไม่พบข้อมูลรายงานก็จะกำหนดค่าของฟิลด์ให้เป็น 0"
+        content4="4.หากมีข้อผิดพลาดเกิดขึ้นจะแสดงข้อความข้อผิดพลาดหรือซ่อน loaderObj"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getSelectedDate: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getSelectedDate มีวัตถุประสงค์เพื่อเปลี่ยนแปลงวันที่ที่เลือกและอัปเดตข้อมูลของรายงานตามวันที่ที่เลือก โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.สร้างตัวแปร currentDateTap เพื่อเก็บวันที่ปัจจุบัน"
+        content2="2.นำข้อมูลของวันที่ปัจจุบันมาจัดรูปแบบใหม่เพื่อแสดงบนหน้าเว็บ โดยแยกวันที่ เดือน และปี และแสดงเป็นข้อความ HTML ซึ่งแสดงในหน้าเว็บ"
+        content3="3.กำหนดการคลิกเพื่อเลื่อนวันหน้าหรือวันก่อนหน้า โดยตรวจสอบการเข้าสู่ระบบก่อนทำการเลื่อนวัน หากไม่ได้เข้าสู่ระบบจะแสดงข้อความแจ้งเตือนให้เข้าสู่ระบบ"
+        content4="4.หากประเภทของรายงานเป็น 10, 20, 30, 40, 50 จะมีการเรียกใช้ฟังก์ชัน updateCalendarDay เพื่ออัปเดตข้อมูลรายงานตามประเภทของรายงาน"
+        content5="5.หลังจากอัปเดตข้อมูลรายงานแล้วจะเรียกใช้ฟังก์ชัน GetReportData เพื่อดึงข้อมูลรายงานล่าสุด"
+        content6="6.ฟังก์ชัน updateCalendarDay ใช้อัปเดตข้อมูลวันที่และแสดงข้อมูลของรายงานตามประเภทที่กำหนด"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    openTabreportCart: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน openTabreportCart ถูกใช้เพื่อเปิดแท็บตามที่เลือกในเมนูรายงานของแอปพลิเคชัน โดยมีการดำเนินการต่าง ๆ ตามลำดับดังนี้"
+        content1="1.ตรวจสอบว่าแท็บที่ถูกเลือกเป็นแท็บไหน โดยใช้เงื่อนไข if เพื่อตรวจสอบค่าของ tabreportCart"
+        content2={`2.หากเป็นแท็บ "DayCart" จะแสดงตัวเลือกวันที่ และเรียกใช้ฟังก์ชัน getSelectedDate เพื่อเลือกวันที่ประเภท "Day" และแสดงกราฟรายงานตามวัน`}
+        content3={`3.หากเป็นแท็บ "MonthCart" จะแสดงตัวเลือกเดือน และเรียกใช้ฟังก์ชัน getSelectedDate เพื่อเลือกวันที่ประเภท "Month" และแสดงกราฟรายงานตามเดือน`}
+        content4="4.หากเป็นแท็บ 'YearCart' จะแสดงตัวเลือกปี และเรียกใช้ฟังก์ชัน getSelectedDate เพื่อเลือกวันที่ประเภท 'Year' และแสดงกราฟรายงานตามปี"
+        content5="5.หากเป็นแท็บ 'TotalCart' จะแสดงกราฟรายงานทั้งหมดโดยไม่มีตัวเลือกวันที่"
+        content6="6.หลังจากนั้นจะปรับการแสดงผลแท็บตามที่ถูกเลือก และเรียกใช้ฟังก์ชันที่เกี่ยวข้องในการแสดงกราฟรายงาน"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    openTabreport: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน openTabreport ถูกใช้เพื่อเปิดแท็บตามที่เลือกในเมนูรายงานของแอปพลิเคชัน โดยมีการดำเนินการต่าง ๆ ตามลำดับดังนี้"
+        content1="1.ตรวจสอบว่าแท็บที่ถูกเลือกเป็นแท็บไหน โดยใช้เงื่อนไข if เพื่อตรวจสอบค่าของ tabreport"
+        content2={`2.หากเป็นแท็บ "Details" โดยตรวจสอบว่าผู้ใช้เข้าสู่ระบบหรือไม่ หากไม่ได้เข้าสู่ระบบจะแสดงกราฟโดยไม่มีการเข้าสู่ระบบ และใช้ chartNOlogin เพื่อแสดงกราฟ ณ ประเภท "Day"`}
+        content3={`3.หากเป็นแท็บ "Chart" โดยตรวจสอบว่าผู้ใช้เข้าสู่ระบบหรือไม่ หากไม่ได้เข้าสู่ระบบจะแสดงกราฟโดยไม่มีการเข้าสู่ระบบ และใช้ chartNOlogin เพื่อแสดงกราฟ ณ ประเภท "Day"`}
+        content4={`4.หากเป็นแท็บ "Flow" จะแสดงกราฟ Flow โดยไม่มีการตรวจสอบการเข้าสู่ระบบ และกำหนดความสูงของแท็บ "Flow"`}
+        content5={`5.หากเป็นแท็บ "Analysis" โดยตรวจสอบว่าผู้ใช้เข้าสู่ระบบหรือไม่ หากไม่ได้เข้าสู่ระบบจะแสดงการแจ้งเตือนเกี่ยวกับการไม่ได้เข้าสู่ระบบ และใช้ chargePowerNOlogin เพื่อแสดงกราฟของการชาร์จพลังงาน`}
+        content6={`6.หากเป็นแท็บ "Alart" โดยตรวจสอบว่าผู้ใช้เข้าสู่ระบบหรือไม่ หากไม่ได้เข้าสู่ระบบจะแสดงกราฟเพื่อแสดงการแจ้งเตือน`}
+        content7={`และต่อมาทำการปรับการแสดงผลแท็บตามที่เลือกและเรียกใช้ฟังก์ชันที่เกี่ยวข้องในการแสดงกราฟรายงาน และใช้ลูปเพื่อปรับการแสดงผลของแท็บและเพิ่มคลาส "actived" เพื่อแสดงว่าแท็บนั้นถูกเลือกไว้ในขณะนี้`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    chartFlowDay: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน chartFlowDay ใช้สำหรับสร้างแผนภูมิแสดงการไหลของข้อมูลของวันที่เลือก โดยมีขั้นตอนดังนี้"
+        content1={`1.ตรวจสอบว่าผู้ใช้เข้าสู่ระบบหรือไม่ โดยใช้ localStorage.getItem("token") เพื่อตรวจสอบค่า CHECK หากเข้าสู่ระบบจะดำเนินการต่อไป หากไม่เข้าสู่ระบบจะไม่ทำอะไร`}
+        content2={`2.กำหนดความกว้างและความสูงของแผนภูมิโดยใช้ window.innerWidth และกำหนดค่าให้กับ w และ h ตามลำดับ`}
+        content3={`3.กำหนดตัวแปร Grand_y, Show_graphSetDataPvPower, Show_graphSetDataCurrent เพื่อใช้เก็บข้อมูลที่ได้จากการร้องขอข้อมูล`}
+        content4={`4.สร้างแผนภูมิโดยใช้ ECharts โดยกำหนดค่าต่าง ๆ ให้กับแผนภูมิ เช่น tooltip, legend, grid, xAxis, yAxis, และ series`}
+        content5={`5.ทำการส่งคำขอ AJAX เพื่อดึงข้อมูลจากเซิร์ฟเวอร์ โดยใช้ API /v1/reportData/powerChart และส่งพารามิเตอร์เพื่อระบุอุปกรณ์ (devicePn) และวันที่ (date)`}
+        content6={`6.ตรวจสอบข้อมูลที่ได้รับจากเซิร์ฟเวอร์ หากสำเร็จ แสดงข้อมูลแผนภูมิ หากไม่สำเร็จแสดงข้อผิดพลาด`}
+        content7={`7.หากข้อมูลถูกส่งมาเป็นการแจ้งเตือนว่าไม่พบข้อมูลให้แสดงหรือไม่พบข้อมูล จะแสดงข้อความแจ้งเตือนดังกล่าว`}
+        content8={`8.หากข้อมูลถูกส่งมาสำเร็จ จะนำข้อมูลมาวิเคราะห์และแสดงผลบนแผนภูมิ`}
+        content9={`โดยมีการใช้ AJAX เพื่อดึงข้อมูลจากเซิร์ฟเวอร์ และใช้ ECharts เพื่อสร้างแผนภูมิแสดงผลข้อมูลในรูปแบบของกราฟแท่งและเส้น เพื่อให้ผู้ใช้งานสามารถสาธิตและวิเคราะห์ข้อมูลได้อย่างชัดเจนและสะดวกสบาย`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    chartFlowMonth: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน chartFlowMonth ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลการไหลของข้อมูลในเดือนที่เลือกไว้ ดังนี้"
+        content1="1.ฟังก์ชันนี้เริ่มต้นด้วยการกำหนดตัวแปรเพื่อเก็บข้อมูลและอ้างอิงไปยังองค์ประกอบของแผนภูมิใน DOM"
+        content2="2.จากนั้น ฟังก์ชันจะดึงโทเค็นการยืนยันตัวตนของผู้ใช้จาก local storage"
+        content3="3.กำหนด API endpoint โดยขึ้นอยู่กับพารามิเตอร์ของฟังก์ชัน (type, year, month, day, pin)"
+        content4="4.ทำการส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์โดยใช้เมธอด $.ajax ของ jQuery โดยส่ง API endpoint ที่สร้างขึ้นมา, โทเค็นการยืนยันตัวตน, และส่วนหัวอื่น ๆ ที่จำเป็น"
+        content5="5.จัดการกับการตอบกลับจากเซิร์ฟเวอร์ในฟังก์ชัน callback success"
+        content5p1="5.1.หากการตอบกลับระบุว่าไม่มีข้อมูลที่มีหรือผู้ใช้ไม่ได้รับการตรวจสอบสิทธิ์ ก็จะแสดงองค์ประกอบ UI ที่เหมาะสม"
+        content5p2="5.2.หากมีข้อมูลที่พร้อมใช้งาน ฟังก์ชันจะประมวลผลข้อมูลเพื่อเตรียมการแสดงบนแผนภูมิ"
+        content5p3="5.3.จัดการกับอ็อปชันของ ECharts ด้วยข้อมูลที่ประมวลผลแล้ว และนำมาใช้งานกับแผนภูมิ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    chartFlowYear: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน chartFlowYear ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลการไหลของข้อมูลในปีที่เลือกไว้ โดยมีขั้นตอนดังนี้"
+        content1="1.เริ่มต้นโดยกำหนดตัวแปรเพื่อเก็บข้อมูลและอ้างอิงไปยังองค์ประกอบของแผนภูมิใน DOM"
+        content2="2.ดึงโทเค็นการยืนยันตัวตนของผู้ใช้จาก local storage"
+        content3="3.กำหนด API endpoint โดยขึ้นอยู่กับพารามิเตอร์ของฟังก์ชัน (type, year, month, day, pin)"
+        content4="4.ทำการส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์โดยใช้เมธอด $.ajax ของ jQuery โดยส่ง API endpoint ที่สร้างขึ้นมา, โทเค็นการยืนยันตัวตน, และส่วนหัวอื่น ๆ ที่จำเป็น"
+        content5="5.จัดการกับการตอบกลับจากเซิร์ฟเวอร์ในฟังก์ชัน callback success"
+        content5p1="5.1.หากการตอบกลับระบุว่าไม่มีข้อมูลที่มีหรือผู้ใช้ไม่ได้รับการตรวจสอบสิทธิ์ ก็จะแสดงองค์ประกอบ UI ที่เหมาะสม"
+        content5p2="5.2.หากมีข้อมูลที่พร้อมใช้งาน ฟังก์ชันจะประมวลผลข้อมูลเพื่อเตรียมการแสดงบนแผนภูมิ"
+        content5p3="5.3.จัดการกับอ็อปชันของ ECharts ด้วยข้อมูลที่ประมวลผลแล้ว และนำมาใช้งานกับแผนภูมิ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    chartFlowTotal: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน chartFlowTotal ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลการไหลของข้อมูลทั้งหมด (รวมกันทุกเดือน) โดยมีขั้นตอนดังนี้"
+        content1="1.เริ่มต้นโดยกำหนดตัวแปรเพื่อเก็บข้อมูลและอ้างอิงไปยังองค์ประกอบของแผนภูมิใน DOM"
+        content2="2.ดึงโทเค็นการยืนยันตัวตนของผู้ใช้จาก local storage"
+        content3="3.กำหนด API endpoint โดยขึ้นอยู่กับพารามิเตอร์ของฟังก์ชัน (type, pin)"
+        content4="4.ทำการส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์โดยใช้เมธอด $.ajax ของ jQuery โดยส่ง API endpoint ที่สร้างขึ้นมา, โทเค็นการยืนยันตัวตน, และส่วนหัวอื่น ๆ ที่จำเป็น"
+        content5="5.จัดการกับการตอบกลับจากเซิร์ฟเวอร์ในฟังก์ชัน callback success:"
+        content5p1="5.1.หากการตอบกลับระบุว่าไม่มีข้อมูลที่มีหรือผู้ใช้ไม่ได้รับการตรวจสอบสิทธิ์ ก็จะแสดงองค์ประกอบ UI ที่เหมาะสม"
+        content5p2="5.2.หากมีข้อมูลที่พร้อมใช้งาน ฟังก์ชันจะประมวลผลข้อมูลเพื่อเตรียมการแสดงบนแผนภูมิ"
+        content5p3="5.3.จัดการกับอ็อปชันของ ECharts ด้วยข้อมูลที่ประมวลผลแล้ว และนำมาใช้งานกับแผนภูมิ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    chargePower: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน chargePower ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลพลังงานการชาร์จของพาโวเวอร์ (PV charging power) โดยมีขั้นตอนดังนี้"
+        content1="1.เริ่มต้นโดยกำหนดความกว้างของแผนภูมิให้เต็มขนาดของหน้าจอและกำหนดความสูงเป็น 300px"
+        content2="2.กำหนดตัวแปร chartDom เพื่ออ้างอิงไปยังองค์ประกอบของแผนภูมิใน DOM"
+        content3="3.ดึงโทเค็นการยืนยันตัวตนของผู้ใช้จาก local storage"
+        content4="4.กำหนด API endpoint โดยใช้ข้อมูลที่ได้รับจากพารามิเตอร์ของฟังก์ชัน (year, month, day, pin)"
+        content5="5.ส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์โดยใช้เมธอด $.ajax ของ jQuery โดยระบุ API endpoint, โทเค็นการยืนยันตัวตน, และส่วนหัวอื่น ๆ ที่จำเป็น"
+        content6="6.จัดการกับการตอบกลับจากเซิร์ฟเวอร์ในฟังก์ชัน callback success"
+        content6p1="6.1.หากไม่มีข้อมูลหรือผู้ใช้ไม่ได้รับการตรวจสอบสิทธิ์ ฟังก์ชันจะแสดงองค์ประกอบ UI ที่เหมาะสม"
+        content6p2="6.2.หากมีข้อมูลที่พร้อมใช้งาน ฟังก์ชันจะประมวลผลข้อมูลเพื่อเตรียมการแสดงบนแผนภูมิ"
+        content6p3="6.3.จัดการกับอ็อปชันของ ECharts ด้วยข้อมูลที่ประมวลผลแล้ว และนำมาใช้งานกับแผนภูมิ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    chartNOlogin: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน chartNOlogin ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลพลังงานการชาร์จของพาโวเวอร์ (PV charging power) และการใช้พลังงานปัจจุบัน (Current load power) โดยมีขั้นตอนดังนี้"
+        content1="1.กำหนดความกว้างและความสูงของแผนภูมิเพื่อให้พอดีกับขนาดหน้าจอ"
+        content2="2.กำหนดค่าของชุดข้อมูล data_series โดยขึ้นอยู่กับค่าของพารามิเตอร์ type"
+        content3="3.กำหนดตัวแปร chartDom เพื่ออ้างอิงไปยังองค์ประกอบของแผนภูมิใน DOM"
+        content4="4.สร้างแผนภูมิ ECharts และกำหนด option ด้วยค่าต่าง ๆ ที่กำหนดไว้"
+        content5="5.นำ option มาใช้งานกับแผนภูมิโดยใช้เมธอด setOption ของ ECharts"
+        content6="ทำนองเดียวกันกับฟังก์ชัน chargePower และ chartFlowYear, การเริ่มต้นของฟังก์ชัน chartNOlogin คือการกำหนดขนาดของแผนภูมิให้เต็มขนาดของหน้าจอ และการกำหนด API endpoint เพื่อดึงข้อมูลจากเซิร์ฟเวอร์ หลังจากนั้นจะมีการสร้างแผนภูมิ ECharts ด้วยข้อมูลที่ได้รับมา และนำ option มาใช้งานกับแผนภูมิ โดยข้อมูลที่ใช้จะเป็นข้อมูลซึ่งกำหนดไว้ล่วงหน้า หรือข้อมูลที่ตั้งค่าไว้เป็นค่าเริ่มต้น ในกรณีที่ไม่มีข้อมูลที่สามารถใช้งานได้ แผนภูมิจะแสดงข้อความที่บอกว่าไม่มีข้อมูลให้แสดง"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    chartNOloginMonthcart: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน chartNOloginMonthcart ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลพลังงานการชาร์จของพาโวเวอร์ (PV charging power) และการใช้พลังงานปัจจุบัน (Current load power) ในระหว่างเดือนนี้ โดยมีขั้นตอนดังนี้"
+        content1="1.กำหนดความกว้างและความสูงของแผนภูมิเพื่อให้พอดีกับขนาดหน้าจอ"
+        content2="2.กำหนดตัวแปร chartDom เพื่ออ้างอิงไปยังองค์ประกอบของแผนภูมิใน DOM"
+        content3="3.สร้างแผนภูมิ ECharts และกำหนด option ด้วยค่าต่าง ๆ ที่กำหนดไว้"
+        content4="4.นำ option มาใช้งานกับแผนภูมิโดยใช้เมธอด setOption ของ ECharts"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    chartNOloginYearhcart: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน chartNOloginYearhcart ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลพลังงานการชาร์จของพาโวเวอร์ (PV charging power) และการใช้พลังงานปัจจุบัน (Current load power) ในระหว่างปีนี้ โดยมีขั้นตอนดังนี้"
+        content1="1.กำหนดความกว้างและความสูงของแผนภูมิเพื่อให้พอดีกับขนาดหน้าจอ"
+        content2="2.กำหนดตัวแปร chartDom เพื่ออ้างอิงไปยังองค์ประกอบของแผนภูมิใน DOM"
+        content3="3.สร้างแผนภูมิ ECharts และกำหนด option ด้วยค่าต่าง ๆ ที่กำหนดไว้"
+        content4="4.นำ option มาใช้งานกับแผนภูมิโดยใช้เมธอด setOption ของ ECharts"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    chartNOloginTotalhcart: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน chartNOloginTotalhcart ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลพลังงานการชาร์จของพาโวเวอร์ (PV charging power) และการใช้พลังงานปัจจุบัน (Current load power) ในระหว่างทั้งหมดของปีนี้ โดยมีขั้นตอนดังนี้"
+        content1="1.กำหนดความกว้างและความสูงของแผนภูมิเพื่อให้พอดีกับขนาดหน้าจอ"
+        content2="2.กำหนดตัวแปร chartDom เพื่ออ้างอิงไปยังองค์ประกอบของแผนภูมิใน DOM"
+        content3="3.สร้างแผนภูมิ ECharts และกำหนด option ด้วยค่าต่าง ๆ ที่กำหนดไว้"
+        content4="4.นำ option มาใช้งานกับแผนภูมิโดยใช้เมธอด setOption ของ ECharts"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    chargePowerNOlogin: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Reportdatalogger.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน chargePowerNOlogin มีวัตถุประสงค์เพื่อสร้างแผนภูมิเพื่อแสดงข้อมูลพลังงานการชาร์จของพาโวเวอร์ (PV charging power) โดยไม่ต้องเข้าสู่ระบบ โดยมีขั้นตอนดังนี้"
+        content1="1.กำหนดความกว้างและความสูงของแผนภูมิเพื่อให้พอดีกับขนาดหน้าจอ"
+        content2="2.กำหนดตัวแปร chartDom เพื่ออ้างอิงไปยังองค์ประกอบของแผนภูมิใน DOM"
+        content3="3.สร้างแผนภูมิ ECharts และกำหนด option ด้วยค่าต่าง ๆ ที่กำหนดไว้"
+        content4="4.นำ option มาใช้งานกับแผนภูมิโดยใช้เมธอด setOption ของ ECharts"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // setting_account.html
+    settingAccountCheckToken: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Setting_account.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน settingAccountCheckToken มีหน้าที่ตรวจสอบว่ามี Token ที่เก็บไว้ใน Local Storage หรือไม่ ถ้ามีก็จะทำงานต่อไป โดยมีขั้นตอนดังนี้"
+        content1={`1.ใช้ localStorage.getItem("token") เพื่อเรียก Token ที่ถูกเก็บไว้ใน Local Storage และเก็บไว้ในตัวแปร token`}
+        content2="2.ตรวจสอบว่า token เป็น null หรือไม่ ถ้าเป็น null แสดงว่ายังไม่มี Token ถูกเก็บไว้"
+        content3="3.ถ้า token ไม่ใช่ null ก็จะทำงานต่อไป เช่น เรียกฟังก์ชัน getProfile() เพื่อดึงข้อมูลโปรไฟล์ และ getInviteCode() เพื่อดึง Invite Code จากเซิร์ฟเวอร์"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    updateProfile: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Setting_account.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน updateProfile(User) ใช้สำหรับอัปเดตโปรไฟล์ของผู้ใช้ โดยมีขั้นตอนการทำงานดังนี้"
+        content1={`1.ใช้ localStorage.getItem("token") เพื่อเรียก Token ที่ถูกเก็บไว้ใน Local Storage และเก็บไว้ในตัวแปร Token`}
+        content2={`2.แปลง Token จาก JSON string เป็น Object ด้วย JSON.parse(Token)`}
+        content3={`3.ใช้ $.ajax() เพื่อส่งคำขอ HTTP PUT ไปยังเซิร์ฟเวอร์เพื่ออัปเดตโปรไฟล์`}
+        content4={`4.กำหนด URL และหัวข้อ Authorization ใน headers ด้วย Token ที่ได้รับ`}
+        content5={`5.กำหนด contentType เป็น "application/json" เนื่องจากข้อมูลที่ส่งไปเป็น JSON`}
+        content6="6.ส่งข้อมูลผู้ใช้ที่ต้องการอัปเดตในรูปแบบ JSON ผ่านพารามิเตอร์ data"
+        content7="7.รอการตอบกลับจากเซิร์ฟเวอร์ และทำการตรวจสอบผลลัพธ์ที่ได้รับ"
+        content8={`8.หากคำขอสำเร็จ (code == 0) แสดงข้อความ "Successfully changed" ด้วย msgPageObj.show()`}
+        content9="9.หากเกิดข้อผิดพลาดในการส่งคำขอหรือการตอบกลับจากเซิร์ฟเวอร์ จะแสดงข้อความ 'error' และสามารถทำการจัดการเพิ่มเติมในฟังก์ชัน error ได้"
+        content10="10.สุดท้ายในฟังก์ชัน complete สามารถเพิ่มโค้ดที่ต้องการให้ทำงานหลังจากทำคำขอเสร็จสิ้นได้ อาจเป็นการล้างค่าหรือทำความสะอาดต่าง ๆ"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    AddAvatar: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Setting_account.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน AddAvatar(file) ใช้สำหรับอัปโหลดรูปภาพของผู้ใช้ โดยมีขั้นตอนการทำงานดังนี้"
+        content1={`1.ใช้ localStorage.getItem("token") เพื่อเรียก Token ที่ถูกเก็บไว้ใน Local Storage และเก็บไว้ในตัวแปร Token`}
+        content2={`2.แปลง Token จาก JSON string เป็น Object ด้วย JSON.parse(Token)`}
+        content3={`3.สร้างอ็อบเจ็กต์ FormData เพื่อเก็บข้อมูลไฟล์ที่จะอัปโหลด`}
+        content4={`4.เพิ่มไฟล์ที่จะอัปโหลดลงใน FormData ด้วย formData.append("file", file)`}
+        content5={`5.แสดง Loader โดยใช้ loaderObj.show()`}
+        content6={`6.ส่งคำขอ HTTP PUT ไปยังเซิร์ฟเวอร์เพื่ออัปโหลดไฟล์`}
+        content7={`7.กำหนด URL และหัวข้อ Authorization ใน headers ด้วย Token ที่ได้รับ`}
+        content8={`8.กำหนด contentType เป็น false เนื่องจากเราใช้ FormData และไม่ต้องการให้ jQuery กำหนด Content-Type ให้เรา`}
+        content9={`9.กำหนด processData เป็น false เนื่องจากเราไม่ต้องการให้ jQuery แปลงข้อมูลให้เป็น query string`}
+        content10={`10.รอการตอบกลับจากเซิร์ฟเวอร์ และทำการตรวจสอบผลลัพธ์ที่ได้รับ`}
+        content11={`11.หากคำขอสำเร็จ (code == 0) แสดงรูปภาพผ่าน URL ที่ได้จากเซิร์ฟเวอร์ และอัปเดตที่แสดงรูปภาพในหน้าเว็บ`}
+        content12={`12.หากเกิดข้อผิดพลาดในการส่งคำขอหรือการตอบกลับจากเซิร์ฟเวอร์ แสดงข้อความ "sys.serverError" และซ่อน Loader ที่แสดงอยู่ด้วย loaderObj.unShow()`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    UpdateAvatar: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Setting_account.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน UpdateAvatar(Img) ใช้สำหรับอัปเดตรูปภาพโปรไฟล์ของผู้ใช้ โดยมีขั้นตอนการทำงานดังนี้"
+        content1={`1.ใช้ localStorage.getItem("token") เพื่อเรียก Token ที่ถูกเก็บไว้ใน Local Storage และเก็บไว้ในตัวแปร Token`}
+        content2={`2.แปลง Token จาก JSON string เป็น Object ด้วย JSON.parse(Token)`}
+        content3={`3.สร้างอ็อบเจ็กต์ mData เพื่อเก็บข้อมูลรูปภาพใหม่ที่จะอัปเดต`}
+        content4={`4.ใช้ console.log(mData) เพื่อตรวจสอบข้อมูลที่จะส่งไปยังเซิร์ฟเวอร์`}
+        content5={`5.ส่งคำขอ HTTP PATCH ไปยังเซิร์ฟเวอร์เพื่ออัปเดตรูปภาพโปรไฟล์`}
+        content6={`6.กำหนด URL และหัวข้อ Authorization ใน headers ด้วย Token ที่ได้รับ`}
+        content7={`7.กำหนด contentType เป็น "application/json" เนื่องจากเราส่งข้อมูลเป็น JSON`}
+        content8={`8.ส่งข้อมูลรูปภาพที่จะอัปเดตในรูปแบบ JSON โดยใช้ JSON.stringify(mData)`}
+        content9={`9.รอการตอบกลับจากเซิร์ฟเวอร์ และทำการตรวจสอบผลลัพธ์ที่ได้รับ`}
+        content10={`10.หากคำขอสำเร็จ (code == 0) แสดงข้อความ "update avatar done" ในคอนโซล`}
+        content11={`11.หากเกิดข้อผิดพลาดในการส่งคำขอหรือการตอบกลับจากเซิร์ฟเวอร์ แสดงข้อความ "sys.serverError" และซ่อน Loader ที่แสดงอยู่ด้วย loaderObj.unShow()`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // setting_order.html
+    getAll: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Setting_order.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getAll(state) ใช้สำหรับเรียกดูรายการคำสั่งซื้อทั้งหมดโดยพารามิเตอร์ state จะระบุสถานะของคำสั่งซื้อที่ต้องการดู และมีขั้นตอนการทำงานดังนี้"
+        content1={`1.ฟังก์ชัน getTimeLine(id) ใช้สำหรับเรียกข้อมูลไทม์ไลน์ของคำสั่งซื้อโดยใช้ id ของคำสั่งซื้อ`}
+        content2={`2.สร้างตัวแปร collect_data เพื่อเก็บข้อมูลรายการคำสั่งซื้อที่ได้รับ`}
+        content3={`3.สร้างอ็อบเจ็กต์ token เพื่อใช้เพื่อเข้าถึง Token ที่เก็บไว้ใน Local Storage`}
+        content4={`4.ตรวจสอบค่าของ state เพื่อกำหนดค่า stateEdit และ stateDelivery ตามที่กำหนด`}
+        content5={`5.ส่งคำขอ HTTP GET เพื่อเรียกข้อมูลคำสั่งซื้อจากเซิร์ฟเวอร์โดยใช้ stateEdit และ stateDelivery ที่กำหนดไว้`}
+        content6={`6.ถ้าคำขอสำเร็จ (code == 0) จะนำข้อมูลที่ได้รับมาใช้แสดงผล`}
+        content7={`7.สร้าง HTML สำหรับแสดงข้อมูลแต่ละรายการคำสั่งซื้อ`}
+        content8={`8.เพิ่มเหตุการณ์คลิกบนแต่ละรายการคำสั่งซื้อเพื่อแสดงรายละเอียดและทำการตรวจสอบสถานะเพื่อดำเนินการต่อไป`}
+        content9={`9.หากเกิดข้อผิดพลาดในการส่งคำขอหรือการตอบกลับจากเซิร์ฟเวอร์ จะแสดงข้อความ "sys.serverError" และซ่อน Loader ที่แสดงอยู่ด้วย loaderObj.unShow()`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    scroller: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Setting_order.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน scroller() ใช้สำหรับกำหนดค่าขนาดและลักษณะของสไคโรลเลอร์ โดยทำการกำหนดความกว้าง width, ความสูง height, และสีพื้นหลัง background-color ของสไคโรลเลอร์ เพื่อให้เข้ากับหน้าต่างการแสดงผล ซึ่งมีขั้นตอนการทำงานดังนี้"
+        content1="1.ใช้เงื่อนไขการตรวจสอบความกว้างของหน้าจอ w และความสูงของหน้าจอ h เพื่อปรับขนาดของสไคโรลเลอร์ให้เต็มที่ในหน้าจอ"
+        content2="2.กำหนดค่าความกว้าง ความสูง และสีพื้นหลังของสไคโรลเลอร์ด้วย CSS"
+        content3="3.สร้างอ็อบเจ็กต์ของ IScroll โดยระบุเลือกใช้งานประเภท probeType เป็น 1 เพื่อเปิดใช้งานการตรวจสอบเลื่อนอย่างที่มีประสิทธิภาพ และการใช้งานเมาส์เพื่อเลื่อน (mouseWheel: true) ในสไคโรลเลอร์ที่ถูกสร้างขึ้นด้วย settingOrder1Scroller เพื่อให้สามารถเลื่อนข้อมูลในสไคโรลเลอร์ได้โดยใช้เมาส์ได้และการเคลื่อนย้ายบนและล่างของหน้าจอจะถูกตรวจจับได้ด้วยประสิทธิภาพสูง."
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // setting.html
+    SettingCheckToken: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Setting.html"
+        headerName={getTitle()}
+        content="-SettingCheckToken() คือฟังก์ชันที่ใช้ในการตรวจสอบการเข้าสู่ระบบของผู้ใช้ โดยทำการดึง token จาก localStorage และแปลงเป็น JSON object เพื่อตรวจสอบว่ามี token อยู่หรือไม่ ขั้นตอนการทำงานคือ"
+        content1="1.ดึง token จาก localStorage โดยใช้ getItem() และแปลงเป็น JSON object ด้วย JSON.parse()"
+        content2={`2.ตรวจสอบว่า token มีค่าเป็น null หรือไม่ ถ้ามีค่าเป็น null แสดงว่าผู้ใช้ยังไม่ได้เข้าสู่ระบบ ให้ทำการซ่อนหน้า loginPage และปิดการทำงานของอีเวนต์ click บนปุ่ม logout โดยใช้ off("click") และกำหนดสีพื้นหลังของกลุ่ม logout เป็นสีเทา`}
+        content3="3.ถ้า token ไม่เป็น null แสดงว่าผู้ใช้ได้เข้าสู่ระบบ ให้เปลี่ยนสีพื้นหลังของกลุ่ม logout เป็นสีแดง"
+        content4="ฟังก์ชันนี้ทำหน้าที่ตรวจสอบสถานะการเข้าสู่ระบบและปรับเปลี่ยนการแสดงผลของหน้าเว็บไซต์ตามสถานะที่ตรวจสอบได้"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getQRcode: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Setting.html"
+        headerName={getTitle()}
+        content="-getQRcode() เป็นฟังก์ชันที่ใช้ในการขอรับ QR code และรหัสเชิญชวนจากเซิร์ฟเวอร์ โดยทำการส่งคำขอไปยังเซิร์ฟเวอร์ด้วยการใช้ AJAX เมื่อได้รับข้อมูลเรียบร้อยแล้ว จะแสดง QR code และรหัสเชิญชวนบนหน้าเว็บไซต์ ขั้นตอนการทำงานคือ"
+        content1="1.ดึง token จาก localStorage โดยใช้ getItem() และแปลงเป็น JSON object ด้วย JSON.parse()"
+        content2={`2.ส่งคำขอ GET ไปยัง URL /v1/inviteCode ของเซิร์ฟเวอร์พร้อมกับ token ใน header`}
+        content3={`3.เมื่อได้รับข้อมูลเรียบร้อยแล้ว ตรวจสอบว่ามีการตอบกลับด้วยสถานะเป็น 0 หรือไม่ ถ้าใช่ แสดงว่าคำขอสำเร็จ และนำข้อมูล QR code และรหัสเชิญชวนมาแสดงบนหน้าเว็บไซต์`}
+        content4={`4.หากมีข้อผิดพลาดเกิดขึ้นในการส่งคำขอหรือไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้ ให้แสดงข้อความเกี่ยวกับข้อผิดพลาดที่เกิดขึ้น`}
+        content5={`ฟังก์ชันนี้ทำหน้าที่ขอรับ QR code และรหัสเชิญชวนจากเซิร์ฟเวอร์และแสดงผลบนหน้าเว็บไซต์ให้กับผู้ใช้.`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // start.html
+    startInit: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Start.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน init ใช้สำหรับการเริ่มต้นโมดูลหลักของเว็บไซต์ โดยมีการทำงานดังนี้"
+        content1={`1.เรียกใช้ฟังก์ชัน pageInit("startPage") เพื่อกำหนดให้หน้า "startPage" เป็นหน้าเริ่มต้น`}
+        content2={`2.เรียกใช้ฟังก์ชัน slideImg() เพื่อทำการสไลด์รูปภาพบนหน้าเว็บ`}
+        content3={`3.เรียกใช้ฟังก์ชัน setAllUILang('getstart') เพื่อตั้งค่าภาษาของ UI ให้เป็น "getstart"`}
+        content4={`4.กำหนดความสูงของหน้า "startPage" ให้เท่ากับความสูงของหน้าจอ`}
+        content5={`5.เพิ่มการทำงานเมื่อคลิกที่ปุ่ม "start_login" โดยเมื่อคลิกจะแสดงหน้า "loginPage"`}
+        content6={`6.ในฟังก์ชัน slideImg() นั้นมีการกำหนดการทำงานของรูปภาพสไลด์ด้วยการกำหนดเหตุการณ์เมื่อคลิกที่ปุ่มหรือภาพ`}
+        content7={`ฟังก์ชันนี้เป็นตัวบูรณาการและเริ่มต้นการทำงานของโมดูลหลักของเว็บไซต์ โดยจะทำการกำหนดค่าเริ่มต้นต่าง ๆ เช่น หน้าเริ่มต้นที่จะแสดง การทำงานของสไลด์ภาพ เป็นต้น ตามที่ได้ระบุไว้ในโค้ดที่ให้มา`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // topup.html
+    TopUpCheckToken: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Topup.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน TopUpCheckToken มีหน้าที่ตรวจสอบการเข้าสู่ระบบโดยการตรวจสอบการมีหรือไม่มี token ที่เก็บไว้ใน localStorage โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึงข้อมูล token จาก localStorage และแปลงเป็น JSON object ด้วย JSON.parse(getToken)"
+        content2={`2.ถ้าไม่มี token ใน localStorage ฟังก์ชันจะซ่อน input สำหรับการเติมเงินโดยการเปลี่ยนค่า css property visibility เป็น "hidden"`}
+        content3={`3.ถ้ามี token ใน localStorage ฟังก์ชันจะแสดง input สำหรับการเติมเงินโดยการเปลี่ยนค่า css property visibility เป็น "visible" และเพิ่มการตรวจสอบการกรอกข้อมูลใน input โดยเรียกฟังก์ชัน checkNoInput เมื่อมีการ input ข้อมูลใหม่เข้ามาใน input field ด้วยการใช้งานเหตุการณ์ "input" บน input field ที่มี id เป็น "input_top_up"`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    topup_checkNoInput: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Topup.html"
+        headerName={getTitle()}
+        content="-checkNoInput มีหน้าที่ตรวจสอบว่ามีการกรอกข้อมูลใน input field สำหรับจำนวนเงินที่ต้องการเติมหรือไม่ โดยมีขั้นตอนการทำงานดังนี้"
+        content1={`1.ดึงค่าที่กรอกเข้ามาใน input field สำหรับจำนวนเงินด้วย $("#input_top_up").val() และเก็บไว้ในตัวแปร input_amount`}
+        content2={`2.ตรวจสอบว่า input_amount เป็นค่าว่างหรือไม่ ถ้าเป็นค่าว่างจะทำการปิดการใช้งานปุ่ม "Go to Payment Method" และปุ่ม "Upload Slip" และปรับเปลี่ยนสไตล์ของปุ่มเหล่านี้ให้เป็นสีเทา และไม่มีเส้นขอบ`}
+        content3={`3.ถ้า input_amount ไม่ใช่ค่าว่าง จะเปิดการใช้งานปุ่ม "Go to Payment Method" และปุ่ม "Upload Slip" และปรับเปลี่ยนสไตล์ของปุ่มเหล่านี้ให้เป็นสีน้ำเงินและมีเส้นขอบ และกำหนดเหตุการณ์ "click" ของปุ่ม "Upload Slip" และปุ่ม "Go to Payment Method" เพื่อทำการอัปโหลดสลิปการโอนเงินและยืนยันการโอนเงินตามลำดับ`}
+        content4={`4.เมื่อปุ่ม "Go to Payment Method" ถูกคลิก จะตรวจสอบว่าจำนวนเงินที่กรอกเข้ามามีค่าน้อยกว่า 300 บาทหรือไม่ ถ้าน้อยกว่า 300 บาทจะแสดงข้อความแจ้งเตือนให้กรอกเงินอย่างน้อย 300 บาท และหากมากกว่าหรือเท่ากับ 300 บาท จะเรียกใช้ฟังก์ชัน UpdateSlipPayment เพื่อทำการอัปเดตการโอนเงิน ด้วยการส่งข้อมูลรูปภาพของสลิปการโอนเงินที่อัปโหลดไว้ด้วย`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    topup_addSlipPayment: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Topup.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน AddSlipPayment ทำหน้าที่อัปโหลดไฟล์สลิปการโอนเงินไปยังเซิร์ฟเวอร์ และจัดการกับการตอบสนองจากเซิร์ฟเวอร์ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง Token จาก localStorage เพื่อใช้ในการยืนยันตัวตนและให้สิทธิ์ในการเข้าถึงระบบ"
+        content2="2.สร้างอ็อบเจ็กต์ FormData เพื่อเก็บข้อมูลไฟล์ที่จะอัปโหลด"
+        content3="3.เพิ่มไฟล์ลงใน FormData โดยใช้เมธอด formData.append('file', file)"
+        content4="4.แสดง loader เพื่อแสดงการดำเนินการอัปโหลด"
+        content5="5.ส่งคำขอ AJAX ไปยัง URL /v1/files โดยใช้เมธอด PUT"
+        content6="6.เพิ่ม header Authorization ใน request เพื่อส่ง Token ในการยืนยันตัวตน"
+        content7="7.ส่งข้อมูล FormData ไปยังเซิร์ฟเวอร์โดยกำหนด contentType เป็น false เพื่อให้ jQuery ไม่แปลงข้อมูล FormData เป็น query string และกำหนด processData เป็น false เพื่อป้องกันการประมวลผลข้อมูลใน FormData โดย jQuery"
+        content8="8.เมื่อได้รับการตอบสนองจากเซิร์ฟเวอร์สำเร็จ ซ่อน loader และตรวจสอบว่า code ในข้อมูลที่ได้รับมาเท่ากับ 0 หรือไม่"
+        content8p1={`8.1.ถ้าเป็น 0 แสดงว่าการอัปโหลดสลิปสำเร็จ จะแสดงภาพสลิปที่อัปโหลดและปรับเปลี่ยนการแสดงผลของปุ่ม "Upload Slip" และ "Close Slip"`}
+        content8p2={`8.2.ถ้าไม่เป็น 0 แสดงว่ามีข้อผิดพลาดเกิดขึ้น และแสดงข้อความแจ้งเตือนให้ผู้ใช้ทราบ`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    topup_updateSlipPayment: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Topup.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน UpdateSlipPayment ทำหน้าที่ส่งคำขอเพื่ออัปเดตข้อมูลการชำระเงินพร้อมส่งสลิปการโอนเงินไปยังเซิร์ฟเวอร์ และจัดการกับการตอบสนองจากเซิร์ฟเวอร์ ดังนี้"
+        content1="1.ดึง Token จาก localStorage เพื่อใช้ในการยืนยันตัวตนและให้สิทธิ์ในการเข้าถึงระบบ"
+        content2="2.ดึงจำนวนเงินที่ผู้ใช้ป้อนจาก input field #input_top_up"
+        content3="3.สร้างอ็อบเจ็กต์ mData เพื่อเก็บข้อมูลเงินที่จะทำการโอนและภาพสลิปการโอน"
+        content4="4.ส่งคำขอ AJAX ไปยัง URL /v1/payment/apply โดยใช้เมธอด POST"
+        content5="5.เพิ่ม header Authorization ใน request เพื่อส่ง Token ในการยืนยันตัวตน"
+        content6={`6.ส่งข้อมูล mData ไปยังเซิร์ฟเวอร์โดยแปลงเป็น JSON และกำหนด contentType เป็น "application/json"`}
+        content7="7.เมื่อได้รับการตอบสนองจากเซิร์ฟเวอร์สำเร็จ ซ่อน loader และตรวจสอบว่า code ในข้อมูลที่ได้รับมาเท่ากับ 0 หรือไม่"
+        content7p1="7.1.ถ้าเป็น 0 แสดงว่าการอัปเดตการชำระเงินสำเร็จ แสดงข้อความแจ้งเตือนและดำเนินการใน UI ตามที่กำหนด"
+        content7p2="7.2.ถ้าไม่เป็น 0 แสดงว่ามีข้อผิดพลาดเกิดขึ้น แสดงข้อความแจ้งเตือนให้ผู้ใช้ทราบ"
+        content8="8.ปิดการแสดงผลของภาพสลิปการโอนและแสดง input field และปุ่ม 'Upload Slip' อีกครั้ง"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    //transaction.html
+    transactionCheckToken: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Topup.html"
+        headerName={getTitle()}
+        content="-transactionCheckToken"
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
@@ -3919,6 +5096,45 @@ export default function HomePage() {
                 setOpenMemberTier={() => setOpenMemberTier(!openMemberTier)}
                 setOpenMonitor={() => setOpenMonitor(!openMonitor)}
                 setOpenMyDevices={() => setOpenMyDevices(!openMyDevices)}
+                setOpenNewAddress={() => setOpenNewAddress(!openNewAddress)}
+                setOpenNotification={() =>
+                  setOpenNotification(!openNotification)
+                }
+                setOpenOrderInfoCancelRefund={() =>
+                  setOpenOrderInfoCancelRefund(!openOrderInfoCancelRefund)
+                }
+                setOpenOrderInfoCancel={() =>
+                  setOpenOrderInfoCancel(!openOrderInfoCancel)
+                }
+                setOpenOrderInfoReceived={() =>
+                  setOpenOrderInfoReceived(!openOrderInfoReceived)
+                }
+                setOpenOrderInfoWaitRceive={() =>
+                  setOpenOrderInfoWaitRceive(!openOrderInfoWaitRceive)
+                }
+                setOpenOrderState10={() =>
+                  setOpenOrderState10(!openOrderState10)
+                }
+                setOpenOrderStateShip={() =>
+                  setOpenOrderStateShip(!openOrderStateShip)
+                }
+                setOpenPaymentMethod={() =>
+                  setOpenPaymentMethod(!openPaymentMethod)
+                }
+                setOpenPaymentMethod2={() =>
+                  setOpenPaymentMethod2(!openPaymentMethod2)
+                }
+                setOpenPaymentStatistic={() =>
+                  setOpenPaymentStatistic(!openPaymentStatistic)
+                }
+                setOpenProductCart={() => setOpenProductCart(!openProductCart)}
+                setOpenProductdetail={() =>
+                  setOpenProductdetail(!openProductdetail)
+                }
+                setOpenPurchaseReport={() =>
+                  setOpenPurchaseReport(!openPurchaseReport)
+                }
+                setOpenRedeem={() => setOpenRedeem(!openRedeem)}
                 openHomeHtml={openHomeHtml}
                 openAdddatalogger={openAdddatalogger}
                 openCancelOrder={openCancelOrder}
@@ -3943,6 +5159,21 @@ export default function HomePage() {
                 openMemberTier={openMemberTier}
                 openMonitor={openMonitor}
                 openMyDevices={openMyDevices}
+                openNewAddress={openNewAddress}
+                openNotification={openNotification}
+                openOrderInfoCancelRefund={openOrderInfoCancelRefund}
+                openOrderInfoCancel={openOrderInfoCancel}
+                openOrderInfoReceived={openOrderInfoReceived}
+                openOrderInfoWaitRceive={openOrderInfoWaitRceive}
+                openOrderState10={openOrderState10}
+                openOrderStateShip={openOrderStateShip}
+                openPaymentMethod={openPaymentMethod}
+                openPaymentMethod2={openPaymentMethod2}
+                openPaymentStatistic={openPaymentStatistic}
+                openProductCart={openProductCart}
+                openProductdetail={openProductdetail}
+                openPurchaseReport={openPurchaseReport}
+                openRedeem={openRedeem}
               />
             )}
           </ul>
@@ -4063,6 +5294,19 @@ export default function HomePage() {
               setOpenPurchaseReport={() =>
                 setOpenPurchaseReport(!openPurchaseReport)
               }
+              setOpenRedeem={() => setOpenRedeem(!openRedeem)}
+              setOpenRefund={() => setOpenRefund(!openRefund)}
+              setOpenRegister={() => setOpenRegister(!openRegister)}
+              setOpenReportdatalogger={() =>
+                setOpenReportdatalogger(!openReportdatalogger)
+              }
+              setOpenSettingAccount={() =>
+                setOpenSettingAccount(!openSettingAccount)
+              }
+              setOpenSettingOrder={() => setOpenSettingOrder(!openSettingOrder)}
+              setOpenSetting={() => setOpenSetting(!openSetting)}
+              setOpenStart={() => setOpenStart(!openStart)}
+              setOpenTopup={() => setOpenTopup(!openTopup)}
               openHomeHtml={openHomeHtml}
               openAdddatalogger={openAdddatalogger}
               openCancelOrder={openCancelOrder}
@@ -4101,6 +5345,15 @@ export default function HomePage() {
               openProductCart={openProductCart}
               openProductdetail={openProductdetail}
               openPurchaseReport={openPurchaseReport}
+              openRedeem={openRedeem}
+              openRefund={openRefund}
+              openRegister={openRegister}
+              openReportdatalogger={openReportdatalogger}
+              openSettingAccount={openSettingAccount}
+              openSettingOrder={openSettingOrder}
+              openSetting={openSetting}
+              openStart={openStart}
+              openTopup={openTopup}
             />
           )}
         </div>
