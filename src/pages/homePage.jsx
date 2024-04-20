@@ -5135,6 +5135,20 @@ export default function HomePage() {
                   setOpenPurchaseReport(!openPurchaseReport)
                 }
                 setOpenRedeem={() => setOpenRedeem(!openRedeem)}
+                setOpenRefund={() => setOpenRefund(!openRefund)}
+                setOpenRegister={() => setOpenRegister(!openRegister)}
+                setOpenReportdatalogger={() =>
+                  setOpenReportdatalogger(!openReportdatalogger)
+                }
+                setOpenSettingAccount={() =>
+                  setOpenSettingAccount(!openSettingAccount)
+                }
+                setOpenSettingOrder={() =>
+                  setOpenSettingOrder(!openSettingOrder)
+                }
+                setOpenSetting={() => setOpenSetting(!openSetting)}
+                setOpenStart={() => setOpenStart(!openStart)}
+                setOpenTopup={() => setOpenTopup(!openTopup)}
                 openHomeHtml={openHomeHtml}
                 openAdddatalogger={openAdddatalogger}
                 openCancelOrder={openCancelOrder}
@@ -5174,6 +5188,14 @@ export default function HomePage() {
                 openProductdetail={openProductdetail}
                 openPurchaseReport={openPurchaseReport}
                 openRedeem={openRedeem}
+                openRefund={openRefund}
+                openRegister={openRegister}
+                openReportdatalogger={openReportdatalogger}
+                openSettingAccount={openSettingAccount}
+                openSettingOrder={openSettingOrder}
+                openSetting={openSetting}
+                openStart={openStart}
+                openTopup={openTopup}
               />
             )}
           </ul>
