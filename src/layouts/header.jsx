@@ -46,7 +46,7 @@ export default function HeaderNavbar() {
     return (
       <button
         {...rest}
-        className="group relative px-4 py-2 font-medium text-slate-100 transition-colors duration-[400ms] hover:text-indigo-300">
+        className="group relative p-2 font-medium text-slate-100 transition-colors duration-[400ms] hover:text-indigo-300">
         <span>{children}</span>
 
         {/* TOP */}
