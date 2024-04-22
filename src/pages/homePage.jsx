@@ -26,7 +26,6 @@ export default function HomePage() {
 
   // open adddatalogger
   const [openAdddatalogger, setOpenAdddatalogger] = useState(false)
-  // console.log("openAdddatalogger", openAdddatalogger)
 
   // open cancelOrder
   const [openCancelOrder, setOpenCancelOrder] = useState(false)
@@ -5440,7 +5439,6 @@ export default function HomePage() {
           </ul>
         </nav>
       )}
-
       {/*SolarApp  */}
       {selectedNavbar === "SolarApp" && (
         <nav className="w-full lg:bg-[#E7E9EB] lg:w-[20%]">
@@ -5606,21 +5604,17 @@ export default function HomePage() {
           </ul>
         </nav>
       )}
-
       {/* Arithmetic */}
       {selectedNavbar === "Arithmetic" && <p>Arithmetic</p>}
-
       {/* Right content  */}
       {/* SolarApp  */}
       {selectedNavbar === "SolarApp" &&
         menuComponentsSolarApp[selectedMenu] &&
-        menuComponentsSolarApp[selectedMenu]()}
-
+        menuComponentsSolarApp[selectedMenu]()}{" "}
       {/* Model structure  */}
       {selectedNavbar === "Model structure" &&
         menuComponentModelStructure[selectedMenu] &&
         menuComponentModelStructure[selectedMenu]()}
-
       {/* Open Drawer */}
       <Drawer
         title="Model Menu"
