@@ -12511,3 +12511,1032 @@ export function Topup_updateSlipPayment() {
     </div>
   )
 }
+
+// transaction.html
+// transactionCheckToken
+export function Transaction_transactionCheckToken() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`getToken = window.localStorage.getItem('token');`}
+        {`token = JSON.parse(getToken);`}
+        {`if (token == null) {`}
+        <div className="ml-2">{`// Handle case where token is null`}</div>
+        {`} else {`}
+        <div className="ml-2">
+          {`// transactionObj.getTransaction("All");`}
+          {`$("#tran_all").click()`}
+        </div>
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// getTransaction
+export function Transaction_getTransaction() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2 flex flex-col gap-10">
+        <div>
+          {`console.log(count_page, "=======count_page======>>>");`}
+          {`if (count_page == null) {`}
+          <div className="ml-2">{`count_page = 1`}</div>
+          {`}`}
+          {`var limitPage = 15`}
+          {`var checkType`}
+          {`switch (typeTransaction) {`}
+          <div className="ml-2">
+            {`case "All":`}
+            <div className="ml-2">
+              {`checkType = \`?type=10,20,30,40,50&&limit=\${limitPage}&&page=\${count_page}\``}
+              {`break;`}
+            </div>
+            {`case 10:`}
+            <div className="ml-2">
+              {`checkType = \`?type=10,20&&limit=\${limitPage}&&page=\${count_page}\``}
+              {`break;`}
+            </div>
+            {`case 30:`}
+            <div className="ml-2">
+              {`checkType = \`?type=30&&limit=\${limitPage}&&page=\${count_page}\``}
+              {`break;`}
+            </div>
+            {`case 40:`}
+            <div className="ml-2">
+              {`checkType = \`?type=40&&limit=\${limitPage}&&page=\${count_page}\``}
+              {`break;`}
+            </div>
+            {`case 50:`}
+            <div className="ml-2">
+              {`checkType = \`?type=50&&limit=\${limitPage}&&page=\${count_page}\``}
+              {`break;`}
+            </div>
+            {`default:`}
+            <div className="ml-2">{`break;`}</div>
+          </div>
+          {`}`}
+        </div>
+
+        <div>
+          {`var str = ""`}
+          <div className="ml-2">
+            {`getToken = localStorage.getItem('token');`}
+            {`token = JSON.parse(getToken);`}
+            {`$.ajax({`}
+            <div className="ml-2">
+              {`type: 'get',`}
+              {`url: API_SERVER + \`/v1/wallet/transactions\${checkType}\`,`}
+              {`headers: {`}
+              <div className="ml-2">
+                {`'Authorization': 'Bearer ' + token.token,`}
+              </div>
+              {`},`}
+              {`async: true,`}
+              {`timeout: 100000,`}
+              {`success: function (data) {`}
+              <div className="ml-2">
+                {`loaderObj.unShow();`}
+                {`if (data.code == 0) {`}
+                <div className="ml-2">
+                  {`if (data.result.length == 0) {`}
+                  <div className="ml-2">
+                    {`str += '<div style="height: 100px; color: #303030; font-weight: bold; font-size: 14px;"class="flexCenter">'`}
+                    {`str += '<img src="./pic/Monitor/Icon-YojoSolar-Nodata.png" style="width:80px; height:80px;">'`}
+                    {`str += '</div>'`}
+                    {`$("#loop_transation_show").html(str);`}
+                    {`$(".pagination_tran").css({ "display": "none" });`}
+                  </div>
+                  {`} else {`}
+                  <div className="ml-2">
+                    {`$(".pagination_tran").css({ "display": "flex" });`}
+                    {`$.each(data.result, function (index, data) {`}
+                    <div className="ml-2">
+                      {`var typeTran`}
+                      {`var typeTranColor`}
+                      {`var stateTran`}
+                      {`var stateColor`}
+                      {`var TypeFromTo`}
+                      {`var Symbol`}
+                      {`var time = moment(data.cdt).format("YYYY-MM-DD | hh:mm:ss");`}
+                      {/* Continue with the rest of the code here */}
+                    </div>
+                    {`})`}
+                  </div>
+                  {`}`}
+                </div>
+                {`} else {`}
+                <div className="ml-2">
+                  {`loaderObj.unShow();`}
+                  {`msgPageObj.show(getStatusCode(data.code))`}
+                </div>
+                {`}`}
+              </div>
+              {`},`}
+              {`error: function (xmlhttprequest, error) {`}
+              <div className="ml-2">
+                {`loaderObj.unShow();`}
+                {`msgPageObj.show(NSLang('sys.serverError'))`}
+              </div>
+              {`},`}
+            </div>
+            {`})`}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// pagination_tran
+export function Transaction_pagination_tran() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var CHECK = localStorage.getItem("token")`}
+        {`if (CHECK == null) {`}
+        <div className="ml-2">
+          {`function getRandomValue(min, max) {`}
+          <div className="ml-2">
+            {`return Math.floor(Math.random() * (max - min + 1)) + min`}
+          </div>
+          {`}`}
+          {`// สุ่มค่าและกำหนดค่าให้กับแต่ละฟิลด์`}
+          {`fields.forEach((field) => {`}
+          <div className="ml-2">
+            {`var randomValue = getRandomValue(0, 100) // สุ่มค่าจาก 0 ถึง 100`}
+            {`$(#{field}).text(randomValue) // กำหนดค่าสุ่มให้กับฟิลด์ที่มี ID ที่ระบุ`}
+          </div>
+          {`})`}
+        </div>
+        {`} else {`}
+        <div className="ml-2">
+          {`getToken = window.localStorage.getItem("token")`}
+          {`token = JSON.parse(getToken)`}
+          {`$.ajax({`}
+          <div className="ml-2">
+            {`type: "get",`}
+            {`url: API_SERVER + /v1/reportData/detail?devicePn={pin}&date={year}-{month}-{day}&page=1&limit=10,`}
+            {`headers: {`}
+            <div className="ml-2">
+              {`Authorization: "Bearer " + token.token,`}
+              {`"Content-Type": "application/json",`}
+            </div>
+            {`},`}
+            {`dataType: "json",`}
+            {`async: true,`}
+            {`timeout: 100000,`}
+            {`success: function (data) {`}
+            <div className="ml-2">
+              {`if (data.code === 0) {`}
+              <div className="ml-2">
+                {`loaderObj.unShow()`}
+                {`if (data.record == 0) {`}
+                <div className="ml-2">
+                  {`fields.forEach((field) => $(#{field}).text("0"))`}
+                </div>
+                {`} else {`}
+                <div className="ml-2">
+                  {`fields.forEach((field) => $(#{field}).text(data.result[0][field]))`}
+                </div>
+                {`}`}
+              </div>
+              {`}`}
+              {`if (data.code === 4324) {`}
+              <div className="ml-2">
+                {`fields.forEach((field) => $(#{field}).text("0"))`}
+              </div>
+              {`}`}
+              {`if (data.code === 4319) {`}
+              <div className="ml-2">
+                {`fields.forEach((field) => $(#{field}).text(Math.floor(Math.random() * 100))) // สุ่มเลขจำนวนเต็มในช่วง 0-99`}
+              </div>
+              {`} else {`}
+              <div className="ml-2">
+                {`// msgPageObj.show(getStatusCode(data.code))`}
+                {`loaderObj.unShow()`}
+              </div>
+              {`}`}
+            </div>
+            {`},`}
+            {`error: function (xmlhttprequest, error) {`}
+            <div className="ml-2">{`loaderObj.unShow()`}</div>
+            {`},`}
+          </div>
+          {`})`}
+        </div>
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// transaction_calPage
+export function Transaction_calPage() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`getToken = window.localStorage.getItem('token');`}
+        {`token = JSON.parse(getToken);`}
+
+        {`console.log(type);`}
+
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: 'get',`}
+          {`url: API_SERVER + '/v1/wallet/transactions?type=10,20,30,40,50&&limit=10000',`}
+          {`headers: {`}
+          <div className="ml-2">
+            {`'Authorization': 'Bearer ' + token.token,`}
+          </div>
+          {`},`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`if (data.code == 0) {`}
+            <div className="ml-2">
+              {`var TypeTopup = data.result.filter(data => data.type == 10 || data.type == 20);`}
+              {`var TypeTransfer = data.result.filter(data => data.type == 30);`}
+              {`var TypeRedeem = data.result.filter(data => data.type == 40);`}
+              {`var TypeBuy = data.result.filter(data => data.type == 50);`}
+
+              {`switch (type) {`}
+              <div className="ml-2">
+                {`case 'All':`}
+                <div className="ml-2">
+                  {`totalPages = Math.ceil(data.records / 15);`}
+                  {`break;`}
+                </div>
+                {`case 10:`}
+                <div className="ml-2">
+                  {`totalPages = Math.ceil(TypeTopup.length / 15);`}
+                  {`break;`}
+                </div>
+                {`case 30:`}
+                <div className="ml-2">
+                  {`totalPages = Math.ceil(TypeTransfer.length / 15);`}
+                  {`break;`}
+                </div>
+                {`case 40:`}
+                <div className="ml-2">
+                  {`totalPages = Math.ceil(TypeRedeem.length / 15);`}
+                  {`break;`}
+                </div>
+                {`case 50:`}
+                <div className="ml-2">
+                  {`totalPages = Math.ceil(TypeBuy.length / 15);`}
+                  {`break;`}
+                </div>
+                {`default:`}
+                <div className="ml-2">{`break;`}</div>
+              </div>
+              {`}`}
+              {`transactionObj.pagination_tran();`}
+              {`console.log(totalPages + '========Total Page======>>>');`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`msgPageObj.show(getStatusCode(data.code));`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">
+            {`loaderObj.unShow();`}
+            {`msgPageObj.show(NSLang('sys.serverError'));`}
+          </div>
+          {`},`}
+        </div>
+        {`})`}
+      </div>
+    </div>
+  )
+}
+
+//  transfer.html
+//transferCheckToken
+export function Transfer_transferCheckToken() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`getToken = window.localStorage.getItem('token');`}
+        {`token = JSON.parse(getToken);`}
+
+        {`if (token == null) {`}
+        <div className="ml-2">
+          {`$('#transfer_my_address').text('-');`}
+          {`$('#transfer_address_send,#transfer_amount').css({ "visibility": "hidden" });`}
+          {`$('#transfer_go_method').off('click');`}
+        </div>
+        {`} else {`}
+        <div className="ml-2">
+          {`$('#transfer_address_send,#transfer_amount').css({ "visibility": "visible" });`}
+          {`$("#transfer_address_send, #transfer_amount").on("input", function () {`}
+          <div className="ml-2">{`checkNoInput();`}</div>
+          {`});`}
+        </div>
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// checkNoInput
+export function Transfer_checkNoInput() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var input_amount = $("#transfer_amount").val();`}
+        {`var address = $("#transfer_address_send").val();`}
+
+        {`if (input_amount === "" || address === "") {`}
+        <div className="ml-2">
+          {`// Disable button and change styling`}
+          {`$('#transfer_go_method').prop("disabled", true).css({ "background": "rgb(187, 173, 173)", "border": "none" });`}
+          {`$('#transfer_go_method').off('click');`}
+        </div>
+        {`} else {`}
+        <div className="ml-2">
+          {`// Enable button and change styling`}
+          {`$('#transfer_go_method').prop("disabled", false).css({ "background": "#3B78FE", "border": "1px solid #3B78FE" });`}
+          {`// Attach click event handler`}
+          {`$('#transfer_go_method').unbind().click(function () {`}
+          <div className="ml-2">
+            {`to_address = $('#transfer_address_send').val();`}
+            {`to_amount = parseFloat($('#transfer_amount').val());`}
+
+            {`if (address.length != 27) {`}
+            <div className="ml-2">
+              {`msgPageObj.show("Invalid wallet address");`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`msgObjTran.show(`}
+              <div className="ml-2">
+                {`\`<div class="flexTop_c">`}
+                <div className="ml-2">
+                  {`<div style="display:flex;">Amount: {to_amount}</div><br>`}
+                  {`<div>Address:{to_address}</div>`}
+                </div>
+                {`</div>\`,`}
+                {`"Are you sure you want to transfer?",`}
+                {`function () {`}
+                <div className="ml-2">
+                  {`msgObjTran.unShow();`}
+                  {`postTransfer();`}
+                </div>
+                {`},`}
+                {`function () {`}
+                <div className="ml-2">{`msgObjTran.unShow();`}</div>
+                {`});`}
+              </div>
+            </div>
+            {`}`}
+          </div>
+          {`});`}
+        </div>
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// postTransfer
+export function Transfer_postTransfer() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var getToken = window.localStorage.getItem("token");`}
+        {`var token = JSON.parse(getToken);`}
+
+        {`to_address = $('#transfer_address_send').val();`}
+        {`to_amount = parseFloat($('#transfer_amount').val());`}
+
+        {`mData = {`}
+        <div className="ml-2">
+          {`"to": to_address,`}
+          {`"amount": to_amount`}
+        </div>
+        {`};`}
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: 'POST',`}
+          {`url: API_SERVER + '/v1/wallet/transfer',`}
+          {`headers: {`}
+          <div className="ml-2">
+            {`'Authorization': 'Bearer ' + token.token,`}
+          </div>
+          {`},`}
+          {`data: JSON.stringify(mData),`}
+          {`contentType: 'application/json',`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`loaderObj.unShow();`}
+            {`if (data.code == 0) {`}
+            <div className="ml-2">
+              {`msgObj4.show('The Baht transfer was successful');`}
+              {`walletObj.getUserData();`}
+              {`walletObj.call();`}
+              {`cleanInput();`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`msgPageObj.show(getStatusCode(data.code));`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (error) {`}
+          <div className="ml-2">{`console.error(error);`}</div>
+          {`}`}
+        </div>
+        {`});`}
+      </div>
+    </div>
+  )
+}
+
+// update_order.html
+//showOrder
+export function Update_order_showOrder() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var collect_data = [];`}
+        {`var getToken = window.localStorage.getItem("token");`}
+        {`var token = JSON.parse(getToken);`}
+
+        {`var productCount = {};`}
+        {`var totalCount = 0;`}
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: 'get',`}
+          {`url: API_SERVER + '/v1/orders',`}
+          {`headers: {`}
+          <div className="ml-2">
+            {`'Authorization': 'Bearer ' + token.token,`}
+          </div>
+          {`},`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`if (data.code == 0) {`}
+            <div className="ml-2">
+              {`// Clear the content of #Order1Tab`}
+              {`$("#showOrder").html("");`}
+
+              {`data.result.forEach(function (item) {`}
+              <div className="ml-2">
+                {`item.items.forEach(function (product) {`}
+                <div className="ml-2">
+                  {`var str = \`<div id="conten{product.oid}"`}
+                  <div className="ml-2">{`...Your HTML content here...`}</div>
+                  {`</div>\`;`}
+
+                  {`if (productCount[product.oid]) {`}
+                  <div className="ml-2">{`productCount[product.oid]++;`}</div>
+                  {`} else {`}
+                  <div className="ml-2">{`productCount[product.oid] = 1;`}</div>
+                  {`}`}
+
+                  {`// Increment the total count`}
+                  <div className="ml-2">{`totalCount++;`}</div>
+                  {`collect_data.push({ "id": product.oid });`}
+
+                  {`// Append the generated HTML for each id`}
+                  <div className="ml-2">{`$("#showOrder").append(str);`}</div>
+                </div>
+                {`});`}
+              </div>
+              {`});`}
+              {`console.log("Product Counts:", productCount);`}
+              {`console.log("Total Count:", totalCount);`}
+              {`$("#countOrder").html(totalCount);`}
+              {`myScroll = new IScroll('#showOrderScroller', { probeType: 1, mouseWheel: true });`}
+              {`console.log("Product Counts:", productCount);`}
+
+              {`$.each(collect_data, function (index, id) {`}
+              <div className="ml-2">
+                {`$($\`#conten{id.id}\`).unbind().click(function () {`}
+                <div className="ml-2">
+                  {`pageShow('trackingPage');`}
+                  {`trackingObj.Getinformation(id.id);`}
+                </div>
+                {`});`}
+              </div>
+              {`});`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`msgPageObj.show(getStatusCode(data.code));`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">
+            {`loaderObj.unShow();`}
+            {`msgPageObj.show(NSLang('sys.serverError'));`}
+          </div>
+          {`},`}
+        </div>
+        {`});`}
+      </div>
+    </div>
+  )
+}
+
+// scroller
+export function Update_order_scroller() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2 flex flex-col gap-4">
+        <p>{`  $("#showOrderScroller").css({ "width": w, "height": h - 90, "overflow": "hidden", "background-color": "#E3F5FF", });`}</p>
+        <p>{`  $("#showOrderScroller").css({ "width": w, "height": h - 90, "overflow": "hidden", "background-color": "#E3F5FF", });`}</p>
+      </div>
+    </div>
+  )
+}
+
+// vouncher_code.html
+//showVoucher
+export function Vouncher_code_showVoucher() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var str = '';`}
+        {`var collect_data = [];`}
+
+        {`if (data.length == 0) {`}
+        <div className="ml-2">
+          {`str += '<div style="height: 100px; color: #303030; font-weight: bold; font-size: 14px;"class="flexCenter">'`}
+          {`str += '<img src="./pic/Monitor/Icon-YojoSolar-Nodata.png" style="width:80px; height:80px;">'`}
+          {`str += '</div>'`}
+          {`$("#loop_voucher_show").html(str);`}
+        </div>
+        {`} else {`}
+        <div className="ml-2">
+          {`$.each(data, function (index, data) {`}
+          <div className="ml-2">
+            {`str += '<div style="height: 15px;"></div>'`}
+            {`str += '<div style="width: 90% ; background: #fff; height: 70px; border-radius: 8px; box-shadow: 2px 2px 3px 0px #0000001A;"class="flexCenter">'`}
+            {`str += '<div style="width: 90%;" class="flexSpac">'`}
+            {`str += '<div class="flexCenter" style="gap: 10px;">'`}
+            {`str += '<img src="./pic/order/icon4.png" alt="" style="width: 55px; height:24px;">'`}
+            {`str += '<div style="display: flex; flex-direction: column; gap: 3px;">'`}
+            {`str += '<span style="color: #303030; font-size: 14px; font-weight: bold;">Voucher code : <span> ' + data.code + '</span> </span>'`}
+            {`str += '<span style="font-size: 14px;">Discount <span> ' + data.discount + '</span> ฿</span>'`}
+            {`str += '</div>'`}
+            {`str += '</div>'`}
+            {`str += ' <input type="radio" name="voucher_code_select" value="' + data.id + '" style="accent-color: #3B78FE; width: 17px; height: 17px;">'`}
+            {`str += '</div>'`}
+            {`str += '</div>'`}
+            {`str += '</div>'`}
+
+            {`collect_data.push({`}
+            <div className="ml-2">
+              {`"id": data.id,`}
+              {`"discount": data.discount`}
+            </div>
+            {`});`}
+          </div>
+          {`});`}
+
+          {`$("#loop_voucher_show").html(str);`}
+          {`myScroll = new IScroll('#voucher_Scroller', { probeType: 1, mouseWheel: true });`}
+
+          {`$("input[name='voucher_code_select']").change(function () {`}
+          <div className="ml-2">
+            {`var selectedPayment = $("input[name='voucher_code_select']:checked").val();`}
+            {`var mapDataDiscount = collect_data.filter(data => data.id == selectedPayment);`}
+            {`$("#show_voucher_dis_order").text(mapDataDiscount[0].discount);`}
+            {`confirm_orderObj.setVoucherId(mapDataDiscount[0].id, mapDataDiscount[0].discount);`}
+          </div>
+          {`});`}
+
+          {`var lastChecked = null;`}
+          {`document.querySelectorAll('input[type="radio"][name="voucher_code_select"]').forEach(radio => {`}
+          <div className="ml-2">
+            {`radio.addEventListener('click', function () {`}
+            <div className="ml-2">
+              {`if (this === lastChecked) {`}
+              <div className="ml-2">
+                {`this.checked = false;`}
+                {`$("#show_voucher_dis_order").text('0');`}
+                {`confirm_orderObj.setVoucherId(null, 0);`}
+                {`lastChecked = null;`}
+              </div>
+              {`} else {`}
+              <div className="ml-2">{`lastChecked = this;`}</div>
+              {`}`}
+            </div>
+            {`});`}
+          </div>
+          {`});`}
+        </div>
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// wallet.html
+//walletCheckToken
+export function Wallet_walletCheckToken() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`getToken = localStorage.getItem("token");`}
+        {`token = JSON.parse(getToken);`}
+
+        {`console.log(token);`}
+        {`if (token == null) {`}
+        <div className="ml-2">
+          {`$("#loginPage").transition({`}
+          <div className="ml-2">{`x: w,`}</div>
+          {`}, 0);`}
+          {`$("#wallet_nologin").css({display: "none"});`}
+          {`$("#wallet_icons_welcome, #show_w_login, #walletHeader").css({`}
+          <div className="ml-2">{`display: "none",`}</div>
+          {`});`}
+          {`$("#welcome_wallet, #copy_id_wall, #W_address, #show_level_w").css({`}
+          <div className="ml-2">{`display: "none",`}</div>
+          {`});`}
+        </div>
+        {`} else {`}
+        <div className="ml-2">
+          {`$("#wallet_nologin").css({display: "none"});`}
+          {`$("#wallet_icons_welcome, #show_w_login, #walletHeader").css({`}
+          <div className="ml-2">{`display: "flex",`}</div>
+          {`});`}
+          {`$("#welcome_wallet, #copy_id_wall, #W_address, #show_level_w").css({`}
+          <div className="ml-2">{`display: "flex",`}</div>
+          {`});`}
+          {`walletObj.getUserData();`}
+          {`homeObj.getProfile();`}
+          {`get_dataTransaction();`}
+        </div>
+        {`}`}
+      </div>
+    </div>
+  )
+}
+
+// getUserData
+export function Wallet_getUserData() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`getToken = localStorage.getItem("token");`}
+        {`token = JSON.parse(getToken);`}
+
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: "get",`}
+          {`url: API_SERVER + "/v1/wallet",`}
+          {`headers: {`}
+          <div className="ml-2">
+            {`Authorization: "Bearer " + token.token,`}
+          </div>
+          {`},`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`if (data.code == 0) {`}
+            <div className="ml-2">
+              {`// Original string`}
+              {`var originalString = data.result.address;`}
+
+              {`Address_wall = data.result.address;`}
+
+              {`// Get the desired substring`}
+              {`var modifiedString =`}
+              <div className="ml-2">
+                {`originalString.substring(0, 4) + "..." + originalString.slice(-4);`}
+              </div>
+              {`// var modifiedString = originalString.substring(0, 23) + "...";`}
+
+              {`var formattedBalance = data.result.balance.toLocaleString(undefined, {`}
+              <div className="ml-2">
+                {`minimumFractionDigits: 2,`}
+                {`maximumFractionDigits: 2,`}
+              </div>
+              {`});`}
+
+              {`$("#w_balance").text("฿ " + formattedBalance);`}
+              {`$("#balance_home, #show_order_money").text(formattedBalance);`}
+
+              {`$("#W_address").text(modifiedString);`}
+
+              {`var formattedNumber = data.result.coin.toLocaleString(undefined, {`}
+              <div className="ml-2">
+                {`minimumFractionDigits: 2,`}
+                {`maximumFractionDigits: 2,`}
+              </div>
+              {`});`}
+              {`$(`}
+              <div className="ml-2">
+                {`"#coins_show, #redeem_coins, #w_coins_data , #coins_home, #coins_monitor, #coins_home_main, #coins_show_order"`}
+              </div>
+              {`).text(formattedNumber);`}
+
+              {`$("#transfer_my_address").text(data.result.address);`}
+              {`$("#w_balance_max").text(data.result.balance);`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`msgPageObj.show(getStatusCode(data.code));`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">
+            {`loaderObj.unShow();`}
+            {`msgPageObj.show(NSLang("sys.serverError"));`}
+          </div>
+          {`},`}
+        </div>
+        {`});`}
+      </div>
+    </div>
+  )
+}
+
+// get_dataTransaction
+export function Wallet_get_dataTransaction() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`var str = "";`}
+        {`getToken = localStorage.getItem("token");`}
+        {`token = JSON.parse(getToken);`}
+
+        {`$.ajax({`}
+        <div className="ml-2">
+          {`type: "get",`}
+          {`url: API_SERVER + \`/v1/wallet/transactions?type=10,20,30,40,50&&limit=5\`,`}
+          {`headers: {`}
+          <div className="ml-2">
+            {`Authorization: "Bearer " + token.token,`}
+          </div>
+          {`},`}
+          {`async: true,`}
+          {`timeout: 100000,`}
+          {`success: function (data) {`}
+          <div className="ml-2">
+            {`if (data.code == 0) {`}
+            <div className="ml-2">
+              {`if (data.result.length == 0) {`}
+              <div className="ml-2">
+                {`str +=`}
+                <div className="ml-2">
+                  {`'<div style="height: 100px; color: #303030; font-weight: bold; font-size: 14px;"class="flexCenter">'`}
+                  {`str +=`}
+                  <div className="ml-2">
+                    {`'<img src="./pic/Monitor/Icon-YojoSolar-Nodata.png" style="width:80px; height:80px;">'`}
+                    {`str += "</div>";`}
+                  </div>
+                </div>
+                {`$("#loop_transation_show").html(str);`}
+              </div>
+              {`} else {`}
+              <div className="ml-2">
+                {`$.each(data.result, function (index, data) {`}
+                <div className="ml-2">
+                  {`var typeTran;`}
+                  {`var typeTranColor;`}
+                  {`var stateTran;`}
+                  {`var stateColor;`}
+                  {`var TypeFromTo;`}
+                  {`var Symbol;`}
+                  {`var time = moment(data.cdt).format("YYYY-MM-DD | hh:mm:ss");`}
+
+                  {`// Original string`}
+                  {`var originalString = data.toAddress;`}
+                  {`var originalString2 = data.formAddress;`}
+                  {`var Address;`}
+
+                  {`var formattedMomey = data.amount.toLocaleString(undefined, {`}
+                  <div className="ml-2">
+                    {`minimumFractionDigits: 2,`}
+                    {`maximumFractionDigits: 2,`}
+                  </div>
+                  {`});`}
+
+                  {`switch (data.type) {`}
+                  <div className="ml-2">
+                    {`case 10:`}
+                    <div className="ml-2">
+                      {`typeTran = "Transfer";`}
+                      {`typeTranColor = "#3B78FE";`}
+                      {`TypeFromTo = "To : ";`}
+                      {`Address = originalString.substring(0, 4) + "..." + originalString.slice(-4);`}
+                      {`Symbol = "-";`}
+                      {`break;`}
+                    </div>
+                    {`case 20:`}
+                    <div className="ml-2">
+                      {`typeTran = "Transfer";`}
+                      {`typeTranColor = "#3B78FE";`}
+                      {`TypeFromTo = "From : ";`}
+                      {`Address = originalString2.substring(0, 4) + "..." + originalString2.slice(-4);`}
+                      {`Symbol = "+";`}
+                      {`break;`}
+                    </div>
+                    {`case 30:`}
+                    <div className="ml-2">
+                      {`typeTran = "Top up";`}
+                      {`typeTranColor = "#4CD462";`}
+                      {`TypeFromTo = "By : ";`}
+                      {`Address = " Transfer from bank";`}
+                      {`Symbol = "+";`}
+                      {`break;`}
+                    </div>
+                    {`case 40:`}
+                    <div className="ml-2">
+                      {`typeTran = "Redeem";`}
+                      {`typeTranColor = "#9A61F8";`}
+                      {`TypeFromTo = "From : ";`}
+                      {`Address = " Yojo coin";`}
+                      {`Symbol = "+";`}
+                      {`break;`}
+                    </div>
+                    {`case 50:`}
+                    <div className="ml-2">
+                      {`typeTran = "Buy";`}
+                      {`typeTranColor = "#FC5353";`}
+                      {`TypeFromTo = "Order no. ";`}
+                      {`Address = " " + data.orderId;`}
+                      {`Symbol = "-";`}
+                      {`break;`}
+                    </div>
+                    {`default:`}
+                    <div className="ml-2">{`break;`}</div>
+                  </div>
+                  {`}`}
+
+                  {`switch (data.state) {`}
+                  <div className="ml-2">
+                    {`case 10:`}
+                    <div className="ml-2">
+                      {`stateTran = "Pending";`}
+                      {`stateColor = "#FE813B";`}
+                      {`break;`}
+                    </div>
+                    {`case 20:`}
+                    <div className="ml-2">
+                      {`stateTran = "Completed";`}
+                      {`stateColor = "#4CD462";`}
+                      {`break;`}
+                    </div>
+                    {`case 30:`}
+                    <div className="ml-2">
+                      {`stateTran = "Failed";`}
+                      {`stateColor = "#FF5247";`}
+                      {`break;`}
+                    </div>
+                    {`default:`}
+                    <div className="ml-2">{`break;`}</div>
+                  </div>
+                  {`}`}
+
+                  {`str +=`}
+                  <div className="ml-2">
+                    {`'<div style="width: 100%; height: 85px; border: 1px solid #3636361A; box-shadow: 2px 2px 3px 1px #0000001A; margin: 7px 0;display: flex; flex-direction: column;align-items: center; justify-content: center; gap: 5px;">'`}
+                    {`str +=`}
+                    <div className="ml-2">
+                      {`'<div style="width: 90% ;display: flex; justify-content: space-between; align-items: center;">'`}
+                      {`str +=`}
+                      <div className="ml-2">
+                        {`'<div class="flexCenter" style="gap: 10px;">'`}
+                        {`str +=`}
+                        <div className="ml-2">
+                          {`' <div style="width: 80px; height: 25px; border-radius: 8px; background: ' + typeTranColor + ' ; color: #fff; font-weight: bold; font-size: 12px;"class="flexCenter">'`}
+                          {`str +=`}
+                          <div className="ml-2">
+                            {`"<span>" + typeTran + "</span>"`}
+                            {`str += "</div>";`}
+                          </div>
+                        </div>
+                        {`str += "</div>";`}
+                      </div>
+                      {`str += "</div>";`}
+                    </div>
+                    {`str +=`}
+                    <div className="ml-2">
+                      {`'<div style="width: 90% ;display: flex; justify-content: space-between; align-items: center;">'`}
+                      {`str +=`}
+                      <div className="ml-2">
+                        {`'<div style="color: #303030; font-size: 12px; font-weight: 600;">'`}
+                        {`str +=`}
+                        <div className="ml-2">
+                          {`"<span>" + TypeFromTo + "</span>"`}
+                          {`str +=`}
+                          <div className="ml-2">
+                            {`"<span>" + Address + "</span>"`}
+                            {`str += "</div>";`}
+                          </div>
+                        </div>
+                        {`str +=`}
+                        <div className="ml-2">
+                          {`' <div style="font-size: 16px; color: #303030; font-weight: 600;">'`}
+                          {`str +=`}
+                          <div className="ml-2">
+                            {`"<span>" + Symbol + " ฿ " + formattedMomey + "</span>"`}
+                            {`str += "</div>";`}
+                          </div>
+                        </div>
+                        {`str += "</div>";`}
+                      </div>
+                      {`str += "</div>";`}
+                    </div>
+                    {`str +=`}
+                    <div className="ml-2">
+                      {`'<div style="width: 90% ;display: flex; justify-content: space-between; align-items: center;">'`}
+                      {`str +=`}
+                      <div className="ml-2">
+                        {`'<div style="font-size: 12px; color: #9F9F9F; ">'`}
+                        {`str +=`}
+                        <div className="ml-2">
+                          {`"<span>" + time + "</span>"`}
+                          {`str += "</div>";`}
+                        </div>
+                        {`str +=`}
+                        <div className="ml-2">
+                          {`'<div style="font-size: 12px; color: ' + stateColor + '; font-weight: 600;">'`}
+                          {`str +=`}
+                          <div className="ml-2">
+                            {`"<span>" + stateTran + "</span>"`}
+                            {`str += "</div>";`}
+                          </div>
+                        </div>
+                        {`str += "</div>";`}
+                      </div>
+                      {`str += "</div>";`}
+                    </div>
+                    {`str += "</div>";`}
+                  </div>
+                  {`});`}
+                  {`$("#w_loop_transaction").html(str);`}
+                  {`myScroll = new IScroll("#walletPage", {`}
+                  <div className="ml-2">
+                    {`probeType: 1,`}
+                    {`mouseWheel: true,`}
+                  </div>
+                  {`});`}
+                </div>
+                {`});`}
+              </div>
+              {`}`}
+            </div>
+            {`} else {`}
+            <div className="ml-2">
+              {`msgPageObj.show(getStatusCode(data.code));`}
+            </div>
+            {`}`}
+          </div>
+          {`},`}
+          {`error: function (xmlhttprequest, error) {`}
+          <div className="ml-2">
+            {`loaderObj.unShow();`}
+            {`msgPageObj.show(NSLang("sys.serverError"));`}
+          </div>
+          {`},`}
+        </div>
+        {`});`}
+      </div>
+    </div>
+  )
+}
+
+// loadList
+export function Wallet_loadList() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`myScroll = new IScroll("#scrollerMy_walletPage", {`}
+        <div className="ml-2">
+          {`probeType: 1,`}
+          {`mouseWheel: true,`}
+        </div>
+        {`})`}
+        <div className="ml-2">
+          {`myScroll.on("scroll", function () {`}
+          <div className="ml-2">{`console.log("====>" + this.y)`}</div>
+          {`})`}
+          {`myScroll.on("scrollEnd", function () {`}
+          <div className="ml-2">{`console.log("====" + new Date())`}</div>
+          {`})`}
+          {`myScroll.refresh()`}
+        </div>
+      </div>
+    </div>
+  )
+}

@@ -195,6 +195,20 @@ import {
   Topup_checkNoInput,
   Topup_topUpCheckToken,
   Topup_updateSlipPayment,
+  Transaction_calPage,
+  Transaction_getTransaction,
+  Transaction_pagination_tran,
+  Transaction_transactionCheckToken,
+  Transfer_checkNoInput,
+  Transfer_postTransfer,
+  Transfer_transferCheckToken,
+  Update_order_scroller,
+  Update_order_showOrder,
+  Vouncher_code_showVoucher,
+  Wallet_getUserData,
+  Wallet_get_dataTransaction,
+  Wallet_loadList,
+  Wallet_walletCheckToken,
 } from "../components/FunctionDataText"
 
 import AlertTryit from "./tryitFunction/alertTryit"
@@ -688,6 +702,34 @@ export default function ModelContent({
             {selectedMenu === "topup_updateSlipPayment" && (
               <Topup_updateSlipPayment />
             )}
+            {selectedMenu === "transactionCheckToken" && (
+              <Transaction_transactionCheckToken />
+            )}
+            {selectedMenu === "getTransaction" && (
+              <Transaction_getTransaction />
+            )}
+            {selectedMenu === "pagination_tran" && (
+              <Transaction_pagination_tran />
+            )}
+            {selectedMenu === "transaction_calPage" && <Transaction_calPage />}
+            {selectedMenu === "transferCheckToken" && (
+              <Transfer_transferCheckToken />
+            )}
+            {selectedMenu === "transfer_checkNoInput" && (
+              <Transfer_checkNoInput />
+            )}
+            {selectedMenu === "postTransfer" && <Transfer_postTransfer />}
+            {selectedMenu === "showOrder" && <Update_order_showOrder />}
+            {selectedMenu === "update_order_scroller" && (
+              <Update_order_scroller />
+            )}
+            {selectedMenu === "showVoucher" && <Vouncher_code_showVoucher />}
+            {selectedMenu === "walletCheckToken" && <Wallet_walletCheckToken />}
+            {selectedMenu === "getUserData" && <Wallet_getUserData />}
+            {selectedMenu === "get_dataTransaction" && (
+              <Wallet_get_dataTransaction />
+            )}
+            {selectedMenu === "loadList" && <Wallet_loadList />}
             <p className="ml-4">{`}`}</p>
             <span className="text-[#A52A2A]">&lt;/script&gt;</span>
           </div>

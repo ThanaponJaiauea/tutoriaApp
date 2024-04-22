@@ -20,8 +20,6 @@ export default function HomePage() {
   // console.log("selectedMenu", selectedMenu)
 
   const [openGeneralModel, setOpenGeneralModel] = useState(false)
-  const [openSpecificModel, setOpenSpecificModel] = useState(false)
-  // console.log("openSpecificModel", openSpecificModel)
 
   // open Hoem.html
   const [openHomeHtml, setOpenHomeHtml] = useState(false)
@@ -164,6 +162,21 @@ export default function HomePage() {
 
   // open topup
   const [openTopup, setOpenTopup] = useState(false)
+
+  // open transaction
+  const [openTransaction, setOpenTransaction] = useState(false)
+
+  // open transfer
+  const [openTransfer, setOpenTransfer] = useState(false)
+
+  // open update_order
+  const [openUpdateOrder, setOpenUpdateOrder] = useState(false)
+
+  // open vouncher_code
+  const [openVouncherCode, setOpenVouncherCode] = useState(false)
+
+  // open wallet
+  const [openWallet, setOpenWallet] = useState(false)
 
   const handleModelClick = (menu) => {
     setSelectedMenu(menu)
@@ -1245,6 +1258,102 @@ export default function HomePage() {
       key: "topup_updateSlipPayment",
       category: "topup",
     },
+
+    // transaction.html
+    {
+      name: "transactionCheckToken()",
+      type: "specificModel",
+      key: "transactionCheckToken",
+      category: "transaction",
+    },
+
+    {
+      name: "getTransaction()",
+      type: "specificModel",
+      key: "getTransaction",
+      category: "transaction",
+    },
+
+    {
+      name: "pagination_tran()",
+      type: "specificModel",
+      key: "pagination_tran",
+      category: "transaction",
+    },
+    {
+      name: "calPage()",
+      type: "specificModel",
+      key: "transaction_calPage",
+      category: "transaction",
+    },
+
+    // transfer
+    {
+      name: "transferCheckToken()",
+      type: "specificModel",
+      key: "transferCheckToken",
+      category: "transfer",
+    },
+    {
+      name: "checkNoInput()",
+      type: "specificModel",
+      key: "transfer_checkNoInput",
+      category: "transfer",
+    },
+    {
+      name: "postTransfer()",
+      type: "specificModel",
+      key: "postTransfer",
+      category: "transfer",
+    },
+
+    //update_order.html
+    {
+      name: "showOrder()",
+      type: "specificModel",
+      key: "showOrder",
+      category: "update_order",
+    },
+    {
+      name: "scroller()",
+      type: "specificModel",
+      key: "update_order_scroller",
+      category: "update_order",
+    },
+
+    // vouncher_code.html
+    {
+      name: "showVoucher()",
+      type: "specificModel",
+      key: "showVoucher",
+      category: "vouncher_code",
+    },
+
+    // wallet.html
+    {
+      name: "walletCheckToken()",
+      type: "specificModel",
+      key: "walletCheckToken",
+      category: "wallet",
+    },
+    {
+      name: "getUserData()",
+      type: "specificModel",
+      key: "getUserData",
+      category: "wallet",
+    },
+    {
+      name: "get_dataTransaction()",
+      type: "specificModel",
+      key: "get_dataTransaction",
+      category: "wallet",
+    },
+    {
+      name: "loadList()",
+      type: "specificModel",
+      key: "loadList",
+      category: "wallet",
+    },
   ]
 
   // data  modelStructure
@@ -1657,6 +1766,36 @@ export default function HomePage() {
         return "AddSlipPayment(file)"
       case "topup_updateSlipPayment":
         return "UpdateSlipPayment(Imgs)"
+      case "transactionCheckToken":
+        return "transactionCheckToken()"
+      case "getTransaction":
+        return "getTransaction()"
+      case "getTransaction":
+        return "getTransaction()"
+      case "pagination_tran":
+        return "pagination_tran()"
+      case "transaction_calPage":
+        return "calPage(type)"
+      case "transferCheckToken":
+        return "transferCheckToken()"
+      case "transfer_checkNoInput":
+        return "checkNoInput()"
+      case "postTransfer":
+        return "postTransfer()"
+      case "showOrder":
+        return "showOrder()"
+      case "update_order_scroller":
+        return "scroller()"
+      case "showVoucher":
+        return "showVoucher(data)"
+      case "walletCheckToken":
+        return "walletCheckToken()"
+      case "getUserData":
+        return "getUserData()"
+      case "get_dataTransaction":
+        return "get_dataTransaction()"
+      case "loadList":
+        return "loadList()"
       default:
         return ""
     }
@@ -4841,9 +4980,266 @@ export default function HomePage() {
     transactionCheckToken: () => (
       <ModelContent
         headers="Solar App"
-        headerHtml="Topup.html"
+        headerHtml="Transaction.html"
         headerName={getTitle()}
-        content="-transactionCheckToken"
+        content="-การทำงานของฟังก์ชัน transactionCheckToken เป็นการตรวจสอบ Token ใน localStorage เพื่อตรวจสอบว่าผู้ใช้ได้ทำการเข้าสู่ระบบหรือยัง โดยมีขั้นตอนดังนี้"
+        content1="1.ดึงค่า Token จาก localStorage และแปลงเป็นอ็อบเจ็กต์ JSON"
+        content2="2.ถ้า Token ไม่มีค่าหรือเป็น null แสดงว่าผู้ใช้ยังไม่ได้ทำการเข้าสู่ระบบ ในกรณีนี้ไม่ต้องดำเนินการใด ๆ"
+        content3="3.นทางกลับกัน ถ้า Token มีค่าอยู่แล้ว หมายถึงผู้ใช้ได้ทำการเข้าสู่ระบบแล้ว ดังนั้นจะเรียกใช้งานหน้า transaction โดยเรียกใช้ฟังก์ชัน getTransaction ที่ต้องการโดยส่งพารามิเตอร์ 'All' เพื่อดึงรายการธุรกรรมทั้งหมด"
+        content4="4.ในที่นี้ใช้ jQuery เพื่อคลิกที่ปุ่ม #tran_all เพื่อเรียกดูรายการธุรกรรมทั้งหมดในหน้า transaction ทันทีหลังจากที่ตรวจสอบ Token แล้ว"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getTransaction: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Transaction.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getTransaction มีหน้าที่ดึงข้อมูลรายการธุรกรรมตามประเภทที่กำหนดจาก API และแสดงข้อมูลนั้นในหน้าเว็บไซต์ โดยมีขั้นตอนดังนี้"
+        content1="1.ตรวจสอบค่า count_page ว่ามีค่าหรือไม่ ถ้าไม่มีจะกำหนดให้มีค่าเป็น 1"
+        content2="2.กำหนดค่า limitPage เพื่อกำหนดจำนวนรายการที่จะแสดงในหน้าเดียว"
+        content3="3.กำหนดตัวแปร checkType ตามประเภทของธุรกรรมที่กำหนดไว้"
+        content4="4.ดึง Token จาก localStorage และแปลงเป็น JSON"
+        content5="5.ทำการ request ไปยัง API เพื่อขอข้อมูลรายการธุรกรรมโดยใช้ ajax ของ jQuery"
+        content6="6.หลังจากได้ข้อมูลมาเรียบร้อย จะทำการตรวจสอบว่ามีข้อมูลรายการธุรกรรมหรือไม่ ถ้าไม่มีจะแสดงข้อความว่า 'No data' และซ่อน pagination แต่ถ้ามีข้อมูลจะทำการแสดงรายการธุรกรรมทั้งหมด"
+        content7="7.หลังจากนั้นจะทำการวนลูปเพื่อแสดงข้อมูลรายการธุรกรรมแต่ละรายการ โดยแสดงประเภทของธุรกรรม ที่มาหรือไป วันเวลา และสถานะของธุรกรรมนั้น ๆ"
+        content8="8.สุดท้ายจะสร้าง scrollbar ให้กับการแสดงผลด้วยการใช้ IScroll ของ jQuery เพื่อให้ผู้ใช้สามารถเลื่อนหน้าจอเพื่อดูข้อมูลธุรกรรมได้ทั้งหมด"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    pagination_tran: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Transaction.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน pagination_tran มีหน้าที่สร้างปุ่ม pagination เพื่อให้ผู้ใช้สามารถเลือกหน้าของรายการธุรกรรมที่ต้องการดูได้ โดยมีขั้นตอนดังนี้"
+        content1="1.แสดง loader เพื่อแสดงว่าระบบกำลังทำงานอยู่"
+        content2="2.กำหนดตัวแปร element เพื่อเก็บ element ของ pagination"
+        content3="3.กำหนดตัวแปร page ให้มีค่าเริ่มต้นเป็น 1"
+        content4="4.สร้าง pagination โดยใช้ฟังก์ชัน createpagination_tran และกำหนดค่าต่าง ๆ ตามจำนวนหน้าทั้งหมด totalPages และหน้าปัจจุบัน currentPage"
+        content5="5.หลังจากที่สร้าง pagination เสร็จเรียบร้อยแล้ว จะทำการซ่อน loader"
+        content6="6.กำหนดการทำงานของปุ่มก่อนหน้า ปุ่มถัดไป และหน้าหลังจากนั้น ให้เรียกใช้งาน createpagination_tran และฟังก์ชัน transactionObj.getTransaction() เพื่อดึงข้อมูลรายการธุรกรรมตามหน้าที่ที่ผู้ใช้เลือก"
+        content7="7.สร้าง event listener เมื่อผู้ใช้คลิกที่หน้าของรายการธุรกรรมแต่ละหน้า เพื่อทำการเรียกใช้งาน createpagination_tran และ transactionObj.getTransaction() โดยส่งหมายเลขหน้าที่ผู้ใช้คลิกเข้ามา"
+        content8="8.สร้าง event listener เมื่อผู้ใช้คลิกที่ปุ่มก่อนหน้า ปุ่มถัดไป โดยให้ทำการเรียกใช้งาน createpagination_tran และ transactionObj.getTransaction() โดยการเรียกใช้งาน createpagination_tran ด้วยหน้าปัจจุบันบวกหรือลบ 1 และส่งค่าขึ้นไปยัง transactionObj.getTransaction() เพื่อดึงข้อมูลรายการธุรกรรมตามหน้าที่ใหม่"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    transaction_calPage: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Transaction.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน calPage ใช้สำหรับคำนวณหน้าของ pagination โดยดึงข้อมูลรายการธุรกรรมทั้งหมดจาก API และแบ่งแยกตามประเภทของรายการธุรกรรมที่กำหนด เมื่อได้ข้อมูลรายการธุรกรรมแล้วจะทำการคำนวณหน้าทั้งหมดของ pagination จากนั้นจะเรียกใช้ฟังก์ชัน transactionObj.pagination_tran() เพื่อสร้าง pagination ใหม่"
+        content1="1.ดึงข้อมูลรายการธุรกรรมทั้งหมดจาก API ด้วยการใช้ AJAX request และกำหนด header ให้เป็น token ที่ได้จาก local storage"
+        content2="2.เมื่อรับข้อมูลสำเร็จแล้ว จะทำการแยกประเภทของรายการธุรกรรมตาม type ที่กำหนด และนับจำนวนรายการธุรกรรมแต่ละประเภท"
+        content3="3.คำนวณหน้าทั้งหมดของ pagination โดยหารจำนวนรายการธุรกรรมทั้งหมดด้วยจำนวนรายการที่ต้องการแสดงต่อหน้า และปัดขึ้นเป็นจำนวนเต็ม"
+        content4="4.เรียกใช้ฟังก์ชัน transactionObj.pagination_tran() เพื่อสร้าง pagination ใหม่ด้วยจำนวนหน้าทั้งหมดที่คำนวณได้"
+        content5="โดยทั้งหมดนี้จะช่วยให้ผู้ใช้สามารถเรียกดูรายการธุรกรรมของแต่ละประเภทและทั้งหมดได้อย่างสะดวก และมีการจัดการหน้าของ pagination ให้เป็นไปอย่างเหมาะสมกับจำนวนรายการที่มีอยู่"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // transfer.html
+    transferCheckToken: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Transfer.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน transferCheckToken ถูกใช้เพื่อตรวจสอบว่าผู้ใช้เข้าสู่ระบบหรือไม่ โดยการตรวจสอบ token ที่เก็บไว้ใน local storage หาก token ไม่มีค่า หรือผู้ใช้ไม่ได้เข้าสู่ระบบ จะทำการปรับการแสดงผลและการทำงานของบางส่วนดังนี้"
+        content1="1.หาก token ไม่มีค่าหรือผู้ใช้ไม่ได้เข้าสู่ระบบ"
+        content1p1="1.1.ปรับการแสดงผลของส่วนที่แสดงที่อยู่ของผู้รับและจำนวนเงินที่จะโอนให้แก่ผู้รับให้แสดงเครื่องหมายขีดบรรทัดแทน และซ่อนส่วนที่ให้ผู้ใช้กรอกที่อยู่ผู้รับและจำนวนเงินที่จะโอน"
+        content1p2="1.2.ปิดการทำงานของปุ่ม 'โอนเงิน'"
+        content2="2.หาก token มีค่าและผู้ใช้เข้าสู่ระบบ"
+        content2p1="2.1.แสดงส่วนที่ให้ผู้ใช้กรอกที่อยู่ผู้รับและจำนวนเงินที่จะโอน"
+        content2p2="2.2.เมื่อผู้ใช้เริ่มกรอกข้อมูลที่อยู่ผู้รับและจำนวนเงินที่จะโอน จะมีการเรียกใช้ฟังก์ชัน checkNoInput เพื่อตรวจสอบว่ามีข้อมูลที่ป้อนหรือไม่"
+        content3="ดังนั้น ฟังก์ชันนี้ช่วยในการจัดการและแสดงผลของการโอนเงินให้สอดคล้องกับสถานะการเข้าสู่ระบบของผู้ใช้"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    transfer_checkNoInput: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Transfer.html"
+        headerName={getTitle()}
+        content="-ในฟังก์ชัน checkNoInput มีการตรวจสอบข้อมูลที่ผู้ใช้กรอกเข้ามาในฟิลด์ของจำนวนเงินและที่อยู่ผู้รับ หากข้อมูลใดข้อมูลหนึ่งหรือทั้งสองไม่ได้รับการกรอก เงื่อนไขจะทำการปรับการแสดงผลและการทำงานของปุ่ม 'โอนเงิน' ดังนี้"
+        content1="1.หากข้อมูลที่รับมาในฟิลด์ของจำนวนเงินหรือที่อยู่ผู้รับเป็นค่าว่าง"
+        content1p1="1.1.ปิดการทำงานของปุ่ม 'โอนเงิน' และปรับสไตล์การแสดงผลของปุ่มให้เป็นสีเทาและไม่มีเส้นขอบ"
+        content1p2="1.2.ลบการแนบการคลิกเมื่อปุ่ม 'โอนเงิน' ถูกคลิก"
+        content2="2.หากทั้งจำนวนเงินและที่อยู่ผู้รับได้รับการกรอก"
+        content2p1="2.1.เปิดใช้งานปุ่ม 'โอนเงิน' และปรับสไตล์การแสดงผลของปุ่มให้เป็นสีน้ำเงินและมีเส้นขอบ"
+        content2p2="2.2.กำหนดการตรวจสอบเมื่อปุ่ม 'โอนเงิน' ถูกคลิก เพื่อแสดงข้อมูลการโอนเงินที่ผู้ใช้ต้องการโอนให้สอดคล้องกับข้อมูลที่รับเข้ามา และสร้างกล่องข้อความเพื่อยืนยันการโอนเงิน"
+        content3="กำหนดการตรวจสอบเมื่อปุ่ม 'โอนเงิน' ถูกคลิก เพื่อแสดงข้อมูลการโอนเงินที่ผู้ใช้ต้องการโอนให้สอดคล้องกับข้อมูลที่รับเข้ามา และสร้างกล่องข้อความเพื่อยืนยันการโอนเงิน"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    postTransfer: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Transfer.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน postTransfer ใช้สำหรับส่งคำขอโอนเงินไปยังเซิร์ฟเวอร์เพื่อดำเนินการโอนเงิน โดยมีขั้นตอนการดำเนินการดังนี้"
+        content1="1.ดึง Token จาก Local Storage เพื่อใช้ในการร้องขอโอนเงินและแปลงข้อมูล Token ให้อยู่ในรูปแบบ JSON"
+        content2="2.รับข้อมูลที่ป้อนเข้ามาจากผู้ใช้เกี่ยวกับที่อยู่ผู้รับและจำนวนเงินที่ต้องการโอน"
+        content3="3.สร้างข้อมูลที่จะส่งไปยังเซิร์ฟเวอร์โดยรวมที่อยู่ผู้รับและจำนวนเงิน"
+        content4="4.ทำการส่งคำขอโอนเงินไปยังเซิร์ฟเวอร์โดยใช้ AJAX POST request โดยมีการส่ง Token ใน header และข้อมูลที่จะโอนเงินในรูปแบบ JSON"
+        content5="5.รอรับการตอบกลับจากเซิร์ฟเวอร์ หากคำขอโอนเงินสำเร็จ (code == 0) จะแสดงข้อความว่า 'การโอนเงินสำเร็จ' และทำการอัพเดตข้อมูลของผู้ใช้และโหลดข้อมูลกระเป๋าเงินอีกครั้ง หลังจากนั้นจะล้างข้อมูลที่ป้อนเข้ามาในฟิลด์"
+        content6="ดังนั้น ฟังก์ชันนี้ช่วยในการดำเนินการโอนเงินและการจัดการข้อมูลหลังจากการโอนเงินสำเร็จ ให้ผู้ใช้ทราบถึงผลลัพธ์ของการดำเนินการดังกล่าวและอัพเดตข้อมูลในกระเป๋าเงินของผู้ใช้ให้เป็นไปตามกติกา"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // update_order.html
+    showOrder: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Update_order.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน showOrder เป็นฟังก์ชันที่ใช้ในการดึงข้อมูลการสั่งซื้อจากเซิร์ฟเวอร์ และสร้าง HTML สำหรับแต่ละรายการสั่งซื้อเพื่อแสดงบนหน้าเว็บไซต์ ดังนี้"
+        content1="1.เริ่มต้นด้วยการสร้างอาร์เรย์ว่าง collect_data เพื่อเก็บ ID ของการสั่งซื้อและเรียกใช้ Token ของผู้ใช้จาก local storage"
+        content2="2.ทำการส่งคำขอ AJAX แบบ GET ไปยังเซิร์ฟเวอร์เพื่อดึงรายการสั่งซื้อของผู้ใช้"
+        content3="3.เมื่อรับข้อมูลเรียบร้อยแล้ว, จะทำการวนลูปผ่านทุก ๆ รายการและสินค้าในรายการ"
+        content4="4.สำหรับแต่ละสินค้าในการสั่งซื้อ, จะสร้าง HTML ที่แสดงข้อมูลสินค้าและเพิ่มลงในอิลิเมนต์ #showOrder บนหน้าเว็บ"
+        content5="5.จะทำการเก็บนับจำนวนของแต่ละสินค้าและจำนวนทั้งหมดของสินค้า"
+        content6="6.จะอัปเดตอิลิเมนต์ #countOrder ด้วยจำนวนทั้งหมดของสินค้า"
+        content7="7.จะสร้างการเริ่มต้นของ IScroll สำหรับอิลิเมนต์ #showOrderScroller เพื่อเปิดใช้งานฟังก์ชันการเลื่อน"
+        content8="8.จะผูกเหตุการณ์คลิกกับแต่ละรายการสินค้าเพื่อจัดการการคลิกและนำไปยังหน้าติดตาม, โดยส่ง ID การสั่งซื้อที่เกี่ยวข้องไปยังฟังก์ชัน trackingObj.Getinformation"
+        content9="โดยรวมแล้ว, ฟังก์ชันนี้ดึงและแสดงข้อมูลการสั่งซื้ออย่างมีประสิทธิภาพพร้อมให้ความสามารถในการโต้ตอบเพื่อให้ผู้ใช้สามารถดูรายละเอียดการติดตามสำหรับแต่ละการสั่งซื้อได้ด้วย"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    update_order_scroller: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Update_order.html"
+        headerName={getTitle()}
+        content={`-ฟังก์ชัน scroller จะกำหนดความกว้างและความสูงของอิลิเมนต์ #showOrderScroller ให้มีค่าเท่ากับ w และ h ลบด้วย 90 พิกเซลเพื่อให้เหมาะสมกับขนาดของหน้าต่างและให้ต่อเนื่องกับส่วนคงเหลือของหน้าต่าง โดยพรอพสตายซ์เริ่มต้น overflow จะถูกตั้งค่าเป็น "hidden" เพื่อป้องกันการเลื่อนข้อความแนวนอนหรือแนวตั้งของเนื้อหาภายใน และมีสีพื้นหลังถูกกำหนดเป็น "#E3F5FF" สีน้ำเงินอ่อนเพื่อให้เหมาะสมกับการแสดงผลข้อมูลบนหน้าต่างนี้ โค้ดที่ไม่ได้ใช้งาน (คือ c) อาจเป็นข้อผิดพลาดหรือการละเว้นของการเขียนโค้ด แต่ไม่มีผลต่อการทำงานของฟังก์ชันนี้ โดยมองเห็นจากการที่มันถูกเขียนเป็นความว่างเปล่าโดยไม่มีเนื้อหาใดๆ ที่มีผลต่อโค้ดที่เขียนไว้ข้างบนและมีผลกับการทำงานของฟังก์ชันที่ถูกเรียกใช้ในที่อื่น`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // vouncher_code.html
+    showVoucher: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Vouncher_code.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน showVoucher ใช้สำหรับแสดงข้อมูลของ voucher บนหน้าเว็บไซต์ โดยรับข้อมูลเข้ามาในรูปแบบของอาร์เรย์ data และทำการสร้าง HTML โดยใช้ข้อมูลนี้เพื่อแสดงรายละเอียดของแต่ละ voucher ภายใน #loop_voucher_show element โดยมีขั้นตอนดังนี้"
+        content1="1.เช็คว่าถ้าข้อมูล voucher ไม่มี (data.length == 0) ก็จะแสดงข้อความแสดงว่าไม่มีข้อมูล voucher พร้อมกับรูปภาพ"
+        content2="2.หากมีข้อมูล voucher จะวนลูปผ่านข้อมูลแต่ละ voucher และสร้าง HTML สำหรับแสดงรายละเอียดของแต่ละ voucher ภายใน #loop_voucher_show"
+        content3="3.เมื่อผู้ใช้เลือก voucher โดยคลิกที่ radio button ของ voucher จะมีการตรวจสอบเมื่อมีการเปลี่ยนแปลงใน radio button ที่ถูกเลือก และทำการอัปเดตค่าส่วนลดของ voucher ที่ถูกเลือกและส่งข้อมูล voucher ที่เลือกไปยังอ็อบเจกต์ confirm_orderObj ในฟังก์ชัน setVoucherId โดยใช้ข้อมูลที่ได้จากการกรองข้อมูลจาก collect_data"
+        content4="4.มีการเพิ่ม event listener เพื่อตรวจสอบการคลิก radio button และทำการยกเลิกการเลือกถ้ามีการคลิกที่ radio button เดิมที่เลือกอยู่แล้ว"
+        content5="ดยรวมแล้วฟังก์ชันนี้ใช้สำหรับการแสดงรายการของ voucher และทำให้ผู้ใช้สามารถเลือก voucher และดูข้อมูลส่วนลดของ voucher ได้โดยตรงบนหน้าเว็บไซต์ โดยมีการจัดการเหตุการณ์เมื่อผู้ใช้ทำการคลิกเลือก voucher อีกด้วยในการยกเลิกการเลือกที่ได้เลือกไว้ก่อนหน้านี้ เพื่อให้ผู้ใช้มีประสบการณ์การใช้งานที่เรียบง่ายและสะดวกมากยิ่งขึ้น"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    // wallet.html
+    walletCheckToken: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Wallet.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน walletCheckToken ใช้สำหรับตรวจสอบว่ามี Token ของผู้ใช้ใน localStorage หรือไม่ โดยมีขั้นตอนดังนี้"
+        content1="1.ดึง Token จาก localStorage และแปลงเป็น JSON object โดยใช้ localStorage.getItem('token') และ JSON.parse(getToken)"
+        content2="2.ทำการตรวจสอบว่า Token นั้นมีค่าเป็น null หรือไม่ ถ้าเป็น null แสดงว่าผู้ใช้ยังไม่ได้เข้าสู่ระบบ ดังนั้นฟังก์ชันจะซ่อนหน้าที่เกี่ยวข้องกับการใช้งาน wallet และทำการแสดงหน้า login แทน"
+        content3="3.หาก Token มีค่าไม่เป็น null แสดงว่าผู้ใช้เข้าสู่ระบบแล้ว จึงจะแสดงหน้า wallet และทำการดึงข้อมูลผู้ใช้และข้อมูลการทำธุรกรรมเพื่อแสดงบนหน้า wallet โดยใช้ฟังก์ชัน walletObj.getUserData() และ get_dataTransaction() ตามลำดับ"
+        content4="ทำให้ฟังก์ชันนี้เป็นส่วนสำคัญในการตรวจสอบสถานะการเข้าสู่ระบบและแสดงหน้า wallet ให้กับผู้ใช้ในแอปพลิเคชัน"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getUserData: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Wallet.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getUserData ใช้สำหรับดึงข้อมูลผู้ใช้งานและข้อมูลกระเป๋าเงินจากเซิร์ฟเวอร์โดยใช้ Token ที่อยู่ใน localStorage และส่งไปยังเซิร์ฟเวอร์เพื่อขอข้อมูล ขั้นตอนการทำงานมีดังนี้"
+        content1="1.ดึง Token จาก localStorage และแปลงเป็น JSON object โดยใช้ localStorage.getItem('token') และ JSON.parse(getToken)"
+        content2="2.ทำการส่งคำขอ GET ไปยังเซิร์ฟเวอร์เพื่อขอข้อมูลผู้ใช้งานและข้อมูลกระเป๋าเงิน โดยใช้ jQuery AJAX ในฟังก์ชัน $.ajax"
+        content3="3.หลังจากที่ได้รับข้อมูลจากเซิร์ฟเวอร์เรียบร้อยแล้ว จะทำการตรวจสอบค่า code ที่ได้รับกลับมา หากเท่ากับ 0 แสดงว่าข้อมูลถูกส่งกลับมาเรียบร้อย จึงทำการแสดงข้อมูลดังนี้"
+        content3p1="3.1.นำ address ที่ได้มาจากเซิร์ฟเวอร์มาแสดงผ่านทาง DOM element ที่มี id W_address"
+        content3p2="3.2.นำ balance ที่ได้มาจากเซิร์ฟเวอร์มาแสดงผ่านทาง DOM element ที่มี id w_balance โดยมีการจัดรูปแบบให้อยู่ในรูปแบบเงินและแสดงเฉพาะส่วนที่เป็นเลขทศนิยม 2 ตำแหน่ง"
+        content3p3="3.3.นำเหรียญ (coin) ที่ได้มาจากเซิร์ฟเวอร์มาแสดงผ่านทาง DOM element ที่มี id w_coins_data โดยมีการจัดรูปแบบให้อยู่ในรูปแบบเลขทศนิยม 2 ตำแหน่ง"
+        content3p4="3.4.นำ balance และเหรียญที่ได้มาจากเซิร์ฟเวอร์ไปแสดงผ่านทางหน้า Home และหน้าแสดงรายการสั่งซื้อ"
+        content4="4.หากค่า code ที่ได้รับไม่เท่ากับ 0 แสดงว่ามีข้อผิดพลาดเกิดขึ้น จึงทำการแสดงข้อความผิดพลาดที่เกิดขึ้นผ่านทาง msgPageObj.show(getStatusCode(data.code))"
+        content5="5.หากเกิดข้อผิดพลาดในการส่งคำขอหรือการเชื่อมต่อกับเซิร์ฟเวอร์ จะทำการแสดงข้อความผิดพลาดที่เกิดขึ้นผ่านทาง msgPageObj.show(NSLang('sys.serverError'))"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    get_dataTransaction: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Wallet.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน get_dataTransaction ใช้สำหรับดึงข้อมูลรายการธุรกรรมที่เกี่ยวข้องกับกระเป๋าเงินของผู้ใช้จากเซิร์ฟเวอร์ โดยส่งคำขอ GET ไปยังเส้นทางที่ระบุและใช้ Token ที่ได้จาก localStorage เพื่อให้เซิร์ฟเวอร์ตรวจสอบการยืนยันตัวตน ขั้นตอนการทำงานมีดังนี้"
+        content1="1.ดึง Token จาก localStorage และแปลงเป็น JSON object โดยใช้ localStorage.getItem('token') และ JSON.parse(getToken)"
+        content2="2.ทำการส่งคำขอ GET ไปยังเซิร์ฟเวอร์เพื่อขอข้อมูลรายการธุรกรรม โดยใช้ jQuery AJAX ในฟังก์ชัน $.ajax"
+        content3="3.หลังจากที่ได้รับข้อมูลจากเซิร์ฟเวอร์เรียบร้อยแล้ว จะทำการตรวจสอบค่า code ที่ได้รับกลับมา หากเท่ากับ 0 แสดงว่าข้อมูลถูกส่งกลับมาเรียบร้อย จึงทำการแสดงข้อมูลรายการธุรกรรม ดังนี้"
+        content3p1="3.1.หากไม่มีรายการธุรกรรมที่ได้รับกลับมา (data.result.length == 0) จะแสดงข้อความแจ้งเตือนว่าไม่มีข้อมูลรายการธุรกรรม"
+        content3p2="3.2.หากมีรายการธุรกรรม จะวนลูปผ่านข้อมูลแต่ละรายการ และสร้าง HTML string เพื่อแสดงข้อมูลแต่ละรายการธุรกรรม"
+        content3p3="3.3.นำ HTML string ที่สร้างไว้มาแสดงผ่านทาง DOM element ที่มี id w_loop_transaction"
+        content4="4.หากค่า code ที่ได้รับไม่เท่ากับ 0 แสดงว่ามีข้อผิดพลาดเกิดขึ้น จึงทำการแสดงข้อความผิดพลาดที่เกิดขึ้นผ่านทาง msgPageObj.show(getStatusCode(data.code))"
+        content5="5.หากเกิดข้อผิดพลาดในการส่งคำขอหรือการเชื่อมต่อกับเซิร์ฟเวอร์ จะทำการแสดงข้อความผิดพลาดที่เกิดขึ้นผ่านทาง msgPageObj.show(NSLang('sys.serverError'))"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    loadList: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Wallet.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน loadList ใช้สำหรับโหลดรายการข้อมูลและตรวจสอบการเลื่อนหน้าจอในหน้ากระเป๋าเงินของผู้ใช้ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.สร้าง instance ของ IScroll ซึ่งเป็นตัวจัดการการเลื่อนหน้าจอในตำแหน่งที่มี id เป็น scrollerMy_walletPage โดยกำหนดค่า probeType: 1 เพื่อให้มีการตรวจสอบตำแหน่งขณะเลื่อน และ mouseWheel: true เพื่อให้สามารถเลื่อนด้วยการใช้เมาส์ได้"
+        content2={`2.เพิ่ม event listener ให้กับเหตุการณ์ "scroll" เพื่อแสดงค่าตำแหน่งขณะเลื่อนหน้าจอผ่านทางคอนโซลด้วย myScroll.on("scroll", function () { console.log("====>" + this.y) })`}
+        content3={`3.เพิ่ม event listener ให้กับเหตุการณ์ "scrollEnd" เพื่อแสดงเวลาที่สิ้นสุดการเลื่อนหน้าจอผ่านทางคอนโซลด้วย myScroll.on("scrollEnd", function () { console.log("====" + new Date()) })`}
+        content4={`4.ทำการ refresh เพื่อปรับปรุงสถานะของการเลื่อนหน้าจอให้เป็นอย่างล่าสุดโดยใช้ myScroll.refresh() เพื่อให้การเลื่อนหน้าจอทำงานได้อย่างถูกต้องและราบรื่น โดยเรียกใช้ฟังก์ชันนี้หลังจากสร้าง instance ของ IScroll แล้ว`}
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
@@ -5053,9 +5449,6 @@ export default function HomePage() {
             {selectedNavbar === "SolarApp" && (
               <FormModelSolarApp
                 data={solarAppData}
-                setOpenSpecificModel={setOpenSpecificModel}
-                openSpecificModel={openSpecificModel}
-                selectedNavbar={selectedNavbar}
                 selectedMenu={selectedMenu}
                 handleModelClick={handleModelClick}
                 setOpenHomeHtml={() => setOpenHomeHtml(!openHomeHtml)}
@@ -5149,6 +5542,13 @@ export default function HomePage() {
                 setOpenSetting={() => setOpenSetting(!openSetting)}
                 setOpenStart={() => setOpenStart(!openStart)}
                 setOpenTopup={() => setOpenTopup(!openTopup)}
+                setOpenTransaction={() => setOpenTransaction(!openTransaction)}
+                setOpenTransfer={() => setOpenTransfer(!openTransfer)}
+                setOpenUpdateOrder={() => setOpenUpdateOrder(!openUpdateOrder)}
+                setOpenVouncherCode={() =>
+                  setOpenVouncherCode(!openVouncherCode)
+                }
+                setOpenWallet={() => setOpenWallet(!openWallet)}
                 openHomeHtml={openHomeHtml}
                 openAdddatalogger={openAdddatalogger}
                 openCancelOrder={openCancelOrder}
@@ -5196,6 +5596,11 @@ export default function HomePage() {
                 openSetting={openSetting}
                 openStart={openStart}
                 openTopup={openTopup}
+                openTransaction={openTransaction}
+                openTransfer={openTransfer}
+                openUpdateOrder={openUpdateOrder}
+                openVouncherCode={openVouncherCode}
+                openWallet={openWallet}
               />
             )}
           </ul>
@@ -5241,9 +5646,6 @@ export default function HomePage() {
           {selectedNavbar === "SolarApp" && (
             <FormModelSolarApp
               data={solarAppData}
-              setOpenSpecificModel={setOpenSpecificModel}
-              openSpecificModel={openSpecificModel}
-              selectedNavbar={selectedNavbar}
               selectedMenu={selectedMenu}
               handleModelClick={handleModelClick}
               setOpenHomeHtml={() => setOpenHomeHtml(!openHomeHtml)}
@@ -5329,6 +5731,11 @@ export default function HomePage() {
               setOpenSetting={() => setOpenSetting(!openSetting)}
               setOpenStart={() => setOpenStart(!openStart)}
               setOpenTopup={() => setOpenTopup(!openTopup)}
+              setOpenTransaction={() => setOpenTransaction(!openTransaction)}
+              setOpenTransfer={() => setOpenTransfer(!openTransfer)}
+              setOpenUpdateOrder={() => setOpenUpdateOrder(!openUpdateOrder)}
+              setOpenVouncherCode={() => setOpenVouncherCode(!openVouncherCode)}
+              setOpenWallet={() => setOpenWallet(!openWallet)}
               openHomeHtml={openHomeHtml}
               openAdddatalogger={openAdddatalogger}
               openCancelOrder={openCancelOrder}
@@ -5376,6 +5783,11 @@ export default function HomePage() {
               openSetting={openSetting}
               openStart={openStart}
               openTopup={openTopup}
+              openTransaction={openTransaction}
+              openTransfer={openTransfer}
+              openUpdateOrder={openUpdateOrder}
+              openVouncherCode={openVouncherCode}
+              openWallet={openWallet}
             />
           )}
         </div>
