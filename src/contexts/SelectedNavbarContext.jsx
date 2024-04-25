@@ -1,15 +1,15 @@
 /** @format */
 
-import { createContext, useState } from "react";
+import {createContext, useState} from "react"
 
-export const SelectedNavbarContext = createContext();
+export const SelectedNavbarContext = createContext()
 
-export default function SelectedNavbarContextProvider({ children }) {
-  const [selectedNavbar, setSelectedNavbar] = useState("Model structure");
+export default function SelectedNavbarContextProvider({children}) {
+  const [selectedNavbar, setSelectedNavbar] = useState("Model structure")
 
-  const [selectedMenu, setSelectedMenu] = useState("alert");
+  const [selectedMenu, setSelectedMenu] = useState("StartProjec")
 
-  const [openDrawer, setOpenDrawer] = useState(false);
+  const [openDrawer, setOpenDrawer] = useState(false)
 
   return (
     <SelectedNavbarContext.Provider
@@ -20,9 +20,8 @@ export default function SelectedNavbarContextProvider({ children }) {
         openDrawer,
         setSelectedMenu,
         selectedMenu,
-      }}
-    >
+      }}>
       {children}
     </SelectedNavbarContext.Provider>
-  );
+  )
 }

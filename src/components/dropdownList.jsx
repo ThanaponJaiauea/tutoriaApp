@@ -1,14 +1,7 @@
 /** @format */
 import {AiOutlineCaretDown, AiOutlineCaretUp} from "react-icons/ai"
-import {
-  FiEdit,
-  FiChevronDown,
-  FiTrash,
-  FiShare,
-  FiPlusSquare,
-} from "react-icons/fi"
+import {FiEdit, FiChevronDown} from "react-icons/fi"
 import {motion} from "framer-motion"
-import {useState} from "react"
 
 export default function DropdownList({
   headerName,
@@ -114,7 +107,10 @@ export default function DropdownList({
         <button
           onClick={onClick}
           className="w-full h-[40px] text-base font-bold flex items-center justify-between gap-2 cursor-pointer">
-          <span className={`font-medium text-sm`}>{headerName}</span>
+          <span className={`font-medium text-sm ${open ? "text-red-600" : ""}`}>
+            {headerName}
+          </span>
+
           <motion.span variants={iconVariants}>
             <i className={`${open ? "text-red-600" : ""}`}>
               <FiChevronDown />

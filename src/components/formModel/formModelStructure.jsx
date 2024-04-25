@@ -1,10 +1,10 @@
 /** @format */
 
-import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
+import {FiEdit, FiChevronDown, FiChevronUp} from "react-icons/fi"
 
 export default function FormModelStructure({
-  setOpenGeneralModel,
-  openGeneralModel,
+  setOpenWidget,
+  openWidget,
   selectedNavbar,
   data,
   handleModelClick,
@@ -12,26 +12,59 @@ export default function FormModelStructure({
 }) {
   return (
     <>
-      <div className=" w-full flex flex-col gap-1">
-        <li className="w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer">
-          <h1>Index.html</h1>
-        </li>
+      {/* Start Prodject */}
+      <div className="w-full flex flex-col gap-1">
+        <button
+          onClick={() => handleModelClick("StartProjec")}
+          className={`w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer ${
+            selectedMenu === "StartProjec"
+              ? "bg-[#04AA6D] text-[#ffff] "
+              : "hover:bg-gray-100 text-black"
+          }`}>
+          <h1>Start Projec</h1>
+        </button>
       </div>
 
+      {/* Index */}
+      <div className="w-full flex flex-col gap-1">
+        <button
+          onClick={() => handleModelClick("index")}
+          className={`w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer ${
+            selectedMenu === "index"
+              ? "bg-[#04AA6D] text-[#ffff] "
+              : "hover:bg-gray-100 text-black"
+          }`}>
+          <h1>Index.html</h1>
+        </button>
+      </div>
+
+      {/* Main */}
+      <div className="w-full flex flex-col gap-1">
+        <button
+          onClick={() => handleModelClick("main")}
+          className={`w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer ${
+            selectedMenu === "main"
+              ? "bg-[#04AA6D] text-[#ffff] "
+              : "hover:bg-gray-100 text-black"
+          }`}>
+          <h1>Main.html</h1>
+        </button>
+      </div>
+
+      {/* Widget */}
       <div className=" w-full flex flex-col gap-1">
-        <li
-          onClick={() => setOpenGeneralModel(!openGeneralModel)}
-          className="w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer"
-        >
+        <button
+          onClick={() => setOpenWidget(!openWidget)}
+          className="w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer">
           <h1>Widget.js</h1>
 
-          {!openGeneralModel ? <AiOutlineCaretDown /> : <AiOutlineCaretUp />}
-        </li>
+          {!openWidget ? <FiChevronDown /> : <FiChevronUp />}
+        </button>
 
-        {openGeneralModel && selectedNavbar === "Model structure" && (
+        {openWidget && selectedNavbar === "Model structure" && (
           <>
             {data
-              ?.filter(item => item.type === "generalModel")
+              ?.filter((item) => item.type === "generalModel")
               .map((el, idx) => (
                 <ul key={idx}>
                   <li
@@ -40,8 +73,7 @@ export default function FormModelStructure({
                       selectedMenu === el?.key
                         ? "bg-[#04AA6D] text-[#ffff] "
                         : "hover:bg-gray-100 text-black"
-                    }`}
-                  >
+                    }`}>
                     {el?.name}
                   </li>
                 </ul>
@@ -50,11 +82,18 @@ export default function FormModelStructure({
         )}
       </div>
 
-      <div className=" w-full flex flex-col gap-1">
-        <li className="w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer">
-          <h1>start page.html</h1>
-        </li>
+      {/* startPage */}
+      <div className="w-full flex flex-col gap-1">
+        <button
+          onClick={() => handleModelClick("startPage")}
+          className={`w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer ${
+            selectedMenu === "startPage"
+              ? "bg-[#04AA6D] text-[#ffff] "
+              : "hover:bg-gray-100 text-black"
+          }`}>
+          <h1>StartPage.html</h1>
+        </button>
       </div>
     </>
-  );
+  )
 }

@@ -1,5 +1,416 @@
 /** @format */
 
+//Index.html modelStructure
+export function IndexHead() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`<meta charset="utf-8">`}
+        {`<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />`}
+        {`<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />`}
+        {`<meta http-equiv="Pragma" content="no-cache" />`}
+        {`<meta http-equiv="Expires" content="0" />`}
+        {`<link rel="shortcut icon" href="#" />`}
+        {`<link rel="stylesheet" href="js/spinnew.css?version=1.1.38" />`}
+        {`<link rel="stylesheet" href="css/login.css">`}
+        {`<link rel="stylesheet" href="css/main.css">`}
+        {`<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>`}
+        {`<link rel="stylesheet" href="css/quill.core.css?version=1.3.6" />`}
+        {`<link rel="stylesheet" href="css/quill.mention.min.css?version=3.1.0" />`}
+        {`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />`}
+        {`<script language="javascript" type="text/javascript" src="js/jquery.js?version=1.0.0.1"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/jquery.transit.js?version=1.0.0.1"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/base64.js"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/widget.js"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/wsFormat.js"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/iscroll-probe.js"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/pic.js?version=1.0.1"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/clipboard.min.js"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/spinnew.js?version=1.0.0.1"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/quill.min.js?version=1.3.6"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/quill.mention.min.js?version=3.1.0"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/sweetalert2.all.min.js"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/data.js"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/user.js"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/swiper.js"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/swiperSlide.js"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/echart.js"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/moment.js"></script>`}
+        {`<script language="javascript" type="text/javascript" src="js/QrCode.js"></script>`}
+      </div>
+    </div>
+  )
+}
+
+// IndexStyle
+export function IndexStyle() {
+  return (
+    <div className="ml-4 break-words">
+      <pre>
+        {`.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexLeft {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+    
+.flexRight {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+    
+.flexTop {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+    
+.flexBottom {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+    
+.flexSpac {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+    
+.flexCenter_c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+    
+.flexLeft_c {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-direction: column;
+}
+    
+.flexRight_c {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-direction: column;
+}
+    
+.flexTop_c {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+    
+.flexBottom_c {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+}
+    
+.flexSpac_c {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}`}
+      </pre>
+    </div>
+  )
+}
+
+// Index body full
+export function IndexBodyFull() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <div>{`<div id="root" class="font-medium"></div>`}</div>
+
+        <div>
+          <p>{`<div id="messageBox">`}</p>
+          <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}</p>
+          <p className="ml-4">{`<div id="messageBoxBg" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
+          <p className="ml-4">{`</div>`}</p>
+          <p className="ml-4 mt-2">{`<div id="messageBoxBodyBg"`}</p>
+          <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+          <p className="ml-10">{`<div id="messageBoxBody"`}</p>
+          <p className="ml-12">{`style="background-color: #f7f7f7;border-radius: 15px;box-shadow: 0px 0px 5px 5px rgb(0, 0, 0,0.2);">`}</p>
+          <p className="ml-12">{`<div style="height: 20px;"></div>`}</p>
+          <p className="ml-12">{`<div id="msgContent"`}</p>
+          <p className="ml-16">{`style="text-align: center;width: 80%;height: 140px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
+          <p className="ml-16">Content</p>
+          <p className="ml-12">{`</div`}</p>
+          <p className="ml-12">{`<div style="width: 100%;height:30px;display: flex;justify-content: center;align-items: center;margin-top: 3px;">`}</p>
+          <p className="ml-16">{`<div id="msgBtnOK" style="width:100%;height:45px;background-color:#ff5b5a;border-radius:0px 0px 0px 5px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
+          <p className="ml-16">{`确认</div>`}</p>
+          <p className="ml-16">{`<div style="background-color:#868686;width:2px"></div>`}</p>
+          <p className="ml-16">{`<div id="msgBtnCancel" style="width:100%;height:45px;background-color:#ededed;border-radius: 0px 0px 5px 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+          <p className="ml-16">{`取消</div>`}</p>
+          <p className="ml-16">{`</div>`}</p>
+          <p className="ml-12">{`</div>`}</p>
+          <p>{`</div>`}</p>
+        </div>
+
+        <div>
+          <p>{`<div id="messageBox3">`}</p>
+          <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}</p>
+          <p className="ml-4">{`<div id="messageBoxBg3" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
+          <p className="ml-4">{`</div>`}</p>
+          <p className="ml-4 mt-2">{`<div id="messageBoxBodyBg3"`}</p>
+          <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+          <p className="ml-10">{`<div id="messageBoxBody3"`}</p>
+          <p className="ml-12">{`style=" display: flex;flex-direction: column; background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
+          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+          <p className="ml-12">{`<div`}</p>
+          <p className="ml-16">{`style="width: 100%; display: flex;     justify-content: center; flex-direction: column; align-items: center;">`}</p>
+          <p className="ml-16">Are you sure ?</p>
+          <p className="ml-12">{`</div>`}</p>
+          <p className="ml-12">{`<div id="msgContent3"`}</p>
+          <p className="ml-16">{`style=" font-size: 14px; color:#9F9F9F ; text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto; ">`}</p>
+          <p className="ml-16">Content</p>
+          <p className="ml-12">{`</div>`}</p>
+          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+          <p className="ml-12">{`<div`}</p>
+          <p className="ml-16">{`style="margin-bottom:10px; width: 100%; display: flex;justify-content: center;align-items: center; flex-direction: row; gap: 10px;">`}</p>
+          <p className="ml-16">{`<div id="msgBtnOK3"`}</p>
+          <p className="ml-20">{`style=" border-radius: 8px; width:30%;height:35px;background-color:#FD9B40;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
+          <p className="ml-20">{`<span style="font-size: 12px;">`}</p>
+          <p className="ml-20">{`OK`}</p>
+          <p className="ml-20">{`</span>`}</p>
+          <p className="ml-16">{`</div>`}</p>
+          <p className="ml-16">{`<div id="msgBtnCancel3"`}</p>
+          <p className="ml-20">{`style=" border-radius: 8px; font-size: 12px;width:30%;height:35px;background-color:#C6C6C6;border-radius: 8px;display: flex;justify-content: center;align-items: center; color: #ffffff;">`}</p>
+          <p className="ml-20">Cancel</p>
+          <p className="ml-16">{`</div>`}</p>
+          <p className="ml-12">{`</div>`}</p>
+          <p>{`</div>`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Index Main Html body
+export function MainHtmlBody() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2 flex flex-col gap-4">
+        <div>
+          <p>{`<div id="body_main" class="bgSizeCover"></div>`}</p>
+        </div>
+
+        <div>
+          <p>{`div id="menu_main" style="width: 100%; position: relative">`}</p>
+
+          <div className="ml-4">
+            <p>{`<div id="menu_main_content" class="bg-foot-all coverMenu">`}</p>
+            <div>
+              <p>{`<div id="menu_home" class="menuCss menuDiv">`}</p>
+              <p className="ml-4">{`<div class="menuCss_pic">`}</p>
+              <p className="ml-8">{`<div class="menuOnClass" id="menuHome">`}</p>
+              <p className="ml-12">{`<svg width="30" height="29" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">`}</p>
+              <p className="ml-16">SVG content...</p>
+              <p className="ml-12">{`</svg>`}</p>
+              <p className="ml-8">{`</div>`}</p>
+              <p className="ml-8">{`<div class="menuOffClass" id="menuHome2" style="display: none">`}</p>
+              <p className="ml-12">{`<svg width="28" height="27" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">`}</p>
+              <p className="ml-16">SVG content...</p>
+              <p className="ml-12">{`</svg>`}</p>
+              <p className="ml-8">{`</div>`}</p>
+              <p className="ml-4">{`</div>`}</p>
+              <p className="ml-4">{`<span class="menuSpan" id="menuHomeSpan">Shop</span>`}</p>
+              <p>{`</div>`}</p>
+            </div>
+
+            <div>
+              <p>{`<div id="menu_monitor" class="menuCss menuDiv">`}</p>
+              <p className="ml-4">{`<div class="menuCss_pic">`}</p>
+              <p className="ml-8">{`<div class="menuOnClass" id="menumonitor" style="padding-top: 2px">`}</p>
+              <p className="ml-12">{`<svg width="30" height="29" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">`}</p>
+              <p className="ml-16">SVG content...</p>
+              <p className="ml-12">{`</svg>`}</p>
+              <p className="ml-8">{`</div>`}</p>
+              <p className="ml-8">{`<div class="menuOffClass" id="menumonitor2" style="display: none; padding-top: 2px">`}</p>
+              <p className="ml-12">{`<svg width="28" height="27" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">`}</p>
+              <p className="ml-16">SVG content...</p>
+              <p className="ml-12">{`</svg>`}</p>
+              <p className="ml-8">{`</div>`}</p>
+              <p className="ml-4">{`</div>`}</p>
+              <p className="ml-4">{`<span class="menuSpan" id="menumonitorSpan">Monitor</span>`}</p>
+              <p>{`</div>`}</p>
+            </div>
+
+            <div>
+              <div className="px-4 break-words">
+                <p>{`<div id="menu_wallet" class="menuCss menuDiv">`}</p>
+                <p className="ml-4">{`<div class="menuCss_pic">`}</p>
+                <p className="ml-8">{`<div class="menuOnClass" id="menuwallet">`}</p>
+                <p className="ml-12">{`<svg width="30" height="29" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">`}</p>
+                <p className="ml-16">SVG content...</p>
+                <p className="ml-12">{`</svg>`}</p>
+                <p className="ml-8">{`</div>`}</p>
+                <p className="ml-8">{`<div class="menuOffClass" id="menuwallet2" style="display: none">`}</p>
+                <p className="ml-12">{`<svg width="28" height="27" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">`}</p>
+                <p className="ml-16">SVG content...</p>
+                <p className="ml-12">{`</svg>`}</p>
+                <p className="ml-8">{`</div>`}</p>
+                <p className="ml-4">{`</div>`}</p>
+                <p className="ml-4">{`<span class="menuSpan" id="menuwalletSpan">Wallet</span>`}</p>
+                <p>{`</div>`}</p>
+              </div>
+            </div>
+            <p>{`</div>`}</p>
+          </div>
+          <p>{`</div>`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Index Main Html Script function main init
+export function MainHtmlScriptInit() {
+  return (
+    <div className="ml-4 break-words">
+      <p>{`this.init = function () {`}</p>
+      <div className="ml-2">
+        <p>{`setAllUILang("main")`}</p>
+        <p>{`$(".menuOffClass").css({display: "block"})`}</p>
+        <p>{`$(".menuOnClass").css({display: "none"})`}</p>
+        <p>{`$("#menuHome").css({display: "block"})`}</p>
+        <p>{`$("#menuHome2").css({display: "none"})`}</p>
+        <p>{`$("#menuHomeSpan").css({color: "var(--bg-foot)", "font-size": "12px"})`}</p>
+        <p>{`$("#menumonitorSpan").css({color: "#97979B", "font-size": "10px"})`}</p>
+        <p>{`$("#menuwalletSpan").css({color: "#97979B", "font-size": "10px"})`}</p>
+        <p>{`$("#menuSettingSpan").css({color: "#97979B", "font-size": "10px"})`}</p>
+        <p>{`$("#menu_main").css({height: menuH})`}</p>
+        <p>{`$("#body_main").css({height: h - menuH})`}</p>
+        <p>{`$("#main").css({"background-color": "#E3F5FF"})`}</p>
+      </div>
+
+      <p>{`var CHECK = localStorage.getItem("token")`}</p>
+      <div className="ml-2">
+        <p>{`if (CHECK == null) {`}</p>
+        <div className="ml-2">
+          <p>{`$("#checkin-button").off("click")`}</p>
+        </div>
+        <p>{`}`}</p>
+      </div>
+
+      <p>{`$("#menu_home").click(function () {`}</p>
+      <div className="ml-2">
+        <p>{`mainObj.menuhome()`}</p>
+      </div>
+      <p>{`})`}</p>
+
+      <p>{`$("#menu_monitor").unbind().click(function () {`}</p>
+      <div className="ml-2">
+        <p>{`mainObj.menumonitor()`}</p>
+        <p>{`notificationObj.GetNotification()`}</p>
+      </div>
+      <p>{`})`}</p>
+
+      <p>{`$("#menu_wallet").click(function () {`}</p>
+      <div className="ml-2">
+        <p>{`mainObj.menuwallet()`}</p>
+      </div>
+      <p>{`})`}</p>
+
+      <p>{`$("#menu_setting").click(function () {`}</p>
+      <div className="ml-2">
+        <p>{`mainObj.menusetting()`}</p>
+      </div>
+      <p>{`})`}</p>
+
+      <p>{`mResObj.showHtml("home.html", "body_main")`}</p>
+      <p>{`mResObj.showHtml("monitor.html", "body_main")`}</p>
+      <p>{`mResObj.showHtml("wallet.html", "body_main")`}</p>
+      <p>{`mResObj.showHtml("setting.html", "body_main")`}</p>
+    </div>
+  )
+}
+
+// Index Main Html Script function main Menuhome
+export function MainHtmlScriptMenuhome() {
+  return (
+    <div className="ml-4 break-words">
+      <p>{`this.menuhome = function () {`}</p>
+      <div className="ml-4">
+        <p>{`unShowMenuPage()`}</p>
+        <div className="ml-2">
+          <p>{`$("#setting_Datalogger,#MonitorScroller").css({display: "none"})`}</p>
+          <p>{`$(".menuOnClass").css({display: "none"})`}</p>
+          <p>{`$(".menuOffClass").css({display: "block"})`}</p>
+          <p>{`$("#menuHome").css({display: "block"})`}</p>
+          <p>{`$("#menuHome2").css({display: "none"})`}</p>
+          <p>{`$("#menuHomeSpan").css({color: "var(--bg-foot)", "font-size": "12px"})`}</p>
+          <p>{`$("#menumonitorSpan").css({color: "#97979B", "font-size": "10px"})`}</p>
+          <p>{`$("#menuwalletSpan").css({color: "#97979B", "font-size": "10px"})`}</p>
+          <p>{`$("#menuSettingSpan").css({color: "#97979B", "font-size": "10px"})`}</p>
+          <p>{`$("#main").css({"background-color": "#E3F5FF"})`}</p>
+          <p>{`homeObj.init()`}</p>
+          <p>{`homeObj.call()`}</p>
+        </div>
+      </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
+
+// Index Main Html Script function main menumonitor
+export function MainHtmlScriptMenumonitor() {
+  return (
+    <div className="ml-4 break-words">
+      <p>{`this.menumonitor = function () {`}</p>
+      <div className="ml-4">
+        <div className="ml-2">
+          <p>{`unShowMenuPage()`}</p>
+          <div className="ml-2">
+            <p>{`$("#setting_Datalogger").css({display: "none"})`}</p>
+            <p>{`$("#MonitorScroller").css({display: "flex"})`}</p>
+            <p>{`$("#newsPopup").css({display: "none"})`}</p>
+            <p>{`$("#popupNews_1").css({display: "none"})`}</p>
+            <p>{`$(".menuOnClass").css({display: "none"})`}</p>
+            <p>{`$(".menuOffClass").css({display: "block"})`}</p>
+            <p>{`$("#menumonitor").css({display: "block"})`}</p>
+            <p>{`$("#menumonitor2").css({display: "none"})`}</p>
+            <p>{`$("#menuHomeSpan").css({color: "#97979B", "font-size": "10px"})`}</p>
+            <p>{`$("#menumonitorSpan").css({color: "var(--bg-foot)", "font-size": "12px"})`}</p>
+            <p>{`$("#menuwalletSpan").css({color: "#97979B", "font-size": "10px"})`}</p>
+            <p>{`$("#menuSettingSpan").css({color: "#97979B", "font-size": "10px"})`}</p>
+            <p>{`$("#main").css({"background-color": "#E3F5FF"})`}</p>
+            <p>{`$("#Popup_shop_monitor").css({display: "none"})`}</p>
+            <p>{`monitorObj.init()`}</p>
+            <p>{`monitorObj.call()`}</p>
+          </div>
+        </div>
+      </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
+
+// Index Main Html Script function main menusetting
+export function MainHtmlScriptMenusetting() {
+  return (
+    <div className="ml-4 break-words">
+      <p>{`this.menusetting = function () {`}</p>
+      MainHtmlScriptMenusetting
+      <p>{`}`}</p>
+    </div>
+  )
+}
+
 // MessageBox() Widget
 export function FunctionMessageBoxText() {
   return (
@@ -13516,7 +13927,7 @@ export function Wallet_get_dataTransaction() {
   )
 }
 
-// loadList
+// Wallet_loadList
 export function Wallet_loadList() {
   return (
     <div className="ml-4 break-words">

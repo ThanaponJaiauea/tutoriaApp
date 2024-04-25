@@ -1,6 +1,7 @@
 /** @format */
 
 import {useState} from "react"
+import {motion} from "framer-motion"
 import useSelectedNavbar from "../hooks/useSelectedNavbar"
 
 export default function HeaderNavbar() {
@@ -11,11 +12,16 @@ export default function HeaderNavbar() {
     selectedNavbar,
     setSelectedMenu,
   } = useSelectedNavbar()
-  // console.log("selectedNavbar:", selectedNavbar);
 
   const [selectedNavbarMenu, setSelectedNavbarMenu] =
     useState("Model structure")
   //   console.log("selectedNavbarMenu", selectedNavbarMenu)
+
+  const [selecteLanguage, setSelecteLanguage] = useState("thai")
+  // console.log("selecteLanguage:", selecteLanguage)
+
+  const TOGGLE_CLASSES =
+    "text-sm font-medium flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-3 md:py-1.5 transition-colors relative z-10"
 
   const handleMenuClick = (menu) => {
     setSelectedNavbarMenu(menu)
@@ -26,7 +32,7 @@ export default function HeaderNavbar() {
     }
 
     if (menu === "Model structure") {
-      setSelectedMenu("alert")
+      setSelectedMenu("StartProjec")
     }
   }
 
@@ -106,7 +112,7 @@ export default function HeaderNavbar() {
         </div>
       )}
 
-      <ul className="w-full h-full w-full font-medium flex items-center text-white ">
+      <ul className="w-full h-full font-medium flex items-center text-white">
         {navbars?.map((el, idx) => (
           <li
             onClick={() => handleMenuClick(el?.title)}
@@ -120,6 +126,42 @@ export default function HeaderNavbar() {
           </li>
         ))}
       </ul>
+
+      {/* <div
+        className={`grid h-[200px] place-content-center px-4 transition-colors `}>
+        <div className="relative flex w-fit items-center rounded-full">
+          <button
+            className={`${TOGGLE_CLASSES} ${
+              selecteLanguage === "thai" ? "text-white" : "text-slate-300"
+            }`}
+            onClick={() => {
+              setSelecteLanguage("thai")
+            }}>
+            <span className="relative z-10 text-white">Thai</span>
+          </button>
+
+          <button
+            className={`${TOGGLE_CLASSES} ${
+              selecteLanguage === "Eng" ? "text-white" : "text-slate-800"
+            }`}
+            onClick={() => {
+              setSelecteLanguage("Eng")
+            }}>
+            <span className="relative z-10 text-white">Eng</span>
+          </button>
+
+          <div
+            className={`absolute inset-0 z-0 flex ${
+              selecteLanguage === "Eng" ? "justify-end" : "justify-start"
+            }`}>
+            <motion.span
+              layout
+              transition={{type: "spring", damping: 15, stiffness: 250}}
+              className="h-full w-1/2 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600"
+            />
+          </div>
+        </div>
+      </div> */}
     </nav>
   )
 }
