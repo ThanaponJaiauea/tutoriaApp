@@ -1,6 +1,7 @@
 /** @format */
 
 import MessageBoxTryit from "./tryitFunction/messageBoxTryit"
+import {FiChevronDown, FiChevronUp} from "react-icons/fi"
 import {
   Addda_talogger_addDate,
   Addda_talogger_createDevice,
@@ -85,9 +86,6 @@ import {
   Login_checkLoginWithRefreshToken,
   MainHtmlBody,
   MainHtmlScriptInit,
-  MainHtmlScriptMenuhome,
-  MainHtmlScriptMenumonitor,
-  MainHtmlScriptMenusetting,
   Main_checkIsLogin,
   Main_getLocalToken,
   Main_menuhome,
@@ -237,8 +235,13 @@ import stepstart5 from "../pictures/stepstart5.png"
 import stepopen5 from "../pictures/stepopen5.png"
 import step6 from "../pictures/step6.png"
 import {Link} from "react-router-dom"
+import MainTryit from "./tryitFunction/mainTryit"
 
 export default function ModelContent({
+  setOpenMainBody,
+  openMainBody,
+  setOpenMainScript,
+  openMainScript,
   headerName,
   selectedMenu,
   functionName,
@@ -252,6 +255,16 @@ export default function ModelContent({
   exampleContent,
   exampleBody,
   contentModelStructure,
+  contentMainBody,
+  contentMainScript,
+  contentMainScript1,
+  contentMainScript2,
+  contentMainScript3,
+  contentMainScript4,
+  contentMainScript5,
+  contentMainScript6,
+  contentMainScript7,
+  contentMainScript8,
   content,
   content1,
   content1p1,
@@ -320,6 +333,7 @@ export default function ModelContent({
   stepContent,
   startCheck,
   mainCheck,
+  startPage,
 }) {
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
@@ -1062,47 +1076,172 @@ export default function ModelContent({
         </div>
       ) : null}
 
-      {/* Main */}
+      {/* Main Structure */}
       {mainCheck && (
         <div>
+          {/* Display example */}
+          <div className="px-4 mt-2">
+            {selectedMenu === "mainHtml" && <MainTryit />}
+          </div>
+
           {/* Body */}
           <div className={`${CONTAINER_CLASSES}`}>
-            <div className="w-full  py-4">
-              <h3 className="text-[23px] font-bold">Body</h3>
+            <div className="w-full py-4">
+              <button
+                onClick={setOpenMainBody}
+                className="w-full flex items-center justify-between">
+                <h3 className="text-[23px] font-bold">Body</h3>
+                {!openMainBody ? <FiChevronDown /> : <FiChevronUp />}
+              </button>
+              <p>{contentMainBody}</p>
             </div>
 
-            <div className="w-full flex flex-col gap-4">
-              <div className="bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-                <p>{`<div  id="main" class="positionZero">`}</p>
-                <MainHtmlBody />
-                <p>{`</div`}</p>
+            {openMainBody && (
+              <div className="w-full flex flex-col gap-4">
+                <div className="bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                  <p>{`<div  id="main" class="positionZero">`}</p>
+                  <p>{`<div id="body_main" class="bgSizeCover"></div>`}</p>
+                  <div className="ml-4 flex flex-col gap-2">
+                    <p>{`<div id="menu_main" style="width: 100%; position: relative">`}</p>
+                    <MainHtmlBody />
+                    <p>{`</div>`}</p>
+                  </div>
+                  <p>{`</div>`}</p>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Script */}
           <div className={`${CONTAINER_CLASSES}`}>
-            <div className="w-full  py-4">
-              <h3 className="text-[23px] font-bold">Script</h3>
-              <p>-</p>
+            <div className="w-full  py-4 break-words">
+              <button
+                onClick={setOpenMainScript}
+                className="w-full flex items-center justify-between">
+                <h3 className="text-[23px] font-bold">Script</h3>
+                {!openMainScript ? <FiChevronDown /> : <FiChevronUp />}
+              </button>
+
+              <div className="flex flex-col gap-2">
+                {contentMainScript && <p>{contentMainScript}</p>}
+                {contentMainScript1 && <p>{contentMainScript1}</p>}
+                {contentMainScript2 && <p>{contentMainScript2}</p>}
+                {contentMainScript3 && <p>{contentMainScript3}</p>}
+                {contentMainScript4 && <p>{contentMainScript4}</p>}
+                {contentMainScript5 && <p>{contentMainScript5}</p>}
+                {contentMainScript6 && <p>{contentMainScript6}</p>}
+                {contentMainScript7 && <p>{contentMainScript7}</p>}
+                {contentMainScript8 && <p>{contentMainScript8}</p>}
+              </div>
             </div>
 
-            <div className="bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-              <span className="text-[#A52A2A]">&lt;script&gt;</span>
-              <div className="ml-4">
-                <p>{`var mainObj = new main()`}</p>
-                <p>{`mainObj.init()`}</p>
-                <p>{`function main() {`}</p>
-                <div className="flex flex-col gap-4">
-                  <MainHtmlScriptInit />
-                  <MainHtmlScriptMenuhome />
-                  <MainHtmlScriptMenumonitor />
-                  <MainHtmlScriptMenusetting />
+            {openMainScript && (
+              <div className="bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                <div className="ml-4">
+                  <p>{`var mainObj = new main()`}</p>
+                  <p>{`mainObj.init()`}</p>
+                  <p>{`function main() {`}</p>
+                  <div className="flex flex-col gap-4">
+                    <div>
+                      <MainHtmlScriptInit />
+                      <p className="text-red-600">{`}`}</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[#0000CD]">
+                        this.
+                        <span className="text-red-600">{`menuhome = function () {`}</span>
+                      </span>
+                      <Main_menuhome />
+                      <p className="text-red-600">{`}`}</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[#0000CD]">
+                        this.
+                        <span className="text-red-600">{`menumonitor = function () {`}</span>
+                      </span>
+                      <Main_menumonitor />
+                      <p className="text-red-600">{`}`}</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[#0000CD]">
+                        this.
+                        <span className="text-red-600">{`menuwallet = function () {`}</span>
+                      </span>
+                      <Main_menuwallet />
+                      <p className="text-red-600">{`}`}</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[#0000CD]">
+                        this.
+                        <span className="text-red-600">{`menusetting = function () {`}</span>
+                      </span>
+                      <Main_menusetting />
+                      <p className="text-red-600">{`}`}</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[#0000CD]">
+                        this.
+                        <span className="text-red-600">{`nShowMenuPage = function () {`}</span>
+                      </span>
+                      <Main_unShowMenuPage />
+                      <p className="text-red-600">{`}`}</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[#0000CD]">
+                        this.
+                        <span className="text-red-600">{`checkIsLogin = function () {`}</span>
+                      </span>
+                      <Main_checkIsLogin />
+                      <p className="text-red-600">{`}`}</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[#0000CD]">
+                        this.
+                        <span className="text-red-600">{`updateLoginStatus = function () {`}</span>
+                      </span>
+                      <Main_updateLoginStatus />
+                      <p className="text-red-600">{`}`}</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[#0000CD]">
+                        this.
+                        <span className="text-red-600">{`getLocalToken = function () {`}</span>
+                      </span>
+                      <Main_getLocalToken />
+                      <p className="text-red-600">{`}`}</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[#0000CD]">
+                        this.
+                        <span className="text-red-600">{`refreshToken = function () {`}</span>
+                      </span>
+                      <Main_refreshToken />
+                      <p className="text-red-600">{`}`}</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[#0000CD]">
+                        this.
+                        <span className="text-red-600">{`refreshTokenFun = function () {`}</span>
+                      </span>
+                      <Main_refreshTokenFun />
+                      <p className="text-red-600">{`}`}</p>
+                    </div>
+                  </div>
                 </div>
-                <p>{`}`}</p>
+                <span className="text-[#A52A2A]">&lt;/script&gt;</span>
               </div>
-              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
-            </div>
+            )}
           </div>
         </div>
       )}

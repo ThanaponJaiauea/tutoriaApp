@@ -1,10 +1,12 @@
 /** @format */
 
-import {FiEdit, FiChevronDown, FiChevronUp} from "react-icons/fi"
+import {FiChevronDown, FiChevronUp} from "react-icons/fi"
 
 export default function FormModelStructure({
   setOpenWidget,
+  setOpenMainHtml,
   openWidget,
+  openMainHtml,
   selectedNavbar,
   data,
   handleModelClick,
@@ -41,30 +43,20 @@ export default function FormModelStructure({
       {/* Main */}
       <div className="w-full flex flex-col gap-1">
         <button
-          onClick={() => handleModelClick("main")}
-          className={`w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer ${
-            selectedMenu === "main"
-              ? "bg-[#04AA6D] text-[#ffff] "
-              : "hover:bg-gray-100 text-black"
-          }`}>
-          <h1>Main.html</h1>
-        </button>
-      </div>
-
-      {/* Widget */}
-      <div className=" w-full flex flex-col gap-1">
-        <button
-          onClick={() => setOpenWidget(!openWidget)}
+          onClick={() => setOpenMainHtml(!openMainHtml)}
           className="w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer">
-          <h1>Widget.js</h1>
+          <h1>Main.html</h1>
 
-          {!openWidget ? <FiChevronDown /> : <FiChevronUp />}
+          {!openMainHtml ? <FiChevronDown /> : <FiChevronUp />}
         </button>
 
-        {openWidget && selectedNavbar === "Model structure" && (
+        {openMainHtml && selectedNavbar === "Model structure" && (
           <>
             {data
-              ?.filter((item) => item.type === "generalModel")
+              ?.filter(
+                (item) =>
+                  item.type === "generalModel" && item.category === "mainHtml"
+              )
               .map((el, idx) => (
                 <ul key={idx}>
                   <li
@@ -82,17 +74,38 @@ export default function FormModelStructure({
         )}
       </div>
 
-      {/* startPage */}
-      <div className="w-full flex flex-col gap-1">
+      {/* Widget */}
+      <div className=" w-full flex flex-col gap-1">
         <button
-          onClick={() => handleModelClick("startPage")}
-          className={`w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer ${
-            selectedMenu === "startPage"
-              ? "bg-[#04AA6D] text-[#ffff] "
-              : "hover:bg-gray-100 text-black"
-          }`}>
-          <h1>StartPage.html</h1>
+          onClick={() => setOpenWidget(!openWidget)}
+          className="w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer">
+          <h1>Widget.js</h1>
+
+          {!openWidget ? <FiChevronDown /> : <FiChevronUp />}
         </button>
+
+        {openWidget && selectedNavbar === "Model structure" && (
+          <>
+            {data
+              ?.filter(
+                (item) =>
+                  item.type === "generalModel" && item.category === "widgetJs"
+              )
+              .map((el, idx) => (
+                <ul key={idx}>
+                  <li
+                    onClick={() => handleModelClick(el?.key)}
+                    className={`w-full h-[40px] flex items-center justify-start p-4 cursor-pointer ${
+                      selectedMenu === el?.key
+                        ? "bg-[#04AA6D] text-[#ffff] "
+                        : "hover:bg-gray-100 text-black"
+                    }`}>
+                    {el?.name}
+                  </li>
+                </ul>
+              ))}
+          </>
+        )}
       </div>
     </>
   )

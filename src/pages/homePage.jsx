@@ -25,6 +25,8 @@ export default function HomePage() {
 
   const [openWidget, setOpenWidget] = useState(false)
 
+  const [openMainHtml, setOpenMainHtml] = useState(false)
+
   // open Hoem.html
   const [openHomeHtml, setOpenHomeHtml] = useState(false)
 
@@ -195,6 +197,8 @@ export default function HomePage() {
           <ul className="hidden lg:flex lg:flex-col">
             <FormModelStructure
               setOpenWidget={setOpenWidget}
+              setOpenMainHtml={setOpenMainHtml}
+              openMainHtml={openMainHtml}
               openWidget={openWidget}
               selectedNavbar={selectedNavbar}
               data={modelStructure}
@@ -371,8 +375,6 @@ export default function HomePage() {
         </nav>
       )}
 
-      {/* --------------------------------------------------------------- */}
-
       {/* Right content  */}
       {/* SolarApp  */}
       {selectedNavbar === "SolarApp" && (
@@ -397,6 +399,8 @@ export default function HomePage() {
           {selectedNavbar === "Model structure" && (
             <FormModelStructure
               setOpenWidget={setOpenWidget}
+              setOpenMainHtml={setOpenMainHtml}
+              openMainHtml={openMainHtml}
               openWidget={openWidget}
               selectedNavbar={selectedNavbar}
               data={modelStructure}
