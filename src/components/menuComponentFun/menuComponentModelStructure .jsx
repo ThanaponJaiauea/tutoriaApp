@@ -268,8 +268,8 @@ const MenuComponentModelStructure = ({selectedMenu}) => {
         widget="none"
         scriptListExplains={true}
         scriptListExplainsHeader={getTitle()}
-        setOpenIndexHead={() => setOpenIndexHead(!openIndexHead)}
-        openIndexHead={openIndexHead}
+        onClick={() => setOpenIndexHead(!openIndexHead)}
+        open={openIndexHead}
         scriptListExplainsContent={`-<head> เป็นส่วนหัวของเอกสาร HTML ซึ่งมีการกำหนดคุณสมบัติต่าง ๆ ของหน้าเว็บไซต์ จะมีการกำหนดดังนี้`}
         scriptListExplainsContent1={`1.กำหนดการเข้ารหัสของหน้าเว็บไซต์ให้เป็น utf-8`}
         scriptListExplainsContent2={`2.กำหนด viewport เพื่อให้หน้าเว็บไซต์สามารถปรับขนาดและซูมได้บนอุปกรณ์ต่าง ๆ`}
@@ -287,12 +287,11 @@ const MenuComponentModelStructure = ({selectedMenu}) => {
         headers="Model Structure"
         headerHtml={getTitle()}
         selectedMenu={selectedMenu}
-        widget="none"
         scriptListExplainsHeader={getTitle()}
+        widget="none"
         scriptListExplains={true}
-        setOpenIndexHead={() => setOpenIndexHead(!openIndexHead)}
         openIndexHead={openIndexHead}
-        scriptListExplainsContent={`-Style`}
+        scriptListExplainsContent={`Style`}
       />
     ),
 

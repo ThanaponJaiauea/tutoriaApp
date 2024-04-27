@@ -245,13 +245,13 @@ import MainTryit from "./tryitFunction/mainTryit"
 
 export default function ModelContent({
   setOpenMainBody,
-  setOpenIndexHead,
+  onClick,
   setOpenMainScript,
   setOpenIndexStyle,
   setOpenIndexBody,
   setOpenIndexScript,
   openMainBody,
-  openIndexHead,
+  open,
   openMainScript,
   openIndexStyle,
   openIndexBody,
@@ -1082,12 +1082,12 @@ export default function ModelContent({
         <div className={`${CONTAINER_CLASSES}`}>
           <div className="w-full py-4">
             <button
-              onClick={setOpenIndexHead}
+              onClick={onClick}
               className="w-full flex items-center justify-between">
               <h3 className="text-[23px] font-bold">
                 {scriptListExplainsHeader}
               </h3>
-              {!openIndexHead ? <FiChevronDown /> : <FiChevronUp />}
+              {!open ? <FiChevronDown /> : <FiChevronUp />}
             </button>
 
             <div>
@@ -1119,7 +1119,7 @@ export default function ModelContent({
             </div>
           </div>
 
-          {openIndexHead && (
+          {open && (
             <div className="w-full flex flex-col gap-4">
               <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
                 <span className="text-[#A52A2A]">&lt;head&gt;</span>
