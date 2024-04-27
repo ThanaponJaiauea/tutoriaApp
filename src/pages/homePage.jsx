@@ -27,6 +27,8 @@ export default function HomePage() {
 
   const [openMainHtml, setOpenMainHtml] = useState(false)
 
+  const [openIndexHtml, setOpenIndexHtml] = useState(false)
+
   // open Hoem.html
   const [openHomeHtml, setOpenHomeHtml] = useState(false)
 
@@ -196,10 +198,14 @@ export default function HomePage() {
         <nav className="w-full lg:bg-[#E7E9EB] lg:w-[20%]">
           <ul className="hidden lg:flex lg:flex-col">
             <FormModelStructure
-              setOpenWidget={setOpenWidget}
-              setOpenMainHtml={setOpenMainHtml}
+              setOpenDrawer={() => setOpenDrawer(false)}
+              setSelectedMenu={setSelectedMenu}
+              setOpenWidget={() => setOpenWidget(!openWidget)}
+              setOpenMainHtml={() => setOpenMainHtml(!openMainHtml)}
+              setOpenIndexHtml={() => setOpenIndexHtml(!openIndexHtml)}
               openMainHtml={openMainHtml}
               openWidget={openWidget}
+              openIndexHtml={openIndexHtml}
               selectedNavbar={selectedNavbar}
               data={modelStructure}
               handleModelClick={handleModelClick}
@@ -398,10 +404,14 @@ export default function HomePage() {
           {/* Model structure */}
           {selectedNavbar === "Model structure" && (
             <FormModelStructure
-              setOpenWidget={setOpenWidget}
-              setOpenMainHtml={setOpenMainHtml}
+              setOpenDrawer={() => setOpenDrawer(false)}
+              setSelectedMenu={setSelectedMenu}
+              setOpenWidget={() => setOpenWidget(!openWidget)}
+              setOpenMainHtml={() => setOpenMainHtml(!openMainHtml)}
+              setOpenIndexHtml={() => setOpenIndexHtml(!openIndexHtml)}
               openMainHtml={openMainHtml}
               openWidget={openWidget}
+              openIndexHtml={openIndexHtml}
               selectedNavbar={selectedNavbar}
               data={modelStructure}
               handleModelClick={handleModelClick}

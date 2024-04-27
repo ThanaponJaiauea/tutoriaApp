@@ -8,7 +8,6 @@ import {
   Addda_talogger_validateInput,
   AlertExample,
   AlertIndex,
-  AlertScript,
   AlertWidget,
   Base64,
   Cancel_order_getItemAll,
@@ -44,7 +43,6 @@ import {
   Distributor_distributorFun,
   DivMessageBox,
   DivMessageBoxExampleCode,
-  DivMessageBoxScript,
   DocumentAddEventListenerWidget,
   EditAddress_deleteAddress,
   EditAddress_editAddress,
@@ -70,6 +68,17 @@ import {
   InCome_getSelectedYear,
   InCome_updateIncomeBeforeTaxes,
   IndexBodyFull,
+  IndexBodyScripFirstCheckToken,
+  IndexBodyScripFirstStartFun,
+  IndexBodyScripOpenAgreement,
+  IndexBodyScripOpenPrivacy,
+  IndexBodyScriptAppComeback,
+  IndexBodyScriptErrorApp,
+  IndexBodyScriptOnBackPressed,
+  IndexBodyScriptSetDeviceId,
+  IndexBodyScriptSetKeyboardHeight,
+  IndexBodyScriptStartApp,
+  IndexBodyScriptVar,
   IndexHead,
   IndexStyle,
   Lang_getStatusCode,
@@ -79,7 +88,6 @@ import {
   Level_openTab,
   LoaderExampleScript,
   LoaderIndexBody,
-  LoaderIndexScript,
   LoaderWidget,
   LocationAddress_getAddress,
   Login_askDeviceIdFun,
@@ -100,7 +108,6 @@ import {
   MemberTier_getMemberTier,
   MessagePageExampleScript,
   MessagePageIndexBody,
-  MessagePageIndexScript,
   MessagePageWidget,
   Monitor_getBill,
   Monitor_getDataMonitor,
@@ -186,7 +193,6 @@ import {
   Reportdatalogger_getSelectedDate,
   Reportdatalogger_openTabreport,
   Reportdatalogger_openTabreportCart,
-  ResObjIndexScript,
   ResObjWidget,
   SettingOrder_getAll,
   SettingOrder_scroller,
@@ -239,9 +245,17 @@ import MainTryit from "./tryitFunction/mainTryit"
 
 export default function ModelContent({
   setOpenMainBody,
-  openMainBody,
+  setOpenIndexHead,
   setOpenMainScript,
+  setOpenIndexStyle,
+  setOpenIndexBody,
+  setOpenIndexScript,
+  openMainBody,
+  openIndexHead,
   openMainScript,
+  openIndexStyle,
+  openIndexBody,
+  openIndexScript,
   headerName,
   selectedMenu,
   functionName,
@@ -265,6 +279,7 @@ export default function ModelContent({
   contentMainScript6,
   contentMainScript7,
   contentMainScript8,
+  indexStructureContext,
   content,
   content1,
   content1p1,
@@ -319,21 +334,31 @@ export default function ModelContent({
   base64Context2p2,
   base64Context2p3,
   base64Contextend,
-  indexHead,
+  scriptListExplains,
   indexStyle,
+  indexScript,
   indexContext1,
   indexContext2,
   indexContext3,
   indexContext4,
   indexContext5,
-  indexBodyFull,
+  indexBody,
   htmlCheck,
   headerHtml,
   headers,
   stepContent,
   startCheck,
   mainCheck,
-  startPage,
+  scriptListExplainsContent,
+  scriptListExplainsContent1,
+  scriptListExplainsContent2,
+  scriptListExplainsContent3,
+  scriptListExplainsContent4,
+  scriptListExplainsContent5,
+  scriptListExplainsContent6,
+  scriptListExplainsContent7,
+  scriptListExplainsContent8,
+  scriptListExplainsHeader,
 }) {
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
@@ -1017,7 +1042,7 @@ export default function ModelContent({
       ) : null}
 
       {/* Index */}
-      {indexContext ? (
+      {indexContext && (
         <div className={`${CONTAINER_CLASSES}`}>
           <div className="py-4">
             <h3 className="text-[23px] font-bold">Index.html</h3>
@@ -1030,51 +1055,165 @@ export default function ModelContent({
           </div>
 
           <div className="w-full flex flex-col gap-4">
-            {/* Index head */}
-            {indexHead && (
-              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-                <span className="text-[#A52A2A]">&lt;head&gt;</span>
-                <IndexHead />
-                <span className="text-[#A52A2A]">&lt;/head&gt;</span>
-              </div>
-            )}
-
-            {/* Index Style */}
-            {indexStyle && (
-              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-                <span className="text-[#A52A2A]">&lt;style&gt;</span>
-                <IndexStyle />
-                <span className="text-[#A52A2A]">&lt;/style&gt;</span>
-              </div>
-            )}
-
-            {/* Index body */}
             <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
               <span className="text-[#A52A2A]">&lt;body&gt;</span>
-              {indexBodyFull && <IndexBodyFull />}
               {selectedMenu === "messageBox" && <DivMessageBox />}
               {selectedMenu === "alert" && <AlertIndex />}
               {selectedMenu === "loader" && <LoaderIndexBody />}
               {selectedMenu === "messagePage" && <MessagePageIndexBody />}
               <span className="text-[#A52A2A]">&lt;/body&gt;</span>
             </div>
+          </div>
+        </div>
+      )}
 
-            {/* Index script */}
-            <div className=" bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-              <div>
+      {/* Index  for Model Structure*/}
+      {indexStructureContext && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="py-4">
+            <h3 className="text-[23px] font-bold">Index.html</h3>
+            <p className="text-lg">{indexStructureContext}</p>
+          </div>
+        </div>
+      )}
+
+      {/* Index script List Explains */}
+      {scriptListExplains && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button
+              onClick={setOpenIndexHead}
+              className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">
+                {scriptListExplainsHeader}
+              </h3>
+              {!openIndexHead ? <FiChevronDown /> : <FiChevronUp />}
+            </button>
+
+            <div>
+              {scriptListExplainsContent && <p>{scriptListExplainsContent}</p>}
+              {scriptListExplainsContent1 && (
+                <p>{scriptListExplainsContent1}</p>
+              )}
+              {scriptListExplainsContent2 && (
+                <p>{scriptListExplainsContent2}</p>
+              )}
+              {scriptListExplainsContent3 && (
+                <p>{scriptListExplainsContent3}</p>
+              )}
+              {scriptListExplainsContent4 && (
+                <p>{scriptListExplainsContent4}</p>
+              )}
+              {scriptListExplainsContent5 && (
+                <p>{scriptListExplainsContent5}</p>
+              )}
+              {scriptListExplainsContent6 && (
+                <p>{scriptListExplainsContent6}</p>
+              )}
+              {scriptListExplainsContent7 && (
+                <p>{scriptListExplainsContent7}</p>
+              )}
+              {scriptListExplainsContent8 && (
+                <p>{scriptListExplainsContent8}</p>
+              )}
+            </div>
+          </div>
+
+          {openIndexHead && (
+            <div className="w-full flex flex-col gap-4">
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <span className="text-[#A52A2A]">&lt;head&gt;</span>
+                <IndexHead />
+                <span className="text-[#A52A2A]">&lt;/head&gt;</span>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Index Style */}
+      {indexStyle && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button
+              onClick={setOpenIndexStyle}
+              className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">Style</h3>
+              {!openIndexStyle ? <FiChevronDown /> : <FiChevronUp />}
+            </button>
+          </div>
+
+          {openIndexStyle && (
+            <div className="w-full flex flex-col gap-4">
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <span className="text-[#A52A2A]">&lt;style&gt;</span>
+                <IndexStyle />
+                <span className="text-[#A52A2A]">&lt;/style&gt;</span>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Index Body */}
+      {indexBody && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button
+              onClick={setOpenIndexBody}
+              className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">Body</h3>
+              {!openIndexBody ? <FiChevronDown /> : <FiChevronUp />}
+            </button>
+          </div>
+
+          {openIndexBody && (
+            <div className="w-full flex flex-col gap-4">
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <span className="text-[#A52A2A]">&lt;body&gt;</span>
+                <IndexBodyFull />
+                <span className="text-[#A52A2A]">&lt;/body&gt;</span>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Index Script */}
+      {indexScript && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button
+              onClick={setOpenIndexScript}
+              className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">Script</h3>
+              {!openIndexScript ? <FiChevronDown /> : <FiChevronUp />}
+            </button>
+          </div>
+
+          {openIndexScript && (
+            <div className="w-full flex flex-col gap-4">
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
                 <span className="text-[#A52A2A]">&lt;script&gt;</span>
-                {selectedMenu === "messageBox" && <DivMessageBoxScript />}
-                {selectedMenu === "alert" && <AlertScript />}
-                {selectedMenu === "resObj" && <ResObjIndexScript />}
-                {selectedMenu === "loader" && <LoaderIndexScript />}
-                {selectedMenu === "messagePage" && <MessagePageIndexScript />}
-
+                <div className="flex flex-col gap-6">
+                  <IndexBodyScriptVar />
+                  <IndexBodyScriptStartApp />
+                  <IndexBodyScriptErrorApp />
+                  <IndexBodyScriptOnBackPressed />
+                  <IndexBodyScriptSetKeyboardHeight />
+                  <IndexBodyScriptSetDeviceId />
+                  <IndexBodyScriptAppComeback />
+                  <IndexBodyScripOpenAgreement />
+                  <IndexBodyScripOpenPrivacy />
+                  <IndexBodyScripFirstStartFun />
+                  <IndexBodyScripFirstCheckToken />
+                </div>
                 <span className="text-[#A52A2A]">&lt;/script&gt;</span>
               </div>
             </div>
-          </div>
+          )}
         </div>
-      ) : null}
+      )}
 
       {/* Main Structure */}
       {mainCheck && (

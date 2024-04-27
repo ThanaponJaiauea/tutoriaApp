@@ -77,6 +77,106 @@ const modelStructure = [
     key: "mainHtml",
     category: "mainHtml",
   },
+
+  // index.html
+  {
+    name: "index.html",
+    type: "generalModel",
+    key: "indexHtml",
+    category: "indexHtml",
+  },
+  {
+    name: "head",
+    type: "generalModel",
+    key: "headIndex",
+    category: "indexHtml",
+  },
+  {
+    name: "style",
+    type: "generalModel",
+    key: "styleIndex",
+    category: "indexHtml",
+  },
+  {
+    name: "body",
+    type: "generalModel",
+    key: "bodyIndex",
+    category: "indexHtml",
+  },
+  {
+    name: "script",
+    type: "generalModel",
+    key: "scriptIndex",
+    category: "indexHtml",
+  },
+
+  // index script drop down list
+  {
+    name: "var",
+    type: "generalModel",
+    key: "var",
+    category: "script_dropdown_list",
+  },
+  {
+    name: "startApp",
+    type: "generalModel",
+    key: "startApp",
+    category: "script_dropdown_list",
+  },
+  {
+    name: "errorApp",
+    type: "generalModel",
+    key: "errorApp",
+    category: "script_dropdown_list",
+  },
+  {
+    name: "onBackPressed",
+    type: "generalModel",
+    key: "onBackPressed",
+    category: "script_dropdown_list",
+  },
+  {
+    name: "setKeyboardHeight",
+    type: "generalModel",
+    key: "setKeyboardHeight",
+    category: "script_dropdown_list",
+  },
+  {
+    name: "setDeviceId",
+    type: "generalModel",
+    key: "setDeviceId",
+    category: "script_dropdown_list",
+  },
+  {
+    name: "appComeback",
+    type: "generalModel",
+    key: "appComeback",
+    category: "script_dropdown_list",
+  },
+  {
+    name: "openAgreement",
+    type: "generalModel",
+    key: "openAgreement",
+    category: "script_dropdown_list",
+  },
+  {
+    name: "openPrivacy",
+    type: "generalModel",
+    key: "openPrivacy",
+    category: "script_dropdown_list",
+  },
+  {
+    name: "firstStartFun",
+    type: "generalModel",
+    key: "firstStartFun",
+    category: "script_dropdown_list",
+  },
+  {
+    name: "firstCheckToken",
+    type: "generalModel",
+    key: "firstCheckToken",
+    category: "script_dropdown_list",
+  },
 ]
 
 export default modelStructure

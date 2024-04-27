@@ -5,7 +5,16 @@ import ModelContent from "../modelContent"
 
 const MenuComponentModelStructure = ({selectedMenu}) => {
   const [openMainBody, setOpenMainBody] = useState(false)
+
   const [openMainScript, setOpenMainScript] = useState(false)
+
+  const [openIndexHead, setOpenIndexHead] = useState(false)
+
+  const [openIndexStyle, setOpenIndexStyle] = useState(false)
+
+  const [openIndexBody, setOpenIndexBody] = useState(false)
+
+  const [openIndexScript, setOpenIndexScript] = useState(false)
 
   const getTitle = () => {
     switch (selectedMenu) {
@@ -35,6 +44,10 @@ const MenuComponentModelStructure = ({selectedMenu}) => {
         return "messagePage()"
       case "mainHtml":
         return "Main.html"
+      case "headIndex":
+        return "Head"
+      case "styleIndex":
+        return "Style"
       default:
         return ""
     }
@@ -225,16 +238,61 @@ const MenuComponentModelStructure = ({selectedMenu}) => {
       />
     ),
 
-    index: () => (
+    indexHtml: () => (
       <ModelContent
         headers="Model Structure"
         headerHtml={getTitle()}
         selectedMenu={selectedMenu}
-        indexContext="-Index.html จะเป็นหน้าที่แสดงหน้าทั้งหมดของ app"
+        indexStructureContext="-Index.html จะเป็นหน้าที่สำหรับการแสดงผลของหน้าเว็บไซต์ app สามารถไปดูอธิบายเพิ่มตามหัวข้อได้ที่ Dropdown"
+        setOpenIndexHead={() => setOpenIndexHead(!openIndexHead)}
+        setOpenIndexStyle={() => setOpenIndexStyle(!openIndexStyle)}
+        setOpenIndexBody={() => setOpenIndexBody(!openIndexBody)}
+        setOpenIndexScript={() => setOpenIndexScript(!openIndexScript)}
+        openIndexHead={openIndexHead}
+        openIndexStyle={openIndexStyle}
+        openIndexBody={openIndexBody}
+        openIndexScript={openIndexScript}
         widget="none"
         indexHead={true}
         indexStyle={true}
-        indexBodyFull={true}
+        indexBody={true}
+        indexScript={true}
+      />
+    ),
+
+    headIndex: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        scriptListExplains={true}
+        scriptListExplainsHeader={getTitle()}
+        setOpenIndexHead={() => setOpenIndexHead(!openIndexHead)}
+        openIndexHead={openIndexHead}
+        scriptListExplainsContent={`-<head> เป็นส่วนหัวของเอกสาร HTML ซึ่งมีการกำหนดคุณสมบัติต่าง ๆ ของหน้าเว็บไซต์ จะมีการกำหนดดังนี้`}
+        scriptListExplainsContent1={`1.กำหนดการเข้ารหัสของหน้าเว็บไซต์ให้เป็น utf-8`}
+        scriptListExplainsContent2={`2.กำหนด viewport เพื่อให้หน้าเว็บไซต์สามารถปรับขนาดและซูมได้บนอุปกรณ์ต่าง ๆ`}
+        scriptListExplainsContent3={`3.กำหนดค่า Cache-Control เพื่อไม่ให้เก็บแคช`}
+        scriptListExplainsContent4={`4.กำหนดค่า Pragma เพื่อไม่ให้เก็บแคช`}
+        scriptListExplainsContent5={`5.กำหนดค่า Expires เพื่อให้หน้าเว็บไซต์ไม่ถูกเก็บแคช`}
+        scriptListExplainsContent6={`6.กำหนด shortcut icon ของเว็บไซต์`}
+        scriptListExplainsContent7={`7.เรียกใช้ stylesheet จากไฟล์ spinnew.css, login.css, และ main.css`}
+        scriptListExplainsContent8={`8.เรียกใช้ fonts จาก Google Fonts และ stylesheet อื่น ๆ สำหรับการแสดงผลของหน้าเว็บไซต์`}
+      />
+    ),
+
+    styleIndex: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        scriptListExplainsHeader={getTitle()}
+        scriptListExplains={true}
+        setOpenIndexHead={() => setOpenIndexHead(!openIndexHead)}
+        openIndexHead={openIndexHead}
+        scriptListExplainsContent={`-Style`}
       />
     ),
 
