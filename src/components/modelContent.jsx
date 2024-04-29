@@ -2,6 +2,7 @@
 
 import MessageBoxTryit from "./tryitFunction/messageBoxTryit"
 import {FiChevronDown, FiChevronUp} from "react-icons/fi"
+import indexStartApp from "../pictures/indexStartApp.png"
 import {
   Addda_talogger_addDate,
   Addda_talogger_createDevice,
@@ -245,13 +246,13 @@ import MainTryit from "./tryitFunction/mainTryit"
 
 export default function ModelContent({
   setOpenMainBody,
-  onClick,
+  setOpenIndexHead,
   setOpenMainScript,
   setOpenIndexStyle,
   setOpenIndexBody,
   setOpenIndexScript,
   openMainBody,
-  open,
+  openIndexHead,
   openMainScript,
   openIndexStyle,
   openIndexBody,
@@ -267,6 +268,10 @@ export default function ModelContent({
   widgetContent3,
   widgetContent4,
   exampleContent,
+  exampleContent1,
+  exampleContent1p1,
+  exampleContent2,
+  exampleContent2p1,
   exampleBody,
   contentModelStructure,
   contentMainBody,
@@ -284,6 +289,12 @@ export default function ModelContent({
   content1,
   content1p1,
   content1p2,
+  content1p3,
+  content1p4,
+  content1p5,
+  content1p6,
+  content1p7,
+  content1p8,
   content2,
   content2p1,
   content2p2,
@@ -334,7 +345,7 @@ export default function ModelContent({
   base64Context2p2,
   base64Context2p3,
   base64Contextend,
-  scriptListExplains,
+  indexHead,
   indexStyle,
   indexScript,
   indexContext1,
@@ -346,19 +357,22 @@ export default function ModelContent({
   htmlCheck,
   headerHtml,
   headers,
+  styleVarIndex,
+  styleStartAppIndex,
+  styleErrorAppIndex,
+  styleOnBackPressedIndex,
+  styleSetKeyboardHeightIndex,
+  styleSetDeviceIdIndex,
+  styleAppComebackIndex,
+  styleOpenAgreementIndex,
+  styleOpenPrivacytIndex,
+  styleFirstStartFunIndex,
+  styleFirstCheckTokenIndex,
+  indexHowToUse,
   stepContent,
   startCheck,
   mainCheck,
-  scriptListExplainsContent,
-  scriptListExplainsContent1,
-  scriptListExplainsContent2,
-  scriptListExplainsContent3,
-  scriptListExplainsContent4,
-  scriptListExplainsContent5,
-  scriptListExplainsContent6,
-  scriptListExplainsContent7,
-  scriptListExplainsContent8,
-  scriptListExplainsHeader,
+  scriptTitle,
 }) {
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
@@ -1078,48 +1092,31 @@ export default function ModelContent({
       )}
 
       {/* Index script List Explains */}
-      {scriptListExplains && (
+      {/* Index Head */}
+      {indexHead && (
         <div className={`${CONTAINER_CLASSES}`}>
           <div className="w-full py-4">
             <button
-              onClick={onClick}
+              onClick={setOpenIndexHead}
               className="w-full flex items-center justify-between">
-              <h3 className="text-[23px] font-bold">
-                {scriptListExplainsHeader}
-              </h3>
-              {!open ? <FiChevronDown /> : <FiChevronUp />}
+              <h3 className="text-[23px] font-bold">Head</h3>
+              {!openIndexHead ? <FiChevronDown /> : <FiChevronUp />}
             </button>
 
             <div>
-              {scriptListExplainsContent && <p>{scriptListExplainsContent}</p>}
-              {scriptListExplainsContent1 && (
-                <p>{scriptListExplainsContent1}</p>
-              )}
-              {scriptListExplainsContent2 && (
-                <p>{scriptListExplainsContent2}</p>
-              )}
-              {scriptListExplainsContent3 && (
-                <p>{scriptListExplainsContent3}</p>
-              )}
-              {scriptListExplainsContent4 && (
-                <p>{scriptListExplainsContent4}</p>
-              )}
-              {scriptListExplainsContent5 && (
-                <p>{scriptListExplainsContent5}</p>
-              )}
-              {scriptListExplainsContent6 && (
-                <p>{scriptListExplainsContent6}</p>
-              )}
-              {scriptListExplainsContent7 && (
-                <p>{scriptListExplainsContent7}</p>
-              )}
-              {scriptListExplainsContent8 && (
-                <p>{scriptListExplainsContent8}</p>
-              )}
+              {content && <p>{content}</p>}
+              {content1 && <p>{content1}</p>}
+              {content2 && <p>{content2}</p>}
+              {content3 && <p>{content3}</p>}
+              {content4 && <p>{content4}</p>}
+              {content5 && <p>{content5}</p>}
+              {content6 && <p>{content6}</p>}
+              {content7 && <p>{content7}</p>}
+              {content8 && <p>{content8}</p>}
             </div>
           </div>
 
-          {open && (
+          {openIndexHead && (
             <div className="w-full flex flex-col gap-4">
               <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
                 <span className="text-[#A52A2A]">&lt;head&gt;</span>
@@ -1141,6 +1138,18 @@ export default function ModelContent({
               <h3 className="text-[23px] font-bold">Style</h3>
               {!openIndexStyle ? <FiChevronDown /> : <FiChevronUp />}
             </button>
+
+            <div>
+              {content && <p>{content}</p>}
+              {content1 && <p>{content1}</p>}
+              {content2 && <p>{content2}</p>}
+              {content3 && <p>{content3}</p>}
+              {content4 && <p>{content4}</p>}
+              {content5 && <p>{content5}</p>}
+              {content6 && <p>{content6}</p>}
+              {content7 && <p>{content7}</p>}
+              {content8 && <p>{content8}</p>}
+            </div>
           </div>
 
           {openIndexStyle && (
@@ -1165,6 +1174,16 @@ export default function ModelContent({
               <h3 className="text-[23px] font-bold">Body</h3>
               {!openIndexBody ? <FiChevronDown /> : <FiChevronUp />}
             </button>
+
+            <div>
+              {content && <p>{content}</p>}
+              {content1 && <p>{content1}</p>}
+              {content2 && <p>{content2}</p>}
+              {content3 && <p>{content3}</p>}
+              {content4 && <p>{content4}</p>}
+              {content5 && <p>{content5}</p>}
+              {content6 && <p>{content6}</p>}
+            </div>
           </div>
 
           {openIndexBody && (
@@ -1215,14 +1234,352 @@ export default function ModelContent({
         </div>
       )}
 
+      {/* drop down list */}
+      {/* var */}
+      {styleVarIndex && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{scriptTitle}</h3>
+            </button>
+
+            <div className="flex flex-col gap-2">
+              {content && <p>{content}</p>}
+              {content1 && <p>{content1}</p>}
+
+              <div className="flex flex-col gap-2 ml-2">
+                {content1p1 && <p>{content1p1}</p>}
+                {content1p2 && <p>{content1p2}</p>}
+                {content1p3 && <p>{content1p3}</p>}
+                {content1p4 && <p>{content1p4}</p>}
+                {content1p5 && <p>{content1p5}</p>}
+                {content1p6 && <p>{content1p6}</p>}
+                {content1p7 && <p>{content1p7}</p>}
+                {content1p8 && <p>{content1p8}</p>}
+              </div>
+
+              {content2 && <p>{content2}</p>}
+
+              <div className="flex flex-col gap-2 ml-2">
+                {content2p1 && <p>{content2p1}</p>}
+              </div>
+
+              {content3 && <p>{content3}</p>}
+
+              <div className="flex flex-col gap-2 ml-2">
+                {content3p1 && <p>{content3p1}</p>}
+                {content3p2 && <p>{content3p2}</p>}
+                {content3p3 && <p>{content3p3}</p>}
+              </div>
+
+              {content4 && <p>{content4}</p>}
+
+              <div className="flex flex-col gap-2 ml-2">
+                {content4p1 && <p>{content4p1}</p>}
+                {content4p2 && <p>{content4p2}</p>}
+              </div>
+
+              {content5 && <p>{content5}</p>}
+              {content6 && <p>{content6}</p>}
+              {content7 && <p>{content7}</p>}
+              {content8 && <p>{content8}</p>}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <div className="flex flex-col gap-6">
+                <IndexBodyScriptVar />
+              </div>
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* startApp */}
+      {styleStartAppIndex && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{scriptTitle}</h3>
+            </button>
+
+            <div className="flex flex-col gap-2">
+              {content && <p>{content}</p>}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <div className="flex flex-col gap-6">
+                <IndexBodyScriptStartApp />
+              </div>
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* errorApp */}
+      {styleErrorAppIndex && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{scriptTitle}</h3>
+            </button>
+
+            <div className="flex flex-col gap-2">
+              {content && <p>{content}</p>}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <div className="flex flex-col gap-6">
+                <IndexBodyScriptErrorApp />
+              </div>
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* onBackPressed */}
+      {styleOnBackPressedIndex && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{scriptTitle}</h3>
+            </button>
+
+            <div className="flex flex-col gap-2">
+              {content && <p>{content}</p>}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <div className="flex flex-col gap-6">
+                <IndexBodyScriptOnBackPressed />
+              </div>
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* setKeyboardHeight */}
+      {styleSetKeyboardHeightIndex && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{scriptTitle}</h3>
+            </button>
+
+            <div className="flex flex-col gap-2">
+              {content && <p>{content}</p>}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <div className="flex flex-col gap-6">
+                <IndexBodyScriptSetKeyboardHeight />
+              </div>
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* setDeviceId */}
+      {styleSetDeviceIdIndex && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{scriptTitle}</h3>
+            </button>
+
+            <div className="flex flex-col gap-2">
+              {content && <p>{content}</p>}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <div className="flex flex-col gap-6">
+                <IndexBodyScriptSetDeviceId />
+              </div>
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* appComeback */}
+      {styleAppComebackIndex && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{scriptTitle}</h3>
+            </button>
+            <div className="flex flex-col gap-2">
+              {content && <p>{content}</p>}
+              {content1 && <p>{content1}</p>}
+              {content2 && <p>{content2}</p>}
+              {content3 && <p>{content3}</p>}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <div className="flex flex-col gap-6">
+                <IndexBodyScriptAppComeback />
+              </div>
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* openAgreement */}
+      {styleOpenAgreementIndex && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{scriptTitle}</h3>
+            </button>
+            <div className="flex flex-col gap-2">
+              {content && <p>{content}</p>}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <div className="flex flex-col gap-6">
+                <IndexBodyScripOpenAgreement />
+              </div>
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* openPrivacy */}
+      {styleOpenPrivacytIndex && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{scriptTitle}</h3>
+            </button>
+            <div className="flex flex-col gap-2">
+              {content && <p>{content}</p>}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <div className="flex flex-col gap-6">
+                <IndexBodyScripOpenPrivacy />
+              </div>
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* firstStartFun */}
+      {styleFirstStartFunIndex && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{scriptTitle}</h3>
+            </button>
+
+            <div className="flex flex-col gap-2">
+              {content && <p>{content}</p>}
+              {content1 && <p>{content1}</p>}
+              {content2 && <p>{content2}</p>}
+              {content3 && <p>{content3}</p>}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <div className="flex flex-col gap-6">
+                <IndexBodyScripFirstStartFun />
+              </div>
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* firstCheckToken */}
+      {styleFirstCheckTokenIndex && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{scriptTitle}</h3>
+            </button>
+
+            <div className="flex flex-col gap-2">
+              {content && <p>{content}</p>}
+              {content1 && <p>{content1}</p>}
+              {content2 && <p>{content2}</p>}
+              {content3 && <p>{content3}</p>}
+              {content4 && <p>{content4}</p>}
+              {content5 && <p>{content5}</p>}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <div className="flex flex-col gap-6">
+                <IndexBodyScripFirstCheckToken />
+              </div>
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* index How To Use */}
+      {indexHowToUse && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{scriptTitle}</h3>
+            </button>
+
+            <div className="flex flex-col gap-2">
+              {content && <p className="text-xl">{content}</p>}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <img src={indexStartApp} />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Main Structure */}
       {mainCheck && (
         <div>
-          {/* Display example */}
-          <div className="px-4 mt-2">
-            {selectedMenu === "mainHtml" && <MainTryit />}
-          </div>
-
           {/* Body */}
           <div className={`${CONTAINER_CLASSES}`}>
             <div className="w-full py-4">
@@ -1391,6 +1748,13 @@ export default function ModelContent({
           <div className="py-4">
             <h3 className="text-[23px] font-bold">Example of use</h3>
             <p>{exampleContent}</p>
+
+            <div className="flex flex-col gap-2">
+              {exampleContent1 && <p>{exampleContent1}</p>}
+              {exampleContent1p1 && <p>{exampleContent1p1}</p>}
+              {exampleContent2 && <p>{exampleContent2}</p>}
+              {exampleContent2p1 && <p>{exampleContent2p1}</p>}
+            </div>
           </div>
 
           {/* Example body */}
@@ -1403,6 +1767,32 @@ export default function ModelContent({
                 {selectedMenu === "headerInit" && <PageInitExampleBody />}
                 {selectedMenu === "pageShow" && <PageShowExampleBody />}
                 {selectedMenu === "pageUnShow" && <PageUnShowExampleBody />}
+                {selectedMenu === "mainHtml" && (
+                  <div>
+                    <span className="text-[#0000CD]">
+                      this.
+                      <span className="text-red-600">{`menumonitor = function () {`}</span>
+                    </span>
+                    <div className="break-words">
+                      <p>{`<div id="menu_monitor" class="menuCss menuDiv">`}</p>
+                      <p className="ml-4">{`<div class="menuCss_pic">`}</p>
+                      <p className="ml-8">{`<div class="menuOnClass" id="menumonitor" style="padding-top: 2px">`}</p>
+                      <p className="ml-12">{`<svg width="30" height="29" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">`}</p>
+                      <p className="ml-16">SVG content...</p>
+                      <p className="ml-12">{`</svg>`}</p>
+                      <p className="ml-8">{`</div>`}</p>
+                      <p className="ml-8">{`<div class="menuOffClass" id="menumonitor2" style="display: none; padding-top: 2px">`}</p>
+                      <p className="ml-12">{`<svg width="28" height="27" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">`}</p>
+                      <p className="ml-16">SVG content...</p>
+                      <p className="ml-12">{`</svg>`}</p>
+                      <p className="ml-8">{`</div>`}</p>
+                      <p className="ml-4">{`</div>`}</p>
+                      <p className="ml-4">{`<span class="menuSpan" id="menumonitorSpan">Monitor</span>`}</p>
+                      <p>{`</div>`}</p>
+                    </div>
+                    <p className="text-red-600">{`}`}</p>
+                  </div>
+                )}
               </div>
 
               <span className="text-[#A52A2A]">&lt;/body&gt;</span>
@@ -1420,6 +1810,17 @@ export default function ModelContent({
             {selectedMenu === "pageUnShow" && <PageUnShowExampleScript />}
             {selectedMenu === "loader" && <LoaderExampleScript />}
             {selectedMenu === "messagePage" && <MessagePageExampleScript />}
+            {selectedMenu === "mainHtml" && (
+              <div>
+                <span className="text-[#0000CD]">
+                  this.
+                  <span className="text-red-600">{`menumonitor = function () {`}</span>
+                </span>
+                <Main_menumonitor />
+                <p className="text-red-600">{`}`}</p>
+              </div>
+            )}
+
             <span className="text-[#A52A2A]">&lt;/script&gt;</span>
           </div>
 
@@ -1432,6 +1833,7 @@ export default function ModelContent({
             {selectedMenu === "pageUnShow" && <PageUnShowTryit />}
             {selectedMenu === "loader" && <LoaderTryit />}
             {selectedMenu === "messagePage" && <MessagePage />}
+            {selectedMenu === "mainHtml" && <MainTryit />}
           </div>
         </div>
       ) : null}

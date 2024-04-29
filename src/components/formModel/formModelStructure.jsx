@@ -17,6 +17,7 @@ export default function FormModelStructure({
   selectedMenu,
   setSelectedMenu,
 }) {
+  // console.log("selectedMenu:", selectedMenu)
   const [openIndexScript, setOpenIndexScript] = useState(false)
 
   return (
@@ -41,7 +42,7 @@ export default function FormModelStructure({
             setOpenIndexHtml()
             setOpenIndexScript(false)
           }}
-          className="w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer">
+          className="w-full h-[40px] text-base font-bold flex items-center justify-between p-4 cursor-pointer">
           <h1>Index.html</h1>
 
           {!openIndexHtml ? <FiChevronDown /> : <FiChevronUp />}
@@ -61,7 +62,7 @@ export default function FormModelStructure({
                       if (el?.key !== "scriptIndex") {
                         handleModelClick(el?.key)
                       } else {
-                        setSelectedMenu("scriptIndex")
+                        setSelectedMenu(selectedMenu)
                       }
                     }}
                     className={`w-full h-[40px] flex items-center justify-start p-4 cursor-pointer ${

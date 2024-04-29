@@ -77,8 +77,20 @@ const modelStructure = [
     key: "mainHtml",
     category: "mainHtml",
   },
+  {
+    name: "How To Use?",
+    type: "generalModel",
+    key: "mainHtmlHowtouse",
+    category: "mainHtml",
+  },
 
   // index.html
+  {
+    name: "How To Use?",
+    type: "generalModel",
+    key: "IndexHowToUse",
+    category: "indexHtml",
+  },
   {
     name: "index.html",
     type: "generalModel",
