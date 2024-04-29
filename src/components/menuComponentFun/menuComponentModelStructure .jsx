@@ -283,6 +283,7 @@ const MenuComponentModelStructure = ({selectedMenu}) => {
         indexStyle={true}
         indexBody={true}
         indexScript={true}
+        listIndex={true}
       />
     ),
 
@@ -319,6 +320,27 @@ const MenuComponentModelStructure = ({selectedMenu}) => {
       />
     ),
 
+    bodyIndex: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Index Script"
+        selectedMenu={selectedMenu}
+        indexBody={true}
+        setOpenIndexBody={() => setOpenIndexBody(!openIndexBody)}
+        openIndexStyle={openIndexStyle}
+        scriptListExplainsHeader={getTitle()}
+        widget="none"
+        scriptListExplains={true}
+        openIndexBody={openIndexBody}
+        content="เป็นส่วนหนึ่งของ HTML ซึ่งใช้ในการสร้างองค์ประกอบต่าง ๆ ที่จะแสดงในหน้าเว็บไซต์หรือแอพพลิเคชัน เช่น กล่องข้อความแจ้งเตือนหรือโมดัลเพื่อกระทำบางอย่าง เพื่อสื่อสารข้อมูลหรือสถานะต่าง ๆ กับผู้ใช้"
+        content1={`1.<div id="root" class="font-medium"></div>: ตัวแปร root ซึ่งอาจใช้เป็นจุดเริ่มต้นของแอพพลิเคชันหรือหน้าเว็บไซต์ มีคลาส font-medium ที่อาจจะใช้สำหรับการกำหนดรูปแบบตัวอักษร`}
+        content2={`2.<div id="messageBox" ...>: กล่องข้อความแจ้งเตือนหลายแบบ ที่มีหลายรูปแบบและปรับแต่งตามรายละเอียดต่าง ๆ ของแต่ละรายการ เช่น พื้นหลัง ขนาด ข้อความ เป็นต้น`}
+        content3={`3.<div id="messagePage" ...>: หน้าเว็บข้อความแจ้งเตือนที่แสดงโดยการเปิดหน้าใหม่ที่มีพื้นหลังสีขาว มีรูปแบบและขนาดข้อความที่แตกต่างจากกล่องข้อความแจ้งเตือน`}
+        content4={`4.<div id="alert" ...>: กล่องข้อความแจ้งเตือนที่แสดงที่ขอบหน้าจอ พื้นหลังสีดำทึบ ที่ใช้สำหรับการแจ้งเตือนเหตุการณ์หรือข้อความที่สำคัญโดยไม่ขัดจังหวะการทำงานของผู้ใช้`}
+        content5={`5.<div id="loader" ...>: กล่องสำหรับแสดงสถานะการโหลดข้อมูลหรือการประมวลผล ที่มักจะแสดงเป็นไอคอนหมุนเวลาที่ระบบกำลังประมวลผลข้อมูล`}
+      />
+    ),
+
     styleIndex: () => (
       <ModelContent
         headers="Model Structure"
@@ -329,7 +351,6 @@ const MenuComponentModelStructure = ({selectedMenu}) => {
         openIndexStyle={openIndexStyle}
         scriptListExplainsHeader={getTitle()}
         widget="none"
-        scriptListExplains={true}
         openIndexHead={openIndexHead}
         content="CSS (Cascading Style Sheets) ซึ่งใช้สำหรับการส่งคำสั่งการแสดงผลให้กับเว็บไซต์หรือเอกสาร HTML เพื่อปรับแต่งรูปแบบการแสดงผลของเนื้อหาบนหน้าเว็บหรือเอกสารนั้นๆ
         ในโค้ดนี้มีการกำหนดคลาสหลายคลาสเพื่อใช้ในการจัดการแสดงผลขององค์ประกอบต่างๆ โดยคลาสที่ถูกกำหนดมีลักษณะการจัดการแสดงผลดังนี้"
@@ -502,27 +523,6 @@ const MenuComponentModelStructure = ({selectedMenu}) => {
         content3="3.ทำการส่งข้อมูลไปยังเซิร์ฟเวอร์ผ่าน Ajax request"
         content4={`4.ในส่วนของ success callback จะตรวจสอบ response ที่ได้รับ ถ้ามีการตอบกลับด้วย code 0 จะทำการอัปเดต token ใน local storage และเรียกใช้ getLocalToken() เพื่ออ่าน token ใหม่ แต่ถ้า code ไม่เท่ากับ 0 แล้วมี code เป็น 4002 จะเรียกใช้ pageShow("loginPage") เพื่อให้ผู้ใช้ทำการ login ใหม่`}
         content5="5.ในกรณีที่เกิด error จะแสดงข้อผิดพลาดทางคอนโซลด้วย console.log(error) และจะไม่มีการดำเนินการต่อในฟังก์ชันนี้หลังจากนั้น"
-      />
-    ),
-
-    bodyIndex: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        indexBody={true}
-        setOpenIndexBody={() => setOpenIndexBody(!openIndexBody)}
-        openIndexStyle={openIndexStyle}
-        scriptListExplainsHeader={getTitle()}
-        widget="none"
-        scriptListExplains={true}
-        openIndexBody={openIndexBody}
-        content="เป็นส่วนหนึ่งของ HTML ซึ่งใช้ในการสร้างองค์ประกอบต่าง ๆ ที่จะแสดงในหน้าเว็บไซต์หรือแอพพลิเคชัน เช่น กล่องข้อความแจ้งเตือนหรือโมดัลเพื่อกระทำบางอย่าง เพื่อสื่อสารข้อมูลหรือสถานะต่าง ๆ กับผู้ใช้"
-        content1={`1.<div id="root" class="font-medium"></div>: ตัวแปร root ซึ่งอาจใช้เป็นจุดเริ่มต้นของแอพพลิเคชันหรือหน้าเว็บไซต์ มีคลาส font-medium ที่อาจจะใช้สำหรับการกำหนดรูปแบบตัวอักษร`}
-        content2={`2.<div id="messageBox" ...>: กล่องข้อความแจ้งเตือนหลายแบบ ที่มีหลายรูปแบบและปรับแต่งตามรายละเอียดต่าง ๆ ของแต่ละรายการ เช่น พื้นหลัง ขนาด ข้อความ เป็นต้น`}
-        content3={`3.<div id="messagePage" ...>: หน้าเว็บข้อความแจ้งเตือนที่แสดงโดยการเปิดหน้าใหม่ที่มีพื้นหลังสีขาว มีรูปแบบและขนาดข้อความที่แตกต่างจากกล่องข้อความแจ้งเตือน`}
-        content4={`4.<div id="alert" ...>: กล่องข้อความแจ้งเตือนที่แสดงที่ขอบหน้าจอ พื้นหลังสีดำทึบ ที่ใช้สำหรับการแจ้งเตือนเหตุการณ์หรือข้อความที่สำคัญโดยไม่ขัดจังหวะการทำงานของผู้ใช้`}
-        content5={`5.<div id="loader" ...>: กล่องสำหรับแสดงสถานะการโหลดข้อมูลหรือการประมวลผล ที่มักจะแสดงเป็นไอคอนหมุนเวลาที่ระบบกำลังประมวลผลข้อมูล`}
       />
     ),
 

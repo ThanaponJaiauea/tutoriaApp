@@ -373,7 +373,10 @@ export default function ModelContent({
   startCheck,
   mainCheck,
   scriptTitle,
+  listIndex,
 }) {
+  console.log("listIndex", listIndex)
+
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
 
@@ -1100,7 +1103,10 @@ export default function ModelContent({
               onClick={setOpenIndexHead}
               className="w-full flex items-center justify-between">
               <h3 className="text-[23px] font-bold">Head</h3>
-              {!openIndexHead ? <FiChevronDown /> : <FiChevronUp />}
+
+              {listIndex && (
+                <>{!openIndexHead ? <FiChevronDown /> : <FiChevronUp />}</>
+              )}
             </button>
 
             <div>
@@ -1116,7 +1122,19 @@ export default function ModelContent({
             </div>
           </div>
 
-          {openIndexHead && (
+          {listIndex ? (
+            <>
+              {openIndexHead && (
+                <div className="w-full flex flex-col gap-4">
+                  <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                    <span className="text-[#A52A2A]">&lt;head&gt;</span>
+                    <IndexHead />
+                    <span className="text-[#A52A2A]">&lt;/head&gt;</span>
+                  </div>
+                </div>
+              )}
+            </>
+          ) : (
             <div className="w-full flex flex-col gap-4">
               <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
                 <span className="text-[#A52A2A]">&lt;head&gt;</span>
@@ -1136,7 +1154,10 @@ export default function ModelContent({
               onClick={setOpenIndexStyle}
               className="w-full flex items-center justify-between">
               <h3 className="text-[23px] font-bold">Style</h3>
-              {!openIndexStyle ? <FiChevronDown /> : <FiChevronUp />}
+
+              {listIndex && (
+                <>{!openIndexStyle ? <FiChevronDown /> : <FiChevronUp />}</>
+              )}
             </button>
 
             <div>
@@ -1152,7 +1173,19 @@ export default function ModelContent({
             </div>
           </div>
 
-          {openIndexStyle && (
+          {listIndex ? (
+            <>
+              {openIndexStyle && (
+                <div className="w-full flex flex-col gap-4">
+                  <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                    <span className="text-[#A52A2A]">&lt;style&gt;</span>
+                    <IndexStyle />
+                    <span className="text-[#A52A2A]">&lt;/style&gt;</span>
+                  </div>
+                </div>
+              )}
+            </>
+          ) : (
             <div className="w-full flex flex-col gap-4">
               <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
                 <span className="text-[#A52A2A]">&lt;style&gt;</span>
@@ -1172,7 +1205,10 @@ export default function ModelContent({
               onClick={setOpenIndexBody}
               className="w-full flex items-center justify-between">
               <h3 className="text-[23px] font-bold">Body</h3>
-              {!openIndexBody ? <FiChevronDown /> : <FiChevronUp />}
+
+              {listIndex && (
+                <>{!openIndexBody ? <FiChevronDown /> : <FiChevronUp />}</>
+              )}
             </button>
 
             <div>
@@ -1186,7 +1222,19 @@ export default function ModelContent({
             </div>
           </div>
 
-          {openIndexBody && (
+          {listIndex ? (
+            <>
+              {openIndexBody && (
+                <div className="w-full flex flex-col gap-4">
+                  <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                    <span className="text-[#A52A2A]">&lt;body&gt;</span>
+                    <IndexBodyFull />
+                    <span className="text-[#A52A2A]">&lt;/body&gt;</span>
+                  </div>
+                </div>
+              )}
+            </>
+          ) : (
             <div className="w-full flex flex-col gap-4">
               <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
                 <span className="text-[#A52A2A]">&lt;body&gt;</span>
