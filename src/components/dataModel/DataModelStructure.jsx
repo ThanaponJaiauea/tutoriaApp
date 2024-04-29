@@ -77,12 +77,6 @@ const modelStructure = [
     key: "mainHtml",
     category: "mainHtml",
   },
-  {
-    name: "How To Use?",
-    type: "generalModel",
-    key: "mainHtmlHowtouse",
-    category: "mainHtml",
-  },
 
   // index.html
   {
