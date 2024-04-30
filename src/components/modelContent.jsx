@@ -375,8 +375,6 @@ export default function ModelContent({
   scriptTitle,
   listIndex,
 }) {
-  console.log("listIndex", listIndex)
-
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
 
@@ -1018,14 +1016,6 @@ export default function ModelContent({
               <p className="ml-4">{`}`}</p>
               <span className="text-[#A52A2A]">&lt;/script&gt;</span>
             </div>
-          </div>
-
-          <div className={`${CONTAINER_CLASSES} break-words`}>
-            <div className="w-full py-4 ">
-              <h3 className="text-[23px] font-bold">Example of use</h3>
-            </div>
-
-            <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg"></div>
           </div>
         </div>
       ) : null}
