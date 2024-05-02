@@ -1,190 +1,315 @@
 /** @format */
 
 import {useState} from "react"
-import {FiChevronDown, FiChevronUp} from "react-icons/fi"
+import {Menu} from "antd"
 
-export default function FormModelStructure({
-  setOpenDrawer,
-  setOpenWidget,
-  setOpenMainHtml,
-  setOpenIndexHtml,
-  openWidget,
-  openMainHtml,
-  openIndexHtml,
-  selectedNavbar,
-  data,
-  handleModelClick,
-  selectedMenu,
-  setSelectedMenu,
-}) {
+export default function FormModelStructure({handleModelClick}) {
   // console.log("selectedMenu:", selectedMenu)
-  const [openIndexScript, setOpenIndexScript] = useState(false)
+
+  const indexData = [
+    {
+      key: "index",
+      label: "index",
+      children: [
+        {
+          name: "How To Use?",
+          type: "generalModel",
+          key: "IndexHowToUse",
+          category: "indexHtml",
+        },
+        {
+          name: "index.html",
+          type: "generalModel",
+          key: "indexHtml",
+          category: "indexHtml",
+        },
+        {
+          name: "head",
+          type: "generalModel",
+          key: "headIndex",
+          category: "indexHtml",
+        },
+        {
+          name: "style",
+          type: "generalModel",
+          key: "styleIndex",
+          category: "indexHtml",
+        },
+        {
+          name: "body",
+          type: "generalModel",
+          key: "bodyIndex",
+          category: "indexHtml",
+        },
+        {
+          name: "script",
+          type: "generalModel",
+          key: "scriptIndex",
+          category: "indexHtml",
+          children: [
+            {
+              name: "var",
+              type: "generalModel",
+              key: "var",
+              category: "script_dropdown_list",
+            },
+            {
+              name: "startApp",
+              type: "generalModel",
+              key: "startApp",
+              category: "script_dropdown_list",
+            },
+            {
+              name: "errorApp",
+              type: "generalModel",
+              key: "errorApp",
+              category: "script_dropdown_list",
+            },
+            {
+              name: "onBackPressed",
+              type: "generalModel",
+              key: "onBackPressed",
+              category: "script_dropdown_list",
+            },
+            {
+              name: "setKeyboardHeight",
+              type: "generalModel",
+              key: "setKeyboardHeight",
+              category: "script_dropdown_list",
+            },
+            {
+              name: "setDeviceId",
+              type: "generalModel",
+              key: "setDeviceId",
+              category: "script_dropdown_list",
+            },
+            {
+              name: "appComeback",
+              type: "generalModel",
+              key: "appComeback",
+              category: "script_dropdown_list",
+            },
+            {
+              name: "openAgreement",
+              type: "generalModel",
+              key: "openAgreement",
+              category: "script_dropdown_list",
+            },
+            {
+              name: "openPrivacy",
+              type: "generalModel",
+              key: "openPrivacy",
+              category: "script_dropdown_list",
+            },
+            {
+              name: "firstStartFun",
+              type: "generalModel",
+              key: "firstStartFun",
+              category: "script_dropdown_list",
+            },
+            {
+              name: "firstCheckToken",
+              type: "generalModel",
+              key: "firstCheckToken",
+              category: "script_dropdown_list",
+            },
+          ],
+        },
+      ],
+    },
+  ]
+
+  const widgetData = [
+    {
+      key: "Widget",
+      label: "Widget",
+      children: [
+        {
+          name: "alert()",
+          type: "generalModel",
+          key: "alert",
+          category: "widgetJs",
+        },
+        {
+          name: "messageBox()",
+          type: "generalModel",
+          key: "messageBox",
+          category: "widgetJs",
+        },
+        {
+          name: "resObj()",
+          type: "generalModel",
+          key: "resObj",
+          category: "widgetJs",
+        },
+        {
+          name: "pageInit()",
+          type: "generalModel",
+          key: "pageInit",
+          category: "widgetJs",
+        },
+        {
+          name: "headerInit()",
+          type: "generalModel",
+          key: "headerInit",
+          category: "widgetJs",
+        },
+        {
+          name: "pageShow()",
+          type: "generalModel",
+          key: "pageShow",
+          category: "widgetJs",
+        },
+        {
+          name: "pageUnShow()",
+          type: "generalModel",
+          key: "pageUnShow",
+          category: "widgetJs",
+        },
+        {
+          name: "document.addEventListener()",
+          type: "generalModel",
+          key: "documentAddEventListener",
+          category: "widgetJs",
+        },
+        {
+          name: "getAbsTime()",
+          type: "generalModel",
+          key: "getAbsTime",
+          category: "widgetJs",
+        },
+        {
+          name: "loader()",
+          type: "generalModel",
+          key: "loader",
+          category: "widgetJs",
+        },
+        {
+          name: "messagePage()",
+          type: "generalModel",
+          key: "messagePage",
+          category: "widgetJs",
+        },
+      ],
+    },
+  ]
+
+  const mainData = [
+    {
+      key: "main",
+      label: "main",
+      children: [
+        {
+          name: "main.html",
+          type: "generalModel",
+          key: "mainHtml",
+          category: "mainHtml",
+        },
+      ],
+    },
+  ]
+
+  const allData = [...indexData, ...widgetData, ...mainData]
+  // console.log("allData", allData)
+
+  const getLevelKeys = (items1) => {
+    const key = {}
+    const func = (items2, level = 1) => {
+      items2.forEach((item) => {
+        key[item.key] = level
+        if (item.children) {
+          func(item.children, level + 1)
+        }
+      })
+    }
+    func(items1)
+    return key
+  }
+
+  const levelKeys = getLevelKeys(allData)
+  // console.log("levelKeys", levelKeys)
+
+  const [stateOpenKeys, setStateOpenKeys] = useState("")
+  // console.log("stateOpenKeys", stateOpenKeys)
+
+  const onOpenChange = (openKeys) => {
+    // ตรวจสอบเมนูที่เปิดอยู่ในปัจจุบัน
+    const currentOpenKey = openKeys.find(
+      (key) => stateOpenKeys.indexOf(key) === -1
+    )
+    // หากมีเมนูที่เปิดใหม่
+    if (currentOpenKey !== undefined) {
+      // หาดัชนีของเมนูที่เปิดใหม่ในลำดับที่ซ้ำกัน
+      const repeatIndex = openKeys
+        .filter((key) => key !== currentOpenKey)
+        .findIndex((key) => levelKeys[key] === levelKeys[currentOpenKey])
+      // ตั้งค่าเมนูที่เปิดอยู่ใหม่
+      setStateOpenKeys((prevOpenKeys) => {
+        // แก้ไขปัญหาโดยตรวจสอบว่า prevOpenKeys เป็น array หรือไม่ก่อนใช้ filter
+        if (Array.isArray(prevOpenKeys)) {
+          return [
+            // เอาเมนูที่เปิดใหม่เข้าไป
+            ...openKeys,
+            // ตัดเมนูที่เปิดเก่าที่มีลำดับเท่ากันกับเมนูใหม่
+            ...prevOpenKeys.filter(
+              (key) => levelKeys[key] !== levelKeys[currentOpenKey]
+            ),
+          ]
+        } else {
+          // ถ้า prevOpenKeys ไม่ใช่ array ให้ใช้ openKeys แทน
+          return openKeys
+        }
+      })
+    } else {
+      // ถ้าไม่มีการเปิดเมนูใหม่
+      setStateOpenKeys(openKeys)
+    }
+  }
 
   return (
     <>
-      {/* Start Prodject */}
-      <div className="w-full flex flex-col gap-1">
-        <button
-          onClick={() => handleModelClick("StartProjec")}
-          className={`w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer ${
-            selectedMenu === "StartProjec"
-              ? "bg-[#04AA6D] text-[#ffff] "
-              : "hover:bg-gray-100 text-black"
-          }`}>
-          <h1>Start Projec</h1>
-        </button>
-      </div>
+      <Menu
+        mode="inline"
+        defaultSelectedKeys={["indexHtml"]}
+        openKeys={stateOpenKeys}
+        onOpenChange={onOpenChange}>
+        {allData.map((menuItem) => (
+          <Menu.SubMenu
+            key={menuItem.key}
+            title={menuItem.label}>
+            {menuItem.children.map(
+              (child) =>
+                child.key !== "scriptIndex" && (
+                  <Menu.Item
+                    key={child.key}
+                    onClick={() => handleModelClick(child.key)}>
+                    {child.name}
+                  </Menu.Item>
+                )
+            )}
 
-      {/* Index */}
-      <div className="w-full flex flex-col gap-1">
-        <button
-          onClick={() => {
-            setOpenIndexHtml()
-            setOpenIndexScript(false)
-          }}
-          className="w-full h-[40px] text-base font-bold flex items-center justify-between p-4 cursor-pointer">
-          <h1>Index.html</h1>
-
-          {!openIndexHtml ? <FiChevronDown /> : <FiChevronUp />}
-        </button>
-
-        {openIndexHtml && selectedNavbar === "Model structure" && (
-          <>
-            {data
-              ?.filter(
-                (item) =>
-                  item.type === "generalModel" && item.category === "indexHtml"
-              )
-              .map((el, idx) => (
-                <ul key={idx}>
-                  <li
-                    onClick={() => {
-                      if (el?.key !== "scriptIndex") {
-                        handleModelClick(el?.key)
-                      } else {
-                        setSelectedMenu(selectedMenu)
-                      }
-                    }}
-                    className={`w-full h-[40px] flex items-center justify-start p-4 cursor-pointer ${
-                      selectedMenu === el?.key
-                        ? "bg-[#04AA6D] text-[#ffff] "
-                        : "hover:bg-gray-100 text-black"
-                    }`}>
-                    {el?.name === "script" ? (
-                      <div className="w-full">
-                        <button
-                          onClick={() => setOpenIndexScript(!openIndexScript)}
-                          className="w-full flex items-center gap-4">
-                          <p>Script</p>
-                          {!openIndexScript ? (
-                            <FiChevronDown />
-                          ) : (
-                            <FiChevronUp />
-                          )}
-                        </button>
-                      </div>
-                    ) : (
-                      el?.name
-                    )}
-                  </li>
-                </ul>
-              ))}
-          </>
-        )}
-
-        {/* Dropdown */}
-        {openIndexScript && (
-          <div className="w-full rounded-md mt-1">
-            <ul>
-              {data
-                ?.filter((items) => items.category === "script_dropdown_list")
-                .map((el, idx) => (
-                  <li
-                    key={idx}
-                    onClick={() => {
-                      setSelectedMenu(el?.name)
-                      setOpenDrawer()
-                    }}
-                    className={`w-full h-[40px] flex items-center justify-start p-4 cursor-pointer ${
-                      selectedMenu === el?.key
-                        ? "bg-[#04AA6D] text-[#ffff] "
-                        : "hover:bg-gray-100 text-black"
-                    }`}>
-                    {el?.name}
-                  </li>
-                ))}
-            </ul>
-          </div>
-        )}
-      </div>
-
-      {/* Main */}
-      <div className="w-full flex flex-col gap-1">
-        <button
-          onClick={setOpenMainHtml}
-          className="w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer">
-          <h1>Main.html</h1>
-
-          {!openMainHtml ? <FiChevronDown /> : <FiChevronUp />}
-        </button>
-
-        {openMainHtml && selectedNavbar === "Model structure" && (
-          <>
-            {data
-              ?.filter(
-                (item) =>
-                  item.type === "generalModel" && item.category === "mainHtml"
-              )
-              .map((el, idx) => (
-                <ul key={idx}>
-                  <li
-                    onClick={() => handleModelClick(el?.key)}
-                    className={`w-full h-[40px] flex items-center justify-start p-4 cursor-pointer ${
-                      selectedMenu === el?.key
-                        ? "bg-[#04AA6D] text-[#ffff] "
-                        : "hover:bg-gray-100 text-black"
-                    }`}>
-                    {el?.name}
-                  </li>
-                </ul>
-              ))}
-          </>
-        )}
-      </div>
-
-      {/* Widget */}
-      <div className=" w-full flex flex-col gap-1">
-        <button
-          onClick={setOpenWidget}
-          className="w-full h-[40px] text-base  font-bold flex items-center justify-between p-4 cursor-pointer">
-          <h1>Widget.js</h1>
-
-          {!openWidget ? <FiChevronDown /> : <FiChevronUp />}
-        </button>
-
-        {openWidget && selectedNavbar === "Model structure" && (
-          <>
-            {data
-              ?.filter(
-                (item) =>
-                  item.type === "generalModel" && item.category === "widgetJs"
-              )
-              .map((el, idx) => (
-                <ul key={idx}>
-                  <li
-                    onClick={() => handleModelClick(el?.key)}
-                    className={`w-full h-[40px] flex items-center justify-start p-4 cursor-pointer ${
-                      selectedMenu === el?.key
-                        ? "bg-[#04AA6D] text-[#ffff] "
-                        : "hover:bg-gray-100 text-black"
-                    }`}>
-                    {el?.name}
-                  </li>
-                </ul>
-              ))}
-          </>
-        )}
-      </div>
+            {/* Script */}
+            {menuItem.key === "index" &&
+              menuItem.children.find(
+                (child) => child.key === "scriptIndex"
+              ) && (
+                <Menu.SubMenu
+                  key="script"
+                  title="Script">
+                  {menuItem.children
+                    .find((child) => child.key === "scriptIndex")
+                    .children.map((child) => (
+                      <Menu.Item
+                        key={child.key}
+                        onClick={() => handleModelClick(child.key)}>
+                        {child.name}
+                      </Menu.Item>
+                    ))}
+                </Menu.SubMenu>
+              )}
+          </Menu.SubMenu>
+        ))}
+      </Menu>
     </>
   )
 }

@@ -2,7 +2,6 @@
 
 import {useState} from "react"
 import {Drawer} from "antd"
-import ModelContent from "../components/modelContent"
 import useSelectedNavbar from "../hooks/useSelectedNavbar"
 import FormModelStructure from "../components/formModel/formModelStructure"
 import FormModelSolarApp from "../components/formModel/formModelSolarApp"
@@ -195,23 +194,21 @@ export default function HomePage() {
       {/* Left navbar */}
       {/* modelStructure */}
       {selectedNavbar === "Model structure" && (
-        <nav className="w-full lg:bg-[#E7E9EB] lg:w-[20%]">
-          <ul className="hidden lg:flex lg:flex-col">
-            <FormModelStructure
-              setOpenDrawer={() => setOpenDrawer(false)}
-              setSelectedMenu={setSelectedMenu}
-              setOpenWidget={() => setOpenWidget(!openWidget)}
-              setOpenMainHtml={() => setOpenMainHtml(!openMainHtml)}
-              setOpenIndexHtml={() => setOpenIndexHtml(!openIndexHtml)}
-              openMainHtml={openMainHtml}
-              openWidget={openWidget}
-              openIndexHtml={openIndexHtml}
-              selectedNavbar={selectedNavbar}
-              data={modelStructure}
-              handleModelClick={handleModelClick}
-              selectedMenu={selectedMenu}
-            />
-          </ul>
+        <nav className="w-full lg:bg-[#E7E9EB] lg:w-[20%] hidden lg:flex lg:flex-col">
+          <FormModelStructure
+            setOpenDrawer={() => setOpenDrawer(false)}
+            setSelectedMenu={setSelectedMenu}
+            setOpenWidget={() => setOpenWidget(!openWidget)}
+            setOpenMainHtml={() => setOpenMainHtml(!openMainHtml)}
+            setOpenIndexHtml={() => setOpenIndexHtml(!openIndexHtml)}
+            openMainHtml={openMainHtml}
+            openWidget={openWidget}
+            openIndexHtml={openIndexHtml}
+            selectedNavbar={selectedNavbar}
+            data={modelStructure}
+            handleModelClick={handleModelClick}
+            selectedMenu={selectedMenu}
+          />
         </nav>
       )}
 
