@@ -1,793 +1,1667 @@
 /** @format */
-import {AiOutlineCaretDown, AiOutlineCaretUp} from "react-icons/ai"
-import DropdownList from "../dropdownList"
 
-export default function FormModelSolarApp({
-  openHomeHtml,
-  selectedMenu,
-  setOpenHomeHtml,
-  setOpenAdddatalogger,
-  setOpenCancelOrder,
-  setOpenChangepassword,
-  setOpenCoinHistory,
-  setOpenCoins,
-  setOpenConfiguration,
-  setOpenConfirm,
-  setOpenCustomer,
-  setOpenDataCustomerDetails,
-  setOpendataCustomer,
-  setOpenDeletedatalogger,
-  setOpenDistributor,
-  setOpenEditAddress,
-  setOpenForgotpass,
-  setOpenInCome,
-  setOpenLang,
-  setOpenLevel,
-  setOpenLocationAddress,
-  setOpenLogin,
-  setOpenMain,
-  setOpenMemberTier,
-  setOpenMonitor,
-  setOpenMyDevices,
-  setOpenNewAddress,
-  setOpenNotification,
-  setOpenOrderInfoCancelRefund,
-  setOpenOrderInfoCancel,
-  setOpenOrderInfoReceived,
-  setOpenOrderInfoWaitRceive,
-  setOpenOrderState10,
-  setOpenOrderStateShip,
-  setOpenPaymentMethod,
-  setOpenPaymentMethod2,
-  setOpenPaymentStatistic,
-  setOpenProductCart,
-  setOpenProductdetail,
-  setOpenPurchaseReport,
-  setOpenRedeem,
-  setOpenRefund,
-  setOpenRegister,
-  setOpenReportdatalogger,
-  setOpenSettingAccount,
-  setOpenSettingOrder,
-  setOpenSetting,
-  setOpenStart,
-  setOpenTopup,
-  setOpenTransaction,
-  setOpenTransfer,
-  setOpenUpdateOrder,
-  setOpenVouncherCode,
-  setOpenWallet,
-  data,
-  handleModelClick,
-  openAdddatalogger,
-  openCancelOrder,
-  openChangepassword,
-  openCoinHistory,
-  openCoins,
-  openConfiguration,
-  openConfirm,
-  openCustomer,
-  openDataCustomerDetails,
-  opendataCustomer,
-  openDeletedatalogger,
-  openDistributor,
-  openEditAddress,
-  openForgotpass,
-  openInCome,
-  openLang,
-  openLevel,
-  openLocationAddress,
-  openLogin,
-  openMain,
-  openMemberTier,
-  openMonitor,
-  openMyDevices,
-  openNewAddress,
-  openNotification,
-  openOrderInfoCancelRefund,
-  openOrderInfoCancel,
-  openOrderInfoReceived,
-  openOrderInfoWaitRceive,
-  openOrderState10,
-  openOrderStateShip,
-  openPaymentMethod,
-  openPaymentMethod2,
-  openPaymentStatistic,
-  openProductCart,
-  openProductdetail,
-  openPurchaseReport,
-  openRedeem,
-  openRefund,
-  openRegister,
-  openReportdatalogger,
-  openSettingAccount,
-  openSettingOrder,
-  openSetting,
-  openStart,
-  openTopup,
-  openTransaction,
-  openTransfer,
-  openUpdateOrder,
-  openVouncherCode,
-  openWallet,
-}) {
+import {useState} from "react"
+import {Menu} from "antd"
+
+export default function FormModelSolarApp({handleModelClick}) {
+  // console.log("selectedMenu:", selectedMenu)
+  const adddataloggerData = [
+    {
+      key: "adddatalogger",
+      label: "Adddatalogger.html",
+      children: [
+        {
+          name: "validateInput()",
+          type: "specificModel",
+          key: "validateInput",
+          category: "adddatalogger",
+        },
+        {
+          name: "AddDate()",
+          type: "specificModel",
+          key: "AddDate",
+          category: "adddatalogger",
+        },
+        {
+          name: "CreateDevice()",
+          type: "specificModel",
+          key: "CreateDevice",
+          category: "adddatalogger",
+        },
+      ],
+    },
+  ]
+
+  const cancelOrderData = [
+    {
+      key: "cancel Order",
+      label: "Cancel_order.html",
+      children: [
+        {
+          name: "getItemAll()",
+          type: "specificModel",
+          key: "getItemAll",
+          category: "cancelOrder",
+        },
+        {
+          name: "sentCancelOrder()",
+          type: "specificModel",
+          key: "sentCancelOrder",
+          category: "cancelOrder",
+        },
+      ],
+    },
+  ]
+
+  const changepasswordData = [
+    {
+      key: "changepassword",
+      label: "Changepassword",
+      children: [
+        {
+          name: "changePassword()",
+          type: "specificModel",
+          key: "changePassword",
+          category: "changepassword",
+        },
+      ],
+    },
+  ]
+
+  const oinHistoryData = [
+    {
+      key: "Oin History",
+      label: "Oin History",
+      children: [
+        {
+          name: "getRedeemHis()",
+          type: "specificModel",
+          key: "getRedeemHis",
+          category: "coinhistory",
+        },
+        {
+          name: "pagination_coins()",
+          type: "specificModel",
+          key: "pagination_coins",
+          category: "coinhistory",
+        },
+        {
+          name: "calPage()",
+          type: "specificModel",
+          key: "calPage",
+          category: "coinhistory",
+        },
+      ],
+    },
+  ]
+
+  const coinsData = [
+    {
+      key: "coins",
+      label: "Coins",
+      children: [
+        {
+          name: "CoinsCheckToken()",
+          type: "specificModel",
+          key: "CoinsCheckToken",
+          category: "coins",
+        },
+        {
+          name: "getPointCoins()",
+          type: "specificModel",
+          key: "getPointCoins",
+          category: "coins",
+        },
+      ],
+    },
+  ]
+
+  const ConfigurationData = [
+    {
+      key: "Configuration",
+      label: "Configuration",
+      children: [
+        {
+          name: "updateDevice()",
+          type: "specificModel",
+          key: "updateDevice",
+          category: "configuration",
+        },
+        {
+          name: "Con()",
+          type: "specificModel",
+          key: "Con",
+          category: "configuration",
+        },
+      ],
+    },
+  ]
+
+  const confirmOrderData = [
+    {
+      key: "confirm Order",
+      label: "Confirm Order",
+      children: [
+        {
+          name: "getOrder()",
+          type: "specificModel",
+          key: "getOrder",
+          category: "confirmorder",
+        },
+        {
+          name: "getStatePayment()",
+          type: "specificModel",
+          key: "getStatePayment",
+          category: "confirmorder",
+        },
+        {
+          name: "setVoucherId()",
+          type: "specificModel",
+          key: "setVoucherId",
+          category: "confirmorder",
+        },
+        {
+          name: "postOrderNow()",
+          type: "specificModel",
+          key: "postOrderNow",
+          category: "confirmorder",
+        },
+        {
+          name: "getAddress()",
+          type: "specificModel",
+          key: "getAddress",
+          category: "confirmorder",
+        },
+        {
+          name: "getCodeDisCountVoucher()",
+          type: "specificModel",
+          key: "getCodeDisCountVoucher",
+          category: "confirmorder",
+        },
+        {
+          name: "getCodeDisCountMember()",
+          type: "specificModel",
+          key: "getCodeDisCountMember",
+          category: "confirmorder",
+        },
+        {
+          name: "calTotal()",
+          type: "specificModel",
+          key: "calTotal",
+          category: "confirmorder",
+        },
+        {
+          name: "cleanDataDefualt()",
+          type: "specificModel",
+          key: "cleanDataDefualt",
+          category: "confirmorder",
+        },
+      ],
+    },
+  ]
+
+  const customerData = [
+    {
+      key: "customer",
+      label: "Customer",
+      children: [
+        {
+          name: "GetDataCustPurchaseReportStats()",
+          type: "specificModel",
+          key: "GetDataCustPurchaseReportStats",
+          category: "customer",
+        },
+        {
+          name: "showChartTotalCustomer()",
+          type: "specificModel",
+          key: "showChartTotalCustomer",
+          category: "customer",
+        },
+        {
+          name: "ChartMethod()",
+          type: "specificModel",
+          key: "ChartMethod",
+          category: "customer",
+        },
+        {
+          name: "ChartGender()",
+          type: "specificModel",
+          key: "ChartGender",
+          category: "customer",
+        },
+        {
+          name: "updateSalesData()",
+          type: "specificModel",
+          key: "updateSalesData",
+          category: "customer",
+        },
+      ],
+    },
+  ]
+
+  const dataCustomerDetails = [
+    {
+      key: "data_customer_details",
+      label: "Data customer details",
+      children: [
+        {
+          name: "GetDataCustomerDetail()",
+          type: "specificModel",
+          key: "GetDataCustomerDetail",
+          category: "data_customer_details",
+        },
+      ],
+    },
+  ]
+
+  const dataCustomerData = [
+    {
+      key: "Data customer",
+      label: "Data customer",
+      children: [
+        {
+          name: "GetDataCustomer()",
+          type: "specificModel",
+          key: "GetDataCustomer",
+          category: "data_customer",
+        },
+      ],
+    },
+  ]
+
+  const deletedataloggerData = [
+    {
+      key: "deletedatalogger",
+      label: "Deletedatalogger",
+      children: [
+        {
+          name: "getDeviceAll()",
+          type: "specificModel",
+          key: "getDeviceAll",
+          category: "deletedatalogger",
+        },
+      ],
+    },
+  ]
+
+  const distributorData = [
+    {
+      key: "distributor",
+      label: "Distributor",
+      children: [
+        {
+          name: "distributorFun()",
+          type: "specificModel",
+          key: "distributorFun",
+          category: "distributor",
+        },
+        {
+          name: "PreviewImg()",
+          type: "specificModel",
+          key: "PreviewImg",
+          category: "distributor",
+        },
+        {
+          name: "PreviewImg_2()",
+          type: "specificModel",
+          key: "PreviewImg_2",
+          category: "distributor",
+        },
+        {
+          name: "CreateDistributor()",
+          type: "specificModel",
+          key: "CreateDistributor",
+          category: "distributor",
+        },
+      ],
+    },
+  ]
+
+  const editAddressData = [
+    {
+      key: "edit Address",
+      label: "Edit Address",
+      children: [
+        {
+          name: "DeleteAddress()",
+          type: "specificModel",
+          key: "DeleteAddress",
+          category: "editAddress",
+        },
+        {
+          name: "EditAddress()",
+          type: "specificModel",
+          key: "EditAddress",
+          category: "editAddress",
+        },
+        {
+          name: "GetAddressID()",
+          type: "specificModel",
+          key: "GetAddressID",
+          category: "editAddress",
+        },
+      ],
+    },
+  ]
+
+  const forgotpassData = [
+    {
+      key: "forgotpass",
+      label: "Forgotpass",
+      children: [
+        {
+          name: "forgotPass()",
+          type: "specificModel",
+          key: "forgotPass",
+          category: "forgotpass",
+        },
+        {
+          name: "sendOTP_Forgot()",
+          type: "specificModel",
+          key: "sendOTP_Forgot",
+          category: "forgotpass",
+        },
+      ],
+    },
+  ]
+
+  const homeHtmlData = [
+    {
+      key: "homeHtml",
+      label: "HomeHtml",
+      children: [
+        {
+          name: "count()",
+          type: "specificModel",
+          key: "count",
+          category: "homeHtml",
+        },
+        {
+          name: "HomeCheckToken()",
+          type: "specificModel",
+          key: "HomeCheckToken",
+          category: "homeHtml",
+        },
+        {
+          name: "getProfile()",
+          type: "specificModel",
+          key: "getProfile",
+          category: "homeHtml",
+        },
+        {
+          name: "sendApi()",
+          type: "specificModel",
+          key: "sendApi",
+          category: "homeHtml",
+        },
+        {
+          name: "checklocalStorage()",
+          type: "specificModel",
+          key: "checklocalStorage",
+          category: "homeHtml",
+        },
+        {
+          name: "checkSimulated()",
+          type: "specificModel",
+          key: "checkSimulated",
+          category: "homeHtml",
+        },
+        {
+          name: "getRecommendProduct()",
+          type: "specificModel",
+          key: "getRecommendProduct",
+          category: "homeHtml",
+        },
+        {
+          name: "getAllProduct()",
+          type: "specificModel",
+          key: "getAllProduct",
+          category: "homeHtml",
+        },
+        {
+          name: "getCheckIn()",
+          type: "specificModel",
+          key: "getCheckIn",
+          category: "homeHtml",
+        },
+      ],
+    },
+  ]
+
+  const inComeData = [
+    {
+      key: "inCome",
+      label: "InCome",
+      children: [
+        {
+          name: "getSelectedYear()",
+          type: "specificModel",
+          key: "getSelectedYear",
+          category: "inCome",
+        },
+        {
+          name: "getSelectedMonth()",
+          type: "specificModel",
+          key: "getSelectedMonth",
+          category: "inCome",
+        },
+        {
+          name: "getIncomeAndExpenditureDetails()",
+          type: "specificModel",
+          key: "getIncomeAndExpenditureDetails",
+          category: "inCome",
+        },
+        {
+          name: "createNewInput()",
+          type: "specificModel",
+          key: "createNewInput",
+          category: "inCome",
+        },
+        {
+          name: "updateIncomeBeforeTaxes()",
+          type: "specificModel",
+          key: "updateIncomeBeforeTaxes",
+          category: "inCome",
+        },
+      ],
+    },
+  ]
+
+  const langData = [
+    {
+      key: "lang",
+      label: "Lang",
+      children: [
+        {
+          name: "setAllPageLang()",
+          type: "specificModel",
+          key: "setAllPageLang",
+          category: "lang",
+        },
+        {
+          name: "setAllUILang()",
+          type: "specificModel",
+          key: "setAllUILang",
+          category: "lang",
+        },
+        {
+          name: "NSLang()",
+          type: "specificModel",
+          key: "NSLang",
+          category: "lang",
+        },
+        {
+          name: "getStatusCode()",
+          type: "specificModel",
+          key: "getStatusCode",
+          category: "lang",
+        },
+      ],
+    },
+  ]
+
+  const levelData = [
+    {
+      key: "level",
+      label: "Level",
+      children: [
+        {
+          name: "openTab()",
+          type: "specificModel",
+          key: "openTab",
+          category: "level",
+        },
+      ],
+    },
+  ]
+
+  const locationAddressData = [
+    {
+      key: "locationAddress",
+      label: "LocationAddress",
+      children: [
+        {
+          name: "GetAddress()",
+          type: "specificModel",
+          key: "GetAddress",
+          category: "locationAddress",
+        },
+      ],
+    },
+  ]
+
+  const loginData = [
+    {
+      key: "login",
+      label: "Login",
+      children: [
+        {
+          name: "checkLoginWithRefreshToken()",
+          type: "specificModel",
+          key: "checkLoginWithRefreshToken",
+          category: "login",
+        },
+        {
+          name: "askDeviceIdFun()",
+          type: "specificModel",
+          key: "askDeviceIdFun",
+          category: "login",
+        },
+      ],
+    },
+  ]
+
+  const mainData = [
+    {
+      key: "main",
+      label: "Main",
+      children: [
+        {
+          name: "menuhome()",
+          type: "specificModel",
+          key: "menuhome",
+          category: "main",
+        },
+        {
+          name: "menumonitor()",
+          type: "specificModel",
+          key: "menumonitor",
+          category: "main",
+        },
+        {
+          name: "menuwallet()",
+          type: "specificModel",
+          key: "menuwallet",
+          category: "main",
+        },
+        {
+          name: "menusetting()",
+          type: "specificModel",
+          key: "menusetting",
+          category: "main",
+        },
+        {
+          name: "unShowMenuPage()",
+          type: "specificModel",
+          key: "unShowMenuPage",
+          category: "main",
+        },
+        {
+          name: "checkIsLogin()",
+          type: "specificModel",
+          key: "checkIsLogin",
+          category: "main",
+        },
+        {
+          name: "updateLoginStatus()",
+          type: "specificModel",
+          key: "updateLoginStatus",
+          category: "main",
+        },
+        {
+          name: "getLocalToken()",
+          type: "specificModel",
+          key: "getLocalToken",
+          category: "main",
+        },
+        {
+          name: "refreshToken()",
+          type: "specificModel",
+          key: "refreshToken",
+          category: "main",
+        },
+        {
+          name: "refreshTokenFun()",
+          type: "specificModel",
+          key: "refreshTokenFun",
+          category: "main",
+        },
+      ],
+    },
+  ]
+
+  const memberTierData = [
+    {
+      key: "memberTier",
+      label: "MemberTier",
+      children: [
+        {
+          name: "getMemberTier()",
+          type: "specificModel",
+          key: "getMemberTier",
+          category: "memberTier",
+        },
+        {
+          name: "createMemberTier()",
+          type: "specificModel",
+          key: "createMemberTier",
+          category: "memberTier",
+        },
+      ],
+    },
+  ]
+
+  const monitorData = [
+    {
+      key: "monitor",
+      label: "Monitor",
+      children: [
+        {
+          name: "monitorCheckToken()",
+          type: "specificModel",
+          key: "monitorCheckToken",
+          category: "monitor",
+        },
+        {
+          name: "RestartPin()",
+          type: "specificModel",
+          key: "RestartPin",
+          category: "monitor",
+        },
+        {
+          name: "GetBill()",
+          type: "specificModel",
+          key: "GetBill",
+          category: "monitor",
+        },
+        {
+          name: "GetSolarDeviceAll()",
+          type: "specificModel",
+          key: "GetSolarDeviceAll",
+          category: "monitor",
+        },
+        {
+          name: "GetDataMonitor()",
+          type: "specificModel",
+          key: "GetDataMonitor",
+          category: "monitor",
+        },
+        {
+          name: "WS()",
+          type: "specificModel",
+          key: "WS",
+          category: "monitor",
+        },
+        {
+          name: "getSelectedMonth()",
+          type: "specificModel",
+          key: "getSelectedMonthMonitor",
+          category: "monitor",
+        },
+        {
+          name: "getSelectedDay()",
+          type: "specificModel",
+          key: "getSelectedDay",
+          category: "monitor",
+        },
+        {
+          name: "openTabbill()",
+          type: "specificModel",
+          key: "openTabbill",
+          category: "monitor",
+        },
+        {
+          name: "RandomValueMonitorNoLogin()",
+          type: "specificModel",
+          key: "RandomValueMonitorNoLogin",
+          category: "monitor",
+        },
+        {
+          name: "luxVal()",
+          type: "specificModel",
+          key: "luxVal",
+          category: "monitor",
+        },
+      ],
+    },
+  ]
+
+  const myDevicesData = [
+    {
+      key: "myDevices",
+      label: "My Devices",
+      children: [
+        {
+          name: "getMyDevice()",
+          type: "specificModel",
+          key: "getMyDevice",
+          category: "myDevices",
+        },
+      ],
+    },
+  ]
+
+  const newAddressData = [
+    {
+      key: "newAddress",
+      label: "New Address",
+      children: [
+        {
+          name: "validateInput()",
+          type: "specificModel",
+          key: "validateInputNewAddress",
+          category: "newAddress",
+        },
+        {
+          name: "CreateAddress()",
+          type: "specificModel",
+          key: "CreateAddress",
+          category: "newAddress",
+        },
+      ],
+    },
+  ]
+
+  const notificationData = [
+    {
+      key: "notification",
+      label: "Notification",
+      children: [
+        {
+          name: "pagination()",
+          type: "specificModel",
+          key: "pagination",
+          category: "notification",
+        },
+        {
+          name: "GetNotification()",
+          type: "specificModel",
+          key: "GetNotification",
+          category: "notification",
+        },
+      ],
+    },
+  ]
+
+  const orderInfoCancelRefundData = [
+    {
+      key: "orderInfoCancelRefund",
+      label: "Order Info Cancel Refund",
+      children: [
+        {
+          name: "getOid()",
+          type: "specificModel",
+          key: "getOid",
+          category: "orderInfoCancelRefund",
+        },
+        {
+          name: "sendRefund()",
+          type: "specificModel",
+          key: "sendRefund",
+          category: "orderInfoCancelRefund",
+        },
+        {
+          name: "cancelOrder()",
+          type: "specificModel",
+          key: "cancelOrder_order_info_cancel_refund",
+          category: "orderInfoCancelRefund",
+        },
+      ],
+    },
+  ]
+
+  const orderInfoCancelData = [
+    {
+      key: "orderInfoCancel",
+      label: "Order Info Cancel",
+      children: [
+        {
+          name: "getOid()",
+          type: "specificModel",
+          key: "getOid_order_info_cancel",
+          category: "orderInfoCancel",
+        },
+        {
+          name: "cancelOrder()",
+          type: "specificModel",
+          key: "cancelOrder_order_info_cancel",
+          category: "orderInfoCancel",
+        },
+      ],
+    },
+  ]
+
+  const orderInfoReceivedData = [
+    {
+      key: "orderInfoReceived",
+      label: "Order In fo Received",
+      children: [
+        {
+          name: "getOid()",
+          type: "specificModel",
+          key: "order_info_received_getOid",
+          category: "orderInfoReceived",
+        },
+        {
+          name: "cancelOrder()",
+          type: "specificModel",
+          key: "order_info_received_cancelOrder",
+          category: "orderInfoReceived",
+        },
+        {
+          name: "getTimeline()",
+          type: "specificModel",
+          key: "order_info_received_getTimeline",
+          category: "orderInfoReceived",
+        },
+      ],
+    },
+  ]
+
+  const orderInfoWaitRceiveData = [
+    {
+      key: "order_info_waitRceive",
+      label: "Order Info WaitRceive",
+      children: [
+        {
+          name: "sendReceipt()",
+          type: "specificModel",
+          key: "order_info_waitRceive_sendReceipt",
+          category: "orderInfoWaitRceive",
+        },
+        {
+          name: "getOid()",
+          type: "specificModel",
+          key: "order_info_waitRceive_getOid",
+          category: "orderInfoWaitRceive",
+        },
+        {
+          name: "getTimeline()",
+          type: "specificModel",
+          key: "order_info_waitRceive_getTimeline",
+          category: "orderInfoWaitRceive",
+        },
+      ],
+    },
+  ]
+
+  const orderState10Data = [
+    {
+      key: "order_state_10",
+      label: "Order State 10",
+      children: [
+        {
+          name: "cancelOrder()",
+          type: "specificModel",
+          key: "orderState10_cancelOrder",
+          category: "orderState10",
+        },
+        {
+          name: "getOid()",
+          type: "specificModel",
+          key: "orderState10_getOid",
+          category: "orderState10",
+        },
+      ],
+    },
+  ]
+
+  const orderStateShipData = [
+    {
+      key: "order_state_ship",
+      label: "Order State Ship",
+      children: [
+        {
+          name: "cancelOrder()",
+          type: "specificModel",
+          key: "orderStateShip_cancelOrder",
+          category: "orderStateShip",
+        },
+        {
+          name: "getOid()",
+          type: "specificModel",
+          key: "orderStateShip_getOid",
+          category: "orderStateShip",
+        },
+      ],
+    },
+  ]
+
+  const paymentMethodData = [
+    {
+      key: "payment_method",
+      label: "Payment Method",
+      children: [
+        {
+          name: "selectPayment()",
+          type: "specificModel",
+          key: "selectPayment",
+          category: "paymentMethod",
+        },
+      ],
+    },
+  ]
+
+  const paymentMethod2Data = [
+    {
+      key: "payment_method2",
+      label: "Payment Method 2",
+      children: [
+        {
+          name: "genQR()",
+          type: "specificModel",
+          key: "genQR",
+          category: "paymentMethod2",
+        },
+        {
+          name: "start_timer()",
+          type: "specificModel",
+          key: "start_timer",
+          category: "paymentMethod2",
+        },
+        {
+          name: "AddSlipPayment()",
+          type: "specificModel",
+          key: "AddSlipPayment",
+          category: "paymentMethod2",
+        },
+        {
+          name: "UpdateSlipPayment()",
+          type: "specificModel",
+          key: "UpdateSlipPayment",
+          category: "paymentMethod2",
+        },
+      ],
+    },
+  ]
+
+  const paymentStatisticData = [
+    {
+      key: "paymentStatistic",
+      label: "Payment Statistic",
+      children: [
+        {
+          name: "GetPaymentStatistic()",
+          type: "specificModel",
+          key: "GetPaymentStatistic",
+          category: "paymentStatistic",
+        },
+        {
+          name: "ChartPaymentStatistic()",
+          type: "specificModel",
+          key: "ChartPaymentStatistic",
+          category: "paymentStatistic",
+        },
+        {
+          name: "ExportCSVPayment()",
+          type: "specificModel",
+          key: "ExportCSVPayment",
+          category: "paymentStatistic",
+        },
+      ],
+    },
+  ]
+
+  const productCartData = [
+    {
+      key: "productCart",
+      label: "Product Cart",
+      children: [
+        {
+          name: "showCart()",
+          type: "specificModel",
+          key: "showCart",
+          category: "productCart",
+        },
+        {
+          name: "show_cart()",
+          type: "specificModel",
+          key: "show_cart",
+          category: "productCart",
+        },
+        {
+          name: "update_quantity()",
+          type: "specificModel",
+          key: "update_quantity",
+          category: "productCart",
+        },
+        {
+          name: "delete_id()",
+          type: "specificModel",
+          key: "delete_id",
+          category: "productCart",
+        },
+        {
+          name: "sumPrice()",
+          type: "specificModel",
+          key: "sumPrice",
+          category: "productCart",
+        },
+        {
+          name: "confirmOrder()",
+          type: "specificModel",
+          key: "confirmOrder",
+          category: "productCart",
+        },
+      ],
+    },
+  ]
+
+  const productdetailData = [
+    {
+      key: "productdetail",
+      label: "Productdetail",
+      children: [
+        {
+          name: "confirmOrderBuy()",
+          type: "specificModel",
+          key: "confirmOrderBuy",
+          category: "productdetail",
+        },
+        {
+          name: "getDetailProduct()",
+          type: "specificModel",
+          key: "getDetailProduct",
+          category: "productdetail",
+        },
+        {
+          name: "checkLogin()",
+          type: "specificModel",
+          key: "checkLogin",
+          category: "productdetail",
+        },
+      ],
+    },
+  ]
+
+  const purchaseReportData = [
+    {
+      key: "purchaseReport",
+      label: "Purchase Report",
+      children: [
+        {
+          name: "GetSalesData()",
+          type: "specificModel",
+          key: "GetSalesData",
+          category: "purchaseReport",
+        },
+        {
+          name: "CreateTableReport()",
+          type: "specificModel",
+          key: "CreateTableReport",
+          category: "purchaseReport",
+        },
+        {
+          name: "CreateTableQuarter()",
+          type: "specificModel",
+          key: "CreateTableQuarter",
+          category: "purchaseReport",
+        },
+        {
+          name: "getSelectedMonthpurchase()",
+          type: "specificModel",
+          key: "getSelectedMonthpurchase",
+          category: "purchaseReport",
+        },
+        {
+          name: "showChart()",
+          type: "specificModel",
+          key: "showChart",
+          category: "purchaseReport",
+        },
+        {
+          name: "ExportCSV()",
+          type: "specificModel",
+          key: "ExportCSV",
+          category: "purchaseReport",
+        },
+      ],
+    },
+  ]
+
+  const redeemData = [
+    {
+      key: "redeem",
+      label: "Redeem",
+      children: [
+        {
+          name: "RedeemCheckToken()",
+          type: "specificModel",
+          key: "RedeemCheckToken",
+          category: "redeem",
+        },
+        {
+          name: "checkNoInput()",
+          type: "specificModel",
+          key: "checkNoInput",
+          category: "redeem",
+        },
+        {
+          name: "postRedeem()",
+          type: "specificModel",
+          key: "postRedeem",
+          category: "redeem",
+        },
+      ],
+    },
+  ]
+
+  const refundData = [
+    {
+      key: "refund",
+      label: "Refund",
+      children: [
+        {
+          name: "getData()",
+          type: "specificModel",
+          key: "getData",
+          category: "refund",
+        },
+        {
+          name: "sendRefund()",
+          type: "specificModel",
+          key: "sendRefund",
+          category: "refund",
+        },
+        {
+          name: "PreviewImg_refund()",
+          type: "specificModel",
+          key: "PreviewImg_refund",
+          category: "refund",
+        },
+      ],
+    },
+  ]
+
+  const registerData = [
+    {
+      key: "register",
+      label: "Register",
+      children: [
+        {
+          name: "registerFun()",
+          type: "specificModel",
+          key: "registerFun",
+          category: "register",
+        },
+
+        {
+          name: "SendOTP()",
+          type: "specificModel",
+          key: "SendOTP",
+          category: "register",
+        },
+      ],
+    },
+  ]
+
+  const reportdataloggerData = [
+    {
+      key: "reportdatalogger",
+      label: "Reportdatalogger",
+      children: [
+        {
+          name: "CreateHTML()",
+          type: "specificModel",
+          key: "CreateHTML",
+          category: "reportdatalogger",
+        },
+        {
+          name: "GetReportData()",
+          type: "specificModel",
+          key: "GetReportData",
+          category: "reportdatalogger",
+        },
+        {
+          name: "getSelectedDate()",
+          type: "specificModel",
+          key: "getSelectedDate",
+          category: "reportdatalogger",
+        },
+        {
+          name: "openTabreportCart()",
+          type: "specificModel",
+          key: "openTabreportCart",
+          category: "reportdatalogger",
+        },
+        {
+          name: "openTabreport()",
+          type: "specificModel",
+          key: "openTabreport",
+          category: "reportdatalogger",
+        },
+        {
+          name: "chartFlowDay()",
+          type: "specificModel",
+          key: "chartFlowDay",
+          category: "reportdatalogger",
+        },
+        {
+          name: "chartFlowMonth()",
+          type: "specificModel",
+          key: "chartFlowMonth",
+          category: "reportdatalogger",
+        },
+        {
+          name: "chartFlowYear()",
+          type: "specificModel",
+          key: "chartFlowYear",
+          category: "reportdatalogger",
+        },
+        {
+          name: "chartFlowTotal()",
+          type: "specificModel",
+          key: "chartFlowTotal",
+          category: "reportdatalogger",
+        },
+        {
+          name: "chargePower()",
+          type: "specificModel",
+          key: "chargePower",
+          category: "reportdatalogger",
+        },
+        {
+          name: "chartNOlogin()",
+          type: "specificModel",
+          key: "chartNOlogin",
+          category: "reportdatalogger",
+        },
+        {
+          name: "chartNOloginMonthcart()",
+          type: "specificModel",
+          key: "chartNOloginMonthcart",
+          category: "reportdatalogger",
+        },
+        {
+          name: "chartNOloginYearhcart()",
+          type: "specificModel",
+          key: "chartNOloginYearhcart",
+          category: "reportdatalogger",
+        },
+        {
+          name: "chartNOloginTotalhcart()",
+          type: "specificModel",
+          key: "chartNOloginTotalhcart",
+          category: "reportdatalogger",
+        },
+        {
+          name: "chargePowerNOlogin()",
+          type: "specificModel",
+          key: "chargePowerNOlogin",
+          category: "reportdatalogger",
+        },
+      ],
+    },
+  ]
+
+  const settingAccountData = [
+    {
+      key: "settingAccount",
+      label: "SettingAccount",
+      children: [
+        {
+          name: "settingAccountCheckToken()",
+          type: "specificModel",
+          key: "settingAccountCheckToken",
+          category: "settingAccount",
+        },
+        {
+          name: "updateProfile()",
+          type: "specificModel",
+          key: "updateProfile",
+          category: "settingAccount",
+        },
+        {
+          name: "UpdateAvatar()",
+          type: "specificModel",
+          key: "AddAvatar",
+          category: "settingAccount",
+        },
+        {
+          name: "UpdateAvatar()",
+          type: "specificModel",
+          key: "UpdateAvatar",
+          category: "settingAccount",
+        },
+      ],
+    },
+  ]
+
+  const settingOrderData = [
+    {
+      key: "setting_order",
+      label: "Setting Order",
+      children: [
+        {
+          name: "getAll()",
+          type: "specificModel",
+          key: "getAll",
+          category: "settingOrder",
+        },
+        {
+          name: "scroller()",
+          type: "specificModel",
+          key: "scroller",
+          category: "settingOrder",
+        },
+      ],
+    },
+  ]
+
+  const settingData = [
+    {
+      key: "setting",
+      label: "Setting",
+      children: [
+        {
+          name: "SettingCheckToken()",
+          type: "specificModel",
+          key: "SettingCheckToken",
+          category: "setting",
+        },
+        {
+          name: "getQRcode()",
+          type: "specificModel",
+          key: "getQRcode",
+          category: "setting",
+        },
+      ],
+    },
+  ]
+
+  const startData = [
+    {
+      key: "start",
+      label: "Start",
+      children: [
+        {
+          name: "init()",
+          type: "specificModel",
+          key: "startInit",
+          category: "start",
+        },
+      ],
+    },
+  ]
+
+  const topupData = [
+    {
+      key: "topup",
+      label: "Topup",
+      children: [
+        {
+          name: "TopUpCheckToken()",
+          type: "specificModel",
+          key: "TopUpCheckToken",
+          category: "topup",
+        },
+        {
+          name: "checkNoInput()",
+          type: "specificModel",
+          key: "topup_checkNoInput",
+          category: "topup",
+        },
+        {
+          name: "AddSlipPayment()",
+          type: "specificModel",
+          key: "topup_addSlipPayment",
+          category: "topup",
+        },
+        {
+          name: "UpdateSlipPayment()",
+          type: "specificModel",
+          key: "topup_updateSlipPayment",
+          category: "topup",
+        },
+      ],
+    },
+  ]
+
+  const transactionData = [
+    {
+      key: "transaction",
+      label: "Transaction",
+      children: [
+        {
+          name: "transactionCheckToken()",
+          type: "specificModel",
+          key: "transactionCheckToken",
+          category: "transaction",
+        },
+
+        {
+          name: "getTransaction()",
+          type: "specificModel",
+          key: "getTransaction",
+          category: "transaction",
+        },
+
+        {
+          name: "pagination_tran()",
+          type: "specificModel",
+          key: "pagination_tran",
+          category: "transaction",
+        },
+        {
+          name: "calPage()",
+          type: "specificModel",
+          key: "transaction_calPage",
+          category: "transaction",
+        },
+      ],
+    },
+  ]
+
+  const transferData = [
+    {
+      key: "transfer",
+      label: "Transfer.html",
+      children: [
+        {
+          name: "transferCheckToken()",
+          type: "specificModel",
+          key: "transferCheckToken",
+          category: "transfer",
+        },
+        {
+          name: "checkNoInput()",
+          type: "specificModel",
+          key: "transfer_checkNoInput",
+          category: "transfer",
+        },
+        {
+          name: "postTransfer()",
+          type: "specificModel",
+          key: "postTransfer",
+          category: "transfer",
+        },
+      ],
+    },
+  ]
+
+  const updateOrderData = [
+    {
+      key: "update_order",
+      label: "Update_order.html",
+      children: [
+        {
+          name: "showOrder()",
+          type: "specificModel",
+          key: "showOrder",
+          category: "update_order",
+        },
+        {
+          name: "scroller()",
+          type: "specificModel",
+          key: "update_order_scroller",
+          category: "update_order",
+        },
+      ],
+    },
+  ]
+
+  const vouncherCodeData = [
+    {
+      key: "vouncher_code",
+      label: "Vouncher_code.html",
+      children: [
+        {
+          name: "showVoucher()",
+          type: "specificModel",
+          key: "showVoucher",
+          category: "vouncher_code",
+        },
+      ],
+    },
+  ]
+
+  const walletData = [
+    {
+      key: "wallet",
+      label: "Wallet.html",
+      children: [
+        {
+          name: "walletCheckToken()",
+          type: "specificModel",
+          key: "walletCheckToken",
+          category: "wallet",
+        },
+        {
+          name: "getUserData()",
+          type: "specificModel",
+          key: "getUserData",
+          category: "wallet",
+        },
+        {
+          name: "get_dataTransaction()",
+          type: "specificModel",
+          key: "get_dataTransaction",
+          category: "wallet",
+        },
+        {
+          name: "loadList()",
+          type: "specificModel",
+          key: "loadList",
+          category: "wallet",
+        },
+      ],
+    },
+  ]
+
+  const allData = [
+    ...adddataloggerData,
+    ...cancelOrderData,
+    ...changepasswordData,
+    ...oinHistoryData,
+    ...coinsData,
+    ...ConfigurationData,
+    ...confirmOrderData,
+    ...customerData,
+    ...dataCustomerDetails,
+    ...dataCustomerData,
+    ...deletedataloggerData,
+    ...distributorData,
+    ...editAddressData,
+    ...forgotpassData,
+    ...homeHtmlData,
+    ...inComeData,
+    ...langData,
+    ...levelData,
+    ...locationAddressData,
+    ...loginData,
+    ...mainData,
+    ...memberTierData,
+    ...monitorData,
+    ...myDevicesData,
+    ...newAddressData,
+    ...notificationData,
+    ...orderInfoCancelRefundData,
+    ...orderInfoCancelData,
+    ...orderInfoReceivedData,
+    ...orderInfoWaitRceiveData,
+    ...orderState10Data,
+    ...orderStateShipData,
+    ...paymentMethodData,
+    ...paymentMethod2Data,
+    ...paymentStatisticData,
+    ...productCartData,
+    ...productdetailData,
+    ...purchaseReportData,
+    ...redeemData,
+    ...refundData,
+    ...registerData,
+    ...reportdataloggerData,
+    ...settingAccountData,
+    ...settingOrderData,
+    ...settingData,
+    ...startData,
+    ...topupData,
+    ...transactionData,
+    ...transferData,
+    ...updateOrderData,
+    ...vouncherCodeData,
+    ...walletData,
+  ]
+
+  const getLevelKeys = (items1) => {
+    const key = {}
+    const func = (items2, level = 1) => {
+      items2.forEach((item) => {
+        key[item.key] = level
+        if (item.children) {
+          func(item.children, level + 1)
+        }
+      })
+    }
+    func(items1)
+    return key
+  }
+
+  const levelKeys = getLevelKeys(allData)
+  // console.log("levelKeys", levelKeys)
+
+  const [stateOpenKeys, setStateOpenKeys] = useState("")
+  // console.log("stateOpenKeys", stateOpenKeys)
+
+  const onOpenChange = (openKeys) => {
+    const currentOpenKey = openKeys.find(
+      (key) => stateOpenKeys.indexOf(key) === -1
+    )
+    if (currentOpenKey !== undefined) {
+      const repeatIndex = openKeys
+        .filter((key) => key !== currentOpenKey)
+        .findIndex((key) => levelKeys[key] === levelKeys[currentOpenKey])
+      setStateOpenKeys((prevOpenKeys) => {
+        if (Array.isArray(prevOpenKeys)) {
+          return [
+            ...openKeys,
+            ...prevOpenKeys.filter(
+              (key) => levelKeys[key] !== levelKeys[currentOpenKey]
+            ),
+          ]
+        } else {
+          return openKeys
+        }
+      })
+    } else {
+      setStateOpenKeys(openKeys)
+    }
+  }
+
   return (
-    <div className="py-2">
-      {/* adddatalogger.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Adddatalogger.htlm"
-          category="adddatalogger"
-          open={openAdddatalogger}
-          onClick={setOpenAdddatalogger}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* cancel_order.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Cancel_order.html"
-          category="cancelOrder"
-          open={openCancelOrder}
-          onClick={setOpenCancelOrder}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* changepassword.html*/}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Changepassword.html"
-          category="changepassword"
-          open={openChangepassword}
-          onClick={setOpenChangepassword}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* coin_history.html*/}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Coin_history.html"
-          category="coinhistory"
-          open={openCoinHistory}
-          onClick={setOpenCoinHistory}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* coins.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Coins.html"
-          category="coins"
-          open={openCoins}
-          onClick={setOpenCoins}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/*  Configuration.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Configuration.html"
-          category="configuration"
-          open={openConfiguration}
-          onClick={setOpenConfiguration}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* confirm_order.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Confirm_order.html"
-          category="confirmorder"
-          open={openConfirm}
-          onClick={setOpenConfirm}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/*   // customer.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="customer.html"
-          category="customer"
-          open={openCustomer}
-          onClick={setOpenCustomer}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/*   // data_customer_details.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="data_cus_details.html"
-          category="data_customer_details"
-          open={openDataCustomerDetails}
-          onClick={setOpenDataCustomerDetails}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/*   // data_customer */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="data_customer.html"
-          category="data_customer"
-          open={opendataCustomer}
-          onClick={setOpendataCustomer}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/*   //deletedatalogger.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="deletedatalogger.html"
-          category="deletedatalogger"
-          open={openDeletedatalogger}
-          onClick={setOpenDeletedatalogger}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* distributor.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="distributor.html"
-          category="distributor"
-          open={openDistributor}
-          onClick={setOpenDistributor}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* edit_address.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="edit_address.html"
-          category="editAddress"
-          open={openEditAddress}
-          onClick={setOpenEditAddress}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* forgotpass.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="forgotpass.html"
-          category="forgotpass"
-          open={openForgotpass}
-          onClick={setOpenForgotpass}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* homeHtml */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Home.htlm"
-          category="homeHtml"
-          open={openHomeHtml}
-          onClick={setOpenHomeHtml}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* inCome.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="InCome.html"
-          category="inCome"
-          open={openInCome}
-          onClick={setOpenInCome}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* lang.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Lang.html"
-          category="lang"
-          open={openLang}
-          onClick={setOpenLang}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* level.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Level.html"
-          category="level"
-          open={openLevel}
-          onClick={setOpenLevel}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* locationAddress.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="LocationAddress.html"
-          category="locationAddress"
-          open={openLocationAddress}
-          onClick={setOpenLocationAddress}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* login.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Login.html"
-          category="login"
-          open={openLogin}
-          onClick={setOpenLogin}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* main.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Main.html"
-          category="main"
-          open={openMain}
-          onClick={setOpenMain}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* memberTier.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="MemberTier.html"
-          category="memberTier"
-          open={openMemberTier}
-          onClick={setOpenMemberTier}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* monitor.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Monitor.html"
-          category="monitor"
-          open={openMonitor}
-          onClick={setOpenMonitor}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* my_devices.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="My_devices.html"
-          category="myDevices"
-          open={openMyDevices}
-          onClick={setOpenMyDevices}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* new_address.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="New_address.html"
-          category="newAddress"
-          open={openNewAddress}
-          onClick={setOpenNewAddress}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* notification.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Notification.html"
-          category="notification"
-          open={openNotification}
-          onClick={setOpenNotification}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/*  order_info_cancel_refund.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Order_info_cancel_refund.html"
-          category="orderInfoCancelRefund"
-          open={openOrderInfoCancelRefund}
-          onClick={setOpenOrderInfoCancelRefund}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* order_info_cancel.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Order_info_cancel.html"
-          category="orderInfoCancel"
-          open={openOrderInfoCancel}
-          onClick={setOpenOrderInfoCancel}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* order_info_received.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Order_info_received.html"
-          category="orderInfoReceived"
-          open={openOrderInfoReceived}
-          onClick={setOpenOrderInfoReceived}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* order_info_waitRceive.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Order_info_waitRceive.html"
-          category="orderInfoWaitRceive"
-          open={openOrderInfoWaitRceive}
-          onClick={setOpenOrderInfoWaitRceive}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* order_state_10.html  */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Order_state_10.html"
-          category="orderState10"
-          open={openOrderState10}
-          onClick={setOpenOrderState10}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* order_state_ship.html  */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Order_state_ship.html"
-          category="orderStateShip"
-          open={openOrderStateShip}
-          onClick={setOpenOrderStateShip}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* payment_method.html  */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Payment_method.html"
-          category="paymentMethod"
-          open={openPaymentMethod}
-          onClick={setOpenPaymentMethod}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* payment_method2.html  */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Payment_method2.html"
-          category="paymentMethod2"
-          open={openPaymentMethod2}
-          onClick={setOpenPaymentMethod2}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* paymentStatistic.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="PaymentStatistic.html"
-          category="paymentStatistic"
-          open={openPaymentStatistic}
-          onClick={setOpenPaymentStatistic}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* productCart.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="ProductCart.html"
-          category="productCart"
-          open={openProductCart}
-          onClick={setOpenProductCart}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* productdetail.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Productdetail.html"
-          category="productdetail"
-          open={openProductdetail}
-          onClick={setOpenProductdetail}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/*  purchaseReport.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="purchaseReport.html"
-          category="purchaseReport"
-          open={openPurchaseReport}
-          onClick={setOpenPurchaseReport}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* redeem.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Redeem.html"
-          category="redeem"
-          open={openRedeem}
-          onClick={setOpenRedeem}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* refund.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Refund.html"
-          category="refund"
-          open={openRefund}
-          onClick={setOpenRefund}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/*register.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Register.html"
-          category="register"
-          open={openRegister}
-          onClick={setOpenRegister}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/*reportdatalogger.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Reportdatalogger.html"
-          category="reportdatalogger"
-          open={openReportdatalogger}
-          onClick={setOpenReportdatalogger}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* setting_account.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Setting_account.html"
-          category="settingAccount"
-          open={openSettingAccount}
-          onClick={setOpenSettingAccount}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/*  setting_order.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Setting_order.html"
-          category="settingOrder"
-          open={openSettingOrder}
-          onClick={setOpenSettingOrder}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* open setting.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Setting.html"
-          category="setting"
-          open={openSetting}
-          onClick={setOpenSetting}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* start.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Start.html"
-          category="start"
-          open={openStart}
-          onClick={setOpenStart}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* topup.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Topup.html"
-          category="topup"
-          open={openTopup}
-          onClick={setOpenTopup}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* transaction.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Transaction.html"
-          category="transaction"
-          open={openTransaction}
-          onClick={setOpenTransaction}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* transfer.html. */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Transfer.html"
-          category="transfer"
-          open={openTransfer}
-          onClick={setOpenTransfer}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* update_order.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Update_order.html"
-          category="update_order"
-          open={openUpdateOrder}
-          onClick={setOpenUpdateOrder}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* vouncher_code.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Vouncher_code.html.html"
-          category="vouncher_code"
-          open={openVouncherCode}
-          onClick={setOpenVouncherCode}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-
-      {/* wallet.html */}
-      <div>
-        <DropdownList
-          selectedMenu={selectedMenu}
-          headerName="Wallet.html"
-          category="wallet"
-          open={openWallet}
-          onClick={setOpenWallet}
-          data={data}
-          handleModelClick={handleModelClick}
-        />
-      </div>
-    </div>
+    <>
+      <Menu
+        mode="inline"
+        defaultSelectedKeys={["indexHtml"]}
+        openKeys={stateOpenKeys}
+        onOpenChange={onOpenChange}>
+        {allData.map((menuItem) => (
+          <Menu.SubMenu
+            key={menuItem.key}
+            title={menuItem.label}>
+            {menuItem.children.map(
+              (child) =>
+                child.key !== "scriptIndex" && (
+                  <Menu.Item
+                    onClick={() => handleModelClick(child.key)}
+                    key={child.key}>
+                    {child.name}
+                  </Menu.Item>
+                )
+            )}
+          </Menu.SubMenu>
+        ))}
+      </Menu>
+    </>
   )
 }
