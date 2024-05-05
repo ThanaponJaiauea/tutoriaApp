@@ -1,9 +1,9 @@
 /** @format */
 
-import {useState} from "react"
-import {Menu} from "antd"
+import { useState } from "react";
+import { Menu } from "antd";
 
-export default function FormModelSolarApp({handleModelClick}) {
+export default function FormModelSolarApp({ handleModelClick }) {
   // console.log("selectedMenu:", selectedMenu)
   const adddataloggerData = [
     {
@@ -30,7 +30,7 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const cancelOrderData = [
     {
@@ -51,12 +51,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const changepasswordData = [
     {
       key: "changepassword",
-      label: "Changepassword",
+      label: "Changepassword.html",
       children: [
         {
           name: "changePassword()",
@@ -66,12 +66,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
-  const oinHistoryData = [
+  const coinHistoryData = [
     {
-      key: "Oin History",
-      label: "Oin History",
+      key: "COin History",
+      label: "Coin_history.html",
       children: [
         {
           name: "getRedeemHis()",
@@ -93,12 +93,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const coinsData = [
     {
       key: "coins",
-      label: "Coins",
+      label: "Coins.html",
       children: [
         {
           name: "CoinsCheckToken()",
@@ -114,12 +114,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const ConfigurationData = [
     {
       key: "Configuration",
-      label: "Configuration",
+      label: "Configuration.html",
       children: [
         {
           name: "updateDevice()",
@@ -135,12 +135,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const confirmOrderData = [
     {
       key: "confirm Order",
-      label: "Confirm Order",
+      label: "Confirm_order.html",
       children: [
         {
           name: "getOrder()",
@@ -198,12 +198,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const customerData = [
     {
       key: "customer",
-      label: "Customer",
+      label: "Customer.html",
       children: [
         {
           name: "GetDataCustPurchaseReportStats()",
@@ -237,12 +237,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
-  const dataCustomerDetails = [
+  const dataCustomerDetailsData = [
     {
       key: "data_customer_details",
-      label: "Data customer details",
+      label: "Data_customer_details.html",
       children: [
         {
           name: "GetDataCustomerDetail()",
@@ -252,12 +252,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const dataCustomerData = [
     {
       key: "Data customer",
-      label: "Data customer",
+      label: "Data_customer.html",
       children: [
         {
           name: "GetDataCustomer()",
@@ -267,12 +267,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const deletedataloggerData = [
     {
       key: "deletedatalogger",
-      label: "Deletedatalogger",
+      label: "Deletedatalogger.html",
       children: [
         {
           name: "getDeviceAll()",
@@ -282,12 +282,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const distributorData = [
     {
       key: "distributor",
-      label: "Distributor",
+      label: "Distributor.html",
       children: [
         {
           name: "distributorFun()",
@@ -315,12 +315,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const editAddressData = [
     {
       key: "edit Address",
-      label: "Edit Address",
+      label: "Edit_address.html",
       children: [
         {
           name: "DeleteAddress()",
@@ -342,12 +342,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const forgotpassData = [
     {
       key: "forgotpass",
-      label: "Forgotpass",
+      label: "Forgotpass.html",
       children: [
         {
           name: "forgotPass()",
@@ -363,12 +363,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const homeHtmlData = [
     {
       key: "homeHtml",
-      label: "HomeHtml",
+      label: "Home.html",
       children: [
         {
           name: "count()",
@@ -426,12 +426,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const inComeData = [
     {
       key: "inCome",
-      label: "InCome",
+      label: "InCome.html",
       children: [
         {
           name: "getSelectedYear()",
@@ -465,12 +465,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const langData = [
     {
       key: "lang",
-      label: "Lang",
+      label: "Lang.html",
       children: [
         {
           name: "setAllPageLang()",
@@ -498,12 +498,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const levelData = [
     {
       key: "level",
-      label: "Level",
+      label: "Level.html",
       children: [
         {
           name: "openTab()",
@@ -513,12 +513,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const locationAddressData = [
     {
       key: "locationAddress",
-      label: "LocationAddress",
+      label: "LocationAddress.html",
       children: [
         {
           name: "GetAddress()",
@@ -528,12 +528,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const loginData = [
     {
       key: "login",
-      label: "Login",
+      label: "Login.html",
       children: [
         {
           name: "checkLoginWithRefreshToken()",
@@ -549,12 +549,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const mainData = [
     {
       key: "main",
-      label: "Main",
+      label: "Main.html",
       children: [
         {
           name: "menuhome()",
@@ -618,12 +618,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const memberTierData = [
     {
       key: "memberTier",
-      label: "MemberTier",
+      label: "MemberTier.html",
       children: [
         {
           name: "getMemberTier()",
@@ -639,12 +639,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const monitorData = [
     {
       key: "monitor",
-      label: "Monitor",
+      label: "Monitor.html",
       children: [
         {
           name: "monitorCheckToken()",
@@ -714,12 +714,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const myDevicesData = [
     {
       key: "myDevices",
-      label: "My Devices",
+      label: "My_devices.html",
       children: [
         {
           name: "getMyDevice()",
@@ -729,12 +729,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const newAddressData = [
     {
       key: "newAddress",
-      label: "New Address",
+      label: "New_address.html",
       children: [
         {
           name: "validateInput()",
@@ -750,12 +750,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const notificationData = [
     {
       key: "notification",
-      label: "Notification",
+      label: "Notification.html",
       children: [
         {
           name: "pagination()",
@@ -771,12 +771,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const orderInfoCancelRefundData = [
     {
       key: "orderInfoCancelRefund",
-      label: "Order Info Cancel Refund",
+      label: "Order_info_cancel_refund.html",
       children: [
         {
           name: "getOid()",
@@ -798,12 +798,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const orderInfoCancelData = [
     {
       key: "orderInfoCancel",
-      label: "Order Info Cancel",
+      label: "Order_info_cancel.html",
       children: [
         {
           name: "getOid()",
@@ -819,12 +819,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const orderInfoReceivedData = [
     {
       key: "orderInfoReceived",
-      label: "Order In fo Received",
+      label: "Order_info_received.html",
       children: [
         {
           name: "getOid()",
@@ -846,12 +846,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const orderInfoWaitRceiveData = [
     {
       key: "order_info_waitRceive",
-      label: "Order Info WaitRceive",
+      label: "Order_info_waitRceive.html",
       children: [
         {
           name: "sendReceipt()",
@@ -873,12 +873,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const orderState10Data = [
     {
       key: "order_state_10",
-      label: "Order State 10",
+      label: "Order_state_10.html",
       children: [
         {
           name: "cancelOrder()",
@@ -894,12 +894,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const orderStateShipData = [
     {
       key: "order_state_ship",
-      label: "Order State Ship",
+      label: "Order_state_ship.html",
       children: [
         {
           name: "cancelOrder()",
@@ -915,12 +915,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const paymentMethodData = [
     {
       key: "payment_method",
-      label: "Payment Method",
+      label: "Payment_method.html",
       children: [
         {
           name: "selectPayment()",
@@ -930,12 +930,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const paymentMethod2Data = [
     {
       key: "payment_method2",
-      label: "Payment Method 2",
+      label: "Payment_method2.html",
       children: [
         {
           name: "genQR()",
@@ -963,12 +963,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const paymentStatisticData = [
     {
       key: "paymentStatistic",
-      label: "Payment Statistic",
+      label: "PaymentStatistic.html",
       children: [
         {
           name: "GetPaymentStatistic()",
@@ -990,12 +990,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const productCartData = [
     {
       key: "productCart",
-      label: "Product Cart",
+      label: "ProductCart.html",
       children: [
         {
           name: "showCart()",
@@ -1035,12 +1035,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const productdetailData = [
     {
       key: "productdetail",
-      label: "Productdetail",
+      label: "Productdetail.html",
       children: [
         {
           name: "confirmOrderBuy()",
@@ -1062,12 +1062,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const purchaseReportData = [
     {
       key: "purchaseReport",
-      label: "Purchase Report",
+      label: "PurchaseReport.html",
       children: [
         {
           name: "GetSalesData()",
@@ -1107,12 +1107,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const redeemData = [
     {
       key: "redeem",
-      label: "Redeem",
+      label: "Redeem.html",
       children: [
         {
           name: "RedeemCheckToken()",
@@ -1134,12 +1134,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const refundData = [
     {
       key: "refund",
-      label: "Refund",
+      label: "Refund.html",
       children: [
         {
           name: "getData()",
@@ -1161,12 +1161,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const registerData = [
     {
       key: "register",
-      label: "Register",
+      label: "Register.html",
       children: [
         {
           name: "registerFun()",
@@ -1183,12 +1183,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const reportdataloggerData = [
     {
       key: "reportdatalogger",
-      label: "Reportdatalogger",
+      label: "Reportdatalogger.html",
       children: [
         {
           name: "CreateHTML()",
@@ -1282,12 +1282,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const settingAccountData = [
     {
       key: "settingAccount",
-      label: "SettingAccount",
+      label: "SettingAccount.html",
       children: [
         {
           name: "settingAccountCheckToken()",
@@ -1315,12 +1315,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const settingOrderData = [
     {
       key: "setting_order",
-      label: "Setting Order",
+      label: "SettingOrder.html",
       children: [
         {
           name: "getAll()",
@@ -1336,12 +1336,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const settingData = [
     {
       key: "setting",
-      label: "Setting",
+      label: "Setting.html",
       children: [
         {
           name: "SettingCheckToken()",
@@ -1357,12 +1357,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const startData = [
     {
       key: "start",
-      label: "Start",
+      label: "Start.html",
       children: [
         {
           name: "init()",
@@ -1372,12 +1372,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const topupData = [
     {
       key: "topup",
-      label: "Topup",
+      label: "Topup.html",
       children: [
         {
           name: "TopUpCheckToken()",
@@ -1405,12 +1405,12 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const transactionData = [
     {
       key: "transaction",
-      label: "Transaction",
+      label: "Transaction.html",
       children: [
         {
           name: "transactionCheckToken()",
@@ -1440,7 +1440,7 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const transferData = [
     {
@@ -1467,7 +1467,7 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const updateOrderData = [
     {
@@ -1488,7 +1488,7 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const vouncherCodeData = [
     {
@@ -1503,7 +1503,7 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const walletData = [
     {
@@ -1536,18 +1536,18 @@ export default function FormModelSolarApp({handleModelClick}) {
         },
       ],
     },
-  ]
+  ];
 
   const allData = [
     ...adddataloggerData,
     ...cancelOrderData,
     ...changepasswordData,
-    ...oinHistoryData,
+    ...coinHistoryData,
     ...coinsData,
     ...ConfigurationData,
     ...confirmOrderData,
     ...customerData,
-    ...dataCustomerDetails,
+    ...dataCustomerDetailsData,
     ...dataCustomerData,
     ...deletedataloggerData,
     ...distributorData,
@@ -1591,52 +1591,52 @@ export default function FormModelSolarApp({handleModelClick}) {
     ...updateOrderData,
     ...vouncherCodeData,
     ...walletData,
-  ]
+  ];
 
-  const getLevelKeys = (items1) => {
-    const key = {}
+  const getLevelKeys = items1 => {
+    const key = {};
     const func = (items2, level = 1) => {
-      items2.forEach((item) => {
-        key[item.key] = level
+      items2.forEach(item => {
+        key[item.key] = level;
         if (item.children) {
-          func(item.children, level + 1)
+          func(item.children, level + 1);
         }
-      })
-    }
-    func(items1)
-    return key
-  }
+      });
+    };
+    func(items1);
+    return key;
+  };
 
-  const levelKeys = getLevelKeys(allData)
+  const levelKeys = getLevelKeys(allData);
   // console.log("levelKeys", levelKeys)
 
-  const [stateOpenKeys, setStateOpenKeys] = useState("")
+  const [stateOpenKeys, setStateOpenKeys] = useState("");
   // console.log("stateOpenKeys", stateOpenKeys)
 
-  const onOpenChange = (openKeys) => {
+  const onOpenChange = openKeys => {
     const currentOpenKey = openKeys.find(
-      (key) => stateOpenKeys.indexOf(key) === -1
-    )
+      key => stateOpenKeys.indexOf(key) === -1
+    );
     if (currentOpenKey !== undefined) {
       const repeatIndex = openKeys
-        .filter((key) => key !== currentOpenKey)
-        .findIndex((key) => levelKeys[key] === levelKeys[currentOpenKey])
-      setStateOpenKeys((prevOpenKeys) => {
+        .filter(key => key !== currentOpenKey)
+        .findIndex(key => levelKeys[key] === levelKeys[currentOpenKey]);
+      setStateOpenKeys(prevOpenKeys => {
         if (Array.isArray(prevOpenKeys)) {
           return [
             ...openKeys,
             ...prevOpenKeys.filter(
-              (key) => levelKeys[key] !== levelKeys[currentOpenKey]
+              key => levelKeys[key] !== levelKeys[currentOpenKey]
             ),
-          ]
+          ];
         } else {
-          return openKeys
+          return openKeys;
         }
-      })
+      });
     } else {
-      setStateOpenKeys(openKeys)
+      setStateOpenKeys(openKeys);
     }
-  }
+  };
 
   return (
     <>
@@ -1644,17 +1644,17 @@ export default function FormModelSolarApp({handleModelClick}) {
         mode="inline"
         defaultSelectedKeys={["indexHtml"]}
         openKeys={stateOpenKeys}
-        onOpenChange={onOpenChange}>
-        {allData.map((menuItem) => (
-          <Menu.SubMenu
-            key={menuItem.key}
-            title={menuItem.label}>
+        onOpenChange={onOpenChange}
+      >
+        {allData.map(menuItem => (
+          <Menu.SubMenu key={menuItem.key} title={menuItem.label}>
             {menuItem.children.map(
-              (child) =>
+              child =>
                 child.key !== "scriptIndex" && (
                   <Menu.Item
                     onClick={() => handleModelClick(child.key)}
-                    key={child.key}>
+                    key={child.key}
+                  >
                     {child.name}
                   </Menu.Item>
                 )
@@ -1663,5 +1663,5 @@ export default function FormModelSolarApp({handleModelClick}) {
         ))}
       </Menu>
     </>
-  )
+  );
 }

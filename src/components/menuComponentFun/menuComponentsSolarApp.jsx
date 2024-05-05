@@ -1,368 +1,368 @@
 /** @format */
 
-import ModelContent from "../modelContent"
+import ModelContent from "../modelContent";
 
-const MenuComponentsSolarApp = ({selectedMenu}) => {
+const MenuComponentsSolarApp = ({ selectedMenu }) => {
   const getTitle = () => {
     switch (selectedMenu) {
       case "count":
-        return "count()"
+        return "count()";
       case "HomeCheckToken":
-        return "HomeCheckToken()"
+        return "HomeCheckToken()";
       case "getProfile":
-        return "getProfile()"
+        return "getProfile()";
       case "sendApi":
-        return "sendApi()"
+        return "sendApi()";
       case "checklocalStorage":
-        return "checklocalStorage()"
+        return "checklocalStorage()";
       case "checkSimulated":
-        return "checkSimulated()"
+        return "checkSimulated()";
       case "getRecommendProduct":
-        return "getRecommendProduct()"
+        return "getRecommendProduct()";
       case "getAllProduct":
-        return "getAllProduct()"
+        return "getAllProduct()";
       case "getCheckIn":
-        return "getCheckIn()"
+        return "getCheckIn()";
       case "validateInput":
-        return "validateInput()"
+        return "validateInput()";
       case "AddDate":
-        return "AddDate()"
+        return "AddDate()";
       case "CreateDevice":
-        return "CreateDevice()"
+        return "CreateDevice()";
       case "getItemAll":
-        return "getItemAll()"
+        return "getItemAll()";
       case "sentCancelOrder":
-        return "sentCancelOrder()"
+        return "sentCancelOrder()";
       case "changePassword":
-        return "changePassword()"
+        return "changePassword()";
       case "getRedeemHis":
-        return "getRedeemHis()"
+        return "getRedeemHis()";
       case "pagination_coins":
-        return "pagination_coins()"
+        return "pagination_coins()";
       case "calPage":
-        return "calPage()"
+        return "calPage()";
       case "CoinsCheckToken":
-        return "CoinsCheckToken()"
+        return "CoinsCheckToken()";
       case "getPointCoins":
-        return "getPointCoins()"
+        return "getPointCoins()";
       case "updateDevice":
-        return "updateDevice()"
+        return "updateDevice()";
       case "Con":
-        return "Con()"
+        return "Con()";
       case "getOrder":
-        return "getOrder()"
+        return "getOrder()";
       case "getStatePayment":
-        return "getStatePayment()"
+        return "getStatePayment()";
       case "setVoucherId":
-        return "setVoucherId()"
+        return "setVoucherId()";
       case "postOrderNow":
-        return "postOrderNow()"
+        return "postOrderNow()";
       case "getAddress":
-        return "getAddress()"
+        return "getAddress()";
       case "getCodeDisCountVoucher":
-        return "getCodeDisCountVoucher()"
+        return "getCodeDisCountVoucher()";
       case "getCodeDisCountMember":
-        return "getCodeDisCountMember()"
+        return "getCodeDisCountMember()";
       case "calTotal":
-        return "calTotal()"
+        return "calTotal()";
       case "cleanDataDefualt":
-        return "cleanDataDefualt()"
+        return "cleanDataDefualt()";
       case "GetDataCustPurchaseReportStats":
-        return "GetDataCustPurchaseReportStats()"
+        return "GetDataCustPurchaseReportStats()";
       case "showChartTotalCustomer":
-        return "showChartTotalCustomer()"
+        return "showChartTotalCustomer()";
       case "ChartMethod":
-        return "ChartMethod()"
+        return "ChartMethod()";
       case "ChartGender":
-        return "ChartGender()"
+        return "ChartGender()";
       case "updateSalesData":
-        return "updateSalesData()"
+        return "updateSalesData()";
       case "GetDataCustomer":
-        return "GetDataCustomer()"
+        return "GetDataCustomer()";
       case "getDeviceAll":
-        return "getDeviceAll()"
+        return "getDeviceAll()";
       case "distributorFun":
-        return "distributorFun()"
+        return "distributorFun()";
       case "PreviewImg":
-        return "PreviewImg()"
+        return "PreviewImg()";
       case "PreviewImg_2":
-        return "PreviewImg_2()"
+        return "PreviewImg_2()";
       case "CreateDistributor":
-        return "CreateDistributor()"
+        return "CreateDistributor()";
       case "DeleteAddress":
-        return "DeleteAddress()"
+        return "DeleteAddress()";
       case "EditAddress":
-        return "EditAddress()"
+        return "EditAddress()";
       case "GetAddressID":
-        return "GetAddressID()"
+        return "GetAddressID()";
       case "forgotPass":
-        return "forgotPass()"
+        return "forgotPass()";
       case "sendOTP_Forgot":
-        return "sendOTP_Forgot()"
+        return "sendOTP_Forgot()";
       case "getSelectedYear":
-        return "getSelectedYear()"
+        return "getSelectedYear()";
       case "getSelectedMonth":
-        return "getSelectedMonth()"
+        return "getSelectedMonth()";
       case "getIncomeAndExpenditureDetails":
-        return "getIncomeAndExpenditureDetails()"
+        return "getIncomeAndExpenditureDetails()";
       case "createNewInput":
-        return "createNewInput()"
+        return "createNewInput()";
       case "updateIncomeBeforeTaxes":
-        return "updateIncomeBeforeTaxes()"
+        return "updateIncomeBeforeTaxes()";
       case "setAllPageLang":
-        return "setAllPageLang()"
+        return "setAllPageLang()";
       case "setAllUILang":
-        return "setAllUILang()"
+        return "setAllUILang()";
       case "NSLang":
-        return "NSLang()"
+        return "NSLang()";
       case "getStatusCode":
-        return "getStatusCode()"
+        return "getStatusCode()";
       case "openTab":
-        return "openTab()"
+        return "openTab()";
       case "GetAddress":
-        return "GetAddress()"
+        return "GetAddress()";
       case "checkLoginWithRefreshToken":
-        return "checkLoginWithRefreshToken()"
+        return "checkLoginWithRefreshToken()";
       case "askDeviceIdFun":
-        return "askDeviceIdFun()"
+        return "askDeviceIdFun()";
       case "menuhome":
-        return "menuhome()"
+        return "menuhome()";
       case "menumonitor":
-        return "menumonitor()"
+        return "menumonitor()";
       case "menuwallet":
-        return "menuwallet()"
+        return "menuwallet()";
       case "menusetting":
-        return "menusetting()"
+        return "menusetting()";
       case "unShowMenuPage":
-        return "unShowMenuPage()"
+        return "unShowMenuPage()";
       case "checkIsLogin":
-        return "checkIsLogin()"
+        return "checkIsLogin()";
       case "updateLoginStatus":
-        return "updateLoginStatus()"
+        return "updateLoginStatus()";
       case "getLocalToken":
-        return "getLocalToken()"
+        return "getLocalToken()";
       case "refreshToken":
-        return "refreshToken()"
+        return "refreshToken()";
       case "refreshTokenFun":
-        return "refreshTokenFun()"
+        return "refreshTokenFun()";
       case "getMemberTier":
-        return "getMemberTier()"
+        return "getMemberTier()";
       case "createMemberTier":
-        return "createMemberTier(data)"
+        return "createMemberTier(data)";
       case "monitorCheckToken":
-        return "monitorCheckToken()"
+        return "monitorCheckToken()";
       case "RestartPin":
-        return "RestartPin(id)"
+        return "RestartPin(id)";
       case "GetBill":
-        return "GetBill(type, day, month, year)"
+        return "GetBill(type, day, month, year)";
       case "GetSolarDeviceAll":
-        return "GetSolarDeviceAll(getText)"
+        return "GetSolarDeviceAll(getText)";
       case "GetDataMonitor":
-        return "GetDataMonitor()"
+        return "GetDataMonitor()";
       case "WS":
-        return "WS()"
+        return "WS()";
       case "getSelectedMonthMonitor":
-        return "getSelectedMonth()"
+        return "getSelectedMonth()";
       case "getSelectedDay":
-        return "getSelectedDay()"
+        return "getSelectedDay()";
       case "openTabbill":
-        return "openTabbill(tab)"
+        return "openTabbill(tab)";
       case "RandomValueMonitorNoLogin":
-        return "RandomValueMonitorNoLogin()"
+        return "RandomValueMonitorNoLogin()";
       case "luxVal":
-        return "luxVal()"
+        return "luxVal()";
       case "getMyDevice":
-        return "getMyDevice()"
+        return "getMyDevice()";
       case "validateInputNewAddress":
-        return "validateInput()"
+        return "validateInput()";
       case "CreateAddress":
-        return "CreateAddress()"
+        return "CreateAddress()";
       case "pagination":
-        return "pagination()"
+        return "pagination()";
       case "GetNotification":
-        return "GetNotification(currentPage)"
+        return "GetNotification(currentPage)";
       case "getOid":
-        return "getOid(id, dataMain, dataItem, stateName)"
+        return "getOid(id, dataMain, dataItem, stateName)";
       case "sendRefund":
-        return "sendRefund(SendCancelRefund)"
+        return "sendRefund(SendCancelRefund)";
       case "cancelOrder_order_info_cancel_refund":
-        return "cancelOrder(dataItem)"
+        return "cancelOrder(dataItem)";
       case "getOid_order_info_cancel":
-        return "getOid(id, dataMain, dataItem)"
+        return "getOid(id, dataMain, dataItem)";
       case "cancelOrder_order_info_cancel":
-        return "cancelOrder(dataItem)"
+        return "cancelOrder(dataItem)";
       case "order_info_received_getOid":
-        return "getOid(id, dataMain, dataItem)"
+        return "getOid(id, dataMain, dataItem)";
       case "order_info_received_cancelOrder":
-        return "cancelOrder(dataItem)"
+        return "cancelOrder(dataItem)";
       case "order_info_received_getTimeline":
-        return "getTimeline(timeline)"
+        return "getTimeline(timeline)";
       case "order_info_waitRceive_sendReceipt":
-        return "sendReceipt(id)"
+        return "sendReceipt(id)";
       case "order_info_waitRceive_getOid":
-        return "getOid(id, dataMain, dataItem)"
+        return "getOid(id, dataMain, dataItem)";
       case "order_info_waitRceive_getTimeline":
-        return "getTimeline(timeline)"
+        return "getTimeline(timeline)";
       case "orderState10_cancelOrder":
-        return "cancelOrder(dataItem)"
+        return "cancelOrder(dataItem)";
       case "orderState10_getOid":
-        return "getOid(id, dataMain, dataItem)"
+        return "getOid(id, dataMain, dataItem)";
       case "orderStateShip_cancelOrder":
-        return "cancelOrder(dataItem)"
+        return "cancelOrder(dataItem)";
       case "orderStateShip_getOid":
-        return "getOid(id, dataMain, dataItem)"
+        return "getOid(id, dataMain, dataItem)";
       case "selectPayment":
-        return "selectPayment()"
+        return "selectPayment()";
       case "genQR":
-        return "genQR(qr)"
+        return "genQR(qr)";
       case "start_timer":
-        return "start_timer(time)"
+        return "start_timer(time)";
       case "AddSlipPayment":
-        return "AddSlipPayment(file)"
+        return "AddSlipPayment(file)";
       case "UpdateSlipPayment":
-        return "UpdateSlipPayment(Img)"
+        return "UpdateSlipPayment(Img)";
       case "GetPaymentStatistic":
-        return "GetPaymentStatistic(year)"
+        return "GetPaymentStatistic(year)";
       case "ChartPaymentStatistic":
-        return "ChartPaymentStatistic()"
+        return "ChartPaymentStatistic()";
       case "ExportCSVPayment":
-        return "ExportCSVPayment()"
+        return "ExportCSVPayment()";
       case "showCart":
-        return "showCart()"
+        return "showCart()";
       case "show_cart":
-        return "show_cart(data)"
+        return "show_cart(data)";
       case "update_quantity":
-        return "update_quantity(id, quantity, price, quantity2)"
+        return "update_quantity(id, quantity, price, quantity2)";
       case "delete_id":
-        return "delete_id(id)"
+        return "delete_id(id)";
       case "sumPrice":
-        return "sumPrice()"
+        return "sumPrice()";
       case "confirmOrder":
-        return "confirmOrder()"
+        return "confirmOrder()";
       case "confirmOrderBuy":
-        return "confirmOrderBuy()"
+        return "confirmOrderBuy()";
       case "getDetailProduct":
-        return "getDetailProduct(id)"
+        return "getDetailProduct(id)";
       case "checkLogin":
-        return "checkLogin()"
+        return "checkLogin()";
       case "GetSalesData":
-        return "GetSalesData(showAll, year)"
+        return "GetSalesData(showAll, year)";
       case "CreateTableReport":
-        return "CreateTableReport()"
+        return "CreateTableReport()";
       case "CreateTableQuarter":
-        return "CreateTableQuarter()"
+        return "CreateTableQuarter()";
       case "getSelectedMonthpurchase":
-        return "getSelectedMonthpurchase()"
+        return "getSelectedMonthpurchase()";
       case "showChart":
-        return "showChart()"
+        return "showChart()";
       case "ExportCSV":
-        return "ExportCSV()"
+        return "ExportCSV()";
       case "RedeemCheckToken":
-        return "RedeemCheckToken()"
+        return "RedeemCheckToken()";
       case "checkNoInput":
-        return "checkNoInput()"
+        return "checkNoInput()";
       case "postRedeem":
-        return "postRedeem()"
+        return "postRedeem()";
       case "getData":
-        return "getData(dataItem)"
+        return "getData(dataItem)";
       case "sendRefund":
-        return "getData(getDataSendRefund)"
+        return "getData(getDataSendRefund)";
       case "PreviewImg_refund":
-        return "PreviewImg_refund()"
+        return "PreviewImg_refund()";
       case "registerFun":
-        return "registerFun()"
+        return "registerFun()";
       case "SendOTP":
-        return "SendOTP()"
+        return "SendOTP()";
       case "CreateHTML":
-        return "CreateHTML()"
+        return "CreateHTML()";
       case "GetReportData":
-        return "GetReportData(year, month, day, pin)"
+        return "GetReportData(year, month, day, pin)";
       case "getSelectedDate":
-        return "getSelectedDate(type, pin)"
+        return "getSelectedDate(type, pin)";
       case "openTabreportCart":
-        return "openTabreportCart(tabreportCart)"
+        return "openTabreportCart(tabreportCart)";
       case "openTabreport":
-        return "openTabreport(tabreport)"
+        return "openTabreport(tabreport)";
       case "chartFlowDay":
-        return "chartFlowDay(type, year, month, day, pin)"
+        return "chartFlowDay(type, year, month, day, pin)";
       case "chartFlowMonth":
-        return "chartFlowMonth(type, year, month, day, pin)"
+        return "chartFlowMonth(type, year, month, day, pin)";
       case "chartFlowYear":
-        return "chartFlowYear(type, year, month, day, pin)"
+        return "chartFlowYear(type, year, month, day, pin)";
       case "chartFlowTotal":
-        return "chartFlowTotal(type, pin)"
+        return "chartFlowTotal(type, pin)";
       case "chargePower":
-        return "chargePower(year, month, day, pin)"
+        return "chargePower(year, month, day, pin)";
       case "chartNOlogin":
-        return "chartNOlogin(type)"
+        return "chartNOlogin(type)";
       case "chartNOloginMonthcart":
-        return "chartNOloginMonthcart(type)"
+        return "chartNOloginMonthcart(type)";
       case "chartNOloginYearhcart":
-        return "chartNOloginYearhcart()"
+        return "chartNOloginYearhcart()";
       case "chartNOloginTotalhcart":
-        return "chartNOloginTotalhcart()"
+        return "chartNOloginTotalhcart()";
       case "chargePowerNOlogin":
-        return "chargePowerNOlogin()"
+        return "chargePowerNOlogin()";
       case "settingAccountCheckToken":
-        return "settingAccountCheckToken()"
+        return "settingAccountCheckToken()";
       case "updateProfile":
-        return "updateProfile(User)"
+        return "updateProfile(User)";
       case "AddAvatar":
-        return "AddAvatar(file)"
+        return "AddAvatar(file)";
       case "UpdateAvatar":
-        return "UpdateAvatar(Img)"
+        return "UpdateAvatar(Img)";
       case "getAll":
-        return "getAll(state)"
+        return "getAll(state)";
       case "scroller":
-        return "scroller()"
+        return "scroller()";
       case "SettingCheckToken":
-        return "SettingCheckToken()"
+        return "SettingCheckToken()";
       case "getQRcode":
-        return "getQRcode()"
+        return "getQRcode()";
       case "startInit":
-        return "init()"
+        return "init()";
       case "TopUpCheckToken":
-        return "TopUpCheckToken()"
+        return "TopUpCheckToken()";
       case "topup_checkNoInput":
-        return "checkNoInput()"
+        return "checkNoInput()";
       case "topup_addSlipPayment":
-        return "AddSlipPayment(file)"
+        return "AddSlipPayment(file)";
       case "topup_updateSlipPayment":
-        return "UpdateSlipPayment(Imgs)"
+        return "UpdateSlipPayment(Imgs)";
       case "transactionCheckToken":
-        return "transactionCheckToken()"
+        return "transactionCheckToken()";
       case "getTransaction":
-        return "getTransaction()"
+        return "getTransaction()";
       case "getTransaction":
-        return "getTransaction()"
+        return "getTransaction()";
       case "pagination_tran":
-        return "pagination_tran()"
+        return "pagination_tran()";
       case "transaction_calPage":
-        return "calPage(type)"
+        return "calPage(type)";
       case "transferCheckToken":
-        return "transferCheckToken()"
+        return "transferCheckToken()";
       case "transfer_checkNoInput":
-        return "checkNoInput()"
+        return "checkNoInput()";
       case "postTransfer":
-        return "postTransfer()"
+        return "postTransfer()";
       case "showOrder":
-        return "showOrder()"
+        return "showOrder()";
       case "update_order_scroller":
-        return "scroller()"
+        return "scroller()";
       case "showVoucher":
-        return "showVoucher(data)"
+        return "showVoucher(data)";
       case "walletCheckToken":
-        return "walletCheckToken()"
+        return "walletCheckToken()";
       case "getUserData":
-        return "getUserData()"
+        return "getUserData()";
       case "get_dataTransaction":
-        return "get_dataTransaction()"
+        return "get_dataTransaction()";
       case "loadList":
-        return "loadList()"
+        return "loadList()";
       default:
-        return ""
+        return "";
     }
-  }
+  };
 
   const menuComponentsSolarApp = {
     // Specific Model
@@ -1084,7 +1084,7 @@ const MenuComponentsSolarApp = ({selectedMenu}) => {
     getDeviceAll: () => (
       <ModelContent
         headers="Solar App"
-        headerHtml="Data_customer.html"
+        headerHtml="Deletedatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชันนี้ใช้ในการดึงข้อมูลอุปกรณ์ทั้งหมดจากเซิร์ฟเวอร์และแสดงในรูปแบบของรายการบนหน้าเว็บ โดยมีขั้นตอนหลักคือ:"
         content1="1.ดึง token จาก local storage เพื่อใช้ในการทำ request ไปยัง API server"
@@ -3809,12 +3809,12 @@ const MenuComponentsSolarApp = ({selectedMenu}) => {
         htmlCheck="show"
       />
     ),
-  }
+  };
 
   return (
     menuComponentsSolarApp[selectedMenu] &&
     menuComponentsSolarApp[selectedMenu]()
-  )
-}
+  );
+};
 
-export default MenuComponentsSolarApp
+export default MenuComponentsSolarApp;
