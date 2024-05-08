@@ -808,7 +808,7 @@ export default function ModelContent({
                 <Notification_getNotification />
               )}
               {selectedMenu === "getOid" && <Order_info_cancel_refund_getOid />}
-              {selectedMenu === "sendRefund" && (
+              {selectedMenu === "sendRefundOrderInfoCancelRefund" && (
                 <Order_info_cancel_refund_sendRefund />
               )}
               {selectedMenu === "cancelOrder_order_info_cancel_refund" && (
@@ -907,7 +907,7 @@ export default function ModelContent({
               {selectedMenu === "checkNoInput" && <Redeem_checkNoInput />}
               {selectedMenu === "postRedeem" && <Redeem_postRedeem />}
               {selectedMenu === "getData" && <Refund_getData />}
-              {selectedMenu === "sendRefund" && <Refund_sendRefund />}
+              {selectedMenu === "sendRefundRefund" && <Refund_sendRefund />}
               {selectedMenu === "PreviewImg_refund" && (
                 <Refund_previewImg_refund />
               )}
@@ -1112,27 +1112,17 @@ export default function ModelContent({
             </div>
           </div>
 
-          {listIndex ? (
-            <>
-              {openIndexHead && (
-                <div className="w-full flex flex-col gap-4">
-                  <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-                    <span className="text-[#A52A2A]">&lt;head&gt;</span>
-                    <IndexHead />
-                    <span className="text-[#A52A2A]">&lt;/head&gt;</span>
-                  </div>
+          <>
+            {openIndexHead && (
+              <div className="w-full flex flex-col gap-4">
+                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                  <span className="text-[#A52A2A]">&lt;head&gt;</span>
+                  <IndexHead />
+                  <span className="text-[#A52A2A]">&lt;/head&gt;</span>
                 </div>
-              )}
-            </>
-          ) : (
-            <div className="w-full flex flex-col gap-4">
-              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-                <span className="text-[#A52A2A]">&lt;head&gt;</span>
-                <IndexHead />
-                <span className="text-[#A52A2A]">&lt;/head&gt;</span>
               </div>
-            </div>
-          )}
+            )}
+          </>
         </div>
       )}
 

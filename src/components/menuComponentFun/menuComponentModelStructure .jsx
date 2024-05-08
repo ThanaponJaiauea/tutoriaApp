@@ -8,7 +8,7 @@ const MenuComponentModelStructure = ({selectedMenu}) => {
 
   const [openMainScript, setOpenMainScript] = useState(false)
 
-  const [openIndexHead, setOpenIndexHead] = useState(false)
+  const [openIndexHead, setOpenIndexHead] = useState(true)
 
   const [openIndexStyle, setOpenIndexStyle] = useState(false)
 

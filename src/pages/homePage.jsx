@@ -2,10 +2,11 @@
 
 import {Drawer} from "antd"
 import useSelectedNavbar from "../hooks/useSelectedNavbar"
-import FormModelStructure from "../components/formModel/formModelStructure"
-import FormModelSolarApp from "../components/formModel/formModelSolarApp"
+import NavbarModelStructure from "../components/navbar/navbarModelStructure"
+import NavbarSolarApp from "../components/navbar/navbarSolarApp"
 import MenuComponentModelStructure from "../components/menuComponentFun/menuComponentModelStructure "
 import MenuComponentsSolarApp from "../components/menuComponentFun/menuComponentsSolarApp"
+import NavbarArithmetic from "../components/navbar/navbarArithmetic"
 
 export default function HomePage() {
   const {
@@ -29,20 +30,22 @@ export default function HomePage() {
       {/* Left navbar */}
       {/* modelStructure */}
       {selectedNavbar === "Model structure" && (
-        <nav className="w-full lg:bg-[#E7E9EB] lg:w-[20%] hidden lg:flex lg:flex-col">
-          <FormModelStructure handleModelClick={handleModelClick} />
+        <nav className="w-full hidden lg:w-[20%] lg:bg-[#E7E9EB] lg:flex lg:flex-col">
+          <NavbarModelStructure handleModelClick={handleModelClick} />
         </nav>
       )}
 
       {/*SolarApp  */}
       {selectedNavbar === "SolarApp" && (
-        <nav className="w-full lg:bg-[#E7E9EB] lg:w-[20%]">
-          <ul className="hidden lg:flex lg:flex-col">
-            {/* Specific Model */}
-            {selectedNavbar === "SolarApp" && (
-              <FormModelSolarApp handleModelClick={handleModelClick} />
-            )}
-          </ul>
+        <nav className="w-full hidden lg:w-[20%] lg:bg-[#E7E9EB] lg:flex lg:flex-col">
+          <NavbarSolarApp handleModelClick={handleModelClick} />
+        </nav>
+      )}
+
+      {/*Arithmetic  */}
+      {selectedNavbar === "Arithmetic" && (
+        <nav className="w-full hidden lg:w-[20%] lg:bg-[#E7E9EB] lg:flex lg:flex-col">
+          <NavbarArithmetic handleModelClick={handleModelClick} />
         </nav>
       )}
 
@@ -68,12 +71,12 @@ export default function HomePage() {
         <div className="flex  flex-col gap-2">
           {/* Model structure */}
           {selectedNavbar === "Model structure" && (
-            <FormModelStructure handleModelClick={handleModelClick} />
+            <NavbarModelStructure handleModelClick={handleModelClick} />
           )}
 
           {/* SolarApp */}
           {selectedNavbar === "SolarApp" && (
-            <FormModelSolarApp handleModelClick={handleModelClick} />
+            <NavbarSolarApp handleModelClick={handleModelClick} />
           )}
         </div>
 
