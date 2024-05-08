@@ -1641,7 +1641,28 @@ const shop_home = [
   {
     key: "shop_home",
     label: "Shop_home.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initShop_home",
+      },
+      {
+        name: "getProducts",
+        type: "generalModel",
+        key: "getProductsShop_home",
+      },
+      {
+        name: "loadList",
+        type: "generalModel",
+        key: "loadListShop_home",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callShop_home",
+      },
+    ],
   },
 ]
 
@@ -1649,7 +1670,38 @@ const shopMain = [
   {
     key: "shopMain",
     label: "ShopMain.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initShop_main",
+      },
+      {
+        name: "shopmenuhome",
+        type: "generalModel",
+        key: "shopmenuhomeShop_main",
+      },
+      {
+        name: "shopmshopmenucategoryenuhome",
+        type: "generalModel",
+        key: "shopmenucategoryShop_main",
+      },
+      {
+        name: "shopmenucart",
+        type: "generalModel",
+        key: "shopmenucartShop_main",
+      },
+      {
+        name: "unShowmenuPageShop",
+        type: "generalModel",
+        key: "unShowmenuPageShopShop_main",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callShop_main",
+      },
+    ],
   },
 ]
 
@@ -1657,7 +1709,28 @@ const summarizeProduct = [
   {
     key: "summarizeProduct",
     label: "SummarizeProduct.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initSummarizeProduct",
+      },
+      {
+        name: "getDataBuy",
+        type: "generalModel",
+        key: "getDataBuySummarizeProduct",
+      },
+      {
+        name: "BuyProduct",
+        type: "generalModel",
+        key: "BuyProductSummarizeProduct",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callSummarizeProduct",
+      },
+    ],
   },
 ]
 
