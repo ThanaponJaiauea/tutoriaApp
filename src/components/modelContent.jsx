@@ -1112,17 +1112,27 @@ export default function ModelContent({
             </div>
           </div>
 
-          <>
-            {openIndexHead && (
-              <div className="w-full flex flex-col gap-4">
-                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-                  <span className="text-[#A52A2A]">&lt;head&gt;</span>
-                  <IndexHead />
-                  <span className="text-[#A52A2A]">&lt;/head&gt;</span>
+          {listIndex ? (
+            <>
+              {openIndexHead && (
+                <div className="w-full flex flex-col gap-4">
+                  <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                    <span className="text-[#A52A2A]">&lt;style&gt;</span>
+                    <IndexHead />
+                    <span className="text-[#A52A2A]">&lt;/style&gt;</span>
+                  </div>
                 </div>
+              )}
+            </>
+          ) : (
+            <div className="w-full flex flex-col gap-4">
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <span className="text-[#A52A2A]">&lt;style&gt;</span>
+                <IndexHead />
+                <span className="text-[#A52A2A]">&lt;/style&gt;</span>
               </div>
-            )}
-          </>
+            </div>
+          )}
         </div>
       )}
 

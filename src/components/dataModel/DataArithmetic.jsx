@@ -1738,7 +1738,28 @@ const summarizeProduct2 = [
   {
     key: "summarizeProduct2",
     label: "SummarizeProduct2.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initSummarizeProduct2",
+      },
+      {
+        name: "getDataBuy",
+        type: "generalModel",
+        key: "getDataBuySummarizeProduct2",
+      },
+      {
+        name: "BuyProduct",
+        type: "generalModel",
+        key: "BuyProductSummarizeProduct2",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callSummarizeProduct2",
+      },
+    ],
   },
 ]
 
@@ -1746,7 +1767,18 @@ const supportEmail = [
   {
     key: "supportEmail",
     label: "SupportEmail.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initSupportEmail",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callSupportEmail",
+      },
+    ],
   },
 ]
 
@@ -1754,7 +1786,18 @@ const supportFacebook = [
   {
     key: "supportFacebook",
     label: "SupportFacebook.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initSupportFacebook",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callSupportFacebook",
+      },
+    ],
   },
 ]
 
@@ -1762,7 +1805,18 @@ const supportLine = [
   {
     key: "supportLine",
     label: "SupportLine.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initSupportLine",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callSupportLine",
+      },
+    ],
   },
 ]
 
@@ -1770,7 +1824,18 @@ const supportSendQQ = [
   {
     key: "supportSendQQ",
     label: "SupportSendQQ.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initSupportSendQQ",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callSupportSendQQ",
+      },
+    ],
   },
 ]
 
@@ -1778,7 +1843,18 @@ const supportTelegram = [
   {
     key: "supportTelegram",
     label: "SupportTelegram.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initSupportTelegram",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callSupportTelegram",
+      },
+    ],
   },
 ]
 
@@ -1786,7 +1862,18 @@ const supportWechat = [
   {
     key: "supportWechat",
     label: "SupportWechat.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initSupportWechat",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callSupportWechat",
+      },
+    ],
   },
 ]
 
@@ -1794,7 +1881,18 @@ const supportWhatsApp = [
   {
     key: "supportWhatsApp",
     label: "SupportWhatsApp.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initSupportWhatsApp",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callSupportWhatsApp",
+      },
+    ],
   },
 ]
 
@@ -1802,7 +1900,28 @@ const team_salary_collection = [
   {
     key: "team_salary_collection",
     label: "Team_salary_collection.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initTeam_salary_collection",
+      },
+      {
+        name: "getVoucherTeam",
+        type: "generalModel",
+        key: "getVoucherTeamTeam_salary_collection",
+      },
+      {
+        name: "postReceiveVouncher",
+        type: "generalModel",
+        key: "postReceiveVouncherTeam_salary_collection",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callTeam_salary_collection",
+      },
+    ],
   },
 ]
 
@@ -1810,7 +1929,48 @@ const topup = [
   {
     key: "topup",
     label: "Topup.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initTopup",
+      },
+      {
+        name: "getChannels",
+        type: "generalModel",
+        key: "getChannelsTopup",
+      },
+      {
+        name: "postTopUp",
+        type: "generalModel",
+        key: "postTopUpTopup",
+      },
+      {
+        name: "moveToNext",
+        type: "generalModel",
+        key: "moveToNextTopup",
+      },
+      {
+        name: "getBankAll",
+        type: "generalModel",
+        key: "getBankAllTopup",
+      },
+      {
+        name: "formatCardNumber",
+        type: "generalModel",
+        key: "formatCardNumberTopup",
+      },
+      {
+        name: "topupCustomData",
+        type: "generalModel",
+        key: "topupCustomDataTopup",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callTopup",
+      },
+    ],
   },
 ]
 
@@ -1818,7 +1978,23 @@ const trade_history = [
   {
     key: "trade_history",
     label: "Trade_history.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initTrade_history",
+      },
+      {
+        name: "getHistory",
+        type: "generalModel",
+        key: "getHistoryTrade_history",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callTrade_history",
+      },
+    ],
   },
 ]
 
@@ -1826,7 +2002,43 @@ const trade = [
   {
     key: "trade",
     label: "Trade.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initTrade",
+      },
+      {
+        name: "tradeCustomData",
+        type: "generalModel",
+        key: "tradeCustomDataTrade",
+      },
+      {
+        name: "countProductTimer",
+        type: "generalModel",
+        key: "countProductTimerTrade",
+      },
+      {
+        name: "getProduct",
+        type: "generalModel",
+        key: "getProductTrade",
+      },
+      {
+        name: "BarLoading",
+        type: "generalModel",
+        key: "BarLoadingTrade",
+      },
+      {
+        name: "loadList",
+        type: "generalModel",
+        key: "loadListTrade",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callTrade",
+      },
+    ],
   },
 ]
 
@@ -1834,7 +2046,28 @@ const transaction_his = [
   {
     key: "transaction_his",
     label: "Transaction_his.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initTransaction_his",
+      },
+      {
+        name: "getHistoryTransaction",
+        type: "generalModel",
+        key: "getHistoryTransactionTransaction_his",
+      },
+      {
+        name: "loadList",
+        type: "generalModel",
+        key: "loadListTransactionTransaction_his",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callTransaction_his",
+      },
+    ],
   },
 ]
 
@@ -1842,7 +2075,23 @@ const transfer_history = [
   {
     key: "transfer_history",
     label: "Transfer_history.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initTransfer_history",
+      },
+      {
+        name: "GetTransferHistory",
+        type: "generalModel",
+        key: "GetTransferHistoryTransfer_history",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callTransfer_history",
+      },
+    ],
   },
 ]
 
@@ -1850,7 +2099,43 @@ const transfer = [
   {
     key: "transfer",
     label: "Transfer.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initTransfer",
+      },
+      {
+        name: "setLimitInput",
+        type: "generalModel",
+        key: "setLimitInputTransfer",
+      },
+      {
+        name: "CheckTransferInput",
+        type: "generalModel",
+        key: "CheckTransferInputTransfer",
+      },
+      {
+        name: "get2FATrade",
+        type: "generalModel",
+        key: "get2FATradeTransfer",
+      },
+      {
+        name: "verify2faTrade",
+        type: "generalModel",
+        key: "verify2faTradeTransfer",
+      },
+      {
+        name: "postTransder",
+        type: "generalModel",
+        key: "postTransderTransfer",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callTransfer",
+      },
+    ],
   },
 ]
 
@@ -1858,7 +2143,33 @@ const verified = [
   {
     key: "verified",
     label: "Verified.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initVerified",
+      },
+      {
+        name: "AddFilesFunc",
+        type: "generalModel",
+        key: "AddFilesFuncVerified",
+      },
+      {
+        name: "VerifiedImgAcc",
+        type: "generalModel",
+        key: "VerifiedImgAccVerified",
+      },
+      {
+        name: "Verified_info",
+        type: "generalModel",
+        key: "Verified_infoVerified",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callVerified",
+      },
+    ],
   },
 ]
 
@@ -1866,7 +2177,23 @@ const wallet_product_detail = [
   {
     key: "wallet_product_detail",
     label: "Wallet_product_detail.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initWallet_product_detail",
+      },
+      {
+        name: "getDatailHistory",
+        type: "generalModel",
+        key: "getDatailHistoryWallet_product_detail",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callWallet_product_detail",
+      },
+    ],
   },
 ]
 
@@ -1874,7 +2201,33 @@ const wallet_product_history = [
   {
     key: "wallet_product_history",
     label: "Wallet_product_history.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initWallet_product_history",
+      },
+      {
+        name: "getTabDate",
+        type: "generalModel",
+        key: "getTabDateWallet_product_history",
+      },
+      {
+        name: "getHistoryWithdraw",
+        type: "generalModel",
+        key: "getHistoryWithdrawWallet_product_history",
+      },
+      {
+        name: "getHistoryWithdrawByDate",
+        type: "generalModel",
+        key: "getHistoryWithdrawByDateWallet_product_history",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callWallet_product_history",
+      },
+    ],
   },
 ]
 
@@ -1882,7 +2235,48 @@ const wallet = [
   {
     key: "wallet",
     label: "Wallet.html",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initWallet",
+      },
+      {
+        name: "getWallet",
+        type: "generalModel",
+        key: "getWalletWallet",
+      },
+      {
+        name: "getAllPoints",
+        type: "generalModel",
+        key: "getAllPointsWallet",
+      },
+      {
+        name: "loadingBar",
+        type: "generalModel",
+        key: "loadingBarWallet",
+      },
+      {
+        name: "verified_wallet",
+        type: "generalModel",
+        key: "verified_walletWallet",
+      },
+      {
+        name: "getLimitWithdraw",
+        type: "generalModel",
+        key: "getLimitWithdrawWallet",
+      },
+      {
+        name: "loadList",
+        type: "generalModel",
+        key: "loadListWallet",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callWallet",
+      },
+    ],
   },
 ]
 
@@ -1890,7 +2284,23 @@ const withdraw_history = [
   {
     key: "withdraw_history",
     label: "Withdraw_history",
-    children: [],
+    children: [
+      {
+        name: "this.init",
+        type: "generalModel",
+        key: "initWithdraw_history",
+      },
+      {
+        name: "loopWithdraw",
+        type: "generalModel",
+        key: "loopWithdrawWithdraw_history",
+      },
+      {
+        name: "this.call",
+        type: "generalModel",
+        key: "callWithdraw_history",
+      },
+    ],
   },
 ]
 

@@ -50,14 +50,14 @@ export default function HomePage() {
       )}
 
       {/* Right content  */}
-      {/* SolarApp  */}
-      {selectedNavbar === "SolarApp" && (
-        <MenuComponentsSolarApp selectedMenu={selectedMenu} />
-      )}
-
       {/* Model structure  */}
       {selectedNavbar === "Model structure" && (
         <MenuComponentModelStructure selectedMenu={selectedMenu} />
+      )}
+
+      {/* SolarApp  */}
+      {selectedNavbar === "SolarApp" && (
+        <MenuComponentsSolarApp selectedMenu={selectedMenu} />
       )}
 
       {/* Open Drawer */}
@@ -77,6 +77,11 @@ export default function HomePage() {
           {/* SolarApp */}
           {selectedNavbar === "SolarApp" && (
             <NavbarSolarApp handleModelClick={handleModelClick} />
+          )}
+
+          {/*Arithmetic  */}
+          {selectedNavbar === "Arithmetic" && (
+            <NavbarArithmetic handleModelClick={handleModelClick} />
           )}
         </div>
 

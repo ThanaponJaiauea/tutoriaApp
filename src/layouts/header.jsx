@@ -33,6 +33,9 @@ export default function HeaderNavbar() {
     if (menu === "Model structure") {
       setSelectedMenu("StartProjec")
     }
+    if (menu === "Arithmetic") {
+      setSelectedMenu("initAboutDetail")
+    }
   }
 
   const navbars = [
@@ -73,45 +76,23 @@ export default function HeaderNavbar() {
     <div className="flex items-center justify-start flex-wrap lg:flex-nowrap">
       {/* nav bar */}
       <nav className="w-full sm:w-4/5 h-[60px] flex items-center bg-[#282A35]">
-        {selectedNavbar === "SolarApp" && (
-          <div className="w-[100px] flex justify-center items-center lg:hidden">
-            <button
-              id="menu-toggle"
-              className="text-white"
-              onClick={() => setOpenDrawer(!openDrawer)}>
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                className="w-10 h-10 border-2">
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </button>
-          </div>
-        )}
-
-        {selectedNavbar === "Model structure" && (
-          <div className="w-[100px] flex justify-center items-center lg:hidden">
-            <button
-              id="menu-toggle"
-              className="text-white"
-              onClick={() => setOpenDrawer(!openDrawer)}>
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                className="w-10 h-10 border-2">
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </button>
-          </div>
-        )}
+        <div className="w-[100px] flex justify-center items-center lg:hidden">
+          <button
+            id="menu-toggle"
+            className="text-white"
+            onClick={() => setOpenDrawer(!openDrawer)}>
+            <svg
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              className="w-10 h-10 border-2">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
 
         <ul className="w-full h-full font-medium flex items-center text-white">
           {navbars?.map((el, idx) => (
