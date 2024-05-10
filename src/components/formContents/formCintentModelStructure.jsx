@@ -3,7 +3,7 @@
 import {useState} from "react"
 import ModelContent from "../modelContent"
 
-const MenuComponentModelStructure = ({selectedMenu}) => {
+const FormCintentModelStructure = ({selectedMenu}) => {
   const [openMainBody, setOpenMainBody] = useState(false)
 
   const [openMainScript, setOpenMainScript] = useState(false)
@@ -79,7 +79,7 @@ const MenuComponentModelStructure = ({selectedMenu}) => {
     }
   }
 
-  const menuComponentModelStructure = {
+  const formCintentModelStructure = {
     alert: () => (
       <ModelContent
         headers="Model Structure"
@@ -559,9 +559,9 @@ const MenuComponentModelStructure = ({selectedMenu}) => {
   }
 
   return (
-    menuComponentModelStructure[selectedMenu] &&
-    menuComponentModelStructure[selectedMenu]()
+    formCintentModelStructure[selectedMenu] &&
+    formCintentModelStructure[selectedMenu]()
   )
 }
 
-export default MenuComponentModelStructure
+export default FormCintentModelStructure

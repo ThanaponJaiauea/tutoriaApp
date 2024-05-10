@@ -2,7 +2,7 @@
 
 import ModelContent from "../modelContent"
 
-const MenuComponentsSolarApp = ({selectedMenu}) => {
+const FormCintentSlipFun = ({selectedMenu}) => {
   const getTitle = () => {
     switch (selectedMenu) {
       case "count":
@@ -364,7 +364,7 @@ const MenuComponentsSolarApp = ({selectedMenu}) => {
     }
   }
 
-  const menuComponentsSolarApp = {
+  const formCintentSlipFun = {
     // Specific Model
     // home.html
     count: () => (
@@ -3811,10 +3811,7 @@ const MenuComponentsSolarApp = ({selectedMenu}) => {
     ),
   }
 
-  return (
-    menuComponentsSolarApp[selectedMenu] &&
-    menuComponentsSolarApp[selectedMenu]()
-  )
+  return formCintentSlipFun[selectedMenu] && formCintentSlipFun[selectedMenu]()
 }
 
-export default MenuComponentsSolarApp
+export default FormCintentSlipFun 

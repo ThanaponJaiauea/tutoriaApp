@@ -3,10 +3,11 @@
 import {Drawer} from "antd"
 import useSelectedNavbar from "../hooks/useSelectedNavbar"
 import NavbarModelStructure from "../components/navbar/navbarModelStructure"
-import NavbarSolarApp from "../components/navbar/navbarSolarApp"
-import MenuComponentModelStructure from "../components/menuComponentFun/menuComponentModelStructure "
-import MenuComponentsSolarApp from "../components/menuComponentFun/menuComponentsSolarApp"
-import NavbarArithmetic from "../components/navbar/navbarArithmetic"
+import FormCintentModelStructure from "../components/formContents/formCintentModelStructure"
+import FormCintentSlipFun from "../components/formContents/formCintentSlipFun"
+import FormCintentEx from "../components/formContents/formCintentEx"
+import NavbarEx from "../components/navbar/navbarEx"
+import NavbarSlipFun from "../components/navbar/navbarSlipFun"
 
 export default function HomePage() {
   const {
@@ -17,8 +18,8 @@ export default function HomePage() {
     setSelectedMenu,
   } = useSelectedNavbar()
 
-  // console.log("selectedNavbar", selectedNavbar);
-  // console.log("selectedMenu", selectedMenu)
+  console.log("selectedNavbar", selectedNavbar)
+  console.log("selectedMenu", selectedMenu)
 
   const handleModelClick = (menu) => {
     setSelectedMenu(menu)
@@ -35,30 +36,33 @@ export default function HomePage() {
         </nav>
       )}
 
-      {/*SolarApp  */}
-      {selectedNavbar === "SolarApp" && (
+      {/*Slip Function  */}
+      {selectedNavbar === "Slip Function" && (
         <nav className="w-full hidden lg:w-[20%] lg:bg-[#E7E9EB] lg:flex lg:flex-col">
-          <NavbarSolarApp handleModelClick={handleModelClick} />
+          <NavbarSlipFun handleModelClick={handleModelClick} />
         </nav>
       )}
 
-      {/*Arithmetic  */}
-      {selectedNavbar === "Arithmetic" && (
+      {/*Ex  */}
+      {selectedNavbar === "Ex" && (
         <nav className="w-full hidden lg:w-[20%] lg:bg-[#E7E9EB] lg:flex lg:flex-col">
-          <NavbarArithmetic handleModelClick={handleModelClick} />
+          <NavbarEx handleModelClick={handleModelClick} />
         </nav>
       )}
 
       {/* Right content  */}
       {/* Model structure  */}
       {selectedNavbar === "Model structure" && (
-        <MenuComponentModelStructure selectedMenu={selectedMenu} />
+        <FormCintentModelStructure selectedMenu={selectedMenu} />
       )}
 
-      {/* SolarApp  */}
-      {selectedNavbar === "SolarApp" && (
-        <MenuComponentsSolarApp selectedMenu={selectedMenu} />
+      {/* Slip Function  */}
+      {selectedNavbar === "Slip Function" && (
+        <FormCintentSlipFun selectedMenu={selectedMenu} />
       )}
+
+      {/* Ex  */}
+      {selectedNavbar === "Ex" && <FormCintentEx selectedMenu={selectedMenu} />}
 
       {/* Open Drawer */}
       <Drawer
@@ -74,14 +78,14 @@ export default function HomePage() {
             <NavbarModelStructure handleModelClick={handleModelClick} />
           )}
 
-          {/* SolarApp */}
-          {selectedNavbar === "SolarApp" && (
-            <NavbarSolarApp handleModelClick={handleModelClick} />
+          {/* Slip Function */}
+          {selectedNavbar === "Slip Function" && (
+            <NavbarSlipFun handleModelClick={handleModelClick} />
           )}
 
           {/*Arithmetic  */}
-          {selectedNavbar === "Arithmetic" && (
-            <NavbarArithmetic handleModelClick={handleModelClick} />
+          {selectedNavbar === "Ex" && (
+            <NavbarEx handleModelClick={handleModelClick} />
           )}
         </div>
 

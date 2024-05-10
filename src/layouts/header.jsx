@@ -5,13 +5,8 @@ import {motion} from "framer-motion"
 import useSelectedNavbar from "../hooks/useSelectedNavbar"
 
 export default function HeaderNavbar() {
-  const {
-    setSelectedNavbar,
-    setOpenDrawer,
-    openDrawer,
-    selectedNavbar,
-    setSelectedMenu,
-  } = useSelectedNavbar()
+  const {setSelectedNavbar, setOpenDrawer, openDrawer, setSelectedMenu} =
+    useSelectedNavbar()
 
   const [selectedNavbarMenu, setSelectedNavbarMenu] =
     useState("Model structure")
@@ -26,14 +21,15 @@ export default function HeaderNavbar() {
     setSelectedNavbarMenu(menu)
     setSelectedNavbar(menu)
 
-    if (menu === "SolarApp") {
-      setSelectedMenu("validateInput")
-    }
-
     if (menu === "Model structure") {
       setSelectedMenu("StartProjec")
     }
-    if (menu === "Arithmetic") {
+
+    if (menu === "Slip Function") {
+      setSelectedMenu("validateInput")
+    }
+
+    if (menu === "Ex") {
       setSelectedMenu("initAboutDetail")
     }
   }
@@ -43,10 +39,10 @@ export default function HeaderNavbar() {
       title: "Model structure",
     },
     {
-      title: "SolarApp",
+      title: "Slip Function",
     },
     {
-      title: "Arithmetic",
+      title: "Ex",
     },
   ]
 
@@ -99,9 +95,9 @@ export default function HeaderNavbar() {
             <li
               onClick={() => handleMenuClick(el?.title)}
               key={idx}
-              className={`h-full py-2 px-3 text-white flex items-center ${
+              className={` h-full py-2 px-3 text-white flex items-center ${
                 selectedNavbarMenu === el?.title
-                  ? "bg-[#04AA6D] text-[#ffff] "
+                  ? "bg-[#04AA6D] text-[#ffff]"
                   : "hover:bg-[#1d1e26] text-[#ffff]"
               }`}>
               <DrawOutlineButton>{el.title}</DrawOutlineButton>

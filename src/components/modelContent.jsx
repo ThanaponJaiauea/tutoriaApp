@@ -222,7 +222,7 @@ import {
   Wallet_get_dataTransaction,
   Wallet_loadList,
   Wallet_walletCheckToken,
-} from "../components/FunctionDataText"
+} from "./dataContents/FunctionDataText"
 
 import AlertTryit from "./tryitFunction/alertTryit"
 import HeaderInitTryit from "./tryitFunction/headerInitTryit"
@@ -243,6 +243,7 @@ import stepopen5 from "../pictures/stepopen5.png"
 import step6 from "../pictures/step6.png"
 import {Link} from "react-router-dom"
 import MainTryit from "./tryitFunction/mainTryit"
+import {SubmitAddalipay_alipayAdd} from "./dataContents/FunctionDataTextArithmetic"
 
 export default function ModelContent({
   setOpenMainBody,
@@ -1013,6 +1014,10 @@ export default function ModelContent({
                 <Wallet_get_dataTransaction />
               )}
               {selectedMenu === "loadList" && <Wallet_loadList />}
+              {/* Arithmetic */}
+              {selectedMenu === "submitAddalipay" && (
+                <SubmitAddalipay_alipayAdd />
+              )}
               <p className="ml-4">{`}`}</p>
               <span className="text-[#A52A2A]">&lt;/script&gt;</span>
             </div>

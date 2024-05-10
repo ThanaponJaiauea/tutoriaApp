@@ -84,9 +84,9 @@ import {
   wallet_product_history,
   wallet,
   withdraw_history,
-} from "../dataModel/DataArithmetic"
+} from "../dataModel/DataEx"
 
-export default function NavbarArithmetic({handleModelClick}) {
+export default function NavbarEx({handleModelClick}) {
   const allData = [
     ...aboutDetail,
     ...aboutDetail2,
@@ -232,7 +232,7 @@ export default function NavbarArithmetic({handleModelClick}) {
     <>
       <Menu
         mode="inline"
-        defaultSelectedKeys={["validateInput"]}
+        defaultSelectedKeys={["initAboutDetail"]}
         openKeys={stateOpenKeys}
         onOpenChange={onOpenChange}>
         {allData.map((menuItem) => (
