@@ -1,0 +1,260 @@
+<!-- @format -->
+
+Ex
+list Navbar dropdown
+
+solar app
+
+- validateInput
+- AddDate
+- CreateDevice
+- CreateDevice
+- getItemAll
+- sentCancelOrder --------------------- PUT
+- getRedeemHis --------------------- GET
+- pagination_coins
+- calPage --------------------- GET
+- CoinsCheckToken
+- getPointCoins --------------------- GET
+- updateDevice --------------------- PUT
+- Con --------------------- GET
+- getOrder --------------------- GET
+- getStatePayment
+- setVoucherId
+- postOrderNow --------------------- POST
+- getAddress --------------------- GET
+- getCodeDisCountVoucher --------------------- GET
+- getCodeDisCountMember --------------------- GET
+- calTotal
+- cleanDataDefualt
+- GetDataCustomerPurchaseReportStatics --------------------- GET
+- showChartTotalCustomer
+- ChartMethod
+- ChartGender
+- updateSalesData
+- GetDataCustomerDetail
+- GetDataCustomer --------------------- GET
+- getDeviceAll --------------------- GET
+- distributorFun
+- PreviewImg --------------------- PUT
+- PreviewImg_2 --------------------- PUT
+- CreateDistributor --------------------- POST
+- DeleteAddress --------------------- DELETE
+- EditAddress --------------------- PUT
+- GetAddressID --------------------- GET
+- forgotPass --------------------- POST
+- sendOTP_Forgot --------------------- POST
+- HomeCheckToken
+- count
+- getProfile --------------------- GET
+- sendApi --------------------- POST
+- checklocalStorage
+- checkSimulated --------------------- GET
+- getRecommendProduct --------------------- GET
+- getAllProduct --------------------- GET
+- checkIn --------------------- POST
+- getCheckIn --------------------- GET
+- getSelectedYear
+- getSelectedMonth
+- getIncomeAndExpenditureDetails --------------------- GET
+- createNewInput
+- updateIncomeBeforeTaxes
+- openTab
+- GetAddress --------------------- GET
+- getMemberTier --------------------- GET
+- createMemberTier
+- monitorCheckToken
+- RestartPin --------------------- PATCH
+- GetBill --------------------- GET
+- GetSolarDeviceAll --------------------- GET
+- GetDataMonitor --------------------- GET
+- getSelectedDay
+- openTabbill
+- RandomValueMonitorNoLogin
+- luxVal
+- getMyDevice --------------------- GET
+- CreateAddress --------------------- POST
+- pagination
+- GetNotification ---------------------GET
+- getOid
+- sendRefund --------------------- PUT
+- getTimeline
+- cancelOrder
+- selectPayment
+- genQR --------------------- PUT
+- start_timer
+- AddSlipPayment --------------------- PUT
+- UpdateSlipPayment --------------------- PUT
+- GetPaymentStatistic --------------------- GET
+- ChartPaymentStatistic
+- ExportCSVPayment
+- showCart --------------------- GET
+- show_cart
+- update_quantity --------------------- PUT
+- delete_id --------------------- DELETE
+- sumPrice
+- confirmOrder --------------------- POST
+- confirmOrderBuy
+- getDetailProduct --------------------- PUT
+- GetSalesData --------------------- GET
+- CreateTableReport
+- CreateTableQuarter
+- getSelectedMonthpurchase
+- showChart
+- ExportCSV
+- RedeemCheckToken
+- checkNoInput
+- postRedeem --------------------- POST
+- getData
+- PreviewImg_refund
+- CreateHTML
+- GetReportData --------------------- GET
+- getSelectedDate
+- openTabreportCart
+- openTabreport
+- chartFlowDay --------------------- GET
+- chartFlowMonth --------------------- GET
+- chartFlowYear --------------------- GET
+- chartFlowTotal --------------------- GET
+- chargePower --------------------- GET
+- chartNOlogin
+- chartNOloginMonthcart
+- chartNOloginYearhcart
+- chartNOloginTotalhcart
+- chargePowerNOlogin
+- settingAccountCheckToken
+- updateProfile --------------------- PUT
+- AddAvatar --------------------- PUT
+- UpdateAvatar --------------------- patch
+- getAll --------------------- GET
+- scroller
+- SettingCheckToken
+- TopUpCheckToken
+- AddSlipPayment --------------------- PUT
+- UpdateSlipPayment --------------------- POST
+- Getinformation
+- transactionCheckToken
+- getTransaction --------------------- GET
+- pagination_tran
+- transferCheckToken
+- postTransfer --------------------- POST
+- showOrder --------------------- GET
+- showVoucher
+- walletCheckToken
+- getUserData --------------------- GET
+- get_dataTransaction --------------------- GET
+
+---
+
+---
+
+Arithmetic
+
+- submitAddalipay
+- getFinancialAlipay --------------------- GET
+- formatCardNumber
+- deleteAlipay --------------------- DELETE
+- historyFunction --------------------- GET
+- submitAddBank
+- getFinancialBank --------------------- GET
+- deleteBank --------------------- DELETE
+- sendMessage --------------------- POST
+- scrollToBottom
+- getCheckIn --------------------- GET
+- checkInBonus --------------------- POST
+- moveToNext
+- getdata
+- get2FAconvert_DSF --------------------- GET
+- popUp2FA
+- verify2faconvert_DSF --------------------- POST
+- postconvert_DSFCIPS --------------------- POST
+- withdrawFuntion
+- get2FATrade --------------------- GET
+- verify2faTrade --------------------- POST
+- postWithdraw --------------------- POST
+- convertFuntion
+- postConvert --------------------- POST
+- wallgetType
+- getFinancialPayments --------------------- GET
+- getLimitInput
+- checkPayMentMethod --------------------- GET
+- changeTab
+- feedback --------------------- POST
+- getInstitution --------------------- GET
+- getAnnouncement --------------------- GET
+- news --------------------- GET
+- first --------------------- POST
+- redempiontcode --------------------- POST
+- CheckMathCoupon --------------------- GET
+- getnewgroup --------------------- GET
+- profile_invite --------------------- GET
+- getAnnouncement_viewID --------------------- GET
+- getAnnouncement_view --------------------- GET
+- getHistory --------------------- GET
+- profile_invite --------------------- GET
+- getVoucherInvite --------------------- GET
+- postReceiveVouncher --------------------- POST
+- calProgressBar
+- copy_show
+- getQrInvite
+- getlevel --------------------- GET
+- fetchPrizes --------------------- GET
+- renderPrizes
+- postSelectedPrize --------------------- POST
+- getUserRoulette --------------------- GET
+- luckyLeftData --------------------- GET
+- getMyTeam
+- underMember
+- summary
+- Peer_group --------------------- GET
+- getMyTeam_3 --------------------- GET
+- showNews --------------------- GET
+- Getnotification_reads
+- allReadNotice --------------------- POST
+- markNotificationAsRead --------------------- PATCH
+- Getnotifications --------------------- GET
+- Profile --------------------- GET
+- Team --------------------- GET
+- verified_name --------------------- GET
+- getVoucherDaily --------------------- GET
+- postReceiveVouncher --------------------- POST
+- getKfLink --------------------- GET
+- handleClick
+- Enable2FA --------------------- POST
+- get2FA --------------------- GET
+- getProducts
+- shopmenuhome
+- shopmenucategory
+- shopmenucart
+- unShowmenuPageShop
+- getDataBuy
+- BuyProduct --------------------- POST
+- getVoucherTeam --------------------- GET
+- getChannels --------------------- GET
+- postTopUp --------------------- POST
+- updategetSelectMoney
+- getBankAll --------------------- GET
+- formatCardNumber
+- topupCustomData
+- tradeCustomData
+- countProductTimer
+- getProduct --------------------- GET
+- BarLoading
+- getHistoryTransaction --------------------- GET
+- GetTransferHistory --------------------- GET
+- setLimitInput
+- CheckTransferInput
+- postTransder --------------------- POST
+- AddFilesFunc --------------------- PUT
+- VerifiedImgAcc --------------------- POST
+- Verified_info --------------------- GET
+- getDatailHistory
+- getTabDate
+- getHistoryWithdraw --------------------- GET
+- Recieve_DSFCIPS --------------------- GET
+- getWallet --------------------- GET
+- getAllPoints --------------------- GET
+- loadingBar
+- verified_wallet --------------------- GET
+- getLimitWithdraw --------------------- GET
+- loopWithdraw --------------------- GET
