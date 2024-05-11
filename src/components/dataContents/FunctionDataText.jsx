@@ -4308,6 +4308,7 @@ export function Login_checkLoginWithRefreshToken() {
 export function Login_askDeviceIdFun() {
   return (
     <div className="ml-4 flex flex-col gap-4 break-words">
+      <p>{`function askDeviceIdFun() {`}</p>
       <div className="ml-2">
         {`if (checkIsAndroid()) {`}
         <div className="ml-2">
@@ -4338,6 +4339,7 @@ export function Login_askDeviceIdFun() {
         </div>
         {`}`}
       </div>
+      <p>{`}`}</p>
     </div>
   )
 }
@@ -14443,6 +14445,526 @@ export function MainHtmlScriptInit() {
       <p>{`mResObj.showHtml("monitor.html", "body_main")`}</p>
       <p>{`mResObj.showHtml("wallet.html", "body_main")`}</p>
       <p>{`mResObj.showHtml("setting.html", "body_main")`}</p>
+    </div>
+  )
+}
+
+// Login.html
+// body Login
+export function Body_longin() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        {`<div id="loginPage" class="flexStart pageInit" style="z-index: 10">`}
+
+        <div className="ml-2 flex flex-col gap-5">
+          <div>
+            {`<imgsrc="./pic/bg.png" alt="" style=" position: absolute; width: 100%; height: 260px; overflow: hidden; z-index: -1;" />`}
+          </div>
+
+          <div>{`<div style="height: 10%"></div>`}</div>
+
+          <div>
+            {`<div style="color: #fff; width: 100%" class="flexCenter">`}
+            <p>{`<div style=" width: 90%; height: 80px; display: flex; justify-content: space-between;">`}</p>
+            <p className="ml-4">{`<div>`}</p>
+            <p className="ml-6">{`<div>`}</p>
+            <p className="ml-10">{`<img id="back_tohome" alt="" style="height: 24px; width: 24px" />`}</p>
+            <p className="ml-6">{`</div>`}</p>
+            <p className="ml-4">{`</div>`}</p>
+            <p className="ml-4">{`<div style="height: 10%"></div>`}</p>
+            <p className="ml-4 mt-4">{`<div style="font-size: 22px; font-weight: 700; text-align: left" id="login_account">`}</p>
+            <p className="ml-6">Login your account</p>
+            <p className="ml-4">{`</div>`}</p>
+            <p className="ml-4">{`<div style="height: 10%"></div>`}</p>
+            <p className="ml-4 mt-4">{` <div style=" font-size: 12px; font-weight: 500; text-align: left; color: #ffffff99;" id="login_sys">`}</p>
+            <p className="ml-6">Login and look your solar energy system.</p>
+            <p className="ml-4">{`</div>`}</p>
+          </div>
+
+          <div>{`<div style="height: 10%"></div>`}</div>
+
+          <div>
+            <p>{`<div style="height: 80%; border-radius: 40px 40px 0 0; background: #fff; position: relative;">`}</p>
+            <p className="ml-2">{`<div id="scroll_login" style="overflow: hidden; border-radius: 40px 40px 0 0;">`}</p>
+            <p className="ml-4">{`<div style="width: 100%; height: auto; background: #fff; border-radius: 40px 40px 0 0; flex-direction: column; position: relative;" class="flexSpac">`}</p>
+            <p className="ml-6">{`<div style="width: 100%; height: 100px;" class="flexCenter">`}</p>
+            <p className="ml-8">{`<img src="./pic/Frame.png" style="width: 180px; height: 76px;" />`}</p>
+            <p className="ml-6">{`</div>`}</p>
+            <p className="mt-4 ml-4">{`<div class="flexCenterColW100">`}</p>
+            <p className="ml-6">{`<div style="height: 20px;"></div>`}</p>
+            <p className="mt-2 ml-6">{`<div class="coverBoxInput">`}</p>
+            <p className="ml-8">{`<img id="login_phone" />`}</p>
+            <p className="ml-8">{`<input id="mobileLogin" class="boxInput" type="text" />`}</p>
+            <p className="ml-6">{`</div>`}</p>
+            <p className="ml-6">{`<div style="height: 15px;"></div>`}</p>
+            <p className="ml-6">{`<div class="coverBoxInput">`}</p>
+            <p className="ml-8">{`<img id="login_pass" />`}</p>
+            <p className="ml-8">{`<input id="password" class="boxInput" type="password" placeholder="Password" maxlength="20" />`}</p>
+            <p className="ml-8">{`<div class="flexEndRow80">`}</p>
+            <p className="ml-10">{`<img id="eyeiconclose_login" alt="eyeicon" />`}</p>
+            <p className="ml-8">{`</div>`}</p>
+            <p className="ml-6">{`</div>`}</p>
+            <p className="ml-6">{`<div style="display: flex; justify-content: space-between; margin: 15px; width: 80%; font-size: 12px;">`}</p>
+            <p className="ml-8">{`<div style="display: flex; align-items: center;">`}</p>
+            <p className="ml-10">{`<input type="checkbox" />`}</p>
+            <p className="ml-10">Remember me</p>
+            <p className="ml-8">{`</div>`}</p>
+            <p className="ml-8">{`<div id="forgotPass" style="color: #3b78fe;">`}</p>
+            <p className="ml-10">Forgot Password ?</p>
+            <p className="ml-8">{`</div>`}</p>
+            <p className="ml-6">{`</div>`}</p>
+            <p className="ml-4 mt-2">{`<div style="height: 30px;"></div>`}</p>
+            <p className="ml-8">{`<div id="loginBtn" class="btnComm">`}</p>
+            <p className="ml-10">Login</p>
+            <p className="ml-8">{`</div>`}</p>
+            <p className="ml-4">{`<div style="height: 10px;"></div>`}</p>
+            <p className="ml-4">{`</div>`}</p>
+            <p className="ml-2">{`</div>`}</p>
+            <p>{`</div>`}</p>
+          </div>
+        </div>
+        {`</div>`}
+      </div>
+    </div>
+  )
+}
+
+// fetchSliderConfigAndData Logine
+export function FetchSliderConfigAndData_login() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "GET",`}</p>
+          <p>{`url: API_SERVER + "/v1/auth/validate/side-image-config",`}</p>
+          <p>{`contentType: "application/json",`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`success: function (configData) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+
+            <p>{`configData = configData.result;`}</p>
+            <p>{`handleSliderConfig(configData);`}</p>
+            <p>{`console.log(configData, '================获取滑块配置和数据函数===================>>>>');`}</p>
+
+            <p>{`function handleSliderConfig(configData) {`}</p>
+            <div className="ml-2">
+              <p>{`if (configData[0] == 1 && configData[1] == 1) {`}</p>
+              <div className="ml-2">
+                <p>{`fetchSliderData();`}</p>
+              </div>
+              <p>{`}`}</p>
+
+              <p>{`if (configData[0] == 0 && configData[1] == 1) {`}</p>
+              <div className="ml-2">
+                <p>{`if (checkLoginR === "register") {`}</p>
+                <div className="ml-2">
+                  <p>{`loginObj.registerFun();`}</p>
+                </div>
+                <p>{`}`}</p>
+                <p>{`if (checkLoginR === "login") {`}</p>
+                <div className="ml-2">
+                  <p>{`fetchSliderData();`}</p>
+                </div>
+                <p>{`}`}</p>
+              </div>
+              <p>{`}`}</p>
+
+              <p>{`if (configData[0] == 1 && configData[1] == 0) {`}</p>
+              <div className="ml-2">
+                <p>{`if (checkLoginR === "register") {`}</p>
+                <div className="ml-2">
+                  <p>{`fetchSliderData();`}</p>
+                </div>
+                <p>{`}`}</p>
+                <p>{`if (checkLoginR === "login") {`}</p>
+                <div className="ml-2">
+                  <p>{`loginObj.loginFun();`}</p>
+                </div>
+                <p>{`}`}</p>
+              </div>
+              <p>{`}`}</p>
+
+              <p>{`if (configData[0] == 0 && configData[1] == 0) {`}</p>
+              <div className="ml-2">
+                <p>{`if (checkLoginR === "register") {`}</p>
+                <div className="ml-2">
+                  <p>{`loginObj.registerFun();`}</p>
+                  <p>{`checkLoginR = null;`}</p>
+                </div>
+                <p>{`}`}</p>
+                <p>{`if (checkLoginR === "login") {`}</p>
+                <div className="ml-2">
+                  <p>{`loginObj.loginFun();`}</p>
+                  <p>{`checkLoginR = null;`}</p>
+                </div>
+                <p>{`}`}</p>
+              </div>
+              <p>{`}`}</p>
+            </div>
+            <p>{`},`}</p>
+            <p>{`error: function (xhr, status, error) {`}</p>
+            <div className="ml-2">
+              <p>{`console.error("Failed to fetch slider config:", error);`}</p>
+              <p>{`msgPageObj.show('服务器繁忙 请退出重试');`}</p>
+              <p>{`loaderObj.unShow();`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`});`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// FetchSliderData Login
+export function FetchSliderData_login() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`$('#sliderContainer').css({ "display": "flex" })`}</p>
+        <p>{`fixedImage.style.left = ${0}px;`}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "GET",`}</p>
+          <p>{`url: API_SERVER + "/v1/auth/validate/side-image",`}</p>
+          <p>{`contentType: "application/json",`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`success: function (sliderData) {`}</p>
+          <div className="ml-2">
+            <p>{`// updateSlider(sliderData);`}</p>
+            <p>{`console.log(sliderData, '================获取滑块数据函数===================>>>>');`}</p>
+            <p>{`blockImage = sliderData.result.block;`}</p>
+            <p>{`bgImage = sliderData.result.bg;`}</p>
+            <p>{`y = ((sliderData.result.y) + 33) * (0.8 * w / 512);`}</p>
+            <p>{`ImgId = sliderData.result.id;`}</p>
+            <p>{`$(".slider_container").css({ "width": 0.8 * w, "height": 0.8 * w * 215 / 512 });`}</p>
+            <p>{`$("#fixedImage").css({ "width": 0.8 * w / 512 * 66 })`}</p>
+            <p>{`captchachack(blockImage, bgImage, y);`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xhr, status, error) {`}</p>
+          <div className="ml-2">
+            <p>{`console.error("Failed to fetch slider data:", error);`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// Slider_cap login
+export function Slider_cap_login() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var sliderContainer = document.getElementById('sliderContainer');`}</p>
+        <p>{`var fixedImage = document.getElementById('fixedImage');`}</p>
+        <p>{`var isDragging = false;`}</p>
+
+        <p>{`fixedImage.addEventListener('mousedown', startDrag);`}</p>
+        <p>{`fixedImage.addEventListener('touchstart', startDrag);`}</p>
+
+        <p>{`function startDrag(e) {`}</p>
+        <div className="ml-2">
+          <p>{`isDragging = true;`}</p>
+          <p>{`window.addEventListener('mousemove', drag);`}</p>
+          <p>{`window.addEventListener('touchmove', drag);`}</p>
+          <p>{`window.addEventListener('mouseup', stopDrag);`}</p>
+          <p>{`window.addEventListener('touchend', stopDrag);`}</p>
+          <p>{`fixedImage.style.transition = 'none'; // Remove transition effect for real-time responsiveness`}</p>
+        </div>
+        <p>{`}`}</p>
+
+        <p>{`function drag(e) {`}</p>
+        <div className="ml-2">
+          <p>{`if (isDragging) {`}</p>
+          <div className="ml-2">
+            <p>{`var xPosition = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;`}</p>
+            <p>{`var containerRect = sliderContainer.getBoundingClientRect();`}</p>
+            <p>{`var minX = containerRect.left;`}</p>
+            <p>{`var maxX = 0.8 * w;`}</p>
+            <p>{`var newPosition = xPosition - fixedImage.clientWidth / 2;`}</p>
+
+            <p>{`// Ensure within bounds`}</p>
+            <p>{`newPosition = Math.max(minX, Math.min(newPosition, maxX));`}</p>
+
+            <p>{`fixedImage.style.left = \`\${newPosition}px\`;`}</p>
+          </div>
+        </div>
+        <p>{`}`}</p>
+
+        <p>{`// Disable dragging`}</p>
+        <p>{`function stopDrag() {`}</p>
+        <div className="ml-2">
+          <p>{`isDragging = false;`}</p>
+          <p>{`window.removeEventListener('mousemove', drag);`}</p>
+          <p>{`window.removeEventListener('touchmove', drag);`}</p>
+          <p>{`window.removeEventListener('mouseup', stopDrag);`}</p>
+          <p>{`window.removeEventListener('touchend', stopDrag);`}</p>
+          <p>{`fixedImage.style.transition = ''; // Restore transition effect`}</p>
+
+          <p>{`xPosition = (parseInt(fixedImage.style.left) / (0.8 * w / 512)) - 33;`}</p>
+
+          <p>{`if (checkLoginR === "register") {`}</p>
+          <div className="ml-2">
+            <p>{`loginObj.registerFun();`}</p>
+            <p>{`checkLoginR = null;`}</p>
+          </div>
+          <p>{`} else if (checkLoginR === "login") {`}</p>
+          <div className="ml-2">
+            <p>{`loginObj.loginFun();`}</p>
+            <p>{`checkLoginR = null;`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// loginFun login
+export function LoginFun_login() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`loaderObj.show();`}</p>
+        <p>{`var mData = {`}</p>
+        <div className="ml-2">
+          <p>{`"mobile": $("#mobileLogin").val(),`}</p>
+          <p>{`"password": $("#password").val(),`}</p>
+          <p>{`"vid": ImgId,`}</p>
+          <p>{`"x": parseInt(xPosition)`}</p>
+        </div>
+        <p>{`}`}</p>
+
+        <p>{`if (deviceId) {`}</p>
+        <div className="ml-2">
+          <p>{`mData = {`}</p>
+          <div className="ml-2">
+            <p>{`"mobile": $("#mobileLogin").val(),`}</p>
+            <p>{`"password": $("#password").val(),`}</p>
+            <p>{`"vid": ImgId,`}</p>
+            <p>{`"x": parseInt(xPosition)`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "post",`}</p>
+          <p>{`url: API_SERVER + "/v1/auth/login",`}</p>
+          <p>{`data: JSON.stringify(mData),`}</p>
+          <p>{`contentType: "application/json",`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`beforeSend: function (xmlhttprequest) {`}</p>
+          <div className="ml-2">
+            <p>{`// Do something before sending the request`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+            <p>{`if (data.code == 0) {`}</p>
+            <div className="ml-2">
+              <p>{`// Do something on success`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`// Do something on error`}</p>
+            </div>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xmlhttprequest, error) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+            <p>{`// Handle error`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`complete: function () {`}</p>
+          <div className="ml-2">
+            <p>{`// Do something after request completes`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`});`}</p>
+
+        <p>{`function cleanInput() {`}</p>
+        <div className="ml-2">
+          <p>{`$("#username").val('');`}</p>
+          <p>{`$("#password").val('');`}</p>
+        </div>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// loginFun login
+export function CheckLoginStatusWithRefreshToken() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`if (token == null) {`}</p>
+        <div className="ml-2">
+          <p>{`return;`}</p>
+        </div>
+
+        <p>{`var mData = { "token": token.refresh };`}</p>
+
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "post",`}</p>
+          <p>{`url: API_SERVER + "/v1/auth/refresh",`}</p>
+          <p>{`data: JSON.stringify(mData),`}</p>
+          <p>{`contentType: "application/json",`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`beforeSend: function (xmlhttprequest) {`}</p>
+          <div className="ml-2">
+            <p>{`// Do something before sending the request`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`if (data.code == 0) {`}</p>
+            <div className="ml-2">
+              <p>{`console.log('===>refresh success');`}</p>
+              <p>{`var tokenObj = data.result;`}</p>
+              <p>{`localStorage.setItem('token', JSON.stringify(tokenObj));`}</p>
+              <p>{`var tokenLocal = localStorage.getItem('token');`}</p>
+              <p>{`if (tokenLocal != null) {`}</p>
+              <div className="ml-2">
+                <p>{`token = JSON.parse(tokenLocal);`}</p>
+              </div>
+              <p>{`}`}</p>
+              <p>{`pageUnShow('loginPage');`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`console.log('===>refresh fail');`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xmlhttprequest, error) {`}</p>
+          <div className="ml-2">
+            <p>{`console.log(error);`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`complete: function () {`}</p>
+          <div className="ml-2">
+            <p>{`// Do something after request completes`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getStatusCodeLang
+export function GetStatusCodeLang() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var thisCode = code;`}</p>
+        <p>{`try {`}</p>
+        <div className="ml-2">
+          <p>{`var v = statusCodesArr[thisCode][langCode];`}</p>
+          <p>{`if (v != null) {`}</p>
+          <div className="ml-2">
+            <p>{`return v;`}</p>
+          </div>
+          <p>{`} else {`}</p>
+          <div className="ml-2">
+            <p>{`return thisCode;`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`} catch (e) {`}</p>
+        <div className="ml-2">
+          <p>{`return thisCode;`}</p>
+        </div>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getlevel
+export function Getlevel() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`this.getlevel = function () {`}</p>
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: 'get',`}</p>
+          <p>{`url: API_SERVER + '/v1/profile/cycle-voucher?type=40',`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`'Authorization': 'Bearer ' + token.token,`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`$("#now_number").text(data.result.activeNumber);`}</p>
+            <p>{`$("#teamPerformance").text(data.result.performance);`}</p>
+
+            <p>{`var filteredItems = data.result.items.filter(item => item.state === 20);`}</p>
+            <p>{`itemsLevelArr = data.result.items;`}</p>
+            <p>{`var indexLevel = data.result.level;`}</p>
+
+            <p>{`console.log(indexLevel, '--------------------------------')`}</p>
+            <p>{`if (indexLevel === 0) {`}</p>
+            <div className="ml-2">
+              <p>{`$('.img_level11').attr('src', './pic/level/level0.png');`}</p>
+              <p>{`$('#profileLevel_All').attr('src', './pic/level/level0.png');`}</p>
+              <p>{`$("#level_number_header_name11").text('普通会员');`}</p>
+              <p>{`$("#level_number_header11").text('');`}</p>
+              <p>{`$("#level_number11").text('普通会员');`}</p>
+              <p>{`$("#sendPostData").css({ "visibility": "hidden" });`}</p>
+            </div>
+            <p>{`} else if (indexLevel === 1) {`}</p>
+            <div className="ml-2">
+              <p>{`$('.img_level11').attr('src', './pic/level/level1.png');`}</p>
+              <p>{`$('#profileLevel_All').attr('src', './pic/level/level1.png');`}</p>
+              <p>{`$("#level_number_header11").text('VIP1');`}</p>
+              <p>{`$("#level_number11").text('V1');`}</p>
+            </div>
+            {/* ต่อไปเช่นนี้ */}
+          </div>
+          {/* อื่น ๆ */}
+        </div>
+        <p>{`},`}</p>
+        <p>{`error: function (xmlhttprequest, error) {`}</p>
+        <div className="ml-2">
+          <p>{`loaderObj.unShow();`}</p>
+          <p>{`msgPageObj.show(NSLang('sys.serverError') + ': ' + error);`}</p>
+        </div>
+        <p>{`});`}</p>
+
+        <p>{`function sendPostData(filteredItems, indexLevel) {`}</p>
+        <div className="ml-2">{/* ส่วนที่เหลือของฟังก์ชัน sendPostData */}</div>
+        <p>{`}`}</p>
+        <p>{`}`}</p>
+      </div>
     </div>
   )
 }

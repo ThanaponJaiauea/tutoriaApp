@@ -5,7 +5,7 @@ list Navbar dropdown
 
 solar app
 
-- validateInput
+<!-- - validateInput
 - AddDate
 - CreateDevice
 - CreateDevice
@@ -257,4 +257,118 @@ Arithmetic
 - loadingBar
 - verified_wallet --------------------- GET
 - getLimitWithdraw --------------------- GET
-- loopWithdraw --------------------- GET
+- loopWithdraw --------------------- GET -->
+
+- validateInput
+- AddDate
+- CreateDevice
+- getItemAll
+- pagination_coins
+- CoinsCheckToken
+- getStatePayment
+- setVoucherId
+- calTotal
+- cleanDataDefualt
+- showChartTotalCustomer
+- ChartMethod
+- ChartGender
+- updateSalesData
+- GetDataCustomerDetail
+- distributorFun
+- HomeCheckToken
+- count
+- checklocalStorage
+- getSelectedYear
+- getSelectedMonth
+- createNewInput
+- updateIncomeBeforeTaxes
+- openTab
+- createMemberTier
+- monitorCheckToken
+- getSelectedDay
+- openTabbill
+- RandomValueMonitorNoLogin
+- luxVal
+- pagination
+- getOid
+- getTimeline
+- cancelOrder
+- selectPayment
+- start_timer
+- ChartPaymentStatistic
+- ExportCSVPayment
+- show_cart
+- sumPrice
+- confirmOrderBuy
+- CreateTableReport
+- CreateTableQuarter
+- getSelectedMonthpurchase
+- showChart
+- ExportCSV
+- RedeemCheckToken
+- checkNoInput
+- getData
+- PreviewImg_refund
+- CreateHTML
+- getSelectedDate
+- openTabreportCart
+- openTabreport
+- chartNOlogin
+- chartNOloginMonthcart
+- chartNOloginYearhcart
+- chartNOloginTotalhcart
+- chargePowerNOlogin
+- settingAccountCheckToken
+- scroller
+- SettingCheckToken
+- TopUpCheckToken
+- Getinformation
+- transactionCheckToken
+- pagination_tran
+- transferCheckToken
+- showVoucher
+- walletCheckToken
+
+---
+
+---
+
+Arithmetic
+
+- submitAddalipay
+- formatCardNumber
+- submitAddBank
+- scrollToBottom
+- moveToNext
+- getdata
+- popUp2FA
+- withdrawFuntion
+- convertFuntion
+- wallgetType
+- getLimitInput
+- changeTab
+- calProgressBar
+- copy_show
+- getQrInvite
+- renderPrizes
+- getMyTeam
+- underMember
+- summary
+- Getnotification_reads
+- handleClick
+- getProducts
+- shopmenuhome
+- shopmenucategory
+- shopmenucart
+- unShowmenuPageShop
+- getDataBuy
+- updategetSelectMoney
+- topupCustomData
+- tradeCustomData
+- countProductTimer
+- BarLoading
+- setLimitInput
+- CheckTransferInput
+- getDatailHistory
+- getTabDate
+- loadingBar

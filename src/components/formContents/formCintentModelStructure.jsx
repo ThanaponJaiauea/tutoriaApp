@@ -74,6 +74,38 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         return "firstCheckToken"
       case "IndexHowToUse":
         return "Index How To Use"
+      case "bodyLogin":
+        return "Body"
+      case "fetchSliderConfigAndData":
+        return "fetchSliderConfigAndData()"
+      case "fetchSliderData":
+        return "fetchSliderData()"
+      case "slider_cap":
+        return "slider_cap()"
+      case "loginFun":
+        return "loginFun()"
+      case "checkLoginStatusWithRefreshToken":
+        return "checkLoginStatusWithRefreshToken()"
+      case "askDeviceIdFun":
+        return "askDeviceIdFun()"
+      case "registerFun":
+        return "registerFun()"
+      case "SendOTP":
+        return "SendOTP()"
+      case "nSLangArrLang":
+        return "var nSLangArrLang"
+      case "setAllPageLang":
+        return "setAllPageLang()"
+      case "setAllUILang":
+        return "setAllUILang()"
+      case "NSLang":
+        return "NSLang"
+      case "getStatusCodeLang":
+        return "getStatusCodeLang(code)"
+      case "openTabLevel":
+        return "openTabLevel(tabName)"
+      case "getlevel":
+        return "getlevel()"
       default:
         return ""
     }
@@ -554,6 +586,293 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         contentMainScript6={`6.เปลี่ยนสีพื้นหลังของหน้าเว็บไซต์ด้วยการใช้ CSS`}
         contentMainScript7={`7.เรียกฟังก์ชัน init และ call จากอ็อบเจ็กต์ homeObj`}
         contentMainScript8="8.ซึ่งการเรียกฟังก์ชัน init และ call จาก homeObj น่าจะเป็นการเรียกฟังก์ชันเพื่อเริ่มต้นและดำเนินการต่อตามลำดับที่เกี่ยวข้องกับหน้าหลักของเว็บไซต์"
+      />
+    ),
+
+    bodyLogin: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Login.html"
+        fromName={getTitle()}
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        widget="none"
+        fromContent={true}
+        fromBody={true}
+        content="-ss"
+      />
+    ),
+
+    fetchSliderConfigAndData: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Login.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        widget="none"
+        fromContent={true}
+        fromScript={true}
+        content="-ss"
+        fromName={getTitle()}
+        functionName={getTitle()}
+      />
+    ),
+
+    fetchSliderData: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Login.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        fromName={getTitle()}
+        fromContent={true}
+        fromScript={true}
+        functionName={getTitle()}
+        widget="none"
+        content="-ss"
+      />
+    ),
+
+    slider_cap: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Login.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        fromName={getTitle()}
+        functionName={getTitle()}
+        fromContent={true}
+        fromScript={true}
+        widget="none"
+        content="-ss"
+      />
+    ),
+
+    loginFun: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Login.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        fromName={getTitle()}
+        functionName={getTitle()}
+        fromContent={true}
+        fromScript={true}
+        widget="none"
+        content="-ss"
+      />
+    ),
+
+    checkLoginStatusWithRefreshToken: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Login.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        fromName={getTitle()}
+        functionName={getTitle()}
+        fromContent={true}
+        fromScript={true}
+        widget="none"
+        content="-ss"
+      />
+    ),
+
+    askDeviceIdFun: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Login.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        fromName={getTitle()}
+        fromContent={true}
+        fromScript={true}
+        widget="none"
+        content="-ss"
+      />
+    ),
+
+    registerFun: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Register.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        fromName={getTitle()}
+        functionName={getTitle()}
+        fromContent={true}
+        fromScript={true}
+        widget="none"
+        content="-ฟังก์ชัน registerFun ใช้สำหรับลงทะเบียนผู้ใช้ใหม่ ดังนี้"
+        content1="1.ดึงค่าข้อมูลที่ผู้ใช้ป้อน เช่น อีเมล, OTP (รหัสยืนยันครั้งเดียว), ชื่อผู้ใช้, เบอร์โทรศัพท์มือถือ, รหัสผ่าน, และรหัสเชิญ"
+        content2="2.สร้างอ็อบเจ็กต์ข้อมูล (mData) ที่มีข้อมูลผู้ใช้เพื่อส่งไปยังเซิร์ฟเวอร์"
+        content3="3.ส่งคำขอ AJAX POST ไปยังเซิร์ฟเวอร์ที่ URL /v1/auth/signUp พร้อมกับข้อมูลผู้ใช้ในรูปแบบ JSON"
+        content4="4.จัดการกับการตอบกลับจากเซิร์ฟเวอร์"
+        content4p1="4.1.หากรหัสการตอบกลับเป็น 0 (หมายถึงสำเร็จ) จะแสดงข้อความสำเร็จ, ล้างช่องกรอกข้อมูล, และเปลี่ยนเส้นทางผู้ใช้ไปที่หน้าเข้าสู่ระบบหลังจากสักครู่"
+        content4p2="4.2.หากรหัสการตอบกลับไม่เท่ากับ 0, จะแสดงข้อความผิดพลาดขึ้นอยู่กับรหัสสถานะที่ได้รับ"
+        content5="5.จัดการกับข้อผิดพลาดที่อาจเกิดขึ้นในระหว่างคำขอ AJAX เช่น ข้อผิดพลาดจากเซิร์ฟเวอร์"
+        content6="6.กำหนดฟังก์ชันภายใน cleanInput เพื่อรีเซ็ตช่องกรอกข้อมูลหลังจากการลงทะเบียน"
+      />
+    ),
+
+    SendOTP: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Register.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        fromName={getTitle()}
+        functionName={getTitle()}
+        fromContent={true}
+        fromScript={true}
+        widget="none"
+        content="-ฟังก์ชัน SendOTP ใช้สำหรับส่งรหัส OTP ไปยังอีเมลของผู้ใช้ ดังนี้"
+        content1="1.ดึงค่าอีเมลที่ผู้ใช้ป้อนในช่องกรอก"
+        content2="2.สร้างอ็อบเจ็กต์ข้อมูล (mData) ที่มีข้อมูลอีเมลและประเภท (type) เพื่อส่งไปยังเซิร์ฟเวอร์"
+        content3="3.ส่งคำขอ AJAX POST ไปยังเซิร์ฟเวอร์ที่ URL /v1/email-verification/send พร้อมกับข้อมูลในรูปแบบ JSON"
+        content4="4.จัดการกับการตอบกลับจากเซิร์ฟเวอร์"
+        content4p1="4.1.หากรหัสการตอบกลับเป็น 0 (หมายถึงสำเร็จ) จะแสดงข้อความสำเร็จและเริ่มนับถอยหลังเวลาต่อไป"
+        content4p2="4.2.หากรหัสการตอบกลับไม่เท่ากับ 0, จะแสดงข้อความผิดพลาดขึ้นอยู่กับรหัสสถานะที่ได้รับ"
+        content5="5.จัดการกับข้อผิดพลาดที่อาจเกิดขึ้นในระหว่างคำขอ AJAX เช่น ข้อผิดพลาดจากเซิร์ฟเวอร์"
+        content6="6.การนับถอยหลังเวลาจะทำงานโดยการเริ่มต้นฟังก์ชัน startCountdown ซึ่งจะเริ่มนับถอยหลังจากเวลาที่ได้รับจากเซิร์ฟเวอร์"
+        content7="7.เมื่อเวลานับถอยหลังสิ้นสุดลง ฟังก์ชัน OTPCountdown จะถูกเรียกเพื่อแสดงหน้าแบบฟอร์มให้ผู้ใช้ป้อน OTP อีกครั้งหรือคลิกที่ปุ่มส่ง OTP อีกครั้งหากต้องการส่งอีกครั้ง"
+      />
+    ),
+
+    nSLangArrLang: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Lang.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        fromName={getTitle()}
+        functionName={getTitle()}
+        fromContent={true}
+        fromVar={true}
+        widget="none"
+      />
+    ),
+
+    setAllPageLang: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Lang.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        fromName={getTitle()}
+        functionName={getTitle()}
+        fromContent={true}
+        fromScript={true}
+        widget="none"
+        content="-ฟังก์ชัน setAllPageLang ใช้ในการตั้งค่าภาษาสำหรับหน้าทั้งหมดในแอปพลิเคชัน โดยการเรียกใช้"
+        content1="1.ฟังก์ชัน setAllUILang สำหรับแต่ละหน้าดังนี้"
+        content2={`"getstart","login","forgotPass","register","main","cart","detail_product","homePage","setting","final"`}
+        content3="การเรียกใช้ setAllUILang จะเป็นการตั้งค่าภาษาสำหรับหน้านั้นๆ โดยทำการโหลดข้อมูลภาษาจากไฟล์หรือแหล่งข้อมูลที่กำหนดไว้ล่วงหน้าแล้วแล้วใช้ในการแสดงผลบนหน้าเว็บในภาษาที่ถูกต้องตามการตั้งค่า"
+      />
+    ),
+
+    setAllUILang: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Lang.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        fromName={getTitle()}
+        functionName={getTitle()}
+        fromContent={true}
+        fromScript={true}
+        widget="none"
+        content="-ฟังก์ชัน setAllUILang() ใช้ในการตั้งค่าข้อความแสดงผลในหน้าต่างๆ ของแอปพลิเคชันตามภาษาที่กำหนด เมื่อมีการเรียกใช้งานฟังก์ชันนี้ โดยส่งพารามิเตอร์ page เข้าไป เพื่อระบุหน้าที่ต้องการตั้งค่าภาษา"
+        content1="1.ในแต่ละเคสของ switch จะมีการกำหนดข้อความแสดงผลของแต่ละ element ในหน้านั้นๆ โดยใช้ NSLang เพื่อดึงข้อความภาษาที่ต้องการตาม key ที่กำหนด"
+        content2="2.หลังจากนั้นจะนำข้อความที่ได้มาแสดงผลใน element ต่างๆ ของหน้านั้นๆ โดยการใช้ html() เพื่อกำหนดข้อความใหม่ในแต่ละ element"
+        content3="3.การเรียกใช้งาน NSLang จะช่วยในการแสดงผลข้อความในภาษาที่ถูกต้องตามการตั้งค่าที่กำหนดไว้ล่วงหน้าแล้วในระบบ"
+        content4="4.การตั้งค่าข้อความใหม่จะเป็นการอัพเดทหน้าเว็บให้เป็นภาษาที่ถูกต้องตามการตั้งค่า"
+      />
+    ),
+
+    NSLang: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Lang.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        fromName={getTitle()}
+        functionName={getTitle()}
+        fromContent={true}
+        fromScript={true}
+        widget="none"
+        content="-ฟังก์ชัน NSLang ใช้ในการค้นหาและคืนค่าข้อความจากตัวแปร NSLangArr โดยใช้คีย์ inStr เพื่อค้นหาข้อความที่ต้องการในภาษาที่ตั้งค่าไว้ล่วงหน้า หากไม่พบข้อความที่ต้องการหรือเกิดข้อผิดพลาดขณะค้นหา ฟังก์ชันจะคืนค่า inStr เป็นค่าเริ่มต้น"
+        content1="1.ในบรรทัดแรกของฟังก์ชัน NSLang จะพยายามดึงข้อความจากตัวแปร NSLangArr โดยใช้คีย์ inStr และ langCode ซึ่งเป็นตัวแปรที่ระบุภาษาที่ต้องการให้แสดงผล"
+        content2="2.หากพบข้อความที่ต้องการจะคืนค่าข้อความนั้น"
+        content3="3.หากไม่พบข้อความหรือเกิดข้อผิดพลาดขณะค้นหา ฟังก์ชันจะคืนค่า inStr เป็นค่าเริ่มต้นหรือค่าที่ส่งเข้ามาตามที่เกิดขึ้นในบริบทนั้นๆ ในการค้นหาข้อความ"
+      />
+    ),
+
+    getStatusCodeLang: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Lang.html"
+        selectedMenu={selectedMenu}
+        openMainBody={openMainBody}
+        openMainScript={openMainScript}
+        fromName={getTitle()}
+        functionName={getTitle()}
+        fromContent={true}
+        fromScript={true}
+        widget="none"
+      />
+    ),
+
+    openTabLevel: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน openTab() ใช้ในการแสดงแท็บที่ถูกเลือกโดยรับชื่อแท็บเป็นพารามิเตอร์ tabName และซ่อนแท็บที่ไม่ได้ถูกเลือก และแสดงแท็บที่ถูกเลือก"
+        content1="1.เริ่มต้นด้วยการรับชื่อแท็บที่ต้องการแสดงเป็นพารามิเตอร์ `tabName`"
+        content2="2.ฟังก์ชันจะดึงอ็อบเจกต์ของแท็บทั้งหมดที่มีคลาส 'tabcontent' และซ่อนทั้งหมด"
+        content3="3.จากนั้นฟังก์ชันจะดึงอ็อบเจกต์ของลิงก์แท็บทั้งหมดที่มีคลาส 'tablinks' และลบคลาส 'actived' ที่มีอยู่"
+        content4="4.ต่อมาฟังก์ชันจะแสดงแท็บที่ถูกเลือกโดยเพิ่มค่า display ให้เป็น 'block' และเพิ่มคลาส 'actived' เข้าไปในลิงก์แท็บที่เกี่ยวข้อง"
+        content5="5.ดังนั้นแท็บที่ไม่ได้ถูกเลือกจะถูกซ่อนและลิงก์ที่ไม่ได้ถูกเลือกจะไม่มีคลาส 'actived' และแท็บที่ถูกเลือกจะแสดงผลและลิงก์ที่เกี่ยวข้องจะมีคลาส 'actived'"
+        functionName="openTab(tabName)"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+      />
+    ),
+
+    getlevel: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+        content="-โค้ดนี้เป็นฟังก์ชัน JavaScript ที่ถูกกำหนดไว้ในรูปแบบของฟังก์ชันในอ็อบเจกต์ (Object function) โดยชื่อของฟังก์ชันคือ getlevel ฟังก์ชันนี้ดำเนินการดังนี้"
+        content1="1.ดึงข้อมูล Token จาก Local Storage ของเบราว์เซอร์ โดยใช้ window.localStorage.getItem('token') และแปลงข้อมูล Token จากรูปแบบ JSON ด้วย JSON.parse(getToken)"
+        content2="2.ทำการส่งคำขอ Ajax ไปยัง URL ที่กำหนด (ในที่นี้คือ API_SERVER + '/v1/profile/cycle-voucher?type=40') โดยมีการส่ง Token ในส่วนของ Header ด้วย"
+        content3="3.เมื่อคำขอสำเร็จ (success) จะทำการปรับแต่งข้อมูลและแสดงผลบนหน้าเว็บได้แก่"
+        content3p1={`3.1.การแสดงข้อมูลต่าง ๆ เช่น $("#now_number").text(data.result.activeNumber) เพื่อแสดงจำนวนที่ใช้งานอยู่ในปัจจุบัน`}
+        content3p2={`3.2.การแสดงรูปภาพเฉพาะกับระดับที่ได้รับเช่น $('.img_level11').attr('src', './pic/level/level0.png')`}
+        content3p3={`3.3.การแสดงข้อมูลในตาราง HTML`}
+        content4={`4.การตรวจสอบความยาวของข้อมูลที่ผ่านการกรองแล้ว และดำเนินการต่อไปตามเงื่อนไข`}
+        content5={`5.เมื่อผิดพลาด (error) จะแสดงข้อความข้อผิดพลาดหรือประเภทของข้อผิดพลาดที่เกิดขึ้น`}
+        content6={`นอกจากนี้ฟังก์ชันยังมีการสร้างอีเวนต์ในการคลิกที่ปุ่ม #sendPostData และเมื่อคลิกจะเรียกใช้ฟังก์ชัน sendPostData ซึ่งทำการส่งข้อมูลผ่าน Ajax และจัดการกับการตอบกลับที่ได้รับจากเซิร์ฟเวอร์ในส่วนของการรับรองความถูกต้องของข้อมูลหรือการจัดการข้อผิดพลาดอื่น ๆ ที่อาจเกิดขึ้นในการส่งคำขอ POST นั้นๆ ตาม API ที่ใช้งาน`}
       />
     ),
   }

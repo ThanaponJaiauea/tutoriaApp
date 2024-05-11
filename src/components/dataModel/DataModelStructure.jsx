@@ -205,7 +205,7 @@ const widgetData = [
 const mainData = [
   {
     key: "main",
-    label: "main",
+    label: "Main.html",
     children: [
       {
         name: "main.html",
@@ -217,4 +217,173 @@ const mainData = [
   },
 ]
 
-export {startProjecData, indexData, widgetData, mainData}
+const login = [
+  {
+    key: "login",
+    label: "Login.html",
+    children: [
+      {
+        name: "Body",
+        type: "generalModel",
+        key: "bodyLogin",
+        category: "loginHtml",
+      },
+      {
+        name: "fetchSliderConfigAndData()",
+        type: "generalModel",
+        key: "fetchSliderConfigAndData",
+        category: "loginHtml",
+      },
+      {
+        name: "fetchSliderData()",
+        type: "generalModel",
+        key: "fetchSliderData",
+        category: "loginHtml",
+      },
+      {
+        name: "slider_cap()",
+        type: "generalModel",
+        key: "slider_cap",
+        category: "loginHtml",
+      },
+      {
+        name: "loginFun()",
+        type: "generalModel",
+        key: "loginFun",
+        category: "loginHtml",
+      },
+      {
+        name: "checkLoginStatusWithRefreshToken()",
+        type: "generalModel",
+        key: "checkLoginStatusWithRefreshToken",
+        category: "loginHtml",
+      },
+      {
+        name: "askDeviceIdFun()",
+        type: "generalModel",
+        key: "askDeviceIdFun",
+        category: "loginHtml",
+      },
+    ],
+  },
+]
+
+const register = [
+  {
+    key: "register",
+    label: "Register.html",
+    children: [
+      {
+        name: "Body",
+        type: "generalModel",
+        key: "bodyregister",
+        category: "registerHtml",
+      },
+      {
+        name: "registerFun()",
+        type: "generalModel",
+        key: "registerFun",
+        category: "registerHtml",
+      },
+      {
+        name: "SendOTP()",
+        type: "generalModel",
+        key: "SendOTP",
+        category: "registerHtml",
+      },
+    ],
+  },
+]
+
+const lang = [
+  {
+    key: "lang",
+    label: "Lang.html",
+    children: [
+      {
+        name: "var NSLangArr",
+        type: "generalModel",
+        key: "nSLangArrLang",
+        category: "langHtml",
+      },
+      {
+        name: "setAllPageLang()",
+        type: "generalModel",
+        key: "setAllPageLang",
+        category: "langHtml",
+      },
+      {
+        name: "setAllUILang()",
+        type: "generalModel",
+        key: "setAllUILang",
+        category: "langHtml",
+      },
+      {
+        name: "NSLang()",
+        type: "generalModel",
+        key: "NSLang",
+        category: "langHtml",
+      },
+      {
+        name: "var statusCodesArr",
+        type: "generalModel",
+        key: "statusCodesArrLang",
+        category: "langHtml",
+      },
+      {
+        name: "getStatusCode()",
+        type: "generalModel",
+        key: "getStatusCodeLang",
+        category: "langHtml",
+      },
+    ],
+  },
+]
+
+const bStyle = [
+  {
+    key: "bStyle",
+    label: "BStyle.html",
+    children: [
+      {
+        name: "Style",
+        type: "generalModel",
+        key: "styleBStyle",
+        category: "bStyleHtml",
+      },
+    ],
+  },
+]
+
+const level = [
+  {
+    key: "level",
+    label: "Level.html",
+    children: [
+      {
+        name: "openTab()",
+        type: "generalModel",
+        key: "openTabLevel",
+        category: "levelHtml",
+      },
+      {
+        name: "getlevel()",
+        type: "generalModel",
+        key: "getlevel",
+        category: "levelHtml",
+      },
+    ],
+  },
+]
+
+export {
+  startProjecData,
+  indexData,
+  widgetData,
+  mainData,
+  login,
+  register,
+  lang,
+  bStyle,
+  level,
+}

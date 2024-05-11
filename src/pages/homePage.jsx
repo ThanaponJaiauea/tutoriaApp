@@ -18,7 +18,7 @@ export default function HomePage() {
     setSelectedMenu,
   } = useSelectedNavbar()
 
-  console.log("selectedNavbar", selectedNavbar)
+  // console.log("selectedNavbar", selectedNavbar)
   console.log("selectedMenu", selectedMenu)
 
   const handleModelClick = (menu) => {

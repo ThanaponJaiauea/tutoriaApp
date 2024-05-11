@@ -7,10 +7,25 @@ import {
   indexData,
   widgetData,
   mainData,
+  login,
+  register,
+  lang,
+  bStyle,
+  level,
 } from "../dataModel/DataModelStructure"
 
 export default function NavbarModelStructure({handleModelClick}) {
-  const allData = [...startProjecData, ...indexData, ...widgetData, ...mainData]
+  const allData = [
+    ...startProjecData,
+    ...indexData,
+    ...widgetData,
+    ...mainData,
+    ...login,
+    ...register,
+    ...lang,
+    ...bStyle,
+    ...level,
+  ]
   // console.log("allData", allData)
 
   const getLevelKeys = (items1) => {

@@ -11,9 +11,11 @@ import {
   AlertIndex,
   AlertWidget,
   Base64,
+  Body_longin,
   Cancel_order_getItemAll,
   Cancel_order_sentCancelOrder,
   ChangePasswordHtml,
+  CheckLoginStatusWithRefreshToken,
   Coin_history_calPage,
   Coin_history_getRedeemHis,
   Coin_history_pagination_coins,
@@ -48,10 +50,14 @@ import {
   EditAddress_deleteAddress,
   EditAddress_editAddress,
   EditAddress_getAddressID,
+  FetchSliderConfigAndData_login,
+  FetchSliderData_login,
   Forgotpass_forgotPass,
   Forgotpass_sendOTP_forgot,
   FunctionMessageBoxText,
   GetAbsTimeWidget,
+  GetStatusCodeLang,
+  Getlevel,
   HeaderInitExampleScript,
   HeaderInitWidget,
   Home_html_checkSimulated,
@@ -91,6 +97,7 @@ import {
   LoaderIndexBody,
   LoaderWidget,
   LocationAddress_getAddress,
+  LoginFun_login,
   Login_askDeviceIdFun,
   Login_checkLoginWithRefreshToken,
   MainHtmlBody,
@@ -203,6 +210,7 @@ import {
   Setting_account_updateAvatar,
   Setting_account_updateProfile,
   Setting_getQRcode,
+  Slider_cap_login,
   Start_init,
   Topup_addSlipPayment,
   Topup_checkNoInput,
@@ -243,9 +251,12 @@ import stepopen5 from "../pictures/stepopen5.png"
 import step6 from "../pictures/step6.png"
 import {Link} from "react-router-dom"
 import MainTryit from "./tryitFunction/mainTryit"
-import {SubmitAddalipay_alipayAdd} from "./dataContents/FunctionDataTextArithmetic"
 
 export default function ModelContent({
+  fromBody,
+  fromScript,
+  fromVar,
+  fromContent,
   setOpenMainBody,
   setOpenIndexHead,
   setOpenMainScript,
@@ -375,6 +386,7 @@ export default function ModelContent({
   mainCheck,
   scriptTitle,
   listIndex,
+  fromName,
 }) {
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
@@ -425,6 +437,81 @@ export default function ModelContent({
             <p>{`}`}</p>
             <span className="text-[#A52A2A]">&lt;/script&gt;</span>
           </div>
+        </div>
+      )}
+
+      {/* from Body */}
+      {fromContent && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">{fromName}</h3>
+            </button>
+
+            <div>
+              {content && <p>{content}</p>}
+              {content1 && <p>{content1}</p>}
+              {content2 && <p>{content2}</p>}
+              {content3 && <p>{content3}</p>}
+              {content4 && <p>{content4}</p>}
+              {content5 && <p>{content5}</p>}
+              {content6 && <p>{content6}</p>}
+            </div>
+          </div>
+
+          <>
+            <div className="w-full flex flex-col gap-4">
+              {fromBody && (
+                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                  <span className="text-[#A52A2A]">&lt;body&gt;</span>
+                  {selectedMenu === "bodyLogin" && <Body_longin />}
+                  <span className="text-[#A52A2A]">&lt;/body&gt;</span>
+                </div>
+              )}
+
+              {fromScript && (
+                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                  <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                  <div className="flex">
+                    <span className="ml-4 text-[#0000CD]">function</span>{" "}
+                    <p className="ml-4"> {`${functionName} {`}</p>
+                  </div>
+                  {selectedMenu === "fetchSliderConfigAndData" && (
+                    <FetchSliderConfigAndData_login />
+                  )}
+                  {selectedMenu === "fetchSliderData" && (
+                    <FetchSliderData_login />
+                  )}
+                  {selectedMenu === "slider_cap" && <Slider_cap_login />}
+                  {selectedMenu === "loginFun" && <LoginFun_login />}
+                  {selectedMenu === "checkLoginStatusWithRefreshToken" && (
+                    <CheckLoginStatusWithRefreshToken />
+                  )}
+                  {selectedMenu === "askDeviceIdFun" && (
+                    <Login_askDeviceIdFun />
+                  )}
+                  {selectedMenu === "registerFun" && <Register_registerFun />}
+                  {selectedMenu === "SendOTP" && <Register_sendOTP />}
+                  {selectedMenu === "setAllPageLang" && <Lang_setAllPageLang />}
+                  {selectedMenu === "setAllUILang" && <Lang_setAllUILang />}
+                  {selectedMenu === "NSLang" && <Lang_nsLang />}
+                  {selectedMenu === "getStatusCodeLang" && (
+                    <GetStatusCodeLang />
+                  )}
+                  <p>{`}`}</p>
+                  <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+                </div>
+              )}
+
+              {fromVar && (
+                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                  <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                  fromVar
+                  <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+                </div>
+              )}
+            </div>
+          </>
         </div>
       )}
 
@@ -641,8 +728,10 @@ export default function ModelContent({
 
             <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
               <span className="text-[#A52A2A]">&lt;script&gt;</span>
-              <span className="ml-4 text-[#0000CD]">function</span>{" "}
-              <p className="ml-4"> {`${functionName} {`}</p>
+              <div className="flex gap-2">
+                <span className="ml-4 text-[#0000CD]">function</span>{" "}
+                <p className=""> {`${functionName} {`}</p>
+              </div>
               {selectedMenu === "count" && <Home_html_count />}
               {selectedMenu === "HomeCheckToken" && (
                 <Home_html_homeCheckToken />
@@ -756,7 +845,7 @@ export default function ModelContent({
               {selectedMenu === "setAllUILang" && <Lang_setAllUILang />}
               {selectedMenu === "NSLang" && <Lang_nsLang />}
               {selectedMenu === "getStatusCode" && <Lang_getStatusCode />}
-              {selectedMenu === "openTab" && <Level_openTab />}
+              {selectedMenu === "openTabLevel" && <Level_openTab />}
               {selectedMenu === "GetAddress" && <LocationAddress_getAddress />}
               {selectedMenu === "checkLoginWithRefreshToken" && (
                 <Login_checkLoginWithRefreshToken />
@@ -1014,10 +1103,7 @@ export default function ModelContent({
                 <Wallet_get_dataTransaction />
               )}
               {selectedMenu === "loadList" && <Wallet_loadList />}
-              {/* Arithmetic */}
-              {selectedMenu === "submitAddalipay" && (
-                <SubmitAddalipay_alipayAdd />
-              )}
+              {selectedMenu === "getlevel" && <Getlevel />}
               <p className="ml-4">{`}`}</p>
               <span className="text-[#A52A2A]">&lt;/script&gt;</span>
             </div>
