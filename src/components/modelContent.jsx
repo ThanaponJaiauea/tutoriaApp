@@ -1,8 +1,8 @@
 /** @format */
 
-import MessageBoxTryit from "./tryitFunction/messageBoxTryit"
-import {FiChevronDown, FiChevronUp} from "react-icons/fi"
-import indexStartApp from "../pictures/indexStartApp.png"
+import MessageBoxTryit from "./tryitFunction/messageBoxTryit";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import indexStartApp from "../pictures/indexStartApp.png";
 import {
   Addda_talogger_addDate,
   Addda_talogger_createDevice,
@@ -129,6 +129,7 @@ import {
   Monitor_restartPin,
   Monitor_ws,
   My_devices_getMyDevice,
+  NSLangArrLang,
   New_address_createAddress,
   New_address_validateInput,
   Notification_getNotification,
@@ -230,33 +231,32 @@ import {
   Wallet_get_dataTransaction,
   Wallet_loadList,
   Wallet_walletCheckToken,
-} from "./dataContents/FunctionDataText"
+} from "./dataContents/FunctionDataText";
 
-import AlertTryit from "./tryitFunction/alertTryit"
-import HeaderInitTryit from "./tryitFunction/headerInitTryit"
-import PageShowTryit from "./tryitFunction/pageShowTryit"
-import PageUnShowTryit from "./tryitFunction/pageUnShowTryit"
-import LoaderTryit from "./tryitFunction/loaderTryit"
-import MessagePage from "./tryitFunction/messagePageTryit"
-import step1 from "../pictures/step1.png"
-import step2 from "../pictures/step2.png"
-import step3 from "../pictures/step3.png"
-import step4 from "../pictures/step4.png"
-import step5 from "../pictures/step5.png"
-import stepclone4 from "../pictures/stepclone4.png"
-import stepbuild5 from "../pictures/stepbuild5.png"
-import stepcd5 from "../pictures/stepcd5.png"
-import stepstart5 from "../pictures/stepstart5.png"
-import stepopen5 from "../pictures/stepopen5.png"
-import step6 from "../pictures/step6.png"
-import {Link} from "react-router-dom"
-import MainTryit from "./tryitFunction/mainTryit"
+import AlertTryit from "./tryitFunction/alertTryit";
+import HeaderInitTryit from "./tryitFunction/headerInitTryit";
+import PageShowTryit from "./tryitFunction/pageShowTryit";
+import PageUnShowTryit from "./tryitFunction/pageUnShowTryit";
+import LoaderTryit from "./tryitFunction/loaderTryit";
+import MessagePage from "./tryitFunction/messagePageTryit";
+import step1 from "../pictures/step1.png";
+import step2 from "../pictures/step2.png";
+import step3 from "../pictures/step3.png";
+import step4 from "../pictures/step4.png";
+import step5 from "../pictures/step5.png";
+import stepclone4 from "../pictures/stepclone4.png";
+import stepbuild5 from "../pictures/stepbuild5.png";
+import stepcd5 from "../pictures/stepcd5.png";
+import stepstart5 from "../pictures/stepstart5.png";
+import stepopen5 from "../pictures/stepopen5.png";
+import step6 from "../pictures/step6.png";
+import { Link } from "react-router-dom";
+import MainTryit from "./tryitFunction/mainTryit";
 
 export default function ModelContent({
-  fromBody,
-  fromScript,
-  fromVar,
-  fromContent,
+  htmlCheckScript,
+  htmlCheckBody,
+  htmlCheckVar,
   setOpenMainBody,
   setOpenIndexHead,
   setOpenMainScript,
@@ -386,10 +386,9 @@ export default function ModelContent({
   mainCheck,
   scriptTitle,
   listIndex,
-  fromName,
 }) {
   const CONTAINER_CLASSES =
-    "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
+    "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5";
 
   return (
     <div className="w-full py-4">
@@ -437,81 +436,6 @@ export default function ModelContent({
             <p>{`}`}</p>
             <span className="text-[#A52A2A]">&lt;/script&gt;</span>
           </div>
-        </div>
-      )}
-
-      {/* from Body */}
-      {fromContent && (
-        <div className={`${CONTAINER_CLASSES}`}>
-          <div className="w-full py-4">
-            <button className="w-full flex items-center justify-between">
-              <h3 className="text-[23px] font-bold">{fromName}</h3>
-            </button>
-
-            <div>
-              {content && <p>{content}</p>}
-              {content1 && <p>{content1}</p>}
-              {content2 && <p>{content2}</p>}
-              {content3 && <p>{content3}</p>}
-              {content4 && <p>{content4}</p>}
-              {content5 && <p>{content5}</p>}
-              {content6 && <p>{content6}</p>}
-            </div>
-          </div>
-
-          <>
-            <div className="w-full flex flex-col gap-4">
-              {fromBody && (
-                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-                  <span className="text-[#A52A2A]">&lt;body&gt;</span>
-                  {selectedMenu === "bodyLogin" && <Body_longin />}
-                  <span className="text-[#A52A2A]">&lt;/body&gt;</span>
-                </div>
-              )}
-
-              {fromScript && (
-                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-                  <span className="text-[#A52A2A]">&lt;script&gt;</span>
-                  <div className="flex">
-                    <span className="ml-4 text-[#0000CD]">function</span>{" "}
-                    <p className="ml-4"> {`${functionName} {`}</p>
-                  </div>
-                  {selectedMenu === "fetchSliderConfigAndData" && (
-                    <FetchSliderConfigAndData_login />
-                  )}
-                  {selectedMenu === "fetchSliderData" && (
-                    <FetchSliderData_login />
-                  )}
-                  {selectedMenu === "slider_cap" && <Slider_cap_login />}
-                  {selectedMenu === "loginFun" && <LoginFun_login />}
-                  {selectedMenu === "checkLoginStatusWithRefreshToken" && (
-                    <CheckLoginStatusWithRefreshToken />
-                  )}
-                  {selectedMenu === "askDeviceIdFun" && (
-                    <Login_askDeviceIdFun />
-                  )}
-                  {selectedMenu === "registerFun" && <Register_registerFun />}
-                  {selectedMenu === "SendOTP" && <Register_sendOTP />}
-                  {selectedMenu === "setAllPageLang" && <Lang_setAllPageLang />}
-                  {selectedMenu === "setAllUILang" && <Lang_setAllUILang />}
-                  {selectedMenu === "NSLang" && <Lang_nsLang />}
-                  {selectedMenu === "getStatusCodeLang" && (
-                    <GetStatusCodeLang />
-                  )}
-                  <p>{`}`}</p>
-                  <span className="text-[#A52A2A]">&lt;/script&gt;</span>
-                </div>
-              )}
-
-              {fromVar && (
-                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-                  <span className="text-[#A52A2A]">&lt;script&gt;</span>
-                  fromVar
-                  <span className="text-[#A52A2A]">&lt;/script&gt;</span>
-                </div>
-              )}
-            </div>
-          </>
         </div>
       )}
 
@@ -564,9 +488,7 @@ export default function ModelContent({
                 <p className="text-xl">
                   -ถ้ายังไม่ได้ติดตั้ง git สามารถดาวน์โหลดจาก link นี้ได้ :
                 </p>
-                <Link
-                  to="https://git-scm.com/downloads"
-                  target="_blank">
+                <Link to="https://git-scm.com/downloads" target="_blank">
                   <p className="text-red-600 text-xl hover:underline">
                     https://git-scm.com/downloads
                   </p>
@@ -575,10 +497,7 @@ export default function ModelContent({
             </div>
 
             <div className="w-full">
-              <img
-                src={step4}
-                className="w-full"
-              />
+              <img src={step4} className="w-full" />
             </div>
           </div>
 
@@ -596,10 +515,7 @@ export default function ModelContent({
             </div>
 
             <div className="w-full">
-              <img
-                src={stepclone4}
-                className="w-full"
-              />
+              <img src={stepclone4} className="w-full" />
             </div>
           </div>
 
@@ -726,387 +642,447 @@ export default function ModelContent({
               </div>
             </div>
 
-            <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
-              <span className="text-[#A52A2A]">&lt;script&gt;</span>
-              <div className="flex gap-2">
-                <span className="ml-4 text-[#0000CD]">function</span>{" "}
-                <p className=""> {`${functionName} {`}</p>
+            {htmlCheckScript === true && (
+              <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
+                <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                <div className="flex gap-2">
+                  <span className="ml-4 text-[#0000CD]">function</span>{" "}
+                  <p className=""> {`${functionName} {`}</p>
+                </div>
+                {selectedMenu === "count" && <Home_html_count />}
+                {selectedMenu === "HomeCheckToken" && (
+                  <Home_html_homeCheckToken />
+                )}
+                {selectedMenu === "getProfile" && <Home_html_getProfile />}
+                {selectedMenu === "sendApi" && <Home_html_sendApi />}
+                {selectedMenu === "checklocalStorage" && (
+                  <Home_html_checklocalStorage />
+                )}
+                {selectedMenu === "checkSimulated" && (
+                  <Home_html_checkSimulated />
+                )}
+                {selectedMenu === "getRecommendProduct" && (
+                  <Home_html_getRecommendProduct />
+                )}
+                {selectedMenu === "getAllProduct" && (
+                  <Home_html_getAllProduct />
+                )}
+                {selectedMenu === "getCheckIn" && <Home_html_getCheckIn />}
+                {selectedMenu === "validateInput" && (
+                  <Addda_talogger_validateInput />
+                )}
+                {selectedMenu === "AddDate" && <Addda_talogger_addDate />}
+                {selectedMenu === "CreateDevice" && (
+                  <Addda_talogger_createDevice />
+                )}
+                {selectedMenu === "getItemAll" && <Cancel_order_getItemAll />}
+                {selectedMenu === "sentCancelOrder" && (
+                  <Cancel_order_sentCancelOrder />
+                )}
+                {selectedMenu === "changePassword" && <ChangePasswordHtml />}
+                {selectedMenu === "getRedeemHis" && (
+                  <Coin_history_getRedeemHis />
+                )}
+                {selectedMenu === "pagination_coins" && (
+                  <Coin_history_pagination_coins />
+                )}
+                {selectedMenu === "calPage" && <Coin_history_calPage />}
+                {selectedMenu === "CoinsCheckToken" && (
+                  <Coins_coinsCheckToken />
+                )}
+                {selectedMenu === "getPointCoins" && <Coins_getPointCoinsn />}
+                {selectedMenu === "updateDevice" && (
+                  <Configuration_updateDevice />
+                )}
+                {selectedMenu === "Con" && <Configuration_con />}
+                {selectedMenu === "getOrder" && <Confirm_order_getOrder />}
+                {selectedMenu === "getStatePayment" && (
+                  <Confirm_order_getStatePayment />
+                )}
+                {selectedMenu === "setVoucherId" && (
+                  <Confirm_order_setVoucherId />
+                )}
+                {selectedMenu === "postOrderNow" && (
+                  <Confirm_order_postOrderNow />
+                )}
+                {selectedMenu === "getAddress" && <Confirm_order_getAddress />}
+                {selectedMenu === "getCodeDisCountVoucher" && (
+                  <Confirm_order_getCodeDisCountVoucher />
+                )}
+                {selectedMenu === "getCodeDisCountMember" && (
+                  <Confirm_order_getCodeDisCountMember />
+                )}
+                {selectedMenu === "calTotal" && <Confirm_order_calTotal />}
+                {selectedMenu === "cleanDataDefualt" && (
+                  <Confirm_order_cleanDataDefualt />
+                )}
+                {selectedMenu === "GetDataCustPurchaseReportStats" && (
+                  <Customer_getDataCustPurchaseReportStats />
+                )}
+                {selectedMenu === "showChartTotalCustomer" && (
+                  <Customer_showChartTotalCustomer />
+                )}
+                {selectedMenu === "ChartMethod" && <Customer_ChartMethod />}
+                {selectedMenu === "ChartGender" && <Customer_ChartGender />}
+                {selectedMenu === "updateSalesData" && (
+                  <Customer_updateSalesData />
+                )}
+                {selectedMenu === "GetDataCustomerDetail" && (
+                  <Data_customer_details_getDataCustomerDetail />
+                )}
+                {selectedMenu === "GetDataCustomer" && (
+                  <Data_customer_getDataCustomer />
+                )}
+                {selectedMenu === "getDeviceAll" && (
+                  <Deletedatalogger_getDeviceAll />
+                )}
+                {selectedMenu === "distributorFun" && (
+                  <Distributor_distributorFun />
+                )}
+                {selectedMenu === "PreviewImg" && <Distributor_PreviewImg />}
+                {selectedMenu === "PreviewImg_2" && <Distributor_PreviewImg2 />}
+                {selectedMenu === "CreateDistributor" && (
+                  <Distributor_createDistributor />
+                )}
+                {selectedMenu === "DeleteAddress" && (
+                  <EditAddress_deleteAddress />
+                )}
+                {selectedMenu === "EditAddress" && <EditAddress_editAddress />}
+                {selectedMenu === "GetAddressID" && (
+                  <EditAddress_getAddressID />
+                )}
+                {selectedMenu === "forgotPass" && <Forgotpass_forgotPass />}
+                {selectedMenu === "sendOTP_Forgot" && (
+                  <Forgotpass_sendOTP_forgot />
+                )}
+                {selectedMenu === "getSelectedYear" && (
+                  <InCome_getSelectedYear />
+                )}
+                {selectedMenu === "getSelectedMonth" && (
+                  <InCome_getSelectedMonth />
+                )}
+                {selectedMenu === "getIncomeAndExpenditureDetails" && (
+                  <InCome_getIncomeAndExpenditureDetails />
+                )}
+                {selectedMenu === "createNewInput" && <InCome_createNewInput />}
+                {selectedMenu === "updateIncomeBeforeTaxes" && (
+                  <InCome_updateIncomeBeforeTaxes />
+                )}
+                {selectedMenu === "setAllPageLang" && <Lang_setAllPageLang />}
+                {selectedMenu === "setAllUILang" && <Lang_setAllUILang />}
+                {selectedMenu === "NSLang" && <Lang_nsLang />}
+                {selectedMenu === "getStatusCode" && <Lang_getStatusCode />}
+                {selectedMenu === "openTabLevel" && <Level_openTab />}
+                {selectedMenu === "GetAddress" && (
+                  <LocationAddress_getAddress />
+                )}
+                {selectedMenu === "checkLoginWithRefreshToken" && (
+                  <Login_checkLoginWithRefreshToken />
+                )}
+                {selectedMenu === "askDeviceIdFun" && <Login_askDeviceIdFun />}
+                {selectedMenu === "menuhome" && <Main_menuhome />}
+                {selectedMenu === "menumonitor" && <Main_menumonitor />}
+                {selectedMenu === "menuwallet" && <Main_menuwallet />}
+                {selectedMenu === "menusetting" && <Main_menusetting />}
+                {selectedMenu === "unShowMenuPage" && <Main_unShowMenuPage />}
+                {selectedMenu === "checkIsLogin" && <Main_checkIsLogin />}
+                {selectedMenu === "updateLoginStatus" && (
+                  <Main_updateLoginStatus />
+                )}
+                {selectedMenu === "getLocalToken" && <Main_getLocalToken />}
+                {selectedMenu === "refreshToken" && <Main_refreshToken />}
+                {selectedMenu === "refreshTokenFun" && <Main_refreshTokenFun />}
+                {selectedMenu === "getMemberTier" && (
+                  <MemberTier_getMemberTier />
+                )}
+                {selectedMenu === "createMemberTier" && (
+                  <MemberTier_createMemberTier />
+                )}
+                {selectedMenu === "monitorCheckToken" && (
+                  <Monitor_monitorCheckToken />
+                )}
+                {selectedMenu === "RestartPin" && <Monitor_restartPin />}
+                {selectedMenu === "GetBill" && <Monitor_getBill />}
+                {selectedMenu === "GetSolarDeviceAll" && (
+                  <Monitor_getSolarDeviceAll />
+                )}
+                {selectedMenu === "GetDataMonitor" && (
+                  <Monitor_getDataMonitor />
+                )}
+                {selectedMenu === "WS" && <Monitor_ws />}
+                {selectedMenu === "getSelectedMonthMonitor" && (
+                  <Monitor_getSelectedMonthMonitor />
+                )}
+                {selectedMenu === "getSelectedDay" && (
+                  <Monitor_getSelectedDay />
+                )}
+                {selectedMenu === "openTabbill" && <Monitor_openTabbill />}
+                {selectedMenu === "RandomValueMonitorNoLogin" && (
+                  <Monitor_randomValueMonitorNoLogin />
+                )}
+                {selectedMenu === "luxVal" && <Monitor_luxVal />}
+                {selectedMenu === "getMyDevice" && <My_devices_getMyDevice />}
+                {selectedMenu === "validateInputNewAddress" && (
+                  <New_address_validateInput />
+                )}
+                {selectedMenu === "CreateAddress" && (
+                  <New_address_createAddress />
+                )}
+                {selectedMenu === "pagination" && <Notification_pagination />}
+                {selectedMenu === "GetNotification" && (
+                  <Notification_getNotification />
+                )}
+                {selectedMenu === "getOid" && (
+                  <Order_info_cancel_refund_getOid />
+                )}
+                {selectedMenu === "sendRefundOrderInfoCancelRefund" && (
+                  <Order_info_cancel_refund_sendRefund />
+                )}
+                {selectedMenu === "cancelOrder_order_info_cancel_refund" && (
+                  <Order_info_cancel_refund_cancelOrder_order_info_cancel_refund />
+                )}
+                {selectedMenu === "getOid_order_info_cancel" && (
+                  <Order_info_cancel_getOid />
+                )}
+                {selectedMenu === "cancelOrder_order_info_cancel" && (
+                  <Order_info_cancel_cancelOrder />
+                )}
+                {selectedMenu === "order_info_received_getOid" && (
+                  <Order_info_received_getOid />
+                )}
+                {selectedMenu === "order_info_received_cancelOrder" && (
+                  <Order_info_received_cancelOrder />
+                )}
+                {selectedMenu === "order_info_received_getTimeline" && (
+                  <Order_info_received_getTimeline />
+                )}
+                {selectedMenu === "order_info_waitRceive_sendReceipt" && (
+                  <Order_info_waitRceive_sendReceipt />
+                )}
+                {selectedMenu === "order_info_waitRceive_getOid" && (
+                  <Order_info_waitRceive_getOid />
+                )}
+                {selectedMenu === "order_info_waitRceive_getTimeline" && (
+                  <Order_info_waitRceive_getTimeline />
+                )}
+                {selectedMenu === "orderState10_cancelOrder" && (
+                  <Order_info_received_cancelOrder />
+                )}
+                {selectedMenu === "orderState10_getOid" && (
+                  <OrderState10_getOid />
+                )}
+                {selectedMenu === "orderStateShip_cancelOrder" && (
+                  <Order_info_received_cancelOrder />
+                )}
+                {selectedMenu === "orderStateShip_getOid" && (
+                  <OrderStateShip_getOid />
+                )}
+                {selectedMenu === "selectPayment" && (
+                  <Payment_method_selectPayment />
+                )}
+                {selectedMenu === "genQR" && <Payment_method2_genQR />}
+                {selectedMenu === "start_timer" && (
+                  <Payment_method2_start_stimer />
+                )}
+                {selectedMenu === "AddSlipPayment" && (
+                  <Payment_method2_addSlipPayment />
+                )}
+                {selectedMenu === "UpdateSlipPayment" && (
+                  <Payment_method2_updateSlipPayment />
+                )}
+                {selectedMenu === "GetPaymentStatistic" && (
+                  <PaymentStatistic_getPaymentStatistic />
+                )}
+                {selectedMenu === "ChartPaymentStatistic" && (
+                  <PaymentStatistic_chartPaymentStatistic />
+                )}
+                {selectedMenu === "ExportCSVPayment" && (
+                  <PaymentStatistic_exportCSVPayment />
+                )}
+                {selectedMenu === "showCart" && <ProductCart_showCart />}
+                {selectedMenu === "show_cart" && <ProductCart_show_cart />}
+                {selectedMenu === "update_quantity" && (
+                  <ProductCart_update_quantity />
+                )}
+                {selectedMenu === "delete_id" && <ProductCart_delete_id />}
+                {selectedMenu === "sumPrice" && <ProductCart_sumPrice />}
+                {selectedMenu === "confirmOrder" && (
+                  <ProductCart_confirmOrder />
+                )}
+                {selectedMenu === "confirmOrderBuy" && (
+                  <Productdetail_confirmOrderBuy />
+                )}
+                {selectedMenu === "getDetailProduct" && (
+                  <Productdetail_getDetailProduct />
+                )}
+                {selectedMenu === "checkLogin" && <Productdetail_checkLogin />}
+                {selectedMenu === "GetSalesData" && (
+                  <PurchaseReport_getSalesData />
+                )}
+                {selectedMenu === "CreateTableReport" && (
+                  <PurchaseReport_createTableReport />
+                )}
+                {selectedMenu === "CreateTableQuarter" && (
+                  <PurchaseReport_createTableQuarter />
+                )}
+                {selectedMenu === "getSelectedMonthpurchase" && (
+                  <PurchaseReport_getSelectedMonthpurchase />
+                )}
+                {selectedMenu === "showChart" && <PurchaseReport_showChart />}
+                {selectedMenu === "ExportCSV" && <PurchaseReport_exportCSV />}
+                {selectedMenu === "RedeemCheckToken" && (
+                  <Redeem_redeemCheckToken />
+                )}
+                {selectedMenu === "checkNoInput" && <Redeem_checkNoInput />}
+                {selectedMenu === "postRedeem" && <Redeem_postRedeem />}
+                {selectedMenu === "getData" && <Refund_getData />}
+                {selectedMenu === "sendRefundRefund" && <Refund_sendRefund />}
+                {selectedMenu === "PreviewImg_refund" && (
+                  <Refund_previewImg_refund />
+                )}
+                {selectedMenu === "registerFun" && <Register_registerFun />}
+                {selectedMenu === "SendOTP" && <Register_sendOTP />}
+                {selectedMenu === "CreateHTML" && (
+                  <Reportdatalogger_createHTML />
+                )}
+                {selectedMenu === "GetReportData" && (
+                  <Reportdatalogger_getReportData />
+                )}
+                {selectedMenu === "getSelectedDate" && (
+                  <Reportdatalogger_getSelectedDate />
+                )}
+                {selectedMenu === "openTabreportCart" && (
+                  <Reportdatalogger_openTabreportCart />
+                )}
+                {selectedMenu === "openTabreport" && (
+                  <Reportdatalogger_openTabreport />
+                )}
+                {selectedMenu === "chartFlowDay" && (
+                  <Reportdatalogger_chartFlowDay />
+                )}
+                {selectedMenu === "chartFlowMonth" && (
+                  <Reportdatalogger_chartFlowMonth />
+                )}
+                {selectedMenu === "chartFlowYear" && (
+                  <Reportdatalogger_chartFlowYear />
+                )}
+                {selectedMenu === "chartFlowTotal" && (
+                  <Reportdatalogger_chartFlowTotal />
+                )}
+                {selectedMenu === "chargePower" && (
+                  <Reportdatalogger_chargePower />
+                )}
+                {selectedMenu === "chartNOlogin" && (
+                  <Reportdatalogger_chartNOlogin />
+                )}
+                {selectedMenu === "chartNOloginMonthcart" && (
+                  <Reportdatalogger_chartNOloginMonthcart />
+                )}
+                {selectedMenu === "chartNOloginYearhcart" && (
+                  <Reportdatalogger_chartNOloginYearhcart />
+                )}
+                {selectedMenu === "chartNOloginTotalhcart" && (
+                  <Reportdatalogger_chartNOloginTotalhcart />
+                )}
+                {selectedMenu === "chargePowerNOlogin" && (
+                  <Reportdatalogger_chargePowerNOlogin />
+                )}
+                {selectedMenu === "settingAccountCheckToken" && (
+                  <Setting_account_settingAccountCheckToken />
+                )}
+                {selectedMenu === "updateProfile" && (
+                  <Setting_account_updateProfile />
+                )}
+                {selectedMenu === "AddAvatar" && <Setting_account_addAvatar />}
+                {selectedMenu === "UpdateAvatar" && (
+                  <Setting_account_updateAvatar />
+                )}
+                {selectedMenu === "getAll" && <SettingOrder_getAll />}
+                {selectedMenu === "scroller" && <SettingOrder_scroller />}
+                {selectedMenu === "SettingCheckToken" && (
+                  <Setting_SettingCheckToken />
+                )}
+                {selectedMenu === "getQRcode" && <Setting_getQRcode />}
+                {selectedMenu === "startInit" && <Start_init />}
+                {selectedMenu === "TopUpCheckToken" && (
+                  <Topup_topUpCheckToken />
+                )}
+                {selectedMenu === "topup_checkNoInput" && (
+                  <Topup_checkNoInput />
+                )}
+                {selectedMenu === "topup_addSlipPayment" && (
+                  <Topup_addSlipPayment />
+                )}
+                {selectedMenu === "topup_updateSlipPayment" && (
+                  <Topup_updateSlipPayment />
+                )}
+                {selectedMenu === "transactionCheckToken" && (
+                  <Transaction_transactionCheckToken />
+                )}
+                {selectedMenu === "getTransaction" && (
+                  <Transaction_getTransaction />
+                )}
+                {selectedMenu === "pagination_tran" && (
+                  <Transaction_pagination_tran />
+                )}
+                {selectedMenu === "transaction_calPage" && (
+                  <Transaction_calPage />
+                )}
+                {selectedMenu === "transferCheckToken" && (
+                  <Transfer_transferCheckToken />
+                )}
+                {selectedMenu === "transfer_checkNoInput" && (
+                  <Transfer_checkNoInput />
+                )}
+                {selectedMenu === "postTransfer" && <Transfer_postTransfer />}
+                {selectedMenu === "showOrder" && <Update_order_showOrder />}
+                {selectedMenu === "update_order_scroller" && (
+                  <Update_order_scroller />
+                )}
+                {selectedMenu === "showVoucher" && (
+                  <Vouncher_code_showVoucher />
+                )}
+                {selectedMenu === "walletCheckToken" && (
+                  <Wallet_walletCheckToken />
+                )}
+                {selectedMenu === "getUserData" && <Wallet_getUserData />}
+                {selectedMenu === "get_dataTransaction" && (
+                  <Wallet_get_dataTransaction />
+                )}
+                {selectedMenu === "loadList" && <Wallet_loadList />}
+                {selectedMenu === "getlevel" && <Getlevel />}
+                {selectedMenu === "fetchSliderConfigAndData" && (
+                  <FetchSliderConfigAndData_login />
+                )}
+                {selectedMenu === "fetchSliderData" && (
+                  <FetchSliderData_login />
+                )}
+                {selectedMenu === "slider_cap" && <Slider_cap_login />}
+                {selectedMenu === "loginFun" && <LoginFun_login />}
+                {selectedMenu === "checkLoginStatusWithRefreshToken" && (
+                  <CheckLoginStatusWithRefreshToken />
+                )}
+                <p className="ml-4">{`}`}</p>
+                <span className="text-[#A52A2A]"> &lt;script&gt;</span>
               </div>
-              {selectedMenu === "count" && <Home_html_count />}
-              {selectedMenu === "HomeCheckToken" && (
-                <Home_html_homeCheckToken />
-              )}
-              {selectedMenu === "getProfile" && <Home_html_getProfile />}
-              {selectedMenu === "sendApi" && <Home_html_sendApi />}
-              {selectedMenu === "checklocalStorage" && (
-                <Home_html_checklocalStorage />
-              )}
-              {selectedMenu === "checkSimulated" && (
-                <Home_html_checkSimulated />
-              )}
-              {selectedMenu === "getRecommendProduct" && (
-                <Home_html_getRecommendProduct />
-              )}
-              {selectedMenu === "getAllProduct" && <Home_html_getAllProduct />}
-              {selectedMenu === "getCheckIn" && <Home_html_getCheckIn />}
-              {selectedMenu === "validateInput" && (
-                <Addda_talogger_validateInput />
-              )}
-              {selectedMenu === "AddDate" && <Addda_talogger_addDate />}
-              {selectedMenu === "CreateDevice" && (
-                <Addda_talogger_createDevice />
-              )}
-              {selectedMenu === "getItemAll" && <Cancel_order_getItemAll />}
-              {selectedMenu === "sentCancelOrder" && (
-                <Cancel_order_sentCancelOrder />
-              )}
-              {selectedMenu === "changePassword" && <ChangePasswordHtml />}
-              {selectedMenu === "getRedeemHis" && <Coin_history_getRedeemHis />}
-              {selectedMenu === "pagination_coins" && (
-                <Coin_history_pagination_coins />
-              )}
-              {selectedMenu === "calPage" && <Coin_history_calPage />}
-              {selectedMenu === "CoinsCheckToken" && <Coins_coinsCheckToken />}
-              {selectedMenu === "getPointCoins" && <Coins_getPointCoinsn />}
-              {selectedMenu === "updateDevice" && (
-                <Configuration_updateDevice />
-              )}
-              {selectedMenu === "Con" && <Configuration_con />}
-              {selectedMenu === "getOrder" && <Confirm_order_getOrder />}
-              {selectedMenu === "getStatePayment" && (
-                <Confirm_order_getStatePayment />
-              )}
-              {selectedMenu === "setVoucherId" && (
-                <Confirm_order_setVoucherId />
-              )}
-              {selectedMenu === "postOrderNow" && (
-                <Confirm_order_postOrderNow />
-              )}
-              {selectedMenu === "getAddress" && <Confirm_order_getAddress />}
-              {selectedMenu === "getCodeDisCountVoucher" && (
-                <Confirm_order_getCodeDisCountVoucher />
-              )}
-              {selectedMenu === "getCodeDisCountMember" && (
-                <Confirm_order_getCodeDisCountMember />
-              )}
-              {selectedMenu === "calTotal" && <Confirm_order_calTotal />}
-              {selectedMenu === "cleanDataDefualt" && (
-                <Confirm_order_cleanDataDefualt />
-              )}
-              {selectedMenu === "GetDataCustPurchaseReportStats" && (
-                <Customer_getDataCustPurchaseReportStats />
-              )}
-              {selectedMenu === "showChartTotalCustomer" && (
-                <Customer_showChartTotalCustomer />
-              )}
-              {selectedMenu === "ChartMethod" && <Customer_ChartMethod />}
-              {selectedMenu === "ChartGender" && <Customer_ChartGender />}
-              {selectedMenu === "updateSalesData" && (
-                <Customer_updateSalesData />
-              )}
-              {selectedMenu === "GetDataCustomerDetail" && (
-                <Data_customer_details_getDataCustomerDetail />
-              )}
-              {selectedMenu === "GetDataCustomer" && (
-                <Data_customer_getDataCustomer />
-              )}
-              {selectedMenu === "getDeviceAll" && (
-                <Deletedatalogger_getDeviceAll />
-              )}
-              {selectedMenu === "distributorFun" && (
-                <Distributor_distributorFun />
-              )}
-              {selectedMenu === "PreviewImg" && <Distributor_PreviewImg />}
-              {selectedMenu === "PreviewImg_2" && <Distributor_PreviewImg2 />}
-              {selectedMenu === "CreateDistributor" && (
-                <Distributor_createDistributor />
-              )}
-              {selectedMenu === "DeleteAddress" && (
-                <EditAddress_deleteAddress />
-              )}
-              {selectedMenu === "EditAddress" && <EditAddress_editAddress />}
-              {selectedMenu === "GetAddressID" && <EditAddress_getAddressID />}
-              {selectedMenu === "forgotPass" && <Forgotpass_forgotPass />}
-              {selectedMenu === "sendOTP_Forgot" && (
-                <Forgotpass_sendOTP_forgot />
-              )}
-              {selectedMenu === "getSelectedYear" && <InCome_getSelectedYear />}
-              {selectedMenu === "getSelectedMonth" && (
-                <InCome_getSelectedMonth />
-              )}
-              {selectedMenu === "getIncomeAndExpenditureDetails" && (
-                <InCome_getIncomeAndExpenditureDetails />
-              )}
-              {selectedMenu === "createNewInput" && <InCome_createNewInput />}
-              {selectedMenu === "updateIncomeBeforeTaxes" && (
-                <InCome_updateIncomeBeforeTaxes />
-              )}
-              {selectedMenu === "setAllPageLang" && <Lang_setAllPageLang />}
-              {selectedMenu === "setAllUILang" && <Lang_setAllUILang />}
-              {selectedMenu === "NSLang" && <Lang_nsLang />}
-              {selectedMenu === "getStatusCode" && <Lang_getStatusCode />}
-              {selectedMenu === "openTabLevel" && <Level_openTab />}
-              {selectedMenu === "GetAddress" && <LocationAddress_getAddress />}
-              {selectedMenu === "checkLoginWithRefreshToken" && (
-                <Login_checkLoginWithRefreshToken />
-              )}
-              {selectedMenu === "askDeviceIdFun" && <Login_askDeviceIdFun />}
-              {selectedMenu === "menuhome" && <Main_menuhome />}
-              {selectedMenu === "menumonitor" && <Main_menumonitor />}
-              {selectedMenu === "menuwallet" && <Main_menuwallet />}
-              {selectedMenu === "menusetting" && <Main_menusetting />}
-              {selectedMenu === "unShowMenuPage" && <Main_unShowMenuPage />}
-              {selectedMenu === "checkIsLogin" && <Main_checkIsLogin />}
-              {selectedMenu === "updateLoginStatus" && (
-                <Main_updateLoginStatus />
-              )}
-              {selectedMenu === "getLocalToken" && <Main_getLocalToken />}
-              {selectedMenu === "refreshToken" && <Main_refreshToken />}
-              {selectedMenu === "refreshTokenFun" && <Main_refreshTokenFun />}
-              {selectedMenu === "getMemberTier" && <MemberTier_getMemberTier />}
-              {selectedMenu === "createMemberTier" && (
-                <MemberTier_createMemberTier />
-              )}
-              {selectedMenu === "monitorCheckToken" && (
-                <Monitor_monitorCheckToken />
-              )}
-              {selectedMenu === "RestartPin" && <Monitor_restartPin />}
-              {selectedMenu === "GetBill" && <Monitor_getBill />}
-              {selectedMenu === "GetSolarDeviceAll" && (
-                <Monitor_getSolarDeviceAll />
-              )}
-              {selectedMenu === "GetDataMonitor" && <Monitor_getDataMonitor />}
-              {selectedMenu === "WS" && <Monitor_ws />}
-              {selectedMenu === "getSelectedMonthMonitor" && (
-                <Monitor_getSelectedMonthMonitor />
-              )}
-              {selectedMenu === "getSelectedDay" && <Monitor_getSelectedDay />}
-              {selectedMenu === "openTabbill" && <Monitor_openTabbill />}
-              {selectedMenu === "RandomValueMonitorNoLogin" && (
-                <Monitor_randomValueMonitorNoLogin />
-              )}
-              {selectedMenu === "luxVal" && <Monitor_luxVal />}
-              {selectedMenu === "getMyDevice" && <My_devices_getMyDevice />}
-              {selectedMenu === "validateInputNewAddress" && (
-                <New_address_validateInput />
-              )}
-              {selectedMenu === "CreateAddress" && (
-                <New_address_createAddress />
-              )}
-              {selectedMenu === "pagination" && <Notification_pagination />}
-              {selectedMenu === "GetNotification" && (
-                <Notification_getNotification />
-              )}
-              {selectedMenu === "getOid" && <Order_info_cancel_refund_getOid />}
-              {selectedMenu === "sendRefundOrderInfoCancelRefund" && (
-                <Order_info_cancel_refund_sendRefund />
-              )}
-              {selectedMenu === "cancelOrder_order_info_cancel_refund" && (
-                <Order_info_cancel_refund_cancelOrder_order_info_cancel_refund />
-              )}
-              {selectedMenu === "getOid_order_info_cancel" && (
-                <Order_info_cancel_getOid />
-              )}
-              {selectedMenu === "cancelOrder_order_info_cancel" && (
-                <Order_info_cancel_cancelOrder />
-              )}
-              {selectedMenu === "order_info_received_getOid" && (
-                <Order_info_received_getOid />
-              )}
-              {selectedMenu === "order_info_received_cancelOrder" && (
-                <Order_info_received_cancelOrder />
-              )}
-              {selectedMenu === "order_info_received_getTimeline" && (
-                <Order_info_received_getTimeline />
-              )}
-              {selectedMenu === "order_info_waitRceive_sendReceipt" && (
-                <Order_info_waitRceive_sendReceipt />
-              )}
-              {selectedMenu === "order_info_waitRceive_getOid" && (
-                <Order_info_waitRceive_getOid />
-              )}
-              {selectedMenu === "order_info_waitRceive_getTimeline" && (
-                <Order_info_waitRceive_getTimeline />
-              )}
-              {selectedMenu === "orderState10_cancelOrder" && (
-                <Order_info_received_cancelOrder />
-              )}
-              {selectedMenu === "orderState10_getOid" && (
-                <OrderState10_getOid />
-              )}
-              {selectedMenu === "orderStateShip_cancelOrder" && (
-                <Order_info_received_cancelOrder />
-              )}
-              {selectedMenu === "orderStateShip_getOid" && (
-                <OrderStateShip_getOid />
-              )}
-              {selectedMenu === "selectPayment" && (
-                <Payment_method_selectPayment />
-              )}
-              {selectedMenu === "genQR" && <Payment_method2_genQR />}
-              {selectedMenu === "start_timer" && (
-                <Payment_method2_start_stimer />
-              )}
-              {selectedMenu === "AddSlipPayment" && (
-                <Payment_method2_addSlipPayment />
-              )}
-              {selectedMenu === "UpdateSlipPayment" && (
-                <Payment_method2_updateSlipPayment />
-              )}
-              {selectedMenu === "GetPaymentStatistic" && (
-                <PaymentStatistic_getPaymentStatistic />
-              )}
-              {selectedMenu === "ChartPaymentStatistic" && (
-                <PaymentStatistic_chartPaymentStatistic />
-              )}
-              {selectedMenu === "ExportCSVPayment" && (
-                <PaymentStatistic_exportCSVPayment />
-              )}
-              {selectedMenu === "showCart" && <ProductCart_showCart />}
-              {selectedMenu === "show_cart" && <ProductCart_show_cart />}
-              {selectedMenu === "update_quantity" && (
-                <ProductCart_update_quantity />
-              )}
-              {selectedMenu === "delete_id" && <ProductCart_delete_id />}
-              {selectedMenu === "sumPrice" && <ProductCart_sumPrice />}
-              {selectedMenu === "confirmOrder" && <ProductCart_confirmOrder />}
-              {selectedMenu === "confirmOrderBuy" && (
-                <Productdetail_confirmOrderBuy />
-              )}
-              {selectedMenu === "getDetailProduct" && (
-                <Productdetail_getDetailProduct />
-              )}
-              {selectedMenu === "checkLogin" && <Productdetail_checkLogin />}
-              {selectedMenu === "GetSalesData" && (
-                <PurchaseReport_getSalesData />
-              )}
-              {selectedMenu === "CreateTableReport" && (
-                <PurchaseReport_createTableReport />
-              )}
-              {selectedMenu === "CreateTableQuarter" && (
-                <PurchaseReport_createTableQuarter />
-              )}
-              {selectedMenu === "getSelectedMonthpurchase" && (
-                <PurchaseReport_getSelectedMonthpurchase />
-              )}
-              {selectedMenu === "showChart" && <PurchaseReport_showChart />}
-              {selectedMenu === "ExportCSV" && <PurchaseReport_exportCSV />}
-              {selectedMenu === "RedeemCheckToken" && (
-                <Redeem_redeemCheckToken />
-              )}
-              {selectedMenu === "checkNoInput" && <Redeem_checkNoInput />}
-              {selectedMenu === "postRedeem" && <Redeem_postRedeem />}
-              {selectedMenu === "getData" && <Refund_getData />}
-              {selectedMenu === "sendRefundRefund" && <Refund_sendRefund />}
-              {selectedMenu === "PreviewImg_refund" && (
-                <Refund_previewImg_refund />
-              )}
-              {selectedMenu === "registerFun" && <Register_registerFun />}
-              {selectedMenu === "SendOTP" && <Register_sendOTP />}
-              {selectedMenu === "CreateHTML" && <Reportdatalogger_createHTML />}
-              {selectedMenu === "GetReportData" && (
-                <Reportdatalogger_getReportData />
-              )}
-              {selectedMenu === "getSelectedDate" && (
-                <Reportdatalogger_getSelectedDate />
-              )}
-              {selectedMenu === "openTabreportCart" && (
-                <Reportdatalogger_openTabreportCart />
-              )}
-              {selectedMenu === "openTabreport" && (
-                <Reportdatalogger_openTabreport />
-              )}
-              {selectedMenu === "chartFlowDay" && (
-                <Reportdatalogger_chartFlowDay />
-              )}
-              {selectedMenu === "chartFlowMonth" && (
-                <Reportdatalogger_chartFlowMonth />
-              )}
-              {selectedMenu === "chartFlowYear" && (
-                <Reportdatalogger_chartFlowYear />
-              )}
-              {selectedMenu === "chartFlowTotal" && (
-                <Reportdatalogger_chartFlowTotal />
-              )}
-              {selectedMenu === "chargePower" && (
-                <Reportdatalogger_chargePower />
-              )}
-              {selectedMenu === "chartNOlogin" && (
-                <Reportdatalogger_chartNOlogin />
-              )}
-              {selectedMenu === "chartNOloginMonthcart" && (
-                <Reportdatalogger_chartNOloginMonthcart />
-              )}
-              {selectedMenu === "chartNOloginYearhcart" && (
-                <Reportdatalogger_chartNOloginYearhcart />
-              )}
-              {selectedMenu === "chartNOloginTotalhcart" && (
-                <Reportdatalogger_chartNOloginTotalhcart />
-              )}
-              {selectedMenu === "chargePowerNOlogin" && (
-                <Reportdatalogger_chargePowerNOlogin />
-              )}
-              {selectedMenu === "settingAccountCheckToken" && (
-                <Setting_account_settingAccountCheckToken />
-              )}
-              {selectedMenu === "updateProfile" && (
-                <Setting_account_updateProfile />
-              )}
-              {selectedMenu === "AddAvatar" && <Setting_account_addAvatar />}
-              {selectedMenu === "UpdateAvatar" && (
-                <Setting_account_updateAvatar />
-              )}
-              {selectedMenu === "getAll" && <SettingOrder_getAll />}
-              {selectedMenu === "scroller" && <SettingOrder_scroller />}
-              {selectedMenu === "SettingCheckToken" && (
-                <Setting_SettingCheckToken />
-              )}
-              {selectedMenu === "getQRcode" && <Setting_getQRcode />}
-              {selectedMenu === "startInit" && <Start_init />}
-              {selectedMenu === "TopUpCheckToken" && <Topup_topUpCheckToken />}
-              {selectedMenu === "topup_checkNoInput" && <Topup_checkNoInput />}
-              {selectedMenu === "topup_addSlipPayment" && (
-                <Topup_addSlipPayment />
-              )}
-              {selectedMenu === "topup_updateSlipPayment" && (
-                <Topup_updateSlipPayment />
-              )}
-              {selectedMenu === "transactionCheckToken" && (
-                <Transaction_transactionCheckToken />
-              )}
-              {selectedMenu === "getTransaction" && (
-                <Transaction_getTransaction />
-              )}
-              {selectedMenu === "pagination_tran" && (
-                <Transaction_pagination_tran />
-              )}
-              {selectedMenu === "transaction_calPage" && (
-                <Transaction_calPage />
-              )}
-              {selectedMenu === "transferCheckToken" && (
-                <Transfer_transferCheckToken />
-              )}
-              {selectedMenu === "transfer_checkNoInput" && (
-                <Transfer_checkNoInput />
-              )}
-              {selectedMenu === "postTransfer" && <Transfer_postTransfer />}
-              {selectedMenu === "showOrder" && <Update_order_showOrder />}
-              {selectedMenu === "update_order_scroller" && (
-                <Update_order_scroller />
-              )}
-              {selectedMenu === "showVoucher" && <Vouncher_code_showVoucher />}
-              {selectedMenu === "walletCheckToken" && (
-                <Wallet_walletCheckToken />
-              )}
-              {selectedMenu === "getUserData" && <Wallet_getUserData />}
-              {selectedMenu === "get_dataTransaction" && (
-                <Wallet_get_dataTransaction />
-              )}
-              {selectedMenu === "loadList" && <Wallet_loadList />}
-              {selectedMenu === "getlevel" && <Getlevel />}
-              <p className="ml-4">{`}`}</p>
-              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
-            </div>
+            )}
+
+            {htmlCheckBody === true && (
+              <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
+                <span className="text-[#A52A2A]">&lt;Body&gt;</span>
+                {selectedMenu === "bodyLogin" && <Body_longin />}
+                {selectedMenu === "bodyregister" && "bodyregister"}
+                <span className="text-[#A52A2A]"> &lt;Body&gt;</span>
+              </div>
+            )}
+
+            {htmlCheckVar === true && (
+              <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
+                <span className="text-[#A52A2A]">&lt;Script&gt;</span>
+                {selectedMenu === "nSLangArrLang" && <NSLangArrLang />}
+                <span className="text-[#A52A2A]"> &lt;Script&gt;</span>
+              </div>
+            )}
           </div>
         </div>
       ) : null}
@@ -1182,7 +1158,8 @@ export default function ModelContent({
           <div className="w-full py-4">
             <button
               onClick={setOpenIndexHead}
-              className="w-full flex items-center justify-between">
+              className="w-full flex items-center justify-between"
+            >
               <h3 className="text-[23px] font-bold">Head</h3>
 
               {listIndex && (
@@ -1233,7 +1210,8 @@ export default function ModelContent({
           <div className="w-full py-4">
             <button
               onClick={setOpenIndexStyle}
-              className="w-full flex items-center justify-between">
+              className="w-full flex items-center justify-between"
+            >
               <h3 className="text-[23px] font-bold">Style</h3>
 
               {listIndex && (
@@ -1284,7 +1262,8 @@ export default function ModelContent({
           <div className="w-full py-4">
             <button
               onClick={setOpenIndexBody}
-              className="w-full flex items-center justify-between">
+              className="w-full flex items-center justify-between"
+            >
               <h3 className="text-[23px] font-bold">Body</h3>
 
               {listIndex && (
@@ -1333,7 +1312,8 @@ export default function ModelContent({
           <div className="w-full py-4">
             <button
               onClick={setOpenIndexScript}
-              className="w-full flex items-center justify-between">
+              className="w-full flex items-center justify-between"
+            >
               <h3 className="text-[23px] font-bold">Script</h3>
               {!openIndexScript ? <FiChevronDown /> : <FiChevronUp />}
             </button>
@@ -1714,7 +1694,8 @@ export default function ModelContent({
             <div className="w-full py-4">
               <button
                 onClick={setOpenMainBody}
-                className="w-full flex items-center justify-between">
+                className="w-full flex items-center justify-between"
+              >
                 <h3 className="text-[23px] font-bold">Body</h3>
                 {!openMainBody ? <FiChevronDown /> : <FiChevronUp />}
               </button>
@@ -1742,7 +1723,8 @@ export default function ModelContent({
             <div className="w-full  py-4 break-words">
               <button
                 onClick={setOpenMainScript}
-                className="w-full flex items-center justify-between">
+                className="w-full flex items-center justify-between"
+              >
                 <h3 className="text-[23px] font-bold">Script</h3>
                 {!openMainScript ? <FiChevronDown /> : <FiChevronUp />}
               </button>
@@ -1967,5 +1949,5 @@ export default function ModelContent({
         </div>
       ) : null}
     </div>
-  )
+  );
 }

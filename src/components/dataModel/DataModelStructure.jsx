@@ -12,7 +12,7 @@ const startProjecData = [
       },
     ],
   },
-]
+];
 
 const indexData = [
   {
@@ -125,7 +125,7 @@ const indexData = [
       },
     ],
   },
-]
+];
 
 const widgetData = [
   {
@@ -200,7 +200,7 @@ const widgetData = [
       },
     ],
   },
-]
+];
 
 const mainData = [
   {
@@ -215,7 +215,7 @@ const mainData = [
       },
     ],
   },
-]
+];
 
 const login = [
   {
@@ -266,7 +266,7 @@ const login = [
       },
     ],
   },
-]
+];
 
 const register = [
   {
@@ -293,7 +293,7 @@ const register = [
       },
     ],
   },
-]
+];
 
 const lang = [
   {
@@ -333,12 +333,12 @@ const lang = [
       {
         name: "getStatusCode()",
         type: "generalModel",
-        key: "getStatusCodeLang",
+        key: "getStatusCode",
         category: "langHtml",
       },
     ],
   },
-]
+];
 
 const bStyle = [
   {
@@ -353,7 +353,7 @@ const bStyle = [
       },
     ],
   },
-]
+];
 
 const level = [
   {
@@ -374,7 +374,7 @@ const level = [
       },
     ],
   },
-]
+];
 
 export {
   startProjecData,
@@ -386,4 +386,4 @@ export {
   lang,
   bStyle,
   level,
-}
+};

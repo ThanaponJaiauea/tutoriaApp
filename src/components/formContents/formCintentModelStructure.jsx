@@ -1,115 +1,115 @@
 /** @format */
 
-import {useState} from "react"
-import ModelContent from "../modelContent"
+import { useState } from "react";
+import ModelContent from "../modelContent";
 
-const FormCintentModelStructure = ({selectedMenu}) => {
-  const [openMainBody, setOpenMainBody] = useState(false)
+const FormCintentModelStructure = ({ selectedMenu }) => {
+  const [openMainBody, setOpenMainBody] = useState(false);
 
-  const [openMainScript, setOpenMainScript] = useState(false)
+  const [openMainScript, setOpenMainScript] = useState(false);
 
-  const [openIndexHead, setOpenIndexHead] = useState(true)
+  const [openIndexHead, setOpenIndexHead] = useState(true);
 
-  const [openIndexStyle, setOpenIndexStyle] = useState(false)
+  const [openIndexStyle, setOpenIndexStyle] = useState(false);
 
-  const [openIndexBody, setOpenIndexBody] = useState(false)
+  const [openIndexBody, setOpenIndexBody] = useState(false);
 
-  const [openIndexScript, setOpenIndexScript] = useState(false)
+  const [openIndexScript, setOpenIndexScript] = useState(false);
 
   const getTitle = () => {
     switch (selectedMenu) {
       case "alert":
-        return "alert()"
+        return "alert()";
       case "messageBox":
-        return "messageBox()"
+        return "messageBox()";
       case "login":
-        return "Login.html"
+        return "Login.html";
       case "resObj":
-        return "resObj()"
+        return "resObj()";
       case "pageInit":
-        return "pageInit()"
+        return "pageInit()";
       case "headerInit":
-        return "headerInit()"
+        return "headerInit()";
       case "pageShow":
-        return "pageShow()"
+        return "pageShow()";
       case "pageUnShow":
-        return "pageUnShow()"
+        return "pageUnShow()";
       case "documentAddEventListener":
-        return "document.addEventListener()"
+        return "document.addEventListener()";
       case "getAbsTime":
-        return "getAbsTime()"
+        return "getAbsTime()";
       case "loader":
-        return "loader()"
+        return "loader()";
       case "messagePage":
-        return "messagePage()"
+        return "messagePage()";
       case "mainHtml":
-        return "Main.html"
+        return "Main.html";
       case "mainHtmlHowtouse":
-        return "Main How to use"
+        return "Main How to use";
       case "headIndex":
-        return "Head"
+        return "Head";
       case "styleIndex":
-        return "Style"
+        return "Style";
       case "var":
-        return "var"
+        return "var";
       case "startApp":
-        return "startApp"
+        return "startApp";
       case "errorApp":
-        return "errorApp"
+        return "errorApp";
       case "onBackPressed":
-        return "onBackPressed"
+        return "onBackPressed";
       case "setKeyboardHeight":
-        return "setKeyboardHeight"
+        return "setKeyboardHeight";
       case "setDeviceId":
-        return "setDeviceId"
+        return "setDeviceId";
       case "appComeback":
-        return "appComeback"
+        return "appComeback";
       case "openAgreement":
-        return "openAgreement"
+        return "openAgreement";
       case "openPrivacy":
-        return "openPrivacy"
+        return "openPrivacy";
       case "firstStartFun":
-        return "firstStartFun"
+        return "firstStartFun";
       case "firstCheckToken":
-        return "firstCheckToken"
+        return "firstCheckToken";
       case "IndexHowToUse":
-        return "Index How To Use"
+        return "Index How To Use";
       case "bodyLogin":
-        return "Body"
+        return "Body";
       case "fetchSliderConfigAndData":
-        return "fetchSliderConfigAndData()"
+        return "fetchSliderConfigAndData()";
       case "fetchSliderData":
-        return "fetchSliderData()"
+        return "fetchSliderData()";
       case "slider_cap":
-        return "slider_cap()"
+        return "slider_cap()";
       case "loginFun":
-        return "loginFun()"
+        return "loginFun()";
       case "checkLoginStatusWithRefreshToken":
-        return "checkLoginStatusWithRefreshToken()"
+        return "checkLoginStatusWithRefreshToken()";
       case "askDeviceIdFun":
-        return "askDeviceIdFun()"
+        return "askDeviceIdFun()";
       case "registerFun":
-        return "registerFun()"
+        return "registerFun()";
       case "SendOTP":
-        return "SendOTP()"
+        return "SendOTP()";
       case "nSLangArrLang":
-        return "var nSLangArrLang"
+        return "var NSLangArr";
       case "setAllPageLang":
-        return "setAllPageLang()"
+        return "setAllPageLang()";
       case "setAllUILang":
-        return "setAllUILang()"
+        return "setAllUILang()";
       case "NSLang":
-        return "NSLang"
-      case "getStatusCodeLang":
-        return "getStatusCodeLang(code)"
+        return "NSLang";
+      case "getStatusCode":
+        return "getStatusCode(code)";
       case "openTabLevel":
-        return "openTabLevel(tabName)"
+        return "openTabLevel(tabName)";
       case "getlevel":
-        return "getlevel()"
+        return "getlevel()";
       default:
-        return ""
+        return "";
     }
-  }
+  };
 
   const formCintentModelStructure = {
     alert: () => (
@@ -591,126 +591,123 @@ const FormCintentModelStructure = ({selectedMenu}) => {
 
     bodyLogin: () => (
       <ModelContent
-        headers="Model Structure"
-        headerHtml="Login.html"
-        fromName={getTitle()}
+        headers="Solar App"
+        headerName={getTitle()}
+        content="LoginFun_login"
         selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
         widget="none"
-        fromContent={true}
-        fromBody={true}
-        content="-ss"
+        htmlCheck="show"
+        headerHtml="home.html"
+        htmlCheckBody={true}
       />
     ),
 
     fetchSliderConfigAndData: () => (
       <ModelContent
-        headers="Model Structure"
-        headerHtml="Login.html"
-        selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        widget="none"
-        fromContent={true}
-        fromScript={true}
-        content="-ss"
-        fromName={getTitle()}
+        headers="Solar App"
+        headerName={getTitle()}
         functionName={getTitle()}
+        content="fetchSliderConfigAndData"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck="show"
+        headerHtml="home.html"
       />
     ),
 
     fetchSliderData: () => (
       <ModelContent
-        headers="Model Structure"
-        headerHtml="Login.html"
-        selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        fromName={getTitle()}
-        fromContent={true}
-        fromScript={true}
+        headers="Solar App"
+        headerName={getTitle()}
         functionName={getTitle()}
+        content="fetchSliderConfigAndData"
+        selectedMenu={selectedMenu}
         widget="none"
-        content="-ss"
+        htmlCheckScript={true}
+        htmlCheck="show"
+        headerHtml="home.html"
       />
     ),
 
     slider_cap: () => (
       <ModelContent
-        headers="Model Structure"
-        headerHtml="Login.html"
-        selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        fromName={getTitle()}
+        headers="Solar App"
+        headerName={getTitle()}
         functionName={getTitle()}
-        fromContent={true}
-        fromScript={true}
+        content="slider_cap"
+        selectedMenu={selectedMenu}
         widget="none"
-        content="-ss"
+        htmlCheckScript={true}
+        htmlCheck="show"
+        headerHtml="home.html"
       />
     ),
 
     loginFun: () => (
       <ModelContent
-        headers="Model Structure"
-        headerHtml="Login.html"
-        selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        fromName={getTitle()}
+        headers="Solar App"
+        headerName={getTitle()}
         functionName={getTitle()}
-        fromContent={true}
-        fromScript={true}
+        content="loginFun"
+        selectedMenu={selectedMenu}
         widget="none"
-        content="-ss"
+        htmlCheckScript={true}
+        htmlCheck="show"
+        headerHtml="home.html"
       />
     ),
 
     checkLoginStatusWithRefreshToken: () => (
       <ModelContent
-        headers="Model Structure"
-        headerHtml="Login.html"
-        selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        fromName={getTitle()}
+        headers="Solar App"
+        headerName={getTitle()}
         functionName={getTitle()}
-        fromContent={true}
-        fromScript={true}
+        content="checkLoginStatusWithRefreshToken"
+        selectedMenu={selectedMenu}
         widget="none"
-        content="-ss"
+        htmlCheckScript={true}
+        htmlCheck="show"
+        headerHtml="home.html"
       />
     ),
 
     askDeviceIdFun: () => (
       <ModelContent
-        headers="Model Structure"
+        headers="Solar App"
         headerHtml="Login.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน askDeviceIdFun นี้ใช้สำหรับขอ Device ID จากแอปพลิเคชัน โดยมีขั้นตอนดังนี้"
+        content1="1.ตรวจสอบว่าเป็นอุปกรณ์แอนดรอยด์หรือไม่ ถ้าใช่ก็จะเริ่มการขอ Device ID"
+        content2={`2.ใช้ setTimeout เพื่อเรียกฟังก์ชัน callApp("ask_deviceId") ทุกๆ 1 วินาทีตั้งแต่หลังจากนี้เพื่อขอ Device ID`}
+        content3="3.การเรียก callApp('ask_deviceId') จะเกิดขึ้นทุกๆ 2 วินาทีเพื่อรวมเวลาที่เรียกไปทั้งหมดไว้ในช่วงเวลาที่มีช่องว่าง"
+        content4="โดยการใช้ setTimeout ในลูปเหล่านี้จะช่วยให้แอปพลิเคชันมีเวลาพอสมควรในการตอบกลับขอ Device ID โดยไม่ทำให้แอปพลิเคชันขัดข้องหรือติดค้างไปกับการร้องขอ Device ID นี้แต่เพียงแค่ใช้เวลาสั้นๆ ในการเรียกเท่านั้น"
+        functionName={getTitle()}
         selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        fromName={getTitle()}
-        fromContent={true}
-        fromScript={true}
         widget="none"
-        content="-ss"
+        htmlCheck="show"
+        htmlCheckScript={true}
+      />
+    ),
+
+    bodyregister: () => (
+      <ModelContent
+        headers="Solar App"
+        headerName={getTitle()}
+        content="bodyregister"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+        headerHtml="home.html"
+        htmlCheckBody={true}
       />
     ),
 
     registerFun: () => (
       <ModelContent
-        headers="Model Structure"
+        headers="Solar App"
         headerHtml="Register.html"
-        selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        fromName={getTitle()}
-        functionName={getTitle()}
-        fromContent={true}
-        fromScript={true}
-        widget="none"
+        headerName={getTitle()}
         content="-ฟังก์ชัน registerFun ใช้สำหรับลงทะเบียนผู้ใช้ใหม่ ดังนี้"
         content1="1.ดึงค่าข้อมูลที่ผู้ใช้ป้อน เช่น อีเมล, OTP (รหัสยืนยันครั้งเดียว), ชื่อผู้ใช้, เบอร์โทรศัพท์มือถือ, รหัสผ่าน, และรหัสเชิญ"
         content2="2.สร้างอ็อบเจ็กต์ข้อมูล (mData) ที่มีข้อมูลผู้ใช้เพื่อส่งไปยังเซิร์ฟเวอร์"
@@ -720,21 +717,19 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         content4p2="4.2.หากรหัสการตอบกลับไม่เท่ากับ 0, จะแสดงข้อความผิดพลาดขึ้นอยู่กับรหัสสถานะที่ได้รับ"
         content5="5.จัดการกับข้อผิดพลาดที่อาจเกิดขึ้นในระหว่างคำขอ AJAX เช่น ข้อผิดพลาดจากเซิร์ฟเวอร์"
         content6="6.กำหนดฟังก์ชันภายใน cleanInput เพื่อรีเซ็ตช่องกรอกข้อมูลหลังจากการลงทะเบียน"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+        htmlCheckScript={true}
       />
     ),
 
     SendOTP: () => (
       <ModelContent
-        headers="Model Structure"
+        headers="Solar App"
         headerHtml="Register.html"
-        selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        fromName={getTitle()}
-        functionName={getTitle()}
-        fromContent={true}
-        fromScript={true}
-        widget="none"
+        headerName={getTitle()}
         content="-ฟังก์ชัน SendOTP ใช้สำหรับส่งรหัส OTP ไปยังอีเมลของผู้ใช้ ดังนี้"
         content1="1.ดึงค่าอีเมลที่ผู้ใช้ป้อนในช่องกรอก"
         content2="2.สร้างอ็อบเจ็กต์ข้อมูล (mData) ที่มีข้อมูลอีเมลและประเภท (type) เพื่อส่งไปยังเซิร์ฟเวอร์"
@@ -745,94 +740,94 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         content5="5.จัดการกับข้อผิดพลาดที่อาจเกิดขึ้นในระหว่างคำขอ AJAX เช่น ข้อผิดพลาดจากเซิร์ฟเวอร์"
         content6="6.การนับถอยหลังเวลาจะทำงานโดยการเริ่มต้นฟังก์ชัน startCountdown ซึ่งจะเริ่มนับถอยหลังจากเวลาที่ได้รับจากเซิร์ฟเวอร์"
         content7="7.เมื่อเวลานับถอยหลังสิ้นสุดลง ฟังก์ชัน OTPCountdown จะถูกเรียกเพื่อแสดงหน้าแบบฟอร์มให้ผู้ใช้ป้อน OTP อีกครั้งหรือคลิกที่ปุ่มส่ง OTP อีกครั้งหากต้องการส่งอีกครั้ง"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+        htmlCheckScript={true}
       />
     ),
 
     nSLangArrLang: () => (
       <ModelContent
-        headers="Model Structure"
+        headers="Solar App"
         headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="var NSLangArr"
         selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        fromName={getTitle()}
-        functionName={getTitle()}
-        fromContent={true}
-        fromVar={true}
         widget="none"
+        htmlCheck="show"
+        htmlCheckVar={true}
       />
     ),
 
     setAllPageLang: () => (
       <ModelContent
-        headers="Model Structure"
+        headers="Solar App"
         headerHtml="Lang.html"
-        selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        fromName={getTitle()}
-        functionName={getTitle()}
-        fromContent={true}
-        fromScript={true}
-        widget="none"
+        headerName={getTitle()}
         content="-ฟังก์ชัน setAllPageLang ใช้ในการตั้งค่าภาษาสำหรับหน้าทั้งหมดในแอปพลิเคชัน โดยการเรียกใช้"
         content1="1.ฟังก์ชัน setAllUILang สำหรับแต่ละหน้าดังนี้"
         content2={`"getstart","login","forgotPass","register","main","cart","detail_product","homePage","setting","final"`}
         content3="การเรียกใช้ setAllUILang จะเป็นการตั้งค่าภาษาสำหรับหน้านั้นๆ โดยทำการโหลดข้อมูลภาษาจากไฟล์หรือแหล่งข้อมูลที่กำหนดไว้ล่วงหน้าแล้วแล้วใช้ในการแสดงผลบนหน้าเว็บในภาษาที่ถูกต้องตามการตั้งค่า"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+        htmlCheckScript={true}
       />
     ),
 
     setAllUILang: () => (
       <ModelContent
-        headers="Model Structure"
+        headers="Solar App"
         headerHtml="Lang.html"
-        selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        fromName={getTitle()}
-        functionName={getTitle()}
-        fromContent={true}
-        fromScript={true}
-        widget="none"
+        headerName={getTitle()}
         content="-ฟังก์ชัน setAllUILang() ใช้ในการตั้งค่าข้อความแสดงผลในหน้าต่างๆ ของแอปพลิเคชันตามภาษาที่กำหนด เมื่อมีการเรียกใช้งานฟังก์ชันนี้ โดยส่งพารามิเตอร์ page เข้าไป เพื่อระบุหน้าที่ต้องการตั้งค่าภาษา"
         content1="1.ในแต่ละเคสของ switch จะมีการกำหนดข้อความแสดงผลของแต่ละ element ในหน้านั้นๆ โดยใช้ NSLang เพื่อดึงข้อความภาษาที่ต้องการตาม key ที่กำหนด"
         content2="2.หลังจากนั้นจะนำข้อความที่ได้มาแสดงผลใน element ต่างๆ ของหน้านั้นๆ โดยการใช้ html() เพื่อกำหนดข้อความใหม่ในแต่ละ element"
         content3="3.การเรียกใช้งาน NSLang จะช่วยในการแสดงผลข้อความในภาษาที่ถูกต้องตามการตั้งค่าที่กำหนดไว้ล่วงหน้าแล้วในระบบ"
         content4="4.การตั้งค่าข้อความใหม่จะเป็นการอัพเดทหน้าเว็บให้เป็นภาษาที่ถูกต้องตามการตั้งค่า"
+        functionName="setAllUILang(page)"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+        htmlCheckScript={true}
       />
     ),
 
     NSLang: () => (
       <ModelContent
-        headers="Model Structure"
+        headers="Solar App"
         headerHtml="Lang.html"
-        selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        fromName={getTitle()}
-        functionName={getTitle()}
-        fromContent={true}
-        fromScript={true}
-        widget="none"
+        headerName={getTitle()}
         content="-ฟังก์ชัน NSLang ใช้ในการค้นหาและคืนค่าข้อความจากตัวแปร NSLangArr โดยใช้คีย์ inStr เพื่อค้นหาข้อความที่ต้องการในภาษาที่ตั้งค่าไว้ล่วงหน้า หากไม่พบข้อความที่ต้องการหรือเกิดข้อผิดพลาดขณะค้นหา ฟังก์ชันจะคืนค่า inStr เป็นค่าเริ่มต้น"
         content1="1.ในบรรทัดแรกของฟังก์ชัน NSLang จะพยายามดึงข้อความจากตัวแปร NSLangArr โดยใช้คีย์ inStr และ langCode ซึ่งเป็นตัวแปรที่ระบุภาษาที่ต้องการให้แสดงผล"
         content2="2.หากพบข้อความที่ต้องการจะคืนค่าข้อความนั้น"
         content3="3.หากไม่พบข้อความหรือเกิดข้อผิดพลาดขณะค้นหา ฟังก์ชันจะคืนค่า inStr เป็นค่าเริ่มต้นหรือค่าที่ส่งเข้ามาตามที่เกิดขึ้นในบริบทนั้นๆ ในการค้นหาข้อความ"
+        functionName="NSLang(inStr)"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck="show"
+        htmlCheckScript={true}
       />
     ),
 
-    getStatusCodeLang: () => (
+    getStatusCode: () => (
       <ModelContent
-        headers="Model Structure"
+        headers="Solar App"
         headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน getStatusCode ใช้ในการค้นหาและคืนค่าข้อความสถานะจากตัวแปร statusCodesArr โดยใช้คีย์ code เพื่อค้นหาข้อความสถานะที่ต้องการแสดงผล หากไม่พบข้อความสถานะที่ต้องการหรือเกิดข้อผิดพลาดขณะค้นหา ฟังก์ชันจะคืนค่า thisCode เป็นค่าเริ่มต้นหรือค่าที่ส่งเข้ามาตามที่เกิดขึ้นในบริบทนั้นๆ ในการค้นหาข้อความสถานะ"
+        content1="1.ในบรรทัดแรกของฟังก์ชัน getStatusCode จะเก็บค่า code ที่ส่งเข้ามาในตัวแปร thisCode"
+        content2="2.จากนั้นฟังก์ชันจะพยายามค้นหาข้อความสถานะจากตัวแปร statusCodesArr โดยใช้คีย์ thisCode และ langCode ซึ่งเป็นตัวแปรที่ระบุภาษาที่ต้องการให้แสดงผล"
+        content3="3.หากพบข้อความสถานะที่ต้องการจะคืนค่าข้อความนั้น"
+        content4="4.หากไม่พบข้อความสถานะหรือเกิดข้อผิดพลาดขณะค้นหา ฟังก์ชันจะคืนค่า thisCode เป็นค่าเริ่มต้นหรือค่าที่ส่งเข้ามาตามที่เกิดขึ้นในบริบทนั้นๆ ในการค้นหาข้อความสถานะ"
+        functionName="getStatusCode(code)"
         selectedMenu={selectedMenu}
-        openMainBody={openMainBody}
-        openMainScript={openMainScript}
-        fromName={getTitle()}
-        functionName={getTitle()}
-        fromContent={true}
-        fromScript={true}
         widget="none"
+        htmlCheck="show"
+        htmlCheckScript={true}
       />
     ),
 
@@ -851,36 +846,15 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheck="show"
+        htmlCheckScript={true}
       />
     ),
-
-    getlevel: () => (
-      <ModelContent
-        headers="Solar App"
-        headerHtml="Lang.html"
-        headerName={getTitle()}
-        functionName={getTitle()}
-        selectedMenu={selectedMenu}
-        widget="none"
-        htmlCheck="show"
-        content="-โค้ดนี้เป็นฟังก์ชัน JavaScript ที่ถูกกำหนดไว้ในรูปแบบของฟังก์ชันในอ็อบเจกต์ (Object function) โดยชื่อของฟังก์ชันคือ getlevel ฟังก์ชันนี้ดำเนินการดังนี้"
-        content1="1.ดึงข้อมูล Token จาก Local Storage ของเบราว์เซอร์ โดยใช้ window.localStorage.getItem('token') และแปลงข้อมูล Token จากรูปแบบ JSON ด้วย JSON.parse(getToken)"
-        content2="2.ทำการส่งคำขอ Ajax ไปยัง URL ที่กำหนด (ในที่นี้คือ API_SERVER + '/v1/profile/cycle-voucher?type=40') โดยมีการส่ง Token ในส่วนของ Header ด้วย"
-        content3="3.เมื่อคำขอสำเร็จ (success) จะทำการปรับแต่งข้อมูลและแสดงผลบนหน้าเว็บได้แก่"
-        content3p1={`3.1.การแสดงข้อมูลต่าง ๆ เช่น $("#now_number").text(data.result.activeNumber) เพื่อแสดงจำนวนที่ใช้งานอยู่ในปัจจุบัน`}
-        content3p2={`3.2.การแสดงรูปภาพเฉพาะกับระดับที่ได้รับเช่น $('.img_level11').attr('src', './pic/level/level0.png')`}
-        content3p3={`3.3.การแสดงข้อมูลในตาราง HTML`}
-        content4={`4.การตรวจสอบความยาวของข้อมูลที่ผ่านการกรองแล้ว และดำเนินการต่อไปตามเงื่อนไข`}
-        content5={`5.เมื่อผิดพลาด (error) จะแสดงข้อความข้อผิดพลาดหรือประเภทของข้อผิดพลาดที่เกิดขึ้น`}
-        content6={`นอกจากนี้ฟังก์ชันยังมีการสร้างอีเวนต์ในการคลิกที่ปุ่ม #sendPostData และเมื่อคลิกจะเรียกใช้ฟังก์ชัน sendPostData ซึ่งทำการส่งข้อมูลผ่าน Ajax และจัดการกับการตอบกลับที่ได้รับจากเซิร์ฟเวอร์ในส่วนของการรับรองความถูกต้องของข้อมูลหรือการจัดการข้อผิดพลาดอื่น ๆ ที่อาจเกิดขึ้นในการส่งคำขอ POST นั้นๆ ตาม API ที่ใช้งาน`}
-      />
-    ),
-  }
+  };
 
   return (
     formCintentModelStructure[selectedMenu] &&
     formCintentModelStructure[selectedMenu]()
-  )
-}
+  );
+};
 
-export default FormCintentModelStructure
+export default FormCintentModelStructure;

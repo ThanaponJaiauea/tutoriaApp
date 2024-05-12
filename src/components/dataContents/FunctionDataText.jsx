@@ -41,7 +41,7 @@ export function FunctionMessageBoxText() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //Index MessageBox Body
@@ -71,7 +71,7 @@ export function DivMessageBox() {
       <p className="ml-12">{`</div>`}</p>
       <p>{`</div>`}</p>
     </div>
-  )
+  );
 }
 
 //Index MessageBox Script
@@ -81,7 +81,7 @@ export function DivMessageBoxScript() {
       <p>{`var msgObj = new messageBox();`}</p>
       <p>{`msgObj.init();`}</p>
     </div>
-  )
+  );
 }
 
 //Index MessageBox exampleCode
@@ -95,7 +95,7 @@ export function DivMessageBoxExampleCode() {
       <p>{`msgObj.unShow();`}</p>
       <p>{`})`}</p>
     </div>
-  )
+  );
 }
 
 // alert() Widget.js
@@ -151,7 +151,7 @@ export function AlertWidget() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // alert() Index Body
@@ -165,7 +165,7 @@ export function AlertIndex() {
         <p>{`</div>`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //Index Alert Script
@@ -175,7 +175,7 @@ export function AlertScript() {
       <p>{`var alertObj = new alert();`}</p>
       <p>{`alertObj.init();`}</p>
     </div>
-  )
+  );
 }
 
 // alert Example
@@ -187,7 +187,7 @@ export function AlertExample() {
         alertObj.unShow()
       }, 500);`}</p>
     </div>
-  )
+  );
 }
 
 // resObj Widget.js
@@ -303,7 +303,7 @@ export function ResObjWidget() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // base64
@@ -428,7 +428,7 @@ export function Base64() {
       <p className="ml-8">{`}`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
-  )
+  );
 }
 
 // resObj Index.html script
@@ -456,7 +456,7 @@ export function ResObjIndexScript() {
         <p className="ml-4">{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //pageInit()
@@ -471,7 +471,7 @@ export function PageInit() {
       <p className="ml-4">{`top: 0,`}</p>
       <p className="ml-4">{`})`}</p>
     </div>
-  )
+  );
 }
 
 //PageInit  Example Body
@@ -481,7 +481,7 @@ export function PageInitExampleBody() {
       <p>{`<div id="name_page">`}</p>
       <p>{`</div>`}</p>
     </div>
-  )
+  );
 }
 
 //PageInit  Example script
@@ -495,7 +495,7 @@ export function PageInitExampleScript() {
       <p className="ml-8">{`pageInit("name_page");`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
-  )
+  );
 }
 
 // HeaderInit Widget
@@ -540,7 +540,7 @@ export function HeaderInitWidget() {
       <p>{`})`}</p>
       <p className="mt-1">{`$(".back_arrow").attr("src", picRes["arrow_back.png"])`}</p>
     </div>
-  )
+  );
 }
 
 //HeaderInit  Example script
@@ -554,7 +554,7 @@ export function HeaderInitExampleScript() {
       <p className="full">{`headerInit("name_page","HeaderInitPage");`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
-  )
+  );
 }
 
 //PageShow Widget
@@ -563,7 +563,7 @@ export function PageShowWidget() {
     <div>
       <p className="ml-8">{`$("#" + pageId).transition({x: w,},PAGETIMEOUT)`}</p>
     </div>
-  )
+  );
 }
 
 //pageShow  Example Body
@@ -574,7 +574,7 @@ export function PageShowExampleBody() {
       <p className="ml-4">current Page</p>
       <p>{`</div>`}</p>
     </div>
-  )
+  );
 }
 
 //pageShow  Example Script
@@ -588,7 +588,7 @@ export function PageShowExampleScript() {
       <p className="full">{`pageShow("go_next_page");`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
-  )
+  );
 }
 
 //pageUnShow Widget
@@ -597,7 +597,7 @@ export function PageUnShowWidget() {
     <div>
       <p className="ml-8">{`$("#" + pageId).transition({x: 0,},PAGETIMEOUT)`}</p>
     </div>
-  )
+  );
 }
 
 //pageUnShow  Example Body
@@ -613,7 +613,7 @@ export function PageUnShowExampleBody() {
             </div>`}</p>
       <p>{`</div>`}</p>
     </div>
-  )
+  );
 }
 
 //pageUnShow  Example Script
@@ -630,7 +630,7 @@ export function PageUnShowExampleScript() {
       <p className="ml-4">{`}`}</p>
       <p>{`}`}</p>
     </div>
-  )
+  );
 }
 
 //pageUnShow Widget
@@ -664,7 +664,7 @@ export function DocumentAddEventListenerWidget() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //GetAbsTimeWidget Widget
@@ -689,7 +689,7 @@ export function GetAbsTimeWidget() {
       <p>{`} catch (e) { throw e }`}</p>
       <p>{`}`}</p>
     </div>
-  )
+  );
 }
 
 //Loader Widget
@@ -735,7 +735,7 @@ export function LoaderWidget() {
       <p>{`$("#loader").css({display: "none"})`}</p>
       <p>{`}`}</p>
     </div>
-  )
+  );
 }
 
 //Loader  Index Body
@@ -747,7 +747,7 @@ export function LoaderIndexBody() {
 `}</p>
       <p>{`</div>`}</p>
     </div>
-  )
+  );
 }
 
 //Loader  Index Script
@@ -757,7 +757,7 @@ export function LoaderIndexScript() {
       <p>var loaderObj = new loader();</p>
       <p>msgObj.init();</p>
     </div>
-  )
+  );
 }
 
 //Loader  Example Script
@@ -766,7 +766,7 @@ export function LoaderExampleScript() {
     <div>
       <p>loaderObj.show();</p>
     </div>
-  )
+  );
 }
 
 // messagePage Widget
@@ -833,7 +833,7 @@ export function MessagePageWidget() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //MessagePage Index Body
@@ -864,7 +864,7 @@ export function MessagePageIndexBody() {
       <p>{`<div>`}</p>
       <p>{`<div>`}</p>
     </div>
-  )
+  );
 }
 
 //MessagePage Index Script
@@ -874,7 +874,7 @@ export function MessagePageIndexScript() {
       <p>var msgPageObj = new messagePage();</p>
       <p>msgPageObj.init();</p>
     </div>
-  )
+  );
 }
 
 //MessagePage Example Script
@@ -883,7 +883,7 @@ export function MessagePageExampleScript() {
     <div className="ml-4">
       <p>msgPageObj.show("messagePage")</p>
     </div>
-  )
+  );
 }
 
 // home.html
@@ -917,7 +917,7 @@ export function Home_html_count() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // HomeCheckToken
@@ -975,7 +975,7 @@ export function Home_html_homeCheckToken() {
         <p className="ml-2">{`productCartObj.call()`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //getProfile
@@ -1068,7 +1068,7 @@ export function Home_html_getProfile() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // sendApi
@@ -1145,7 +1145,7 @@ export function Home_html_sendApi() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // checklocalStorage
@@ -1167,7 +1167,7 @@ export function Home_html_checklocalStorage() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // checkSimulated
@@ -1210,7 +1210,7 @@ export function Home_html_checkSimulated() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // getRecommendProduct
@@ -1281,7 +1281,7 @@ export function Home_html_getRecommendProduct() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //getAllProduct
@@ -1363,7 +1363,7 @@ export function Home_html_getAllProduct() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //getCheckIn
@@ -1486,7 +1486,7 @@ export function Home_html_getCheckIn() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // Adddatalogger
@@ -1496,7 +1496,7 @@ export function Addda_talogger_validateInput() {
     <div className="ml-4 flex flex-col gap-2 ">
       <p>inputField.value = inputField.value.replace(/[^0-9a-zA-Z]/g, "")</p>
     </div>
-  )
+  );
 }
 
 //AddDate
@@ -1524,7 +1524,7 @@ export function Addda_talogger_addDate() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //CreateDevice
@@ -1584,7 +1584,7 @@ export function Addda_talogger_createDevice() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // cancel_order.html
@@ -1598,7 +1598,7 @@ export function Cancel_order_getItemAll() {
       <p>$("#price_cancel").text(dataItem.price + " ฿")</p>
       <p>$("#itemCancel_Quantity").text("Quantity x " + dataItem.quantity)</p>
     </div>
-  )
+  );
 }
 
 //sentCancelOrder
@@ -1664,7 +1664,7 @@ export function Cancel_order_sentCancelOrder() {
         <p className="ml-4">{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // changePassword.html
@@ -1749,7 +1749,7 @@ export function ChangePasswordHtml() {
         <p className="ml-4">{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // coin_history.html
@@ -1904,7 +1904,7 @@ export function Coin_history_getRedeemHis() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //pagination_coins
@@ -1989,7 +1989,7 @@ export function Coin_history_pagination_coins() {
       <p className="ml-4">{`});`}</p>
       <p>{`}`}</p>
     </div>
-  )
+  );
 }
 
 // calPage
@@ -2037,7 +2037,7 @@ export function Coin_history_calPage() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // coins.html
@@ -2058,7 +2058,7 @@ export function Coins_coinsCheckToken() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //getPointCoins
@@ -2105,7 +2105,7 @@ export function Coins_getPointCoinsn() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // Configuration.html
@@ -2160,7 +2160,7 @@ export function Configuration_updateDevice() {
       <p className="ml-4">{`error: function (xmlhttprequest, error) {},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // Configuration_con
@@ -2212,7 +2212,7 @@ export function Configuration_con() {
       <p className="ml-4">{`error: function (xmlhttprequest, error) {},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // confirm_order.html
@@ -2283,7 +2283,7 @@ export function Confirm_order_getOrder() {
       <p className="ml-4">{`});`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // getStatePayment
@@ -2293,7 +2293,7 @@ export function Confirm_order_getStatePayment() {
       <p>checkStateMethodPayment = method</p>
       <p>calTotal()</p>
     </div>
-  )
+  );
 }
 
 // setVoucherId
@@ -2304,7 +2304,7 @@ export function Confirm_order_setVoucherId() {
       <p>VoucherDis = discount</p>
       <p>calTotal()</p>
     </div>
-  )
+  );
 }
 
 // postOrderNow
@@ -2360,7 +2360,7 @@ export function Confirm_order_postOrderNow() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // getAddress
@@ -2411,7 +2411,7 @@ export function Confirm_order_getAddress() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 //getCodeDisCountVoucher
@@ -2448,7 +2448,7 @@ export function Confirm_order_getCodeDisCountVoucher() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // getCodeDisCountMember
@@ -2509,7 +2509,7 @@ export function Confirm_order_getCodeDisCountMember() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 // calTotal
@@ -2553,7 +2553,7 @@ export function Confirm_order_calTotal() {
       <p>{`});`}</p>
       <p>{`$('#show_total_price_order').text(formattedNumber + ' ฿');`}</p>
     </div>
-  )
+  );
 }
 
 // cleanDataDefualt
@@ -2576,7 +2576,7 @@ export function Confirm_order_cleanDataDefualt() {
       <p>{`$("#yojo_wallet_radio").prop("checked", true);`}</p>
       <p>{`$("#discount_member").prop("checked", false);`}</p>
     </div>
-  )
+  );
 }
 
 //  customer.html
@@ -2678,7 +2678,7 @@ export function Customer_getDataCustPurchaseReportStats() {
       <p>{`},`}</p>
       <p>{`});`}</p>
     </div>
-  )
+  );
 }
 
 //showChartTotalCustomer
@@ -2739,7 +2739,7 @@ export function Customer_showChartTotalCustomer() {
         <p>{`option && myChart.setOption(option);`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //ChartMethod
@@ -2829,7 +2829,7 @@ export function Customer_ChartMethod() {
         <p>{`option && myChart1.setOption(option);`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //ChartGender
@@ -2887,7 +2887,7 @@ export function Customer_ChartGender() {
         <p>{`option && myChart2.setOption(option);`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //updateSalesData
@@ -2930,7 +2930,7 @@ export function Customer_updateSalesData() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // data_customer_details.html
@@ -2956,7 +2956,7 @@ export function Data_customer_details_getDataCustomerDetail() {
         <p>$("#Complaint_Customer").text("-")</p>
       </div>
     </div>
-  )
+  );
 }
 
 // data_customer
@@ -3034,7 +3034,7 @@ export function Data_customer_getDataCustomer() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //deletedatalogger.html
@@ -3123,7 +3123,7 @@ export function Deletedatalogger_getDeviceAll() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //distributor.html
@@ -3173,7 +3173,7 @@ export function Distributor_distributorFun() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // PreviewImg
@@ -3265,7 +3265,7 @@ export function Distributor_PreviewImg() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // PreviewImg_2
@@ -3336,7 +3336,7 @@ export function Distributor_PreviewImg2() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 export function Distributor_createDistributor() {
@@ -3437,7 +3437,7 @@ export function Distributor_createDistributor() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // edit_address.html
@@ -3480,7 +3480,7 @@ export function EditAddress_deleteAddress() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //EditAddress
@@ -3527,7 +3527,7 @@ export function EditAddress_editAddress() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // GetAddressID
@@ -3564,7 +3564,7 @@ export function EditAddress_getAddressID() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // forgotpass.html
@@ -3626,7 +3626,7 @@ export function Forgotpass_forgotPass() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 export function Forgotpass_sendOTP_forgot() {
@@ -3718,7 +3718,7 @@ export function Forgotpass_sendOTP_forgot() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //inCome.html
@@ -3746,7 +3746,7 @@ export function InCome_getSelectedYear() {
         <p>{`$('#calendarGetYear').html(str);`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //getSelectedMonth
@@ -3776,7 +3776,7 @@ export function InCome_getSelectedMonth() {
         <p>{`$('#calendarGetMonth').html(str);`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // getIncomeAndExpenditureDetails
@@ -3827,7 +3827,7 @@ export function InCome_getIncomeAndExpenditureDetails() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //createNewInput
@@ -3843,7 +3843,7 @@ export function InCome_createNewInput() {
           })`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //updateIncomeBeforeTaxes
@@ -3864,7 +3864,7 @@ export function InCome_updateIncomeBeforeTaxes() {
         <p>{`)`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // lang.html
@@ -3884,7 +3884,7 @@ export function Lang_setAllPageLang() {
         <p>setAllUILang("final")</p>
       </div>
     </div>
-  )
+  );
 }
 
 //setAllUILang
@@ -4053,7 +4053,121 @@ export function Lang_setAllUILang() {
         </div>
       </div>
     </div>
-  )
+  );
+}
+
+// nSLangArrLang
+export function NSLangArrLang() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2 flex flex-col gap-4">
+        <div>
+          <p>{`var NSLangArr = {`}</p>
+        </div>
+
+        <div>
+          <p>{`"getStart.start": { "en": "Get start", "zh": "开始使用", "th": "เริ่มต้นใช้งาน", },`}</p>
+        </div>
+
+        <div>
+          <p>{`"login.welcome_back": { "zh": "欢迎您回来", "en": "Welcome back", "th": "ยินดีต้อนรับกลับมา" },`}</p>
+          <p>{`"login.signup": { "zh": "登录以继续", "en": "Please sign in to continue", "th": "กรุณาลงชื่อเข้าใช้เพื่อดำเนินการต่อ" },`}</p>
+          <p>{`"login.login": { "zh": "登录", "en": "Login", "th": "เข้าสู่ระบบ" },`}</p>
+          <p>{`"login.mobileLogin": { "zh": "用户名", "en": "Email", "th": "ชื่อผู้ใช้" },`}</p>
+          <p>{`"login.password1": { "zh": "密码", "en": "Password", "th": "รหัสผ่าน" },`}</p>
+          <p>{`"login.login_span1": { "zh": "记住密码", "en": "Remember password", "th": "จดจำรหัสผ่าน" },`}</p>
+          <p>{`"login.login_span2": { "zh": "忘记密码？", "en": "Forgot Password?", "th": "ลืมรหัสผ่าน?" },`}</p>
+          <p>{`"login.login_span3": { "zh": "及", "en": "and", "th": "และ" },`}</p>
+          <p>{`"login.login_span4": { "zh": "隐私条款", "en": "Privacy Policy", "th": "นโยบายความเป็นส่วนตัว" },`}</p>
+          <p>{`"login.noAcc": { "zh": "没有账号 ?", "en": "Don't have an account?", "th": "ยังไม่มีบัญชีใช่หรือไม่?" },`}</p>
+          <p>{`"login.goRegister": { "zh": "马上注册", "en": "Create a new account", "th": "ลงทะเบียนเดี๋ยวนี้" },`}</p>
+          <p>{`"login.policy": { "en": "Please confirm the privacy policy", "zh": "请确认隐私政策", "th": "กรุณายืนยันนโยบายความเป็นส่วนตัว", },`}</p>
+          <p>{`"login.password": { "en": "Please enter the login password", "zh": "请输入登陆密码", "th": "กรุณากรอกรหัสผ่านเข้าสู่ระบบ", },`}</p>
+          <p>{`"login.fill": { "en": "Please enter your email and password", "zh": "请输入您的用户名和密码", "th": "กรุณากรอกชื่อผู้ใช้และรหัสผ่านของคุณ", },`}</p>
+          <p>{`"login.mail": { "en": "Please enter your email", "zh": "请输入您的用户名", "th": "กรุณากรอกชื่อผู้ใช้ของคุณ", },`}</p>
+          <p>{`"login.account": { "en": "Login your account", "zh": "登录您的帐户", "th": "เข้าสู่บัญชีของคุณ", },`}</p>
+          <p>{`"login.sys": { "en": "Please log in to access your solar energy system.", "zh": "登录并查看您的太阳能系统。", "th": "เข้าสู่ระบบและดูระบบพลังงานแสงอาทิตย์ของคุณ", },`}</p>
+          <p>{`"login.version": { "en": "Version 1.0", "zh": "1.0 版本", "th": "เวอร์ชัน 1.0", },`}</p>
+          <p>{`"login.regiss": { "en": "You will register as", "zh": "您将注册为", "th": "คุณกำลังจะลงทะเบียนเป็น", },`}</p>
+          <p>{`"login.user": { "en": "User", "zh": "用户", "th": "ผู้ใช้", },`}</p>
+          <p>{`"login.lang": { "en": "EN", "zh": "ZH", "th": "TH", },`}</p>
+          <p>{`"login.or": { "en": "OR", "zh": "或者", "th": "หรือ", },`}</p>
+          <p>{`"login.face": { "en": "Login with Facebook", "zh": "使用 Facebook 登录", "th": "เข้าสู่ระบบด้วย Facebook", },`}</p>
+          <p>{`"login.google": { "en": "Login with Google", "zh": "使用 Google 登录", "th": "เข้าสู่ระบบด้วย Google", },`}</p>
+          <p>{`"login.apple": { "en": "Login with Apple ID", "zh": "使用 Apple ID 登录", "th": "เข้าสู่ระบบด้วย Apple ID", },`}</p>
+          <p>{`"login.noacc": { "en": "No account is associated with this app. Please try again.", "zh": "没有帐户与此应用程序关联。 请再试一次", "th": "ไม่มีบัญชีที่เชื่อมโยงกับแอพนี้ กรุณาลองอีกครั้ง", },`}</p>
+        </div>
+
+        <div>
+          <p>{`"forgot.forgot": { "en": "Did you forgot your password?", "zh": "您忘记了密码吗？", "th": "คุณลืมรหัสผ่านใช่หรือไม่?" },`}</p>
+          <p>{`"forgot.send": { "en": "Sending to your email to reset password", "zh": "发送至您的邮箱以重置密码", "th": "กำลังส่งไปยังอีเมลของคุณเพื่อตั้งค่ารหัสผ่านใหม่" },`}</p>
+          <p>{`"forgot.enter": { "en": "Please enter your email", "zh": "请输入您的电子邮箱", "th": "กรุณากรอกอีเมล์ของคุณ" },`}</p>
+          <p>{`"forgot.OK": { "en": "Send", "zh": "发送", "th": "ส่ง" },`}</p>
+          <p>{`"forgot.phone": { "en": "Phone number", "zh": "手机号", "th": "เบอร์โทรศัพท์มือถือ" },`}</p>
+          <p>{`"forgot.email": { "en": "Email", "zh": "邮箱", "th": "อีเมล" },`}</p>
+          <p>{`"forgot.otp": { "en": "OTP Verification", "zh": "短信验证码", "th": "รหัสOTP" },`}</p>
+          <p>{`"forgot.pass": { "en": "New password", "zh": "新密码", "th": "รหัสผ่านใหม่" },`}</p>
+          <p>{`"forgot.conPass": { "en": "Confirm new password", "zh": "确认密码", "th": "ยืนยันรหัสผ่าน" },`}</p>
+        </div>
+
+        <div>
+          <p>{`"register.account": { "en": "Account ", "zh": "帐户 ", "th": "บัญชี " },`}</p>
+          <p>{`"register.account_create": { "en": "Create account to join with us.", "zh": "创建帐户加入我们。", "th": "สร้างบัญชีเพื่อเข้าร่วมกับเรา" },`}</p>
+          <p>{`"register.agree": { "en": "I agree with the terms and conditions", "zh": "我同意条款和条件", "th": "ฉันเห็นด้วยกับข้อกำหนดและเงื่อนไข" },`}</p>
+          <p>{`"register.user_user": { "en": "New", "zh": "用户", "th": "ผู้ใช้" },`}</p>
+          <p>{`"register.account_for": { "en": "Create ", "zh": "创建 ", "th": "สร้าง " },`}</p>
+          <p>{`"register.name": { "zh": "姓名", "en": "Realname", "th": "ชื่อ" },`}</p>
+          <p>{`"register.password1": { "zh": "重设密码", "en": "Confirm password", "th": "ตั้งค่ารหัสผ่านอีกครั้ง" },`}</p>
+          <p>{`"register.btn": { "zh": "创建新账户", "en": "Create Account", "th": "สร้างบัญชี" },`}</p>
+          <p>{`"register.acc": { "zh": "我已经有一个账户", "en": "I already have an account", "th": "ฉันมีบัญชีแล้ว" },`}</p>
+          <p>{`"register.login": { "zh": "登录", "en": "Log in", "th": "เข้าสู่ระบบ" },`}</p>
+          <p>{`"register.fill": { "en": "Please fill in all the required information", "zh": "请填写所有必填信息", "th": "กรุณากรอกข้อมูลให้ครบถ้วน" },`}</p>
+          <p>{`"register.digit": { "en": "Please enter your 11 digit phone number.", "zh": "请输入您的 11 位电话号码。", "th": "กรุณากรอกหมายเลขโทรศัพท์ 11 หลัก" },`}</p>
+          <p>{`"register.pass": { "en": "Please enter a password between 6 and 30 characters long and confirm the password to match", "zh": "请填写6到30个字符长度的密码，并确认密码匹配", "th": "กรุณากรอกรหัสผ่านที่มีความยาวระหว่าง 6 ถึง 30 ตัวอักษรและยืนยันรหัสผ่านให้ตรงกัน" },`}</p>
+          <p>{`"register.repass": { "en": "The password and confirmation password do not match", "zh": "密码和确认密码不一致", "th": "การป้อนรหัสผ่านและยืนยันรหัสผ่านไม่สอดคล้องกัน" },`}</p>
+          <p>{`"register.success": { "en": "You have successfully registered an account", "zh": "您已成功注册帐号", "th": "คุณได้ลงทะเบียนบัญชีเรียบร้อยแล้ว" },`}</p>
+          <p>{`"register.email": { "zh": "电子邮箱", "en": "Email", "th": "อีเมล" },`}</p>
+          <p>{`"register.invite": { "zh": "邀请码", "en": "Invitation code", "th": "รหัสเชิญ" }`}</p>
+        </div>
+
+        <div>
+          <p>{`"main.home": { "zh": "主页", "en": "Shop", "th": "ร้านค้า" },`}</p>
+          <p>{`"main.trade": { "zh": "贸易", "en": "Trade", "th": "ซื้อขาย" },`}</p>
+          <p>{`"main.wallet": { "zh": "钱包", "en": "Wallet", "th": "กระเป๋าเงิน" },`}</p>
+          <p>{`"main.setting": { "zh": "我的", "en": "Setting", "th": "ตั้งค่า" }`}</p>
+        </div>
+
+        <div>
+          <p>{`"product.login": { "zh": "您目前未登录。请登录以继续购买。", "en": "You are not currently logged in. Please log in to continue your purchase.", "th": "คุณยังไม่ได้เข้าสู่ระบบ โปรดเข้าสู่ระบบเพื่อดำเนินการซื้อสินค้า" },`}</p>
+        </div>
+
+        <div>
+          <p>{`"productDetail.price": { "zh": "价格", "en": "Price", "th": "ราคา" },`}</p>
+          <p>{`"productDetail.Product_description": { "zh": "产品描述", "en": "Product Description", "th": "รายละเอียดสินค้า" },`}</p>
+          <p>{`"productDetail.add_to_cart": { "zh": "加入购物车", "en": "Add to cart", "th": "เพิ่มใส่รถเข็น" },`}</p>
+          <p>{`"productDetail.add_cart": { "zh": "添加", "en": "Add", "th": "เพิ่ม" },`}</p>
+          <p>{`"productDetail.discount": { "zh": "打折", "en": "Discount", "th": "ลดราคา" },`}</p>
+          <p>{`"productDetail.detail_login": { "en": "Login", "zh": "登录", "th": "เข้าสู่ระบบ" },`}</p>
+          <p>{`"productDetail.Parameters": { "en": "Parameters", "zh": "参数", "th": "พารามิเตอร์" },`}</p>
+          <p>{`"productDetail.ItemNumber": { "en": "Item Number : ", "zh": " 商品编号: ", "th": "หมายเลขรายการสินค้า : " }`}</p>
+        </div>
+
+        <div>
+          <p>{`"cart.head": { "zh": "我的购物车", "en": "My Cart", "th": "รถเข็นของฉัน" },`}</p>
+          <p>{`"cart.item": { "zh": "购物车商品", "en": "Items in cart", "th": "รายการในรถเข็น" },`}</p>
+          <p>{`"cart.total": { "zh": "总共", "en": "Total", "th": "ทั้งหมด" },`}</p>
+          <p>{`"cart.buy": { "zh": "立即购买", "en": "Buy now", "th": "ซื้อตอนนี้" },`}</p>
+          <p>{`"cart.quantity": { "zh": "数量", "en": "Quantity", "th": "จำนวน" },`}</p>
+          <p>{`"cart.noitem": { "zh": "没有商品", "en": "No item", "th": "ไม่มีรายการสินค้า" },`}</p>
+          <p>{`"cart.select": { "zh": "请先选择商品", "en": " Please select a product first ", "th": "กรุณาเลือกสินค้าก่อน" }`}</p>
+        </div>
+
+        <div>
+          <p>{`}`}</p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 // NSLang
@@ -4073,7 +4187,7 @@ export function Lang_nsLang() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //getStatusCode
@@ -4094,7 +4208,7 @@ export function Lang_getStatusCode() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // level.html
@@ -4116,7 +4230,7 @@ export function Level_openTab() {
         <p>{`document.getElementById(tabName).classList.add("actived");`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //locationAddress.html
@@ -4258,7 +4372,7 @@ export function LocationAddress_getAddress() {
       </div>
       ;
     </div>
-  )
+  );
 }
 
 //  login.html
@@ -4301,14 +4415,13 @@ export function Login_checkLoginWithRefreshToken() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //askDeviceIdFun
 export function Login_askDeviceIdFun() {
   return (
     <div className="ml-4 flex flex-col gap-4 break-words">
-      <p>{`function askDeviceIdFun() {`}</p>
       <div className="ml-2">
         {`if (checkIsAndroid()) {`}
         <div className="ml-2">
@@ -4339,9 +4452,8 @@ export function Login_askDeviceIdFun() {
         </div>
         {`}`}
       </div>
-      <p>{`}`}</p>
     </div>
-  )
+  );
 }
 
 // main.html
@@ -4365,7 +4477,7 @@ export function Main_menuhome() {
         <p>{`homeObj.call()`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // menumonitor
@@ -4392,7 +4504,7 @@ export function Main_menumonitor() {
         <p>{`monitorObj.call()`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // menuwallet
@@ -4415,7 +4527,7 @@ export function Main_menuwallet() {
         <p>{`walletObj.call()`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // menusetting
@@ -4438,7 +4550,7 @@ export function Main_menusetting() {
         <p>{`settingObj.call()`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // unShowMenuPage
@@ -4464,7 +4576,7 @@ export function Main_unShowMenuPage() {
   })`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // checkIsLogin
@@ -4490,7 +4602,7 @@ export function Main_checkIsLogin() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // updateLoginStatus
@@ -4531,7 +4643,7 @@ export function Main_updateLoginStatus() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // getLocalToken
@@ -4547,7 +4659,7 @@ export function Main_getLocalToken() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // refreshToken
@@ -4567,7 +4679,7 @@ export function Main_refreshToken() {
         <p>{`}, 1800000)`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // refreshTokenFun
@@ -4619,7 +4731,7 @@ export function Main_refreshTokenFun() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //memberTier.html
@@ -4666,7 +4778,7 @@ export function MemberTier_getMemberTier() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // createMemberTier
@@ -4909,7 +5021,7 @@ export function MemberTier_createMemberTier() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // monitor.html
@@ -4958,7 +5070,7 @@ export function Monitor_monitorCheckToken() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // RestartPin
@@ -5010,7 +5122,7 @@ export function Monitor_restartPin() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // GetBill
@@ -5089,7 +5201,7 @@ export function Monitor_getBill() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //GetSolarDeviceAll
@@ -5336,7 +5448,7 @@ export function Monitor_getSolarDeviceAll() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // GetDataMonitor
@@ -5462,7 +5574,7 @@ export function Monitor_getDataMonitor() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // WS
@@ -5576,7 +5688,7 @@ export function Monitor_ws() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // getSelectedMonthMonitor
@@ -5655,7 +5767,7 @@ export function Monitor_getSelectedMonthMonitor() {
         <p>{`$("#calendarGen").html(str)`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // getSelectedDay
@@ -5748,7 +5860,7 @@ export function Monitor_getSelectedDay() {
         <p>{`$("#calendarGenDayTap").html(str)`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // openTabbill
@@ -5782,7 +5894,7 @@ export function Monitor_openTabbill() {
         {`document.getElementById(tab).classList.add("actived")`}
       </div>
     </div>
-  )
+  );
 }
 
 // RandomValueMonitorNoLogin
@@ -5842,7 +5954,7 @@ export function Monitor_randomValueMonitorNoLogin() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // luxVal
@@ -5937,7 +6049,7 @@ export function Monitor_luxVal() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // my_devices.html
@@ -6024,7 +6136,7 @@ export function My_devices_getMyDevice() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // new_address.html
@@ -6064,7 +6176,7 @@ export function New_address_validateInput() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // CreateAddress
@@ -6134,7 +6246,7 @@ export function New_address_createAddress() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // notification.html
@@ -6253,7 +6365,7 @@ export function Notification_pagination() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // GetNotification
@@ -6537,7 +6649,7 @@ export function Notification_getNotification() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 //  order_info_cancel_refund.html
@@ -6642,7 +6754,7 @@ export function Order_info_cancel_refund_getOid() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // sendRefund
@@ -6700,7 +6812,7 @@ export function Order_info_cancel_refund_sendRefund() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // cancelOrder_order_info_cancel_refund
@@ -6711,7 +6823,7 @@ export function Order_info_cancel_refund_cancelOrder_order_info_cancel_refund() 
         <p>{`cancel_orderObj.getItemAll(dataItem)`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // order_info_cancel.html
@@ -6757,7 +6869,7 @@ export function Order_info_cancel_getOid() {
         <p>{`$("#cancel_deliveryTime").text(deliveryTime);`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // cancelOrder
@@ -6768,7 +6880,7 @@ export function Order_info_cancel_cancelOrder() {
         <p>{`cancel_orderObj.getItemAll(dataItem)`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // order_info_received.html
@@ -6818,7 +6930,7 @@ export function Order_info_received_getOid() {
         <p>{`$('#received_deliveryTime').text(deliveryTime);`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // Order_info_received_cancelOrder
@@ -6829,7 +6941,7 @@ export function Order_info_received_cancelOrder() {
         <p>cancel_orderObj.getItemAll(dataItem)</p>
       </div>
     </div>
-  )
+  );
 }
 
 // order_info_received_getTimeline
@@ -6889,7 +7001,7 @@ export function Order_info_received_getTimeline() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // order_info_waitRceive.html
@@ -6943,7 +7055,7 @@ export function Order_info_waitRceive_sendReceipt() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // order_info_waitRceive_getOid
@@ -6987,7 +7099,7 @@ export function Order_info_waitRceive_getOid() {
         <p>{`$('#waitRceive_deliveryTime').text(deliveryTime);`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // order_info_waitRceive_getTimeline
@@ -7044,7 +7156,7 @@ export function Order_info_waitRceive_getTimeline() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // order_state_10.html
@@ -7085,7 +7197,7 @@ export function OrderState10_getOid() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // order_state_ship.html
@@ -7127,7 +7239,7 @@ export function OrderStateShip_getOid() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // payment_method.html
@@ -7167,7 +7279,7 @@ export function Payment_method_selectPayment() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //  payment_method2.html
@@ -7217,7 +7329,7 @@ export function Payment_method2_genQR() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // start_timer
@@ -7268,7 +7380,7 @@ export function Payment_method2_start_stimer() {
         <p>{``}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // AddSlipPayment
@@ -7319,7 +7431,7 @@ export function Payment_method2_addSlipPayment() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // UpdateSlipPayment
@@ -7387,7 +7499,7 @@ export function Payment_method2_updateSlipPayment() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // paymentStatistic.html
@@ -7445,7 +7557,7 @@ export function PaymentStatistic_getPaymentStatistic() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // ChartPaymentStatistic
@@ -7553,7 +7665,7 @@ export function PaymentStatistic_chartPaymentStatistic() {
         <p>{`option && myChart.setOption(option);`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // ExportCSVPayment
@@ -7593,7 +7705,7 @@ export function PaymentStatistic_exportCSVPayment() {
         <p>{`downloadCSV(csv, \`Yojosolar Payment Statistic-{formattedDate}.csv\`);`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // productCart.html
@@ -7647,7 +7759,7 @@ export function ProductCart_showCart() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // show_cart
@@ -7749,7 +7861,7 @@ export function ProductCart_show_cart() {
         <p>{`})`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // update_quantity
@@ -7817,7 +7929,7 @@ export function ProductCart_update_quantity() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // delete_id
@@ -7877,7 +7989,7 @@ export function ProductCart_delete_id() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // sumPrice
@@ -7912,7 +8024,7 @@ export function ProductCart_sumPrice() {
         <p>{`$("#show_total_price").html(parseFloat(sum).toLocaleString() + '&nbsp;' + '฿');`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // confirmOrder
@@ -7983,7 +8095,7 @@ export function ProductCart_confirmOrder() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //  productdetail.html
@@ -8051,7 +8163,7 @@ export function Productdetail_confirmOrderBuy() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // getDetailProduct
@@ -8208,7 +8320,7 @@ export function Productdetail_getDetailProduct() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // checkLogin
@@ -8230,7 +8342,7 @@ export function Productdetail_checkLogin() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // purchaseReport.html
@@ -8324,7 +8436,7 @@ export function PurchaseReport_getSalesData() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // CreateTableReport
@@ -8515,7 +8627,7 @@ export function PurchaseReport_createTableReport() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // CreateTableQuarter
@@ -8600,7 +8712,7 @@ export function PurchaseReport_createTableQuarter() {
         <p>{`$("#purchaseReportScroller").css({ "width": w, "height": h - 75, "overflow": "hidden", "background-color": "#E3F5FF" });`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // getSelectedMonthpurchase
@@ -8670,7 +8782,7 @@ export function PurchaseReport_getSelectedMonthpurchase() {
         <p>{`$('#calendarGen1').html(str);`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // showChart
@@ -8819,7 +8931,7 @@ export function PurchaseReport_showChart() {
         <p>{`myScroll = new IScroll('#purchaseReportScroller', { probeType: 1, mouseWheel: true });`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // ExportCSV
@@ -8888,7 +9000,7 @@ export function PurchaseReport_exportCSV() {
         <p>{`document.body.removeChild(downloadLink);`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // redeem.html
@@ -8923,7 +9035,7 @@ export function Redeem_redeemCheckToken() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // checkNoInput
@@ -8960,7 +9072,7 @@ export function Redeem_checkNoInput() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // postRedeem
@@ -9013,7 +9125,7 @@ export function Redeem_postRedeem() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // refund.html
@@ -9029,7 +9141,7 @@ export function Refund_getData() {
         <p>{`$('#Quantity_refund').text('Quantity x ' + dataItem.quantity)`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // sendRefund
@@ -9109,7 +9221,7 @@ export function Refund_sendRefund() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // PreviewImg_refund
@@ -9198,7 +9310,7 @@ export function Refund_previewImg_refund() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // register.html
@@ -9279,7 +9391,7 @@ export function Register_registerFun() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // SendOTP
@@ -9382,7 +9494,7 @@ export function Register_sendOTP() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // reportdatalogger.html
@@ -9463,7 +9575,7 @@ export function Reportdatalogger_createHTML() {
         {`$("#img_show_31").css("display", "none")`}
       </div>
     </div>
-  )
+  );
 }
 
 // GetReportData
@@ -9546,7 +9658,7 @@ export function Reportdatalogger_getReportData() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // getSelectedDate
@@ -9697,7 +9809,7 @@ export function Reportdatalogger_getSelectedDate() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // openTabreportCart
@@ -9800,7 +9912,7 @@ export function Reportdatalogger_openTabreportCart() {
         <p>{`document.getElementById(tabreportCart).classList.add("activedCart")`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 //openTabreport
@@ -9946,7 +10058,7 @@ export function Reportdatalogger_openTabreport() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // chartFlowDay
@@ -10188,7 +10300,7 @@ export function Reportdatalogger_chartFlowDay() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // chartFlowMonth
@@ -10426,7 +10538,7 @@ export function Reportdatalogger_chartFlowMonth() {
         {`});`}
       </div>
     </div>
-  )
+  );
 }
 
 // chartFlowYear
@@ -10664,7 +10776,7 @@ export function Reportdatalogger_chartFlowYear() {
         {`});`}
       </div>
     </div>
-  )
+  );
 }
 
 // chartFlowTotal
@@ -10902,7 +11014,7 @@ export function Reportdatalogger_chartFlowTotal() {
         {`});`}
       </div>
     </div>
-  )
+  );
 }
 
 // chargePower
@@ -11105,7 +11217,7 @@ export function Reportdatalogger_chargePower() {
         {`});`}
       </div>
     </div>
-  )
+  );
 }
 
 // chartNOlogin
@@ -11221,7 +11333,7 @@ export function Reportdatalogger_chartNOlogin() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // chartNOloginMonthcart
@@ -11347,7 +11459,7 @@ export function Reportdatalogger_chartNOloginMonthcart() {
         {`option && myChart.setOption(option);`}
       </div>
     </div>
-  )
+  );
 }
 
 // chartNOloginYearhcart
@@ -11473,7 +11585,7 @@ export function Reportdatalogger_chartNOloginYearhcart() {
         {`option && myChart.setOption(option);`}
       </div>
     </div>
-  )
+  );
 }
 
 // chartNOloginTotalhcart
@@ -11600,7 +11712,7 @@ export function Reportdatalogger_chartNOloginTotalhcart() {
         {`option && myChart.setOption(option);`}
       </div>
     </div>
-  )
+  );
 }
 
 // chargePowerNOlogin
@@ -11700,7 +11812,7 @@ export function Reportdatalogger_chargePowerNOlogin() {
         {`option && myChart.setOption(option);`}
       </div>
     </div>
-  )
+  );
 }
 
 // setting_account.html
@@ -11716,7 +11828,7 @@ export function Setting_account_settingAccountCheckToken() {
       }`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // updateProfile
@@ -11767,7 +11879,7 @@ export function Setting_account_updateProfile() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // AddAvatar
@@ -11820,7 +11932,7 @@ export function Setting_account_addAvatar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // UpdateAvatar
@@ -11869,7 +11981,7 @@ export function Setting_account_updateAvatar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // settingOrder.html
@@ -12179,7 +12291,7 @@ export function SettingOrder_getAll() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // scroller
@@ -12191,7 +12303,7 @@ export function SettingOrder_scroller() {
         <p>{` myScroll1 = new IScroll('#settingOrder1Scroller', { probeType: 1, mouseWheel: true });`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // setting.html
@@ -12219,7 +12331,7 @@ export function Setting_SettingCheckToken() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // getQRcode
@@ -12264,7 +12376,7 @@ export function Setting_getQRcode() {
         {`})`}
       </div>
     </div>
-  )
+  );
 }
 
 // start.html
@@ -12322,7 +12434,7 @@ export function Start_init() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // topup.html
@@ -12348,7 +12460,7 @@ export function Topup_topUpCheckToken() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // checkNoInput
@@ -12394,7 +12506,7 @@ export function Topup_checkNoInput() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // addSlipPayment
@@ -12440,7 +12552,7 @@ export function Topup_addSlipPayment() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // updateSlipPayment
@@ -12511,7 +12623,7 @@ export function Topup_updateSlipPayment() {
         {`});`}
       </div>
     </div>
-  )
+  );
 }
 
 // transaction.html
@@ -12532,7 +12644,7 @@ export function Transaction_transactionCheckToken() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // getTransaction
@@ -12647,7 +12759,7 @@ export function Transaction_getTransaction() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // pagination_tran
@@ -12730,7 +12842,7 @@ export function Transaction_pagination_tran() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // transaction_calPage
@@ -12814,7 +12926,7 @@ export function Transaction_calPage() {
         {`})`}
       </div>
     </div>
-  )
+  );
 }
 
 //  transfer.html
@@ -12842,7 +12954,7 @@ export function Transfer_transferCheckToken() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // checkNoInput
@@ -12902,7 +13014,7 @@ export function Transfer_checkNoInput() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // postTransfer
@@ -12959,7 +13071,7 @@ export function Transfer_postTransfer() {
         {`});`}
       </div>
     </div>
-  )
+  );
 }
 
 // update_order.html
@@ -13050,7 +13162,7 @@ export function Update_order_showOrder() {
         {`});`}
       </div>
     </div>
-  )
+  );
 }
 
 // scroller
@@ -13062,7 +13174,7 @@ export function Update_order_scroller() {
         <p>{`  $("#showOrderScroller").css({ "width": w, "height": h - 90, "overflow": "hidden", "background-color": "#E3F5FF", });`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // vouncher_code.html
@@ -13144,7 +13256,7 @@ export function Vouncher_code_showVoucher() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // wallet.html
@@ -13186,7 +13298,7 @@ export function Wallet_walletCheckToken() {
         {`}`}
       </div>
     </div>
-  )
+  );
 }
 
 // getUserData
@@ -13268,7 +13380,7 @@ export function Wallet_getUserData() {
         {`});`}
       </div>
     </div>
-  )
+  );
 }
 
 // get_dataTransaction
@@ -13515,7 +13627,7 @@ export function Wallet_get_dataTransaction() {
         {`});`}
       </div>
     </div>
-  )
+  );
 }
 
 // Wallet_loadList
@@ -13540,7 +13652,7 @@ export function Wallet_loadList() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 //Index.html modelStructure
@@ -13582,7 +13694,7 @@ export function IndexHead() {
         {`<script language="javascript" type="text/javascript" src="js/QrCode.js"></script>`}
       </div>
     </div>
-  )
+  );
 }
 
 // IndexStyle
@@ -13669,7 +13781,7 @@ export function IndexStyle() {
 }`}
       </pre>
     </div>
-  )
+  );
 }
 
 // Index body full
@@ -13960,7 +14072,7 @@ export function IndexBodyFull() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // Index Script VAR
@@ -14052,7 +14164,7 @@ export function IndexBodyScriptVar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // Index Script startApp
@@ -14134,7 +14246,7 @@ export function IndexBodyScriptStartApp() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  )
+  );
 }
 
 // Index Script errorApp
@@ -14147,7 +14259,7 @@ export function IndexBodyScriptErrorApp() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  )
+  );
 }
 
 // Index Script onBackPressed
@@ -14160,7 +14272,7 @@ export function IndexBodyScriptOnBackPressed() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  )
+  );
 }
 
 // Index Script setKeyboardHeight
@@ -14173,7 +14285,7 @@ export function IndexBodyScriptSetKeyboardHeight() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  )
+  );
 }
 
 // Index Script setDeviceId
@@ -14187,7 +14299,7 @@ export function IndexBodyScriptSetDeviceId() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  )
+  );
 }
 
 // Index Script appComeback
@@ -14201,7 +14313,7 @@ export function IndexBodyScriptAppComeback() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  )
+  );
 }
 
 // Index Script openAgreement
@@ -14214,7 +14326,7 @@ export function IndexBodyScripOpenAgreement() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  )
+  );
 }
 
 // Index Script openPrivacy
@@ -14227,7 +14339,7 @@ export function IndexBodyScripOpenPrivacy() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  )
+  );
 }
 
 // Index Script firstStartFun
@@ -14246,7 +14358,7 @@ export function IndexBodyScripFirstStartFun() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  )
+  );
 }
 
 // Index Script firstCheckToken
@@ -14310,7 +14422,7 @@ export function IndexBodyScripFirstCheckToken() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  )
+  );
 }
 
 // Main Html body
@@ -14388,7 +14500,7 @@ export function MainHtmlBody() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // Main Html Script function main init
@@ -14446,7 +14558,7 @@ export function MainHtmlScriptInit() {
       <p>{`mResObj.showHtml("wallet.html", "body_main")`}</p>
       <p>{`mResObj.showHtml("setting.html", "body_main")`}</p>
     </div>
-  )
+  );
 }
 
 // Login.html
@@ -14527,7 +14639,7 @@ export function Body_longin() {
         {`</div>`}
       </div>
     </div>
-  )
+  );
 }
 
 // fetchSliderConfigAndData Logine
@@ -14617,10 +14729,10 @@ export function FetchSliderConfigAndData_login() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-// FetchSliderData Login
+// fetchSliderData Login
 export function FetchSliderData_login() {
   return (
     <div className="ml-4 break-words">
@@ -14655,10 +14767,10 @@ export function FetchSliderData_login() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
-// Slider_cap login
+// slider_cap login
 export function Slider_cap_login() {
   return (
     <div className="ml-4 break-words">
@@ -14726,7 +14838,7 @@ export function Slider_cap_login() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // loginFun login
@@ -14805,10 +14917,10 @@ export function LoginFun_login() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
-// loginFun login
+// checkLoginStatusWithRefreshToken login
 export function CheckLoginStatusWithRefreshToken() {
   return (
     <div className="ml-4 break-words">
@@ -14870,7 +14982,7 @@ export function CheckLoginStatusWithRefreshToken() {
         <p>{`});`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // getStatusCodeLang
@@ -14899,7 +15011,7 @@ export function GetStatusCodeLang() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // getlevel
@@ -14966,5 +15078,5 @@ export function Getlevel() {
         <p>{`}`}</p>
       </div>
     </div>
-  )
+  );
 }
