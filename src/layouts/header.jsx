@@ -26,7 +26,7 @@ export default function HeaderNavbar() {
     }
 
     if (menu === "Slip Function") {
-      setSelectedMenu("validateInput")
+      setSelectedMenu("AddAvatar")
     }
 
     if (menu === "Ex") {

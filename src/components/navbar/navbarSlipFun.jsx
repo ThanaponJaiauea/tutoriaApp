@@ -23,8 +23,7 @@ export default function NavbarSlipFun({handleModelClick}) {
           handlelClickToTOp()
           handleModelClick(key.key)
         }}
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
+        defaultSelectedKeys={["AddAvatar"]}
         mode="inline"
         theme="light">
         {slipFunData

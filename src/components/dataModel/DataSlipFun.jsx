@@ -3,13 +3,8 @@ import {PieChartOutlined} from "@ant-design/icons"
 
 export const slipFunData = [
   {
-    label: "init()",
-    key: "init",
-    icon: <PieChartOutlined />,
-  },
-  {
-    label: "call()",
-    key: "call",
+    label: "init() And call()",
+    key: "initAndCall",
     icon: <PieChartOutlined />,
   },
   {
@@ -765,6 +760,11 @@ export const slipFunData = [
   {
     label: "loopWithdraw()",
     key: "loopWithdraw",
+    icon: <PieChartOutlined />,
+  },
+  {
+    label: "menuhome()",
+    key: "menuhome",
     icon: <PieChartOutlined />,
   },
 ]

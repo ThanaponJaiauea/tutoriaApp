@@ -1,9 +1,10 @@
 /** @format */
 
-import MessageBoxTryit from "./tryitFunction/messageBoxTryit";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import indexStartApp from "../pictures/indexStartApp.png";
+import MessageBoxTryit from "./tryitFunction/messageBoxTryit"
+import {FiChevronDown, FiChevronUp} from "react-icons/fi"
+import indexStartApp from "../pictures/indexStartApp.png"
 import {
+  AddSlipPayment,
   Addda_talogger_addDate,
   Addda_talogger_createDevice,
   Addda_talogger_validateInput,
@@ -15,7 +16,12 @@ import {
   Cancel_order_getItemAll,
   Cancel_order_sentCancelOrder,
   ChangePasswordHtml,
+  CheckIn,
+  CheckInBonus,
   CheckLoginStatusWithRefreshToken,
+  CheckMathCoupon,
+  CheckPayMentMethod,
+  CleanInput,
   Coin_history_calPage,
   Coin_history_getRedeemHis,
   Coin_history_pagination_coins,
@@ -39,6 +45,8 @@ import {
   Customer_updateSalesData,
   Data_customer_details_getDataCustomerDetail,
   Data_customer_getDataCustomer,
+  DeleteAlipay,
+  DeleteBank,
   Deletedatalogger_getDeviceAll,
   Distributor_PreviewImg,
   Distributor_PreviewImg2,
@@ -50,16 +58,30 @@ import {
   EditAddress_deleteAddress,
   EditAddress_editAddress,
   EditAddress_getAddressID,
+  Feedback,
   FetchSliderConfigAndData_login,
   FetchSliderData_login,
+  First,
   Forgotpass_forgotPass,
   Forgotpass_sendOTP_forgot,
   FunctionMessageBoxText,
+  Get2FATrade,
+  Get2FAconvert_DSF,
   GetAbsTimeWidget,
-  GetStatusCodeLang,
+  GetAnnouncement,
+  GetAnnouncement_view,
+  GetAnnouncement_viewID,
+  GetFinancialAlipay,
+  GetFinancialBank,
+  GetFinancialPayments,
+  GetHistory,
+  GetInstitution,
+  GetVoucherInvite,
   Getlevel,
+  Getnewgroup,
   HeaderInitExampleScript,
   HeaderInitWidget,
+  HistoryFunction,
   Home_html_checkSimulated,
   Home_html_checklocalStorage,
   Home_html_count,
@@ -132,6 +154,7 @@ import {
   NSLangArrLang,
   New_address_createAddress,
   New_address_validateInput,
+  News,
   Notification_getNotification,
   Notification_pagination,
   OrderState10_getOid,
@@ -159,11 +182,13 @@ import {
   PaymentStatistic_chartPaymentStatistic,
   PaymentStatistic_exportCSVPayment,
   PaymentStatistic_getPaymentStatistic,
-  Payment_method2_addSlipPayment,
   Payment_method2_genQR,
   Payment_method2_start_stimer,
-  Payment_method2_updateSlipPayment,
   Payment_method_selectPayment,
+  PostConvert,
+  PostReceiveVouncher,
+  PostWithdraw,
+  Postconvert_DSFCIPS,
   ProductCart_confirmOrder,
   ProductCart_delete_id,
   ProductCart_showCart,
@@ -173,6 +198,7 @@ import {
   Productdetail_checkLogin,
   Productdetail_confirmOrderBuy,
   Productdetail_getDetailProduct,
+  Profile_invite,
   PurchaseReport_createTableQuarter,
   PurchaseReport_createTableReport,
   PurchaseReport_exportCSV,
@@ -182,6 +208,7 @@ import {
   Redeem_checkNoInput,
   Redeem_postRedeem,
   Redeem_redeemCheckToken,
+  Redempiontcode,
   Refund_getData,
   Refund_previewImg_refund,
   Refund_sendRefund,
@@ -203,6 +230,7 @@ import {
   Reportdatalogger_openTabreport,
   Reportdatalogger_openTabreportCart,
   ResObjWidget,
+  SendMessage,
   SettingOrder_getAll,
   SettingOrder_scroller,
   Setting_SettingCheckToken,
@@ -212,6 +240,7 @@ import {
   Setting_account_updateProfile,
   Setting_getQRcode,
   Slider_cap_login,
+  Start_call,
   Start_init,
   Topup_addSlipPayment,
   Topup_checkNoInput,
@@ -224,37 +253,41 @@ import {
   Transfer_checkNoInput,
   Transfer_postTransfer,
   Transfer_transferCheckToken,
+  UpdateSlipPayment,
   Update_order_scroller,
   Update_order_showOrder,
+  Verify2faTrade,
+  Verify2faconvert_DSF,
   Vouncher_code_showVoucher,
   Wallet_getUserData,
   Wallet_get_dataTransaction,
   Wallet_loadList,
   Wallet_walletCheckToken,
-} from "./dataContents/FunctionDataText";
+} from "./dataContents/FunctionDataText"
 
-import AlertTryit from "./tryitFunction/alertTryit";
-import HeaderInitTryit from "./tryitFunction/headerInitTryit";
-import PageShowTryit from "./tryitFunction/pageShowTryit";
-import PageUnShowTryit from "./tryitFunction/pageUnShowTryit";
-import LoaderTryit from "./tryitFunction/loaderTryit";
-import MessagePage from "./tryitFunction/messagePageTryit";
-import step1 from "../pictures/step1.png";
-import step2 from "../pictures/step2.png";
-import step3 from "../pictures/step3.png";
-import step4 from "../pictures/step4.png";
-import step5 from "../pictures/step5.png";
-import stepclone4 from "../pictures/stepclone4.png";
-import stepbuild5 from "../pictures/stepbuild5.png";
-import stepcd5 from "../pictures/stepcd5.png";
-import stepstart5 from "../pictures/stepstart5.png";
-import stepopen5 from "../pictures/stepopen5.png";
-import step6 from "../pictures/step6.png";
-import { Link } from "react-router-dom";
-import MainTryit from "./tryitFunction/mainTryit";
+import AlertTryit from "./tryitFunction/alertTryit"
+import HeaderInitTryit from "./tryitFunction/headerInitTryit"
+import PageShowTryit from "./tryitFunction/pageShowTryit"
+import PageUnShowTryit from "./tryitFunction/pageUnShowTryit"
+import LoaderTryit from "./tryitFunction/loaderTryit"
+import MessagePage from "./tryitFunction/messagePageTryit"
+import step1 from "../pictures/step1.png"
+import step2 from "../pictures/step2.png"
+import step3 from "../pictures/step3.png"
+import step4 from "../pictures/step4.png"
+import step5 from "../pictures/step5.png"
+import stepclone4 from "../pictures/stepclone4.png"
+import stepbuild5 from "../pictures/stepbuild5.png"
+import stepcd5 from "../pictures/stepcd5.png"
+import stepstart5 from "../pictures/stepstart5.png"
+import stepopen5 from "../pictures/stepopen5.png"
+import step6 from "../pictures/step6.png"
+import {Link} from "react-router-dom"
+import MainTryit from "./tryitFunction/mainTryit"
 
 export default function ModelContent({
   htmlCheckScript,
+  htmlCheckCall,
   htmlCheckBody,
   htmlCheckVar,
   setOpenMainBody,
@@ -323,6 +356,7 @@ export default function ModelContent({
   content4p2,
   content4p3,
   content4p4,
+  content4p5,
   content5,
   content5p1,
   content5p2,
@@ -336,9 +370,12 @@ export default function ModelContent({
   content7,
   content7p1,
   content7p2,
+  content7p3,
   content8,
   content8p1,
   content8p2,
+  content8p3,
+  content8p4,
   content9,
   content10,
   content11,
@@ -388,7 +425,7 @@ export default function ModelContent({
   listIndex,
 }) {
   const CONTAINER_CLASSES =
-    "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5";
+    "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
 
   return (
     <div className="w-full py-4">
@@ -488,7 +525,9 @@ export default function ModelContent({
                 <p className="text-xl">
                   -ถ้ายังไม่ได้ติดตั้ง git สามารถดาวน์โหลดจาก link นี้ได้ :
                 </p>
-                <Link to="https://git-scm.com/downloads" target="_blank">
+                <Link
+                  to="https://git-scm.com/downloads"
+                  target="_blank">
                   <p className="text-red-600 text-xl hover:underline">
                     https://git-scm.com/downloads
                   </p>
@@ -497,7 +536,10 @@ export default function ModelContent({
             </div>
 
             <div className="w-full">
-              <img src={step4} className="w-full" />
+              <img
+                src={step4}
+                className="w-full"
+              />
             </div>
           </div>
 
@@ -515,7 +557,10 @@ export default function ModelContent({
             </div>
 
             <div className="w-full">
-              <img src={stepclone4} className="w-full" />
+              <img
+                src={stepclone4}
+                className="w-full"
+              />
             </div>
           </div>
 
@@ -592,7 +637,7 @@ export default function ModelContent({
       ) : null}
 
       {/* HTML  */}
-      {htmlCheck === "show" ? (
+      {htmlCheck === true && (
         <div>
           <div className={`${CONTAINER_CLASSES} break-words`}>
             <div className="w-full py-4 ">
@@ -619,6 +664,7 @@ export default function ModelContent({
                 {content4p2 && <p>{content4p2}</p>}
                 {content4p3 && <p>{content4p3}</p>}
                 {content4p4 && <p>{content4p4}</p>}
+                {content4p5 && <p>{content4p5}</p>}
                 {content5 && <p>{content5}</p>}
                 {content5p1 && <p>{content5p1}</p>}
                 {content5p2 && <p>{content5p2}</p>}
@@ -632,9 +678,12 @@ export default function ModelContent({
                 {content7 && <p>{content7}</p>}
                 {content7p1 && <p>{content7p1}</p>}
                 {content7p2 && <p>{content7p2}</p>}
+                {content7p3 && <p>{content7p3}</p>}
                 {content8 && <p>{content8}</p>}
                 {content8p1 && <p>{content8p1}</p>}
                 {content8p2 && <p>{content8p2}</p>}
+                {content8p3 && <p>{content8p3}</p>}
+                {content8p4 && <p>{content8p4}</p>}
                 {content9 && <p>{content9}</p>}
                 {content10 && <p>{content10}</p>}
                 {content11 && <p>{content11}</p>}
@@ -668,6 +717,7 @@ export default function ModelContent({
                   <Home_html_getAllProduct />
                 )}
                 {selectedMenu === "getCheckIn" && <Home_html_getCheckIn />}
+                {selectedMenu === "checkIn" && <CheckIn />}
                 {selectedMenu === "validateInput" && (
                   <Addda_talogger_validateInput />
                 )}
@@ -716,7 +766,7 @@ export default function ModelContent({
                 {selectedMenu === "cleanDataDefualt" && (
                   <Confirm_order_cleanDataDefualt />
                 )}
-                {selectedMenu === "GetDataCustPurchaseReportStats" && (
+                {selectedMenu === "GetDataCustomerPurchaseReportStatics" && (
                   <Customer_getDataCustPurchaseReportStats />
                 )}
                 {selectedMenu === "showChartTotalCustomer" && (
@@ -835,7 +885,7 @@ export default function ModelContent({
                 {selectedMenu === "getOid" && (
                   <Order_info_cancel_refund_getOid />
                 )}
-                {selectedMenu === "sendRefundOrderInfoCancelRefund" && (
+                {selectedMenu === "sendRefund" && (
                   <Order_info_cancel_refund_sendRefund />
                 )}
                 {selectedMenu === "cancelOrder_order_info_cancel_refund" && (
@@ -884,12 +934,8 @@ export default function ModelContent({
                 {selectedMenu === "start_timer" && (
                   <Payment_method2_start_stimer />
                 )}
-                {selectedMenu === "AddSlipPayment" && (
-                  <Payment_method2_addSlipPayment />
-                )}
-                {selectedMenu === "UpdateSlipPayment" && (
-                  <Payment_method2_updateSlipPayment />
-                )}
+                {selectedMenu === "AddSlipPayment" && <AddSlipPayment />}
+                {selectedMenu === "UpdateSlipPayment" && <UpdateSlipPayment />}
                 {selectedMenu === "GetPaymentStatistic" && (
                   <PaymentStatistic_getPaymentStatistic />
                 )}
@@ -1003,7 +1049,7 @@ export default function ModelContent({
                   <Setting_SettingCheckToken />
                 )}
                 {selectedMenu === "getQRcode" && <Setting_getQRcode />}
-                {selectedMenu === "startInit" && <Start_init />}
+                {selectedMenu === "initAndCall" && <Start_init />}
                 {selectedMenu === "TopUpCheckToken" && (
                   <Topup_topUpCheckToken />
                 )}
@@ -1062,8 +1108,66 @@ export default function ModelContent({
                 {selectedMenu === "checkLoginStatusWithRefreshToken" && (
                   <CheckLoginStatusWithRefreshToken />
                 )}
+                {selectedMenu === "cleanInput" && <CleanInput />}
+                {selectedMenu === "getFinancialAlipay" && (
+                  <GetFinancialAlipay />
+                )}
+                {selectedMenu === "deleteAlipay" && <DeleteAlipay />}
+                {selectedMenu === "historyFunction" && <HistoryFunction />}
+                {selectedMenu === "getFinancialBank" && <GetFinancialBank />}
+                {selectedMenu === "deleteBank" && <DeleteBank />}
+                {selectedMenu === "sendMessage" && <SendMessage />}
+                {selectedMenu === "checkInBonus" && <CheckInBonus />}
+                {selectedMenu === "get2FAconvert_DSF" && <Get2FAconvert_DSF />}
+                {selectedMenu === "verify2faconvert_DSF" && (
+                  <Verify2faconvert_DSF />
+                )}
+                {selectedMenu === "postconvert_DSFCIPS" && (
+                  <Postconvert_DSFCIPS />
+                )}
+                {selectedMenu === "get2FATrade" && <Get2FATrade />}
+                {selectedMenu === "verify2faTrade" && <Verify2faTrade />}
+                {selectedMenu === "postWithdraw" && <PostWithdraw />}
+                {selectedMenu === "postConvert" && <PostConvert />}
+                {selectedMenu === "getFinancialPayments" && (
+                  <GetFinancialPayments />
+                )}
+                {selectedMenu === "checkPayMentMethod" && (
+                  <CheckPayMentMethod />
+                )}
+                {selectedMenu === "feedback" && <Feedback />}
+                {selectedMenu === "getInstitution" && <GetInstitution />}
+                {selectedMenu === "getAnnouncement" && <GetAnnouncement />}
+                {selectedMenu === "news" && <News />}
+                {selectedMenu === "first" && <First />}
+                {selectedMenu === "redempiontcode" && <Redempiontcode />}
+                {selectedMenu === "CheckMathCoupon" && <CheckMathCoupon />}
+                {selectedMenu === "getnewgroup" && <Getnewgroup />}
+                {selectedMenu === "profile_invite" && <Profile_invite />}
+                {selectedMenu === "getAnnouncement_viewID" && (
+                  <GetAnnouncement_viewID />
+                )}
+                {selectedMenu === "getAnnouncement_view" && (
+                  <GetAnnouncement_view />
+                )}
+                {selectedMenu === "getHistory" && <GetHistory />}
+                {selectedMenu === "getVoucherInvite" && <GetVoucherInvite />}
+                {selectedMenu === "postReceiveVouncher" && (
+                  <PostReceiveVouncher />
+                )}
                 <p className="ml-4">{`}`}</p>
                 <span className="text-[#A52A2A]"> &lt;script&gt;</span>
+              </div>
+            )}
+
+            {htmlCheckCall === true && htmlCheckScript === true && (
+              <div className="mt-10">
+                <h3 className="text-[23px] font-bold">Call()</h3>
+                <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
+                  <span className="text-[#A52A2A]">&lt;Script&gt;</span>
+                  {selectedMenu === "initAndCall" && <Start_call />}
+                  <span className="text-[#A52A2A]"> &lt;Script&gt;</span>
+                </div>
               </div>
             )}
 
@@ -1085,7 +1189,7 @@ export default function ModelContent({
             )}
           </div>
         </div>
-      ) : null}
+      )}
 
       {/* base64.js */}
       {base64 ? (
@@ -1158,8 +1262,7 @@ export default function ModelContent({
           <div className="w-full py-4">
             <button
               onClick={setOpenIndexHead}
-              className="w-full flex items-center justify-between"
-            >
+              className="w-full flex items-center justify-between">
               <h3 className="text-[23px] font-bold">Head</h3>
 
               {listIndex && (
@@ -1210,8 +1313,7 @@ export default function ModelContent({
           <div className="w-full py-4">
             <button
               onClick={setOpenIndexStyle}
-              className="w-full flex items-center justify-between"
-            >
+              className="w-full flex items-center justify-between">
               <h3 className="text-[23px] font-bold">Style</h3>
 
               {listIndex && (
@@ -1262,8 +1364,7 @@ export default function ModelContent({
           <div className="w-full py-4">
             <button
               onClick={setOpenIndexBody}
-              className="w-full flex items-center justify-between"
-            >
+              className="w-full flex items-center justify-between">
               <h3 className="text-[23px] font-bold">Body</h3>
 
               {listIndex && (
@@ -1312,8 +1413,7 @@ export default function ModelContent({
           <div className="w-full py-4">
             <button
               onClick={setOpenIndexScript}
-              className="w-full flex items-center justify-between"
-            >
+              className="w-full flex items-center justify-between">
               <h3 className="text-[23px] font-bold">Script</h3>
               {!openIndexScript ? <FiChevronDown /> : <FiChevronUp />}
             </button>
@@ -1694,8 +1794,7 @@ export default function ModelContent({
             <div className="w-full py-4">
               <button
                 onClick={setOpenMainBody}
-                className="w-full flex items-center justify-between"
-              >
+                className="w-full flex items-center justify-between">
                 <h3 className="text-[23px] font-bold">Body</h3>
                 {!openMainBody ? <FiChevronDown /> : <FiChevronUp />}
               </button>
@@ -1723,8 +1822,7 @@ export default function ModelContent({
             <div className="w-full  py-4 break-words">
               <button
                 onClick={setOpenMainScript}
-                className="w-full flex items-center justify-between"
-              >
+                className="w-full flex items-center justify-between">
                 <h3 className="text-[23px] font-bold">Script</h3>
                 {!openMainScript ? <FiChevronDown /> : <FiChevronUp />}
               </button>
@@ -1949,5 +2047,5 @@ export default function ModelContent({
         </div>
       ) : null}
     </div>
-  );
+  )
 }

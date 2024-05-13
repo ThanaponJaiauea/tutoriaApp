@@ -1,365 +1,435 @@
 /** @format */
 
-import ModelContent from "../modelContent";
+import ModelContent from "../modelContent"
 
-const FormCintentSlipFun = ({ selectedMenu }) => {
+const FormCintentSlipFun = ({selectedMenu}) => {
   const getTitle = () => {
     switch (selectedMenu) {
       case "count":
-        return "count()";
+        return "count()"
       case "HomeCheckToken":
-        return "HomeCheckToken()";
+        return "HomeCheckToken()"
       case "getProfile":
-        return "getProfile()";
+        return "getProfile()"
       case "sendApi":
-        return "sendApi()";
+        return "sendApi()"
       case "checklocalStorage":
-        return "checklocalStorage()";
+        return "checklocalStorage()"
       case "checkSimulated":
-        return "checkSimulated()";
+        return "checkSimulated()"
       case "getRecommendProduct":
-        return "getRecommendProduct()";
+        return "getRecommendProduct()"
       case "getAllProduct":
-        return "getAllProduct()";
+        return "getAllProduct()"
       case "getCheckIn":
-        return "getCheckIn()";
+        return "getCheckIn()"
       case "validateInput":
-        return "validateInput()";
+        return "validateInput()"
       case "AddDate":
-        return "AddDate()";
+        return "AddDate()"
       case "CreateDevice":
-        return "CreateDevice()";
+        return "CreateDevice()"
       case "getItemAll":
-        return "getItemAll()";
+        return "getItemAll()"
       case "sentCancelOrder":
-        return "sentCancelOrder()";
+        return "sentCancelOrder()"
       case "changePassword":
-        return "changePassword()";
+        return "changePassword()"
       case "getRedeemHis":
-        return "getRedeemHis()";
+        return "getRedeemHis()"
       case "pagination_coins":
-        return "pagination_coins()";
+        return "pagination_coins()"
       case "calPage":
-        return "calPage()";
+        return "calPage()"
       case "CoinsCheckToken":
-        return "CoinsCheckToken()";
+        return "CoinsCheckToken()"
       case "getPointCoins":
-        return "getPointCoins()";
+        return "getPointCoins()"
       case "updateDevice":
-        return "updateDevice()";
+        return "updateDevice()"
       case "Con":
-        return "Con()";
+        return "Con()"
       case "getOrder":
-        return "getOrder()";
+        return "getOrder()"
       case "getStatePayment":
-        return "getStatePayment()";
+        return "getStatePayment()"
       case "setVoucherId":
-        return "setVoucherId()";
+        return "setVoucherId()"
       case "postOrderNow":
-        return "postOrderNow()";
+        return "postOrderNow()"
       case "getAddress":
-        return "getAddress()";
+        return "getAddress()"
       case "getCodeDisCountVoucher":
-        return "getCodeDisCountVoucher()";
+        return "getCodeDisCountVoucher()"
       case "getCodeDisCountMember":
-        return "getCodeDisCountMember()";
+        return "getCodeDisCountMember()"
       case "calTotal":
-        return "calTotal()";
+        return "calTotal()"
       case "cleanDataDefualt":
-        return "cleanDataDefualt()";
-      case "GetDataCustPurchaseReportStats":
-        return "GetDataCustPurchaseReportStats()";
+        return "cleanDataDefualt()"
+      case "GetDataCustomerPurchaseReportStatics":
+        return "GetDataCustomerPurchaseReportStatics()"
       case "showChartTotalCustomer":
-        return "showChartTotalCustomer()";
+        return "showChartTotalCustomer()"
       case "ChartMethod":
-        return "ChartMethod()";
+        return "ChartMethod()"
       case "ChartGender":
-        return "ChartGender()";
+        return "ChartGender()"
       case "updateSalesData":
-        return "updateSalesData()";
+        return "updateSalesData()"
       case "GetDataCustomer":
-        return "GetDataCustomer()";
+        return "GetDataCustomer()"
       case "getDeviceAll":
-        return "getDeviceAll()";
+        return "getDeviceAll()"
       case "distributorFun":
-        return "distributorFun()";
+        return "distributorFun()"
       case "PreviewImg":
-        return "PreviewImg()";
+        return "PreviewImg()"
       case "PreviewImg_2":
-        return "PreviewImg_2()";
+        return "PreviewImg_2()"
       case "CreateDistributor":
-        return "CreateDistributor()";
+        return "CreateDistributor()"
       case "DeleteAddress":
-        return "DeleteAddress()";
+        return "DeleteAddress()"
       case "EditAddress":
-        return "EditAddress()";
+        return "EditAddress()"
       case "GetAddressID":
-        return "GetAddressID()";
+        return "GetAddressID()"
       case "forgotPass":
-        return "forgotPass()";
+        return "forgotPass()"
       case "sendOTP_Forgot":
-        return "sendOTP_Forgot()";
+        return "sendOTP_Forgot()"
       case "getSelectedYear":
-        return "getSelectedYear()";
+        return "getSelectedYear()"
       case "getSelectedMonth":
-        return "getSelectedMonth()";
+        return "getSelectedMonth()"
       case "getIncomeAndExpenditureDetails":
-        return "getIncomeAndExpenditureDetails()";
+        return "getIncomeAndExpenditureDetails()"
       case "createNewInput":
-        return "createNewInput()";
+        return "createNewInput()"
       case "updateIncomeBeforeTaxes":
-        return "updateIncomeBeforeTaxes()";
+        return "updateIncomeBeforeTaxes()"
       case "NSLang":
-        return "NSLang()";
+        return "NSLang()"
       case "openTab":
-        return "openTab()";
+        return "openTab()"
       case "GetAddress":
-        return "GetAddress()";
+        return "GetAddress()"
       case "checkLoginWithRefreshToken":
-        return "checkLoginWithRefreshToken()";
+        return "checkLoginWithRefreshToken()"
       case "menuhome":
-        return "menuhome()";
+        return "menuhome()"
       case "menumonitor":
-        return "menumonitor()";
+        return "menumonitor()"
       case "menuwallet":
-        return "menuwallet()";
+        return "menuwallet()"
       case "menusetting":
-        return "menusetting()";
+        return "menusetting()"
       case "unShowMenuPage":
-        return "unShowMenuPage()";
+        return "unShowMenuPage()"
       case "checkIsLogin":
-        return "checkIsLogin()";
+        return "checkIsLogin()"
       case "updateLoginStatus":
-        return "updateLoginStatus()";
+        return "updateLoginStatus()"
       case "getLocalToken":
-        return "getLocalToken()";
+        return "getLocalToken()"
       case "refreshToken":
-        return "refreshToken()";
+        return "refreshToken()"
       case "refreshTokenFun":
-        return "refreshTokenFun()";
+        return "refreshTokenFun()"
       case "getMemberTier":
-        return "getMemberTier()";
+        return "getMemberTier()"
       case "createMemberTier":
-        return "createMemberTier(data)";
+        return "createMemberTier(data)"
       case "monitorCheckToken":
-        return "monitorCheckToken()";
+        return "monitorCheckToken()"
       case "RestartPin":
-        return "RestartPin(id)";
+        return "RestartPin(id)"
       case "GetBill":
-        return "GetBill(type, day, month, year)";
+        return "GetBill(type, day, month, year)"
       case "GetSolarDeviceAll":
-        return "GetSolarDeviceAll(getText)";
+        return "GetSolarDeviceAll(getText)"
       case "GetDataMonitor":
-        return "GetDataMonitor()";
+        return "GetDataMonitor()"
       case "WS":
-        return "WS()";
+        return "WS()"
       case "getSelectedMonthMonitor":
-        return "getSelectedMonth()";
+        return "getSelectedMonth()"
       case "getSelectedDay":
-        return "getSelectedDay()";
+        return "getSelectedDay()"
       case "openTabbill":
-        return "openTabbill(tab)";
+        return "openTabbill(tab)"
       case "RandomValueMonitorNoLogin":
-        return "RandomValueMonitorNoLogin()";
+        return "RandomValueMonitorNoLogin()"
       case "luxVal":
-        return "luxVal()";
+        return "luxVal()"
       case "getMyDevice":
-        return "getMyDevice()";
+        return "getMyDevice()"
       case "validateInputNewAddress":
-        return "validateInput()";
+        return "validateInput()"
       case "CreateAddress":
-        return "CreateAddress()";
+        return "CreateAddress()"
       case "pagination":
-        return "pagination()";
+        return "pagination()"
       case "GetNotification":
-        return "GetNotification(currentPage)";
+        return "GetNotification(currentPage)"
       case "getOid":
-        return "getOid(id, dataMain, dataItem, stateName)";
-      case "sendRefundOrderInfoCancelRefund":
-        return "sendRefund(SendCancelRefund)";
+        return "getOid(id, dataMain, dataItem, stateName)"
+      case "sendRefund":
+        return "sendRefund(SendCancelRefund)"
       case "cancelOrder_order_info_cancel_refund":
-        return "cancelOrder(dataItem)";
+        return "cancelOrder(dataItem)"
       case "getOid_order_info_cancel":
-        return "getOid(id, dataMain, dataItem)";
+        return "getOid(id, dataMain, dataItem)"
       case "cancelOrder_order_info_cancel":
-        return "cancelOrder(dataItem)";
+        return "cancelOrder(dataItem)"
       case "order_info_received_getOid":
-        return "getOid(id, dataMain, dataItem)";
+        return "getOid(id, dataMain, dataItem)"
       case "order_info_received_cancelOrder":
-        return "cancelOrder(dataItem)";
+        return "cancelOrder(dataItem)"
       case "order_info_received_getTimeline":
-        return "getTimeline(timeline)";
+        return "getTimeline(timeline)"
       case "order_info_waitRceive_sendReceipt":
-        return "sendReceipt(id)";
+        return "sendReceipt(id)"
       case "order_info_waitRceive_getOid":
-        return "getOid(id, dataMain, dataItem)";
+        return "getOid(id, dataMain, dataItem)"
       case "order_info_waitRceive_getTimeline":
-        return "getTimeline(timeline)";
+        return "getTimeline(timeline)"
       case "orderState10_cancelOrder":
-        return "cancelOrder(dataItem)";
+        return "cancelOrder(dataItem)"
       case "orderState10_getOid":
-        return "getOid(id, dataMain, dataItem)";
+        return "getOid(id, dataMain, dataItem)"
       case "orderStateShip_cancelOrder":
-        return "cancelOrder(dataItem)";
+        return "cancelOrder(dataItem)"
       case "orderStateShip_getOid":
-        return "getOid(id, dataMain, dataItem)";
+        return "getOid(id, dataMain, dataItem)"
       case "selectPayment":
-        return "selectPayment()";
+        return "selectPayment()"
       case "genQR":
-        return "genQR(qr)";
+        return "genQR(qr)"
       case "start_timer":
-        return "start_timer(time)";
+        return "start_timer(time)"
       case "AddSlipPayment":
-        return "AddSlipPayment(file)";
+        return "AddSlipPayment(file)"
       case "UpdateSlipPayment":
-        return "UpdateSlipPayment(Img)";
+        return "UpdateSlipPayment(Img)"
       case "GetPaymentStatistic":
-        return "GetPaymentStatistic(year)";
+        return "GetPaymentStatistic(year)"
       case "ChartPaymentStatistic":
-        return "ChartPaymentStatistic()";
+        return "ChartPaymentStatistic()"
       case "ExportCSVPayment":
-        return "ExportCSVPayment()";
+        return "ExportCSVPayment()"
       case "showCart":
-        return "showCart()";
+        return "showCart()"
       case "show_cart":
-        return "show_cart(data)";
+        return "show_cart(data)"
       case "update_quantity":
-        return "update_quantity(id, quantity, price, quantity2)";
+        return "update_quantity(id, quantity, price, quantity2)"
       case "delete_id":
-        return "delete_id(id)";
+        return "delete_id(id)"
       case "sumPrice":
-        return "sumPrice()";
+        return "sumPrice()"
       case "confirmOrder":
-        return "confirmOrder()";
+        return "confirmOrder()"
       case "confirmOrderBuy":
-        return "confirmOrderBuy()";
+        return "confirmOrderBuy()"
       case "getDetailProduct":
-        return "getDetailProduct(id)";
+        return "getDetailProduct(id)"
       case "checkLogin":
-        return "checkLogin()";
+        return "checkLogin()"
       case "GetSalesData":
-        return "GetSalesData(showAll, year)";
+        return "GetSalesData(showAll, year)"
       case "CreateTableReport":
-        return "CreateTableReport()";
+        return "CreateTableReport()"
       case "CreateTableQuarter":
-        return "CreateTableQuarter()";
+        return "CreateTableQuarter()"
       case "getSelectedMonthpurchase":
-        return "getSelectedMonthpurchase()";
+        return "getSelectedMonthpurchase()"
       case "showChart":
-        return "showChart()";
+        return "showChart()"
       case "ExportCSV":
-        return "ExportCSV()";
+        return "ExportCSV()"
       case "RedeemCheckToken":
-        return "RedeemCheckToken()";
+        return "RedeemCheckToken()"
       case "checkNoInput":
-        return "checkNoInput()";
+        return "checkNoInput()"
       case "postRedeem":
-        return "postRedeem()";
+        return "postRedeem()"
       case "getData":
-        return "getData(dataItem)";
+        return "getData(dataItem)"
       case "sendRefundRefund":
-        return "getData(getDataSendRefund)";
+        return "getData(getDataSendRefund)"
       case "PreviewImg_refund":
-        return "PreviewImg_refund()";
+        return "PreviewImg_refund()"
       case "registerFun":
-        return "registerFun()";
+        return "registerFun()"
       case "CreateHTML":
-        return "CreateHTML()";
+        return "CreateHTML()"
       case "GetReportData":
-        return "GetReportData(year, month, day, pin)";
+        return "GetReportData(year, month, day, pin)"
       case "getSelectedDate":
-        return "getSelectedDate(type, pin)";
+        return "getSelectedDate(type, pin)"
       case "openTabreportCart":
-        return "openTabreportCart(tabreportCart)";
+        return "openTabreportCart(tabreportCart)"
       case "openTabreport":
-        return "openTabreport(tabreport)";
+        return "openTabreport(tabreport)"
       case "chartFlowDay":
-        return "chartFlowDay(type, year, month, day, pin)";
+        return "chartFlowDay(type, year, month, day, pin)"
       case "chartFlowMonth":
-        return "chartFlowMonth(type, year, month, day, pin)";
+        return "chartFlowMonth(type, year, month, day, pin)"
       case "chartFlowYear":
-        return "chartFlowYear(type, year, month, day, pin)";
+        return "chartFlowYear(type, year, month, day, pin)"
       case "chartFlowTotal":
-        return "chartFlowTotal(type, pin)";
+        return "chartFlowTotal(type, pin)"
       case "chargePower":
-        return "chargePower(year, month, day, pin)";
+        return "chargePower(year, month, day, pin)"
       case "chartNOlogin":
-        return "chartNOlogin(type)";
+        return "chartNOlogin(type)"
       case "chartNOloginMonthcart":
-        return "chartNOloginMonthcart(type)";
+        return "chartNOloginMonthcart(type)"
       case "chartNOloginYearhcart":
-        return "chartNOloginYearhcart()";
+        return "chartNOloginYearhcart()"
       case "chartNOloginTotalhcart":
-        return "chartNOloginTotalhcart()";
+        return "chartNOloginTotalhcart()"
       case "chargePowerNOlogin":
-        return "chargePowerNOlogin()";
+        return "chargePowerNOlogin()"
       case "settingAccountCheckToken":
-        return "settingAccountCheckToken()";
+        return "settingAccountCheckToken()"
       case "updateProfile":
-        return "updateProfile(User)";
+        return "updateProfile(User)"
       case "AddAvatar":
-        return "AddAvatar(file)";
+        return "AddAvatar(file)"
       case "UpdateAvatar":
-        return "UpdateAvatar(Img)";
+        return "UpdateAvatar(Img)"
       case "getAll":
-        return "getAll(state)";
+        return "getAll(state)"
       case "scroller":
-        return "scroller()";
+        return "scroller()"
       case "SettingCheckToken":
-        return "SettingCheckToken()";
+        return "SettingCheckToken()"
       case "getQRcode":
-        return "getQRcode()";
-      case "startInit":
-        return "init()";
+        return "getQRcode()"
+      case "initAndCall":
+        return "init()"
       case "TopUpCheckToken":
-        return "TopUpCheckToken()";
+        return "TopUpCheckToken()"
       case "topup_checkNoInput":
-        return "checkNoInput()";
+        return "checkNoInput()"
       case "topup_addSlipPayment":
-        return "AddSlipPayment(file)";
+        return "AddSlipPayment(file)"
       case "topup_updateSlipPayment":
-        return "UpdateSlipPayment(Imgs)";
+        return "UpdateSlipPayment(Imgs)"
       case "transactionCheckToken":
-        return "transactionCheckToken()";
+        return "transactionCheckToken()"
       case "getTransaction":
-        return "getTransaction()";
+        return "getTransaction()"
       case "getTransaction":
-        return "getTransaction()";
+        return "getTransaction()"
       case "pagination_tran":
-        return "pagination_tran()";
+        return "pagination_tran()"
       case "transaction_calPage":
-        return "calPage(type)";
+        return "calPage(type)"
       case "transferCheckToken":
-        return "transferCheckToken()";
+        return "transferCheckToken()"
       case "transfer_checkNoInput":
-        return "checkNoInput()";
+        return "checkNoInput()"
       case "postTransfer":
-        return "postTransfer()";
+        return "postTransfer()"
       case "showOrder":
-        return "showOrder()";
+        return "showOrder()"
       case "update_order_scroller":
-        return "scroller()";
+        return "scroller()"
       case "showVoucher":
-        return "showVoucher(data)";
+        return "showVoucher(data)"
       case "walletCheckToken":
-        return "walletCheckToken()";
+        return "walletCheckToken()"
       case "getUserData":
-        return "getUserData()";
+        return "getUserData()"
       case "get_dataTransaction":
-        return "get_dataTransaction()";
+        return "get_dataTransaction()"
       case "loadList":
-        return "loadList()";
+        return "loadList()"
+      case "cleanInput":
+        return "cleanInput()"
+      case "askDeviceIdFun":
+        return "askDeviceIdFun()"
+      case "loginFun":
+        return "loginFun()"
+      case "checkIn":
+        return "checkIn()"
+      case "getFinancialAlipay":
+        return "getFinancialAlipay()"
+      case "deleteAlipay":
+        return "deleteAlipay(id)"
+      case "historyFunction":
+        return "historyFunction(id, time, title)"
+      case "getFinancialBank":
+        return "getFinancialBank()"
+      case "deleteBank":
+        return "deleteBank(id)"
+      case "sendMessage":
+        return "sendMessage()"
+      case "checkInBonus":
+        return "checkInBonus(days)"
+      case "get2FAconvert_DSF":
+        return "get2FAconvert_DSF()"
+      case "verify2faconvert_DSF":
+        return "verify2faconvert_DSF()"
+      case "postconvert_DSFCIPS":
+        return "postconvert_DSFCIPS()"
+      case "get2FATrade":
+        return "get2FATrade()"
+      case "verify2faTrade":
+        return "verify2faTrade()"
+      case "postWithdraw":
+        return "postWithdraw(amount)"
+      case "postConvert":
+        return "postConvert(Type)"
+      case "getFinancialPayments":
+        return "getFinancialPayments()"
+      case "checkPayMentMethod":
+        return "checkPayMentMethod()"
+      case "feedback":
+        return "feedback(Type, Content)"
+      case "getInstitution":
+        return "getInstitution()"
+      case "getAnnouncement":
+        return "getAnnouncement()"
+      case "news":
+        return "news()"
+      case "first":
+        return "first()"
+      case "redempiontcode":
+        return "redempiontcode()"
+      case "CheckMathCoupon":
+        return "CheckMathCoupon()"
+      case "getnewgroup":
+        return "getnewgroup()"
+      case "profile_invite":
+        return "profile_invite()"
+      case "getAnnouncement_viewID":
+        return "getAnnouncement_viewID(id)"
+      case "getAnnouncement_view":
+        return "getAnnouncement_view()"
+      case "getHistory":
+        return "getHistory()"
+      case "getVoucherInvite":
+        return "getVoucherInvite()"
+      case "postReceiveVouncher":
+        return "postReceiveVouncher(step)"
+      case "getlevel":
+        return "getlevel()"
       default:
-        return "";
+        return ""
     }
-  };
+  }
 
   const formCintentSlipFun = {
     // Specific Model
     // home.html
     count: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerName={getTitle()}
         content="-ฟังก์ชัน count(i) ซึ่งรับพารามิเตอร์ i เพื่อระบุ index ขององค์ประกอบ HTML ที่ต้องการจะนับจำนวนของมัน หลักการทำงานของฟังก์ชันนี้คือการเพิ่มหรือลดค่า counter เมื่อมีการคลิกที่ปุ่มเพิ่มหรือลด และอัปเดตการแสดงผลของ counter ในองค์ประกอบ HTML ที่เกี่ยวข้อง ต่อไปนี้คืออธิบายเพิ่มเติมเกี่ยวกับโค้ด"
         content1="1.ฟังก์ชัน count(i) มีการสร้างตัวแปร counter และกำหนดค่าเริ่มต้นให้เป็น 1 เพื่อเก็บค่าของ counter."
@@ -368,7 +438,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content4="4.ฟังก์ชัน updateCounter(i) จะอัปเดตการแสดงผลของ counter ในองค์ประกอบ HTML ที่มีคลาส count${i} โดยใช้ jQuery"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
         headerHtml="home.html"
         functionName="count(i)"
@@ -377,7 +447,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
 
     HomeCheckToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerName={getTitle()}
         functionName={getTitle()}
         content="-ฟังก์ชัน HomeCheckToken() ที่สร้าง HTML ขึ้นมาแสดงผลบนหน้าเว็บไซต์ โดยมีลักษณะการทำงานดังนี้:"
@@ -388,7 +458,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content2p2="2.2.หากมี token อยู่ใน localStorage (ค่า token ไม่เท่ากับ null) จะทำการแสดงบางองค์ประกอบบนหน้าเว็บที่เป็นส่วนของผู้ใช้ที่ล็อกอิน (เช่น ปุ่ม check-in, และบางส่วนที่เกี่ยวกับการล็อกอิน) และซ่อนบางส่วนที่เกี่ยวกับการไม่ล็อกอิน (เช่น ส่วนของหน้านี้ที่เป็นส่วนของผู้ใช้ที่ยังไม่ล็อกอิน)"
         content3="3.ในส่วนของการกระทำเพิ่มเติม, โค้ดทำการเชื่อมต่อกับองค์ประกอบบนหน้าเว็บ (DOM) และกำหนดค่าต่าง ๆ เช่น การกำหนด display property, การลิงค์กับฟังก์ชันอื่น ๆ เพื่อดำเนินการต่อไป."
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
         headerHtml="home.html"
       />
@@ -396,7 +466,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
 
     getProfile: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerName={getTitle()}
         functionName={getTitle()}
         content="-ฟังก์ชัน getProfile() ที่ใช้ Ajax เพื่อเรียกข้อมูลโปรไฟล์ผู้ใช้จากเซิร์ฟเวอร์:"
@@ -407,7 +477,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content5="5.สุดท้ายมีการเรียกใช้ Loader และแสดงข้อความข้อผิดพลาดหากมีข้อผิดพลาดเกิดขึ้น"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
         headerHtml="home.html"
       />
@@ -415,7 +485,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
 
     sendApi: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerName={getTitle()}
         functionName={getTitle()}
         content="-ฟังก์ชัน sendApi() ใช้สำหรับส่งข้อมูลไปยังเซิร์ฟเวอร์ โดยมีขั้นตอนดังนี้"
@@ -426,7 +496,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content5="5.หลังจากที่ข้อมูลถูกส่งไปยังเซิร์ฟเวอร์เรียบร้อยแล้ว จะปิด Loader และตรวจสอบการตอบกลับจากเซิร์ฟเวอร์ หาก code ที่ได้รับคือ 0 (สำเร็จ) จะทำการบันทึกสถานะการจำลองและดึงข้อมูลสินค้า หากไม่เป็นไปตามนั้นจะแสดงข้อผิดพลาด"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
         headerHtml="home.html"
       />
@@ -434,7 +504,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
 
     checklocalStorage: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="home.html"
         headerName={getTitle()}
         functionName={getTitle()}
@@ -446,14 +516,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content5="5.ในกรณีที่ simulatedData เป็นค่าอื่นที่ไม่ใช่ 'true' จะแสดง Popup ข่าวสารออกมา"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     checkSimulated: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="home.html"
         headerName={getTitle()}
         functionName={getTitle()}
@@ -465,14 +535,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content5="5.ในกรณีที่เกิดข้อผิดพลาดในการเรียก API จะแสดงข้อความผิดพลาด"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getRecommendProduct: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="home.html"
         headerName={getTitle()}
         functionName={getTitle()}
@@ -485,14 +555,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content6="6.สิ้นสุดการทำงานของฟังก์ชัน"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getAllProduct: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="home.html"
         headerName={getTitle()}
         functionName={getTitle()}
@@ -505,14 +575,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content6="6.หากเกิดข้อผิดพลาดในการดึงข้อมูลสินค้า จะแสดงข้อความผิดพลาดและซ่อน Popup ข่าวสาร"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getCheckIn: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="home.html"
         headerName={getTitle()}
         functionName={getTitle()}
@@ -529,7 +599,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content4="4.หากเกิดข้อผิดพลาดในการดึงข้อมูลการเช็คอิน จะแสดงข้อความผิดพลาดและซ่อน Popup ข่าวสาร"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -537,35 +607,35 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     //Adddatalogger
     validateInput: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Adddatalogger.html"
         headerName={getTitle()}
         functionName="validateInput(inputField)"
         content="-เป็นฟังก์ชัน validateInput(inputField) ที่ใช้สำหรับตรวจสอบและแก้ไขข้อมูลที่ผู้ใช้ป้อนเข้ามาในฟิลด์ข้อมูล โดยลบทุกอักขระที่ไม่ใช่ตัวเลขหรือตัวอักษรภาษาอังกฤษในสตริงข้อมูลที่รับเข้ามา ซึ่งเป็นวิธีที่ใช้เพื่อป้องกันข้อมูลที่ไม่ถูกต้องหรือไม่คาดคิดจากการป้อนข้อมูลข้างฝั่งของผู้ใช้"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     AddDate: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Adddatalogger.html"
         headerName={getTitle()}
         functionName={getTitle()}
         content={`-เป็นฟังก์ชัน AddDate() ที่ใช้ในการเพิ่มวันที่และเวลาปัจจุบันลงในฟิลด์ข้อมูลที่มี id เป็น "device_occurredtime" ทุกๆ 1 วินาที โดยใช้ setInterval เพื่อเรียกฟังก์ชัน addDate ทุกๆ 1 วินาที และในฟังก์ชัน addDate จะสร้างวันที่และเวลาปัจจุบัน และจัดรูปแบบให้เป็น "yyyy-mm-dd hh:mm:ss" แล้วกำหนดให้เป็น placeholder ในฟิลด์ข้อมูลดังกล่าวโดยใช้ jQuer`}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     CreateDevice: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Adddatalogger.html"
         headerName={getTitle()}
         functionName={getTitle()}
@@ -581,7 +651,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content9="9.เมื่อเกิด error ในการส่งข้อมูล (error) จะไม่มีการทำอะไร เพียงแค่ปล่อยให้มันเป็นไปตามปกติหรือจัดการข้อผิดพลาดตามที่ต้องการ"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -589,7 +659,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     //cancelOrderHtml
     getItemAll: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="CancelOrder.html"
         headerName={getTitle()}
         functionName="getItemAll(dataItem)"
@@ -602,7 +672,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content6={`6.$("#itemCancel_Quantity").text("Quantity x " + dataItem.quantity): กำหนดข้อความใน element ที่มี id เป็น itemCancel_Quantity เท่ากับจำนวนสินค้าที่อยู่ใน dataItem รวมกับข้อความ "Quantity x"`}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -610,7 +680,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     //sentCancelOrder
     sentCancelOrder: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="CancelOrder.html"
         headerName={getTitle()}
         functionName="sentCancelOrder(dataItem)"
@@ -626,7 +696,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content9="9.เมื่อเกิด error ในการส่งข้อมูล (error) จะแสดงข้อความผิดพลาดที่เกิดขึ้น"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -634,7 +704,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     //changepassword.html
     changePassword: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="CancelOrder.html"
         headerName={getTitle()}
         functionName={getTitle()}
@@ -649,7 +719,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content8="8.ประมวลผลการตอบกลับจากเซิร์ฟเวอร์และแสดงข้อความแจ้งเตือนผู้ใช้ตามผลการประมวลผล"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -657,7 +727,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // coin_history.html
     getRedeemHis: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="coin_history.html"
         headerName={getTitle()}
         content="-ฟังก์ชั่น getRedeemHis() นี้ใช้สำหรับดึงประวัติการแลกเหรียญโดยมีขั้นตอนดังนี้"
@@ -672,14 +742,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     pagination_coins: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="coin_history.html"
         headerName={getTitle()}
         content="-ฟังก์ชั่น pagination_coins() นี้ใช้สร้าง pagination สำหรับการแสดงข้อมูลประวัติการแลกเหรียญ โดยมีขั้นตอนดังนี้"
@@ -694,14 +764,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     calPage: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="coin_history.html"
         headerName={getTitle()}
         content="-ฟังก์ชั่น calPage(type) นี้ใช้สำหรับคำนวณหน้าของ pagination โดยมีขั้นตอนดังนี้"
@@ -715,7 +785,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="calPage(type)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -723,7 +793,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // coins.html
     CoinsCheckToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="coins.html"
         headerName={getTitle()}
         content="-ฟังก์ชั่น CoinsCheckToken() นี้ใช้สำหรับตรวจสอบการมีหรือไม่มี token ใน localStorage และดำเนินการต่อตามเงื่อนไข ดังนี้()"
@@ -733,14 +803,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getPointCoins: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="coins.html"
         headerName={getTitle()}
         content="-ฟังก์ชั่น getPointCoins() นี้ใช้สำหรับดึงข้อมูลคะแนนเหรียญของผู้ใช้งาน โดยมีขั้นตอนดังนี้"
@@ -751,7 +821,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -759,7 +829,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // Configuration.html
     updateDevice: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Configuration.html"
         headerName={getTitle()}
         content="-ฟังก์ชั่น updateDevice() นี้ใช้สำหรับอัปเดตข้อมูลของอุปกรณ์โดยมีขั้นตอนดังนี้"
@@ -771,14 +841,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     Con: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Configuration.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน Con(id) ใช้สำหรับดึงรายละเอียดของอุปกรณ์โซล่าที่มี id ที่ระบุและเติมฟอร์มการอัปเดตด้วยข้อมูลที่ดึงมา "
@@ -792,7 +862,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="Con(id)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -800,7 +870,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // confirm_order.html
     getOrder: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="confirm_order.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getOrder(data, oldData) ใช้สำหรับแสดงรายการสินค้าที่ลูกค้าเลือกซื้อและทำการคำนวณราคารวม "
@@ -815,14 +885,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="getOrder(data, oldData)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getStatePayment: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="confirm_order.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getStatePayment(method) ใช้สำหรับตั้งค่าวิธีการชำระเงินและเรียกฟังก์ชัน calTotal() เพื่อคำนวณ"
@@ -831,14 +901,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="getStatePayment(method)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     setVoucherId: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="confirm_order.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน setVoucherId(id, discount) ใช้สำหรับตั้งค่า ID และส่วนลดของบัตรกำนัลและเรียกใช้ฟังก์ชัน calTotal() เพื่อคำนวณยอดรวมใหม่"
@@ -848,14 +918,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="setVoucherId(id, discount)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     postOrderNow: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="confirm_order.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน postOrderNow(data) ใช้สำหรับส่งคำสั่งซื้อไปยังเซิร์ฟเวอร์ เพื่อทำการสั่งซื้อสินค้าโดยใช้ข้อมูลที่ระบุ นี่"
@@ -869,14 +939,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="postOrderNow(data)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getAddress: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="confirm_order.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getAddress() ใช้สำหรับเรียกข้อมูลที่อยู่จัดส่งจากเซิร์ฟเวอร์"
@@ -887,14 +957,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getCodeDisCountVoucher: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="confirm_order.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getCodeDisCountVoucher() ใช้สำหรับดึงรายการของ voucher "
@@ -906,14 +976,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getCodeDisCountMember: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="confirm_order.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getCodeDisCountMember() ใช้สำหรับดึงข้อมูลเกี่ยวกับระดับสมาชิกและส่วนลดที่สามารถใช้ได้จากเซิร์ฟเวอร์"
@@ -925,14 +995,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     calTotal: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="confirm_order.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน calTotal() นี้ใช้สำหรับคำนวณยอดรวมที่ต้องจ่ายหลังจากคำนวณส่วนลดและการใช้เหรียญและส่วนลดต่างๆ "
@@ -944,14 +1014,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     cleanDataDefualt: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="confirm_order.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน cleanDataDefualt() ทำงานเพื่อล้างข้อมูลและตั้งค่าเริ่มต้นให้กับหน้าเว็บของแอปพลิเคชันที่เกี่ยวข้องกับรหัสนี้ โดยจะทำการดำเนินการต่อไปนี้"
@@ -970,15 +1040,15 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     // customer.html
-    GetDataCustPurchaseReportStats: () => (
+    GetDataCustomerPurchaseReportStatics: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="customer.html"
         headerName="GetDataCustomerPurchaseReportStatics()"
         content="-เป็นฟังก์ชันที่ใช้สำหรับดึงข้อมูลสถิติการซื้อของลูกค้าผ่าน API จากเซิร์ฟเวอร์ของเรา โดยมีขั้นตอนหลักคือ"
@@ -989,14 +1059,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     showChartTotalCustomer: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="customer.html"
         headerName={getTitle()}
         content="-โค้ดนี้ใช้ ECharts เพื่อสร้างกราฟประเภท pie chart แสดงข้อมูลการเข้าถึง (Access From) โดยมีลักษณะเด่นคือ"
@@ -1008,14 +1078,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     ChartMethod: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="customer.html"
         headerName={getTitle()}
         content="-ฟังก์ชันนี้ใช้ในการสร้างกราฟแท่งแสดงยอดรวมการซื้อสินค้าตามเพศของลูกค้า โดยมีขั้นตอนหลักคือ:"
@@ -1027,14 +1097,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="ChartMethod(data)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     ChartGender: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="customer.html"
         headerName={getTitle()}
         content="-ฟังก์ชันนี้ใช้ในการสร้างกราฟแท่งแสดงอายุเฉลี่ยของลูกค้าตามเพศ โดยมีขั้นตอนหลักคือ"
@@ -1045,14 +1115,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="ChartGender (data)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     updateSalesData: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="customer.html"
         headerName="updateSalesData (showAll)"
         content="-ฟังก์ชันนี้ใช้ในการอัปเดตข้อมูลขายสินค้าในตารางขายสินค้า โดยมีขั้นตอนหลักคือ"
@@ -1064,7 +1134,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="updateSalesData (showAll)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1072,7 +1142,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // data_customer_details.html
     GetDataCustomerDetail: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="customer.html"
         headerName="GetDataCustomerDetail (data)"
         content="-ฟังก์ชันนี้ใช้ในการแสดงข้อมูลลูกค้าที่ได้รับมาในรูปแบบของ HTML elements โดยมีขั้นตอนหลักคือ"
@@ -1083,7 +1153,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="GetDataCustomerDetail (data)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1091,7 +1161,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // data_customer.html
     GetDataCustomer: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="data_customer.html"
         headerName={getTitle()}
         content="-ฟังก์ชันนี้ใช้ในการดึงข้อมูลลูกค้าจากเซิร์ฟเวอร์และแสดงในรูปแบบของรายการบนหน้าเว็บ โดยมีขั้นตอนหลักคือ"
@@ -1103,7 +1173,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="GetDataCustomer()"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1111,7 +1181,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // deletedatalogger.html
     getDeviceAll: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Deletedatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชันนี้ใช้ในการดึงข้อมูลอุปกรณ์ทั้งหมดจากเซิร์ฟเวอร์และแสดงในรูปแบบของรายการบนหน้าเว็บ โดยมีขั้นตอนหลักคือ:"
@@ -1124,7 +1194,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="getDeviceAll()"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1132,7 +1202,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // distributor.html
     distributorFun: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Distributor.html"
         headerName={getTitle()}
         content="-ฟังก์ชันนี้ใช้ในการจัดการกับการคลิกที่ปุ่มและการเลือกไฟล์ โดยมีขั้นตอนหลักคือ"
@@ -1143,14 +1213,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="distributorFun()"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     PreviewImg: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Distributor.html"
         headerName={getTitle()}
         content="-ฟังก์ชันนี้ใช้ในการแสดงตัวอย่างของรูปภาพที่ถูกเลือกจาก input ที่มี id='fileInput' โดยมีขั้นตอนหลักคือ"
@@ -1161,14 +1231,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="PreviewImg()"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     PreviewImg_2: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Distributor.html"
         headerName={getTitle()}
         content="-ฟังก์ชันนี้ใช้ในการแสดงตัวอย่างของรูปภาพที่ถูกเลือกจาก input ที่มี id='fileInput_2' โดยมีขั้นตอนหลักคือ:"
@@ -1180,14 +1250,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="PreviewImg_2()"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     CreateDistributor: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Distributor.html"
         headerName={getTitle()}
         content="-ฟังก์ชันนี้ใช้ในการสร้างผู้แทนจำหน่าย (Distributor) โดยมีขั้นตอนหลักคือ"
@@ -1198,7 +1268,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="CreateDistributor()"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1206,7 +1276,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     //  edit_address.html
     DeleteAddress: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Edit_address.html"
         headerName={getTitle()}
         content="-ฟังก์ชันนี้ใช้ในการลบที่อยู่จัดส่งที่มี ID ที่ระบุออกจากระบบ"
@@ -1217,14 +1287,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     EditAddress: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Edit_address.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน EditAddress() ใช้ในการแก้ไขข้อมูลที่อยู่จัดส่งที่มี ID ที่ระบุ"
@@ -1235,14 +1305,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     GetAddressID: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Edit_address.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน GetAddressID(ById) ใช้ในการดึงข้อมูลที่อยู่จัดส่งโดยใช้ ID ที่ระบุ"
@@ -1254,7 +1324,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="GetAddressID(ById)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1262,7 +1332,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // forgotpass.html
     forgotPass: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Edit_address.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน forgotPass() ใช้ในกระบวนการลืมรหัสผ่าน"
@@ -1276,14 +1346,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     sendOTP_Forgot: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Edit_address.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน sendOTP_Forgot() ใช้ในการส่ง OTP ในกระบวนการลืมรหัสผ่าน"
@@ -1297,7 +1367,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1305,7 +1375,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // inCome.html
     getSelectedYear: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="InCome.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getSelectedYear() ใช้ในการดึงปีปัจจุบันและแสดงบนหน้าเว็บ"
@@ -1320,14 +1390,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getSelectedMonth: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="InCome.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getSelectedMonth() ใช้ในการดึงเดือนปัจจุบันและแสดงชื่อของเดือนนั้น"
@@ -1342,14 +1412,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getIncomeAndExpenditureDetails: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="InCome.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getIncomeAndExpenditureDetails() ใช้ในการดึงรายละเอียดเกี่ยวกับรายได้และค่าใช้จ่าย"
@@ -1365,14 +1435,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     createNewInput: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="InCome.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน createNewInput() ใช้ในการสร้าง元素 <input> ใหม่โดยมีลักษณะดังนี้"
@@ -1382,14 +1452,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     updateIncomeBeforeTaxes: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="InCome.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน updateIncomeBeforeTaxes มีการดำเนินการดังนี้"
@@ -1399,7 +1469,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1409,7 +1479,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // level.html
     openTab: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Lang.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน openTab() ใช้ในการแสดงแท็บที่ถูกเลือกโดยรับชื่อแท็บเป็นพารามิเตอร์ tabName และซ่อนแท็บที่ไม่ได้ถูกเลือก และแสดงแท็บที่ถูกเลือก"
@@ -1421,7 +1491,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="openTab(tabName)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1429,7 +1499,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // locationAddress.html
     GetAddress: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Lang.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน GetAddress ใช้ในการดึงข้อมูลที่อยู่จัดส่ง โดยใช้ token เพื่อทำการตรวจสอบสิทธิ์การเข้าถึง หลังจากนั้นจะแสดงข้อมูลที่อยู่ทั้งหมดในหน้าเว็บโดยใช้ HTML และ CSS เพื่อแสดงผลอย่างเหมาะสม"
@@ -1447,7 +1517,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1455,7 +1525,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // login.html
     checkLoginWithRefreshToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Login.html"
         headerName="checkLoginStatusWithRefreshToken()"
         content="-เป็นฟังก์ชัน checkLoginStatusWithRefreshToken() ที่ใช้สำหรับตรวจสอบสถานะการเข้าสู่ระบบโดยใช้ Refresh Token เพื่อขอ Token ใหม่เมื่อ Token เดิมหมดอายุ โดยมีขั้นตอนดังนี้:"
@@ -1468,7 +1538,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName="checkLoginStatusWithRefreshToken()"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1476,7 +1546,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // main.html
     menuhome: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Main.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน menuhome ทำหน้าที่เปิดหน้าเว็บไซต์หลักโดยมีขั้นตอนดังนี้"
@@ -1491,14 +1561,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     menumonitor: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Main.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน menumonitor มีหน้าที่เปิดหน้า Monitor โดยมีขั้นตอนดังนี้"
@@ -1515,14 +1585,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     menuwallet: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Main.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน menuwallet มีหน้าที่เปิดหน้า Wallet โดยมีขั้นตอนดังนี้"
@@ -1536,14 +1606,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     menusetting: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Main.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน menusetting มีหน้าที่เปิดหน้า Setting โดยมีขั้นตอนดังนี้"
@@ -1557,14 +1627,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     unShowMenuPage: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Main.html"
         headerName={getTitle()}
         content="ฟังก์ชัน unShowMenuPage มีหน้าที่ซ่อนหน้าเมนูทั้งหมดและเคลื่อนย้ายองค์ประกอบของเมนูกลับไปที่ตำแหน่งเริ่มต้นดังนี้"
@@ -1573,14 +1643,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     checkIsLogin: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Main.html"
         headerName={getTitle()}
         content="ฟังก์ชัน checkIsLogin ดูเหมือนจะตรวจสอบสถานะการเข้าสู่ระบบของผู้ใช้ โดยมีขั้นตอนดังนี้"
@@ -1593,14 +1663,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     updateLoginStatus: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Main.html"
         headerName={getTitle()}
         content="ฟังก์ชัน updateLoginStatus() ดำเนินการตรวจสอบสถานะการเข้าสู่ระบบของผู้ใช้ โดยมีขั้นตอนดังนี้"
@@ -1615,14 +1685,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getLocalToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Main.html"
         headerName={getTitle()}
         content="ฟังก์ชัน getLocalToken มีหน้าที่ดึงข้อมูล Token จาก Local Storage และเก็บไว้ในตัวแปร token ดังนี้"
@@ -1633,14 +1703,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     refreshToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Main.html"
         headerName={getTitle()}
         content="ฟังก์ชัน refreshToken() มีหน้าที่เรียกใช้ฟังก์ชัน refreshTokenFun เพื่อรีเฟรช Token โดยตั้งค่าให้ทำงานตามระยะเวลาที่กำหนดดังนี้"
@@ -1650,14 +1720,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     refreshTokenFun: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Main.html"
         headerName={getTitle()}
         content="ฟังก์ชัน refreshTokenFun() มีหน้าที่ทำการรีเฟรช Token โดยดำเนินการตามขั้นตอนต่อไปนี้"
@@ -1670,7 +1740,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1678,7 +1748,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // memberTier.html
     getMemberTier: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="MemberTier.html"
         headerName={getTitle()}
         content="ฟังก์ชัน getMemberTier() มีหน้าที่ทำการเรียกข้อมูลระดับสมาชิก (member tier) จาก API โดยใช้ Token ที่เก็บไว้ใน Local Storage เพื่อทำการยืนยันการรับสิทธิ์ โดยมีขั้นตอนดังนี้"
@@ -1690,14 +1760,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     createMemberTier: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="MemberTier.html"
         headerName={getTitle()}
         content="ฟังก์ชัน createMemberTier() ใช้สำหรับสร้างข้อมูลระดับสมาชิก (member tier) ขึ้นมาแสดงในหน้าเว็บไซต์ โดยมีขั้นตอนดังนี้"
@@ -1710,7 +1780,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1718,7 +1788,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     //monitor.html
     monitorCheckToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Monitor.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน monitorCheckToken() มีหน้าที่ตรวจสอบ Token ที่เก็บไว้ใน Local Storage และดำเนินการตามเงื่อนไขต่อไปนี้"
@@ -1732,14 +1802,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     RestartPin: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Monitor.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน RestartPin() มีหน้าที่สำหรับส่งคำขอที่ร้องขอให้เซิร์ฟเวอร์เริ่มต้นการทำงานของอุปกรณ์ (device) โดยมีขั้นตอนดังนี้"
@@ -1752,14 +1822,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     GetBill: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Monitor.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน GetBill() ใช้สำหรับดึงข้อมูลบิลการใช้พลังงานไฟฟ้าของอุปกรณ์พลังงานแสงอาทิตย์ โดยมีการทำงานตามขั้นตอนดังนี้"
@@ -1776,14 +1846,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     GetSolarDeviceAll: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Monitor.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน GetSolarDeviceAll() มีหน้าที่ดึงข้อมูลอุปกรณ์โซล่าร์ทั้งหมดที่เชื่อมต่อและมีการลงทะเบียนไว้จากเซิร์ฟเวอร์ โดยใช้ Token ที่เก็บอยู่ใน Local Storage เพื่อทำการส่งคำขอไปยังเซิร์ฟเวอร์และขอข้อมูลอุปกรณ์โซล่าร์ทั้งหมดเพื่อแสดงบนหน้าเว็บไซต์ กระบวนการทำงานมีดังนี้"
@@ -1797,14 +1867,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     GetDataMonitor: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Monitor.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน GetDataMonitor() มีหน้าที่ดึงข้อมูลการตรวจสอบของอุปกรณ์มอนิเตอร์โดยใช้ Token จาก Local Storage และทำการส่งคำขอไปยังเซิร์ฟเวอร์เพื่อขอข้อมูล โดยมีขั้นตอนการทำงานดังนี้"
@@ -1817,14 +1887,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     WS: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Monitor.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน WS มีหน้าที่เชื่อมต่อ WebSocket และทำการจัดการกับข้อมูลที่ได้รับผ่าน WebSocket โดยมีกระบวนการทำงานดังนี้"
@@ -1841,14 +1911,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getSelectedMonthMonitor: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Monitor.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getSelectedMonth() นี้ใช้ในการแสดงเดือนปัจจุบันและบิลของเดือนนั้น โดยมีการอัปเดตเมื่อผู้ใช้คลิกปุ่มเดือนถัดไปหรือก่อนหน้านั้นดังนี้"
@@ -1860,14 +1930,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getSelectedDay: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Monitor.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getSelectedDay() นี้ใช้ในการแสดงวันปัจจุบันและบิลของวันนั้น โดยมีการอัปเดตเมื่อผู้ใช้คลิกปุ่มวันถัดไปหรือก่อนหน้าดังนี้"
@@ -1879,14 +1949,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     openTabbill: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Monitor.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน openTabbill() นี้ใช้ในการเปิดแท็บต่างๆในส่วนของบิล โดยทำงานตามขั้นตอนดังนี้"
@@ -1896,14 +1966,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     RandomValueMonitorNoLogin: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Monitor.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน RandomValueMonitorNoLogin() ใช้สำหรับสร้างค่าสุ่มเพื่อนำมาแสดงบนหน้าจอโดยไม่ต้องเข้าสู่ระบบ โดยมีขั้นตอนการทำงานดังนี้"
@@ -1914,14 +1984,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     luxVal: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Monitor.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน luxVal() นี้ใช้สำหรับการคำนวณและแสดงค่าความสว่าง (Lux) โดยขึ้นอยู่กับเวลาปัจจุบัน เนื่องจากค่าความสว่างในธรรมชาติมักมีการเปลี่ยนแปลงตามเวลาของวัน ดังนั้นฟังก์ชันจะคำนวณและอัปเดตค่าความสว่างทุกๆ ชั่วโมงโดยใช้เวลาปัจจุบัน เพื่อให้ข้อมูลสมจริงที่สุดตามเวลาขณะนั้น"
@@ -1931,7 +2001,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1939,7 +2009,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     //my_devices.html
     getMyDevice: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="My_devices.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getMyDevice() นี้ใช้สำหรับดึงข้อมูลอุปกรณ์ที่เชื่อมต่อกับระบบโซลาร์เพาเวอร์ โดยการเรียกใช้งาน API /v1/solarDevice เพื่อรับข้อมูลอุปกรณ์ และนำข้อมูลที่ได้มาแสดงผลบนหน้าเว็บไซต์"
@@ -1952,7 +2022,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1960,7 +2030,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // new_address.html
     validateInputNewAddress: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="New_address.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน validateInput นี้ใช้สำหรับตรวจสอบและกำหนดค่าข้อมูลที่ป้อนเข้ามาในช่องข้อมูลบางช่องให้ถูกต้องตามเงื่อนไขที่กำหนด โดยทำการกรองอักขระที่ไม่ต้องการออกไป และจำกัดความยาวของข้อมูลให้อยู่ในรูปแบบที่ถูกต้องด้วยการตัดความยาวให้เหลือตามเงื่อนไขที่กำหนดไว้"
@@ -1973,14 +2043,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     CreateAddress: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="New_address.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน CreateAddress() นี้ถูกใช้เพื่อสร้างที่อยู่ใหม่ในระบบ โดยมีขั้นตอนการทำงานดังนี้"
@@ -1990,7 +2060,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -1998,7 +2068,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // notification.html
     pagination: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Notification.html"
         headerName={getTitle()}
         content="-โค้ดนี้ใช้สร้างการแบ่งหน้า (pagination) โดยใช้ข้อมูลเกี่ยวกับจำนวนหน้าทั้งหมดและหน้าปัจจุบันเพื่อสร้างปุ่มแบ่งหน้าที่เหมาะสม ดังนี้"
@@ -2012,14 +2082,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     GetNotification: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Notification.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน GetNotification() ใช้สำหรับการดึงข้อมูลการแจ้งเตือนจากเซิร์ฟเวอร์ API โดยอ้างอิงจาก token ของผู้ใช้ และหน้าปัจจุบันที่กำลังแสดง (currentPage) เพื่อนำมาแสดงผลในหน้าเว็บไซต์ ดังนี้"
@@ -2037,7 +2107,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2045,7 +2115,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // order_info_cancel_refund.html
     getOid: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_info_cancel_refund.html"
         headerName={getTitle()}
         content="-เป็นฟังก์ชัน getOid(id, dataMain, dataItem, stateName) ที่มีหน้าที่รับข้อมูลเพื่อแสดงบนหน้าเว็บ โดยมีการทำงานหลายอย่างดังนี้"
@@ -2061,14 +2131,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
-    sendRefundOrderInfoCancelRefund: () => (
+    sendRefund: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_info_cancel_refund.html"
         headerName={getTitle()}
         content="-ฟังก์ชันนี้ใช้สำหรับส่งคำขอยกเลิกการคืนเงินโดยใช้ข้อมูล SendCancelRefund ที่ได้รับมาเป็นพารามิเตอร์ โดยมีขั้นตอนการทำงานดังนี้"
@@ -2083,21 +2153,21 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     cancelOrder_order_info_cancel_refund: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_info_cancel_refund.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน cancelOrder() รับพารามิเตอร์ dataItem ซึ่งเป็นข้อมูลที่ใช้ในการยกเลิกคำสั่งซื้อ ฟังก์ชันนี้ทำงานโดยเรียกใช้เมทอด getItemAll ของอ็อบเจกต์ cancel_orderObj และส่ง dataItem เข้าไปในเมทอดดังกล่าว เพื่อประมวลผลการยกเลิกคำสั่งซื้อต่อไป"
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2105,7 +2175,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     //order_info_cancel.html
     getOid_order_info_cancel: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_info_cancel.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getOid นี้ใช้สำหรับเติมข้อมูลลงใน element ต่างๆ บนหน้าเว็บด้วยข้อมูลที่ได้รับมาจาก dataMain และ dataItem ดังนี้"
@@ -2120,21 +2190,21 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     cancelOrder_order_info_cancel: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_info_cancel.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน cancelOrder() รับพารามิเตอร์ dataItem ซึ่งเป็นข้อมูลที่ใช้ในการยกเลิกคำสั่งซื้อ ฟังก์ชันนี้ทำงานโดยเรียกใช้เมทอด getItemAll ของอ็อบเจกต์ cancel_orderObj และส่ง dataItem เข้าไปในเมทอดดังกล่าว เพื่อประมวลผลการยกเลิกคำสั่งซื้อต่อไป"
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2142,7 +2212,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // order_info_received.html
     order_info_received_getOid: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_info_received.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getOid() นี้ทำหน้าที่เติมข้อมูลลงใน element ต่างๆ บนหน้าเว็บด้วยข้อมูลที่ได้รับมาจาก dataMain และ dataItem ดังนี้"
@@ -2161,28 +2231,28 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     order_info_received_cancelOrder: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_info_received.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน cancelOrder นี้ทำหน้าที่เรียกใช้เมท็อด getItemAll ของอ็อบเจกต์ cancel_orderObj โดยส่ง dataItem เข้าไปเพื่อประมวลผลการยกเลิกคำสั่งซื้อ ดังนั้นฟังก์ชันนี้จะส่งข้อมูลใน dataItem ไปยัง getItemAll เพื่อดำเนินการต่อในกระบวนการยกเลิกคำสั่งซื้อที่เหมาะสม"
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     order_info_received_getTimeline: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_info_received.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getTimeline นี้ใช้สำหรับแสดงข้อมูลการเคลื่อนไหวของการจัดส่งในรูปแบบแถบเวลา (timeline) บนหน้าเว็บ โดยทำงานดังนี้"
@@ -2193,7 +2263,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2201,7 +2271,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // order_info_waitRceive.html
     order_info_waitRceive_sendReceipt: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_info_waitRceive.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน sendReceipt นี้ใช้สำหรับส่งคำขอยืนยันการรับสินค้าไปยังเซิร์ฟเวอร์ โดยมีขั้นตอนการทำงานดังนี้"
@@ -2215,14 +2285,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     order_info_waitRceive_getOid: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_info_waitRceive.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getOid นี้ใช้สำหรับแสดงข้อมูลรายละเอียดของคำสั่งซื้อในสถานะ 'รอรับสินค้า' บนหน้าเว็บ โดยทำงานดังนี้"
@@ -2239,14 +2309,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     order_info_waitRceive_getTimeline: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_info_waitRceive.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getTimeline นี้ใช้สำหรับแสดงข้อมูลการเคลื่อนไหวของการจัดส่งในรูปแบบแถบเวลา (timeline) บนหน้าเว็บ โดยมีขั้นตอนการทำงานดังนี้"
@@ -2258,7 +2328,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2266,21 +2336,21 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // order_state_10.html
     orderState10_cancelOrder: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_state_10.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน cancelOrder นี้ทำหน้าที่เรียกใช้เมท็อด getItemAll ของอ็อบเจกต์ cancel_orderObj โดยส่ง dataItem เข้าไปเพื่อประมวลผลการยกเลิกคำสั่งซื้อ ดังนั้นฟังก์ชันนี้จะส่งข้อมูลใน dataItem ไปยัง getItemAll เพื่อดำเนินการต่อในกระบวนการยกเลิกคำสั่งซื้อที่เหมาะสม"
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     orderState10_getOid: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_state_10.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getOid นี้ทำหน้าที่แสดงข้อมูลรายละเอียดของรายการสินค้าในสถานะ 10 บนหน้าเว็บ โดยมีขั้นตอนการทำงานดังนี้"
@@ -2296,7 +2366,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2304,21 +2374,21 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // order_state_ship.html
     orderStateShip_cancelOrder: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_state_ship.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน cancelOrder นี้ทำหน้าที่เรียกใช้เมท็อด getItemAll ของอ็อบเจกต์ cancel_orderObj โดยส่ง dataItem เข้าไปเพื่อประมวลผลการยกเลิกคำสั่งซื้อ ดังนั้นฟังก์ชันนี้จะส่งข้อมูลใน dataItem ไปยัง getItemAll เพื่อดำเนินการต่อในกระบวนการยกเลิกคำสั่งซื้อที่เหมาะสม"
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     orderStateShip_getOid: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Order_state_ship.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getOid นี้ทำหน้าที่แสดงข้อมูลรายละเอียดของรายการสินค้าที่จัดส่งอยู่บนหน้าเว็บ โดยมีขั้นตอนการทำงานดังนี้"
@@ -2334,7 +2404,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2342,7 +2412,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // payment_method.html
     selectPayment: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Payment_method.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน selectPayment นี้ใช้สำหรับการเลือกวิธีการชำระเงินที่ต้องการในหน้าเว็บ โดยมีขั้นตอนการทำงานดังนี้"
@@ -2354,7 +2424,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2362,7 +2432,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // payment_method2.html
     genQR: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Payment_method2.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน genQR ใช้สำหรับสร้าง QR code สำหรับการชำระเงิน โดยมีขั้นตอนการทำงานดังนี้"
@@ -2377,14 +2447,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     start_timer: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Payment_method2.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน start_timer ทำหน้าที่เริ่มการนับเวลาถอยหลังเมื่อได้รับเวลาที่กำหนดมาแล้ว โดยมีขั้นตอนการทำงานดังนี้"
@@ -2399,14 +2469,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     AddSlipPayment: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Payment_method2.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน AddSlipPayment ใช้สำหรับอัปโหลดไฟล์ใบเสร็จการชำระเงินผ่าน AJAX โดยมีขั้นตอนการทำงานดังนี้"
@@ -2422,14 +2492,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     UpdateSlipPayment: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Payment_method2.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน UpdateSlipPayment ใช้สำหรับอัปเดตข้อมูลการชำระเงินด้วยการส่งไฟล์ใบเสร็จที่อัปโหลดไปยังเซิร์ฟเวอร์ โดยมีขั้นตอนการทำงานดังนี้"
@@ -2444,7 +2514,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2452,7 +2522,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // paymentStatistic.html
     GetPaymentStatistic: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PaymentStatistic.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน GetPaymentStatistic ใช้สำหรับดึงข้อมูลสถิติการชำระเงินจากเซิร์ฟเวอร์โดยระบุปีที่ต้องการดึงข้อมูล โดยมีขั้นตอนการทำงานดังนี้"
@@ -2466,14 +2536,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     ChartPaymentStatistic: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PaymentStatistic.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน ChartPaymentStatistic ใช้สร้างกราฟแสดงข้อมูลสถิติการชำระเงินโดยใช้ข้อมูลที่ได้รับมาจากเซิร์ฟเวอร์ โดยมีขั้นตอนการทำงานดังนี้"
@@ -2493,14 +2563,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     ExportCSVPayment: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PaymentStatistic.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน ExportCSVPayment ใช้สร้างไฟล์ CSV จากข้อมูลการชำระเงินที่มีอยู่และทำการดาวน์โหลดไฟล์ CSV นั้น ๆ โดยมีขั้นตอนการทำงานดังนี้"
@@ -2516,7 +2586,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2524,7 +2594,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // productCart.html
     showCart: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PaymentStatistic.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน showCart ใช้สำหรับแสดงรายการสินค้าในตะกร้าของลูกค้า โดยมีขั้นตอนการทำงานดังนี้"
@@ -2532,7 +2602,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content2={`2.ดึงข้อมูลของตะกร้าสินค้าจาก local storage โดยใช้ localStorage.getItem("Cart") และแปลงข้อมูลเป็นออบเจ็กต์ JSON ด้วย JSON.parse()`}
         content3="3.กำหนดตัวแปรสำหรับเก็บข้อมูลรวมทั้งหมดและราคาทั้งหมดของสินค้า"
         content4="4.สร้างอาเรย์ที่เป็นเซ็ต (Set) เพื่อเก็บรหัสสินค้าที่ไม่ซ้ำกัน"
-        content5="5.เรียกใช้ AJAX เพื่อเรียกข้อมูลของตะกร้าสินค้าจากเซิร์ฟเวอร์ โดยกำหนด URL และ headers ที่จำเป็นและระบุว่าจะใช้วิธีการส่งคำขอแบบ async"
+        content5="5.เรียกใช้ AJAX เพื่อเรียกข้อมูลของตะกร้าสินค้าจากเซิร์ฟเวอร์ โดยกำหนด URL และ headers ที่จำเlip Functionบุว่าจะใช้วิธีการส่งคำขอแบบ async"
         content6="6.ในการสำเร็จของการขอข้อมูล AJAX"
         content6p1="6.1.ตรวจสอบรหัสของข้อมูลที่ส่งกลับ หากเท่ากับ 0 แสดงว่าสามารถแสดงข้อมูลได้"
         content6p2="6.2.เรียกใช้ฟังก์ชัน show_cart(data.result) เพื่อแสดงรายการสินค้า"
@@ -2544,14 +2614,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     show_cart: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PaymentStatistic.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน show_cart นี้ใช้สำหรับแสดงรายการสินค้าในตะกร้าของลูกค้า โดยมีขั้นตอนการทำงานดังนี้"
@@ -2570,14 +2640,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     update_quantity: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PaymentStatistic.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน update_quantity นี้ใช้สำหรับอัปเดตจำนวนสินค้าในตะกร้าของผู้ใช้ เมื่อมีการคลิกปุ่มเพิ่มหรือลดจำนวนสินค้าในรายการ"
@@ -2590,14 +2660,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     delete_id: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PaymentStatistic.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน delete_id นี้ใช้สำหรับลบสินค้าออกจากตะกร้าของผู้ใช้"
@@ -2610,14 +2680,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     sumPrice: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PaymentStatistic.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน sumPrice นี้ใช้สำหรับคำนวณราคารวมของสินค้าที่ถูกเลือกในตะกร้าและแสดงราคารวมทั้งหมดให้กับผู้ใช้"
@@ -2630,14 +2700,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     confirmOrder: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PaymentStatistic.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน confirmOrder มีหน้าที่ดำเนินการยืนยันการสั่งซื้อสินค้าที่มีอยู่ในตะกร้าของผู้ใช้"
@@ -2651,7 +2721,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2659,7 +2729,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     //productdetail.html
     confirmOrderBuy: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Productdetail.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน confirmOrderBuy ทำหน้าที่ยืนยันการซื้อสินค้าทันทีที่ผู้ใช้กดปุ่มซื้อสินค้า"
@@ -2673,14 +2743,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getDetailProduct: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Productdetail.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getDetailProduct มีหน้าที่แสดงรายละเอียดสินค้า"
@@ -2699,14 +2769,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     checkLogin: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Productdetail.html"
         headerName={getTitle()}
         content="-checkLogin ฟังก์ชันทำหน้าที่ตรวจสอบว่าผู้ใช้เข้าสู่ระบบแล้วหรือยัง โดยดูค่าของ token ใน localStorage"
@@ -2715,7 +2785,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2723,7 +2793,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // purchaseReport.html
     GetSalesData: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PurchaseReport.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน GetSalesData ทำการเรียกใช้งาน API เพื่อรับข้อมูลการขายจากฝั่งเซิร์ฟเวอร์ โดยใช้ปีที่กำหนดในพารามิเตอร์ year เป็นเงื่อนไข ภายในฟังก์ชันนี้มีขั้นตอนดังนี้"
@@ -2741,14 +2811,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     CreateTableReport: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PurchaseReport.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน CreateTableReport ใช้สำหรับสร้างตารางข้อมูลการขายเพื่อแสดงผลบนหน้าเว็บไซต์ โดยมีขั้นตอนดังนี้"
@@ -2762,14 +2832,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     CreateTableQuarter: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PurchaseReport.html"
         headerName={getTitle()}
         content="-CreateTableQuarter คือฟังก์ชันที่ใช้สร้างตารางข้อมูลการขายในแบบไตรมาสเพื่อแสดงผลบนหน้าเว็บไซต์ โดยมีขั้นตอนดังนี้"
@@ -2781,14 +2851,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getSelectedMonthpurchase: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PurchaseReport.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getSelectedMonthpurchase ใช้ในการเลือกเดือนและปีที่ต้องการดูข้อมูลการซื้อสินค้า โดยมีขั้นตอนดังนี้"
@@ -2803,14 +2873,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     showChart: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PurchaseReport.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน showChart ใช้ในการแสดงแผนภูมิกราฟิกด้วยไลบรารี ECharts ซึ่งมีขั้นตอนดังนี้"
@@ -2826,14 +2896,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     ExportCSV: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="PurchaseReport.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน ExportCSV นี้ใช้สำหรับสร้างไฟล์ CSV จากข้อมูลการขายที่เก็บไว้ในตัวแปร dataReport เพื่อให้ผู้ใช้สามารถดาวน์โหลดข้อมูลเพื่อนำไปใช้งานต่อได้ ดังนี้"
@@ -2850,7 +2920,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2858,7 +2928,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // redeem.html
     RedeemCheckToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Redeem.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน RedeemCheckToken มีหน้าที่ตรวจสอบการมีหรือไม่มี token ที่เก็บไว้ใน localStorage และดำเนินการตามเงื่อนไขดังนี้"
@@ -2870,14 +2940,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     checkNoInput: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Redeem.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน checkNoInput ทำหน้าที่ตรวจสอบว่ามีการป้อนข้อมูลในช่อง input ที่ใช้สำหรับการแลกเหรียญ (redeem coins) หรือไม่ และปรับการทำงานของปุ่ม submit ตามเงื่อนไขดังนี้"
@@ -2888,14 +2958,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     postRedeem: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Redeem.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน postRedeem มีหน้าที่ส่งข้อมูลการแลกเหรียญไปยังเซิร์ฟเวอร์เพื่อดำเนินการตามคำขอ โดยมีขั้นตอนการทำงานดังนี้"
@@ -2908,7 +2978,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2916,7 +2986,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // refund.html
     getData: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Refund.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getData ทำหน้าที่รับข้อมูลสินค้าที่ต้องการทำการคืนเงิน (refund) และแสดงข้อมูลนี้ในหน้าเว็บไซต์ โดยมีขั้นตอนการทำงานดังนี้"
@@ -2928,14 +2998,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     sendRefundRefund: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Refund.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน sendRefund ใช้สำหรับส่งข้อมูลการคืนเงิน (refund) ไปยังเซิร์ฟเวอร์ โดยมีขั้นตอนการทำงานดังนี้"
@@ -2949,14 +3019,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     PreviewImg_refund: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Refund.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน PreviewImg_refund ใช้สำหรับตั้งค่าการดูตัวอย่างรูปภาพที่ผู้ใช้เลือกอัปโหลดเพื่อคืนเงิน โดยมีขั้นตอนการทำงานดังนี้"
@@ -2971,7 +3041,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -2979,7 +3049,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // reportdatalogger.html
     CreateHTML: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน CreateHTML ใช้สร้าง HTML สำหรับแสดงข้อมูลรายงานของระบบ ดังนี้"
@@ -2993,14 +3063,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     GetReportData: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน GetReportData มีวัตถุประสงค์เพื่อเรียกข้อมูลรายงานสำหรับอุปกรณ์ที่ระบุในวันที่และเดือนที่ระบุ เมื่อได้รับข้อมูลรายงานมาแล้ว จะนำข้อมูลนั้นไปแสดงบนหน้าเว็บ"
@@ -3011,14 +3081,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getSelectedDate: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getSelectedDate มีวัตถุประสงค์เพื่อเปลี่ยนแปลงวันที่ที่เลือกและอัปเดตข้อมูลของรายงานตามวันที่ที่เลือก โดยมีขั้นตอนการทำงานดังนี้"
@@ -3031,14 +3101,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     openTabreportCart: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน openTabreportCart ถูกใช้เพื่อเปิดแท็บตามที่เลือกในเมนูรายงานของแอปพลิเคชัน โดยมีการดำเนินการต่าง ๆ ตามลำดับดังนี้"
@@ -3051,14 +3121,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     openTabreport: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน openTabreport ถูกใช้เพื่อเปิดแท็บตามที่เลือกในเมนูรายงานของแอปพลิเคชัน โดยมีการดำเนินการต่าง ๆ ตามลำดับดังนี้"
@@ -3072,14 +3142,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     chartFlowDay: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน chartFlowDay ใช้สำหรับสร้างแผนภูมิแสดงการไหลของข้อมูลของวันที่เลือก โดยมีขั้นตอนดังนี้"
@@ -3095,14 +3165,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     chartFlowMonth: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน chartFlowMonth ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลการไหลของข้อมูลในเดือนที่เลือกไว้ ดังนี้"
@@ -3117,14 +3187,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     chartFlowYear: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน chartFlowYear ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลการไหลของข้อมูลในปีที่เลือกไว้ โดยมีขั้นตอนดังนี้"
@@ -3139,14 +3209,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     chartFlowTotal: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน chartFlowTotal ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลการไหลของข้อมูลทั้งหมด (รวมกันทุกเดือน) โดยมีขั้นตอนดังนี้"
@@ -3161,14 +3231,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     chargePower: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน chargePower ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลพลังงานการชาร์จของพาโวเวอร์ (PV charging power) โดยมีขั้นตอนดังนี้"
@@ -3184,14 +3254,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     chartNOlogin: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน chartNOlogin ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลพลังงานการชาร์จของพาโวเวอร์ (PV charging power) และการใช้พลังงานปัจจุบัน (Current load power) โดยมีขั้นตอนดังนี้"
@@ -3204,14 +3274,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     chartNOloginMonthcart: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน chartNOloginMonthcart ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลพลังงานการชาร์จของพาโวเวอร์ (PV charging power) และการใช้พลังงานปัจจุบัน (Current load power) ในระหว่างเดือนนี้ โดยมีขั้นตอนดังนี้"
@@ -3222,14 +3292,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     chartNOloginYearhcart: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน chartNOloginYearhcart ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลพลังงานการชาร์จของพาโวเวอร์ (PV charging power) และการใช้พลังงานปัจจุบัน (Current load power) ในระหว่างปีนี้ โดยมีขั้นตอนดังนี้"
@@ -3240,14 +3310,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     chartNOloginTotalhcart: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน chartNOloginTotalhcart ใช้สร้างแผนภูมิเพื่อแสดงข้อมูลพลังงานการชาร์จของพาโวเวอร์ (PV charging power) และการใช้พลังงานปัจจุบัน (Current load power) ในระหว่างทั้งหมดของปีนี้ โดยมีขั้นตอนดังนี้"
@@ -3258,14 +3328,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     chargePowerNOlogin: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Reportdatalogger.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน chargePowerNOlogin มีวัตถุประสงค์เพื่อสร้างแผนภูมิเพื่อแสดงข้อมูลพลังงานการชาร์จของพาโวเวอร์ (PV charging power) โดยไม่ต้องเข้าสู่ระบบ โดยมีขั้นตอนดังนี้"
@@ -3276,7 +3346,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -3284,7 +3354,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // setting_account.html
     settingAccountCheckToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Setting_account.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน settingAccountCheckToken มีหน้าที่ตรวจสอบว่ามี Token ที่เก็บไว้ใน Local Storage หรือไม่ ถ้ามีก็จะทำงานต่อไป โดยมีขั้นตอนดังนี้"
@@ -3294,21 +3364,21 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     updateProfile: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Setting_account.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน updateProfile(User) ใช้สำหรับอัปเดตโปรไฟล์ของผู้ใช้ โดยมีขั้นตอนการทำงานดังนี้"
         content1={`1.ใช้ localStorage.getItem("token") เพื่อเรียก Token ที่ถูกเก็บไว้ใน Local Storage และเก็บไว้ในตัวแปร Token`}
         content2={`2.แปลง Token จาก JSON string เป็น Object ด้วย JSON.parse(Token)`}
         content3={`3.ใช้ $.ajax() เพื่อส่งคำขอ HTTP PUT ไปยังเซิร์ฟเวอร์เพื่ออัปเดตโปรไฟล์`}
-        content4={`4.กำหนด URL และหัวข้อ Authorization ใน headers ด้วย Token ที่ได้รับ`}
+        content4={`4.กำหนด URL และหัวข้อ Authorization ใน headers ด้วlip Functionที่ได้รับ`}
         content5={`5.กำหนด contentType เป็น "application/json" เนื่องจากข้อมูลที่ส่งไปเป็น JSON`}
         content6="6.ส่งข้อมูลผู้ใช้ที่ต้องการอัปเดตในรูปแบบ JSON ผ่านพารามิเตอร์ data"
         content7="7.รอการตอบกลับจากเซิร์ฟเวอร์ และทำการตรวจสอบผลลัพธ์ที่ได้รับ"
@@ -3318,14 +3388,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     AddAvatar: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Setting_account.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน AddAvatar(file) ใช้สำหรับอัปโหลดรูปภาพของผู้ใช้ โดยมีขั้นตอนการทำงานดังนี้"
@@ -3335,7 +3405,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content4={`4.เพิ่มไฟล์ที่จะอัปโหลดลงใน FormData ด้วย formData.append("file", file)`}
         content5={`5.แสดง Loader โดยใช้ loaderObj.show()`}
         content6={`6.ส่งคำขอ HTTP PUT ไปยังเซิร์ฟเวอร์เพื่ออัปโหลดไฟล์`}
-        content7={`7.กำหนด URL และหัวข้อ Authorization ใน headers ด้วย Token ที่ได้รับ`}
+        content7={`7.กำหนด URL และหัวข้อ Authorization ใน headers ด้วlip Functionที่ได้รับ`}
         content8={`8.กำหนด contentType เป็น false เนื่องจากเราใช้ FormData และไม่ต้องการให้ jQuery กำหนด Content-Type ให้เรา`}
         content9={`9.กำหนด processData เป็น false เนื่องจากเราไม่ต้องการให้ jQuery แปลงข้อมูลให้เป็น query string`}
         content10={`10.รอการตอบกลับจากเซิร์ฟเวอร์ และทำการตรวจสอบผลลัพธ์ที่ได้รับ`}
@@ -3344,14 +3414,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     UpdateAvatar: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Setting_account.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน UpdateAvatar(Img) ใช้สำหรับอัปเดตรูปภาพโปรไฟล์ของผู้ใช้ โดยมีขั้นตอนการทำงานดังนี้"
@@ -3360,7 +3430,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         content3={`3.สร้างอ็อบเจ็กต์ mData เพื่อเก็บข้อมูลรูปภาพใหม่ที่จะอัปเดต`}
         content4={`4.ใช้ console.log(mData) เพื่อตรวจสอบข้อมูลที่จะส่งไปยังเซิร์ฟเวอร์`}
         content5={`5.ส่งคำขอ HTTP PATCH ไปยังเซิร์ฟเวอร์เพื่ออัปเดตรูปภาพโปรไฟล์`}
-        content6={`6.กำหนด URL และหัวข้อ Authorization ใน headers ด้วย Token ที่ได้รับ`}
+        content6={`6.กำหนด URL และหัวข้อ Authorization ใน headers ด้วlip Functionที่ได้รับ`}
         content7={`7.กำหนด contentType เป็น "application/json" เนื่องจากเราส่งข้อมูลเป็น JSON`}
         content8={`8.ส่งข้อมูลรูปภาพที่จะอัปเดตในรูปแบบ JSON โดยใช้ JSON.stringify(mData)`}
         content9={`9.รอการตอบกลับจากเซิร์ฟเวอร์ และทำการตรวจสอบผลลัพธ์ที่ได้รับ`}
@@ -3369,7 +3439,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -3377,7 +3447,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // setting_order.html
     getAll: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Setting_order.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getAll(state) ใช้สำหรับเรียกดูรายการคำสั่งซื้อทั้งหมดโดยพารามิเตอร์ state จะระบุสถานะของคำสั่งซื้อที่ต้องการดู และมีขั้นตอนการทำงานดังนี้"
@@ -3393,14 +3463,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     scroller: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Setting_order.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน scroller() ใช้สำหรับกำหนดค่าขนาดและลักษณะของสไคโรลเลอร์ โดยทำการกำหนดความกว้าง width, ความสูง height, และสีพื้นหลัง background-color ของสไคโรลเลอร์ เพื่อให้เข้ากับหน้าต่างการแสดงผล ซึ่งมีขั้นตอนการทำงานดังนี้"
@@ -3410,7 +3480,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -3418,7 +3488,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // setting.html
     SettingCheckToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Setting.html"
         headerName={getTitle()}
         content="-SettingCheckToken() คือฟังก์ชันที่ใช้ในการตรวจสอบการเข้าสู่ระบบของผู้ใช้ โดยทำการดึง token จาก localStorage และแปลงเป็น JSON object เพื่อตรวจสอบว่ามี token อยู่หรือไม่ ขั้นตอนการทำงานคือ"
@@ -3429,14 +3499,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getQRcode: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Setting.html"
         headerName={getTitle()}
         content="-getQRcode() เป็นฟังก์ชันที่ใช้ในการขอรับ QR code และรหัสเชิญชวนจากเซิร์ฟเวอร์ โดยทำการส่งคำขอไปยังเซิร์ฟเวอร์ด้วยการใช้ AJAX เมื่อได้รับข้อมูลเรียบร้อยแล้ว จะแสดง QR code และรหัสเชิญชวนบนหน้าเว็บไซต์ ขั้นตอนการทำงานคือ"
@@ -3448,15 +3518,15 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     // start.html
-    startInit: () => (
+    initAndCall: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Start.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน init ใช้สำหรับการเริ่มต้นโมดูลหลักของเว็บไซต์ โดยมีการทำงานดังนี้"
@@ -3470,15 +3540,16 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
+        htmlCheckCall={true}
       />
     ),
 
     // topup.html
     TopUpCheckToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Topup.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน TopUpCheckToken มีหน้าที่ตรวจสอบการเข้าสู่ระบบโดยการตรวจสอบการมีหรือไม่มี token ที่เก็บไว้ใน localStorage โดยมีขั้นตอนการทำงานดังนี้"
@@ -3488,14 +3559,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     topup_checkNoInput: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Topup.html"
         headerName={getTitle()}
         content="-checkNoInput มีหน้าที่ตรวจสอบว่ามีการกรอกข้อมูลใน input field สำหรับจำนวนเงินที่ต้องการเติมหรือไม่ โดยมีขั้นตอนการทำงานดังนี้"
@@ -3506,14 +3577,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     topup_addSlipPayment: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Topup.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน AddSlipPayment ทำหน้าที่อัปโหลดไฟล์สลิปการโอนเงินไปยังเซิร์ฟเวอร์ และจัดการกับการตอบสนองจากเซิร์ฟเวอร์ โดยมีขั้นตอนการทำงานดังนี้"
@@ -3530,14 +3601,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     topup_updateSlipPayment: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Topup.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน UpdateSlipPayment ทำหน้าที่ส่งคำขอเพื่ออัปเดตข้อมูลการชำระเงินพร้อมส่งสลิปการโอนเงินไปยังเซิร์ฟเวอร์ และจัดการกับการตอบสนองจากเซิร์ฟเวอร์ ดังนี้"
@@ -3554,7 +3625,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -3562,7 +3633,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     //transaction.html
     transactionCheckToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Transaction.html"
         headerName={getTitle()}
         content="-การทำงานของฟังก์ชัน transactionCheckToken เป็นการตรวจสอบ Token ใน localStorage เพื่อตรวจสอบว่าผู้ใช้ได้ทำการเข้าสู่ระบบหรือยัง โดยมีขั้นตอนดังนี้"
@@ -3573,14 +3644,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getTransaction: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Transaction.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getTransaction มีหน้าที่ดึงข้อมูลรายการธุรกรรมตามประเภทที่กำหนดจาก API และแสดงข้อมูลนั้นในหน้าเว็บไซต์ โดยมีขั้นตอนดังนี้"
@@ -3595,14 +3666,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     pagination_tran: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Transaction.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน pagination_tran มีหน้าที่สร้างปุ่ม pagination เพื่อให้ผู้ใช้สามารถเลือกหน้าของรายการธุรกรรมที่ต้องการดูได้ โดยมีขั้นตอนดังนี้"
@@ -3617,14 +3688,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     transaction_calPage: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Transaction.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน calPage ใช้สำหรับคำนวณหน้าของ pagination โดยดึงข้อมูลรายการธุรกรรมทั้งหมดจาก API และแบ่งแยกตามประเภทของรายการธุรกรรมที่กำหนด เมื่อได้ข้อมูลรายการธุรกรรมแล้วจะทำการคำนวณหน้าทั้งหมดของ pagination จากนั้นจะเรียกใช้ฟังก์ชัน transactionObj.pagination_tran() เพื่อสร้าง pagination ใหม่"
@@ -3636,7 +3707,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -3644,7 +3715,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // transfer.html
     transferCheckToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Transfer.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน transferCheckToken ถูกใช้เพื่อตรวจสอบว่าผู้ใช้เข้าสู่ระบบหรือไม่ โดยการตรวจสอบ token ที่เก็บไว้ใน local storage หาก token ไม่มีค่า หรือผู้ใช้ไม่ได้เข้าสู่ระบบ จะทำการปรับการแสดงผลและการทำงานของบางส่วนดังนี้"
@@ -3658,14 +3729,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     transfer_checkNoInput: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Transfer.html"
         headerName={getTitle()}
         content="-ในฟังก์ชัน checkNoInput มีการตรวจสอบข้อมูลที่ผู้ใช้กรอกเข้ามาในฟิลด์ของจำนวนเงินและที่อยู่ผู้รับ หากข้อมูลใดข้อมูลหนึ่งหรือทั้งสองไม่ได้รับการกรอก เงื่อนไขจะทำการปรับการแสดงผลและการทำงานของปุ่ม 'โอนเงิน' ดังนี้"
@@ -3679,14 +3750,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     postTransfer: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Transfer.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน postTransfer ใช้สำหรับส่งคำขอโอนเงินไปยังเซิร์ฟเวอร์เพื่อดำเนินการโอนเงิน โดยมีขั้นตอนการดำเนินการดังนี้"
@@ -3699,7 +3770,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -3707,7 +3778,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // update_order.html
     showOrder: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Update_order.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน showOrder เป็นฟังก์ชันที่ใช้ในการดึงข้อมูลการสั่งซื้อจากเซิร์ฟเวอร์ และสร้าง HTML สำหรับแต่ละรายการสั่งซื้อเพื่อแสดงบนหน้าเว็บไซต์ ดังนี้"
@@ -3723,21 +3794,21 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     update_order_scroller: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Update_order.html"
         headerName={getTitle()}
         content={`-ฟังก์ชัน scroller จะกำหนดความกว้างและความสูงของอิลิเมนต์ #showOrderScroller ให้มีค่าเท่ากับ w และ h ลบด้วย 90 พิกเซลเพื่อให้เหมาะสมกับขนาดของหน้าต่างและให้ต่อเนื่องกับส่วนคงเหลือของหน้าต่าง โดยพรอพสตายซ์เริ่มต้น overflow จะถูกตั้งค่าเป็น "hidden" เพื่อป้องกันการเลื่อนข้อความแนวนอนหรือแนวตั้งของเนื้อหาภายใน และมีสีพื้นหลังถูกกำหนดเป็น "#E3F5FF" สีน้ำเงินอ่อนเพื่อให้เหมาะสมกับการแสดงผลข้อมูลบนหน้าต่างนี้ โค้ดที่ไม่ได้ใช้งาน (คือ c) อาจเป็นข้อผิดพลาดหรือการละเว้นของการเขียนโค้ด แต่ไม่มีผลต่อการทำงานของฟังก์ชันนี้ โดยมองเห็นจากการที่มันถูกเขียนเป็นความว่างเปล่าโดยไม่มีเนื้อหาใดๆ ที่มีผลต่อโค้ดที่เขียนไว้ข้างบนและมีผลกับการทำงานของฟังก์ชันที่ถูกเรียกใช้ในที่อื่น`}
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -3745,7 +3816,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // vouncher_code.html
     showVoucher: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Vouncher_code.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน showVoucher ใช้สำหรับแสดงข้อมูลของ voucher บนหน้าเว็บไซต์ โดยรับข้อมูลเข้ามาในรูปแบบของอาร์เรย์ data และทำการสร้าง HTML โดยใช้ข้อมูลนี้เพื่อแสดงรายละเอียดของแต่ละ voucher ภายใน #loop_voucher_show element โดยมีขั้นตอนดังนี้"
@@ -3757,7 +3828,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -3765,7 +3836,7 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
     // wallet.html
     walletCheckToken: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Wallet.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน walletCheckToken ใช้สำหรับตรวจสอบว่ามี Token ของผู้ใช้ใน localStorage หรือไม่ โดยมีขั้นตอนดังนี้"
@@ -3776,14 +3847,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     getUserData: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Wallet.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน getUserData ใช้สำหรับดึงข้อมูลผู้ใช้งานและข้อมูลกระเป๋าเงินจากเซิร์ฟเวอร์โดยใช้ Token ที่อยู่ใน localStorage และส่งไปยังเซิร์ฟเวอร์เพื่อขอข้อมูล ขั้นตอนการทำงานมีดังนี้"
@@ -3799,14 +3870,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     get_dataTransaction: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Wallet.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน get_dataTransaction ใช้สำหรับดึงข้อมูลรายการธุรกรรมที่เกี่ยวข้องกับกระเป๋าเงินของผู้ใช้จากเซิร์ฟเวอร์ โดยส่งคำขอ GET ไปยังเส้นทางที่ระบุและใช้ Token ที่ได้จาก localStorage เพื่อให้เซิร์ฟเวอร์ตรวจสอบการยืนยันตัวตน ขั้นตอนการทำงานมีดังนี้"
@@ -3821,14 +3892,14 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
 
     loadList: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slip Function"
         headerHtml="Wallet.html"
         headerName={getTitle()}
         content="-ฟังก์ชัน loadList ใช้สำหรับโหลดรายการข้อมูลและตรวจสอบการเลื่อนหน้าจอในหน้ากระเป๋าเงินของผู้ใช้ โดยมีขั้นตอนการทำงานดังนี้"
@@ -3839,13 +3910,807 @@ const FormCintentSlipFun = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
-  };
 
-  return formCintentSlipFun[selectedMenu] && formCintentSlipFun[selectedMenu]();
-};
+    cleanInput: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Wallet.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน cleanInput() ซึ่งมีหน้าที่ในการล้างค่าของฟิลด์ข้อมูลในแบบฟอร์ม โดยใช้ jQuery ในการเข้าถึงฟิลด์ต่างๆ โดยให้"
+        content1={`1.$("#username").val("") - ล้างค่าในฟิลด์ที่มี id เป็น "username" โดยกำหนดให้มีค่าว่าง`}
+        content2={`2.$("#address").val("") - ล้างค่าในฟิลด์ที่มี id เป็น "address" โดยกำหนดให้มีค่าว่าง`}
+        content3={`3.$("#email").val("") - ล้างค่าในฟิลด์ที่มี id เป็น "email" โดยกำหนดให้มีค่าว่าง`}
+        content4="ซึ่งสามารถนำไปใช้ในกรณีที่ต้องการล้างค่าของฟิลด์ข้อมูลในแบบฟอร์มก่อนที่จะทำการส่งข้อมูลหรือกระทำอื่นๆ ที่ต้องการให้ข้อมูลในฟิลด์เป็นค่าว่างก่อนนั้นได้"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
 
-export default FormCintentSlipFun;
+    checkLoginStatusWithRefreshToken: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Wallet.html"
+        headerName={getTitle()}
+        content="-เป็นฟังก์ชัน checkLoginStatusWithRefreshToken() ซึ่งใช้สำหรับตรวจสอบสถานะการเข้าสู่ระบบโดยใช้ Refresh Token เพื่อป้องกันการหมดอายุของ Access Token โดยมีขั้นตอนดังนี้"
+        content1="1.ตรวจสอบว่าตัวแปร token มีค่าเป็น null หรือไม่ ถ้าเป็น null ก็จะออกจากฟังก์ชันโดยไม่ทำอะไร"
+        content2="2.สร้างข้อมูลที่ต้องการส่งในรูปแบบ JSON ซึ่งประกอบด้วยแค่ refresh token จากนั้นทำการส่ง request ไปยัง API ด้วย jQuery.ajax()"
+        content3="3.ในส่วนของ beforeSend จะไม่มีการกระทำอะไรเพิ่มเติม"
+        content4="4.หลังจากส่ง request เรียบร้อยแล้ว จะมีการตรวจสอบคำตอบที่ได้กลับมา ถ้า code ของ response เป็น 0 แสดงว่าการ refresh token สำเร็จ จะทำการบันทึก token ลงใน localStorage และทำการแปลง token จาก string เป็น JSON object เก็บไว้ในตัวแปร token นอกจากนี้ยังทำการซ่อนหน้า loginPage ออกไปด้วยฟังก์ชัน pageUnShow()"
+        content5="5.ถ้า code ของ response ไม่เป็น 0 แสดงว่าการ refresh token ไม่สำเร็จ จะแสดงข้อความ 'refresh fail' ใน console.log()"
+        content6="6.ในกรณีที่เกิด error ในการส่ง request หรือใน response จะแสดง error ใน console.log()"
+        content7="7.ส่วน complete จะไม่มีการกระทำอะไรเพิ่มเติม ซึ่งอาจใช้สำหรับการทำงานหลังจบ request หรือปิด loader ตามความเหมาะสม"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    askDeviceIdFun: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Login.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน askDeviceIdFun นี้ใช้สำหรับขอ Device ID จากแอปพลิเคชัน โดยมีขั้นตอนดังนี้"
+        content1="1.ตรวจสอบว่าเป็นอุปกรณ์แอนดรอยด์หรือไม่ ถ้าใช่ก็จะเริ่มการขอ Device ID"
+        content2={`2.ใช้ setTimeout เพื่อเรียกฟังก์ชัน callApp("ask_deviceId") ทุกๆ 1 วินาทีตั้งแต่หลังจากนี้เพื่อขอ Device ID`}
+        content3="3.การเรียก callApp('ask_deviceId') จะเกิดขึ้นทุกๆ 2 วินาทีเพื่อรวมเวลาที่เรียกไปทั้งหมดไว้ในช่วงเวลาที่มีช่องว่าง"
+        content4="โดยการใช้ setTimeout ในลูปเหล่านี้จะช่วยให้แอปพลิเคชันมีเวลาพอสมควรในการตอบกลับขอ Device ID โดยไม่ทำให้แอปพลิเคชันขัดข้องหรือติดค้างไปกับการร้องขอ Device ID นี้แต่เพียงแค่ใช้เวลาสั้นๆ ในการเรียกเท่านั้น"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    registerFun: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Register.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน registerFun ใช้สำหรับลงทะเบียนผู้ใช้ใหม่ ดังนี้"
+        content1="1.ดึงค่าข้อมูลที่ผู้ใช้ป้อน เช่น อีเมล, OTP (รหัสยืนยันครั้งเดียว), ชื่อผู้ใช้, เบอร์โทรศัพท์มือถือ, รหัสผ่าน, และรหัสเชิญ"
+        content2="2.สร้างอ็อบเจ็กต์ข้อมูล (mData) ที่มีข้อมูลผู้ใช้เพื่อส่งไปยังเซิร์ฟเวอร์"
+        content3="3.ส่งคำขอ AJAX POST ไปยังเซิร์ฟเวอร์ที่ URL /v1/auth/signUp พร้อมกับข้อมูลผู้ใช้ในรูปแบบ JSON"
+        content4="4.จัดการกับการตอบกลับจากเซิร์ฟเวอร์"
+        content4p1="4.1.หากรหัสการตอบกลับเป็น 0 (หมายถึงสำเร็จ) จะแสดงข้อความสำเร็จ, ล้างช่องกรอกข้อมูล, และเปลี่ยนเส้นทางผู้ใช้ไปที่หน้าเข้าสู่ระบบหลังจากสักครู่"
+        content4p2="4.2.หากรหัสการตอบกลับไม่เท่ากับ 0, จะแสดงข้อความผิดพลาดขึ้นอยู่กับรหัสสถานะที่ได้รับ"
+        content5="5.จัดการกับข้อผิดพลาดที่อาจเกิดขึ้นในระหว่างคำขอ AJAX เช่น ข้อผิดพลาดจากเซิร์ฟเวอร์"
+        content6="6.กำหนดฟังก์ชันภายใน cleanInput เพื่อรีเซ็ตช่องกรอกข้อมูลหลังจากการลงทะเบียน"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    SendOTP: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Register.html"
+        headerName={getTitle()}
+        content="-ฟังก์ชัน SendOTP ใช้สำหรับส่งรหัส OTP ไปยังอีเมลของผู้ใช้ ดังนี้"
+        content1="1.ดึงค่าอีเมลที่ผู้ใช้ป้อนในช่องกรอก"
+        content2="2.สร้างอ็อบเจ็กต์ข้อมูล (mData) ที่มีข้อมูลอีเมลและประเภท (type) เพื่อส่งไปยังเซิร์ฟเวอร์"
+        content3="3.ส่งคำขอ AJAX POST ไปยังเซิร์ฟเวอร์ที่ URL /v1/email-verification/send พร้อมกับข้อมูลในรูปแบบ JSON"
+        content4="4.จัดการกับการตอบกลับจากเซิร์ฟเวอร์"
+        content4p1="4.1.หากรหัสการตอบกลับเป็น 0 (หมายถึงสำเร็จ) จะแสดงข้อความสำเร็จและเริ่มนับถอยหลังเวลาต่อไป"
+        content4p2="4.2.หากรหัสการตอบกลับไม่เท่ากับ 0, จะแสดงข้อความผิดพลาดขึ้นอยู่กับรหัสสถานะที่ได้รับ"
+        content5="5.จัดการกับข้อผิดพลาดที่อาจเกิดขึ้นในระหว่างคำขอ AJAX เช่น ข้อผิดพลาดจากเซิร์ฟเวอร์"
+        content6="6.การนับถอยหลังเวลาจะทำงานโดยการเริ่มต้นฟังก์ชัน startCountdown ซึ่งจะเริ่มนับถอยหลังจากเวลาที่ได้รับจากเซิร์ฟเวอร์"
+        content7="7.เมื่อเวลานับถอยหลังสิ้นสุดลง ฟังก์ชัน OTPCountdown จะถูกเรียกเพื่อแสดงหน้าแบบฟอร์มให้ผู้ใช้ป้อน OTP อีกครั้งหรือคลิกที่ปุ่มส่ง OTP อีกครั้งหากต้องการส่งอีกครั้ง"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    loginFun: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="ฟังก์ชัน loginFun() นี้ใช้สำหรับการทำการเข้าสู่ระบบผ่าน API โดยมีขั้นตอนดังนี้"
+        content1="1.นำข้อมูลจากฟิลด์ในแบบฟอร์ม (ชื่อผู้ใช้และรหัสผ่าน) มาเก็บไว้ในตัวแปร mData ในรูปแบบของ JSON object"
+        content2="2.ตรวจสอบว่ามี deviceId หรือไม่ ถ้ามีจะกำหนดค่าใน mData ใหม่อีกรอบ โดยใช้ข้อมูลจากฟิลด์ในแบบฟอร์มอีกครั้ง"
+        content3="3.ส่ง request ไปยัง API โดยใช้ jQuery.ajax() เพื่อทำการเข้าสู่ระบบ"
+        content4="4.ในส่วนของ beforeSend จะไม่มีการกระทำอะไรเพิ่มเติม"
+        content5="5.หลังจากที่ส่ง request เรียบร้อยแล้ว จะมีการตรวจสอบคำตอบที่ได้กลับมา ถ้า code ของ response เป็น 0 แสดงว่าการเข้าสู่ระบบสำเร็จ จะทำการซ่อน loader ด้วยฟังก์ชัน loaderObj.unShow() และทำการล้างค่าฟิลด์ข้อมูลในแบบฟอร์มด้วยฟังก์ชัน cleanInput() จากนั้นจะทำการเก็บ token และชื่อผู้ใช้ที่ลงทะเบียนลงใน localStorage และทำการเรียกใช้ฟังก์ชัน init() ของหน้า homeObj และ checkIsLogin() ของ mainObj สุดท้ายจะทำการแสดงหน้า notificationPage"
+        content6="6.ถ้า code ของ response ไม่เป็น 0 แสดงว่าการเข้าสู่ระบบไม่สำเร็จ จะแสดงข้อความแจ้งเตือนโดยใช้ msgPageObj.show() ซึ่งจะแปลง code ของ response เป็นข้อความที่แสดงความหมายเพื่อแจ้งเตือนให้ผู้ใช้ทราบ"
+        content7="7.ในกรณีที่เกิด error ในการส่ง request หรือใน response จะแสดงข้อความ '服务器链接问题' ใน console log"
+        content8="8.ส่วน complete จะไม่มีการกระทำอะไรเพิ่มเติม ซึ่งอาจใช้สำหรับการทำงานหลังจบ request หรือปิด loader ตามความเหมาะสม"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+        headerHtml="home.html"
+      />
+    ),
+
+    checkIn: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getAllProduct() ทำหน้าที่ดึงข้อมูลสินค้าทั้งหมดจาก API โดยใช้เมทอด GET และนำข้อมูลที่ได้มาแสดงผลในหน้าเว็บไซต์ โดยมีขั้นตอนดังนี้"
+        content1="1.ดึง token จาก localStorage เพื่อใช้ในการเข้าถึง API และแปลงข้อมูล token จาก string เป็น JSON object"
+        content2={`2.ตรวจสอบค่าของตัวแปร checkSimulatedData ว่ามีค่าหรือไม่ ถ้าไม่มีกำหนดค่า SimulateAPI เป็น "/v1/products" หากมีกำหนดค่า SimulateAPI เป็น "/v1/recommend/products" และกำหนด header ในการส่ง request ด้วย Bearer token`}
+        content3="3.แสดง loader บนหน้าเว็บไซต์เพื่อแสดงว่ากำลังโหลดข้อมูล"
+        content4="4.ส่ง request ไปยัง API โดยใช้ jQuery.ajax() เพื่อดึงข้อมูลสินค้า"
+        content5="5.ในส่วนของ beforeSend จะไม่มีการกระทำอะไรเพิ่มเติม"
+        content6="6.หลังจากที่ส่ง request เรียบร้อยแล้ว จะตรวจสอบคำตอบที่ได้รับ ถ้า code ของ response เป็น 0 แสดงว่าการดึงข้อมูลสินค้าสำเร็จ จะซ่อน loader และแสดงข้อมูลสินค้าบนหน้าเว็บไซต์ โดยแบ่งแยกตามหมวดหมู่ของสินค้าและแสดงผลด้วยการสร้าง HTML ในแต่ละหมวดหมู่"
+        content7="7.ในกรณีที่ code ของ response ไม่เป็น 0 จะแสดงข้อความแจ้งเตือนผิดพลาดที่เกิดขึ้น"
+        content8="8.ในกรณีที่เกิด error ในการส่ง request หรือใน response จะแสดงข้อความแจ้งเตือนผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์"
+        content9={`ฟังก์ชัน checkIn() ทำหน้าที่ส่งคำขอเช็คอินไปยังเซิร์ฟเวอร์ โดยใช้เมทอด POST และใส่ header ในการส่ง request ด้วย Bearer token เพื่อตรวจสอบการเข้าสู่ระบบ หลังจากนั้นจะทำการเปลี่ยนสถานะของปุ่มเช็คอินให้เป็น "Checked In" และปิดการเช็คอินสำหรับวันนั้นและเรียกใช้ฟังก์ชัน getCheckIn() ในกรณีที่การเช็คอินไม่สำเร็จจะแสดงข้อความแจ้งเตือนผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์`}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+        headerHtml="home.html"
+      />
+    ),
+
+    getFinancialAlipay: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getFinancialAlipay นี้ใช้สำหรับการดึงข้อมูลบัตร Alipay จากเซิร์ฟเวอร์ โดยมีขั้นตอนดังนี้"
+        content1="1.แสดง loader บนหน้าเว็บไซต์เพื่อแสดงว่ากำลังโหลดข้อมูล"
+        content2="2.สร้างตัวแปรสำหรับเก็บข้อมูลที่ได้รับจากเซิร์ฟเวอร์ เตรียมตัวแปรสำหรับเก็บข้อมูลเฉพาะประเภท Alipay"
+        content3="3.ดึง token จาก localStorage เพื่อใช้ในการเข้าถึง API และแปลงข้อมูล token จาก string เป็น JSON object"
+        content4="4.ส่ง request ไปยัง API โดยใช้เมทอด GET และใส่ header ในการส่ง request ด้วย Bearer token เพื่อตรวจสอบการเข้าสู่ระบบ"
+        content5="5.ในส่วนของ beforeSend จะไม่มีการกระทำอะไรเพิ่มเติม"
+        content6={`6.หลังจากที่ส่ง request เรียบร้อยแล้ว จะตรวจสอบคำตอบที่ได้รับ ถ้า code ของ response เป็น 0 แสดงว่าการดึงข้อมูลสำเร็จ จะซ่อน loader และแสดงข้อมูลบัตร Alipay บนหน้าเว็บไซต์ โดยกำหนดรายละเอียดของแต่ละบัตรและเก็บไว้ในตัวแปร str ซึ่งจะถูกแทรกใน element ที่มี id เป็น "loop_data_Alipay" หากไม่มีข้อมูลบัตร Alipay จะแสดงข้อความแจ้งเตือนว่าไม่มีข้อมูล`}
+        content7={`7.ในกรณีที่ code ของ response ไม่เป็น 0 จะแสดงข้อความแจ้งเตือนผิดพลาดที่เกิดขึ้น`}
+        content8={`8.ในกรณีที่เกิด error ในการส่ง request หรือใน response จะแสดงข้อความแจ้งเตือนผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์ และทำการเรียกใช้ฟังก์ชัน cleanInput() เพื่อล้างข้อมูลในฟอร์มที่เกี่ยวข้อง`}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    deleteAlipay: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน deleteAlipay(id) นี้ใช้สำหรับลบบัตร Alipay โดยมีขั้นตอนดังนี้"
+        content1="1.แสดงข้อความยืนยันการลบบัตร Alipay โดยใช้ฟังก์ชัน msgObj.show() และรอการยืนยันจากผู้ใช้"
+        content2="2.เมื่อผู้ใช้ยืนยันการลบ ฟังก์ชัน msgObj.unShow() จะถูกเรียกเพื่อซ่อนข้อความยืนยัน และ loader จะถูกแสดงขึ้นเพื่อแสดงว่ากำลังลบข้อมูล"
+        content3="3.ส่ง request ไปยัง API โดยใช้เมทอด DELETE และใส่ header ในการส่ง request ด้วย Bearer token เพื่อตรวจสอบการเข้าสู่ระบบ และระบุ URL ที่ต้องการลบบัตร Alipay โดยระบุ id ของบัตรที่ต้องการลบ"
+        content4="4.ในส่วนของ beforeSend จะไม่มีการกระทำอะไรเพิ่มเติม"
+        content5="5.หลังจากที่ส่ง request เรียบร้อยแล้ว จะตรวจสอบคำตอบที่ได้รับ ถ้า code ของ response เป็น 0 แสดงว่าการลบบัตร Alipay สำเร็จ จะซ่อน loader และเรียกใช้ฟังก์ชัน getFinancialAlipay() และ getFinancialPayments() เพื่อโหลดข้อมูลบัตร Alipay และข้อมูลการชำระเงินอีกครั้ง"
+        content6="6.ในกรณีที่ code ของ response ไม่เป็น 0 จะแสดงข้อความแจ้งเตือนผิดพลาดที่เกิดขึ้น"
+        content7="7.ในกรณีที่เกิด error ในการส่ง request หรือใน response จะแสดงข้อความแจ้งเตือนผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์และซ่อน loader"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    historyFunction: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน historyFunction(id, time, title) นี้ใช้สำหรับแสดงประวัติการทำธุรกรรมในกระเป๋าเงิน โดยมีขั้นตอนดังนี้"
+        content1="1.สร้างตัวแปร str เพื่อเก็บ HTML ที่จะแสดงข้อมูลประวัติการทำธุรกรรม"
+        content2="2.สร้างตัวแปร Alldata เพื่อเก็บข้อมูลที่ได้รับจากเซิร์ฟเวอร์"
+        content3="3.ดึง token จาก localStorage เพื่อใช้ในการเข้าถึง API และแปลงข้อมูล token จาก string เป็น JSON object"
+        content4="4.ส่ง request ไปยัง API โดยใช้เมทอด GET และใส่ header ในการส่ง request ด้วย Bearer token เพื่อตรวจสอบการเข้าสู่ระบบ"
+        content5="5.หลังจากที่ส่ง request เรียบร้อยแล้ว จะตรวจสอบคำตอบที่ได้รับ ถ้า code ของ response เป็น 0 แสดงว่าการดึงข้อมูลสำเร็จ และจะแสดงข้อมูลประวัติการทำธุรกรรมบนหน้าเว็บไซต์"
+        content6="6.ในกรณีที่ code ของ response ไม่เป็น 0 จะแสดงข้อความแจ้งเตือนผิดพลาดที่เกิดขึ้น"
+        content7="7.ในกรณีที่เกิด error ในการส่ง request หรือใน response จะแสดงข้อความแจ้งเตือนผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์ และซ่อน loader"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    getFinancialBank: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getFinancialBank นี้ใช้สำหรับดึงข้อมูลของบัตรธนาคารจากเซิร์ฟเวอร์ โดยมีขั้นตอนดังนี้"
+        content1="1.แสดง loader เพื่อแสดงว่ากำลังโหลดข้อมูล"
+        content2="2.สร้างตัวแปร str เพื่อเก็บ HTML ที่จะแสดงข้อมูลของบัตรธนาคาร"
+        content3="3.สร้างตัวแปร data_id เพื่อเก็บ ID ของข้อมูลแต่ละบัตรธนาคาร"
+        content4="4.สร้างตัวแปร collect_Bank เพื่อเก็บข้อมูลบัตรธนาคารที่ได้รับจากเซิร์ฟเวอร์"
+        content5="5.ดึง token จาก localStorage เพื่อใช้ในการเข้าถึง API และแปลงข้อมูล token จาก string เป็น JSON object"
+        content6="6.ส่ง request ไปยัง API โดยใช้เมทอด GET และใส่ header ในการส่ง request ด้วย Bearer token เพื่อตรวจสอบการเข้าสู่ระบบ"
+        content7="7.หลังจากที่ส่ง request เรียบร้อยแล้ว จะตรวจสอบคำตอบที่ได้รับ ถ้า code ของ response เป็น 0 แสดงว่าการดึงข้อมูลสำเร็จ และจะแสดงข้อมูลบัตรธนาคารบนหน้าเว็บไซต์"
+        content8="8.ในกรณีที่ code ของ response ไม่เป็น 0 จะแสดงข้อความแจ้งเตือนผิดพลาดที่เกิดขึ้น"
+        content9="9.ในกรณีที่เกิด error ในการส่ง request หรือใน response จะแสดงข้อความแจ้งเตือนผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์ และซ่อน loader"
+        content10="10.สำหรับแต่ละบัตรธนาคารที่ได้รับมา จะทำการฟิลเตอร์เพื่อเลือกเฉพาะบัตรธนาคาร และแสดงข้อมูลบัตรธนาคารนั้นๆ บนหน้าเว็บไซต์โดยใส่รายละเอียดของบัตรและซ่อน loader ที่แสดงข้อความ 'ไม่มีข้อมูล' หากไม่มีบัตรธนาคารที่ได้รับมา"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    deleteBank: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน deleteBank(id) นี้ใช้สำหรับลบบัตรธนาคารโดยมีขั้นตอนดังนี้"
+        content1="1.แสดงข้อความยืนยันการลบบัตรธนาคารโดยใช้ฟังก์ชัน msgObj.show() และรอการยืนยันจากผู้ใช้"
+        content2="2.เมื่อผู้ใช้ยืนยันการลบ ฟังก์ชัน msgObj.unShow() จะถูกเรียกเพื่อซ่อนข้อความยืนยัน และ loader จะถูกแสดงขึ้นเพื่อแสดงว่ากำลังลบข้อมูล"
+        content3="3.ส่ง request ไปยัง API โดยใช้เมทอด DELETE และใส่ header ในการส่ง request ด้วย Bearer token เพื่อตรวจสอบการเข้าสู่ระบบ และระบุ URL ที่ต้องการลบบัตรธนาคาร โดยระบุ id ของบัตรที่ต้องการลบ"
+        content4="4.ในส่วนของ beforeSend จะไม่มีการกระทำอะไรเพิ่มเติม"
+        content5="5.หลังจากที่ส่ง request เรียบร้อยแล้ว จะตรวจสอบคำตอบที่ได้รับ ถ้า code ของ response เป็น 0 แสดงว่าการลบบัตรธนาคารสำเร็จ จะซ่อน loader และเรียกใช้ฟังก์ชัน getFinancialBank() และ getFinancialPayments() เพื่อโหลดข้อมูลบัตรธนาคาร และข้อมูลการชำระเงินอีกครั้ง"
+        content6="6.ในกรณีที่ code ของ response ไม่เป็น 0 จะแสดงข้อความแจ้งเตือนผิดพลาดที่เกิดขึ้น"
+        content7="7.ในกรณีที่เกิด error ในการส่ง request หรือใน response จะแสดงข้อความแจ้งเตือนผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์ และซ่อน loader"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    sendMessage: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน sendMessage() นี้ใช้สำหรับส่งข้อความจากผู้ใช้ไปยัง API และแสดงข้อความตอบกลับจากระบบด้วยขั้นตอนดังนี้"
+        content1={`1.รับข้อความจากผู้ใช้ที่ป้อนใน input field ด้วย $("#user-input").val()`}
+        content2={`2.สร้าง payload สำหรับส่งไปยัง API ซึ่งประกอบด้วยข้อความที่ผู้ใช้ป้อน`}
+        content3={`3.ส่ง request ไปยัง API โดยใช้เมทอด POST และระบุ URL ของ API พร้อมกับข้อมูลที่ต้องการส่ง และ header ในการส่ง request ด้วย Bearer token เพื่อตรวจสอบการเข้าสู่ระบบ`}
+        content4={`4.เมื่อได้รับ response จาก API ถ้า code เป็น 0 แสดงว่าการส่งข้อความสำเร็จ จะแสดง loader และเก็บข้อความตอบกลับจากระบบไว้ในตัวแปร replyChat เพื่อนำไปแสดงในขั้นตอนถัดไป`}
+        content5={`5.หาก code ไม่ใช่ 0 แสดงว่ามีข้อผิดพลาดเกิดขึ้น ซึ่งอาจเกี่ยวข้องกับการเชื่อมต่อ หรือสิทธิ์การเข้าถึง ในกรณีนี้จะแสดงข้อความแจ้งเตือนตาม code ของ response`}
+        content6={`6.เมื่อส่งข้อความสำเร็จแล้ว จะมีการเรียกใช้ฟังก์ชัน simulateSystemResponse() เพื่อจำลองการตอบกลับของระบบ`}
+        content7={`7.ในฟังก์ชัน simulateSystemResponse() จะมีการเรียกใช้ setTimeout เพื่อจำลองเวลาที่ระบบใช้ในการประมวลผล และจากนั้นจะมีการเรียก callback function เพื่อแสดงข้อความตอบกลับจากระบบ`}
+        content8={`8.เมื่อมีข้อความตอบกลับจากระบบแล้ว จะนำข้อความนั้นมาแสดงผลด้วยฟังก์ชัน appendMessage() โดยให้ข้อความแสดงทางซ้ายของหน้าจอ`}
+        content9={`9.สุดท้ายจะมีการตรวจสอบว่าผู้ใช้ป้อนข้อความหรือไม่ หากมีข้อความ จะแสดงข้อความที่ผู้ใช้ป้อนใน input field ด้วยฟังก์ชัน appendMessage() ทางขวาของหน้าจอ`}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    checkInBonus: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน checkInBonus(days) นี้ใช้สำหรับเช็คอินเพื่อรับโบนัสตามจำนวนวันที่กำหนด โดยมีขั้นตอนดังนี้"
+        content1="1.แสดง loader เพื่อแสดงว่าระบบกำลังทำงาน"
+        content2="2.ดึง token จาก localStorage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง"
+        content3="3.ส่ง request ไปยัง API โดยใช้เมทอด POST และระบุ URL ของ API พร้อมกับข้อมูลที่ต้องการส่ง (จำนวนวัน) และ header ในการส่ง request ด้วย Bearer token เพื่อตรวจสอบการเข้าสู่ระบบ"
+        content4="4.เมื่อได้รับ response จาก API ถ้า code เป็น 0 แสดงว่าการเช็คอินเพื่อรับโบนัสสำเร็จ โดย loader จะถูกซ่อนและข้อมูลโบนัสจะถูกแสดงใน console"
+        content5="5.หาก code ไม่ใช่ 0 แสดงว่ามีข้อผิดพลาดเกิดขึ้น ในกรณีนี้ loader จะถูกซ่อนและข้อความแจ้งเตือนจะถูกแสดงผ่าน msgPageObj"
+        content6="6.ในกรณีเกิด error ในการส่ง request ไปยัง API จะแสดงข้อความแจ้งเตือนเกี่ยวกับข้อผิดพลาดที่เกิดขึ้น"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    get2FAconvert_DSF: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน get2FAconvert_DSF() นี้ใช้สำหรับเรียกข้อมูลการตั้งค่า Two-Factor Authentication (2FA) สำหรับการทำรายการต่าง ๆ ในระบบ ดังนี้"
+        content1="1.ดึง token จาก localStorage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง API โดยมีการแปลงข้อมูล token เป็น Object ด้วย JSON.parse()"
+        content2="2.ส่ง request ไปยัง API โดยใช้เมทอด GET และระบุ URL ของ API พร้อมกับ header ในการส่ง request ด้วย Bearer token เพื่อตรวจสอบการเข้าสู่ระบบ"
+        content3="3.เมื่อได้รับ response จาก API ถ้าสถานะของ 2FA มีค่าเป็น false แสดงว่าผู้ใช้ยังไม่ได้เปิดใช้งานการตั้งค่า 2FA ในกรณีนี้ loader จะถูกซ่อนและข้อความแจ้งเตือนจะปรากฏขึ้นบอกว่าผู้ใช้ยังไม่ได้เปิดใช้งานการตั้งค่า 2FA พร้อมกับให้ผู้ใช้ทำการเปิดใช้งานผ่านหน้าต่างการตั้งค่า"
+        content4="4.ในกรณีที่สถานะของ 2FA เป็น true แสดงว่าผู้ใช้ได้เปิดใช้งานการตั้งค่า 2FA แล้ว ในกรณีนี้ loader จะถูกซ่อนและ popup ที่เกี่ยวข้องกับ 2FA จะปรากฏขึ้น"
+        content5="5.ในกรณีที่เกิด error ในการส่ง request ไปยัง API จะแสดงข้อผิดพลาดที่เกี่ยวข้องผ่านคอนโซลล์"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    verify2faconvert_DSF: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน verify2faconvert_DSF() นี้ใช้สำหรับการตรวจสอบรหัสการยืนยันสองชั้น (2FA) เมื่อผู้ใช้ทำการป้อนรหัส 6 หลักที่ได้รับจากอุปกรณ์ 2FA ดังนี้"
+        content1="1.ดึง token จาก localStorage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง API โดยมีการแปลงข้อมูล token เป็น Object ด้วย JSON.parse()"
+        content2="2.รับข้อมูลรหัส 6 หลักจากผู้ใช้ที่ป้อนผ่านฟิลด์รหัสต่าง ๆ (convert_digit1, convert_digit2, ..., convert_digit6)"
+        content3="3.สร้าง Object mData ที่มีค่ารหัสที่ผู้ใช้ป้อนเข้ารหัสแล้วและส่งไปยัง API โดยใช้เมทอด POST"
+        content4="4.เมื่อได้รับ response จาก API ถ้ารหัสเป็น 0 แสดงว่าการตรวจสอบเสร็จสมบูรณ์และฟังก์ชัน postconvert_DSFCIPS() จะถูกเรียกใช้หลังจากนั้น"
+        content5="5.ในกรณีที่เกิด error ขณะส่ง request ไปยัง API ไม่มีการดำเนินการเพิ่มเติมโดยไม่แสดงข้อความข้อผิดพลาดที่เกี่ยวข้อง"
+        content6="ซึ่งฟังก์ชันนี้ใช้ในกระบวนการยืนยันการเปลี่ยนแปลงความสามารถการจัดการการเงินของผู้ใช้ที่ได้ผ่านการตรวจสอบสองชั้น (2FA) ด้วยรหัสที่ได้รับจากอุปกรณ์ 2FA ของผู้ใช้"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    postconvert_DSFCIPS: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน postconvert_DSFCIPS() ทำการสร้างคำขอเพื่อทำการสมัครเข้าร่วมกองทุนการชดเชยหนี้ (DSF) โดยระบุประเภทของการใช้จ่ายเป็นคะแนน (type: 20) และจำนวนยอดเงินที่ต้องการสมัครเข้ากองทุน จากนั้นส่งคำขอไปยัง API ด้วยเมทอด POST ดังนี้"
+        content1="1.ดึง token จาก localStorage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง API โดยมีการแปลงข้อมูล token เป็น Object ด้วย JSON.parse()"
+        content2="2รับค่าจำนวนยอดเงิน DSF ที่ผู้ใช้ป้อนผ่านฟิลด์ (#convert_DSF_dept)"
+        content3="3.สร้าง Object mData ที่มีประเภทการใช้จ่ายเป็นคะแนนและยอดเงิน DSF และส่งคำขอไปยัง API โดยใช้เมทอด POST"
+        content4="4.เมื่อได้รับ response จาก API ถ้ารหัสเป็น 0 แสดงว่าการสมัครเข้าร่วม DSF เสร็จสมบูรณ์ และการแสดงผลสำหรับสถานะการสมัครเข้าร่วม DSF จะถูกอัปเดต"
+        content5="5.ในกรณีที่เกิด error ขณะส่ง request ไปยัง API จะแสดงข้อความข้อผิดพลาดที่เกี่ยวข้องและทำการล้างข้อมูลที่ป้อนในฟิลด์ให้เรียบร้อยด้วยฟังก์ชัน cleanInput()"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    get2FATrade: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-get2FATrade() คือฟังก์ชันที่ใช้ในการตรวจสอบว่าผู้ใช้เปิดใช้งานรหัสผ่านการซื้อขายแล้วหรือไม่ โดยดึง token จาก localStorage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง API และจากนั้นส่งคำขอไปยัง API โดยใช้เมทอด GET ซึ่งมีการตั้งค่า url และ headers เพื่อส่งคำขอไปยังเซิร์ฟเวอร์ที่ถูกต้อง หลังจากนั้นแสดง UI ตามสถานะของผลลัพธ์ที่ได้รับ"
+        content1="1.ดึง token จาก localStorage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง API และแปลงข้อมูล token เป็น Object ด้วย JSON.parse()"
+        content2="2.สร้างคำขอ GET ไปยัง API สำหรับการตรวจสอบสถานะของการเปิดใช้งานรหัสผ่านการซื้อขาย"
+        content3="3.เมื่อได้รับ response จาก API แสดง loaderObj เพื่อแสดงว่าการโหลดกำลังดำเนินการอยู่"
+        content4="4.ถ้าสถานะการเปิดใช้งานรหัสผ่านการซื้อขายเป็นเท็จ แสดง msgObj บอกว่า 'คุณยังไม่ได้เปิดใช้งานรหัสผ่านการซื้อขาย' และมีปุ่มเพื่อนำผู้ใช้ไปยังหน้าการตั้งค่า"
+        content5="5.ถ้าสถานะการเปิดใช้งานรหัสผ่านการซื้อขายเป็นจริง แสดง msgObj ขอให้ผู้ใช้ป้อนรหัสผ่านการซื้อขาย และมีปุ่มเพื่อยืนยันและตรวจสอบรหัสผ่านการซื้อขาย หรือปุ่มอื่น ๆ เพื่อปิดกล่องข้อความ"
+        content6={`การสร้างข้อความที่ให้ผู้ใช้ป้อนรหัสผ่านการซื้อขายเป็นลำดับสำคัญ และการตรวจสอบรหัสผ่านนั้นถูกดำเนินการผ่านการส่งคำขอ POST ไปยัง API โดยใช้ฟังก์ชัน verify2faTrade() หลังจากนั้นกำหนดการแสดงผลเมื่อได้รับการตอบสนองจาก API ในส่วนของสถานะของการเปิดใช้งานรหัสผ่านการซื้อขาย ถ้าสถานะเป็นเท็จ มันจะแสดงข้อความที่ให้ผู้ใช้ทราบว่าคุณยังไม่ได้เปิดใช้งานรหัสผ่านการซื้อขาย และหลังจากนั้นจะเปิดหน้าการตั้งค่า เพื่อให้ผู้ใช้ทำการตั้งค่ารหัสผ่านการซื้อขายได้ทันทีหากต้องการ แต่ถ้าสถานะเป็นจริง มันจะแสดงข้อความที่ให้ผู้ใช้ป้อนรหัสผ่านการซื้อขาย และมีปุ่มที่อนุญาตให้ผู้ใช้ยืนยันรหัสผ่าน และเมื่อรหัสผ่านถูกยืนยัน ฟังก์ชัน verify2faTrade() จะถูกเรียกใช้ในที่สุดเพื่อทำการตรวจสอบรหัสผ่านที่ผู้ใช้ป้อนและดำเนินการต่อไปตามต้องการ ส่วนสุดท้าย เมื่อรับการตอบสนองจาก API เมื่อมีการส่งคำขอ POST เพื่อตรวจสอบรหัสผ่านการซื้อขาย เมื่อรหัสเป็น 0 หมายถึงการยืนยันรหัสผ่านเสร็จสิ้นและกระบวนการการแสดงผลที่เกี่ยวข้องจะถูกอัปเดต แต่ถ้ามีข้อผิดพลาดในขณะที่ส่งคำขอจะแสดงข้อความข้อผิดพลาดที่เกี่ยวข้องด้วยฟังก์ชัน console.log()`}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    verify2faTrade: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-verify2faTrade() เป็นฟังก์ชันที่ใช้ในการตรวจสอบรหัสผ่านการซื้อขาย โดยรับค่ารหัสผ่านที่ผู้ใช้ป้อนเข้ามาผ่าน input element แล้วส่งคำขอ POST ไปยัง API เพื่อตรวจสอบรหัสผ่านนี้ว่าถูกต้องหรือไม่ หากรหัสผ่านถูกต้องจะทำการเรียกใช้ฟังก์ชัน postTransfer() เพื่อดำเนินการต่อไป แต่หากไม่ถูกต้องจะแสดงข้อผิดพลาดที่เกี่ยวข้อง"
+        content1="1.ดึง token จาก localStorage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง API และแปลงข้อมูล token เป็น Object ด้วย JSON.parse()"
+        content2="2.รับค่ารหัสผ่านที่ผู้ใช้ป้อนผ่าน input element"
+        content3="3.สร้างคำขอ POST ไปยัง API เพื่อตรวจสอบรหัสผ่านการซื้อขาย"
+        content4="4.เมื่อได้รับ response จาก API ถ้ารหัสผ่านถูกต้อง ซึ่งมีรหัสสถานะเป็น 0 จะปิด msgObj ที่แสดงข้อความให้ผู้ใช้ป้อนรหัสผ่านการซื้อขายและเรียกใช้ฟังก์ชัน postTransfer() เพื่อดำเนินการต่อไป"
+        content5="5.ถ้าไม่ถูกต้อง จะแสดงข้อความข้อผิดพลาดที่เกี่ยวข้องด้วย msgPageObj.show() และทำการเรียกใช้ cleanInput() เพื่อล้างข้อมูล input ที่ผู้ใช้ป้อนเข้ามาที่ไม่ถูกต้อง"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    postWithdraw: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน postWithdraw(Type) ใช้ในการส่งคำขอถอนเงิน โดยมีการรับพารามิเตอร์ Type เพื่อระบุว่าเป็นการถอนเงินผ่านบัญชีธนาคารหรืออะไร และตรวจสอบพารามิเตอร์นี้เพื่อกำหนดจำนวนเงินที่ถูกต้องและ ID ของวิธีการชำระเงินที่เลือก หลังจากนั้นจะส่งคำขอ POST ไปยัง API เพื่อดำเนินการถอนเงิน"
+        content1="1.ดึง token จาก localStorage เพื่อใช้ในการตรวจสอบสิทธิ์การเข้าถึง API และแปลงข้อมูล token เป็น Object ด้วย JSON.parse()"
+        content2={`2.ตรวจสอบว่า Type เป็น "bank" หรือ "alipay" และดึงจำนวนเงินและ ID ของวิธีการชำระเงินที่เลือกจาก input elements ที่เกี่ยวข้อง`}
+        content3="3.สร้างข้อมูลที่จะส่งไปยัง API ในรูปแบบของ Object mData"
+        content4="4.ส่งคำขอ POST ไปยัง API เพื่อทำการถอนเงิน"
+        content5={`5.เมื่อได้รับ response จาก API ถ้าการถอนเงินสำเร็จ ซึ่งมีรหัสสถานะเป็น 0 จะแสดงข้อความ "提现成功" และดึงข้อมูลวอลเล็ตใหม่ด้วย walletObj.getWallet(TypeWallet)`}
+        content6={`6.ถ้าไม่สำเร็จ จะแสดงข้อความข้อผิดพลาดที่เกี่ยวข้องด้วย msgPageObj.show() และทำการเรียกใช้ cleanInput() เพื่อล้างข้อมูล input ที่ผู้ใช้ป้อนเข้ามาที่ไม่ถูกต้อง`}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    postConvert: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน postConvert(amount) ใช้สำหรับการแปลงเงินหนึ่งประเภทเป็นประเภทอื่นในกระเป๋าเงินของผู้ใช้ ดังนี้"
+        content1="1.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์"
+        content2="2.สร้างออบเจ็กต์ mData ที่มีรายละเอียดของการแปลง เช่น ประเภทกระเป๋าที่มา (TypeWallet) ประเภทกระเป๋าปลายทาง (30) และ จำนวนที่ต้องการแปลง"
+        content3="3.ส่งคำขอ POST ไปยังเส้นทาง API ที่ระบุ (/v1/wallet/convert) พร้อมกับโทเค็นการอนุญาตและออบเจ็กต์ข้อมูล"
+        content4="4.เมื่อการแปลงสำเร็จ (รหัสสถานะ 0) จะล้างข้อมูลนำเข้า แสดงข้อความสำเร็จ และอัปเดตข้อมูลกระเป๋าโดยการเรียกใช้ walletObj.getWallet(TypeWallet)"
+        content5="5.หากการแปลงล้มเหลว จะแสดงข้อความผิดพลาดโดยใช้ msgPageObj.show() และล้างข้อมูลนำเข้า"
+        content6="ฟังก์ชันนี้ช่วยให้ผู้ใช้สามารถแปลงสกุลเงินภายในกระเป๋าของพวกเขาได้ โดยให้ความสะดวกในการทำธุรกรรมระหว่างสินทรัพย์หรือสกุลเงินที่แตกต่างกัน"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    getFinancialPayments: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getFinancialPayments ใช้สำหรับดึงข้อมูลการชำระเงินทางการเงิน เช่น ข้อมูลบัญชีธนาคารและข้อมูลบัญชี Alipay จากเซิร์ฟเวอร์"
+        content1={`1.ตรียมตัวแปรต่างๆ เช่น str, str2, bank_detail, collect_Bank, alipay_detail, collect_Alipay เพื่อใช้เก็บข้อมูลที่ได้รับ`}
+        content2={`2.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์`}
+        content3={`3.ส่งคำขอ GET ไปยังเส้นทาง API ที่ระบุ (/v1/financialOrganization) พร้อมกับโทเค็นการอนุญาต`}
+        content4={`4.เมื่อรับข้อมูลเรียบร้อยแล้ว แยกข้อมูลบัญชีธนาคารและ Alipay ออกจากกัน`}
+        content5={`5.สร้างตัวเลือกในเมนู dropdown สำหรับการเลือกบัญชีธนาคารและ Alipay โดยใช้ข้อมูลที่ได้รับมา`}
+        content6={`6.ตั้งค่าการเลือกบัญชีธนาคารและ Alipay ให้แสดงข้อมูลรายละเอียดของบัญชีที่ถูกเลือก`}
+        content7={`7.แสดงข้อความผิดพลาดหากมีข้อผิดพลาดเกิดขึ้น`}
+        content8={`8.หากไม่มีข้อมูลสำหรับบัญชีธนาคารหรือ Alipay ให้แสดงข้อความว่า "ไม่มีข้อมูล"`}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    checkPayMentMethod: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน checkPayMentMethod ใช้สำหรับตรวจสอบว่าผู้ใช้มีวิธีการชำระเงิน (การถอนเงิน) อะไรบ้างที่สามารถใช้งานได้"
+        content1="1.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์"
+        content2="2.ส่งคำขอ GET ไปยังเส้นทาง API ที่ระบุ (/v1/payments/method) พร้อมกับโทเค็นการอนุญาต"
+        content3="3.เมื่อรับข้อมูลเรียบร้อยแล้ว ตรวจสอบค่าในอาร์เรย์ผลลัพธ์เพื่อตรวจสอบว่ามีวิธีการชำระเงินใดใช้งานได้บ้าง"
+        content4="4.ตามค่าที่ได้จากการตรวจสอบ แสดงหรือซ่อนตัวเลือกของการชำระเงินต่างๆ ซึ่งมีอยู่สองประเภทคือ Alipay และบัตรธนาคาร"
+        content5="5.อัพเดตการแสดงผลและสร้างความสามารถให้ผู้ใช้เลือกวิธีการชำระเงินได้ตามที่มีอยู่ในระบบ"
+        content6="6.รีเฟรชสครอลเเละอัพเดตการเลื่อนเลื่อนหน้าเพื่อให้การแสดงผลเป็นไปตามที่ต้องการ"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    feedback: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน feedback ใช้สำหรับส่งความคิดเห็นจากผู้ใช้ไปยังเซิร์ฟเวอร์"
+        content1="1.ดึงข้อมูลที่ผู้ใช้ป้อนเข้ามา เช่น ประเภทของความคิดเห็น (Type) และเนื้อหาของความคิดเห็น (Content) และค่า mobileFeedback จากฟอร์ม"
+        content2="2.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์"
+        content3="3.สร้างออบเจ็กต์ mData ที่ประกอบด้วยข้อมูลที่เราต้องการส่งไปยังเซิร์ฟเวอร์ เช่น ประเภทความคิดเห็น หมายเลขโทรศัพท์มือถือ และเนื้อหาของความคิดเห็น"
+        content4="4.ส่งคำขอ POST ไปยังเส้นทาง API ที่ระบุ (/v1/config/feedback) พร้อมกับข้อมูลที่เราเตรียมไว้"
+        content5={`5.เมื่อรับคำตอบจากเซิร์ฟเวอร์ ตรวจสอบว่ามีการดำเนินการเสร็จสมบูรณ์หรือไม่ ถ้าสำเร็จแล้วแสดงข้อความว่า "การส่งความคิดเห็นสำเร็จ" และล้างฟอร์มความคิดเห็น`}
+        content6="6.ถ้าไม่สำเร็จ แสดงข้อความเกี่ยวกับข้อผิดพลาดที่เกิดขึ้นและล้างฟอร์มความคิดเห็น"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    getInstitution: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getInstitution มีหน้าที่ดึงข้อมูลเกี่ยวกับสถาบันที่เชิญชวนผู้ใช้ให้เข้าร่วม"
+        content1="1.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์"
+        content2="2.สร้างสตริงว่าง str เพื่อเตรียมเก็บ HTML สำหรับแสดงข้อมูลของสถาบัน"
+        content3="3.ส่งคำขอ GET ไปยังเส้นทาง API /v1/inviteCode/institution พร้อมกับโทเค็นที่มีอยู่"
+        content4="4.เมื่อรับข้อมูลกลับมาจากเซิร์ฟเวอร์ ตรวจสอบว่าคำขอสำเร็จหรือไม่"
+        content5="5.หากสำเร็จ นำข้อมูลที่ได้มาใช้ในการแสดงผลบนหน้าเว็บ"
+        content6="6.หากมีข้อมูลระดับของสถาบันในข้อมูลที่ได้มา กำหนดสตริง str โดยให้แสดงข้อมูลของแต่ละระดับของสถาบันในรูปแบบ HTML"
+        content7="7.นำสตริง str ที่เตรียมไว้มาแสดงผลบนหน้าเว็บ และสร้างอ็อบเจ็กต์ iScroll เพื่อให้สามารถเลื่อนหน้าจอได้ในกรณีที่มีข้อมูลมากเกินไป"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    getAnnouncement: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getAnnouncement มีหน้าที่ดึงข้อมูลประกาศ"
+        content1="1.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์"
+        content2="2.สร้างสตริงว่าง announcementHTML เพื่อเตรียมเก็บ HTML สำหรับแสดงประกาศ."
+        content3="3.ส่งคำขอ GET ไปยังเส้นทาง API /v1/announcement พร้อมกับโทเค็นที่มีอยู่"
+        content4="4.เมื่อรับข้อมูลกลับมาจากเซิร์ฟเวอร์ ตรวจสอบว่าคำขอสำเร็จหรือไม่"
+        content5="5.หากสำเร็จ วนลูปผ่านข้อมูลประกาศแต่ละรายการและสร้าง HTML สำหรับแสดงข้อมูล"
+        content6="6.แทรก HTML ที่สร้างเข้าไปใน announcementHTML"
+        content7="7.นำ HTML ที่สร้างมาแสดงผลบนหน้าเว็บ"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    news: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-this.news เป็นฟังก์ชันที่ใช้ในการดึงข้อมูลข่าว"
+        content1="1.ก่อนอื่น ฟังก์ชันจะสร้างตัวแปรสำหรับเก็บ HTML (str) และอาร์เรย์ที่เก็บ ID ของข่าว (collect_id)"
+        content2="2.จากนั้นจะดึงโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์"
+        content3="3.ส่งคำขอ GET ไปยังเส้นทาง API /v1/news พร้อมกับโทเค็นที่มีอยู่"
+        content4="4.เมื่อรับข้อมูลกลับมาจากเซิร์ฟเวอร์ ตรวจสอบว่าคำขอสำเร็จหรือไม่"
+        content5="5.หากสำเร็จ ฟังก์ชันจะวนลูปผ่านข้อมูลข่าวแต่ละรายการและสร้าง HTML เพื่อแสดงข้อมูลข่าว"
+        content6="6.แทรก HTML ที่สร้างเข้าไปในตัวแปร str"
+        content7="7.นำ HTML ที่สร้างมาแสดงผลบนหน้าเว็บ"
+        content8="8.สร้างกิจกรรม click เพื่อแสดงรายละเอียดข่าวเมื่อผู้ใช้คลิกที่หัวข้อข่าว"
+        content9="9.ในกรณีที่มีข้อผิดพลาด แสดงข้อความผิดพลาดที่เกิดขึ้น"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    first: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-this.first เป็นฟังก์ชันที่ใช้ในการเรียกข้อมูลคูปองทางคณิตศาสตร์"
+        content1="1.เริ่มต้นโดยดึงโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์"
+        content2="2.ส่งคำขอ POST ไปยังเส้นทาง API /v1/profile/math-coupon พร้อมกับโทเค็นที่มีอยู่"
+        content3="3.เมื่อรับข้อมูลกลับมาจากเซิร์ฟเวอร์ ตรวจสอบว่าคำขอสำเร็จหรือไม่"
+        content4="4.หากสำเร็จ แสดงข้อความสถานะที่ได้รับจากฟังก์ชัน getStatusCode"
+        content5="5.ในกรณีที่เกิดข้อผิดพลาด แสดงข้อความผิดพลาดที่เกิดขึ้น"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    redempiontcode: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน this.redemptionCode ทำหน้าที่ส่งคำขอเพื่อใช้โค้ดการเติมเงิน"
+        content1="1.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์"
+        content2="2.ดึงค่าของโค้ดการเติมเงินจากฟิลด์ป้อนข้อมูล"
+        content3="3.ส่งคำขอ POST ไปยังเส้นทาง API /v1/profile/active-code/${code} พร้อมกับโทเค็น"
+        content4="4.เมื่อรับข้อมูลกลับมาจากเซิร์ฟเวอร์ ตรวจสอบว่าคำขอสำเร็จหรือไม่"
+        content5="5.หากสำเร็จ แสดงข้อความสถานะที่ได้รับจากฟังก์ชัน getStatusCode"
+        content6="6.ในกรณีที่เกิดข้อผิดพลาด แสดงข้อความผิดพลาดที่เกิดขึ้น"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    CheckMathCoupon: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน CheckMathCoupon ทำหน้าที่ตรวจสอบว่าผู้ใช้มีคูปองสำหรับฟังก์ชัน math-coupon หรือไม่"
+        content1="1.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์"
+        content2="2.ส่งคำขอ GET ไปยังเส้นทาง API /v1/profile/check-math-coupon พร้อมกับโทเค็น"
+        content3="3.เมื่อรับข้อมูลกลับมาจากเซิร์ฟเวอร์ ตรวจสอบค่าที่ได้รับว่าเป็น true หรือไม่"
+        content4="4.หากผลลัพธ์เป็น true กำหนดสีพื้นหลังของปุ่ม #first เป็นสีเทาและปิดการใช้งาน (off)"
+        content5="5.หากผลลัพธ์ไม่ใช่ true กำหนดสีพื้นหลังของปุ่ม #first ให้เป็นสีแดง"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    getnewgroup: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-getnewgroup เป็นฟังก์ชันที่ใช้เพื่อดึงข้อมูลกลุ่มข่าวจากเซิร์ฟเวอร์"
+        content1="1.เริ่มต้นโดยกำหนดตัวแปร str เป็นสตริงว่าง เพื่อใช้เก็บ HTML ที่จะแสดงผลหลังจากดึงข้อมูลกลับมา"
+        content2="2.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงให้อยู่ในรูปแบบของออบเจ็กต์"
+        content3="3.ส่งคำขอ GET ไปยังเส้นทาง API /v1/news/group พร้อมกับโทเค็น"
+        content4="4.เมื่อข้อมูลกลับมาจากเซิร์ฟเวอร์แล้ว"
+        content4p1="4.1.ตรวจสอบว่าข้อมูลผลลัพธ์มีความยาวมากกว่า 0 หรือไม่ (คือมีกลุ่มข่าวใหม่)"
+        content4p2="4.2.หากมี วนลูปผ่านกลุ่มข่าวแต่ละกลุ่ม และสร้าง HTML สำหรับแท็บแต่ละกลุ่มข่าว โดยใช้ข้อมูลจากแต่ละกลุ่ม เช่น ชื่อกลุ่มและ ID และเพิ่มเข้าไปในตัวแปร str"
+        content4p3="4.3.กำหนดคลาส CSS ให้กับแท็บแต่ละกลุ่มข่าว โดยใช้เงื่อนไขว่าถ้า ID เป็น 0 ให้ใช้คลาส selected-tab-chind มิฉะนั้นให้ใช้คลาส selected-tab-chind-default"
+        content4p4="4.4.กำหนด HTML ให้กับ element ที่มี id เป็น tab-groud โดยใช้ค่าที่เก็บไว้ในตัวแปร str"
+        content4p5={`4.5.ทำการคลิกที่แท็บที่มี ID เป็น 3 โดยใช้ $("#tab3").trigger("click"); และสร้าง event listener สำหรับแต่ละแท็บ`}
+        content5="5.ถ้าไม่มีข้อมูลกลุ่มข่าวใหม่"
+        content5p1="5.1.สร้าง HTML สำหรับแท็บที่มี id เป็น null"
+        content5p2="5.2.กำหนด HTML ให้กับ element ที่มี id เป็น tab-groud โดยใช้ค่าที่เก็บไว้ในตัวแปร str"
+        content6="6.หากเกิดข้อผิดพลาดในการร้องขอ (เช่น ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้) แสดงข้อความข้อผิดพลาด"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    profile_invite: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-profile_invite เป็นฟังก์ชันที่ใช้เพื่อดึงข้อมูลโปรไฟล์ของผู้ใช้"
+        content1="1.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงให้อยู่ในรูปแบบของออบเจ็กต์"
+        content2="2.ส่งคำขอ GET ไปยังเส้นทาง API /v1/profile พร้อมกับโทเค็น"
+        content3="3.เมื่อข้อมูลโปรไฟล์กลับมาจากเซิร์ฟเวอร์แล้ว"
+        content3p1="3.1.ตรวจสอบค่า institution ในข้อมูลโปรไฟล์"
+        content3p2="3.2.ถ้าค่า institution เป็น true ปิดการแสดงโหลด,แสดงหน้า home_organizPage,เรียกฟังก์ชัน call() ใน home_organizObj เพื่อดึงข้อมูลเพิ่มเติมเกี่ยวกับหน้า home_organizPage"
+        content3p3="3.3.หากค่า institution เป็น false ปิดการแสดงโหลด,แสดงข้อความบนหน้าจอว่า '请联系客服，了解关于机构账户相关信息!' เพื่อแจ้งให้ผู้ใช้ติดต่อกับฝ่ายบริการลูกค้าเพื่อขอข้อมูลเพิ่มเติมเกี่ยวกับบัญชีสถาบัน"
+        content4="4.หากเกิดข้อผิดพลาดในการร้องขอ (เช่น ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้) แสดงข้อความข้อผิดพลาด"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    getAnnouncement_viewID: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getAnnouncement_viewID ดึงข้อมูลการประกาศโดยใช้ ID เป็นตัวแปร"
+        content1="1.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงให้อยู่ในรูปแบบของออบเจ็กต์"
+        content2="2.กำหนดตัวแปร container เพื่อเก็บข้อมูลที่จะแสดงบนหน้าจอ"
+        content3="3.กำหนดตัวแปร myScroll เพื่อใช้สำหรับการเลื่อนหน้าเว็บ (scrolling)"
+        content4="4.กำหนดตัวแปร IdView เป็นอาร์เรย์ที่ใช้เก็บ ID ของข้อมูลที่ดึงมา"
+        content5="5.ส่งคำขอ GET ไปยังเส้นทาง API /v1/announcement/topic${id} พร้อมกับโทเค็นและ ID ที่ต้องการดึงข้อมูล"
+        content6="6.เมื่อข้อมูลการประกาศถูกส่งกลับมาจากเซิร์ฟเวอร์"
+        content6p1="6.1.นำข้อมูลที่ได้มาใส่ในตัวแปร data"
+        content6p2="6.2.ดำเนินการต่อตามต้องการ เช่น การแสดงข้อมูลใน container"
+        content7="7.หากมีข้อผิดพลาดในการร้องขอ (เช่น ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้) จะต้องจัดการกับข้อผิดพลาดนั้น"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    getAnnouncement_view: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ในฟังก์ชัน getAnnouncement_view"
+        content1="1.เริ่มต้นด้วยการดึงโทเค็นของผู้ใช้จาก localStorage และแปลงให้อยู่ในรูปแบบของออบเจ็กต์"
+        content2="2.กำหนดตัวแปร container เพื่อเก็บข้อมูลที่จะแสดงบนหน้าจอ"
+        content3="3.กำหนดตัวแปร myScroll เพื่อใช้สำหรับการเลื่อนหน้าเว็บ (scrolling)"
+        content4="4.กำหนดตัวแปร IdView เป็นอาร์เรย์ที่ใช้เก็บ ID ของข้อมูลที่จะถูกดึงมา"
+        content5="5.ส่งคำขอ GET ไปยังเส้นทาง API /v1/announcement พร้อมกับโทเค็นของผู้ใช้"
+        content6="6.เมื่อข้อมูลการประกาศถูกส่งกลับมาจากเซิร์ฟเวอร์"
+        content6p1="6.1.นำข้อมูลที่ได้มาใส่ในตัวแปร data"
+        content6p2="6.2.ใช้ $.each() เพื่อวนลูปผ่านข้อมูลที่ได้รับมาและสร้าง HTML สำหรับแสดงข้อมูล"
+        content6p3="6.3.แสดงข้อมูลบนหน้าจอโดยใช้ $('#informationHeader_view').html(str)"
+        content6p4="6.4.สร้างอาร์เรย์ IdView โดยเก็บ ID ของแต่ละรายการข้อมูลที่ได้รับมา"
+        content7="7.วนลูปผ่าน IdView เพื่อเพิ่มฟังก์ชันคลิกเพื่อดูรายละเอียดของแต่ละรายการ"
+        content8={`8.เมื่อมีคลิกบนปุ่ม "ดูรายละเอียด" (view_{Viewpage.IdView})`}
+        content8p1="8.1.สร้าง HTML สำหรับแสดงรายcละเอียดข้อมูล"
+        content8p2="8.2.แสดงรายละเอียดบนหน้าจอโดยใช้ $('#information_info').html(str_viewPage)"
+        content8p3="8.3.แสดงหน้าประกาศข้อมูลโดยใช้ pageShow('informationPage')"
+        content8p4="8.4.เรียกใช้ informationListObj.getAnnouncement_viewID(Viewpage.IdView) เพื่อดึงข้อมูลเพิ่มเติมของรายการนี้ด้วย ID ที่เกี่ยวข้อง"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    getHistory: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ในฟังก์ชัน getHistory"
+        content1="1.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงให้อยู่ในรูปแบบของออบเจ็กต์"
+        content2="2.กำหนดตัวแปร str เพื่อเก็บข้อมูลที่จะแสดงในหน้าประวัติ"
+        content3="3.ส่งคำขอ GET ไปยังเส้นทาง API /v1/wallet/history เพื่อดึงประวัติการทำรายการ"
+        content4="4.มื่อข้อมูลประวัติถูกส่งกลับมาจากเซิร์ฟเวอร์"
+        content4p1="4.1.ตรวจสอบว่ารหัสของคำขอคือ 0 (หมายถึงไม่มีข้อผิดพลาด)"
+        content4p2="4.2.ถ้าไม่มีรายการประวัติใดๆ: เพิ่ม HTML แสดงข้อความ 'คุณยังไม่มีประวัติรางวัลเชิญเพื่อน',กำหนด HTML ใน #loop_history_invite_user ด้วยข้อความที่สร้างขึ้น"
+        content4p3="4.3.ในกรณีที่มีรายการประวัติ ใช้ $.each() เพื่อวนลูปผ่านข้อมูลที่ได้รับมาและสร้าง HTML สำหรับแสดงรายการประวัติ,แสดง HTML ใน #loop_history_invite_user ด้วยข้อมูลที่สร้างขึ้น"
+        content4p4="4.4.สร้างอ็อบเจ็กต์ myScroll เพื่อใช้ในการเลื่อนหน้าเว็บ (scrolling)"
+        content5="5.ในกรณีที่มีข้อผิดพลาดระหว่างการส่งคำขอ"
+        content5p1="5.1.แสดงข้อความข้อผิดพลาดบนหน้าจอโดยใช้ msgPageObj.show(NSLang('sys.serverError') + ': ' + error)"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    getVoucherInvite: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getVoucherInvite มีหน้าที่ดึงข้อมูลเกี่ยวกับคูปองการเชิญเพื่อน จากนั้นนำข้อมูลที่ได้มาแสดงผลบนหน้าเว็บ โดยมีขั้นตอนการดำเนินการดังนี้"
+        content1="1.ก่อนทุกอย่าง ฟังก์ชันจะดึงโทเค็นของผู้ใช้จาก localStorage และแปลงให้อยู่ในรูปแบบของออบเจ็กต์ token"
+        content2="2.ส่งคำขอ GET ไปยังเส้นทาง API /v1/profile/cycle-voucher?type=30 เพื่อขอข้อมูลเกี่ยวกับคูปองการเชิญเพื่อน"
+        content3="3.เมื่อได้รับข้อมูล ตรวจสอบรหัสคำขอ"
+        content3p1="3.1.หากเป็น 0 แสดงว่าไม่มีข้อผิดพลาด จะดำเนินการต่อไปเพื่อแสดงข้อมูลคูปอง"
+        content3p2="3.2.หากเป็น 4089 แสดงว่าคูปองได้รับไปแล้ว ให้แสดงข้อความ '已领取"
+        content3p3="3.3.หากเป็น 4090 แสดงว่าไม่ได้รับคูปองเนื่องจากไม่ตรงเงื่อนไข ให้แสดงข้อความ '未满足条件'"
+        content3p4="3.4.ในกรณีอื่นๆ แสดงข้อความข้อผิดพลาดที่ได้จากฟังก์ชัน getStatusCode"
+        content4="4.ถ้าไม่มีข้อผิดพลาด"
+        content4p1="4.1.สร้าง HTML เพื่อแสดงข้อมูลคูปองที่ได้รับมา โดยใส่ข้อมูลลงในแต่ละคอลัมน์ เช่น จำนวนคนที่เชิญ, ยอดเงิน, และสถานะของคูปอง"
+        content4p2="4.2.เพิ่มอีเวนต์ click สำหรับแต่ละคูปอง เพื่อทำการรับคูปอง"
+        content4p3="4.3.นำ HTML ที่สร้างไปแทนที่ใน DOM ของหน้าเว็บ"
+        content4p4="4.4.สร้างอินสแตนซ์ของ IScroll เพื่อเรียกใช้งานการเลื่อนหน้า"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    postReceiveVouncher: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน postReceiveVouncher ทำหน้าที่ส่งคำขอ POST เพื่อรับคูปอง โดยมีขั้นตอนการดำเนินการดังนี้"
+        content1="1.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงให้อยู่ในรูปแบบของออบเจ็กต์ token"
+        content2="2.สร้างออบเจ็กต์ mData ที่มีข้อมูลประเภท 30 (คูปองการเชิญเพื่อน) และขั้นตอนการเชิญเพื่อน (step) ที่ได้รับผ่านพารามิเตอร์ของฟังก์ชัน"
+        content3="3.ส่งคำขอ POST ไปยังเส้นทาง API /v1/profile/cycle-voucher เพื่อทำการรับคูปอง พร้อมส่งข้อมูลที่อยู่ในออบเจ็กต์ mData ไปด้วย"
+        content4="4.เมื่อได้รับการตอบรับ ตรวจสอบรหัสคำขอ"
+        content4p1="4.1.หากเป็น 0 แสดงว่าการรับคูปองสำเร็จ จะแสดงข้อความ '领取成功' และเปลี่ยนสีพื้นหลังของสถานะคูปองให้เป็นสีน้ำเงิน"
+        content4p2={`4.2.หากเป็น 4089 แสดงว่าคูปองได้รับไปแล้ว ให้แสดงข้อความ "已领取"`}
+        content4p3={`4.3.หากเป็น 4090 แสดงว่าไม่ได้รับคูปองเนื่องจากไม่ตรงเงื่อนไข ให้แสดงข้อความ "未满足条件"`}
+        content4p4={`4.4.ในกรณีอื่นๆ แสดงข้อความข้อผิดพลาดที่ได้จากฟังก์ชัน getStatusCode`}
+        content5="5.ในกรณีที่เกิดข้อผิดพลาดในการส่งคำขอ"
+        content5p1={`5.1.แสดงข้อความ "sys.serverError"`}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheckScript={true}
+        htmlCheck={true}
+      />
+    ),
+
+    getlevel: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="ฟังก์ชัน getlevel มีหน้าที่ดึงข้อมูลเกี่ยวกับระดับสมาชิก (level) และข้อมูลที่เกี่ยวข้องจากเซิร์ฟเวอร์ จากนั้นนำข้อมูลเหล่านั้นมาแสดงผลบนหน้าเว็บ. ได้แก่"
+        content1="1.ดึงข้อมูลโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์ token"
+        content2="2.ทำการส่งคำขอ GET ไปยังเส้นทาง API /v1/profile/cycle-voucher?type=40 เพื่อขอข้อมูลเกี่ยวกับระดับสมาชิก"
+        content3="3.เมื่อได้ข้อมูลเช่นจำนวนระดับ, รายละเอียดระดับและรายละเอียดของระดับสมาชิก จะนำข้อมูลเหล่านั้นมาแสดงผลบนหน้าเว็บ"
+        content4="4.ทำการสร้างตาราง HTML เพื่อแสดงรายละเอียดของระดับสมาชิกและค่าผลประสิทธิ์ของแต่ละระดับ"
+        content5={`5.ทำการสร้างปุ่ม "领取奖励" โดยเช็คเงื่อนไขว่าผู้ใช้สามารถรับรางวัลได้หรือไม่ หากสามารถรับรางวัลได้ ให้ทำการส่งคำขอ POST เพื่อรับรางวัล`}
+        content6={`6.ในกรณีที่เกิดข้อผิดพลาดในการส่งคำขอ POST, แสดงข้อความข้อผิดพลาด.และฟังก์ชัน sendPostData ทำหน้าที่ส่งคำขอ POST เพื่อรับรางวัลของระดับสมาชิก`}
+        content6p1={`6.1.ตรวจสอบว่าข้อมูล itemsLevelArr ไม่เป็นค่าว่าง ถ้าเป็นค่าว่าง จะแสดงข้อความ "领取失败，请重试！" และจบการทำงาน`}
+        content6p2={`6.2.ตรวจสอบระดับรางวัลที่ยังไม่ได้รับรางวัล จากนั้นกำหนดค่า mLevelToPost ให้เป็นระดับรางวัลที่ยังไม่ได้รับรางวัล`}
+        content6p3={`6.3.สร้างข้อมูล postData ที่ต้องส่งและส่งคำขอ POST ไปยัง API /v1/profile/cycle-voucher`}
+        content7="7.เมื่อได้รับคำตอบ:"
+        content7p1={`7.1.ถ้ารหัสคำขอเป็น 4089 แสดงว่ารับรางวัลไปแล้ว ให้แสดงข้อความ "周奖励不能重复领取！" และปิดการทำงานปุ่ม "领取奖励"`}
+        content7p2={`7.2.ถ้ารหัสคำขอเป็น 4090 แสดงว่ายังไม่ได้รับรางวัล ให้แสดงข้อความ "周奖励将于每周一自动激活，请您按时领取"`}
+        content7p3={`7.3.ในกรณีอื่น ๆ, แสดงข้อความตามรหัสคำขอ`}
+        content8={`และจบการทำงานของฟังก์ชัน คำสั่ง refresh ใช้สำหรับการอัพเดทตัวแปร myScroll ของ IScroll ที่ใช้ในการเลื่อนหน้าเพจ`}
+        functionName="openTab(tabName)"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+  }
+
+  return formCintentSlipFun[selectedMenu] && formCintentSlipFun[selectedMenu]()
+}
+
+export default FormCintentSlipFun

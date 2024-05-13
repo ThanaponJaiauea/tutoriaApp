@@ -1,115 +1,115 @@
 /** @format */
 
-import { useState } from "react";
-import ModelContent from "../modelContent";
+import {useState} from "react"
+import ModelContent from "../modelContent"
 
-const FormCintentModelStructure = ({ selectedMenu }) => {
-  const [openMainBody, setOpenMainBody] = useState(false);
+const FormCintentModelStructure = ({selectedMenu}) => {
+  const [openMainBody, setOpenMainBody] = useState(false)
 
-  const [openMainScript, setOpenMainScript] = useState(false);
+  const [openMainScript, setOpenMainScript] = useState(false)
 
-  const [openIndexHead, setOpenIndexHead] = useState(true);
+  const [openIndexHead, setOpenIndexHead] = useState(true)
 
-  const [openIndexStyle, setOpenIndexStyle] = useState(false);
+  const [openIndexStyle, setOpenIndexStyle] = useState(false)
 
-  const [openIndexBody, setOpenIndexBody] = useState(false);
+  const [openIndexBody, setOpenIndexBody] = useState(false)
 
-  const [openIndexScript, setOpenIndexScript] = useState(false);
+  const [openIndexScript, setOpenIndexScript] = useState(false)
 
   const getTitle = () => {
     switch (selectedMenu) {
       case "alert":
-        return "alert()";
+        return "alert()"
       case "messageBox":
-        return "messageBox()";
+        return "messageBox()"
       case "login":
-        return "Login.html";
+        return "Login.html"
       case "resObj":
-        return "resObj()";
+        return "resObj()"
       case "pageInit":
-        return "pageInit()";
+        return "pageInit()"
       case "headerInit":
-        return "headerInit()";
+        return "headerInit()"
       case "pageShow":
-        return "pageShow()";
+        return "pageShow()"
       case "pageUnShow":
-        return "pageUnShow()";
+        return "pageUnShow()"
       case "documentAddEventListener":
-        return "document.addEventListener()";
+        return "document.addEventListener()"
       case "getAbsTime":
-        return "getAbsTime()";
+        return "getAbsTime()"
       case "loader":
-        return "loader()";
+        return "loader()"
       case "messagePage":
-        return "messagePage()";
+        return "messagePage()"
       case "mainHtml":
-        return "Main.html";
+        return "Main.html"
       case "mainHtmlHowtouse":
-        return "Main How to use";
+        return "Main How to use"
       case "headIndex":
-        return "Head";
+        return "Head"
       case "styleIndex":
-        return "Style";
+        return "Style"
       case "var":
-        return "var";
+        return "var"
       case "startApp":
-        return "startApp";
+        return "startApp"
       case "errorApp":
-        return "errorApp";
+        return "errorApp"
       case "onBackPressed":
-        return "onBackPressed";
+        return "onBackPressed"
       case "setKeyboardHeight":
-        return "setKeyboardHeight";
+        return "setKeyboardHeight"
       case "setDeviceId":
-        return "setDeviceId";
+        return "setDeviceId"
       case "appComeback":
-        return "appComeback";
+        return "appComeback"
       case "openAgreement":
-        return "openAgreement";
+        return "openAgreement"
       case "openPrivacy":
-        return "openPrivacy";
+        return "openPrivacy"
       case "firstStartFun":
-        return "firstStartFun";
+        return "firstStartFun"
       case "firstCheckToken":
-        return "firstCheckToken";
+        return "firstCheckToken"
       case "IndexHowToUse":
-        return "Index How To Use";
+        return "Index How To Use"
       case "bodyLogin":
-        return "Body";
+        return "Body"
       case "fetchSliderConfigAndData":
-        return "fetchSliderConfigAndData()";
+        return "fetchSliderConfigAndData()"
       case "fetchSliderData":
-        return "fetchSliderData()";
+        return "fetchSliderData()"
       case "slider_cap":
-        return "slider_cap()";
+        return "slider_cap()"
       case "loginFun":
-        return "loginFun()";
+        return "loginFun()"
       case "checkLoginStatusWithRefreshToken":
-        return "checkLoginStatusWithRefreshToken()";
+        return "checkLoginStatusWithRefreshToken()"
       case "askDeviceIdFun":
-        return "askDeviceIdFun()";
+        return "askDeviceIdFun()"
       case "registerFun":
-        return "registerFun()";
+        return "registerFun()"
       case "SendOTP":
-        return "SendOTP()";
+        return "SendOTP()"
       case "nSLangArrLang":
-        return "var NSLangArr";
+        return "var NSLangArr"
       case "setAllPageLang":
-        return "setAllPageLang()";
+        return "setAllPageLang()"
       case "setAllUILang":
-        return "setAllUILang()";
+        return "setAllUILang()"
       case "NSLang":
-        return "NSLang";
+        return "NSLang"
       case "getStatusCode":
-        return "getStatusCode(code)";
+        return "getStatusCode(code)"
       case "openTabLevel":
-        return "openTabLevel(tabName)";
+        return "openTabLevel(tabName)"
       case "getlevel":
-        return "getlevel()";
+        return "getlevel()"
       default:
-        return "";
+        return ""
     }
-  };
+  }
 
   const formCintentModelStructure = {
     alert: () => (
@@ -596,7 +596,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         content="LoginFun_login"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         headerHtml="home.html"
         htmlCheckBody={true}
       />
@@ -611,7 +611,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheckScript={true}
-        htmlCheck="show"
+        htmlCheck={true}
         headerHtml="home.html"
       />
     ),
@@ -625,7 +625,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheckScript={true}
-        htmlCheck="show"
+        htmlCheck={true}
         headerHtml="home.html"
       />
     ),
@@ -639,7 +639,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheckScript={true}
-        htmlCheck="show"
+        htmlCheck={true}
         headerHtml="home.html"
       />
     ),
@@ -649,11 +649,19 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         headers="Solar App"
         headerName={getTitle()}
         functionName={getTitle()}
-        content="loginFun"
+        content="ฟังก์ชัน loginFun() นี้ใช้สำหรับการทำการเข้าสู่ระบบผ่าน API โดยมีขั้นตอนดังนี้"
+        content1="1.นำข้อมูลจากฟิลด์ในแบบฟอร์ม (ชื่อผู้ใช้และรหัสผ่าน) มาเก็บไว้ในตัวแปร mData ในรูปแบบของ JSON object"
+        content2="2.ตรวจสอบว่ามี deviceId หรือไม่ ถ้ามีจะกำหนดค่าใน mData ใหม่อีกรอบ โดยใช้ข้อมูลจากฟิลด์ในแบบฟอร์มอีกครั้ง"
+        content3="3.ส่ง request ไปยัง API โดยใช้ jQuery.ajax() เพื่อทำการเข้าสู่ระบบ"
+        content4="4.ในส่วนของ beforeSend จะไม่มีการกระทำอะไรเพิ่มเติม"
+        content5="5.หลังจากที่ส่ง request เรียบร้อยแล้ว จะมีการตรวจสอบคำตอบที่ได้กลับมา ถ้า code ของ response เป็น 0 แสดงว่าการเข้าสู่ระบบสำเร็จ จะทำการซ่อน loader ด้วยฟังก์ชัน loaderObj.unShow() และทำการล้างค่าฟิลด์ข้อมูลในแบบฟอร์มด้วยฟังก์ชัน cleanInput() จากนั้นจะทำการเก็บ token และชื่อผู้ใช้ที่ลงทะเบียนลงใน localStorage และทำการเรียกใช้ฟังก์ชัน init() ของหน้า homeObj และ checkIsLogin() ของ mainObj สุดท้ายจะทำการแสดงหน้า notificationPage"
+        content6="6.ถ้า code ของ response ไม่เป็น 0 แสดงว่าการเข้าสู่ระบบไม่สำเร็จ จะแสดงข้อความแจ้งเตือนโดยใช้ msgPageObj.show() ซึ่งจะแปลง code ของ response เป็นข้อความที่แสดงความหมายเพื่อแจ้งเตือนให้ผู้ใช้ทราบ"
+        content7="7.ในกรณีที่เกิด error ในการส่ง request หรือใน response จะแสดงข้อความ '服务器链接问题' ใน console log"
+        content8="8.ส่วน complete จะไม่มีการกระทำอะไรเพิ่มเติม ซึ่งอาจใช้สำหรับการทำงานหลังจบ request หรือปิด loader ตามความเหมาะสม"
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheckScript={true}
-        htmlCheck="show"
+        htmlCheck={true}
         headerHtml="home.html"
       />
     ),
@@ -667,7 +675,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheckScript={true}
-        htmlCheck="show"
+        htmlCheck={true}
         headerHtml="home.html"
       />
     ),
@@ -685,7 +693,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -697,7 +705,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         content="bodyregister"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         headerHtml="home.html"
         htmlCheckBody={true}
       />
@@ -720,7 +728,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -743,7 +751,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -756,7 +764,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         content="var NSLangArr"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckVar={true}
       />
     ),
@@ -773,7 +781,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -791,7 +799,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         functionName="setAllUILang(page)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -808,7 +816,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         functionName="NSLang(inStr)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -826,7 +834,7 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         functionName="getStatusCode(code)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
@@ -845,16 +853,44 @@ const FormCintentModelStructure = ({ selectedMenu }) => {
         functionName="openTab(tabName)"
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck="show"
+        htmlCheck={true}
         htmlCheckScript={true}
       />
     ),
-  };
+
+    getlevel: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="ฟังก์ชัน getlevel มีหน้าที่ดึงข้อมูลเกี่ยวกับระดับสมาชิก (level) และข้อมูลที่เกี่ยวข้องจากเซิร์ฟเวอร์ จากนั้นนำข้อมูลเหล่านั้นมาแสดงผลบนหน้าเว็บ. ได้แก่"
+        content1="1.ดึงข้อมูลโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์ token"
+        content2="2.ทำการส่งคำขอ GET ไปยังเส้นทาง API /v1/profile/cycle-voucher?type=40 เพื่อขอข้อมูลเกี่ยวกับระดับสมาชิก"
+        content3="3.เมื่อได้ข้อมูลเช่นจำนวนระดับ, รายละเอียดระดับและรายละเอียดของระดับสมาชิก จะนำข้อมูลเหล่านั้นมาแสดงผลบนหน้าเว็บ"
+        content4="4.ทำการสร้างตาราง HTML เพื่อแสดงรายละเอียดของระดับสมาชิกและค่าผลประสิทธิ์ของแต่ละระดับ"
+        content5={`5.ทำการสร้างปุ่ม "领取奖励" โดยเช็คเงื่อนไขว่าผู้ใช้สามารถรับรางวัลได้หรือไม่ หากสามารถรับรางวัลได้ ให้ทำการส่งคำขอ POST เพื่อรับรางวัล`}
+        content6={`6.ในกรณีที่เกิดข้อผิดพลาดในการส่งคำขอ POST, แสดงข้อความข้อผิดพลาด.และฟังก์ชัน sendPostData ทำหน้าที่ส่งคำขอ POST เพื่อรับรางวัลของระดับสมาชิก`}
+        content6p1={`6.1.ตรวจสอบว่าข้อมูล itemsLevelArr ไม่เป็นค่าว่าง ถ้าเป็นค่าว่าง จะแสดงข้อความ "领取失败，请重试！" และจบการทำงาน`}
+        content6p2={`6.2.ตรวจสอบระดับรางวัลที่ยังไม่ได้รับรางวัล จากนั้นกำหนดค่า mLevelToPost ให้เป็นระดับรางวัลที่ยังไม่ได้รับรางวัล`}
+        content6p3={`6.3.สร้างข้อมูล postData ที่ต้องส่งและส่งคำขอ POST ไปยัง API /v1/profile/cycle-voucher`}
+        content7="7.เมื่อได้รับคำตอบ:"
+        content7p1={`7.1.ถ้ารหัสคำขอเป็น 4089 แสดงว่ารับรางวัลไปแล้ว ให้แสดงข้อความ "周奖励不能重复领取！" และปิดการทำงานปุ่ม "领取奖励"`}
+        content7p2={`7.2.ถ้ารหัสคำขอเป็น 4090 แสดงว่ายังไม่ได้รับรางวัล ให้แสดงข้อความ "周奖励将于每周一自动激活，请您按时领取"`}
+        content7p3={`7.3.ในกรณีอื่น ๆ, แสดงข้อความตามรหัสคำขอ`}
+        content8={`และจบการทำงานของฟังก์ชัน คำสั่ง refresh ใช้สำหรับการอัพเดทตัวแปร myScroll ของ IScroll ที่ใช้ในการเลื่อนหน้าเพจ`}
+        functionName="openTab(tabName)"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+  }
 
   return (
     formCintentModelStructure[selectedMenu] &&
     formCintentModelStructure[selectedMenu]()
-  );
-};
+  )
+}
 
-export default FormCintentModelStructure;
+export default FormCintentModelStructure

@@ -41,7 +41,7 @@ export function FunctionMessageBoxText() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //Index MessageBox Body
@@ -71,7 +71,7 @@ export function DivMessageBox() {
       <p className="ml-12">{`</div>`}</p>
       <p>{`</div>`}</p>
     </div>
-  );
+  )
 }
 
 //Index MessageBox Script
@@ -81,7 +81,7 @@ export function DivMessageBoxScript() {
       <p>{`var msgObj = new messageBox();`}</p>
       <p>{`msgObj.init();`}</p>
     </div>
-  );
+  )
 }
 
 //Index MessageBox exampleCode
@@ -95,7 +95,7 @@ export function DivMessageBoxExampleCode() {
       <p>{`msgObj.unShow();`}</p>
       <p>{`})`}</p>
     </div>
-  );
+  )
 }
 
 // alert() Widget.js
@@ -151,7 +151,7 @@ export function AlertWidget() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // alert() Index Body
@@ -165,7 +165,7 @@ export function AlertIndex() {
         <p>{`</div>`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //Index Alert Script
@@ -175,7 +175,7 @@ export function AlertScript() {
       <p>{`var alertObj = new alert();`}</p>
       <p>{`alertObj.init();`}</p>
     </div>
-  );
+  )
 }
 
 // alert Example
@@ -187,7 +187,7 @@ export function AlertExample() {
         alertObj.unShow()
       }, 500);`}</p>
     </div>
-  );
+  )
 }
 
 // resObj Widget.js
@@ -303,7 +303,7 @@ export function ResObjWidget() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // base64
@@ -428,7 +428,7 @@ export function Base64() {
       <p className="ml-8">{`}`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
-  );
+  )
 }
 
 // resObj Index.html script
@@ -456,7 +456,7 @@ export function ResObjIndexScript() {
         <p className="ml-4">{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //pageInit()
@@ -471,7 +471,7 @@ export function PageInit() {
       <p className="ml-4">{`top: 0,`}</p>
       <p className="ml-4">{`})`}</p>
     </div>
-  );
+  )
 }
 
 //PageInit  Example Body
@@ -481,7 +481,7 @@ export function PageInitExampleBody() {
       <p>{`<div id="name_page">`}</p>
       <p>{`</div>`}</p>
     </div>
-  );
+  )
 }
 
 //PageInit  Example script
@@ -495,7 +495,7 @@ export function PageInitExampleScript() {
       <p className="ml-8">{`pageInit("name_page");`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
-  );
+  )
 }
 
 // HeaderInit Widget
@@ -540,7 +540,7 @@ export function HeaderInitWidget() {
       <p>{`})`}</p>
       <p className="mt-1">{`$(".back_arrow").attr("src", picRes["arrow_back.png"])`}</p>
     </div>
-  );
+  )
 }
 
 //HeaderInit  Example script
@@ -554,7 +554,7 @@ export function HeaderInitExampleScript() {
       <p className="full">{`headerInit("name_page","HeaderInitPage");`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
-  );
+  )
 }
 
 //PageShow Widget
@@ -563,7 +563,7 @@ export function PageShowWidget() {
     <div>
       <p className="ml-8">{`$("#" + pageId).transition({x: w,},PAGETIMEOUT)`}</p>
     </div>
-  );
+  )
 }
 
 //pageShow  Example Body
@@ -574,7 +574,7 @@ export function PageShowExampleBody() {
       <p className="ml-4">current Page</p>
       <p>{`</div>`}</p>
     </div>
-  );
+  )
 }
 
 //pageShow  Example Script
@@ -588,7 +588,7 @@ export function PageShowExampleScript() {
       <p className="full">{`pageShow("go_next_page");`}</p>
       <p className="ml-4">{`}`}</p>
     </div>
-  );
+  )
 }
 
 //pageUnShow Widget
@@ -597,7 +597,7 @@ export function PageUnShowWidget() {
     <div>
       <p className="ml-8">{`$("#" + pageId).transition({x: 0,},PAGETIMEOUT)`}</p>
     </div>
-  );
+  )
 }
 
 //pageUnShow  Example Body
@@ -613,7 +613,7 @@ export function PageUnShowExampleBody() {
             </div>`}</p>
       <p>{`</div>`}</p>
     </div>
-  );
+  )
 }
 
 //pageUnShow  Example Script
@@ -630,7 +630,7 @@ export function PageUnShowExampleScript() {
       <p className="ml-4">{`}`}</p>
       <p>{`}`}</p>
     </div>
-  );
+  )
 }
 
 //pageUnShow Widget
@@ -664,7 +664,7 @@ export function DocumentAddEventListenerWidget() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //GetAbsTimeWidget Widget
@@ -689,7 +689,7 @@ export function GetAbsTimeWidget() {
       <p>{`} catch (e) { throw e }`}</p>
       <p>{`}`}</p>
     </div>
-  );
+  )
 }
 
 //Loader Widget
@@ -735,7 +735,7 @@ export function LoaderWidget() {
       <p>{`$("#loader").css({display: "none"})`}</p>
       <p>{`}`}</p>
     </div>
-  );
+  )
 }
 
 //Loader  Index Body
@@ -747,7 +747,7 @@ export function LoaderIndexBody() {
 `}</p>
       <p>{`</div>`}</p>
     </div>
-  );
+  )
 }
 
 //Loader  Index Script
@@ -757,7 +757,7 @@ export function LoaderIndexScript() {
       <p>var loaderObj = new loader();</p>
       <p>msgObj.init();</p>
     </div>
-  );
+  )
 }
 
 //Loader  Example Script
@@ -766,7 +766,7 @@ export function LoaderExampleScript() {
     <div>
       <p>loaderObj.show();</p>
     </div>
-  );
+  )
 }
 
 // messagePage Widget
@@ -833,7 +833,7 @@ export function MessagePageWidget() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //MessagePage Index Body
@@ -864,7 +864,7 @@ export function MessagePageIndexBody() {
       <p>{`<div>`}</p>
       <p>{`<div>`}</p>
     </div>
-  );
+  )
 }
 
 //MessagePage Index Script
@@ -874,7 +874,7 @@ export function MessagePageIndexScript() {
       <p>var msgPageObj = new messagePage();</p>
       <p>msgPageObj.init();</p>
     </div>
-  );
+  )
 }
 
 //MessagePage Example Script
@@ -883,7 +883,7 @@ export function MessagePageExampleScript() {
     <div className="ml-4">
       <p>msgPageObj.show("messagePage")</p>
     </div>
-  );
+  )
 }
 
 // home.html
@@ -917,7 +917,7 @@ export function Home_html_count() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // HomeCheckToken
@@ -975,7 +975,7 @@ export function Home_html_homeCheckToken() {
         <p className="ml-2">{`productCartObj.call()`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //getProfile
@@ -1068,7 +1068,7 @@ export function Home_html_getProfile() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // sendApi
@@ -1145,7 +1145,7 @@ export function Home_html_sendApi() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // checklocalStorage
@@ -1167,7 +1167,7 @@ export function Home_html_checklocalStorage() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // checkSimulated
@@ -1210,7 +1210,7 @@ export function Home_html_checkSimulated() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // getRecommendProduct
@@ -1281,7 +1281,7 @@ export function Home_html_getRecommendProduct() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //getAllProduct
@@ -1363,7 +1363,66 @@ export function Home_html_getAllProduct() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
+}
+
+// checkIn
+export function CheckIn() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem("token")`}</p>
+        <p>{`var token = JSON.parse(getToken)`}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "post",`}</p>
+          <p>{`url: API_SERVER + "/v1/checkIn",`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`Authorization: "Bearer " + token.token,`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`contentType: "application/json",`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`beforeSend: function (xmlhttprequest) {`}</p>
+          <div className="ml-2">
+            <p>{`// Do something before sending the request`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`if (data.code == 0) {`}</p>
+            <div className="ml-2">
+              <p>{`$("#checkinToday").css({background: "rgb(140 135 135)"})`}</p>
+              <p>{`$("#checkinToday").text("Checked In")`}</p>
+              <p>{`$("#checkinToday").off("click")`}</p>
+              <p>{`getCheckIn()`}</p>
+            </div>
+            <p>{`} else if (data.code == 4310) {`}</p>
+            <div className="ml-2">
+              <p>{`$("#checkinToday").css({background: "gray"})`}</p>
+              {/* หรือคุณอาจต้องการสีเทาแทน "gay" แต่ก็ขอโทษที่ไม่เข้าใจนะครับ */}
+              {/* <p>{`// getCheckIn()`}</p> */}
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`// Handle other cases`}</p>
+            </div>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xhr, status, error) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow()`}</p>
+            <p>{`msgPageObj.show(NSLang("sys.serverError"))`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+    </div>
+  )
 }
 
 //getCheckIn
@@ -1486,7 +1545,7 @@ export function Home_html_getCheckIn() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // Adddatalogger
@@ -1496,7 +1555,7 @@ export function Addda_talogger_validateInput() {
     <div className="ml-4 flex flex-col gap-2 ">
       <p>inputField.value = inputField.value.replace(/[^0-9a-zA-Z]/g, "")</p>
     </div>
-  );
+  )
 }
 
 //AddDate
@@ -1524,7 +1583,7 @@ export function Addda_talogger_addDate() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //CreateDevice
@@ -1584,7 +1643,7 @@ export function Addda_talogger_createDevice() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // cancel_order.html
@@ -1598,7 +1657,7 @@ export function Cancel_order_getItemAll() {
       <p>$("#price_cancel").text(dataItem.price + " ฿")</p>
       <p>$("#itemCancel_Quantity").text("Quantity x " + dataItem.quantity)</p>
     </div>
-  );
+  )
 }
 
 //sentCancelOrder
@@ -1664,7 +1723,7 @@ export function Cancel_order_sentCancelOrder() {
         <p className="ml-4">{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // changePassword.html
@@ -1749,7 +1808,7 @@ export function ChangePasswordHtml() {
         <p className="ml-4">{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // coin_history.html
@@ -1904,7 +1963,7 @@ export function Coin_history_getRedeemHis() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //pagination_coins
@@ -1989,7 +2048,7 @@ export function Coin_history_pagination_coins() {
       <p className="ml-4">{`});`}</p>
       <p>{`}`}</p>
     </div>
-  );
+  )
 }
 
 // calPage
@@ -2037,7 +2096,7 @@ export function Coin_history_calPage() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  );
+  )
 }
 
 // coins.html
@@ -2058,7 +2117,7 @@ export function Coins_coinsCheckToken() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //getPointCoins
@@ -2105,7 +2164,7 @@ export function Coins_getPointCoinsn() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  );
+  )
 }
 
 // Configuration.html
@@ -2160,7 +2219,7 @@ export function Configuration_updateDevice() {
       <p className="ml-4">{`error: function (xmlhttprequest, error) {},`}</p>
       <p>{`});`}</p>
     </div>
-  );
+  )
 }
 
 // Configuration_con
@@ -2212,7 +2271,7 @@ export function Configuration_con() {
       <p className="ml-4">{`error: function (xmlhttprequest, error) {},`}</p>
       <p>{`});`}</p>
     </div>
-  );
+  )
 }
 
 // confirm_order.html
@@ -2283,7 +2342,7 @@ export function Confirm_order_getOrder() {
       <p className="ml-4">{`});`}</p>
       <p>{`});`}</p>
     </div>
-  );
+  )
 }
 
 // getStatePayment
@@ -2293,7 +2352,7 @@ export function Confirm_order_getStatePayment() {
       <p>checkStateMethodPayment = method</p>
       <p>calTotal()</p>
     </div>
-  );
+  )
 }
 
 // setVoucherId
@@ -2304,7 +2363,7 @@ export function Confirm_order_setVoucherId() {
       <p>VoucherDis = discount</p>
       <p>calTotal()</p>
     </div>
-  );
+  )
 }
 
 // postOrderNow
@@ -2360,7 +2419,7 @@ export function Confirm_order_postOrderNow() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  );
+  )
 }
 
 // getAddress
@@ -2411,7 +2470,7 @@ export function Confirm_order_getAddress() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  );
+  )
 }
 
 //getCodeDisCountVoucher
@@ -2448,7 +2507,7 @@ export function Confirm_order_getCodeDisCountVoucher() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  );
+  )
 }
 
 // getCodeDisCountMember
@@ -2509,7 +2568,7 @@ export function Confirm_order_getCodeDisCountMember() {
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
     </div>
-  );
+  )
 }
 
 // calTotal
@@ -2553,7 +2612,7 @@ export function Confirm_order_calTotal() {
       <p>{`});`}</p>
       <p>{`$('#show_total_price_order').text(formattedNumber + ' ฿');`}</p>
     </div>
-  );
+  )
 }
 
 // cleanDataDefualt
@@ -2576,7 +2635,7 @@ export function Confirm_order_cleanDataDefualt() {
       <p>{`$("#yojo_wallet_radio").prop("checked", true);`}</p>
       <p>{`$("#discount_member").prop("checked", false);`}</p>
     </div>
-  );
+  )
 }
 
 //  customer.html
@@ -2678,7 +2737,7 @@ export function Customer_getDataCustPurchaseReportStats() {
       <p>{`},`}</p>
       <p>{`});`}</p>
     </div>
-  );
+  )
 }
 
 //showChartTotalCustomer
@@ -2739,7 +2798,7 @@ export function Customer_showChartTotalCustomer() {
         <p>{`option && myChart.setOption(option);`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //ChartMethod
@@ -2829,7 +2888,7 @@ export function Customer_ChartMethod() {
         <p>{`option && myChart1.setOption(option);`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //ChartGender
@@ -2887,7 +2946,7 @@ export function Customer_ChartGender() {
         <p>{`option && myChart2.setOption(option);`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //updateSalesData
@@ -2930,7 +2989,7 @@ export function Customer_updateSalesData() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // data_customer_details.html
@@ -2956,7 +3015,7 @@ export function Data_customer_details_getDataCustomerDetail() {
         <p>$("#Complaint_Customer").text("-")</p>
       </div>
     </div>
-  );
+  )
 }
 
 // data_customer
@@ -3034,7 +3093,7 @@ export function Data_customer_getDataCustomer() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //deletedatalogger.html
@@ -3123,7 +3182,7 @@ export function Deletedatalogger_getDeviceAll() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //distributor.html
@@ -3173,7 +3232,7 @@ export function Distributor_distributorFun() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // PreviewImg
@@ -3265,7 +3324,7 @@ export function Distributor_PreviewImg() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // PreviewImg_2
@@ -3336,7 +3395,7 @@ export function Distributor_PreviewImg2() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 export function Distributor_createDistributor() {
@@ -3437,7 +3496,7 @@ export function Distributor_createDistributor() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // edit_address.html
@@ -3480,7 +3539,7 @@ export function EditAddress_deleteAddress() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //EditAddress
@@ -3527,7 +3586,7 @@ export function EditAddress_editAddress() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // GetAddressID
@@ -3564,7 +3623,7 @@ export function EditAddress_getAddressID() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // forgotpass.html
@@ -3626,7 +3685,7 @@ export function Forgotpass_forgotPass() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 export function Forgotpass_sendOTP_forgot() {
@@ -3718,7 +3777,7 @@ export function Forgotpass_sendOTP_forgot() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //inCome.html
@@ -3746,7 +3805,7 @@ export function InCome_getSelectedYear() {
         <p>{`$('#calendarGetYear').html(str);`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //getSelectedMonth
@@ -3776,7 +3835,7 @@ export function InCome_getSelectedMonth() {
         <p>{`$('#calendarGetMonth').html(str);`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // getIncomeAndExpenditureDetails
@@ -3827,7 +3886,7 @@ export function InCome_getIncomeAndExpenditureDetails() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //createNewInput
@@ -3843,7 +3902,7 @@ export function InCome_createNewInput() {
           })`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //updateIncomeBeforeTaxes
@@ -3864,7 +3923,7 @@ export function InCome_updateIncomeBeforeTaxes() {
         <p>{`)`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // lang.html
@@ -3884,7 +3943,7 @@ export function Lang_setAllPageLang() {
         <p>setAllUILang("final")</p>
       </div>
     </div>
-  );
+  )
 }
 
 //setAllUILang
@@ -4053,7 +4112,7 @@ export function Lang_setAllUILang() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // nSLangArrLang
@@ -4167,7 +4226,7 @@ export function NSLangArrLang() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // NSLang
@@ -4187,7 +4246,7 @@ export function Lang_nsLang() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //getStatusCode
@@ -4208,7 +4267,7 @@ export function Lang_getStatusCode() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // level.html
@@ -4230,7 +4289,7 @@ export function Level_openTab() {
         <p>{`document.getElementById(tabName).classList.add("actived");`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //locationAddress.html
@@ -4372,7 +4431,7 @@ export function LocationAddress_getAddress() {
       </div>
       ;
     </div>
-  );
+  )
 }
 
 //  login.html
@@ -4415,7 +4474,7 @@ export function Login_checkLoginWithRefreshToken() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //askDeviceIdFun
@@ -4453,7 +4512,7 @@ export function Login_askDeviceIdFun() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // main.html
@@ -4477,7 +4536,7 @@ export function Main_menuhome() {
         <p>{`homeObj.call()`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // menumonitor
@@ -4504,7 +4563,7 @@ export function Main_menumonitor() {
         <p>{`monitorObj.call()`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // menuwallet
@@ -4527,7 +4586,7 @@ export function Main_menuwallet() {
         <p>{`walletObj.call()`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // menusetting
@@ -4550,7 +4609,7 @@ export function Main_menusetting() {
         <p>{`settingObj.call()`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // unShowMenuPage
@@ -4576,7 +4635,7 @@ export function Main_unShowMenuPage() {
   })`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // checkIsLogin
@@ -4602,7 +4661,7 @@ export function Main_checkIsLogin() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // updateLoginStatus
@@ -4643,7 +4702,7 @@ export function Main_updateLoginStatus() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // getLocalToken
@@ -4659,7 +4718,7 @@ export function Main_getLocalToken() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // refreshToken
@@ -4679,7 +4738,7 @@ export function Main_refreshToken() {
         <p>{`}, 1800000)`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // refreshTokenFun
@@ -4731,7 +4790,7 @@ export function Main_refreshTokenFun() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //memberTier.html
@@ -4778,7 +4837,7 @@ export function MemberTier_getMemberTier() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // createMemberTier
@@ -5021,7 +5080,7 @@ export function MemberTier_createMemberTier() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // monitor.html
@@ -5070,7 +5129,7 @@ export function Monitor_monitorCheckToken() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // RestartPin
@@ -5122,7 +5181,7 @@ export function Monitor_restartPin() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // GetBill
@@ -5201,7 +5260,7 @@ export function Monitor_getBill() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //GetSolarDeviceAll
@@ -5448,7 +5507,7 @@ export function Monitor_getSolarDeviceAll() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // GetDataMonitor
@@ -5574,7 +5633,7 @@ export function Monitor_getDataMonitor() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // WS
@@ -5688,7 +5747,7 @@ export function Monitor_ws() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // getSelectedMonthMonitor
@@ -5767,7 +5826,7 @@ export function Monitor_getSelectedMonthMonitor() {
         <p>{`$("#calendarGen").html(str)`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // getSelectedDay
@@ -5860,7 +5919,7 @@ export function Monitor_getSelectedDay() {
         <p>{`$("#calendarGenDayTap").html(str)`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // openTabbill
@@ -5894,7 +5953,7 @@ export function Monitor_openTabbill() {
         {`document.getElementById(tab).classList.add("actived")`}
       </div>
     </div>
-  );
+  )
 }
 
 // RandomValueMonitorNoLogin
@@ -5954,7 +6013,7 @@ export function Monitor_randomValueMonitorNoLogin() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // luxVal
@@ -6049,7 +6108,7 @@ export function Monitor_luxVal() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // my_devices.html
@@ -6136,7 +6195,7 @@ export function My_devices_getMyDevice() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // new_address.html
@@ -6176,7 +6235,7 @@ export function New_address_validateInput() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // CreateAddress
@@ -6246,7 +6305,7 @@ export function New_address_createAddress() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // notification.html
@@ -6365,7 +6424,7 @@ export function Notification_pagination() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // GetNotification
@@ -6649,7 +6708,7 @@ export function Notification_getNotification() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 //  order_info_cancel_refund.html
@@ -6754,7 +6813,7 @@ export function Order_info_cancel_refund_getOid() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // sendRefund
@@ -6812,7 +6871,7 @@ export function Order_info_cancel_refund_sendRefund() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // cancelOrder_order_info_cancel_refund
@@ -6823,7 +6882,7 @@ export function Order_info_cancel_refund_cancelOrder_order_info_cancel_refund() 
         <p>{`cancel_orderObj.getItemAll(dataItem)`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // order_info_cancel.html
@@ -6869,7 +6928,7 @@ export function Order_info_cancel_getOid() {
         <p>{`$("#cancel_deliveryTime").text(deliveryTime);`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // cancelOrder
@@ -6880,7 +6939,7 @@ export function Order_info_cancel_cancelOrder() {
         <p>{`cancel_orderObj.getItemAll(dataItem)`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // order_info_received.html
@@ -6930,7 +6989,7 @@ export function Order_info_received_getOid() {
         <p>{`$('#received_deliveryTime').text(deliveryTime);`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // Order_info_received_cancelOrder
@@ -6941,7 +7000,7 @@ export function Order_info_received_cancelOrder() {
         <p>cancel_orderObj.getItemAll(dataItem)</p>
       </div>
     </div>
-  );
+  )
 }
 
 // order_info_received_getTimeline
@@ -7001,7 +7060,7 @@ export function Order_info_received_getTimeline() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // order_info_waitRceive.html
@@ -7055,7 +7114,7 @@ export function Order_info_waitRceive_sendReceipt() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // order_info_waitRceive_getOid
@@ -7099,7 +7158,7 @@ export function Order_info_waitRceive_getOid() {
         <p>{`$('#waitRceive_deliveryTime').text(deliveryTime);`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // order_info_waitRceive_getTimeline
@@ -7156,7 +7215,7 @@ export function Order_info_waitRceive_getTimeline() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // order_state_10.html
@@ -7197,7 +7256,7 @@ export function OrderState10_getOid() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // order_state_ship.html
@@ -7239,7 +7298,7 @@ export function OrderStateShip_getOid() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // payment_method.html
@@ -7279,7 +7338,7 @@ export function Payment_method_selectPayment() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //  payment_method2.html
@@ -7329,7 +7388,7 @@ export function Payment_method2_genQR() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // start_timer
@@ -7380,11 +7439,11 @@ export function Payment_method2_start_stimer() {
         <p>{``}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // AddSlipPayment
-export function Payment_method2_addSlipPayment() {
+export function AddSlipPayment() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2">
@@ -7431,11 +7490,11 @@ export function Payment_method2_addSlipPayment() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // UpdateSlipPayment
-export function Payment_method2_updateSlipPayment() {
+export function UpdateSlipPayment() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2">
@@ -7499,7 +7558,7 @@ export function Payment_method2_updateSlipPayment() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // paymentStatistic.html
@@ -7557,7 +7616,7 @@ export function PaymentStatistic_getPaymentStatistic() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // ChartPaymentStatistic
@@ -7665,7 +7724,7 @@ export function PaymentStatistic_chartPaymentStatistic() {
         <p>{`option && myChart.setOption(option);`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // ExportCSVPayment
@@ -7705,7 +7764,7 @@ export function PaymentStatistic_exportCSVPayment() {
         <p>{`downloadCSV(csv, \`Yojosolar Payment Statistic-{formattedDate}.csv\`);`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // productCart.html
@@ -7759,7 +7818,7 @@ export function ProductCart_showCart() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // show_cart
@@ -7861,7 +7920,7 @@ export function ProductCart_show_cart() {
         <p>{`})`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // update_quantity
@@ -7929,7 +7988,7 @@ export function ProductCart_update_quantity() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // delete_id
@@ -7989,7 +8048,7 @@ export function ProductCart_delete_id() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // sumPrice
@@ -8024,7 +8083,7 @@ export function ProductCart_sumPrice() {
         <p>{`$("#show_total_price").html(parseFloat(sum).toLocaleString() + '&nbsp;' + '฿');`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // confirmOrder
@@ -8095,7 +8154,7 @@ export function ProductCart_confirmOrder() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //  productdetail.html
@@ -8163,7 +8222,7 @@ export function Productdetail_confirmOrderBuy() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // getDetailProduct
@@ -8320,7 +8379,7 @@ export function Productdetail_getDetailProduct() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // checkLogin
@@ -8342,7 +8401,7 @@ export function Productdetail_checkLogin() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // purchaseReport.html
@@ -8436,7 +8495,7 @@ export function PurchaseReport_getSalesData() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // CreateTableReport
@@ -8627,7 +8686,7 @@ export function PurchaseReport_createTableReport() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // CreateTableQuarter
@@ -8712,7 +8771,7 @@ export function PurchaseReport_createTableQuarter() {
         <p>{`$("#purchaseReportScroller").css({ "width": w, "height": h - 75, "overflow": "hidden", "background-color": "#E3F5FF" });`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // getSelectedMonthpurchase
@@ -8782,7 +8841,7 @@ export function PurchaseReport_getSelectedMonthpurchase() {
         <p>{`$('#calendarGen1').html(str);`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // showChart
@@ -8931,7 +8990,7 @@ export function PurchaseReport_showChart() {
         <p>{`myScroll = new IScroll('#purchaseReportScroller', { probeType: 1, mouseWheel: true });`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // ExportCSV
@@ -9000,7 +9059,7 @@ export function PurchaseReport_exportCSV() {
         <p>{`document.body.removeChild(downloadLink);`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // redeem.html
@@ -9035,7 +9094,7 @@ export function Redeem_redeemCheckToken() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // checkNoInput
@@ -9072,7 +9131,7 @@ export function Redeem_checkNoInput() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // postRedeem
@@ -9125,7 +9184,7 @@ export function Redeem_postRedeem() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // refund.html
@@ -9141,7 +9200,7 @@ export function Refund_getData() {
         <p>{`$('#Quantity_refund').text('Quantity x ' + dataItem.quantity)`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // sendRefund
@@ -9221,7 +9280,7 @@ export function Refund_sendRefund() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // PreviewImg_refund
@@ -9310,7 +9369,7 @@ export function Refund_previewImg_refund() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // register.html
@@ -9391,7 +9450,7 @@ export function Register_registerFun() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // SendOTP
@@ -9494,7 +9553,7 @@ export function Register_sendOTP() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // reportdatalogger.html
@@ -9575,7 +9634,7 @@ export function Reportdatalogger_createHTML() {
         {`$("#img_show_31").css("display", "none")`}
       </div>
     </div>
-  );
+  )
 }
 
 // GetReportData
@@ -9658,7 +9717,7 @@ export function Reportdatalogger_getReportData() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // getSelectedDate
@@ -9809,7 +9868,7 @@ export function Reportdatalogger_getSelectedDate() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // openTabreportCart
@@ -9912,7 +9971,7 @@ export function Reportdatalogger_openTabreportCart() {
         <p>{`document.getElementById(tabreportCart).classList.add("activedCart")`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 //openTabreport
@@ -10058,7 +10117,7 @@ export function Reportdatalogger_openTabreport() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // chartFlowDay
@@ -10300,7 +10359,7 @@ export function Reportdatalogger_chartFlowDay() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // chartFlowMonth
@@ -10538,7 +10597,7 @@ export function Reportdatalogger_chartFlowMonth() {
         {`});`}
       </div>
     </div>
-  );
+  )
 }
 
 // chartFlowYear
@@ -10776,7 +10835,7 @@ export function Reportdatalogger_chartFlowYear() {
         {`});`}
       </div>
     </div>
-  );
+  )
 }
 
 // chartFlowTotal
@@ -11014,7 +11073,7 @@ export function Reportdatalogger_chartFlowTotal() {
         {`});`}
       </div>
     </div>
-  );
+  )
 }
 
 // chargePower
@@ -11217,7 +11276,7 @@ export function Reportdatalogger_chargePower() {
         {`});`}
       </div>
     </div>
-  );
+  )
 }
 
 // chartNOlogin
@@ -11333,7 +11392,7 @@ export function Reportdatalogger_chartNOlogin() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // chartNOloginMonthcart
@@ -11459,7 +11518,7 @@ export function Reportdatalogger_chartNOloginMonthcart() {
         {`option && myChart.setOption(option);`}
       </div>
     </div>
-  );
+  )
 }
 
 // chartNOloginYearhcart
@@ -11585,7 +11644,7 @@ export function Reportdatalogger_chartNOloginYearhcart() {
         {`option && myChart.setOption(option);`}
       </div>
     </div>
-  );
+  )
 }
 
 // chartNOloginTotalhcart
@@ -11712,7 +11771,7 @@ export function Reportdatalogger_chartNOloginTotalhcart() {
         {`option && myChart.setOption(option);`}
       </div>
     </div>
-  );
+  )
 }
 
 // chargePowerNOlogin
@@ -11812,7 +11871,7 @@ export function Reportdatalogger_chargePowerNOlogin() {
         {`option && myChart.setOption(option);`}
       </div>
     </div>
-  );
+  )
 }
 
 // setting_account.html
@@ -11828,7 +11887,7 @@ export function Setting_account_settingAccountCheckToken() {
       }`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // updateProfile
@@ -11879,7 +11938,7 @@ export function Setting_account_updateProfile() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // AddAvatar
@@ -11887,12 +11946,11 @@ export function Setting_account_addAvatar() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2">
-        {`var Token = localStorage.getItem("token");`}
-        {`var obj = JSON.parse(Token);`}
-
-        {`var formData = new FormData();`}
-        {`formData.append("file", file);`}
-        {`loaderObj.show();`}
+        <p>{`var Token = localStorage.getItem("token");`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{`var formData = new FormData();`}</p>
+        <p>{`formData.append("file", file);`}</p>
+        <p>{`loaderObj.show();`}</p>
 
         {`$.ajax({`}
         <div className="ml-2">
@@ -11932,7 +11990,7 @@ export function Setting_account_addAvatar() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // UpdateAvatar
@@ -11981,7 +12039,7 @@ export function Setting_account_updateAvatar() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // settingOrder.html
@@ -12291,7 +12349,7 @@ export function SettingOrder_getAll() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // scroller
@@ -12303,7 +12361,7 @@ export function SettingOrder_scroller() {
         <p>{` myScroll1 = new IScroll('#settingOrder1Scroller', { probeType: 1, mouseWheel: true });`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // setting.html
@@ -12331,7 +12389,7 @@ export function Setting_SettingCheckToken() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // getQRcode
@@ -12376,7 +12434,7 @@ export function Setting_getQRcode() {
         {`})`}
       </div>
     </div>
-  );
+  )
 }
 
 // start.html
@@ -12434,7 +12492,20 @@ export function Start_init() {
         {`}`}
       </div>
     </div>
-  );
+  )
+}
+
+export function Start_call() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`this.call = function () {`}</p>
+        <p className="ml-4">{`getCodeDisCountVoucher();`}</p>
+        <p className="ml-4">{`getCodeDisCountMember();`}</p>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
 }
 
 // topup.html
@@ -12460,7 +12531,7 @@ export function Topup_topUpCheckToken() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // checkNoInput
@@ -12506,7 +12577,7 @@ export function Topup_checkNoInput() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // addSlipPayment
@@ -12552,7 +12623,7 @@ export function Topup_addSlipPayment() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // updateSlipPayment
@@ -12623,7 +12694,7 @@ export function Topup_updateSlipPayment() {
         {`});`}
       </div>
     </div>
-  );
+  )
 }
 
 // transaction.html
@@ -12644,7 +12715,7 @@ export function Transaction_transactionCheckToken() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // getTransaction
@@ -12759,7 +12830,7 @@ export function Transaction_getTransaction() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // pagination_tran
@@ -12842,7 +12913,7 @@ export function Transaction_pagination_tran() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // transaction_calPage
@@ -12926,7 +12997,7 @@ export function Transaction_calPage() {
         {`})`}
       </div>
     </div>
-  );
+  )
 }
 
 //  transfer.html
@@ -12954,7 +13025,7 @@ export function Transfer_transferCheckToken() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // checkNoInput
@@ -13014,7 +13085,7 @@ export function Transfer_checkNoInput() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // postTransfer
@@ -13071,7 +13142,7 @@ export function Transfer_postTransfer() {
         {`});`}
       </div>
     </div>
-  );
+  )
 }
 
 // update_order.html
@@ -13162,7 +13233,7 @@ export function Update_order_showOrder() {
         {`});`}
       </div>
     </div>
-  );
+  )
 }
 
 // scroller
@@ -13174,7 +13245,7 @@ export function Update_order_scroller() {
         <p>{`  $("#showOrderScroller").css({ "width": w, "height": h - 90, "overflow": "hidden", "background-color": "#E3F5FF", });`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // vouncher_code.html
@@ -13256,7 +13327,7 @@ export function Vouncher_code_showVoucher() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // wallet.html
@@ -13298,7 +13369,7 @@ export function Wallet_walletCheckToken() {
         {`}`}
       </div>
     </div>
-  );
+  )
 }
 
 // getUserData
@@ -13380,7 +13451,7 @@ export function Wallet_getUserData() {
         {`});`}
       </div>
     </div>
-  );
+  )
 }
 
 // get_dataTransaction
@@ -13627,7 +13698,7 @@ export function Wallet_get_dataTransaction() {
         {`});`}
       </div>
     </div>
-  );
+  )
 }
 
 // Wallet_loadList
@@ -13652,7 +13723,7 @@ export function Wallet_loadList() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 //Index.html modelStructure
@@ -13694,7 +13765,7 @@ export function IndexHead() {
         {`<script language="javascript" type="text/javascript" src="js/QrCode.js"></script>`}
       </div>
     </div>
-  );
+  )
 }
 
 // IndexStyle
@@ -13781,7 +13852,7 @@ export function IndexStyle() {
 }`}
       </pre>
     </div>
-  );
+  )
 }
 
 // Index body full
@@ -14072,7 +14143,7 @@ export function IndexBodyFull() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // Index Script VAR
@@ -14164,7 +14235,7 @@ export function IndexBodyScriptVar() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // Index Script startApp
@@ -14246,7 +14317,7 @@ export function IndexBodyScriptStartApp() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  );
+  )
 }
 
 // Index Script errorApp
@@ -14259,7 +14330,7 @@ export function IndexBodyScriptErrorApp() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  );
+  )
 }
 
 // Index Script onBackPressed
@@ -14272,7 +14343,7 @@ export function IndexBodyScriptOnBackPressed() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  );
+  )
 }
 
 // Index Script setKeyboardHeight
@@ -14285,7 +14356,7 @@ export function IndexBodyScriptSetKeyboardHeight() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  );
+  )
 }
 
 // Index Script setDeviceId
@@ -14299,7 +14370,7 @@ export function IndexBodyScriptSetDeviceId() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  );
+  )
 }
 
 // Index Script appComeback
@@ -14313,7 +14384,7 @@ export function IndexBodyScriptAppComeback() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  );
+  )
 }
 
 // Index Script openAgreement
@@ -14326,7 +14397,7 @@ export function IndexBodyScripOpenAgreement() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  );
+  )
 }
 
 // Index Script openPrivacy
@@ -14339,7 +14410,7 @@ export function IndexBodyScripOpenPrivacy() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  );
+  )
 }
 
 // Index Script firstStartFun
@@ -14358,7 +14429,7 @@ export function IndexBodyScripFirstStartFun() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  );
+  )
 }
 
 // Index Script firstCheckToken
@@ -14422,7 +14493,7 @@ export function IndexBodyScripFirstCheckToken() {
         <span className="text-red-600">{`}`}</span>
       </div>
     </div>
-  );
+  )
 }
 
 // Main Html body
@@ -14500,7 +14571,7 @@ export function MainHtmlBody() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // Main Html Script function main init
@@ -14558,7 +14629,7 @@ export function MainHtmlScriptInit() {
       <p>{`mResObj.showHtml("wallet.html", "body_main")`}</p>
       <p>{`mResObj.showHtml("setting.html", "body_main")`}</p>
     </div>
-  );
+  )
 }
 
 // Login.html
@@ -14639,7 +14710,7 @@ export function Body_longin() {
         {`</div>`}
       </div>
     </div>
-  );
+  )
 }
 
 // fetchSliderConfigAndData Logine
@@ -14729,7 +14800,7 @@ export function FetchSliderConfigAndData_login() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // fetchSliderData Login
@@ -14767,7 +14838,7 @@ export function FetchSliderData_login() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // slider_cap login
@@ -14838,7 +14909,7 @@ export function Slider_cap_login() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // loginFun login
@@ -14917,7 +14988,7 @@ export function LoginFun_login() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // checkLoginStatusWithRefreshToken login
@@ -14982,7 +15053,7 @@ export function CheckLoginStatusWithRefreshToken() {
         <p>{`});`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // getStatusCodeLang
@@ -15011,7 +15082,7 @@ export function GetStatusCodeLang() {
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
 }
 
 // getlevel
@@ -15060,9 +15131,7 @@ export function Getlevel() {
               <p>{`$("#level_number_header11").text('VIP1');`}</p>
               <p>{`$("#level_number11").text('V1');`}</p>
             </div>
-            {/* ต่อไปเช่นนี้ */}
           </div>
-          {/* อื่น ๆ */}
         </div>
         <p>{`},`}</p>
         <p>{`error: function (xmlhttprequest, error) {`}</p>
@@ -15073,10 +15142,1839 @@ export function Getlevel() {
         <p>{`});`}</p>
 
         <p>{`function sendPostData(filteredItems, indexLevel) {`}</p>
-        <div className="ml-2">{/* ส่วนที่เหลือของฟังก์ชัน sendPostData */}</div>
+        <div className="ml-2">
+          <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+          <p>{`var token = JSON.parse(getToken);`}</p>
+          <p>{`if (itemsLevelArr == null) {`}</p>
+          <p>{` msgPageObj.show('领取失败，请重试！');`}</p>
+          <p>{`return;`}</p>
+          <p>{`}`}</p>
+          <p>{`var mLevelToPost = 0;`}</p>
+          <p>{`var mLevelToPost = 0;`}</p>
+        </div>
         <p>{`}`}</p>
+        <p>{`for (var i = 0; i < itemsLevelArr.length; i++) {`}</p>
+        <p>{`if (itemsLevelArr[i].state != 30) {`}</p>
+        <p>{`mLevelToPost = itemsLevelArr[i].level;`}</p>
+        <p>{`break;`}</p>
+        <p>{`}`}</p>
+        <p>{`}`}</p>
+        <p>{`var postData = {`}</p>
+        <p>{`type: 40,`}</p>
+        <p>{`step: mLevelToPost`}</p>
+        <p>{`$.ajax({`}</p>
+        <p>{`type: 'post',`}</p>
+        <p>{`url: API_SERVER + '/v1/profile/cycle-voucher',`}</p>
+        <p>{`headers: {`}</p>
+        <p>{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p>{`},`}</p>
+        <p>{`data: JSON.stringify(postData),`}</p>
+        <p>{`contentType: 'application/json',`}</p>
+        <p>{`success: function (response) {`}</p>
+        <p>{`if (response.code === 4089) {`}</p>
+        <p>{`msgPageObj.show("周奖励不能重复领取！");`}</p>
+        <p>{`$("#sendPostData").css({ "background": "#918e8e", });`}</p>
+        <p>{`$("#sendPostData").off("click");`}</p>
+        <p>{`} else if (response.code === 4090) {`}</p>
+        <p>{`msgPageObj.show("周奖励将于每周一自动激活，请您按时领取");`}</p>
+        <p>{`} else if (response.code === 0) {`}</p>
+        <p>{`msgPageObj.show("恭喜你，领取成功！");`}</p>
+        <p>{`}`}</p>
+        <p>{`}`}</p>
+        <p>{`error: function (xmlhttprequest, error) {`}</p>
+        <p>{`console.error('POST request error:', error);`}</p>
+        <p>{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// cleanInput
+export function CleanInput() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>$("#username").val("")</p>
+        <p>$("#address").val("")</p>
+        <p>$("#email").val("")</p>
+      </div>
+    </div>
+  )
+}
+
+// GetFinancialAlipay
+export function GetFinancialAlipay() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`loaderObj.show();`}</p>
+        <p>{`var str = "";`}</p>
+        <p>{`var data_id = [];`}</p>
+        <p>{`var collect_alipay = [];`}</p>
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: 'get',`}</p>
+          <p>{`url: API_SERVER + '/v1/financialOrganization',`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`'Authorization': 'Bearer ' + token.token,`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+            <p>{`var alipay_card = data.result.filter(data => data.type === 20);`}</p>
+            <p>{`collect_alipay.push(alipay_card);`}</p>
+            <p>{`if (collect_alipay[0].length === 0) {`}</p>
+            <div className="ml-2">
+              <p>{`str += '<div style="height: 300px" class="flexCenter"><img src="./pic/icons/nodata_icons.png" style="width:110px;"></div>';`}</p>
+              <p>{`$("#loop_data_Alipay").html(str);`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`$.each(collect_alipay[0], function (index, data) {`}</p>
+              <div className="ml-2">
+                <p>{`var formatNum = formatCardNumber(data.cardNumber)`}</p>
+                <p>{`str += '<div style="height: 10px;"></div>'`}</p>
+                <p>{`str += '<div style="border-radius: 4px; width: 90%; height: 128px; position:relative; gap: 20px;" class="flexCenter_c">'`}</p>
+                <p>{`str += '<img src="./pic/bank/bg_alipay.png" alt="" style="height: 100%; width: 100%; position: absolute; z-index: -1;">'`}</p>
+                <p>{`str += '<div class="flexSpac" style="width: 85%;">'`}</p>
+                <p>{`str += '<img src="./pic/bank/icons_bank.png" alt="" style="height: 35px; width: 30px;">'`}</p>
+                <p>{`str += '<div style="color: #fff; text-align: left; display: flex; flex-direction: row;">'`}</p>
+                <p>{`str += '<span style="font-size: 18px;">' + data.cardName + '</span>'`}</p>
+                <p>{`str += '</div>'`}</p>
+                <p>{`str += '<div style="padding: 5px; font-size: 13px; color: #fff; background: #ffffff40; border-radius: 100px;" class="flexCenter">'`}</p>
+                <p>{`str += '<span id="Alipay_del_' + data.id + '">删除支付宝</span>'`}</p>
+                <p>{`str += '</div>'`}</p>
+                <p>{`str += '</div>'`}</p>
+                <p>{`str += '<div style="color: #fff; font-weight: bold; font-size: 22px;">'`}</p>
+                <p>{`str += '<span>' + formatNum + '</span>'`}</p>
+                <p>{`str += '</div>'`}</p>
+                <p>{`str += '</div>'`}</p>
+                <p>{` data_id.push({ "id": data.id })`}</p>
+              </div>
+              <p>{`});`}</p>
+              <p>{`$("#loop_data_Alipay").html(str);`}</p>
+              <p>{` myScroll = new IScroll('#scroller_alipay_card', { probeType: 1, mouseWheel: true });`}</p>
+              <p>{`$.each(data_id, function (index, data) {`}</p>
+              <div className="ml-2">
+                <p>{`$(`}</p>
+                <div className="ml-2">
+                  <p>{`'#Alipay_del_' + data.id`}</p>
+                </div>
+                <p>{`).click(function () {`}</p>
+                <div className="ml-2">
+                  <p>{`deleteAlipay(data.id);`}</p>
+                </div>
+                <p>{`});`}</p>
+              </div>
+              <p>{`});`}</p>
+            </div>
+            <p>{`}`}</p>
+            <p>{`if (data.code !== 0) {`}</p>
+            <div className="ml-2">
+              <p>{`msgPageObj.show(getStatusCode(data.code));`}</p>
+            </div>
+            <p>{`}`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xmlhttprequest, error) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+            <p>{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+            <p>{`cleanInput();`}</p>
+          </div>
+          <p>{`},`}</p>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// deleteAlipay
+export function DeleteAlipay() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`msgObj.show('确定要删除吗？', function () {`}</p>
+        <div className="ml-2">
+          <p>{`msgObj.unShow();`}</p>
+          <p>{`loaderObj.show();`}</p>
+          <p>{`$.ajax({`}</p>
+          <div className="ml-2">
+            <p>{`type: "delete",`}</p>
+            <p>{`headers: {`}</p>
+            <div className="ml-2">
+              <p>{`'Authorization': 'Bearer ' + token.token,`}</p>
+            </div>
+            <p>{`},`}</p>
+            <p>{`url: API_SERVER + "/v1/financialOrganization/" + id,`}</p>
+            <p>{`data: {},`}</p>
+            <p>{`contentType: "application/json",`}</p>
+            <p>{`dataType: "json",`}</p>
+            <p>{`async: true,`}</p>
+            <p>{`timeout: 100000,`}</p>
+            <p>{`beforeSend: function (xmlhttprequest) {`}</p>
+            <div className="ml-2">
+              <p>{`// Do something before sending the request`}</p>
+            </div>
+            <p>{`},`}</p>
+            <p>{`success: function (data) {`}</p>
+            <div className="ml-2">
+              <p>{`loaderObj.unShow();`}</p>
+              <p>{`if (data.code == 0) {`}</p>
+              <div className="ml-2">
+                <p>{`alipay_cardObj.getFinancialAlipay();`}</p>
+                <p>{`earnObj.getFinancialPayments();`}</p>
+              </div>
+              <p>{`} else {`}</p>
+              <div className="ml-2">
+                <p>{`msgPageObj.show(getStatusCode(data.code));`}</p>
+              </div>
+            </div>
+            <p>{`},`}</p>
+            <p>{`error: function (xmlhttprequest, error) {`}</p>
+            <div className="ml-2">
+              <p>{`loaderObj.unShow();`}</p>
+              <p>{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+            </div>
+            <p>{`},`}</p>
+          </div>
+          <p>{`});`}</p>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// historyFunction
+export function HistoryFunction() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var str = '';`}</p>
+        <p>{`var Alldata;`}</p>
+        <p>{``}</p>
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: 'get',`}</p>
+          <p>{`url: API_SERVER + "/v1/wallet/history/" + id,`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`'Authorization': 'Bearer ' + token.token,`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`if (data.code == 0) {`}</p>
+            <div className="ml-2">
+              <p>{`Alldata = data.result;`}</p>
+              <p>{``}</p>
+              <p>{`if (Alldata.uid == null) {`}</p>
+              <div className="ml-2">
+                <p>{`str += <div style={{height: '40px', fontWeight: 'bold', fontSize: '16px', width: '100%', background: '#fff'}} className="flexCenter">ไม่มีข้อมูล</div>;`}</p>
+                <p>{`$("#").html(str);`}</p>
+              </div>
+              <p>{`} else {`}</p>
+              <div className="ml-2">
+                <p>{`str += <div style={{marginTop: '25px', width: '90%', fontSize: '16px', fontWeight: 'bold', background: 'linear-gradient(180deg, #FFECEA 0%, #FFFEFE 20.49%, #FFFFFF 100%)', padding: '20px 0', gap: '10px', display: 'flex', flexDirection: 'column', boxShadow: '0px 0px 8px 0px #5C7AB540', borderRadius: '6px'}}>;`}</p>
+                <p>{`str += <div className="flexCenter" style={{fontSize: '20px'}}>{title}</div>;`}</p>
+                <p>{`str += <div style={{height: '20px'}}></div>;`}</p>
+                <p>{``}</p>
+                <p>{`str += <div style={{weight: '100%'}}>;`}</p>
+                <p>{`str += <div className="bothSides"> ;`}</p>
+                <p>{`str += <span style={{paddingLeft: '20px', color: '#8D959B'}}>เวลา :</span>;`}</p>
+                <p>{`str += <span style={{paddingLeft: '10px'}}>{Alldata.uid == null ? "-" : time}</span>;`}</p>
+                <p>{`str += </div>;`}</p>
+                <p>{``}</p>
+                <p>{`// เพิ่มส่วนอื่น ๆ ตามต้องการ`}</p>
+                <p>{``}</p>
+              </div>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`loaderObj.unShow();`}</p>
+              <p>{`msgPageObj.show(getStatusCode(data.code));`}</p>
+            </div>
+          </div>
+          <p>{`},`}</p>
+          <p>{`error: function (xmlhttprequest, error) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+            <p>{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+          </div>
+          <p>{`},`}</p>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getFinancialBank
+export function GetFinancialBank() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`loaderObj.show();`}</p>
+        <p>{`str = "";`}</p>
+        <p>{`data_id = [];`}</p>
+        <p>{`collect_Bank = [];`}</p>
+        <p>{``}</p>
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: 'get',`}</p>
+          <p>{`url: API_SERVER + "/v1/financialOrganization",`}</p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`'Authorization': 'Bearer ' + token.token,`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+            <p>{`var Bank_card = data.result.filter(data => data.type === 10);`}</p>
+            <p>{`collect_Bank.push(Bank_card);`}</p>
+            <p>{``}</p>
+            <p>{`if (collect_Bank[0].length == 0) {`}</p>
+            <div className="ml-2">
+              <p>{`str += <div style={{height: '300px'}} className="flexCenter"><img src="./pic/icons/nodata_icons.png" style={{width: '110px'}}/></div>;`}</p>
+              <p>{`$("#loop_data_bank").html(str);`}</p>
+            </div>
+            <p>{`} else if (collect_Bank[0].length != 0) {`}</p>
+            <div className="ml-2">
+              <p>{`$.each(collect_Bank[0], function (index, data) {`}</p>
+              <div className="ml-2">
+                <p>{`var formatNum = formatCardNumber(data.cardNumber);`}</p>
+                <p>{``}</p>
+                <p>{`str += <div style={{height: '10px'}}/>;`}</p>
+                <p>{`str += <div style={{borderRadius: '4px', width: '90%', height: '128px', position: 'relative', gap: '20px'}} className="flexCenter_c"/>;`}</p>
+                <p>{`str += <img src="./pic/bank/bg_bank.png" alt="" style={{height: '100%', width: '100%', position: 'absolute', zIndex: '-1'}}/>;`}</p>
+                <p>{`str += <div className="flexSpac" style={{width: '85%'}}/>;`}</p>
+                <p>{`str += <img className="icon_" src="./pic/bank/logos_unionpay.png" alt="" style={{height: '27px'}}/>;`}</p>
+                <p>{`str += <div style={{color: '#fff', textAlign: 'left', display: 'flex', flexDirection: 'row'}}/>;`}</p>
+                <p>{`str += <span style={{fontSize: '18px'}}>{data.bankName}</span>;`}</p>
+                <p>{`str += <div style={{padding: '5px', fontSize: '13px', color: '#fff', background: '#ffffff40', borderRadius: '100px'}} className="flexCenter"/>;`}</p>
+                <p>{`str += <span id={"bank_del_" + data.id}>删除银行卡</span>;`}</p>
+                <p>{`str += </div>;`}</p>
+                <p>{``}</p>
+                <p>{`str += <div style={{color: '#fff', fontWeight: 'bold', fontSize: '22px'}}/>;`}</p>
+                <p>{`str += <span>{formatNum}</span>;`}</p>
+                <p>{`str += </div>;`}</p>
+                <p>{``}</p>
+                <p>{`data_id.push({ "id": data.id });`}</p>
+              </div>
+              <p>{`});`}</p>
+              <p>{``}</p>
+              <p>{`$("#loop_data_bank").html(str);`}</p>
+              <p>{`myScroll = new IScroll('#scroller_bank_card', { probeType: 1, mouseWheel: true });`}</p>
+              <p>{``}</p>
+              <p>{`// delete bank`}</p>
+              <p>{`$.each(data_id, function (index, data) {`}</p>
+              <div className="ml-2">
+                <p>{`$(`}</p>
+                <p>{`\`#bank_del_{data.id}\``}</p>
+                <p>{`).click(function () {`}</p>
+                <div className="ml-2">
+                  <p>{`deleteBank(data.id);`}</p>
+                </div>
+                <p>{`});`}</p>
+              </div>
+              <p>{`});`}</p>
+              <p>{``}</p>
+            </div>
+            <p>{``}</p>
+            <p>{`if (data.code != 0) {`}</p>
+            <div className="ml-2">
+              <p>{`msgPageObj.show(getStatusCode(data.code));`}</p>
+            </div>
+          </div>
+          <p>{`},`}</p>
+          <p>{``}</p>
+          <p>{`error: function (xmlhttprequest, error) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+            <p>{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+            <p>{`cleanInput();`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// deleteBank
+export function DeleteBank() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`msgObj.show('确定要删除吗？', function () {`}</p>
+        <p className="ml-4">{`msgObj.unShow();`}</p>
+        <p className="ml-4">{`loaderObj.show();`}</p>
+        <p className="ml-4">{`$.ajax({`}</p>
+        <p className="ml-8">{`type: "delete",`}</p>
+        <p className="ml-8">{`headers: {`}</p>
+        <p className="ml-10">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-8">{`},`}</p>
+        <p className="ml-8">{`url: API_SERVER + "/v1/financialOrganization/" + id,`}</p>
+        <p className="ml-8">{`data: {},`}</p>
+        <p className="ml-8">{`contentType: "application/json",`}</p>
+        <p className="ml-8">{`dataType: "json",`}</p>
+        <p className="ml-8">{`async: true,`}</p>
+        <p className="ml-8">{`timeout: 100000,`}</p>
+        <p className="ml-8">{`beforeSend: function (xmlhttprequest) {`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`success: function (data) {`}</p>
+        <p className="ml-10">{`loaderObj.unShow();`}</p>
+        <p className="ml-10">{`if (data.code == 0) {`}</p>
+        <p className="ml-12">{`bank_cardObj.getFinancialBank();`}</p>
+        <p className="ml-12">{`earnObj.getFinancialPayments()`}</p>
+        <p className="ml-10">{`} else {`}</p>
+        <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code))`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-10">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-12">{`loaderObj.unShow();`}</p>
+        <p className="ml-12">{`msgPageObj.show(NSLang('sys.serverError'))`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-4">{`});`}</p>
         <p>{`}`}</p>
       </div>
     </div>
-  );
+  )
+}
+
+// sendMessage
+export function SendMessage() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2 flex flex-col gap-4">
+        <div>
+          <p>{`var replyChat`}</p>
+          <p>{`chatApiCall();`}</p>
+        </div>
+
+        <div>
+          <p>{`function chatApiCall() {`}</p>
+          <p>var userInput = $("#user-input").val();</p>
+          <p>{`var mData = {`}</p>
+          <p className="ml-4">{`"text": userInput`}</p>
+          <p>{`}`}</p>
+          <p>{`$.ajax({`}</p>
+          <p className="ml-4">{`type: "post",`}</p>
+          <p className="ml-4">{`url: API_SERVER + "/v1/chat/text",`}</p>
+          <p className="ml-4">{`headers: {`}</p>
+          <p className="ml-8">{`'Authorization': 'Bearer ' + token.token`}</p>
+          <p className="ml-4">{`}`}</p>
+          <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+          <p className="ml-4">{`contentType: "application/json",`}</p>
+          <p className="ml-4">{`dataType: "json",`}</p>
+          <p className="ml-4">{`async: true,`}</p>
+          <p className="ml-4">{`timeout: 100000,`}</p>
+          <p className="ml-4">{`beforeSend: function (xmlhttprequest) {`}</p>
+          <p className="ml-4">{`}`}</p>
+          <p className="ml-4">{`success: function (data) {`}</p>
+          <p className="ml-8">{`loaderObj.unShow();`}</p>
+          <p className="ml-8">{`if (data.code == 0) {`}</p>
+          <p className="ml-10">{`loaderObj.show();`}</p>
+          <p className="ml-10">{`replyChat = data.result.text`}</p>
+          <p className="ml-10">{`simulateSystemResponse(userMessage, function (systemResponse) {`}</p>
+          <p className="ml-14">{`loaderObj.unShow();`}</p>
+          <p className="ml-14">{`var imgSystem = document.createElement('img');`}</p>
+          <p className="ml-14">{`imgSystem.src = imgSrcSystem;`}</p>
+          <p className="ml-14">{`imgSystem.style.height = '30px';`}</p>
+          <p className="ml-14">{`imgSystem.style.position = 'absolute';`}</p>
+          <p className="ml-14">{`imgSystem.style.left = '5px';`}</p>
+          <p className="ml-14">{`appendMessage(imgSystem, systemResponse, "System", 'left');`}</p>
+          <p className="ml-10">{`});`}</p>
+          <p className="ml-4">{`},`}</p>
+          <p className="ml-4">{`},`}</p>
+          <p className="ml-4">{`else {`}</p>
+          <p className="ml-8">{`if (data.code == 4087) {`}</p>
+          <p className="ml-10">{`msgPageObj.show('提问到达上限')`}</p>
+          <p className="ml-10">{`return`}</p>
+          <p className="ml-8">{`}`}</p>
+          <p className="ml-8">{`if (data.code == 4090) {`}</p>
+          <p className="ml-10">{`msgPageObj.show('您还未获得加入语言大模型建设和测试权限')`}</p>
+          <p className="ml-10">{`return`}</p>
+          <p className="ml-8">{`}`}</p>
+          <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code))`}</p>
+          <p className="ml-4">{`}`}</p>
+          <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+          <p className="ml-8">{`loaderObj.unShow();`}</p>
+          <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+          <p className="ml-8">{`cleanInput();`}</p>
+          <p>{`});`}</p>
+          <p>{`}`}</p>
+        </div>
+
+        <div>
+          <p>{`function appendMessage(image, message, sender, side) {`}</p>
+          <p className="ml-4">
+            var chatOutput = document.getElementById('chat-output');
+          </p>
+          <p className="ml-4">
+            var messageDiv = document.createElement('div');
+          </p>
+          <p className="ml-4">messageDiv.style.display = 'flex';</p>
+          <p className="ml-4">messageDiv.style.padding = '10px';</p>
+          <p className="ml-4">
+            messageDiv.style.justifyContent = side === 'right' ? 'flex-end' :
+            'flex-start';
+          </p>
+          <p className="ml-4">messageDiv.style.alignItems = 'center';</p>
+          <p className="ml-4">messageDiv.style.gap = '10px';</p>
+          <p className="ml-4">
+            var strongElement = document.createElement('strong');
+          </p>
+          <p className="ml-4">strongElement.style.padding = '10px';</p>
+          <p className="ml-4">
+            strongElement.style.color = side === 'right' ? '#fff' : '#000';
+          </p>
+          <p className="ml-4">
+            strongElement.style.borderRadius = side === 'right' ? '10px 10px 0px
+            10px' : '10px 10px 10px 0px';
+          </p>
+          <p className="ml-4">
+            strongElement.style.border = side === 'right' ? '1px solid #FF9595'
+            : '1px solid #E3E3E3';
+          </p>
+          <p className="ml-4">
+            strongElement.style.background = side === 'right' ? '#FF9595' :
+            '#FDFDFD';
+          </p>
+          <p className="ml-4">{`strongElement.textContent = {message};`}</p>
+          <p className="ml-4">{`strongElement.style.marginLeft = side === 'right' ? '0px' : '35px';`}</p>
+          <p className="ml-4">messageDiv.appendChild(strongElement);</p>
+          <p className="ml-4">{`if (image) {`}</p>
+          <p className="ml-8">{`messageDiv.appendChild(image);`}</p>
+          <p className="ml-4">{`}`}</p>
+          <p className="ml-4">{`chatOutput.appendChild(messageDiv);`}</p>
+          <p className="ml-4">{`myScroll.refresh();`}</p>
+          <p className="ml-4">{`chatOutput.scrollTop = chatOutput.scrollHeight;`}</p>
+          <p className="ml-4">{`scrollToBottom();`}</p>
+          <p>{`}`}</p>
+        </div>
+
+        <div>
+          <p>{`function simulateSystemResponse(userMessage, callback) {`}</p>
+          <p className="ml-4">var think = "thinking . . .";</p>
+          <p className="ml-4">{`setTimeout(() => {`}</p>
+          <p className="ml-8">{`myScroll.refresh();`}</p>
+          <p className="ml-8">{`myScroll = new IScroll('#scroller_chat', { probeType: 1, mouseWheel: true });`}</p>
+          <p className="ml-8">{`var chatOutput = document.getElementById('chat-output');`}</p>
+          <p className="ml-8">{`chatOutput.scrollTop = chatOutput.scrollHeight;`}</p>
+          <p className="ml-8">{`scrollToBottom()`}</p>
+          <p className="ml-4">{`}, 100);`}</p>
+          <p>{`}`}</p>
+          <p>{`myScroll.refresh();`}</p>
+        </div>
+
+        <div>
+          <p>var userInput = document.getElementById('user-input');</p>
+          <p>var imgSrcUser = picRes['you.png'];</p>
+          <p>var imgSrcSystem = "./pic/logo/chatLogo.svg";</p>
+          <p>var userMessage = userInput.value;</p>
+          <p>{`if (userMessage.trim() !== '') {`}</p>
+          <p className="ml-4">{`var imgUser = document.createElement('img');`}</p>
+          <p className="ml-4">{`imgUser.src = imgSrcUser;`}</p>
+          <p className="ml-4">{`imgUser.style.height = '30px';`}</p>
+          <p className="ml-4">{`appendMessage(imgUser, userMessage, "User", 'right');`}</p>
+          <p>{`}`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// checkInBonus
+export function CheckInBonus() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`loaderObj.show();`}</p>
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/eventCheckIn/bonus/" + days,`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) { }`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`if (data.code === 0) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`console.log(data.result);`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-8">{`msgObj.unShow();`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// get2FAconvert_DSF
+export function Get2FAconvert_DSF() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var Token = localStorage.getItem('token');`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "get",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/twoFA",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + obj.token`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`loaderObj.show();`}</p>
+        <p className="ml-6">{`if (data.result.status === false) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgObj.show('您尚未开启交易密码', function () {`}</p>
+        <p className="ml-10">{`msgObj.unShow();`}</p>
+        <p className="ml-10">{`pageShow('settingPage');`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-6">{`if (data.result.status === true) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`popUp2FA();`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`console.log(error, xmlhttprequest);`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// verify2faconvert_DSF
+export function Verify2faconvert_DSF() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`var code1 = parseFloat($('#convert_digit1').val());`}</p>
+        <p>{`var code2 = parseFloat($('#convert_digit2').val());`}</p>
+        <p>{`var code3 = parseFloat($('#convert_digit3').val());`}</p>
+        <p>{`var code4 = parseFloat($('#convert_digit4').val());`}</p>
+        <p>{`var code5 = parseFloat($('#convert_digit5').val());`}</p>
+        <p>{`var code6 = parseFloat($('#convert_digit6').val());`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`"password": \`\${code1}\${code2}\${code3}\${code4}\${code5}\${code6}\`,`}</p>
+        <p>{`};`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/twoFA/verify",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) { },`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`if (data.code === 0) {`}</p>
+        <p className="ml-8">{`msgObj.unShow();`}</p>
+        <p className="ml-8">{`setTimeout(() => {`}</p>
+        <p className="ml-10">{`postconvert_DSFCIPS();`}</p>
+        <p className="ml-8">{`}, 500);`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{``}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// postconvert_DSFCIPS
+export function Postconvert_DSFCIPS() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`loaderObj.show();`}</p>
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`var amountDSF = $("#convert_DSF_dept").val();`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`"type": 20,`}</p>
+        <p className="ml-4">{`"amount": amountDSF,`}</p>
+        <p>{``}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/debtSettlementFund/apply",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) {`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`if (data.code === 0) {`}</p>
+        <p className="ml-8">{`$("#convert_code").css({ "display": "none" });`}</p>
+        <p className="ml-8">{`$("#convert_seccess").css({ "display": "flex" });`}</p>
+        <p className="ml-8">{`cleanInput();`}</p>
+        <p className="ml-8">{`walletObj.call();`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-6">{`cleanInput();`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`complete: function () {`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// get2FATrade
+export function Get2FATrade() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var Token = localStorage.getItem('token');`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "get",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/twoFA",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + obj.token`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`loaderObj.show();`}</p>
+        <p className="ml-6">{`if (data.result.status === false) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgObj.show('您尚未开启交易密码', function () {`}</p>
+        <p className="ml-10">{`msgObj.unShow();`}</p>
+        <p className="ml-10">{`settingObj.call();`}</p>
+        <p className="ml-10">{`pageShow('settingPage');`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-6">{`} else if (data.result.status === true) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgObj.show(`}</p>
+        <p className="ml-10">{`<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;width: 100%;">`}</p>
+        <p className="ml-10">{`<div id="Trade2FA" style="margin-bottom:20px">请输入交易密码</div>`}</p>
+        <p className="ml-10">{`<input style="width:100%;height:30px;font-size: 19px;" id="Trade2FA_Input" type="password" placeholder="请输入交易密码" />`}</p>
+        <p className="ml-8">{`</div>, function () {`}</p>
+        <p className="ml-10">{`msgObj.unShow();`}</p>
+        <p className="ml-10">{`verify2faTrade();`}</p>
+        <p className="ml-8">{`}, function () {`}</p>
+        <p className="ml-10">{`msgObj.unShow();`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`console.log(error, xmlhttprequest);`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// verify2faTrade
+export function Verify2faTrade() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`var InputPassword = $("#Trade2FA_Input").val();`}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`"password": InputPassword,`}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/twoFA/verify",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) {`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`if (data.code === 0) {`}</p>
+        <p className="ml-8">{`msgObj.unShow();`}</p>
+        <p className="ml-8">{`setTimeout(() => {`}</p>
+        <p className="ml-10">{`postTransder();`}</p>
+        <p className="ml-8">{`}, 500);`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-6">{`cleanInput();`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// postWithdraw
+export function PostWithdraw() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`if (Type === "bank") {`}</p>
+        <p className="ml-4">{`var amount = parseFloat($("#amout_number").val());`}</p>
+        <p className="ml-4">{`paymentId = parseFloat($("#bankSelect option:selected").val());`}</p>
+        <p>{`}`}</p>
+        <p>{`if (Type === "alipay") {`}</p>
+        <p className="ml-4">{`var amount = parseFloat($("#amout_number2").val());`}</p>
+        <p className="ml-4">{`paymentId = parseFloat($("#alipaySelect option:selected").val());`}</p>
+        <p>{`}`}</p>
+        <p>{``}</p>
+        <p>{`console.log("Amount:" + amount, "Payment id:" + paymentId);`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`"id": paymentId,`}</p>
+        <p className="ml-4">{`"type": TypeWallet,`}</p>
+        <p className="ml-4">{`"amount": amount,`}</p>
+        <p className="ml-4">{`"remark": ""`}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/bankInfo/apply/withdraw",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) {`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`if (data.code === 0) {`}</p>
+        <p className="ml-8">{`cleanInput();`}</p>
+        <p className="ml-8">{`msgPageObj.show('提现成功');`}</p>
+        <p className="ml-8">{`walletObj.getWallet(TypeWallet);`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-6">{`cleanInput();`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// postConvert
+export function PostConvert() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`"from": TypeWallet,`}</p>
+        <p className="ml-4">{`"to": 30,`}</p>
+        <p className="ml-4">{`"amount": amount,`}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/wallet/convert",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) {`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`if (data.code === 0) {`}</p>
+        <p className="ml-8">{`cleanInput();`}</p>
+        <p className="ml-8">{`msgPageObj.show('提现成功');`}</p>
+        <p className="ml-8">{`walletObj.getWallet(TypeWallet);`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-6">{`cleanInput();`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getFinancialPayments
+export function GetFinancialPayments() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var str = "";`}</p>
+        <p>{`var str2 = "";`}</p>
+        <p>{`var bank_detail = [];`}</p>
+        <p>{`var collect_Bank = [];`}</p>
+        <p>{``}</p>
+        <p>{`var alipay_detail = [];`}</p>
+        <p>{`var collect_Alipay = [];`}</p>
+        <p>{``}</p>
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/financialOrganization',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`var Bank_card = data.result.filter(data => data.type === 10);`}</p>
+        <p className="ml-6">{`collect_Bank.push(Bank_card);`}</p>
+        <p className="ml-6">{``}</p>
+        <p className="ml-6">{`if (collect_Bank[0].length === 0) {`}</p>
+        <p className="ml-8">{`str += "<option ></option>";`}</p>
+        <p className="ml-8">{`$("#bankSelect").html(str);`}</p>
+        <p className="ml-8">{`$("#card_name").text('');`}</p>
+        <p className="ml-8">{`$("#card_number").text('');`}</p>
+        <p className="ml-8">{`CheckNobank = 'No_data';`}</p>
+        <p className="ml-6">{`} else if (collect_Bank[0].length !== 0) {`}</p>
+        <p className="ml-8">{`CheckNobank = "nocheck";`}</p>
+        <p className="ml-8">{`$.each(collect_Bank[0], function (index, data) {`}</p>
+        <p className="ml-10">{`str += "<option value='" + data.id + "'>" + data.bankName + "</option>";`}</p>
+        <p className="ml-10">{`bank_detail.push({ "id": data.id, "acc": data.cardName, "num": data.cardNumber });`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-8">{`$("#bankSelect").html(str);`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`$("#bankSelect").unbind().change(function () {`}</p>
+        <p className="ml-10">{`appendBank();`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`function appendBank() {`}</p>
+        <p className="ml-10">{`var bankVal = parseFloat($("#bankSelect").val());`}</p>
+        <p className="ml-10">{`var bankValCheck = bank_detail.filter(data => data.id === bankVal);`}</p>
+        <p className="ml-10">{`if (bankValCheck) {`}</p>
+        <p className="ml-12">{`$("#card_name").text(bankValCheck[0].acc);`}</p>
+        <p className="ml-12">{`$("#card_number").text(bankValCheck[0].num);`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`appendBank();`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-6">{``}</p>
+        <p className="ml-6">{`var Alipay_card = data.result.filter(data => data.type === 20);`}</p>
+        <p className="ml-6">{`collect_Alipay.push(Alipay_card);`}</p>
+        <p className="ml-6">{``}</p>
+        <p className="ml-6">{`if (collect_Alipay[0].length === 0) {`}</p>
+        <p className="ml-8">{`str2 += "<option ></option>";`}</p>
+        <p className="ml-8">{`$("#alipaySelect").html(str2);`}</p>
+        <p className="ml-8">{`$("#card_number_alipay").text("")`}</p>
+        <p className="ml-8">{`CheckNoAlipay = 'No_data';`}</p>
+        <p className="ml-6">{`} else if (collect_Alipay[0].length !== 0) {`}</p>
+        <p className="ml-8">{`CheckNoAlipay = "nocheck";`}</p>
+        <p className="ml-8">{`$.each(collect_Alipay[0], function (index, data) {`}</p>
+        <p className="ml-10">{`str2 += "<option value='" + data.id + "' >" + data.cardName + "</option>";`}</p>
+        <p className="ml-10">{`alipay_detail.push({ "id": data.id, "num": data.cardNumber });`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-8">{`$("#alipaySelect").html(str2);`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`$("#alipaySelect").unbind().change(function () {`}</p>
+        <p className="ml-10">{`appendAlipay();`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`function appendAlipay() {`}</p>
+        <p className="ml-10">{`var alipayVal = parseFloat($("#alipaySelect").val());`}</p>
+        <p className="ml-10">{`var alipayValCheck = alipay_detail.filter(data => data.id === alipayVal);`}</p>
+        <p className="ml-10">{`if (alipayValCheck) {`}</p>
+        <p className="ml-12">{`$("#card_number_alipay").text(alipayValCheck[0].num);`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`appendAlipay();`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-6">{``}</p>
+        <p className="ml-6">{`if (data.code !== 0) {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{``}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// checkPayMentMethod
+export function CheckPayMentMethod() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "get",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/payments/method",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`data: null,`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) {`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`if (data.code === 0) {`}</p>
+        <p className="ml-8">{`var arr = data.result;`}</p>
+        <p className="ml-8">{`// Show message when there are no withdrawal methods`}</p>
+        <p className="ml-8">{`if (arr[1] === 0 && arr[0] === 0) {`}</p>
+        <p className="ml-10">{`$("#noWithdrawalMethodMessage").css({ "display": "block" });`}</p>
+        <p className="ml-10">{`$("#earn_convert").css({ "display": "none" });`}</p>
+        <p className="ml-8">{`} else if (arr[1] === 0 && arr[0] === 1) {`}</p>
+        <p className="ml-10">{`$("#noWithdrawalMethodMessage").css({ "display": "none" });`}</p>
+        <p className="ml-8">{`} else if (arr[1] === 1 && arr[0] === 0) {`}</p>
+        <p className="ml-10">{`$("#noWithdrawalMethodMessage").css({ "display": "none" });`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`$("#noWithdrawalMethodMessage").css({ "display": "none" });`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`// Show or hide Alipay`}</p>
+        <p className="ml-8">{`if (arr[1] === 1) {`}</p>
+        <p className="ml-10">{`$("#alipay").css({ "display": "flex" });`}</p>
+        <p className="ml-10">{`$("#showAlipay").css({ "display": "flex" });`}</p>
+        <p className="ml-10">{`$("#alipay").click();`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`$("#alipay").css({ "display": "none" });`}</p>
+        <p className="ml-10">{`$("#showAlipay").css({ "display": "none" });`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`// Show or hide Bank Card`}</p>
+        <p className="ml-8">{`if (arr[0] === 1) {`}</p>
+        <p className="ml-10">{`$("#bank-card").css({ "display": "flex" });`}</p>
+        <p className="ml-10">{`$("#showBank").css({ "display": "flex" });`}</p>
+        <p className="ml-10">{`$("#bank-card").click();`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`$("#bank-card").css({ "display": "none" });`}</p>
+        <p className="ml-10">{`$("#showBank").css({ "display": "none" });`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`myScroll.refresh();`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`// Handle error`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`// Handle error`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`complete: function () {`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// feedback
+export function Feedback() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var mobileFeedback = $("#mobile_feedback").val();`}</p>
+        <p>{`var Token = localStorage.getItem("token");`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`"type": Type,`}</p>
+        <p className="ml-4">{`"mobile": mobileFeedback,`}</p>
+        <p className="ml-4">{`"content": Content,`}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/config/feedback",`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-6">{`"Content-Type": "application/json",`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`if (data.code === 0) {`}</p>
+        <p className="ml-8">{`msgPageObj.show("意见反馈提交成功");`}</p>
+        <p className="ml-8">{`feedbackObj.clearfeedback();`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-8">{`feedbackObj.clearfeedback();`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getInstitution
+export function GetInstitution() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`var str = "";`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/inviteCode/institution',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`if (data.code === 0) {`}</p>
+        <p className="ml-8">{`$("#amount_home_organiz1").text(data.result.daySign);`}</p>
+        <p className="ml-8">{`$("#amount_home_organiz2").text(data.result.sign);`}</p>
+        <p className="ml-8">{`$("#amount_home_organiz3").text(data.result.dayActive);`}</p>
+        <p className="ml-8">{`$("#amount_home_organiz4").text(data.result.active);`}</p>
+        <p className="ml-8">{`$("#amount_home_organiz5").text(parseFloat(data.result.dayAmount).toFixed(2));`}</p>
+        <p className="ml-8">{`$("#amount_home_organiz6").text(parseFloat(data.result.amount).toFixed(2));`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`var organiz7Keling = data.result.total - data.result.issued;`}</p>
+        <p className="ml-8">{`$("#amount_home_organiz7").text(parseFloat(organiz7Keling).toFixed(2));`}</p>
+        <p className="ml-8">{`$("#amount_home_organiz8").text(parseFloat(data.result.total).toFixed(2));`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`if (data.result.levels.length === 0) {`}</p>
+        <p className="ml-10">{`str += '<div style="height: 110px" class="flexCenter"><img src="./pic/icons/nodata_icons.png" style="width:110px;"></div>';`}</p>
+        <p className="ml-10">{`$('#loop_home_organiz').html(str);`}</p>
+        <p className="ml-10">{`myScroll = new IScroll('#scroller_home_organiz', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`console.log(data.result.levels);`}</p>
+        <p className="ml-10">{``}</p>
+        <p className="ml-10">{`allData = data.result.levels;`}</p>
+        <p className="ml-10">{`$.each(allData, function (index, data) {`}</p>
+        <p className="ml-12">{`var Number = index + 1;`}</p>
+        <p className="ml-12">{`var ShowLevel;`}</p>
+        <p className="ml-12">{`switch (Number) {`}</p>
+        <p className="ml-14">{`case 1:`}</p>
+        <p className="ml-16">{`ShowLevel = '一';`}</p>
+        <p className="ml-16">{`break;`}</p>
+        <p className="ml-14">{`case 2:`}</p>
+        <p className="ml-16">{`ShowLevel = '二';`}</p>
+        <p className="ml-16">{`break;`}</p>
+        <p className="ml-14">{`case 3:`}</p>
+        <p className="ml-16">{`ShowLevel = '三';`}</p>
+        <p className="ml-16">{`break;`}</p>
+        <p className="ml-14">{`case 4:`}</p>
+        <p className="ml-16">{`ShowLevel = '四';`}</p>
+        <p className="ml-16">{`break;`}</p>
+        <p className="ml-14">{`case 5:`}</p>
+        <p className="ml-16">{`ShowLevel = '五';`}</p>
+        <p className="ml-16">{`break;`}</p>
+        <p className="ml-14">{`case 6:`}</p>
+        <p className="ml-16">{`ShowLevel = '六';`}</p>
+        <p className="ml-16">{`break;`}</p>
+        <p className="ml-14">{`case 7:`}</p>
+        <p className="ml-16">{`ShowLevel = '七';`}</p>
+        <p className="ml-16">{`break;`}</p>
+        <p className="ml-14">{`case 8:`}</p>
+        <p className="ml-16">{`ShowLevel = '八';`}</p>
+        <p className="ml-16">{`break;`}</p>
+        <p className="ml-14">{`case 9:`}</p>
+        <p className="ml-16">{`ShowLevel = '九';`}</p>
+        <p className="ml-16">{`break;`}</p>
+        <p className="ml-14">{`case 10:`}</p>
+        <p className="ml-16">{`ShowLevel = '十';`}</p>
+        <p className="ml-16">{`break;`}</p>
+        <p className="ml-12">{`}`}</p>
+        <p className="ml-10">{``}</p>
+        <p className="ml-10">{`str += '<div style="width: 100%; color:#000 ; display: flex;">';`}</p>
+        <p className="ml-10">{``}</p>
+        <p className="ml-10">{`str += '<div style="width: 100%; height: 35px;" class="flexCenter">';`}</p>
+        <p className="ml-10">{`str += '<div style="width: 60px; height: 25px; border: 1px solid #A17E3B; border-radius: 2px;"class="flexCenter"><span>' + ShowLevel + '级</span></div>';`}</p>
+        <p className="ml-10">{`str += '</div>';`}</p>
+        <p className="ml-10">{``}</p>
+        <p className="ml-10">{`str += '<div style="width: 100%; height: 35px;" class="flexCenter">' + data.sign + '</div>';`}</p>
+        <p className="ml-10">{`str += '<div style="width: 100%; height: 35px;" class="flexCenter">' + data.active + '</div>';`}</p>
+        <p className="ml-10">{`str += '<div style="width: 100%; height: 35px;" class="flexCenter">' + parseFloat(data.amount).toFixed(2) + '</div>';`}</p>
+        <p className="ml-10">{``}</p>
+        <p className="ml-10">{`str += '</div>';`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`$('#loop_home_organiz').html(str);`}</p>
+        <p className="ml-8">{`myScroll = new IScroll('#scroller_home_organiz', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`} else {`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError') + ': ' + error);`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getAnnouncement
+export function GetAnnouncement() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/announcement',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`var announcementHTML = "";`}</p>
+        <p className="ml-6">{``}</p>
+        <p className="ml-6">{`$.each(data.result, function (index, announcement) {`}</p>
+        <p className="ml-8">{`announcementHTML += \`<swiper-slide style=" white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; justify-content: flex-start; align-items: center;">\n`}</p>
+        <p className="ml-8">{`<div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;margin: 0 8px; " > \n`}</p>
+        <p className="ml-8">{`<span style="width: 55px;">公告：</span>{announcement.title}\n`}</p>
+        <p className="ml-8">{`</div>\n`}</p>
+        <p className="ml-6">{`});`}</p>
+        <p className="ml-6">{`$(`}</p>
+        <p className="ml-6">{`#informationHeader`}</p>
+        <p className="ml-6">{`).html(announcementHTML);`}</p>
+        <p>{``}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError') + ': ' + error);`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// news
+export function News() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var str = ''`}</p>
+        <p>{`var collect_id = []`}</p>
+        <p>{`var getToken = window.localStorage.getItem('token')`}</p>
+        <p>{`var token = JSON.parse(getToken)`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/news',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{``}</p>
+        <p className="ml-6">{`if (data.code === 0) {`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`if (data.result.length === 0) {`}</p>
+        <p className="ml-10">{`str += '<div style="height: 50px;" class="flexCenter">没有数据</div>';`}</p>
+        <p className="ml-10">{`$("#news").html(str);`}</p>
+        <p className="ml-10">{`myScroll = new IScroll('#homePage', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`if (data.result.length !== 0) {`}</p>
+        <p className="ml-10">{`$.each(data.result, function (index, data) {`}</p>
+        <p className="ml-12">{`var newDate = moment(data.time).format("YYYY-MM-DD hh:mm:ss");`}</p>
+        <p className="ml-12">{``}</p>
+        <p className="ml-12">{`str += '<div style=" height: 5px;"></div>';`}</p>
+        <p className="ml-12">{`str += '<div style="display: flex; align-items: center; justify-content: space-between;">';`}</p>
+        <p className="ml-12">{`str += '<img class="image-item" src="' + (API_SERVER + data.image + '?Authorization=' + token.token) + '" alt="item">';`}</p>
+        <p className="ml-12">{`str += '<div style="display: flex; flex-direction: column; flex: 1; text-align: end;">';`}</p>
+        <p className="ml-12">{`str += '<div style="height: 10px;"></div>';`}</p>
+        <p className="ml-12">{`str += '<span style="font-size: 14px;" id="news_' + data.id + '">' + data.title + '</span>';`}</p>
+        <p className="ml-12">{`str += '<div style="height: 15px;"></div>';`}</p>
+        <p className="ml-12">{`str += '<span style="color: #A4A4A4; font-size: 14px;">' + newDate + '</span>';`}</p>
+        <p className="ml-12">{`str += '</div>';`}</p>
+        <p className="ml-12">{`str += '</div>';`}</p>
+        <p className="ml-12">{``}</p>
+        <p className="ml-12">{`str += '<div style=" height: 5px;"></div>';`}</p>
+        <p className="ml-12">{`str += '<div class="line_app" style="width:100%; margin: 5px 0;"></div>';`}</p>
+        <p className="ml-12">{``}</p>
+        <p className="ml-12">{`collect_id.push({ "id": data.id, "img": data.image, "title": data.title })`}</p>
+        <p className="ml-10">{`});`}</p>
+        <p className="ml-10">{`$('#news').html(str);`}</p>
+        <p className="ml-10">{`myScroll = new IScroll('#homePage', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-10">{``}</p>
+        <p className="ml-10">{`$.each(collect_id, function (index, data) {`}</p>
+        <p className="ml-12">{`$(`}</p>
+        <p className="ml-12">{`#news_{data.id}`}</p>
+        <p className="ml-12">{`).unbind().click(function () {`}</p>
+        <p className="ml-14">{``}</p>
+        <p className="ml-14">{`pageShow("newsPage")`}</p>
+        <p className="ml-14">{`newsObj.showNews(data.id, data.img, data.title)`}</p>
+        <p className="ml-12">{``}</p>
+        <p className="ml-12">{`})`}</p>
+        <p className="ml-10">{``}</p>
+        <p className="ml-10">{`})`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-6">{``}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code))`}</p>
+        <p className="ml-8">{`msgObj.unShow()`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'))`}</p>
+        <p className="ml-4">{`},`}</p>
+      </div>
+    </div>
+  )
+}
+
+// first
+export function First() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = localStorage.getItem('token')`}</p>
+        <p>{`var token = JSON.parse(getToken)`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + \`/v1/profile/math-coupon\`,`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`if (data.code === 0) {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code))`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code))`}</p>
+        <p className="ml-8">{`msgObj.unShow()`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'))`}</p>
+        <p className="ml-4">{`},`}</p>
+      </div>
+    </div>
+  )
+}
+
+// redempiontcode
+export function Redempiontcode() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = localStorage.getItem('token')`}</p>
+        <p>{`var token = JSON.parse(getToken)`}</p>
+        <p>{`var code = $("#code").val()`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + \`/v1/profile/active-code/\${code}\`,`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) { },`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`if (data.code === 0) {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code))`}</p>
+        <p className="ml-8">{`msgObj.unShow()`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code))`}</p>
+        <p className="ml-8">{`msgObj.unShow()`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'))`}</p>
+        <p className="ml-4">{`},`}</p>
+      </div>
+    </div>
+  )
+}
+
+// CheckMathCoupon
+export function CheckMathCoupon() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/profile/check-math-coupon',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`console.log(data.result);`}</p>
+        <p className="ml-6">{`if (data.result == true) {`}</p>
+        <p className="ml-8">{`console.log(data.result);`}</p>
+        <p className="ml-8">{`$("#first").css({ "background": "#918e8e", }).off();`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`$("#first").css({ "background": "linear-gradient(281deg, #EA372A 48.76%, #F83D3D 86.99%), #918e8e" });`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError') + ': ' + error);`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getnewgroup
+export function Getnewgroup() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var str = '';`}</p>
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/news/group',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`if (data.result.length > 0) {`}</p>
+        <p className="ml-8">{`data.result.forEach(function (group) {`}</p>
+        <p className="ml-10">{`var tabClass = (group.id === 0) ? 'selected-tab-chind' : 'selected-tab-chind-default';`}</p>
+        <p className="ml-10">{`str += '<div class="tab ' + tabClass + '" data-tab="' + group.id + '" id="tab' + group.id + '">' + group.name + '</div>';`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-8">{`$("#tab-groud").html(str);`}</p>
+        <p className="ml-8">{`$("#tab3").trigger("click");`}</p>
+        <p className="ml-8">{`home2Obj.news();`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`str += '<div class="tab selected-tab-chind" data-tab="null" id="tabnull">null</div>';`}</p>
+        <p className="ml-8">{`$("#tab-groud").html(str);`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// profile_invite
+export function Profile_invite() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/profile',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`var organizSelet = data.result.institution;`}</p>
+        <p className="ml-6">{`console.log(organizSelet, '===========profile_invite====================>>>');`}</p>
+        <p className="ml-6">{`if (organizSelet === true) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`pageShow("home_organizPage");`}</p>
+        <p className="ml-8">{`home_organizObj.call();`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show('请联系客服，了解关于机构账户相关信息!');`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getAnnouncement_viewID
+export function GetAnnouncement_viewID() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`var container = document.getElementById('informationHeader_view');`}</p>
+        <p>{`var myScroll;`}</p>
+        <p>{`var IdView = [];`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + \`/v1/announcement/topic\${id}\`,`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getAnnouncement_view
+export function GetAnnouncement_view() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`var container = document.getElementById('informationHeader_view');`}</p>
+        <p>{`var myScroll;`}</p>
+        <p>{`var IdView = [];`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/announcement',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`var str = "";`}</p>
+        <p className="ml-8">{`var str1 = "";`}</p>
+        <p className="ml-8">{`str_viewPage = "";`}</p>
+        <p className="ml-8">{`var IdView = [];`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`$.each(data.result, function (index, data) {`}</p>
+        <p className="ml-12">{`var item = data;`}</p>
+        <p className="ml-12">{`var finalAllDate = moment(item.date).format("YYYY-MM-DD");`}</p>
+        <p className="ml-12">{`var titleElement = document.createElement('li');`}</p>
+        <p className="ml-12">{`str += \` `}</p>
+        <p className="ml-16">{`<div style="display: flex;justify-content: space-between;margin-top: 20px; padding:0px 10px;margin-bottom: 15px;align-items: center; ">`}</p>
+        <p className="ml-16">{`<div style="display: flex;align-items: center;">`}</p>
+        <p className="ml-16">{`<img src="./pic/home/not02.png"style="height:32px; padding:10px; " >`}</p>
+        <p className="ml-16">{`<div style="font-weight:normal; font-size:14px; ">\${item.title}</div>`}</p>
+        <p className="ml-12">{`</div>`}</p>
+        <p className="ml-12">{`<br>`}</p>
+        <p className="ml-12">{`<span id="view_\${item.id}" class="view_more" style=" color:#FFF;background:#EA372A;    padding: 5px 20px; border-radius: 4px;">查看`}</p>
+        <p className="ml-16">{`</span>`}</p>
+        <p className="ml-16">{`</div>`}</p>
+        <p className="ml-16">{``}</p>
+        <p className="ml-12">{`$('#informationHeader_view').html(str);`}</p>
+        <p className="ml-12">{``}</p>
+        <p className="ml-12">{`myScroll = new IScroll('#scroll_informationList_body', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`$.each(data.result, function (index, viewmore) {`}</p>
+        <p className="ml-12">{`IdView.push({ "IdView": viewmore.id, "title": viewmore.title, "content": viewmore.content, "date": viewmore.date })`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`$.each(IdView, function (index, Viewpage) {`}</p>
+        <p className="ml-12">{`var ViewPageDate = moment(Viewpage.date).format("YYYY-MM-DD HH:mm");`}</p>
+        <p className="ml-12">{`$(`}</p>
+        <p className="ml-12">{`'#view_' + Viewpage.IdView.click(function () {`}</p>
+        <p className="ml-16">{`str_viewPage += \``}</p>
+        <p className="ml-20">{`<div style="display: flex; flex-direction: column; padding: 0px 32px 260px 24px; ">`}</p>
+        <p className="ml-20">{``}</p>
+        <p className="ml-20">{`<h3 style=" fontsize:18px;">\{Viewpage.title}</h3>`}</p>
+        <p className="ml-20">{``}</p>
+        <p className="ml-20">{``}</p>
+        <p className="ml-20">{`<div style=" text-indent: 20px;   letter-spacing: 0.5px;  fontsize:14px;">\${Viewpage.content}</div>`}</p>
+        <p className="ml-20">{``}</p>
+        <p className="ml-20">{``}</p>
+        <p className="ml-20">{``}</p>
+        <p className="ml-16">{`</div>`}</p>
+        <p className="ml-16">{` `}</p>
+        <p className="ml-16">{` `}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-4">{``}</p>
+        <p>{`},`}</p>
+        <p>{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-4">{`loaderObj.unShow();`}</p>
+        <p className="ml-4">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p>{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getHistory
+export function GetHistory() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`var str = "";`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/wallet/history?page=1&limit=9&walletType=25&type=&eventType=300',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`if (data.code === 0) {`}</p>
+        <p className="ml-12">{`if (data.records === null) {`}</p>
+        <p className="ml-16">{`console.log('i am here' + data.result);`}</p>
+        <p className="ml-16">{`str += '<span style="text-align: center;">您还没有邀约奖励记录</span>';`}</p>
+        <p className="ml-16">{`$('#loop_history_invite_user').html(str);`}</p>
+        <p className="ml-12">{`} else {`}</p>
+        <p className="ml-16">{`$.each(data.result, function (index, data) {`}</p>
+        <p className="ml-20">{`str += '<span>' + (index + 1) + '、恭喜您，邀约达到' + (index + 1) * 10 + '人，获得' + data.amount + '元奖励</span>';`}</p>
+        <p className="ml-16">{`});`}</p>
+        <p className="ml-16">{`$('#loop_history_invite_user').html(str);`}</p>
+        <p className="ml-16">{`myScroll = new IScroll('#scroller_invitation_rewards', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-12">{`}`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-12">{`// Handle the case when data.code is not 0`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError') + ': ' + error);`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getVoucherInvite
+export function GetVoucherInvite() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var str = "";`}</p>
+        <p>{`var collect_step = [];`}</p>
+        <p>{``}</p>
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/profile/cycle-voucher?type=30',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`if (data.code === 0) {`}</p>
+        <p className="ml-12">{`$('#voucher_invite').text(data.result.now);`}</p>
+        <p className="ml-12">{`$.each(data.result.items, function (index, data) {`}</p>
+        <p className="ml-16">{`str += '<div style="height: 10px;"></div>';`}</p>
+        <p className="ml-16">{`str += '<div style="justify-content: flex-end;width: 90%;margin: 0 auto;background-color: #fff;height: 80px;border-radius: 10px;display: flex;align-items: center;">';`}</p>
+        <p className="ml-16">{`str += '<div style="gap: 10px;display: flex;align-items: center;justify-content: flex-start;width: 75%;">';`}</p>
+        <p className="ml-16">{`str += '<img style="height:  32px;" src="./pic/home/side_home.png" alt="">';`}</p>
+        <p className="ml-16">{`str += '<div style="display: flex;flex-direction: column;gap: 5px;">';`}</p>
+        <p className="ml-16">{`str += ' <span style="font-size: 16px ;color:#414655;">累计邀约注册人数 ' + data.number + ' 人 </span>';`}</p>
+        <p className="ml-16">{`str += '<span style="font-size: 14px; color: #6C7BA8;">奖励 ' + data.amount + ' 算力券 </span>';`}</p>
+        <p className="ml-16">{`str += '</div>';`}</p>
+        <p className="ml-16">{`str += '</div>';`}</p>
+        <p className="ml-16">{`str += '<div id="step_invite' + data.number + '" style="margin-right: 10px; color: #fff; ' + (data.state == 10 ? "background: linear-gradient(270deg, #67748E 0%, #6C7BA8 96.28%);" : "background: linear-gradient(270deg, #EA372A 0%, #FD5E43 96.28%);") + ' width: 70px; height: 30px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">';`}</p>
+        <p className="ml-16">{`str += '<span>' + (data.state == 10 ? "已领取" : data.state == 20 ? "未领取" : "未满足") + ' </span>';`}</p>
+        <p className="ml-16">{`str += '</div>';`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-12">{`$("#loop_voucher_data_invite").html(str);`}</p>
+        <p className="ml-12">{`myScroll = new IScroll('#scroller_invitation_registration', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-12">{`$.each(collect_step, function (index, data) {`}</p>
+        <p className="ml-16">{`$(`}</p>
+        <p className="ml-16">{`'#step_invite' + data.step).unbind().click(function () {`}</p>
+        <p className="ml-20">{`postReceiveVouncher(data.step);`}</p>
+        <p className="ml-16">{`})`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-8">{`} else if (data.code === 4089) {`}</p>
+        <p className="ml-12">{`msgPageObj.show('已领取');`}</p>
+        <p className="ml-8">{`} else if (data.code === 4090) {`}</p>
+        <p className="ml-12">{`msgPageObj.show('未满足条件');`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-12">{`loaderObj.unShow();`}</p>
+        <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// postReceiveVouncher
+export function PostReceiveVouncher() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`"type": 30,`}</p>
+        <p className="ml-4">{`"step": step`}</p>
+        <p>{`}`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/profile/cycle-voucher",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) { },`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`if (data.code == 0) {`}</p>
+        <p className="ml-12">{`msgPageObj.show("领取成功");`}</p>
+        <p className="ml-12">{`$(`}</p>
+        <p className="ml-12">
+          {`'#step_invite' + step).css("background", "linear-gradient(270deg, #67748E 0%, #6C7BA8 96.28%)")`}
+          ;
+        </p>
+        <p className="ml-12">{`$(`}</p>
+        <p className="ml-12">{`'#step_invite' + step + ' span').text("已领取");`}</p>
+        <p className="ml-8">{`} else if (data.code == 4089) {`}</p>
+        <p className="ml-12">{`msgPageObj.show('已领取');`}</p>
+        <p className="ml-8">{`} else if (data.code == 4090) {`}</p>
+        <p className="ml-12">{`msgPageObj.show('未满足条件');`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-12">{`loaderObj.unShow();`}</p>
+        <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
 }
