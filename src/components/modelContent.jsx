@@ -273,6 +273,7 @@ import {
   Slider_cap_login,
   Start_call,
   Start_init,
+  StatusCodesArrLang,
   Team,
   Topup_addSlipPayment,
   Topup_checkNoInput,
@@ -1290,6 +1291,9 @@ export default function ModelContent({
               <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
                 <span className="text-[#A52A2A]">&lt;Script&gt;</span>
                 {selectedMenu === "nSLangArrLang" && <NSLangArrLang />}
+                {selectedMenu === "statusCodesArrLang" && (
+                  <StatusCodesArrLang />
+                )}
                 <span className="text-[#A52A2A]"> &lt;Script&gt;</span>
               </div>
             )}

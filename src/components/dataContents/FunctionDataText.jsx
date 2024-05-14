@@ -19005,3 +19005,95 @@ export function LoopWithdraw() {
     </div>
   )
 }
+
+// statusCodesArrLang
+export function StatusCodesArrLang() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var statusCodesArr = {`}</p>
+        <div >
+          <pre>
+            {`    "0": { "en": "Success", "zh": "请求成功", "th": "สำเร็จ" },
+    "2011": { "en": "Accepted", "zh": "请求已受理", "th": "ยอมรับแล้ว" },
+    "4001": { "en": "Token expire", "zh": "账户已过期", "th": "Token หมดอายุ" },
+    "4002": { "en": "Refresh token expire", "zh": "再次刷新账户", "th": "Refresh Token หมดอายุ" },
+    "4010": { "en": "Incorrect phone number or password", "zh": "电话号码或密码不正确", "th": "หมายเลขโทรศัพท์หรือรหัสผ่านไม่ถูกต้อง" },
+    "4011": { "en": "Invalid password", "zh": "密码错误", "th": "รหัสผ่านไม่ถูกต้อง" },
+    "4014": { "en": "Invalid account name", "zh": "无效的用户名", "th": "ชื่อบัญชีไม่ถูกต้อง" },
+    "4021": { "en": "Password not matches", "zh": "密码与当前密码不匹配", "th": "รหัสผ่านไม่ตรงกับรหัสผ่านปัจจุบัน" },
+    "4022": { "en": "Existed account name", "zh": "用户名已经存在", "th": "มีชื่อบัญชีอยู่แล้ว" },
+    "4023": { "en": "Existed mobile", "zh": "手机号已经存在", "th": "มีหมายเลขโทรศัพท์มือถือแล้ว" },
+    "4024": { "en": "Sms code sample", "zh": "短信验证码不一致", "th": "รหัส SMS ไม่ตรงกัน" },
+    "4025": { "en": "Destroy account", "zh": "已经注销的帐户", "th": "บัญชีถูกยกเลิกแล้ว" },
+    "4029": { "en": "Invalid mobile", "zh": "无效的手机号", "th": "หมายเลขโทรศัพท์ไม่ถูกต้อง" },
+    "4030": { "en": "Invalid user id", "zh": "无效用户ID", "th": "รหัสผู้ใช้ไม่ถูกต้อง" },
+    "4031": { "en": "Balance not enough", "zh": "余额不足", "th": "ยอดเงินไม่เพียงพอ" },
+    "4032": { "en": "Invalid wallet address", "zh": "无效钱包地址", "th": "ที่อยู่กระเป๋าเงินไม่ถูกต้อง" },
+    "4033": { "en": "Invalid amount", "zh": "无效金额", "th": "จำนวนไม่ถูกต้อง" },
+    "4034": { "en": "Withdraw fail", "zh": "提现失败", "th": "การถอนล้มเหลว" },
+    "4035": { "en": "Invalid invite code", "zh": "无效邀请码", "th": "รหัสเชิญไม่ถูกต้อง" },
+    "4036": { "en": "Invalid financial organization bank name", "zh": "无效金融机构银行名称", "th": "ชื่อธนาคารไม่ถูกต้อง" },
+    "4037": { "en": "Invalid financial organization card number", "zh": "无效金融机构卡号", "th": "หมายเลขบัตรไม่ถูกต้อง" },
+    "4038": { "en": "Invalid financial organization card name", "zh": "无效金融机构卡名", "th": "ชื่อบัตรไม่ถูกต้อง" },
+    "4039": { "en": "Existed financial organization card number", "zh": "已存在金融机构卡号", "th": "มีหมายเลขธนาคารอยู่แล้ว" },
+    "4040": { "en": "Invalid name", "zh": "无效姓名", "th": "ชื่อไม่ถูกต้อง" },
+    "4041": { "en": "Invalid identity passport code", "zh": "无效身份证号码", "th": "รหัสบัตรประจำตัวไม่ถูกต้อง" },
+    "4042": { "en": "Invalid step", "zh": "无效步骤", "th": "ขั้นตอนไม่ถูกต้อง" },
+    "4043": { "en": "Existed checked in", "zh": "已签到", "th": "ได้ทำการเช็คอินแล้ว" },
+    "4044": { "en": "Invalid product id", "zh": "无效产品ID", "th": "รหัสผลิตภัณฑ์ไม่ถูกต้อง" },
+    "4045": { "en": "Not allow repeat purchase", "zh": "不允许重复购买", "th": "ไม่อนุญาตให้ซื้อซ้ำ" },
+    "4046": { "en": "Purchase method is invalid", "zh": "购买方式无效", "th": "วิธีการซื้อไม่ถูกต้อง" },
+    "4047": { "en": "Product state is invalid", "zh": "产品状态无效", "th": "สถานะผลิตภัณฑ์ไม่ถูกต้อง" },
+    "4048": { "en": "Purchase method is not match", "zh": "购买方式不匹配", "th": "วิธีการซื้อไม่ตรงกัน" },
+    "4049": { "en": "Product is off", "zh": "产品已下架", "th": "ผลิตภัณฑ์ถูกปิด" },
+    "4050": { "en": "Account disabled", "zh": "用户已被禁用", "th": "บัญชีถูกปิดการใช้งาน" },
+    "4051": { "en": "Invalid announcement id", "zh": "无效公告ID", "th": "รหัสประกาศไม่ถูกต้อง" },
+    "4052": { "en": "Invalid wallet type", "zh": "无效钱包类型", "th": "ประเภทกระเป๋าเงินไม่ถูกต้อง" },
+    "4053": { "en": "Invalid transaction type", "zh": "无效交易类型", "th": "ประเภทการธุรกรรมไม่ถูกต้อง" },
+    "4054": { "en": "Invalid 2fa", "zh": "没有设置交易密码", "th": "การตรวจสอบความปลอดภัย 2 ขั้นตอนไม่ถูกต้อง" },
+    "4055": { "en": "Withdraw not enabled", "zh": "提现未启用", "th": "การถอนเงินไม่ได้เปิดใช้งาน" },
+    "4056": { "en": "Invalid notifications", "zh": "无效通知", "th": "การแจ้งเตือนไม่ถูกต้อง" },
+    "4057": { "en": "Identity not verified", "zh": "身份未验证", "th": "ไม่ได้รับการตรวจสอบตัวตน" },
+    "4058": { "en": "Not found bank name", "zh": "未找到银行名称", "th": "ไม่พบชื่อธนาคาร" },
+    "4059": { "en": "Not found bank info apply type", "zh": "未找到银行信息申请类型", "th": "ไม่พบประเภทการสมัครข้อมูลธนาคาร" },
+    "4062": { "en": "Not enough credit", "zh": "没有足够的额度", "th": "เครดิตไม่พอ" },
+    "4063": { "en": "Activity points can only be used once", "zh": "活动积分只能使用", "th": "คะแนนกิจกรรมสามารถใช้ได้หนึ่งครั้งเท่านั้น" },
+    "4064": { "en": "Not enough points", "zh": "积分不够", "th": "คะแนนไม่เพียงพอ" },
+    "4065": { "en": "Insufficient Debt Settlement Fund Balance", "zh": "债务清算基金余额不足", "th": "ยอดกองทุนชำระหนี้ไม่เพียงพอ" },
+    "4066": { "en": "You are not active enough, please try your best", "zh": "您的龙力值不够，请努力哦", "th": "คุณยังใช้งานไม่มากพอ โปรดพยายามให้ดีที่สุด" },
+    "4067": { "en": "Not support debt settlement fund", "zh": "不支持债务清偿基金", "th": "ไม่สนับสนุนกองทุนการชำระหนี้" },
+    "4068": { "en": "Invalid remark", "zh": "无效评论", "th": "หมายเหตุที่ไม่ถูกต้อง" },
+    "4069": { "en": "Invalid financial organization wallet address", "zh": "无效的金融组织钱包地址", "th": "ที่อยู่กระเป๋าสตางค์ทางการเงินไม่ถูกต้อง" },
+    "4070": { "en": "Existed financial organization wallet address", "zh": "现有金融机构钱包地址", "th": "ที่อยู่กระเป๋าเงินขององค์กรทางการเงินที่มีอยู่" },
+    "4071": { "en": "Invalid financial organization wallet address", "zh": "无效的金融组织钱包地址", "th": "ที่อยู่กระเป๋าสตางค์ทางการเงินไม่ถูกต้อง" },
+    
+    "4078": { "en": "", "zh": "金额小于最小金额要求", "th": " " },
+    "4079": { "en": "", "zh": "用户已经锁定，请联系客服", "th": " " },
+    "4088": { "en": "", "zh": "无效的活动码", "th": " " },
+    "4072": { "en": "", "zh": "活动码已经被使用过", "th": "" },
+    "4074": { "en": "", "zh": "该支付方式有误请重新绑定！", "th": "" },
+    "4089": { "en": "", "zh": "已经领取过", "th": " " },
+    //"4089": { "en": "", "zh": "恭喜您！获得40万算力券奖励！", "th": " " },
+    "4090": { "en": "", "zh": "不符合领取条件", "th": "" },
+    "4091": { "en": "", "zh": "您今天已提交意见反馈", "th": " " },
+    "4092": { "en": "", "zh": "算力券不足", "th": " " },
+    "4093": { "en": "", "zh": "验证无效或过期", "th": " " },
+    "4094": { "en": "", "zh": "注册数量达到上限", "th": " " },
+    "4095": { "en": "", "zh": "提示：提款卡姓名必须和本人一致", "th": " " },
+    "4096": { "en": "", "zh": "重复的上传", "th": " " },
+    "4097": { "en": "", "zh": "身份证图片未上传", "th": " " },
+    
+    "4100": { "en": "", "zh": "产品还没有开始销售", "th": " " },
+    "4101": { "en": "", "zh": "没有转账权限，请联系客服！", "th": " " },
+    "4103": { "en": "", "zh": "助力金收益钱包禁止提现", "th": " " }
+    "8002": { "en": "", "zh": "仅支持 JPG，PNG，JPEG格式的图片上传", "th": " " },
+    "9999": { "en": "Unknown mistake", "zh": "未知错误", "th": "ไม่ทราบข้อผิดพลาด" }
+            `}
+          </pre>
+        </div>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
