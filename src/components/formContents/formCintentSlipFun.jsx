@@ -419,6 +419,78 @@ const FormCintentSlipFun = ({selectedMenu}) => {
         return "postReceiveVouncher(step)"
       case "getlevel":
         return "getlevel()"
+      case "fetchPrizes":
+        return "fetchPrizes()"
+      case "postSelectedPrize":
+        return "postSelectedPrize(selectedPrize, rotateDegree)"
+      case "getUserRoulette":
+        return "getUserRoulette()"
+      case "luckyLeftData":
+        return "luckyLeftData()"
+      case "Peer_group":
+        return "Peer_group()"
+      case "getMyTeam_3":
+        return "getMyTeam_3()"
+      case "showNews":
+        return "showNews(id, img, header, time)"
+      case "allReadNotice":
+        return "allReadNotice()"
+      case "markNotificationAsRead":
+        return "markNotificationAsRead(notificationId)"
+      case "Getnotifications":
+        return "Getnotifications()"
+      case "Profile":
+        return "Profile()"
+      case "Team":
+        return "Team()"
+      case "verified_name":
+        return "verified_name()"
+      case "getVoucherDaily":
+        return "getVoucherDaily()"
+      case "getKfLink":
+        return "getKfLink()"
+      case "Enable2FA":
+        return "Enable2FA()"
+      case "get2FA":
+        return "get2FA()"
+      case "BuyProduct":
+        return "BuyProduct(id)"
+      case "getVoucherTeam":
+        return "getVoucherTeam()"
+      case "getChannels":
+        return "getChannels()"
+      case "postTopUp":
+        return "postTopUp(id, name, cardName, cardNum)"
+      case "getBankAll":
+        return "getBankAll()"
+      case "getProduct":
+        return "getProduct(type, tradeA)"
+      case "getHistoryTransaction":
+        return "getHistoryTransaction(type)"
+      case "GetTransferHistory":
+        return "GetTransferHistory()"
+      case "postTransder":
+        return "postTransder()"
+      case "AddFilesFunc":
+        return "AddFilesFunc(file, img)"
+      case "VerifiedImgAcc":
+        return "VerifiedImgAcc()"
+      case "Verified_info":
+        return "Verified_info()"
+      case "getHistoryWithdraw":
+        return "getHistoryWithdraw(type, eventType)"
+      case "Recieve_DSFCIPS":
+        return "Recieve_DSFCIPS()"
+      case "getWallet":
+        return "getWallet(type)"
+      case "getAllPoints":
+        return "getAllPoints()"
+      case "verified_wallet":
+        return "verified_wallet()"
+      case "getLimitWithdraw":
+        return "getLimitWithdraw()"
+      case "loopWithdraw":
+        return "loopWithdraw(type)"
       default:
         return ""
     }
@@ -4702,6 +4774,837 @@ const FormCintentSlipFun = ({selectedMenu}) => {
         content7p3={`7.3.ในกรณีอื่น ๆ, แสดงข้อความตามรหัสคำขอ`}
         content8={`และจบการทำงานของฟังก์ชัน คำสั่ง refresh ใช้สำหรับการอัพเดทตัวแปร myScroll ของ IScroll ที่ใช้ในการเลื่อนหน้าเพจ`}
         functionName="openTab(tabName)"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    fetchPrizes: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน fetchPrizes มีหน้าที่ดึงข้อมูลรางวัลจาก API และแสดงผลบนหน้าเว็บ โดยมีขั้นตอนดังนี้"
+        content1="1.ดึงข้อมูลโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์ token"
+        content2="2.ทำการส่งคำขอ GET ไปยังเส้นทาง API /v1/config/roulette-rule เพื่อขอข้อมูลรางวัล"
+        content3="3.ตั้งค่า headers ของคำขอให้มี 'Authorization' พร้อมกับโทเค็นที่ได้"
+        content4="4.เมื่อได้รับข้อมูลจาก API"
+        content4p1="4.1.เก็บข้อมูลรางวัลที่ได้รับจาก API ในตัวแปร prizes"
+        content4p2="4.2.เรียกใช้ฟังก์ชัน renderPrizes เพื่อนำข้อมูลรางวัลที่ได้รับมาแสดงผลบนหน้าเว็บ"
+        content5="5.ในกรณีที่เกิดข้อผิดพลาดในการส่งคำขอ GET, แสดงข้อความข้อผิดพลาด"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    postSelectedPrize: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน postSelectedPrize มีหน้าที่ในการส่งข้อมูลรางวัลที่เลือกไปยังเซิร์ฟเวอร์และทำการหมุนวงล้อ โดยมีขั้นตอนดังนี้"
+        content1="1.ดึงข้อมูลโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์ token"
+        content2="2.สร้างออบเจ็กต์ mData เพื่อเก็บข้อมูลรางวัลที่เลือก โดยมีคุณสมบัติ id ที่เป็น id ของรางวัลที่เลือก"
+        content3="3.ส่งคำขอ POST ไปยังเส้นทาง API /v1/config/roulette-rule โดยตั้งค่า headers ให้มี 'Authorization' พร้อมกับโทเค็น"
+        content4="4.ในกรณีที่ส่งข้อมูลสำเร็จ"
+        content4p1="4.1.อัปเดตมุมการหมุน (rotateDegree) และชื่อของรางวัล (rotateName) จากข้อมูลที่ได้รับจากเซิร์ฟเวอร์"
+        content4p2="4.2.คำนวณมุมการหมุนของวงล้อและอัปเดตการหมุนของวงล้อใน DOM"
+        content4p3="4.3.แสดงข้อความยืนยันการชนะรางวัล"
+        content5="5.ในกรณีที่เกิดข้อผิดพลาดในการส่งข้อมูล, แสดงข้อความข้อผิดพลาดตามรหัสสถานะที่ได้รับ"
+        content6="6.อธิบายเพิ่มเติม"
+        content6p1="6.1.selectedPrize เป็นวัตถุที่เก็บข้อมูลรางวัลที่เลือก"
+        content6p2="6.2.rotateDegree เป็นมุมหมุนของวงล้อ"
+        content6p3="6.3.rotateName เก็บชื่อรางวัลที่ได้รับหลังจากการหมุน"
+        content6p4="6.4.ฟังก์ชัน msgPageObj.show ใช้เพื่อแสดงข้อความให้กับผู้ใช้"
+        content6p5="6.5.ฟังก์ชัน getUserRoulette และ luckyLeftData ใช้เพื่ออัปเดตข้อมูลการหมุนวงล้อของผู้ใช้และจำนวนครั้งที่เหลืออยู่"
+        content6p6="6.6.ตัวแปร rotating ใช้เพื่อตรวจสอบสถานะการหมุนของวงล้อ"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getUserRoulette: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getUserRoulette มีหน้าที่ในการดึงข้อมูลผู้ใช้ล่าสุดที่ได้รับรางวัลจากวงล้อรูเล็ต โดยมีการทำงานดังนี้"
+        content1="1.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์ token"
+        content2="2.ส่งคำขอ GET ไปยังเส้นทาง API /v1/config/roulette-latest โดยตั้งค่า headers ให้มี 'Authorization' พร้อมกับโทเค็น"
+        content3="3.ในกรณีที่ส่งคำขอสำเร็จ"
+        content3p1="3.1.ถ้า data.code เป็น 0 ให้ประมวลผลข้อมูลที่ได้รับ"
+        content3p2="3.2.สร้างตาราง HTML ที่มีข้อมูลชื่อ, เบอร์โทรศัพท์, ชื่อรางวัล, และจำนวนเงินของผู้ใช้ล่าสุดที่ได้รับรางวัล"
+        content3p3="3.3.แสดงจำนวนครั้งที่เหลือในการหมุนวงล้อ"
+        content3p4="3.4.ถ้าไม่มีข้อมูล (AllUser.length == 0) ให้แสดงข้อความว่า 'ไม่มีข้อมูล'"
+        content3p5="3.5.ถ้ามีข้อมูล, ให้กรองข้อมูลผู้ใช้ (AllUser) เพื่อแสดงเฉพาะ 5 คนแรก และแสดงผลในตาราง HTML"
+        content4="4.ในกรณีที่เกิดข้อผิดพลาดในการส่งคำขอ, ให้แสดงข้อความข้อผิดพลาด"
+        content5="5.อธิบายเพิ่มเติม"
+        content5p1="5.1.token.token ใช้สำหรับการรับรองความถูกต้องของผู้ใช้ในการส่งคำขอไปยัง API"
+        content5p2="5.2.ใช้ localStorage เพื่อดึงข้อมูลโทเค็นที่ถูกเก็บไว้เมื่อผู้ใช้เข้าสู่ระบบ"
+        content5p3="5.3.ใช้ $.ajax ของ jQuery เพื่อส่งคำขอ GET และจัดการการตอบกลับจากเซิร์ฟเวอร์"
+        content5p4="5.4.data.result ประกอบด้วยข้อมูลผู้ใช้ล่าสุดที่ได้รับรางวัล"
+        content5p5="5.5.ฟังก์ชัน msgPageObj.show ใช้สำหรับแสดงข้อความให้กับผู้ใช้ในกรณีที่เกิดข้อผิดพลาดหรือเมื่อส่งคำขอสำเร็จ"
+        content5p6="5.6.ใช้ IScroll เพื่อเพิ่มประสบการณ์การเลื่อนในกรณีที่มีข้อมูลมาก"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    luckyLeftData: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน luckyLeftData มีหน้าที่ดึงข้อมูลจำนวนครั้งที่เหลือในการหมุนวงล้อของผู้ใช้จาก API และแสดงผลในหน้าเว็บ โดยมีการทำงานดังนี้"
+        content1="1.ดึงโทเค็นของผู้ใช้จาก localStorage และแปลงเป็นออบเจ็กต์ obj"
+        content2="2.ส่งคำขอ GET ไปยังเส้นทาง API /v1/config/roulette-count โดยตั้งค่า headers ให้มี 'Authorization' พร้อมกับโทเค็น"
+        content3="3.ในกรณีที่ส่งคำขอสำเร็จ"
+        content3p1="3.1.ข้อมูลจำนวนครั้งที่เหลือ (mData.result) จะถูกแสดงผลในองค์ประกอบ HTML ที่มี id #luckyLeftNum"
+        content4="4.ในกรณีที่เกิดข้อผิดพลาดในการส่งคำขอ, ให้แสดงข้อผิดพลาดในคอนโซล"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    Peer_group: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน Peer_group ใช้สำหรับดึงข้อมูลสรุปเกี่ยวกับทีมของผู้ใช้จากเส้นทาง API หนึ่ง ๆ และแสดงข้อมูลนั้นให้ผู้ใช้เห็น โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง Token ของผู้ใช้จาก local storage และแปลงเป็นออบเจ็กต์"
+        content2="2.ส่งคำขอ GET ไปยังเส้นทาง API /v1/inviteCode/team/summary2 พร้อมกับ Token ที่รวมไว้ใน headers"
+        content3="3.เมื่อได้รับการตอบกลับสำเร็จ"
+        content3p1="3.1.แยกข้อมูลสรุปของทีมออกมาจากการตอบกลับ"
+        content3p2="3.2.แสดงจำนวนรวมของผู้ใช้ที่ลงทะเบียนในทีม"
+        content3p3="3.3.แสดงผลการทำงานรวมของทีม"
+        content3p4="3.4.คำนวณและแสดงยอดคอมมิชชั่นทั้งหมดที่ได้รับ"
+        content3p5="3.5.คำนวณและแสดงจำนวนผู้ใช้ที่เปิดใช้งานทั้งหมดที่เกิดขึ้นในทุกระดับของทีม"
+        content4="4.จัดการกับสถานการณ์ที่แตกต่างขึ้นอยู่กับจำนวนระดับของทีม"
+        content4p1="4.1.หากมีเพียงระดับทีมเดียว จะแสดงข้อมูลสำหรับระดับนั้น"
+        content4p2="4.2.หากมีสองระดับทีม จะแสดงข้อมูลสำหรับทั้งสองระดับ"
+        content4p3="4.3.หากมีสามระดับทีม จะแสดงข้อมูลสำหรับทั้งสามระดับ"
+        content5="5.เมื่อเกิดข้อผิดพลาดในคำขอ AJAX จะแสดงข้อความเกี่ยวกับข้อผิดพลาดของเซิร์ฟเวอร์และล้างสถานะของการแสดงผลของทีม"
+        content6="6.บันทึกข้อมูลที่เกี่ยวข้องไว้ในคอนโซลสำหรับการตรวจสอบข้อผิดพลาดและการดีบั๊ก"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getMyTeam_3: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getMyTeam_3 ใช้สำหรับดึงข้อมูลสมาชิกในทีมระดับที่ 3 ของผู้ใช้จาก API และแสดงผลให้ผู้ใช้เห็น โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง Token ของผู้ใช้จาก local storage และแปลงเป็นออบเจ็กต์"
+        content2="2.เซ็ตค่า HTML ใน #tabcontent_3 เป็นว่าง"
+        content3="3.กำหนดตัวแปรที่ใช้ในการโหลดข้อมูล เช่น loadData_team_3, limit_team_3, pageCount_team_3"
+        content4="4.เรียกใช้ฟังก์ชัน Peer_3 เพื่อดึงข้อมูลผู้ใช้ในทีมระดับที่ 3 และแสดงผล"
+        content5="5.ในฟังก์ชัน Peer_3"
+        content5p1="5.1.ส่งคำขอ GET ไปยังเส้นทาง API /v1/inviteCode/underLevel/3 พร้อมกับ Token และพารามิเตอร์ page และ limit"
+        content6="6.เมื่อได้รับข้อมูลสำเร็จ"
+        content6p1="6.1.กำหนดค่าให้กับ input และ button ที่ใช้สำหรับการเปลี่ยนหน้า"
+        content6p2="6.2.ตรวจสอบและปรับปรุงการแสดงหน้าปุ่ม prev และ next ตามการเปลี่ยนหน้าปัจจุบัน"
+        content6p3="6.3.แสดงจำนวนรวมของผู้ใช้ในทีมระดับที่ 3"
+        content6p4="6.4.ตรวจสอบสถานะของข้อมูลที่ได้รับและแสดงข้อมูลในรูปแบบของ HTML"
+        content6p5="6.5.ปรับสีพื้นหลังของแต่ละแถวตามเงื่อนไขที่กำหนด"
+        content7="7.หากมีข้อผิดพลาดในการดึงข้อมูล จะไม่แสดงข้อมูลและปิดการแสดงโลดิ้ง"
+        content8="8.ฟังก์ชัน getMyTeam_3 ถูกเรียกใช้เมื่อมีการโหลดหน้าหรือทำการคลิกปุ่มเปลี่ยนหน้า เพื่อดึงข้อมูลทีมระดับที่ 3 ใหม่หรือเปลี่ยนหน้าของข้อมูลที่มีอยู่แล้ว"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    showNews: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน showNews ใช้สำหรับแสดงข้อมูลข่าวที่เลือกในหน้าเว็บไซต์ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.รับพารามิเตอร์ id, img, header, time ซึ่งเป็นข้อมูลข่าวที่เลือกในหน้าเว็บไซต์ และทำการจัดรูปแบบข้อมูลเวลาให้เป็นรูปแบบที่ถูกต้องโดยใช้ moment.js"
+        content2="2.ดึง Token ของผู้ใช้จาก local storage และแปลงเป็นออบเจ็กต์"
+        content3="3.กำหนดค่ารูปภาพและหัวข้อข่าวให้กับ HTML ใน #news_img_show และ #header_news ตามที่ได้รับมา"
+        content4="4.ส่งคำขอ GET ไปยังเส้นทาง API /v1/news/${id} เพื่อขอข้อมูลเนื้อหาข่าวที่เลือก พร้อมกับ Token สำหรับการอนุญาต"
+        content5="5.มื่อได้รับข้อมูลเนื้อหาข่าวสำเร็จ"
+        content5p1="5.1.ปิดการแสดงโลดิ้ง"
+        content5p2="5.2.ตรวจสอบว่ารหัสของข้อมูลเป็น 0 หรือไม่ ถ้าเป็น 0 แสดงว่าไม่มีข้อผิดพลาด"
+        content5p3="5.3.ถ้าไม่ใช่ 0 แสดงว่ามีข้อผิดพลาด และแสดงข้อผิดพลาดที่เกิดขึ้น"
+        content5p4="5.4.ปิดการแสดงโลดิ้ง"
+        content6="6.หากมีข้อผิดพลาดในการดึงข้อมูล จะแสดงข้อความข้อผิดพลาดที่เกิดขึ้น"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    allReadNotice: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน allReadNotice ใช้สำหรับทำการอ่านข้อความแจ้งเตือนทั้งหมด โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง Token ของผู้ใช้จาก local storage และแปลงเป็นออบเจ็กต์"
+        content2="2.ส่งคำขอ POST ไปยังเส้นทาง API /v1/notifications/all-read เพื่อทำการทำเครื่องหมายว่าอ่านทั้งหมด โดยใช้ Token สำหรับการอนุญาต"
+        content3="3.เมื่อคำขอสำเร็จ"
+        content3p1="3.1.เรียกใช้เมธอด Getnotifications ของอ็อบเจ็กต์ notificationObj เพื่อดึงข้อความแจ้งเตือนใหม่"
+        content4="4.หากมีข้อผิดพลาดในการทำคำขอ จะแสดงข้อความข้อผิดพลาดที่เกิดขึ้น"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    markNotificationAsRead: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน markNotificationAsRead ใช้สำหรับทำเครื่องหมายข้อความแจ้งเตือนว่าถูกอ่านแล้ว โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง Token ของผู้ใช้จาก local storage และแปลงเป็นออบเจ็กต์"
+        content2="2.สร้างข้อมูลที่จะส่งไปยังเซิร์ฟเวอร์ เพื่อระบุ ID ของข้อความแจ้งเตือนที่ต้องการทำเครื่องหมายว่าอ่านแล้ว"
+        content3="3.ส่งคำขอ PATCH ไปยังเส้นทาง API /v1/notifications เพื่อทำการทำเครื่องหมายว่าอ่าน โดยใช้ Token สำหรับการอนุญาต"
+        content4="4.เมื่อคำขอสำเร็จ"
+        content4p1="4.1.ตรวจสอบว่าการทำเครื่องหมายข้อความแจ้งเตือนว่าอ่านแล้วสำเร็จหรือไม่ ถ้าสำเร็จจะแสดงข้อความ 'Notification marked as read successfully'"
+        content4p2="4.2.หากไม่สำเร็จ จะแสดงข้อความข้อผิดพลาดที่เกิดขึ้น"
+        content5="5.หากเกิดข้อผิดพลาดในการสื่อสารกับเซิร์ฟเวอร์ จะแสดงข้อความข้อผิดพลาดที่เกิดขึ้น"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    Getnotifications: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน Getnotifications ใช้สำหรับดึงข้อมูลการแจ้งเตือนทั้งหมดของผู้ใช้ โดยมีขั้นตอนการทำงานดังนี้"
+        content1="1.ดึง Token ของผู้ใช้จาก local storage และแปลงเป็นออบเจ็กต์"
+        content2="2.สร้างตัวแปร collect_Data เพื่อเก็บข้อมูลการแจ้งเตือนทั้งหมดที่ได้รับจากเซิร์ฟเวอร์"
+        content3="3.เริ่มการส่งคำขอ GET ไปยังเส้นทาง API /v1/notifications เพื่อขอข้อมูลการแจ้งเตือนทั้งหมด โดยใช้ Token สำหรับการอนุญาต"
+        content4="4.เมื่อคำขอสำเร็จ"
+        content4p1="4.1.หากรหัสของข้อมูลที่ได้รับมีค่าเป็น 0 แสดงว่าคำขอสำเร็จ ให้ดำเนินการต่อไป"
+        content4p2="4.2.นับจำนวนข้อความแจ้งเตือนที่ยังไม่ได้อ่าน (unread) และแสดงจำนวนนี้ในปุ่ม 'ยังไม่ได้อ่าน'"
+        content4p3="4.3.ถ้าไม่มีข้อความแจ้งเตือนที่ยังไม่ได้อ่าน ให้ซ่อนปุ่ม 'ย้อนกลับ' เพื่อกลับไปยังหน้าหลัก"
+        content4p4="4.4.วนลูปผ่านข้อมูลการแจ้งเตือนทั้งหมดที่ได้รับ เพื่อสร้าง HTML สำหรับแสดงข้อมูลแจ้งเตือน"
+        content4p5="4.5.สร้างเหตุการณ์ click บนแต่ละข้อความแจ้งเตือน เพื่อแสดงรายละเอียดของข้อความและทำเครื่องหมายว่าอ่านแล้ว"
+        content4p6="4.6.เก็บข้อมูลของแต่ละข้อความแจ้งเตือนไว้ใน collect_Data เพื่อใช้ในการแสดงรายละเอียดข้อความที่เลือก"
+        content5="5.หากคำขอไม่สำเร็จ จะแสดงข้อความข้อผิดพลาดที่เกิดขึ้น"
+        content6="ฟังก์ชันนี้เป็นส่วนหนึ่งของการจัดการข้อมูลแจ้งเตือนในแอปพลิเคชัน ทำให้ผู้ใช้สามารถดูและจัดการข้อความแจ้งเตือนได้อย่างมีประสิทธิภาพและสะดวกสบาย"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    Profile: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน Profile นี้มีหน้าที่ดึงข้อมูลโปรไฟล์ของผู้ใช้และแสดงข้อมูลนั้นในหน้าเว็บไซต์หรือแอปพลิเคชัน ดังนี้"
+        content1="1.ฟังก์ชันนี้จะเรียกข้อมูล token ที่ใช้สำหรับการตรวจสอบสิทธิ์การเข้าถึงของผู้ใช้จาก local storage และแปลงข้อมูล token นั้นให้อยู่ในรูปแบบของอ็อบเจ็กต์"
+        content2="2.หลังจากนั้นฟังก์ชันจะส่งคำขอ GET ไปยังเส้นทาง /v1/profile ของเซิร์ฟเวอร์ API โดยรวมข้อมูล token การตรวจสอบสิทธิ์ของผู้ใช้ไว้ในส่วนหัวของคำขอ"
+        content3="3.เมื่อข้อมูลโปรไฟล์ถูกดึงมาสำเร็จ"
+        content3p1="3.1.ฟังก์ชันจะอัพเดทองค์ประกอบ HTML ที่เกี่ยวข้องกับข้อมูลผู้ใช้ เช่น หมายเลขบัญชี ชื่อ ชื่อจริง รหัสประจำตัวประชาชน และหมายเลขโทรศัพท์"
+        content4="4.ในกรณีที่เกิดข้อผิดพลาดระหว่างการร้องขอ ฟังก์ชันนี้ไม่จัดการกับข้อผิดพลาดโดยชัดเจน ซึ่งอาจทำให้เกิดข้อผิดพลาดโดยไม่แสดงข้อความผิดพลาดให้กับผู้ใช้"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    Team: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน Team มีหน้าที่เรียกข้อมูลทีมของผู้ใช้ระดับที่ 1 แล้วนำข้อมูลนั้นไปใช้ในการแสดงผลบนหน้าเว็บไซต์หรือแอปพลิเคชัน ดังนี้"
+        content1="1.ฟังก์ชันนี้จะดึงข้อมูล token ที่ใช้สำหรับการตรวจสอบสิทธิ์การเข้าถึงของผู้ใช้จาก local storage แล้วแปลงข้อมูล token นั้นให้อยู่ในรูปแบบของอ็อบเจ็กต์"
+        content2="2.หลังจากนั้นฟังก์ชันจะส่งคำขอ GET ไปยังเส้นทาง /v1/inviteCode/myTeam/level1 บนเซิร์ฟเวอร์ API โดยรวมข้อมูล token การตรวจสอบสิทธิ์ของผู้ใช้ไว้ในส่วนหัวของคำขอ"
+        content3="3.เมื่อข้อมูลทีมระดับที่ 1 ถูกดึงมาสำเร็จแล้ว"
+        content3p1="3.1.ฟังก์ชันจะเรียกใช้ฟังก์ชัน Peer_group() ของ myteamObj เพื่อดึงข้อมูลทีมทั้งหมดของผู้ใช้ และทำการแสดงผลบนหน้าเว็บไซต์หรือแอปพลิเคชัน"
+        content4="4.ในกรณีที่เกิดข้อผิดพลาดระหว่างการร้องขอ ฟังก์ชันนี้ไม่จัดการกับข้อผิดพลาดโดยชัดเจน ซึ่งอาจทำให้เกิดข้อผิดพลาดโดยไม่แสดงข้อความผิดพลาดให้กับผู้ใช้"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    verified_name: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน verified_name ทำหน้าที่ตรวจสอบว่าผู้ใช้ได้ทำการอัปโหลดรูปภาพสำหรับการตรวจสอบชื่อจริงหรือไม่ โดยใช้ Promise เพื่อจัดการกับการร้องขอแบบไม่同步 ดังนี้"
+        content1="1.ฟังก์ชันนี้สร้างและส่งคืนอ็อบเจ็กต์ Promise โดยมีการรับพารามิเตอร์ resolve และ reject ซึ่งเป็นฟังก์ชันที่จะถูกเรียกเมื่อการทำงานสำเร็จหรือเกิดข้อผิดพลาดตามลำดับ"
+        content2="2.ในส่วนของการเริ่มต้นของ Promise ฟังก์ชันนี้จะดึงข้อมูล token จาก local storage แล้วแปลงข้อมูล token ให้อยู่ในรูปแบบของอ็อบเจ็กต์"
+        content3="3.จากนั้นฟังก์ชันจะส่งคำขอ GET ไปยังเส้นทาง /v1/identity/check-image บนเซิร์ฟเวอร์ API โดยรวมข้อมูล token การตรวจสอบสิทธิ์ของผู้ใช้ไว้ในส่วนหัวของคำขอ"
+        content4="4.เมื่อได้รับการตอบกลับจาก API ฟังก์ชันจะตรวจสอบข้อมูลที่ได้รับ และแสดงผลลัพธ์บนคอนโซลของเบราว์เซอร์ โดยมีเงื่อนไขดังนี้"
+        content4p1="4.1.หากข้อมูลผลลัพธ์เป็น true แสดงว่าผู้ใช้ได้ทำการอัปโหลดรูปภาพสำหรับการตรวจสอบชื่อจริงแล้ว ในกรณีนี้จะเรียกใช้ resolve(true) เพื่อส่งผลลัพธ์ไปยัง Promise"
+        content4p2="4.2.หากข้อมูลผลลัพธ์เป็น false แสดงว่าผู้ใช้ยังไม่ได้ทำการอัปโหลดรูปภาพสำหรับการตรวจสอบชื่อจริง ในกรณีนี้จะเรียกใช้ resolve(false) เพื่อส่งผลลัพธ์ไปยัง Promise"
+        content5="5.ในกรณีที่การร้องขอสำเร็จแต่มีข้อผิดพลาดเกิดขึ้น เช่น การสื่อสารกับเซิร์ฟเวอร์มีปัญหา ฟังก์ชันจะเรียกใช้ reject(error) เพื่อส่งข้อผิดพลาดไปยัง Promise"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getVoucherDaily: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getVoucherDaily() นี้มีวัตถุประสงค์เพื่อดึงข้อมูลบัตรกำนัลรายวันจากเซิร์ฟเวอร์โดยใช้ AJAX และแสดงผลลัพธ์ในหน้าเว็บไซต์ ต่อไปนี้คือการอธิบายโค้ดของฟังก์ชัน"
+        content1="1.การดึงข้อมูลบัตรกำนัล: ใช้ AJAX เพื่อส่งคำขอ GET ไปยังเซิร์ฟเวอร์ที่ URL /v1/profile/cycle-voucher?type=20 เพื่อขอข้อมูลบัตรกำนัลรายวัน โดยระบุประเภทของบัตรกำนัลเป็น 20 ในพารามิเตอร์ type=20 และใช้ Token ในการอนุญาตแบบ Bearer Token ในส่วนหัวข้อของคำขอ"
+        content2="2.การจัดการกับข้อมูลที่ได้รับ: ในส่วนของการสำเร็จของคำขอ AJAX (success) จะตรวจสอบรหัสสถานะของการตอบกลับ ถ้ารหัสสถานะเป็น 0 แสดงว่าการร้องขอประสบความสำเร็จและข้อมูลบัตรกำนัลถูกส่งกลับมา ในกรณีนี้ ฟังก์ชันจะสร้าง HTML สำหรับแสดงข้อมูลบัตรกำนัลแต่ละรายการและรายการบัตรกำนัลที่สามารถคลิกเพื่อรับ ที่นี่คือขั้นตอนที่ฟังก์ชันทำ"
+        content2p1="2.1.อัปเดตจำนวนบัตรกำนัลที่สามารถรับได้ปัจจุบันในแท็ก #voucher_receive"
+        content2p2="2.2.สร้าง HTML สำหรับแสดงรายการบัตรกำนัลแต่ละรายการ และการสถานะของบัตรกำนัล"
+        content2p3="2.3.เก็บข้อมูลของแต่ละรายการบัตรกำนัลในอาร์เรย์ collect_step"
+        content2p4="2.4.แสดงรายการบัตรกำนัลในตาราง HTML ที่มี id #loop_voucher_data_receive"
+        content2p5="2.5.สร้าง instance ของ IScroll เพื่อให้สามารถเลื่อนได้ในแท็กที่มี id #scroller_receive_daily"
+        content2p6="2.6.กำหนดการคลิกเพื่อรับบัตรกำนัลสำหรับแต่ละรายการ"
+        content3="3.การจัดการกับข้อผิดพลาด: ในกรณีที่รหัสสถานะไม่ใช่ 0 (เช่น 4089, 4090) ฟังก์ชันจะแสดงข้อความที่เกี่ยวข้องกับข้อผิดพลาดโดยใช้ msgPageObj.show() หรือหยุดการดำเนินการอื่นๆ ที่เกี่ยวข้อง ในกรณีที่เกิดข้อผิดพลาดระหว่างการสื่อสารกับเซิร์ฟเวอร์ ฟังก์ชันจะแสดงข้อความข้อผิดพลาดทั่วไป"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getKfLink: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getKfLink() นี้มีหน้าที่ดึงลิงก์การสนทนา (Customer Service Link) จากเซิร์ฟเวอร์โดยใช้ AJAX และเปิดลิงก์นั้นใน iframe บนหน้าเว็บไซต์ ต่อไปนี้คือการอธิบายโค้ดของฟังก์ชัน"
+        content1="1.การแสดง loader: เริ่มต้นโดยการแสดง loader ขณะที่กำลังดึงข้อมูล"
+        content2="2.การดึงลิงก์: ใช้ AJAX เพื่อส่งคำขอ GET ไปยังเซิร์ฟเวอร์ที่ URL /v1/config/customer-link เพื่อขอข้อมูลลิงก์การสนทนา โดยใช้ Token ในการอนุญาตแบบ Bearer Token ในส่วนหัวข้อของคำขอ"
+        content3="3.การประมวลผลข้อมูลที่ได้: ในส่วนของการสำเร็จของคำขอ AJAX (success) จะมีการเก็บลิงก์ที่ได้รับจากเซิร์ฟเวอร์ไว้ในตัวแปร KfLink และเปิดลิงก์นั้นใน iframe บนหน้าเว็บไซต์ และยกเลิกการแสดง loader หลังจากนั้น"
+        content4="4.การจัดการกับข้อผิดพลาด: ในกรณีที่เกิดข้อผิดพลาดระหว่างการส่งคำขอ (AJAX) ฟังก์ชันจะแสดงข้อความข้อผิดพลาดในคอนโซลล์"
+        content5="การใช้งานลิงก์ที่ได้รับมาเป็นไปตามที่ต้องการในแบบที่ไม่ต้องนำไปแสดงในหน้าเว็บไซต์แต่เปิดใน iframe ซึ่งอาจเป็นการเชื่อมต่อไปยังเว็บไซต์ภายนอกหรือแชทบอทของบริษัท โดยเฉพาะสำหรับการติดต่อกับลูกค้าในขณะที่พวกเขาอยู่ในเว็บไซต์ของคุณ"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    Enable2FA: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน Enable2FA() นี้ใช้สำหรับเปิดใช้งานการยืนยันตัวตนสองขั้นตอน (2FA) โดยการส่งข้อมูลการตั้งค่าจากฟอร์มไปยังเซิร์ฟเวอร์เพื่อให้ทำการตั้งค่า ต่อไปนี้คือการอธิบายโค้ดของฟังก์ชัน"
+        content1="1.ดึง Token: ดึง Token จาก Local Storage และแปลงเป็น Object โดยใช้ JSON.parse() เพื่อใช้ในการส่งคำขอไปยังเซิร์ฟเวอร์"
+        content2="2.เตรียมข้อมูล: สร้างอ็อบเจ็กต์ mData ซึ่งประกอบด้วยข้อมูลที่จำเป็นสำหรับการเปิดใช้งาน 2FA ซึ่งในกรณีนี้คือรหัสผ่านที่ผู้ใช้ป้อนในช่องข้อมูล Set2FA_Input"
+        content3="3.ส่งคำขอ: ส่งคำขอ POST ไปยังเซิร์ฟเวอร์ที่ URL /v1/twoFA โดยใช้ Token ในส่วนหัวของคำขอเพื่อให้เซิร์ฟเวอร์ตรวจสอบการตั้งค่า 2FA"
+        content4="4.การจัดการกับการสำเร็จและข้อผิดพลาด: ในกรณีที่การส่งคำขอสำเร็จ (success) แสดงข้อความผ่านทาง msgObj แจ้งให้ผู้ใช้ทราบว่าการตั้งค่าสำเร็จแล้ว และปรับปรุงสถานะการเปิดใช้งาน 2FA บนหน้าเว็บไซต์ ในกรณีที่เกิดข้อผิดพลาด ฟังก์ชันจะไม่มีการจัดการกับข้อผิดพลาดใด ๆ ที่เกิดขึ้น"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    get2FA: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน get2FA() นี้ใช้สำหรับการดึงข้อมูลการตั้งค่าการยืนยันตัวตนสองขั้นตอน (2FA) จากเซิร์ฟเวอร์ ต่อไปนี้คือการอธิบายโค้ดของฟังก์ชัน"
+        content1="1.ดึง Token: ดึง Token จาก Local Storage และแปลงเป็น Object โดยใช้ JSON.parse() เพื่อใช้ในการส่งคำขอไปยังเซิร์ฟเวอร์"
+        content2="2.ส่งคำขอ: ส่งคำขอ GET ไปยังเซิร์ฟเวอร์ที่ URL /v1/twoFA โดยใช้ Token ในส่วนหัวของคำขอ"
+        content3={`3.การจัดการกับข้อมูลที่ได้รับ: ในกรณีที่คำขอสำเร็จ (success) ฟังก์ชันจะตรวจสอบสถานะของการเปิดใช้งาน 2FA ที่ได้รับจากเซิร์ฟเวอร์ ถ้าสถานะเป็นเท็จ (false) จะแสดงข้อความ "未设置" และเปลี่ยนสีของข้อความเป็นสีเทา ในกรณีที่สถานะเป็นจริง (true) จะแสดงข้อความ "已启用" และเปลี่ยนสีของข้อความเป็นสีเขียว`}
+        content4={`4.การจัดการกับข้อผิดพลาด: ในกรณีที่เกิดข้อผิดพลาดในการส่งคำขอ (error) ฟังก์ชันจะแสดงข้อผิดพลาดในคอนโซลล็อกของเบราว์เซอร์`}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    BuyProduct: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน BuyProduct(id) ใช้สำหรับการซื้อสินค้าโดยทำการส่งข้อมูลผ่าน AJAX ไปยังเซิร์ฟเวอร์ของคุณ เมื่อเรียกใช้งานฟังก์ชันนี้ โค้ดจะทำงานดังนี้"
+        content1="1.ตรวจสอบเงื่อนไขว่า allowRepeated เป็น true หรือไม่"
+        content1p1={`1.1.ากเป็น true จะดึงค่าจำนวนสำหรับการซื้อสินค้าจาก element ที่มี ID เป็น "buy_copies2" และเก็บไว้ในตัวแปร number2`}
+        content1p2={`1.2.หากไม่เป็น true จะกำหนดค่า number2 เป็น "1"`}
+        content2={`2.ตรวจสอบเงื่อนไขว่า numberSelet เท่ากับ 1 หรือไม่`}
+        content2p1={`2.1.หากเท่ากับ 1 จะกำหนดค่า number2 เป็น "1"`}
+        content3="3.แสดง loaderObj เพื่อแสดงว่ากำลังโหลด"
+        content4="4.ดึง Token จาก localStorage และแปลงเป็น JSON object"
+        content5="5.กำหนดข้อมูลที่จะส่งไปยังเซิร์ฟเวอร์ด้วย productId และ count (จำนวนสินค้า)"
+        content6="6.ส่ง AJAX request ไปยังเซิร์ฟเวอร์"
+        content7={`7.ในการ response จากเซิร์ฟเวอร์ ถ้ารหัสของข้อมูลเป็น 0 แสดงว่าการซื้อสินค้าสำเร็จ และแสดงข้อความ "恭喜您！产品购买成功！" ที่เรียกใช้งาน msgPageObj.show()`}
+        content8={`8.ถ้ารหัสไม่ใช่ 0 แสดงว่ามีข้อผิดพลาด จึงแสดงข้อความแสดงสถานะที่เกี่ยวข้องด้วย getStatusCode(data.code)`}
+        content9={`ทั้งนี้หลังจากที่ดำเนินการเสร็จสิ้นแล้ว ฟังก์ชันจะทำการเรียกใช้ฟังก์ชันอื่น เช่น walletObj.getWallet(), mainObj.menutrade(), และ summarize_productObj.call() เพื่อทำการอัปเดตข้อมูลหรือเมนูที่เกี่ยวข้องในแอปพลิเคชันของคุณให้เป็นไปตามสถานะที่เปลี่ยนแปลง โดยปกติแล้วฟังก์ชันเหล่านี้จะทำการอัปเดตข้อมูลการทำธุรกรรมหรือรายการสินค้าที่ใช้งานในแอปพลิเคชันของคุณ`}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getVoucherTeam: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getVoucherTeam() ใช้ในการดึงข้อมูลทีมจากเซิร์ฟเวอร์ โดยเรียกข้อมูลผ่าน AJAX และแสดงผลข้อมูลบนหน้าเว็บ โดยมีรายละเอียดการทำงานดังนี้"
+        content1="1.กำหนดตัวแปร str เป็นสตริงว่างและ collect_step เป็นอาเรย์ว่าง"
+        content2="2.ดึง Token จาก localStorage และแปลงเป็น JSON object"
+        content3="3.ส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์เพื่อดึงข้อมูลทีม โดยมีเงื่อนไขการเรียกแบบ GET"
+        content4="4.เมื่อเซิร์ฟเวอร์ตอบกลับสำเร็จ (status code 200) จะตรวจสอบโค้ดในข้อมูลที่ตอบกลับ"
+        content4p1={`4.1.หาก data.code == 0 อัปเดตข้อมูลใน element ที่มี ID เป็น "voucher_team" ด้วยค่าจำนวนปัจจุบัน (data.result.now),ใช้ $.each() เพื่อวนลูปผ่านรายการ data.result.items แต่ละรายการจะสร้าง HTML และเพิ่มเข้าไปในตัวแปร str และเก็บข้อมูลใน collect_step,อัปเดตเนื้อหาใน element ที่มี ID เป็น "loop_voucher_data" ด้วยค่าของตัวแปร str,ใช้ IScroll เพื่อทำให้เนื้อหาที่เลื่อนบน element ที่มี ID เป็น "scroller_team_salary" มีการเลื่อนแบบ smooth,วนลูปผ่าน collect_step เพื่อผูก event click กับปุ่มที่สร้างในลูป HTML`}
+        content4p2="4.2.หาก data.code == 4089 แสดงข้อความ '已领取'"
+        content4p3="4.3.หาก data.code == 4090 แสดงข้อความ '未满足条件'"
+        content4p4="4.4.หากเป็นโค้ดอื่น ๆ เรียกใช้ loaderObj.unShow() และแสดงสถานะข้อผิดพลาด"
+        content5="5.หากคำขอ AJAX มีข้อผิดพลาด จะแสดงข้อความข้อผิดพลาด"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getChannels: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getChannels() ถูกใช้เพื่อดึงข้อมูลช่องทางการชำระเงินจากเซิร์ฟเวอร์และแสดงผลบนหน้าเว็บ รวมถึงการจัดการการเลือกช่องทางและการตรวจสอบจำนวนเงินที่ผู้ใช้ต้องการชำระ โดยรายละเอียดของฟังก์ชันมีดังนี้"
+        content1="1.ดึง Token จาก localStorage และแปลงเป็น JSON object"
+        content2="2.ส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์เพื่อดึงข้อมูลช่องทางการชำระเงิน โดยใช้ method GET"
+        content3="3.เมื่อเซิร์ฟเวอร์ตอบกลับสำเร็จ (status code 200) จะตรวจสอบโค้ดในข้อมูลที่ตอบกลับ"
+        content4="4.หาก data.code == 0"
+        content4p1="4.1.กำหนดตัวแปร channelStr และ str เป็นสตริงว่าง และ pic เป็นอาเรย์ว่าง"
+        content4p2="4.2.นลูปผ่านข้อมูลใน data.result เพื่อสร้าง HTML สำหรับแต่ละช่องทางการชำระเงิน และเพิ่มเข้าไปในตัวแปร str"
+        content4p3="4.3.จัดรูปแบบ HTML ของช่องทางการชำระเงินตามประเภท (เช่น WeChat, UnionPay, Alipay)"
+        content4p4="4.4.เพิ่มข้อมูลใน pic เพื่อเก็บ ID ของช่องทางการชำระเงิน"
+        content5="5.ตั้งเวลา (setTimeout) เพื่ออัปเดตเนื้อหาใน element ที่มี ID เป็น online_deposit_show ด้วยค่าของตัวแปร str และปรับแต่งการแสดงผลของประเภทช่องทางการชำระเงิน"
+        content6="6.ผูก event click กับ checkbox ของแต่ละช่องทางการชำระเงิน เพื่อให้เลือกได้เพียงช่องทางเดียว"
+        content7="7.ผูก event click กับปุ่มที่มี ID เป็น sure_to_comfirm_topUp เพื่อทำการยืนยันการชำระเงิน"
+        content7p1="7.1.ตรวจสอบว่ามีการเลือกช่องทางการชำระเงินหรือไม่"
+        content7p2="7.2.ตรวจสอบจำนวนเงินที่กรอกตรงตามเงื่อนไขหรือไม่"
+        content7p3="7.3.ถ้าเป็น iOS ให้เปลี่ยนหน้าโดยใช้ window.location.href หากไม่ใช่ให้เปิดหน้าต่างใหม่โดยใช้ window.open"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    postTopUp: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน postTopUp(id, name, cardName, cardNum) ใช้เพื่อส่งคำขอเติมเงินโดยการโพสต์ข้อมูลการเติมเงินไปยังเซิร์ฟเวอร์ โดยใช้ข้อมูลที่ผู้ใช้ป้อนและข้อมูลที่ได้รับการตรวจสอบก่อนหน้า ฟังก์ชันนี้ยังแสดงการแจ้งเตือนผลลัพธ์การทำรายการและอัปเดตกระเป๋าเงินหากทำรายการสำเร็จ รายละเอียดของฟังก์ชันมีดังนี้"
+        content1="1.แสดงตัวโหลด (loaderObj.show())"
+        content2="2.ดึง token จาก localStorage และแปลงเป็น JSON object"
+        content3="3.ดึงจำนวนเงินที่ต้องการเติมจากอินพุตที่มี ID เป็น input_money_topup และแปลงเป็น float"
+        content4="4.สร้าง object mData ที่มีข้อมูลสำหรับการเติมเงิน"
+        content4p1="4.1.type: ประเภทของการทำธุรกรรม (เช่น 10)"
+        content4p2="4.2.bankName: ชื่อธนาคาร"
+        content4p3="4.3.cardNumber: หมายเลขบัตร"
+        content4p4="4.4.cardName: ชื่อบัตร"
+        content4p5="4.5.amount: จำนวนเงิน"
+        content4p6="4.6.remark: หมายเหตุ (ว่างเปล่าในตัวอย่างนี้)"
+        content5="5.ส่งคำขอ AJAX ด้วย method POST ไปยัง URL /v1/bankInfo/apply/deposit"
+        content5p1="5.1.ตั้งค่าหัว Authorization เป็น Bearer token"
+        content5p2="5.2.ส่งข้อมูล mData ในรูปแบบ JSON"
+        content5p3="5.3.ตั้งค่า contentType และ dataType เป็น application/json"
+        content6="6.หากคำขอสำเร็จ"
+        content6p1="6.1.ซ่อนตัวโหลด (loaderObj.unShow())"
+        content6p2="6.2.แสดงข้อความสถานะ (msgPageObj.show(getStatusCode(data.code), ...)) และถ้ารหัสสถานะ (data.code) เป็น 0 ให้เรียกใช้ฟังก์ชัน walletObj.getWallet() เพื่ออัปเดตข้อมูลกระเป๋าเงิน"
+        content7="7.หากเกิดข้อผิดพลาด"
+        content7p1="7.1.ซ่อนตัวโหลด (loaderObj.unShow())"
+        content7p2="7.2.เรียกใช้ฟังก์ชัน cleanInput() เพื่อทำความสะอาดข้อมูลในอินพุต"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getBankAll: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getBankAll นี้มีการดึงข้อมูลของธนาคารทั้งหมดที่เกี่ยวข้องกับบัญชีผู้ใช้ เพื่อให้ผู้ใช้สามารถเลือกธนาคารที่ต้องการใช้ในการเติมเงินได้ ด้านล่างเป็นอธิบายขั้นตอนต่าง ๆ ในฟังก์ชัน"
+        content1="1.กำหนดตัวแปร str เพื่อเก็บ HTML ที่จะใช้แสดงข้อมูลธนาคาร"
+        content2="2.กำหนดตัวแปร data_id เพื่อเก็บรายการ ID ของข้อมูลธนาคาร"
+        content3="3.กำหนดตัวแปร collect_Bank เพื่อเก็บข้อมูลธนาคารทั้งหมดที่ได้รับ"
+        content4="4.ดึง token จาก localStorage และแปลงเป็น JSON object"
+        content5="5.ส่งคำขอ AJAX เพื่อดึงข้อมูลธนาคารโดยใช้ URL /v1/financialOrganization"
+        content6="6.เมื่อคำขอสำเร็จ จะกรองข้อมูลธนาคารที่มีประเภทเป็น 10 (ธนาคารที่เกี่ยวข้องกับการเติมเงิน) และเก็บไว้ใน collect_Bank"
+        content7="7.ตรวจสอบว่ามีข้อมูลธนาคารหรือไม่ หากไม่มีจะแสดงข้อความ 'ไม่มีข้อมูล' ใน HTML"
+        content8="8.หากมีข้อมูลธนาคาร"
+        content8p1="8.1.วนลูปผ่านข้อมูลธนาคารที่ได้รับเพื่อสร้าง HTML สำหรับแสดงข้อมูลธนาคารแต่ละรายการ"
+        content8p2="8.2.สร้าง HTML สำหรับแสดงชื่อธนาคารและหมายเลขบัตร โดยซ่อนหมายเลขบัตรบางส่วน เพื่อความปลอดภัย"
+        content8p3="8.3.แนบ input radio เพื่อให้ผู้ใช้เลือกธนาคาร"
+        content8p4="8.4.แสดงปุ่มยืนยันการเติมเงินและทำการโพสต์ข้อมูลการเติมเงินโดยใช้ฟังก์ชัน postTopUp"
+        content9="9.ถ้ามีข้อผิดพลาดในการร้องขอ แสดงข้อความข้อผิดพลาด"
+        content10="10.นอกจากนี้ ฟังก์ชันยังมีการใช้ฟังก์ชัน cleanInput() เมื่อเกิดข้อผิดพลาดในการร้องขอ AJAX ซึ่งเป็นการล้างข้อมูลที่ป้อนในอินพุตเพื่อให้ผู้ใช้สามารถลองกรอกข้อมูลใหม่ได้ และมีการใช้ loaderObj ในการแสดงตัวโหลดขณะที่รอการโหลดข้อมูล"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getProduct: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getProduct นี้มีหน้าที่ดึงข้อมูลผลิตภัณฑ์ต่าง ๆ ของแอปพลิเคชัน โดยขึ้นอยู่กับประเภทของผลิตภัณฑ์และข้อมูลการซื้อขาย ฟังก์ชันจะสร้าง HTML เพื่อแสดงข้อมูลผลิตภัณฑ์ที่ได้รับมา เช่น รูปภาพผลิตภัณฑ์ ชื่อผลิตภัณฑ์ ข้อมูลเกี่ยวกับการรับส่วนลด รายได้ การคิดเงินเบี้ย ฯลฯ
+        นี่คือขั้นตอนหลักในฟังก์ชัน"
+        content1="1.กำหนดตัวแปร str เพื่อเก็บ HTML ที่จะใช้แสดงข้อมูลผลิตภัณฑ์"
+        content2="2.ดึง Token จาก localStorage และแปลงเป็น JSON object"
+        content3="3.ส่งคำขอ AJAX เพื่อดึงข้อมูลผลิตภัณฑ์โดยใช้ URL /v1/products?type=${type}"
+        content4="4.เมื่อคำขอสำเร็จ คัดกรองข้อมูลผลิตภัณฑ์ที่ตรงกับเงื่อนไข และจัดเก็บไว้ใน productData"
+        content5="5.ตรวจสอบว่ามีข้อมูลผลิตภัณฑ์หรือไม่ หากไม่มีจะแสดงข้อความ 'ไม่มีข้อมูล' ใน HTML"
+        content6="6.หากมีข้อมูลผลิตภัณฑ์"
+        content6p1="6.1.วนลูปผ่านข้อมูลผลิตภัณฑ์ที่ได้รับ เพื่อสร้าง HTML สำหรับแสดงข้อมูลผลิตภัณฑ์แต่ละรายการ"
+        content6p2="6.2.สร้าง input radio เพื่อให้ผู้ใช้เลือกซื้อผลิตภัณฑ์"
+        content6p3={`6.3.กำหนดการทำงานเมื่อผู้ใช้คลิกที่ปุ่ม "ซื้อทันที" โดยเรียกใช้ summarize_productObj.getDataBuy หรือ summarize_product2Obj.getDataBuy ขึ้นอยู่กับประเภทของผลิตภัณฑ์`}
+        content7="7.ตรวจสอบประเภทของผลิตภัณฑ์เพื่อแสดงหรือซ่อนข้อมูลเพิ่มเติมตามเงื่อนไขที่กำหนด"
+        content8="8.ดำเนินการโหลดแถบความคืบหน้าของผลิตภัณฑ์ และเรียกใช้ฟังก์ชัน fetchAppCustomData เพื่อดึงข้อมูลที่กำหนดเองของแอปพลิเคชัน"
+        content9="9.ตั้งค่าการนับถอยหลังเพื่อแสดงเวลาที่เหลือในการซื้อของผลิตภัณฑ์"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getHistoryTransaction: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="ฟังก์ชัน getHistoryTransaction นี้มีหน้าที่ดึงข้อมูลประวัติการทำธุรกรรมของกระเป๋าเงินจากเซิร์ฟเวอร์ API และแสดงผลในหน้าเว็บ นี่คือขั้นตอนหลักในฟังก์ชัน"
+        content1="1.แสดง loader เพื่อแสดงว่าระบบกำลังดำเนินการดึงข้อมูล"
+        content2="2.กำหนดตัวแปร str เพื่อเก็บ HTML ที่จะใช้แสดงข้อมูลการทำธุรกรรม"
+        content3="3.กำหนดตัวแปร Alltype เพื่อกำหนดประเภทของการทำธุรกรรมที่ต้องการดึง"
+        content4={`4.ส่งคำขอ AJAX เพื่อดึงข้อมูลประวัติการทำธุรกรรมโดยใช้ URL /v1/wallet/history?page={page}&limit={limit}{Alltype}`}
+        content5={`5.เมื่อคำขอสำเร็จ ตรวจสอบสถานะของข้อมูลที่ส่งกลับ หากสำเร็จแสดงข้อมูลประวัติการทำธุรกรรม หากไม่มีข้อมูลแสดงภาพ "ไม่มีข้อมูล"`}
+        content6="6.วนลูปผ่านข้อมูลที่ได้รับเพื่อสร้าง HTML สำหรับแสดงข้อมูลการทำธุรกรรมแต่ละรายการ"
+        content7="7.กำหนดการทำงานเมื่อผู้ใช้คลิกที่แต่ละรายการของประวัติการทำธุรกรรม เพื่อแสดงรายละเอียดเพิ่มเติมของการทำธุรกรรมนั้น"
+        content8="8.ตั้งค่าการควบคุมการเลื่อนหน้าและการคำนวณหน้าใหม่"
+        content9="9.ตรวจสอบข้อมูลที่ผู้ใช้ป้อนในช่อง input เพื่อความถูกต้อง"
+        content10="10.ตรวจสอบและจัดการกับการคลิกปุ่มเพื่อเปลี่ยนหน้า"
+        content11="ฟังก์ชันนี้ยังมีการใช้งานคำสั่ง console.log เพื่อแสดงข้อมูลและข้อผิดพลาดต่าง ๆ ในกระบวนการดึงข้อมูล และใช้งานฟังก์ชัน loaderObj.show() และ loaderObj.unShow() เพื่อแสดงและซ่อน loader ตามลำดับในกระบวนการดำเนินการ"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    GetTransferHistory: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="ฟังก์ชัน GetTransferHistory นี้ใช้สำหรับดึงข้อมูลประวัติการโอนเงินของกระเป๋าเงินจากเซิร์ฟเวอร์ API และแสดงผลในหน้าเว็บ นี่คือสิ่งที่ฟังก์ชันนี้ทำ"
+        content1="1.ดึง token จาก local storage เพื่อใช้ในการทำคำขอ API"
+        content2="2.กำหนดค่าตัวแปร limit และ loadData เพื่อใช้ในการกำหนดจำนวนข้อมูลที่จะดึงและหน้าที่ต้องการดึง"
+        content3="3.กำหนดค่าตัวแปร pageCount และตั้งค่า input ที่ใช้ในการกรอกหน้าของประวัติการโอนเงิน"
+        content4="4.เรียกใช้ฟังก์ชัน GetTransfer_History เพื่อดึงข้อมูลประวัติการโอนเงิน"
+        content5={`5.ใน GetTransfer_History, ส่งคำขอ AJAX เพื่อดึงข้อมูลประวัติการโอนเงินโดยใช้ URL /v1/wallet/transfer?page={loadData}&limit={limit}`}
+        content6="6.ในส่วน success ของคำขอ AJAX, ตรวจสอบสถานะของข้อมูลที่ส่งกลับ และแสดงข้อมูลประวัติการโอนเงินหากสำเร็จ"
+        content7="7.ตั้งค่าการทำงานเมื่อผู้ใช้คลิกที่ปุ่มเพื่อเปลี่ยนหน้าหรือปุ่มไปยังหน้าที่กำหนด"
+        content8="8.ตรวจสอบและจัดการกับการป้อนข้อมูลที่ผู้ใช้ป้อนใน input เพื่อความถูกต้อง"
+        content9="9.แสดง loader เพื่อแสดงว่าระบบกำลังดำเนินการดึงข้อมูล และซ่อน loader เมื่อดึงข้อมูลสำเร็จหรือเกิดข้อผิดพลาด"
+        content10="10.สร้าง HTML เพื่อแสดงข้อมูลประวัติการโอนเงินและแสดงผลลัพธ์ในหน้าเว็บ"
+        content11="ฟังก์ชันนี้ใช้งาน jQuery AJAX เพื่อส่งคำขอไปยังเซิร์ฟเวอร์ API และดึงข้อมูลประวัติการโอนเงินโดยใช้ URL ที่ระบุ และจัดการกับข้อมูลที่ส่งกลับเพื่อแสดงผลในหน้าเว็บ"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    postTransder: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="ฟังก์ชัน postTransder นี้ใช้สำหรับทำการโพสต์ (POST) ข้อมูลการโอนเงินไปยังเซิร์ฟเวอร์ API นี่คือสิ่งที่ฟังก์ชันนี้ทำ"
+        content1="1.ดึงค่า mobile และ amount จาก input fields ใน HTML"
+        content2="2.ดึง token จาก localStorage เพื่อใช้ในการส่งคำขอ API"
+        content3={`3.สร้าง JSON object mData ที่มี property "mobile" และ "amount" ด้วยค่าที่ดึงมาจาก input fields`}
+        content4="4.ส่งคำขอ AJAX โดยใช้เมธอด POST ไปยัง URL /v1/wallet/transfer บนเซิร์ฟเวอร์ API"
+        content5="5.ส่ง token ใน header เพื่อยืนยันตัวตนของผู้ใช้"
+        content6={`6.ส่งข้อมูล JSON object ผ่าน request body และตั้งค่า content type เป็น "application/json"`}
+        content7="7.รอการตอบกลับจากเซิร์ฟเวอร์ API โดยใช้ AJAX ที่เป็น asynchronous"
+        content8={`8.ในส่วน success ของคำขอ AJAX, ตรวจสอบสถานะของการโอนเงิน และแสดงข้อความ "转账成功" หากสำเร็จ`}
+        content9={`9.หากไม่สำเร็จ, ตรวจสอบรหัสข้อผิดพลาดและแสดงข้อความผิดพลาดที่เกี่ยวข้อง`}
+        content10={`10.ในกรณีของข้อผิดพลาดเซิร์ฟเวอร์หรือการส่งคำขอ, แสดงข้อความ "sys.serverError"`}
+        content11={`11.สร้าง loader เพื่อแสดงว่าระบบกำลังดำเนินการโพสต์ข้อมูลและซ่อน loader เมื่อโพสต์ข้อมูลสำเร็จหรือเกิดข้อผิดพลาด`}
+        content12={`12.ในท้ายที่สุดของฟังก์ชัน, เรียกใช้ฟังก์ชัน cleanInput เพื่อล้างข้อมูลใน input fields หลังจากการโอนเงินสำเร็จหรือไม่สำเร็จ`}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    AddFilesFunc: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="ฟังก์ชัน AddFilesFunc ใช้สำหรับอัปโหลดไฟล์ไปยังเซิร์ฟเวอร์"
+        content1="1.ดึง token จาก localStorage และแปลงเป็น JSON"
+        content2="2.สร้าง FormData และเพิ่มไฟล์ที่ต้องการอัปโหลด"
+        content3="3.แสดงตัวโหลด (loading spinner)"
+        content4="4.ใช้ $.ajax เพื่อส่งคำขอ PUT ไปยังเซิร์ฟเวอร์พร้อม token"
+        content5="5.ถ้าอัปโหลดสำเร็จ ให้ซ่อนตัวโหลดและบันทึก URL ของรูปภาพตามที่กำหนด"
+        content6="6.ถ้าไม่สำเร็จ หรือเกิดข้อผิดพลาด ให้ซ่อนตัวโหลดและแสดงข้อความ error"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    VerifiedImgAcc: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน VerifiedImgAcc ใช้ในการส่งภาพที่อัปโหลดไปยืนยันบัญชี"
+        content1="1.สร้างอาร์เรย์ mData ที่มีรูปภาพ Image1, Image2, Image3"
+        content2="2.แสดงตัวโหลด (loading spinner)"
+        content3="3.ใช้ $.ajax ส่งคำขอ POST ไปยังเซิร์ฟเวอร์ที่ /v1/identity/image พร้อม token ใน header"
+        content4="4.ถ้าสำเร็จ ให้ซ่อนตัวโหลดและแสดงหน้าต่อไป reset_password_donePage"
+        content5="5.ถ้าไม่สำเร็จ หรือเกิดข้อผิดพลาด ให้ซ่อนตัวโหลดและแสดงข้อความ error"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    Verified_info: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน Verified_info ใช้ในการดึงข้อมูลการยืนยันตัวตน"
+        content1="1.ดึง token จาก localStorage และแปลงเป็น JSON"
+        content2="2.ใช้ $.ajax ส่งคำขอ GET ไปยังเซิร์ฟเวอร์ที่ /v1/identity พร้อม token ใน header"
+        content3="3.ถ้าสำเร็จ ให้แสดงชื่อและรหัสพาสปอร์ตใน HTML ที่มี ID #name_verified และ #number_verified"
+        content4="4.ถ้าเกิดข้อผิดพลาด ให้แสดงข้อความ error"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getHistoryWithdraw: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getHistoryWithdrawByDate ใช้ในการดึงประวัติการถอนเงินตามวันที่"
+        content1="1.เริ่มต้นด้วยการเรียกใช้ฟังก์ชัน trigger บน element #w_his_purchase เพื่อเรียกดูประวัติการซื้อของ"
+        content2="2.ลบ HTML ภายใน element #w_his_purchase_loop"
+        content3="3.กำหนดค่าตัวแปร loadData เป็น 1 และ pageCount เป็น 1 และ limit เป็น 1000"
+        content4="4.แสดงตัวโหลด (loading spinner)"
+        content5="5.สร้างตัวแปรอาร์เรย์ str, collect_data, collect_data2, collect_data3 และดึง token จาก localStorage"
+        content6="6.เรียกใช้ฟังก์ชัน getHistoryWithdraw เพื่อดึงข้อมูลประวัติการถอน"
+        content7="7.ในฟังก์ชัน getHistoryWithdraw"
+        content7p1="7.1.ทำการส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์เพื่อขอข้อมูลประวัติการถอนโดยระบุ limit และ walletType"
+        content7p2="7.2.เมื่อรับข้อมูลสำเร็จ จัดเก็บข้อมูลลงในตัวแปร collect_data และทำการวนลูปเพื่อจัดรูปแบบวันที่"
+        content7p3="7.3.กรองข้อมูลตามวันที่ที่ระบุและเก็บลงใน collect_data2"
+        content7p4="7.4.กำหนดการแสดงผลหน้าเพจ และการตรวจสอบหน้าก่อนหน้าและหน้าถัดไป"
+        content7p5="7.5.สร้าง HTML สำหรับแสดงผลข้อมูล"
+        content7p6="7.6.สร้างเหตุการณ์คลิกบนแต่ละรายการข้อมูลเพื่อแสดงรายละเอียด"
+        content7p7={`7.7.หากไม่มีข้อมูลแสดงภาพ "No Data"`}
+        content7p8={`7.8.แสดงข้อความ error หากการร้องขอไม่สำเร็จ`}
+        content8="8.ปิดคอมเมนต์ออกจากการกำหนดเหตุการณ์คลิกบน element #goHistoryPage, #nextHistorywallet, และ #prevHistorywallet ที่ยังไม่ถูกใช้งาน"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    Recieve_DSFCIPS: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน Recieve_DSFCIPS มีหน้าที่ในการรับคืนคะแนน DSF CIPS ที่ค้างอยู่"
+        content1="1.ดึง token จาก localStorage และแปลงเป็น JSON"
+        content2="2.ส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์ที่ /v1/profile/points เพื่อขอข้อมูลจำนวนคะแนน DSF CIPS ที่ค้างอยู่"
+        content3="3.เมื่อรับข้อมูลสำเร็จ กำหนดค่า amountDSF เป็นจำนวนคะแนน DSF CIPS ที่ค้างอยู่"
+        content4="4.ถ้าจำนวนคะแนน DSF CIPS มากกว่าหรือเท่ากับ 0"
+        content4p1="4.1.แสดงข้อความยืนยันการรับคืนคะแนน"
+        content4p2="4.2.เมื่อผู้ใช้กดยืนยัน แสดงตัวโหลดและส่งคำขอ POST ไปยังเซิร์ฟเวอร์ที่ /v1/debtSettlementFund/apply เพื่อรับคืนคะแนน DSF CIPS"
+        content4p3={`4.3.เมื่อรับคืนสำเร็จ แสดงข้อความ "รับคืนสำเร็จ" และโหลดข้อมูลคะแนน DSF CIPS ใหม่`}
+        content4p4="4.4.หากมีข้อผิดพลาดในการรับคืน แสดงข้อความ error"
+        content5="5.ถ้าจำนวนคะแนน DSF CIPS น้อยกว่า 0 ไม่ต้องดำเนินการใด ๆ ต่อไป"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getWallet: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getWallet ใช้ในการดึงข้อมูลกระเป๋าเงินของผู้ใช้"
+        content1="1.ดึง token จาก localStorage และแปลงเป็น JSON"
+        content2="2.ส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์ที่ /v1/wallet เพื่อขอข้อมูลกระเป๋าเงิน"
+        content3="3.เมื่อรับข้อมูลสำเร็จ กำหนดค่าให้กับ element ต่าง ๆ ตามประเภทของกระเป๋าเงิน"
+        content4="4.คำนวณยอดรวมของเงินทั้งหมดในกระเป๋า"
+        content5="5.แสดงข้อมูลยอดรวมเงินในกระเป๋าและยอดรวมรายได้ทั้งหมด"
+        content6="6.ปรับแต่งข้อความและเนื้อหาขึ้นอยู่กับประเภทของกระเป๋าเงิน"
+        content7="7.แสดงข้อมูลยอดเงินในกระเป๋าเงินที่ต้องการโดยระบุ type"
+        content8="8.แสดงข้อความ error หากการร้องขอไม่สำเร็จ"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getAllPoints: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน getAllPoints ใช้ในการดึงข้อมูลคะแนนทั้งหมดของผู้ใช้"
+        content1="1.ดึง token จาก localStorage และแปลงเป็น JSON"
+        content2="2.ส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์ที่ /v1/profile/points เพื่อขอข้อมูลคะแนนทั้งหมด"
+        content3="3.เมื่อรับข้อมูลสำเร็จ ตรวจสอบว่ามีการส่งค่า code กลับมาหรือไม่"
+        content4="4.หากมี code เป็น 0"
+        content4p1="4.1.กำหนดค่าของ activity_points เป็นค่าคะแนนจาก data.result.activity"
+        content4p2="4.2.กำหนดค่า amountDSF เป็นค่าคะแนนหนี้"
+        content4p3="4.3.แสดงค่า amountDSF ใน element ที่มี id เป็น w_show_balance2"
+        content4p4="4.4.ทำการคำนวณและแสดงความคืบหน้าด้วยฟังก์ชัน loadingBar"
+        content4p5="4.5.หากไม่เป็น 0 แสดงข้อความ error"
+        content5="5.แสดงข้อความ error หากการร้องขอไม่สำเร็จ"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    verified_wallet: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-ฟังก์ชัน verified_wallet สร้างและคืนค่า Promise เพื่อดำเนินการเช็คการอัปโหลดภาพตรวจสอบสำหรับการยืนยันตัวตน"
+        content1="1.ดึง token จาก localStorage และแปลงเป็น JSON"
+        content2="2.ส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์ที่ /v1/identity/check-image เพื่อเช็คการอัปโหลดภาพตรวจสอบ"
+        content3="3.เมื่อรับข้อมูลสำเร็จ ตรวจสอบค่า result จากข้อมูลที่ได้รับ"
+        content4="4.ถ้า result เป็น true"
+        content4p1="4.1.แสดงข้อความว่า 'อัปโหลดแล้ว'"
+        content4p2="4.2.ส่งค่า true ผ่าน resolve ไปยัง Promise นั้น"
+        content5="5.ถ้าไม่ใช่ true"
+        content5p1="5.1.แสดงข้อความว่า 'ยังไม่ได้อัปโหลด'"
+        content5p2="5.2.ส่งค่า false ผ่าน resolve ไปยัง Promise นั้น"
+        content6="6.หากเกิดข้อผิดพลาดในการส่งคำขอ AJAX จะแสดงข้อความข้อผิดพลาดและส่งค่า error ผ่าน reject ไปยัง Promise นั้น"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    getLimitWithdraw: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-getLimitWithdraw เป็นฟังก์ชันที่ใช้เรียกข้อมูลค่า limit สำหรับการถอนเงิน"
+        content1="1.ดึง token จาก localStorage และแปลงเป็น JSON"
+        content2="2.ส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์ที่ /v1/config/trans-limit เพื่อขอข้อมูลค่า limit"
+        content3="3.เมื่อรับข้อมูลสำเร็จ ตรวจสอบค่า code จากข้อมูลที่ได้รับ"
+        content4="4.ถ้า code เป็น 0"
+        content4p1="4.1.แยกข้อมูล limit ออกเป็นอาร์เรย์ limitData"
+        content4p2="4.2.เรียกใช้เมทอด getLimitInput ของ earnObj และส่ง limitData เข้าไป"
+        content4p3="4.3.เรียกใช้เมทอด setLimitInput ของ transferObj และส่ง limitData เข้าไป"
+        content5="5.ถ้าไม่ใช่ 0"
+        content5p1="5.1.ซ่อน loader"
+        content5p2="5.2.แสดงข้อความข้อผิดพลาดที่ได้รับจากฟังก์ชัน getStatusCode"
+        content6="6.หากเกิดข้อผิดพลาดในการส่งคำขอ AJAX จะซ่อน loader และแสดงข้อความข้อผิดพลาดที่ได้รับจาก NSLang('sys.serverError')"
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckScript={true}
+      />
+    ),
+
+    loopWithdraw: () => (
+      <ModelContent
+        headers="Slip Function"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        content="-loopWithdraw ฟังก์ชันนี้มีวัตถุประสงค์เพื่อดึงประวัติการถอนเงินและแสดงผลในรูปแบบของลูป"
+        content1="1.เตรียมตัวแปร str เพื่อเก็บ HTML ที่จะแสดงผลในหน้าเว็บ"
+        content2="2.สร้างอาร์เรย์ collect_walletType เพื่อเก็บรายละเอียดของประวัติการถอนเงินตามประเภทที่ระบุ"
+        content3="3.ดึง token จาก localStorage และแปลงเป็น JSON"
+        content4="4.ส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์ที่ /v1/wallet/history?type=20&page=1&limit=100 เพื่อขอข้อมูลประวัติการถอนเงิน"
+        content5="5.เมื่อรับข้อมูลสำเร็จ ตรวจสอบค่า code จากข้อมูลที่ได้รับ"
+        content6="6.ถ้า code เป็น 0"
+        content6p1="6.1.ซ่อน loader"
+        content6p2="6.2.กรองข้อมูลประวัติการถอนเงินเพื่อเลือกเฉพาะประเภทที่ระบุ"
+        content6p3="6.3.เพิ่มข้อมูลเข้าไปใน collect_walletType"
+        content6p4={`6.4.ถ้าไม่มีข้อมูลประวัติการถอนเงินสำหรับประเภทที่ระบุ แสดงรูปไอคอน "nodata_icons.png"`}
+        content6p5="6.5.ถ้ามีข้อมูลประวัติการถอนเงินสำหรับประเภทที่ระบุ สร้าง HTML สำหรับแสดงข้อมูลแต่ละรายการ"
+        content7="7.ถ้าไม่ใช่ 0"
+        content7p1="7.1.แสดงข้อความข้อผิดพลาดที่ได้รับจาก getStatusCode"
+        content8="8.หากเกิดข้อผิดพลาดในการส่งคำขอ AJAX ซ่อน loader และแสดงข้อความข้อผิดพลาดที่ได้รับจาก NSLang('sys.serverError') และล้างข้อมูลอินพุต"
+        content9="ในที่นี้ collect_walletType ถูกใช้เพื่อเก็บประวัติการถอนเงินที่ได้รับตามประเภทที่ระบุ เพื่อให้สามารถแสดงข้อมูลที่ถูกกรองเฉพาะแต่ละประเภทได้ในลูป และส่งต่อไปยังฟังก์ชันอื่นเพื่อการประมวลผลเพิ่มเติม เช่น getLimitInput และ setLimitInput ซึ่งมองเห็นข้อมูลเหล่านี้เป็นอาร์เรย์ของประวัติการถอนเงินที่สอดคล้องกับประเภทที่ระบุ"
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheck={true}

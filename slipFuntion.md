@@ -150,39 +150,39 @@ list Navbar dropdown
 <!-- - getVoucherInvite --------------------- GET -->
 <!-- - postReceiveVouncher --------------------- POST -->
 <!-- - getlevel --------------------- GET -->
-- fetchPrizes --------------------- GET
-- postSelectedPrize --------------------- POST
-- getUserRoulette --------------------- GET
-- luckyLeftData --------------------- GET
-- Peer_group --------------------- GET
-- getMyTeam_3 --------------------- GET
-- showNews --------------------- GET
-- allReadNotice --------------------- POST
-- markNotificationAsRead --------------------- PATCH
-- Getnotifications --------------------- GET
-- Profile --------------------- GET
-- Team --------------------- GET
-- verified_name --------------------- GET
-- getVoucherDaily --------------------- GET
-- getKfLink --------------------- GET
-- Enable2FA --------------------- POST
-- get2FA --------------------- GET
-- BuyProduct --------------------- POST
-- getVoucherTeam --------------------- GET
-- getChannels --------------------- GET
-- postTopUp --------------------- POST
-- getBankAll --------------------- GET
-- getProduct --------------------- GET
-- getHistoryTransaction --------------------- GET
-- GetTransferHistory --------------------- GET
-- postTransder --------------------- POST
-- AddFilesFunc --------------------- PUT
-- VerifiedImgAcc --------------------- POST
-- Verified_info --------------------- GET
-- getHistoryWithdraw --------------------- GET
-- Recieve_DSFCIPS --------------------- GET
-- getWallet --------------------- GET
-- getAllPoints --------------------- GET
-- verified_wallet --------------------- GET
-- getLimitWithdraw --------------------- GET
-- loopWithdraw --------------------- GET
+<!-- - fetchPrizes --------------------- GET -->
+<!-- - postSelectedPrize --------------------- POST -->
+<!-- - getUserRoulette --------------------- GET -->
+<!-- - luckyLeftData --------------------- GET -->
+<!-- - Peer_group --------------------- GET -->
+<!-- - getMyTeam_3 --------------------- GET -->
+<!-- - showNews --------------------- GET -->
+<!-- - allReadNotice --------------------- POST -->
+<!-- - markNotificationAsRead --------------------- PATCH -->
+<!-- - Getnotifications --------------------- GET -->
+<!-- - Profile --------------------- GET -->
+<!-- - Team --------------------- GET -->
+<!-- - verified_name --------------------- GET -->
+<!-- - getVoucherDaily --------------------- GET -->
+<!-- - getKfLink --------------------- GET -->
+<!-- - Enable2FA --------------------- POST -->
+<!-- - get2FA --------------------- GET -->
+<!-- - BuyProduct --------------------- POST -->
+<!-- - getVoucherTeam --------------------- GET -->
+<!-- - getChannels --------------------- GET -->
+<!-- - postTopUp --------------------- POST -->
+<!-- - getBankAll --------------------- GET -->
+<!-- - getProduct --------------------- GET -->
+<!-- - getHistoryTransaction --------------------- GET -->
+<!-- - GetTransferHistory --------------------- GET -->
+<!-- - postTransder --------------------- POST -->
+<!-- - AddFilesFunc --------------------- PUT -->
+<!-- - VerifiedImgAcc --------------------- POST -->
+<!-- - Verified_info --------------------- GET -->
+<!-- - getHistoryWithdraw --------------------- GET -->
+<!-- - Recieve_DSFCIPS --------------------- GET -->
+<!-- - getWallet --------------------- GET -->
+<!-- - getAllPoints --------------------- GET -->
+<!-- - verified_wallet --------------------- GET -->
+<!-- - getLimitWithdraw --------------------- GET -->
+<!-- - loopWithdraw --------------------- GET -->

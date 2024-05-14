@@ -16978,3 +16978,2030 @@ export function PostReceiveVouncher() {
     </div>
   )
 }
+
+// fetchPrizes
+export function FetchPrizes() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/config/roulette-rule',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`console.log("success");`}</p>
+        <p className="ml-8">{`prizes = data.result; // เก็บข้อมูลที่ได้รับจาก API ในตัวแปร prizes`}</p>
+        <p className="ml-8">{`renderPrizes(prizes); // เรียกใช้ฟังก์ชันสำหรับแสดงผลลัพธ์`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xhr, status, error) {`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// postSelectedPrize
+export function PostSelectedPrize() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`// ทำการ POST ข้อมูลที่ได้จากการหมุนไปยังเซิร์ฟเวอร์`}</p>
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`"id": parseFloat(selectedPrize.id)`}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`console.log(mData);`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/config/roulette-rule',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`// ทำการจัดการเมื่อส่งข้อมูลสำเร็จ`}</p>
+        <p className="ml-8">{`if (data.code == 0) {`}</p>
+        <p className="ml-10">{`rotateDegree = data.result.id - 1;`}</p>
+        <p className="ml-10">{`rotateName = data.result.name;`}</p>
+        <p className="ml-10">{`console.log("name" + rotateName, "==============================>>>");`}</p>
+        <p className="ml-10">{`selectedPrize = prizes[rotateDegree];`}</p>
+        <p className="ml-10">{``}</p>
+        <p className="ml-10">{`increase += 1;`}</p>
+        <p className="ml-10">{`var rotationDegree = (51.43 * rotateDegree) + 1800 * increase; // Each slice is 51.43 degrees apart, adding 360 for additional speed`}</p>
+        <p className="ml-10">{`$('#roulette-wheel').css({`}</p>
+        <p className="ml-12">{`'transition': 'transform 2s ease-in-out', // Reduced transition time for faster spin`}</p>
+        <p className="ml-12">{`'transform': 'rotate(' + rotationDegree + 'deg)' // Rotate to the calculated degree`}</p>
+        <p className="ml-10">{`});`}</p>
+        <p className="ml-10">{`rotating = false;`}</p>
+        <p className="ml-10">{`setTimeout(() => {`}</p>
+        <p className="ml-12">{`levelId = rotateDegree + 1;`}</p>
+        <p className="ml-12">{`if (levelId == 6 || levelId == 7) {`}</p>
+        <p className="ml-14">{`msgPageObj.show(`}</p>
+        <p className="ml-16">{`<div class="flexTop_c">`}</p>
+        <p className="ml-18">{`<span>恭喜您！</span>`}</p>
+        <p className="ml-18">{`<div><span>抽到了</span><span>{rotateName}</span></div>`}</p>
+        <p className="ml-18">{`<span>请联系客户经理或者在线客服领取！</span>`}</p>
+        <p className="ml-16">{`</div>`}</p>
+        <p className="ml-14">{`);`}</p>
+        <p className="ml-12">{`} else {`}</p>
+        <p className="ml-14">{`msgPageObj.show(`}</p>
+        <p className="ml-16">{`<div class="flexTop_c">`}</p>
+        <p className="ml-18">{`<span>恭喜您！</span>`}</p>
+        <p className="ml-18">{`<div><span>已抽到</span><span>{rotateName}</span></div>`}</p>
+        <p className="ml-16">{`</div>`}</p>
+        <p className="ml-14">{`);`}</p>
+        <p className="ml-12">{`}`}</p>
+        <p className="ml-12">{`getUserRoulette();`}</p>
+        <p className="ml-12">{`console.log('You win: ' + $('#roulette-wheel .slice:eq(' + rotateDegree + ') span').text());`}</p>
+        <p className="ml-12">{`console.log("Select" + JSON.stringify(selectedPrize));`}</p>
+        <p className="ml-10">{`}, 2500);`}</p>
+        <p className="ml-10">{`luckyLeftData();`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`if (data.code == 4090) {`}</p>
+        <p className="ml-12">{`msgPageObj.show('邀约1人注册并体验产品<br>获取额外抽奖次数');`}</p>
+        <p className="ml-10">{`} else if (data.code == 7999) {`}</p>
+        <p className="ml-12">{`msgPageObj.show('大转盘活动调整，敬请期待！');`}</p>
+        <p className="ml-10">{`} else {`}</p>
+        <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-10">{`rotating = false;`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xhr, status, error) {`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getUserRoulette
+export function GetUserRoulette() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/config/roulette-latest',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`if (data.code == 0) {`}</p>
+        <p className="ml-10">{`var str = '<tr><td style="width:25%;">姓名</td><td style="width:25%;">电话</td><td style="width:25%;">奖品名称</td><td style="width:25%;">奖品金额</td></tr>';`}</p>
+        <p className="ml-10">{`var AllUser = data.result;`}</p>
+        <p className="ml-10">{`var rouletteNum = data.records;`}</p>
+        <p className="ml-10">{`console.log(rouletteNum, '================rouletteNum======1=============>>>>');`}</p>
+        <p className="ml-10">{`var luckyPPgetNum = rouletteNum * 12 + Math.floor(Math.random() * 9) + 1;`}</p>
+        <p className="ml-10">{`console.log(luckyPPgetNum, '================luckyPPgetNum======2=============>>>>');`}</p>
+        <p className="ml-10">{`$('#luckyPPget').text(luckyPPgetNum);`}</p>
+        <p className="ml-10">{`if (AllUser.length == 0) {`}</p>
+        <p className="ml-12">{`str += "<tr><td></td><td></td><td>没有数据</td><td></td></tr>";`}</p>
+        <p className="ml-12">{`$("#show_user_wheel_last").html(str);`}</p>
+        <p className="ml-10">{`} else {`}</p>
+        <p className="ml-12">{`var Filter_dataUser = AllUser.slice(0, 5);`}</p>
+        <p className="ml-12">{`$.each(Filter_dataUser, function (index, data) {`}</p>
+        <p className="ml-14">{`var number = data.mobile.slice(0, 3) + '***' + data.mobile.slice(6);`}</p>
+        <p className="ml-14">{`str += "<tr><td>" + data.name + "</td><td>" + number + "</td><td>" + data.rName + "</td><td>" + data.amount + "</td></tr>";`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-12">{`$("#show_user_wheel_last").html(str);`}</p>
+        <p className="ml-12">{`myScroll = new IScroll('#scroller_luckyWheel', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xhr, status, error) {`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// luckyLeftData
+export function LuckyLeftData() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var Token = localStorage.getItem('token');`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "GET",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/config/roulette-count",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + obj.token`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`success: function (mData) {`}</p>
+        <p className="ml-8">{`console.log(mData, '================luckyLeftData================>>>>');`}</p>
+        <p className="ml-8">{`var luckyLeftNum = mData.result;`}</p>
+        <p className="ml-8">{`$('#luckyLeftNum').text(luckyLeftNum);`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xhr, status, error) {`}</p>
+        <p className="ml-8">{`console.error("Failed to fetch app custom data:", error);`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// Peer_group
+export function Peer_group() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`// ทำการ GET ข้อมูลสรุปทีมโดยใช้ Token`}</p>
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "get",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/inviteCode/team/summary2",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) { },`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`// 1-2-3`}</p>
+        <p className="ml-8">{`var allMyTeam = data.result;`}</p>
+        <p className="ml-8">{`console.log(allMyTeam, '==========================================');`}</p>
+        <p className="ml-8">{`$('#level_team_all').html(allMyTeam.number);//总注册用户`}</p>
+        <p className="ml-8">{`$('#team_count_All').html(allMyTeam.number);//总注册用户_我的页显示`}</p>
+        <p className="ml-8">{`$('#performance_all').html(allMyTeam.amount.toFixed(1));//总业绩`}</p>
+        <p className="ml-8">{`// // 4`}</p>
+        <p className="ml-8">{`var allTeamAmount = allMyTeam.level.length;`}</p>
+        <p className="ml-8">{`console.log(allTeamAmount, '==================总业绩========================>>>');`}</p>
+        <p className="ml-8">{`var team_data_0 = allMyTeam.level[0];`}</p>
+        <p className="ml-8">{`var team_data_1 = allMyTeam.level[1];`}</p>
+        <p className="ml-8">{`var team_data_2 = allMyTeam.level[2];`}</p>
+        <p className="ml-8">{`// Total commission calculation`}</p>
+        <p className="ml-8">{`if (allTeamAmount == 1) {`}</p>
+        <p className="ml-12">{`var makeAmountAll_0 = team_data_0.makeAmount;`}</p>
+        <p className="ml-12">{`$('#makeAmount_all').text(makeAmountAll_0.toFixed(1));//总佣金=1`}</p>
+        <p className="ml-12">{`//team_1`}</p>
+        <p className="ml-12">{`$('#Level_team_number_1').text(team_data_0.number);//一级注册人数`}</p>
+        <p className="ml-12">{`$('#Active_team_active_1').html(team_data_0.active);//一级激活用户`}</p>
+        <p className="ml-12">{`$('#Amount_team_amount_1').text(team_data_0.amount.toFixed(1));//一级总业绩`}</p>
+        <p className="ml-12">{`$('#makeAmount_1').text(team_data_0.makeAmount.toFixed(1));//一级总佣金`}</p>
+        <p className="ml-12">{`// Total active users`}</p>
+        <p className="ml-12">{`var allMyTeamActive = team_data_0.active;`}</p>
+        <p className="ml-12">{`$('#dayPerformance_all').html(allMyTeamActive);//总激活用户`}</p>
+        <p className="ml-8">{`} else if (allTeamAmount == 2) {`}</p>
+        <p className="ml-12">{`var makeAmountAll_1 = team_data_0.makeAmount + team_data_1.makeAmount;`}</p>
+        <p className="ml-12">{`$('#makeAmount_all').text(makeAmountAll_1.toFixed(1));//总佣金=1+2`}</p>
+        <p className="ml-12">{`//team_1`}</p>
+        <p className="ml-12">{`$('#Level_team_number_1').text(team_data_0.number);//一级注册人数`}</p>
+        <p className="ml-12">{`$('#Active_team_active_1').html(team_data_0.active);//一级激活用户`}</p>
+        <p className="ml-12">{`$('#Amount_team_amount_1').text(team_data_0.amount.toFixed(1));//一级总业绩`}</p>
+        <p className="ml-12">{`$('#makeAmount_1').text(team_data_0.makeAmount.toFixed(1));//一级总佣金`}</p>
+        <p className="ml-12">{`//team_2`}</p>
+        <p className="ml-12">{`$('#Level_team_number_2').text(team_data_1.number);//二级注册人数`}</p>
+        <p className="ml-12">{`$('#Active_team_active_2').html(team_data_1.active);//二级激活用户`}</p>
+        <p className="ml-12">{`$('#Amount_team_amount_2').text(team_data_1.amount.toFixed(1));//二级总业绩`}</p>
+        <p className="ml-12">{`$('#makeAmount_2').text(team_data_1.makeAmount.toFixed(1));//二级总佣金`}</p>
+        <p className="ml-12">{`//team_3`}</p>
+        <p className="ml-12">{`$('#Level_team_number_3').text(team_data_2.number);//三级注册人数`}</p>
+        <p className="ml-12">{`$('#Active_team_active_3').html(team_data_2.active);//三级激活用户`}</p>
+        <p className="ml-12">{`$('#Amount_team_amount_3').text(team_data_2.amount.toFixed(1));//三级总业绩`}</p>
+        <p className="ml-12">{`$('#makeAmount_3').text(team_data_2.makeAmount.toFixed(1));//三级总佣金`}</p>
+        <p className="ml-12">{`// Total active users`}</p>
+        <p className="ml-12">{`var allMyTeamActive = team_data_0.active + team_data_1.active + team_data_2.active;`}</p>
+        <p className="ml-12">{`$('#dayPerformance_all').html(allMyTeamActive);//总激活用户`}</p>
+        <p className="ml-4">{` },`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-8">{`myteamObj.ClearStatusMyTeam();`}</p>
+        <p className="ml-4">{`});`}</p>
+        <p className="ml-4">{`},`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getMyTeam_3
+export function GetMyTeam_3() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`// ส่งข้อมูล POST ที่ได้จากการหมุนไปยังเซิร์ฟเวอร์`}</p>
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`$('#tabcontent_3').html("");`}</p>
+        <p>{`var loadData_team_3 = 1;`}</p>
+        <p>{`var limit_team_3 = 8;`}</p>
+        <p>{`var pageCount_team_3 = 1;`}</p>
+        <p>{`Peer_3();`}</p>
+        <p>{`function Peer_3() {`}</p>
+        <p className="ml-2">{`var str = "";`}</p>
+        <p className="ml-2">{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "get",`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/inviteCode/underLevel/3?page=' + loadData_team_3 + '&limit=' + limit_team_3,`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) { },`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`$('#inputmy_team_3').val(pageCount_team_3);`}</p>
+        <p className="ml-6">{`$('#nextmy_team_3').unbind().click(function () {`}</p>
+        <p className="ml-8">{`loadData_team_3 += 1;`}</p>
+        <p className="ml-8">{`pageCount_team_3 += 1;`}</p>
+        <p className="ml-8">{`Peer_3();`}</p>
+        <p className="ml-8">{`$('#inputmy_team_3').val(pageCount_team_3);`}</p>
+        <p className="ml-8">{`arrayIdTeam = [];`}</p>
+        <p className="ml-8">{`loaderObj.show();`}</p>
+        <p className="ml-6">{`});`}</p>
+        <p className="ml-6">{`$('#prevmy_team_3').unbind().click(function () {`}</p>
+        <p className="ml-8">{`loadData_team_3 -= 1;`}</p>
+        <p className="ml-8">{`pageCount_team_3 -= 1;`}</p>
+        <p className="ml-8">{`Peer_3();`}</p>
+        <p className="ml-8">{`$('#inputmy_team_3').val(pageCount_team_3);`}</p>
+        <p className="ml-8">{`arrayIdTeam = [];`}</p>
+        <p className="ml-8">{`loaderObj.show();`}</p>
+        <p className="ml-6">{`});`}</p>
+        <p className="ml-6">{`$("#gomy_teamPage_3").unbind().click(function () {`}</p>
+        <p className="ml-8">{`var inputmy_team_3 = parseFloat($("#inputmy_team_3").val());`}</p>
+        <p className="ml-8">{`if (isNaN(inputmy_team_3)) {`}</p>
+        <p className="ml-10">{`msgPageObj.show("请输入您想要访问的页面");`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`loadData_team_3 = inputmy_team_3;`}</p>
+        <p className="ml-10">{`pageCount_team_3 = inputmy_team_3;`}</p>
+        <p className="ml-10">{`Peer_3();`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-6">{`});`}</p>
+        <p className="ml-6">{`if (pageCount_team_3 <= 1) {`}</p>
+        <p className="ml-8">{`pageCount_team_3 = 1;`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-6">{`if (pageCount_team_3 > Math.ceil(data.records / limit_team_3)) {`}</p>
+        <p className="ml-8">{`pageCount_team_3 = Math.ceil(data.records / limit_team_3);`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-6">{`if (pageCount_team_3 == 1) {`}</p>
+        <p className="ml-8">{`$('#prevmy_team_3').css({ 'visibility': 'hidden' });`}</p>
+        <p className="ml-6">{`} else if (pageCount_team_3 != 1) {`}</p>
+        <p className="ml-8">{`$('#prevmy_team_3').css({ 'visibility': 'visible' });`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-6">{`if (pageCount_team_3 == Math.ceil(data.records / limit_team_3)) {`}</p>
+        <p className="ml-8">{`$('#nextmy_team_3').css({ 'visibility': 'hidden' });`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-6">{`else if (pageCount_team_3 != Math.ceil(data.records / limit_team_3)) {`}</p>
+        <p className="ml-8">{`$('#nextmy_team_3').css({ 'visibility': 'visible' });`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-6">{`// max per page`}</p>
+        <p className="ml-6">{`$('#maxPagemy_team_3').text(Math.ceil(data.records / limit_team_3) == 0 ? '1' : Math.ceil(data.records / limit_team_3));`}</p>
+        <p className="ml-6">{`// clean in input`}</p>
+        <p className="ml-6">{`$('#inputmy_team_3').unbind();`}</p>
+        <p className="ml-6">{`$('#inputmy_team_3').on('input', function () {`}</p>
+        <p className="ml-8">{`var inputValue_team_3 = parseInt($(this).val(), 10);`}</p>
+        <p className="ml-8">{`if (inputValue_team_3 < 1 || inputValue_team_3 > Math.ceil(data.records / limit_team_3)) {`}</p>
+        <p className="ml-24">{`$(this).val(""); // Clear the input value`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-6">{`});`}</p>
+        <p className="ml-6">{`$('#level_team_3').html(data.records);`}</p>
+        <p className="ml-6">{`if (data.code == 0) {`}</p>
+        <p className="ml-8">{`if (data.records == 0) {`}</p>
+        <p className="ml-24">{`str += '  <div style=" color: #8D959B;width: 100%; ">';`}</p>
+        <p className="ml-24">{`str += '<div style=" display: flex;align-items: center; width: 85%;margin: 0 auto; justify-content: center;">';`}</p>
+        <p className="ml-24">{`str += ' <img src="./pic/icons/nodata_icons.png" style="width:110px;">';`}</p>
+        <p className="ml-24">{`str += '</div>';`}</p>
+        <p className="ml-24">{`str += '</div>';`}</p>
+        <p className="ml-24">{`$('#tabcontent_2').html(str);`}</p>
+        <p className="ml-24">{`$("#pageTab_team_3").css({ "display": "none" })`}</p>
+        <p className="ml-24">{`$("#headmyteam").css({ "display": "none" })`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-24">{`$("#pageTab_team_3").css({ "display": "flex" })`}</p>
+        <p className="ml-24">{`$("#headmyteam").css({ "display": "flex" })`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`if (data.records < 8) {`}</p>
+        <p className="ml-24">{`$("#pageTab_team_3").css({ "display": "none" })`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-24">{`$("#pageTab_team_3").css({ "display": "flex" })`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`$.each(data.result, function (index, data) {`}</p>
+        <p className="ml-10">{`var isoDateTime = data.signupTime;`}</p>
+        <p className="ml-10">{`var date = new Date(isoDateTime);`}</p>
+        <p className="ml-10">{`var year = date.getFullYear();`}</p>
+        <p className="ml-10">{`var month = String(date.getMonth() + 1).padStart(2, '0');`}</p>
+        <p className="ml-10">{`var day = String(date.getDate()).padStart(2, '0');`}</p>
+        <p className="ml-10">{`var hours = String(date.getHours()).padStart(2, '0');`}</p>
+        <p className="ml-10">{`var minutes = String(date.getMinutes()).padStart(2, '0');`}</p>
+        <p className="ml-10">{`var formattedDateTime = \`\${year}-\${month}-\${day} \${hours}:\${minutes}\`;`}</p>
+        <p className="ml-10">{`str += '<div class="item-myteam" id="' + (data.mobile) + '_show_inside_team" style="height: 35px; background: #FFE6D9; width: 100%; margin:  0 auto; justify-content: space-around; display: flex; font-size: 13px;">';`}</p>
+        <p className="ml-10">{`str += '<div style="display: flex; flex-direction: column; gap: 10px; width: 25%; align-items: center; justify-content: center;">';`}</p>
+        <p className="ml-10">{`str += '<span>' + (data.mobile) + '</span>';`}</p>
+        <p className="ml-10">{`str += '</div>';`}</p>
+        <p className="ml-10">{`str += '<div style="display: flex; flex-direction: column; gap: 10px; width: 20%; align-items: center; justify-content: center;">';`}</p>
+        <p className="ml-10">{`str += '<span>' + (data.name) + '</span>';`}</p>
+        <p className="ml-10">{`str += '</div>';`}</p>
+        <p className="ml-10">{`str += '<div style="display: flex; flex-direction: column; gap: 10px; width: 20%; align-items: center; justify-content: center;">';`}</p>
+        <p className="ml-10">{`str += '<span>' + (data.amount.toFixed(1)) + '</span>';`}</p>
+        <p className="ml-10">{`str += '</div>';`}</p>
+        <p className="ml-10">{`str += '<div style="display: flex; flex-direction: column; gap: 10px; width: 35%; align-items: center; justify-content: center;">';`}</p>
+        <p className="ml-10">{`str += '<span>' + (formattedDateTime) + '</span>';`}</p>
+        <p className="ml-10">{`str += '</div>';`}</p>
+        <p className="ml-10">{`str += ' </div>';`}</p>
+        <p className="ml-10">{`if (!arrayIdTeam.some(item => item.mobile === data.mobile)) {`}</p>
+        <p className="ml-10">{`arrayIdTeam.push({ "uid": data.mobile });`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-28">{`});`}</p>
+        <p className="ml-10">{`loaderObj.unShow();`}</p>
+        <p className="ml-10">{`setTimeout(() => {`}</p>
+        <p className="ml-12">{`myScroll = new IScroll('#myteam_body', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-10">{`}, 300);`}</p>
+        <p className="ml-10">{`$('#tabcontent_3').html(str);`}</p>
+        <p className="ml-10">{`console.log(arrayIdTeam);`}</p>
+        <p className="ml-10">{`$.each(arrayIdTeam, function (index, data) {`}</p>
+        <p className="ml-12">{`if (index % 2 === 0) {`}</p>
+        <p className="ml-12">{`} else {`}</p>
+        <p className="ml-32">{`$(#{data.uid}_show_inside_team).css({ "background": "#FFE6D9" });`}</p>
+        <p className="ml-12">{`}`}</p>
+        <p className="ml-10">{`});`}</p>
+        <p className="ml-20">{`}`}</p>
+        <p className="ml-16">{`},`}</p>
+        <p className="ml-16">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-20">{`loaderObj.unShow();`}</p>
+        <p className="ml-16">{`},`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-0">{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// showNews
+export function ShowNews() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var ViewPageDate_news = moment(time).format("YYYY-MM-DD HH:mm");`}</p>
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$("#news_img_show").attr("src", \`{API_SERVER}{img}?Authorization={token.token}\`);`}</p>
+        <p>{`$("#header_news").html(header);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "get",`}</p>
+        <p className="ml-4">{`url: API_SERVER + \`/v1/news/{id}\`,`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`if (data.code == 0) {`}</p>
+        <p className="ml-12">{`$('#news_page_details').html(data.result);`}</p>
+        <p className="ml-12">{`$('#time_view').text(ViewPageDate_news + "｜新闻中心");`}</p>
+        <p className="ml-12">{`myScroll = new IScroll('#scroller_news', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-12">{`msgObj.unShow();`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// allReadNotice
+export function AllReadNotice() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`// ส่งคำขอ POST ข้อมูลเพื่อทำให้การแจ้งเตือนทั้งหมดเป็นเรียบร้อย`}</p>
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/notifications/all-read',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`notificationObj.Getnotifications();`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// markNotificationAsRead
+export function MarkNotificationAsRead() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`console.log(notificationId, "notificationId");`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`"id": notificationId`}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "PATCH",`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/notifications',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`if (data.code === 0) {`}</p>
+        <p className="ml-10">{`console.log('การแจ้งเตือนถูกทำเครื่องหมายว่าอ่านแล้วเรียบร้อยแล้ว');`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`console.error('การทำเครื่องหมายการแจ้งเตือนว่าอ่านแล้วล้มเหลว:', data.description);`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`console.error('การสื่อสารกับเซิร์ฟเวอร์ล้มเหลว:', error);`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// Getnotifications
+export function Getnotifications() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/notifications/all-read',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`notificationObj.Getnotifications();`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// Profile
+export function Profile() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var Token = localStorage.getItem('token');`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/profile',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + obj.token`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`$('#id_account, #show_id_setting').text(data.result.accountId);`}</p>
+        <p className="ml-8">{`$('#user_account, #show_name_setting, #show_name_setting,  #show_name3_setting').text(data.result.name);`}</p>
+        <p className="ml-8">{`$('#show_name2_setting').text(data.result.realName);`}</p>
+        <p className="ml-8">{`$('#show_id_card_setting').text(data.result.identification);`}</p>
+        <p className="ml-8">{`$('#show_phone_setting').text(data.result.phoneNumber);`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xhr, status, error) {`}</p>
+        <p className="ml-4">{``}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// Team
+export function Team() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var Token = localStorage.getItem('token');`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/inviteCode/myTeam/level1',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + obj.token`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`myteamObj.Peer_group();`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xhr, status, error) {`}</p>
+        <p className="ml-4">{``}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// verified_name
+export function Verified_name() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`return new Promise(function (resolve, reject) {`}</p>
+        <div className="ml-2">
+          <p>{`var Token = localStorage.getItem('token');`}</p>
+          <p>{`var obj = JSON.parse(Token);`}</p>
+          <p>{``}</p>
+          <p>{`$.ajax({`}</p>
+          <p className="ml-4">{`type: 'GET',`}</p>
+          <p className="ml-4">{`url: API_SERVER + '/v1/identity/check-image',`}</p>
+          <p className="ml-4">{`headers: {`}</p>
+          <p className="ml-6">{`'Authorization': 'Bearer ' + obj.token`}</p>
+          <p className="ml-4">{`},`}</p>
+          <p className="ml-4">{`async: true,`}</p>
+          <p className="ml-4">{`timeout: 100000,`}</p>
+          <p className="ml-4">{`success: function (data) {`}</p>
+          <p className="ml-8">{`console.log(data);`}</p>
+          <p className="ml-8">{`if (data.result === true) {`}</p>
+          <p className="ml-10">{`console.log('อัปโหลดแล้ว');`}</p>
+          <p className="ml-10">{`$('#verified_name').text('(อัปโหลดแล้ว)');`}</p>
+          <p className="ml-10">{`isVerified = true;`}</p>
+          <p className="ml-10">{`resolve(true);`}</p>
+          <p className="ml-8">{`} else {`}</p>
+          <p className="ml-10">{`console.log('ยังไม่ได้อัปโหลด');`}</p>
+          <p className="ml-10">{`$('#verified_name').text('(ยังไม่ได้อัปโหลด)');`}</p>
+          <p className="ml-10">{`var isVerified = false;`}</p>
+          <p className="ml-10">{`resolve(false);`}</p>
+          <p className="ml-8">{`}`}</p>
+          <p className="ml-4">{`},`}</p>
+          <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+          <p className="ml-8">{`console.error('การร้องขอล้มเหลว:', error);`}</p>
+          <p className="ml-8">{`reject(error);`}</p>
+          <p className="ml-4">{`}`}</p>
+          <p>{`});`}</p>
+        </div>
+
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getVoucherDaily
+export function GetVoucherDaily() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`// ทำการ GET ข้อมูลเพื่อรับคูปองรอบ`}</p>
+        <p>{`var str = "";`}</p>
+        <p>{`var collect_step = [];`}</p>
+        <p>{``}</p>
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/profile/cycle-voucher?type=20',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`if (data.code == 0) {`}</p>
+        <p className="ml-10">{`$('#voucher_receive').text(data.result.now);`}</p>
+        <p className="ml-10">{`$.each(data.result.items, function (index, data) {`}</p>
+        <p className="ml-12">{`str += '<div style="height: 10px;"></div>';`}</p>
+        <p className="ml-12">{`str += '<div style="justify-content: space-between;width: 90%;margin: 0 auto;background-color: #fff;height: 80px;border-radius: 10px;display: flex;align-items: center;">';`}</p>
+        <p className="ml-12">{`str += '<div style="display: flex;gap: 10px; align-items: center;margin-left: 12px;">';`}</p>
+        <p className="ml-14">{`str += '<img style="height:  32px;" src="./pic/home/side_home.png" alt="">';`}</p>
+        <p className="ml-14">{`str += '<div style="display: flex;flex-direction: column;gap: 5px;">';`}</p>
+        <p className="ml-14">{`str += ' <span style="font-size: 16px ;color:#414655;">直推日激活人数 ' + data.number + ' 人 </span>';`}</p>
+        <p className="ml-14">{`str += '<span style="font-size: 14px; color: #6C7BA8;">奖励 ' + data.amount + ' 元 </span>';`}</p>
+        <p className="ml-14">{`str += '</div>';`}</p>
+        <p className="ml-12">{`str += '</div>';`}</p>
+        <p className="ml-12">{`str += '<div id="step_receive' + data.number + '" style="margin-right: 10px; color: #fff; ' + (data.state == 10 ? "background: linear-gradient(270deg, #67748E 0%, #6C7BA8 96.28%);" : "background: linear-gradient(270deg, #EA372A 0%, #FD5E43 96.28%);") + ' width: 70px; height: 30px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">';`}</p>
+        <p className="ml-12">{`str += '<span>' + (data.state == 10 ? "已领取" : data.state == 20 ? "未领取" : "未满足") + ' </span>';`}</p>
+        <p className="ml-12">{`str += '</div>';`}</p>
+        <p className="ml-12">{`str += '</div>';`}</p>
+        <p className="ml-10">{`collect_step.push({ "step": data.number });`}</p>
+        <p className="ml-10">{`});`}</p>
+        <p className="ml-10">{`$("#loop_voucher_data_receive").html(str);`}</p>
+        <p className="ml-10">{`myScroll = new IScroll('#scroller_receive_daily', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-10">{`$.each(collect_step, function (index, data) {`}</p>
+        <p className="ml-12">
+          {`$(` +
+            "`#step_receive${data.step}`" +
+            `).unbind().click(function () {`}
+        </p>
+        <p className="ml-14">{`postReceiveVouncher(data.step);`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-10">{`});`}</p>
+        <p className="ml-8">{`} else if (data.code == 4089) {`}</p>
+        <p className="ml-10">{`msgPageObj.show('已领取');`}</p>
+        <p className="ml-8">{`} else if (data.code == 4090) {`}</p>
+        <p className="ml-10">{`msgPageObj.show('未满足条件');`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`loaderObj.unShow();`}</p>
+        <p className="ml-10">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getKfLink
+export function GetKfLink() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`loaderObj.show();`}</p>
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "get",`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/config/customer-link',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`// การประมวลผลข้อมูลเมื่อสำเร็จ`}</p>
+        <p className="ml-8">{`var KfLink = data.result;`}</p>
+        <p className="ml-8">{`window.frames[0].location.href = KfLink;`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`console.log('okLink', KfLink);`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xhr, status, error) {`}</p>
+        <p className="ml-8">{`console.error('Error fetching data:', error);`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// Enable2FA
+export function Enable2FA() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var Token = localStorage.getItem('token');`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`"password": $("#Set2FA_Input").val()`}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/twoFA",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + obj.token`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) {`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`msgObj.show("交易密码激活！", function () {`}</p>
+        <p className="ml-12">{`msgObj.unShow();`}</p>
+        <p className="ml-12">{`$('#show_status_activate').text("已启用").css("color", "#43d143");`}</p>
+        <p className="ml-8">{`}, function () {`}</p>
+        <p className="ml-12">{`msgObj.unShow();`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xhr, status, error) {`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// get2FA
+export function Get2FA() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var Token = localStorage.getItem('token');`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "get",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/twoFA",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + obj.token`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`if (data.result.status === false) {`}</p>
+        <p className="ml-12">{`$('#show_status_activate').text("未设置").css("color", "#6C7BA8");`}</p>
+        <p className="ml-12">{`$("#2FA_Open").click(function () {`}</p>
+        <p className="ml-16">{`handleClick();`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-8">{`} else if (data.result.status === true) {`}</p>
+        <p className="ml-12">{`$('#show_status_activate').text("已启用").css("color", "#43d143");`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`console.log(error, xmlhttprequest);`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// BuyProduct
+export function BuyProduct() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`if (allowRepeated === true) {`}</p>
+        <p className="ml-4">{`var number2 = $("#buy_copies2").val();`}</p>
+        <p className="ml-4">{`console.log("-----------buy_copies2-----allowRepeated----", number2);`}</p>
+        <p>{`} else {`}</p>
+        <p className="ml-4">{`var number2 = "1";`}</p>
+        <p className="ml-4">{`console.log("-----------buy_copies2-----else----", number2);`}</p>
+        <p>{`}`}</p>
+        <p>{`if (numberSelet === 1) {`}</p>
+        <p className="ml-4">{`var number2 = "1";`}</p>
+        <p className="ml-4">{`console.log("-----------buy_copies2-----numberSelet----", numberSelet);`}</p>
+        <p>{`}`}</p>
+        <p>{``}</p>
+        <p>{`loaderObj.show();`}</p>
+        <p>{`var Token = localStorage.getItem("token");`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{`mData = {`}</p>
+        <p className="ml-4">{`productId: id,`}</p>
+        <p className="ml-4">{`count: number2,`}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/products",`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`Authorization: "Bearer " + obj.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`if (data.code === 0) {`}</p>
+        <p className="ml-12">{`msgPageObj.show("恭喜您！产品购买成功！", function () { });`}</p>
+        <p className="ml-12">{`walletObj.getWallet();`}</p>
+        <p className="ml-12">{`mainObj.menutrade();`}</p>
+        <p className="ml-12">{`summarize_productObj.call();`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code), function () { });`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xhr, status, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang("sys.serverError"));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getVoucherTeam
+export function GetVoucherTeam() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var str = "";`}</p>
+        <p>{`var collect_step = [];`}</p>
+        <p>{``}</p>
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/profile/cycle-voucher?type=10',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`if (data.code === 0) {`}</p>
+        <p className="ml-12">{`$('#voucher_team').text(data.result.now);`}</p>
+        <p className="ml-12">{`$.each(data.result.items, function (index, data) {`}</p>
+        <p className="ml-16">{`str += '<div style="height: 10px;"></div>';`}</p>
+        <p className="ml-16">{`str += '<div style="  position: relative;justify-content: end;width: 90%; margin: 0 auto;background-color: #fff;height: 80px;border-radius: 10px;display: flex; align-items: center;">';`}</p>
+        <p className="ml-16">{`str += '<div style="display: flex;gap: 10px; position: absolute;left: 10px;display: flex; align-items: center;">';`}</p>
+        <p className="ml-16">{`str += '<img style="height:  32px;" src="./pic/home/side_home.png" alt="">';`}</p>
+        <p className="ml-16">{`str += '<div style="display: flex;flex-direction: column;gap: 5px;">';`}</p>
+        <p className="ml-16">{`str += ' <span style="font-size: 14px ;color:#414655;">直推激活用户 ' + data.number + ' 人 </span>';`}</p>
+        <p className="ml-16">{`str += '<span style="font-size: 12px; color: #6C7BA8;">月工资 ' + data.amount + ' 元 </span>';`}</p>
+        <p className="ml-16">{`str += '</div>';`}</p>
+        <p className="ml-16">{`str += '</div>';`}</p>
+        <p className="ml-16">{`str += '<div id="step_' + data.number + '" style="margin-right: 10px; color: #fff; ' + (data.state === 10 ? "background: linear-gradient(270deg, #67748E 0%, #6C7BA8 96.28%);" : "background: linear-gradient(270deg, #EA372A 0%, #FD5E43 96.28%);") + ' width: 70px; height: 30px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">';`}</p>
+        <p className="ml-16">{`str += '<span>' + (data.state === 10 ? "已领取" : data.state === 20 ? "未领取" : "未满足") + ' </span>';`}</p>
+        <p className="ml-16">{`str += '</div>';`}</p>
+        <p className="ml-16">{`str += '</div>';`}</p>
+        <p className="ml-16">{`collect_step.push({ "step": data.number });`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-12">{`$("#loop_voucher_data").html(str);`}</p>
+        <p className="ml-12">{`myScroll = new IScroll('#scroller_team_salary', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-12">{`$.each(collect_step, function (index, data) {`}</p>
+        <p className="ml-16">{`$(#step_{data.step}).unbind().click(function () {`}</p>
+        <p className="ml-20">{`postReceiveVouncher(data.step);`}</p>
+        <p className="ml-16">{`});`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-8">{`} else if (data.code === 4089) {`}</p>
+        <p className="ml-12">{`msgPageObj.show('已领取');`}</p>
+        <p className="ml-8">{`} else if (data.code === 4090) {`}</p>
+        <p className="ml-12">{`msgPageObj.show('未满足条件');`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-12">{`loaderObj.unShow();`}</p>
+        <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getChannels
+export function GetChannels() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "get",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/payments",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) {},`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`if (data.code == 0) {`}</p>
+        <p className="ml-12">{`var channelStr = '';`}</p>
+        <p className="ml-12">{`var str = '';`}</p>
+        <p className="ml-12">{`var pic = [];`}</p>
+        <p className="ml-12">{`var arr = data.result;`}</p>
+        <p className="ml-12">{`for (var i = 0; i < arr.length; i++) {`}</p>
+        <p className="ml-16">{`var item = arr[i];`}</p>
+        <p className="ml-16">{`var channelsArr = arr[i].channels;`}</p>
+        <p className="ml-16">{`for (var j = 0; j < channelsArr.length; j++) {`}</p>
+        <p className="ml-20">{`var getAmountsForm = channelsArr[j].amounts;`}</p>
+        <p className="ml-20">{`var amountStream = '';`}</p>
+        <p className="ml-20">{`if (getAmountsForm.length > 0) {`}</p>
+        <p className="ml-24">{`for (var n = 0; n < getAmountsForm.length; n++) {`}</p>
+        <p className="ml-28">{`amountStream = amountStream + getAmountsForm[n] + '-';`}</p>
+        <p className="ml-24">{`}`}</p>
+        <p className="ml-20">{`} else {`}</p>
+        <p className="ml-24">{`amountStream = '0';`}</p>
+        <p className="ml-20">{`}`}</p>
+        <p className="ml-20">{`str += \`<div class="{channelsArr[j].group == "" ? "NoType" : channelsArr[j].group == "微信" ? "WeChat" : channelsArr[j].group == "银联" ? "UnionPay" : "Alipay"}"`}</p>
+        <p className="ml-28">{`style="width: 95%; height: 50px; border-radius: 5px; background: #fff; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; display: flex; align-items: center; justify-content: center; flex-direction: row;">\``}</p>
+        <p className="ml-28">{`<div style="width: 20%; " class="flexCenter">`}</p>
+        <p className="ml-32">{`<img id="logo_deposit_img{channelsArr[j].id}" src="pic/icons/\${channelsArr[j].group == "" ? "NoType" : channelsArr[j].group == "微信" ? "wechat.png" : channelsArr[j].group == "银联" ? "union.png" : "ali.png"}" style="height: 24px;width: 24px; border-radius: 100%;">`}</p>
+        <p className="ml-28">{`</div>`}</p>
+        <p className="ml-28">{`<div style="width: 60%;">`}</p>
+        <p className="ml-32">{`<div style="font-size: 16px;">{channelsArr[j].name}</div>`}</p>
+        <p className="ml-32">{`<div style="color: #dadada; font-size: 12px; gap:3px;">`}</p>
+        <p className="ml-36">{`<span>单笔</span>`}</p>
+        <p className="ml-36">{`<span style="padding-left:3px;" id="{channelsArr[j].id}">\${channelsArr[j].limit}</span>`}</p>
+        <p className="ml-32">{`</div>`}</p>
+        <p className="ml-28">{`</div>`}</p>
+        <p className="ml-28">{`<div style="width: 20%;" class="flexCenter">`}</p>
+        <p className="ml-32">{`<div class="round">`}</p>
+        <p className="ml-36">{`<input value="{channelsArr[j].id}_{channelsArr[j].limit}_\${amountStream}" type="checkbox" id="checkbox\${channelsArr[j].id}" class="single-checkbox" />`}</p>
+        <p className="ml-36">{`<label for="checkbox{channelsArr[j].id}"></label>`}</p>
+        <p className="ml-32">{`</div>`}</p>
+        <p className="ml-28">{`</div>`}</p>
+        <p className="ml-20">{`</div>\`;`}</p>
+        <p className="ml-20">{`pic.push({ "id": channelsArr[j].id });`}</p>
+        <p className="ml-16">{`}`}</p>
+        <p className="ml-12">{`}`}</p>
+        <p className="ml-12">{`setTimeout(() => {`}</p>
+        <p className="ml-16">{`$("#online_deposit_show").html(str);`}</p>
+        <p className="ml-16">{`$(".NoType").css({ "display": "none" });`}</p>
+        <p className="ml-16">{`$(".WeChat").css({ "display": "flex" });`}</p>
+        <p className="ml-16">{`$(".UnionPay").css({ "display": "none" });`}</p>
+        <p className="ml-16">{`$(".Alipay").css({ "display": "none" });`}</p>
+        <p className="ml-16">{`myScroll = new IScroll("#scroller_topup", { probeType: 1, mouseWheel: true, });`}</p>
+        <p className="ml-16">{`$('.single-checkbox').unbind();`}</p>
+        <p className="ml-16">{`$('.single-checkbox').click(function () {`}</p>
+        <p className="ml-20">{`if ($(this).is(":checked")) {`}</p>
+        <p className="ml-24">{`$('.single-checkbox').not(this).prop("checked", false);`}</p>
+        <p className="ml-24">{`console.log('===112233====>' + $(this).val());`}</p>
+        <p className="ml-24">{`selectedChannel = $(this).val();`}</p>
+        <p className="ml-24">{`var AmountsVal = selectedChannel.split('_');`}</p>
+        <p className="ml-24">{`var getPartAmounts = AmountsVal[2];`}</p>
+        <p className="ml-24">{`console.log('===445566====>' + getPartAmounts);`}</p>
+        <p className="ml-20">{`} else {`}</p>
+        <p className="ml-24">{`selectedChannel = null;`}</p>
+        <p className="ml-20">{`}`}</p>
+        <p className="ml-16">{`});`}</p>
+        <p className="ml-12">{`}, 200);`}</p>
+        <p className="ml-12">{`$("#sure_to_comfirm_topUp").unbind();`}</p>
+        <p className="ml-12">{`$("#sure_to_comfirm_topUp").on("click", function () {`}</p>
+        <p className="ml-16">{`if (selectedChannel == null) {`}</p>
+        <p className="ml-20">{`msgPageObj.show('请选择支付通道！');`}</p>
+        <p className="ml-20">{`return;`}</p>
+        <p className="ml-16">{`}`}</p>
+        <p className="ml-16">{`var accessToken = localStorage.getItem("token");`}</p>
+        <p className="ml-16">{`var channelArrVal = selectedChannel.split('_');`}</p>
+        <p className="ml-16">{`var onlineValue = channelArrVal[0];`}</p>
+        <p className="ml-16">{`var selectText = channelArrVal[1];`}</p>
+        <p className="ml-16">{`var arrSelect = selectText.split('-');`}</p>
+        <p className="ml-16">{`var min = Number(arrSelect[0]);`}</p>
+        <p className="ml-16">{`var max = Number(arrSelect[1]);`}</p>
+        <p className="ml-16">{`var payAmount = Number($("#input_money_topup").val());`}</p>
+        <p className="ml-16">{`var isValidPayAmount = false;`}</p>
+        <p className="ml-16">{`if ((min <= payAmount) && (max >= payAmount)) {`}</p>
+        <p className="ml-20">{`isValidPayAmount = true;`}</p>
+        <p className="ml-16">{`}`}</p>
+        <p className="ml-16">{`if (!isValidPayAmount) {`}</p>
+        <p className="ml-20">{`msgPageObj.show('支付金额不符合规则！');`}</p>
+        <p className="ml-20">{`return;`}</p>
+        <p className="ml-16">{`}`}</p>
+        <p className="ml-16">{`var onlineAmount = $("#input_money_topup").val();`}</p>
+        <p className="ml-16">{`var u = navigator.userAgent;`}</p>
+        <p className="ml-16">{`var isiOS = !!u.match(/\\(i[^;]+;( U;)? CPU.+Mac OS X/);`}</p>
+        <p className="ml-16">{`loaderObj.show();`}</p>
+        <p className="ml-16">{`setTimeout(function () {`}</p>
+        <p className="ml-20">{`if (onlineAmount == "") {`}</p>
+        <p className="ml-24">{`msgPageObj.show('请填写需要充值的金额');`}</p>
+        <p className="ml-24">{`loaderObj.unShow();`}</p>
+        <p className="ml-20">{`} else if (isiOS) {`}</p>
+        <p className="ml-24">{`console.log(onlineValue, "=======================================================");`}</p>
+        <p className="ml-24">{`window.location.href = "onlinePay.html?onlineWay=" + onlineValue + "&onlineSum=" + onlineAmount + "&token=" + accessToken + "&wt=1";`}</p>
+        <p className="ml-24">{`loaderObj.unShow();`}</p>
+        <p className="ml-20">{`} else {`}</p>
+        <p className="ml-24">{`window.open(url = "onlinePay.html?onlineWay=" + onlineValue + "&onlineSum=" + onlineAmount + "&token=" + accessToken);`}</p>
+        <p className="ml-24">{`loaderObj.unShow();`}</p>
+        <p className="ml-20">{`}`}</p>
+        <p className="ml-16">{`}, 1000);`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`console.log(error);`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`complete: function () {},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// postTopUp
+export function PostTopUp() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`loaderObj.show();`}</p>
+        <p>{`var getToken = localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`var amount = parseFloat($('#input_money_topup').val());`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`type: 10,`}</p>
+        <p className="ml-4">{`bankName: name,`}</p>
+        <p className="ml-4">{`cardNumber: cardNum,`}</p>
+        <p className="ml-4">{`cardName: cardName,`}</p>
+        <p className="ml-4">{`amount: amount,`}</p>
+        <p className="ml-4">{`remark: ""`}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "post",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/bankInfo/apply/deposit",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`Authorization: "Bearer " + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) { },`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code), function () {`}</p>
+        <p className="ml-12">{`if (data.code == 0) {`}</p>
+        <p className="ml-14">{`walletObj.getWallet();`}</p>
+        <p className="ml-12">{`}`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`cleanInput();`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getBankAll
+export function GetBankAll() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var str = "";`}</p>
+        <p>{`var data_id = [];`}</p>
+        <p>{`var collect_Bank = [];`}</p>
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/financialOrganization',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`var Bank_card = data.result.filter(data => data.type === 10);`}</p>
+        <p className="ml-8">{`collect_Bank.push(Bank_card);`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`if (collect_Bank[0].length == 0) {`}</p>
+        <p className="ml-12">{`str += '<div style="height: 50px;" class="flexCenter">没有数据</div>';`}</p>
+        <p className="ml-12">{`$("#lood_all_detail_payment_medthod").html(str);`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-12">{`$.each(collect_Bank[0], function (index, data) {`}</p>
+        <p className="ml-16">{`var longNumber = data.cardNumber;`}</p>
+        <p className="ml-16">{`var firstFourDigits = longNumber.substr(0, 4);`}</p>
+        <p className="ml-16">{`var maskedNumber = longNumber.replace(/^.{4}/, "****");`}</p>
+        <p className="ml-16">{`var maskedNumber2 = maskedNumber.substr(0, 8);`}</p>
+        <p className="ml-16">{`var num = formatCardNumber(maskedNumber2);`}</p>
+        <p className="ml-16">{``}</p>
+        <p className="ml-16">{`str += '<div style="width: 100%;" class="flexSpac">';`}</p>
+        <p className="ml-16">{``}</p>
+        <p className="ml-16">{`str += '<div class="flexCenter" style="width: 65%; gap: 10px; justify-content: left;" >';`}</p>
+        <p className="ml-16">{`str += '<img src="./pic/topup/payment.png" alt="" style="width: 20px; height: 20px;">';`}</p>
+        <p className="ml-16">{`str += '<span style="font-size:16px;">' + data.bankName + '</span>';`}</p>
+        <p className="ml-16">{`str += '</div>';`}</p>
+        <p className="ml-16">{``}</p>
+        <p className="ml-16">{`str += '<div class="flexCenter">';`}</p>
+        <p className="ml-16">{`str += '<span style="font-size:16px;">' + num + '</span>';`}</p>
+        <p className="ml-16">{`str += '<input type="radio" name="select_bank_topup" value="' + data.id + '">';`}</p>
+        <p className="ml-16">{`str += '</div>';`}</p>
+        <p className="ml-16">{``}</p>
+        <p className="ml-16">{`str += '</div>';`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-12">{``}</p>
+        <p className="ml-12">{`$("#lood_all_detail_payment_medthod").html(str);`}</p>
+        <p className="ml-12">{`myScroll = new IScroll('#scroller_topup', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-12">{``}</p>
+        <p className="ml-12">{`$('#btn_top_up_confirm').unbind().click(function () {`}</p>
+        <p className="ml-16">{`$("#top_up_code").css({ "display": "none" });`}</p>
+        <p className="ml-16">{`$("#top_up_seccess").css({ "display": "flex" });`}</p>
+        <p className="ml-16">{``}</p>
+        <p className="ml-16">{`var selectVal = $("input[name='select_bank_topup']:checked").val();`}</p>
+        <p className="ml-16">{``}</p>
+        <p className="ml-16">{`var checkedBank = collect_Bank[0].filter(data => data.id === parseFloat(selectVal));`}</p>
+        <p className="ml-16">{``}</p>
+        <p className="ml-16">{`postTopUp(checkedBank[0].id, checkedBank[0].bankName, checkedBank[0].cardName, checkedBank[0].cardNumber);`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`if (data.code != 0) {`}</p>
+        <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-8">{`cleanInput();`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getProduct
+export function GetProduct() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/products?type=' + {type},`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`if (data.code != 0) {`}</p>
+        <p className="ml-10">{`return;`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`var FilterGroup70 = data.result.filter(data => data.group === 70);`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`if ({type} == 70) {`}</p>
+        <p className="ml-10">{`productData = FilterGroup70;`}</p>
+        <p className="ml-8">{`} else if ({type} == 10) {`}</p>
+        <p className="ml-10">{`productData = data.result.filter(data => data.group !== 70);`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`productData = data.result;`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`if (productData.length == 0) {`}</p>
+        <p className="ml-10">{`str += '<div style="height: 40px;"></div>';`}</p>
+        <p className="ml-10">{`str += '<div style="font-size:14px; height: 50px; font-weight: bold; color:rgb(141, 149, 155);" class="flexCenter">产品尚未发售，敬请期待</div>';`}</p>
+        <p className="ml-10">{`$("#loop_product_show").html(str);`}</p>
+        <p className="ml-10">{`var myScroll = new IScroll('#scroller_product', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`if (productData.length != 0) {`}</p>
+        <p className="ml-10">{`$.each(productData, function (index, data) {`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`$('#loop_product_show').html(str);`}</p>
+        <p className="ml-8">{`setTimeout(() => {`}</p>
+        <p className="ml-10">{`var myScroll = new IScroll('#scroller_product', { probeType: 1, mouseWheel: true });`}</p>
+        <p className="ml-8">{`}, 500);`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`var show_type = $('#show_data_alert_product_type, #show_data_alert_product_type2');`}</p>
+        <p className="ml-8">{`if ({type} == 40) {`}</p>
+        <p className="ml-10">{`show_type.show();`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`show_type.hide();`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`$.each(product_id, function (index, data) {`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`BarLoading();`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`fetchAppCustomData();`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`timerCountInt = setInterval(function () {`}</p>
+        <p className="ml-10">{`countProductTimer();`}</p>
+        <p className="ml-8">{`}, 1000);`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xhr, status, error) {`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getHistoryTransaction
+export function GetHistoryTransaction() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`"page": page,`}</p>
+        <p className="ml-4">{`"limit": limit,`}</p>
+        <p className="ml-4">{`"type": type`}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "get",`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/wallet/history',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`data: mData,`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`// จัดการเมื่อรับข้อมูลสำเร็จ`}</p>
+        <p className="ml-8">{`if (data.code == 0) {`}</p>
+        <p className="ml-10">{`loaderObj.unShow();`}</p>
+        <p className="ml-10">{`if (data.result.length == 0) {`}</p>
+        <p className="ml-12">{`str += '<div style="height: 400px" class="flexCenter"><img src="./pic/icons/nodata_icons.png" style="width:110px;"></div>';`}</p>
+        <p className="ml-12">{`$("#loop_tansaction_history").html(str);`}</p>
+        <p className="ml-12">{`$("#search_page_tran").css({ "display": "none" });`}</p>
+        <p className="ml-10">{`} else {`}</p>
+        <p className="ml-12">{`$("#search_page_tran").css({ "display": "flex" });`}</p>
+        <p className="ml-12">{`$.each(data.result, function (index, data) {`}</p>
+        <p className="ml-14">{`var finalAllDate = moment(data.cdt).format("YYYY-MM-DD HH:mm:ss");`}</p>
+        <p className="ml-14">{`var seletGroup = getGroupDescription(data.group);`}</p>
+        <p>{`<!-- ข้อมูลเพิ่มเติมในการแปลงรหัสกลุ่ม -->`}</p>
+        <p className="ml-14">{`var typeName = getTypeDescription(data.walletType);`}</p>
+        <p className="ml-14">{`var eventTypeDescription = getEventTypeDescription(data.eventType, typeName, seletGroup);`}</p>
+        <p className="ml-14">{`var moneyOut = checkMoneyOut(data.type);`}</p>
+        <p className="ml-14">{`str += '<div style="font-weight:bold; background: #fff; width: 100%;  height: 70px;align-items: center;gap: 5px; display: flex; box-shadow: 0px 0px 8px 0px rgba(92, 122, 181, 0.25);" class="go_each_tran_detail' + data.id + '">';`}</p>
+        <p>{`<!-- เพิ่มข้อมูลอื่น ๆ ที่จำเป็น -->`}</p>
+        <p className="ml-10">{`});`}</p>
+        <p>{`<!-- เพิ่มการจัดการอีเวนต์อื่น ๆ และโค้ดที่เกี่ยวข้อง -->`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`loaderObj.unShow();`}</p>
+        <p className="ml-10">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p>{`<!-- เพิ่มการจัดการข้อผิดพลาด -->`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// GetTransferHistory
+export function GetTransferHistory() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`var limit = 10;`}</p>
+        <p>{`var loadData = 1;`}</p>
+        <p>{`var pageCount = 1;`}</p>
+        <p>{`$('#inputHistoryTransfer').val(pageCount);`}</p>
+        <p>{`GetTransfer_History();`}</p>
+        <p>{``}</p>
+        <p>{`function GetTransfer_History() {`}</p>
+        <p>{`  $.ajax({`}</p>
+        <p className="ml-4">{`type: "get",`}</p>
+        <p className="ml-4">{`url: API_SERVER + \`/v1/wallet/transfer?page={loadData}&limit={limit}\`,`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`// ทำการประมวลผลข้อมูลเมื่อได้รับข้อมูลสำเร็จ`}</p>
+        <p className="ml-8">{`if (data.code == 0) {`}</p>
+        <p className="ml-10">{`// ปรับแต่งรายการข้อมูล`}</p>
+        <p className="ml-10">{`$('#prevTransfer').unbind().click(function () {`}</p>
+        <p className="ml-14">{`loadData -= 1;`}</p>
+        <p className="ml-14">{`pageCount -= 1;`}</p>
+        <p className="ml-14">{`$('#content_history_transfer').html("");`}</p>
+        <p className="ml-14">{`GetTransfer_History();`}</p>
+        <p className="ml-14">{`$('#inputHistoryTransfer').val(pageCount);`}</p>
+        <p className="ml-10">{`});`}</p>
+        <p className="ml-10">{`// เช็คหน้าถัดไป`}</p>
+        <p className="ml-10">{`if (pageCount == Math.ceil(data.records / limit)) {`}</p>
+        <p className="ml-12">{`$('#nextTransfer').css({ 'visibility': 'hidden' });`}</p>
+        <p className="ml-10">{`} else if (pageCount != Math.ceil(data.records / limit)) {`}</p>
+        <p className="ml-12">{`$('#nextTransfer').css({ 'visibility': 'visible' });`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`// แสดงข้อผิดพลาดที่ได้รับ`}</p>
+        <p className="ml-10">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`// ปิด Loader`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`});`}</p>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// postTransder
+export function PostTransder() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var mobileValue = $("#address_wallet").val();`}</p>
+        <p>{`var amountValue = parseFloat($("#transfer_input_money").val());`}</p>
+        <p>{`var getToken = localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`var mData = {`}</p>
+        <p className="ml-4">{`"mobile": mobileValue,`}</p>
+        <p className="ml-4">{`"amount": amountValue,`}</p>
+        <p>{`};`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "POST",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/wallet/transfer",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`beforeSend: function (xmlhttprequest) {`}</p>
+        <p className="ml-6">{`// ทำสิ่งที่ต้องการก่อนส่งคำขอ`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`if (data.code == 0) {`}</p>
+        <p className="ml-8">{`// ทำสิ่งที่ต้องการเมื่อโอนเงินสำเร็จ`}</p>
+        <p className="ml-8">{`msgPageObj.show("การโอนเงินสำเร็จ")`}</p>
+        <p className="ml-8">{`cleanInput();`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`if (data.code == 4097) {`}</p>
+        <p className="ml-10">{`msgPageObj.show('ผู้โอนหรือผู้รับเงินไม่ได้รับการรับรองตัวตน')`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`msgPageObj.show(getStatusCode(data.code))`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'))`}</p>
+        <p className="ml-6">{`// cleanInput();`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// AddFilesFunc
+export function AddFilesFunc() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var Token = localStorage.getItem('token');`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{``}</p>
+        <p>{`var formData = new FormData();`}</p>
+        <p>{`formData.append('file', file);`}</p>
+        <p>{`loaderObj.show();`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'PUT',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/files',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + obj.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`contentType: false,`}</p>
+        <p className="ml-4">{`data: formData,`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`processData: false,`}</p>
+        <p className="ml-4">{``}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`if (data.code == 0) {`}</p>
+        <p className="ml-8">{`console.log(data.result);`}</p>
+        <p className="ml-8">{`switch (img) {`}</p>
+        <p className="ml-10">{`case 'img1':`}</p>
+        <p className="ml-12">{`Image1 = data.result.link;`}</p>
+        <p className="ml-12">{`break;`}</p>
+        <p className="ml-10">{`case 'img2':`}</p>
+        <p className="ml-12">{`Image2 = data.result.link;`}</p>
+        <p className="ml-12">{`break;`}</p>
+        <p className="ml-10">{`case 'img3':`}</p>
+        <p className="ml-12">{`Image3 = data.result.link;`}</p>
+        <p className="ml-12">{`break;`}</p>
+        <p className="ml-8">{`default:`}</p>
+        <p className="ml-10">{`break;`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`} else {`}</p>
+        <p className="ml-6">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang("sys.serverError"));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// VerifiedImgAcc
+export function VerifiedImgAcc() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var mData = [`}</p>
+        <p className="ml-4">{`Image1,`}</p>
+        <p className="ml-4">{`Image2,`}</p>
+        <p className="ml-4">{`Image3`}</p>
+        <p>{`];`}</p>
+        <p>{`loaderObj.show();`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: "POST",`}</p>
+        <p className="ml-4">{`url: API_SERVER + "/v1/identity/image",`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`data: JSON.stringify(mData),`}</p>
+        <p className="ml-4">{`contentType: "application/json",`}</p>
+        <p className="ml-4">{`dataType: "json",`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{``}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`if (data.code == 0) {`}</p>
+        <p className="ml-8">{`console.log(data.result);`}</p>
+        <p className="ml-8">{`pageUnShow("verifiedPage");`}</p>
+        <p className="ml-8">{`pageShow("reset_password_donePage");`}</p>
+        <p className="ml-8">{`mainObj.menuprofile();`}</p>
+        <p className="ml-6">{`} else {`}</p>
+        <p className="ml-8">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-6">{`loaderObj.unShow();`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// VerifiedImgAcc
+export function Verified_info() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var Token = localStorage.getItem('token');`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'GET',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/identity',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + obj.token`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{``}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-6">{`$('#name_verified').text(data.result.name);`}</p>
+        <p className="ml-6">{`$('#number_verified').text(data.result.passportCode);`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xhr, status, error) {`}</p>
+        <p className="ml-6">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getHistoryWithdraw
+export function GetHistoryWithdraw() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`// Trigger click event for purchase history`}</p>
+        <p>{`$('#w_his_purchase').trigger('click');`}</p>
+        <p>{`$("#w_his_purchase_loop").html("");`}</p>
+        <p>{``}</p>
+        <p>{`// Initialize variables`}</p>
+        <p>{`var loadData = 1`}</p>
+        <p>{`eventType = eventType || "";`}</p>
+        <p>{`var pageCount = 1`}</p>
+        <p>{`$('#inputHistorywallet').val(pageCount)`}</p>
+        <p>{`var limit = 9`}</p>
+        <p>{`loaderObj.show();`}</p>
+        <p>{`var str = []`}</p>
+        <p>{`var collect_data = []`}</p>
+        <p>{`var getToken = window.localStorage.getItem('token')`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`typeHis = type`}</p>
+        <p>{``}</p>
+        <p>{`getHistoryWithdraw()`}</p>
+        <p>{``}</p>
+        <p>{`function getHistoryWithdraw() {`}</p>
+        <p className="ml-4">{`$.ajax({`}</p>
+        <p className="ml-6">{`type: "get",`}</p>
+        <p className="ml-6">{`url: API_SERVER + \`/v1/wallet/history?page={loadData}&limit={limit}&walletType={type}&eventType={eventType}\`,`}</p>
+        <p className="ml-6">{`headers: {`}</p>
+        <p className="ml-8">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-6">{`},`}</p>
+        <p className="ml-6">{`contentType: "application/json",`}</p>
+        <p className="ml-6">{`dataType: "json",`}</p>
+        <p className="ml-6">{`async: true,`}</p>
+        <p className="ml-6">{`timeout: 100000,`}</p>
+        <p className="ml-6">{`success: function (data) {`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`// Update visibility of previous and next buttons`}</p>
+        <p className="ml-8">{`$('#prevHistorywallet').css({ 'visibility': pageCount === 1 ? 'hidden' : 'visible' });`}</p>
+        <p className="ml-8">{`$('#nextHistorywallet').css({ 'visibility': pageCount === Math.ceil(data.records / limit) ? 'hidden' : 'visible' });`}</p>
+        <p className="ml-8">{`$('#maxPageHistorywallet').text(Math.ceil(data.records / limit) || '1');`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`$('#inputHistorywallet').unbind().on('input', function () {`}</p>
+        <p className="ml-10">{`var inputValue = parseInt($(this).val(), 10);`}</p>
+        <p className="ml-10">{`if (isNaN(inputValue) || inputValue < 1 || inputValue > Math.ceil(data.records / limit)) {`}</p>
+        <p className="ml-12">{`$(this).val(""); // Clear the input value`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-8">{`});`}</p>
+        <p className="ml-8">{``}</p>
+        <p className="ml-8">{`if (data.code === 0) {`}</p>
+        <p className="ml-10">{``}</p>
+        <p className="ml-10">{`loaderObj.unShow();`}</p>
+        <p className="ml-10">{`if (data.records === 0) {`}</p>
+        <p className="ml-12">{`str += '<div style="height: 400px" class="flexCenter"><img src="./pic/icons/nodata_icons.png" style="width:110px;"></div>';`}</p>
+        <p className="ml-12">{`$("#w_his_purchase_loop").html(str);`}</p>
+        <p className="ml-12">{`$("#search-page").css({ "display": "none" });`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-10">{``}</p>
+        <p className="ml-10">{`if (data.records !== 0) {`}</p>
+        <p className="ml-12">{`$('#w_his_purchase_loop').html("");`}</p>
+        <p className="ml-12">{`str = '';`}</p>
+        <p className="ml-12">{`$.each(data.result, function (index, data) {`}</p>
+        <p className="ml-14">{`var finalAllDate = moment(data.cdt).format("YYYY-MM-DD HH:mm:ss");`}</p>
+        <p className="ml-14">{`var seletGroup = data.group;`}</p>
+        <p className="ml-14">{`switch (data.group) {`}</p>
+        <p className="ml-16">{`case 10: seletGroup = '算力+工业'; break;`}</p>
+        <p className="ml-16">{`case 20: seletGroup = '算力+教育'; break;`}</p>
+        <p className="ml-16">{`case 30: seletGroup = '算力+金融'; break;`}</p>
+        <p className="ml-16">{`case 40: seletGroup = '算力+医疗'; break;`}</p>
+        <p className="ml-16">{`case 50: seletGroup = '算力+交通'; break;`}</p>
+        <p className="ml-16">{`case 60: seletGroup = '算力+能源'; break;`}</p>
+        <p className="ml-16">{`case 70: seletGroup = '民族企业助力区'; break;`}</p>
+        <p className="ml-16">{`default: seletGroup = ''; break;`}</p>
+        <p className="ml-14">{`}`}</p>
+        <p className="ml-14">{`var typeName;`}</p>
+        <p className="ml-14">{`switch (data.walletType) {`}</p>
+        <p className="ml-16">{`case 20: typeName = '产品收益'; break;`}</p>
+        <p className="ml-16">{`case 21: typeName = '推荐佣金'; break;`}</p>
+        <p className="ml-16">{`case 26: typeName = '会员等级奖励'; break;`}</p>
+        <p className="ml-16">{`case 23: typeName = '工资'; break;`}</p>
+        <p className="ml-16">{`case 24: typeName = '会议奖励'; break;`}</p>
+        <p className="ml-16">{`case 25: typeName = '签到钱包'; break;`}</p>
+        <p className="ml-16">{`case 27: typeName = '助力金钱包'; break;`}</p>
+        <p className="ml-16">{`case 28: typeName = '助力金收益钱包'; break;`}</p>
+        <p className="ml-16">{`case 30: typeName = '算力金额'; break;`}</p>
+        <p className="ml-16">{`default: typeName = ''; break;`}</p>
+        <p className="ml-14">{`}`}</p>
+        <p className="ml-14">{`var eventTypeDescription;`}</p>
+        <p className="ml-14">{`switch (data.eventType) {`}</p>
+        <p className="ml-16">{`case 10: eventTypeDescription = '每日返利'; break;`}</p>
+        <p className="ml-16">{`case 20: eventTypeDescription = '产品周期结束'; break;`}</p>
+        <p className="ml-16">{`case 30: eventTypeDescription = '提前结束'; break;`}</p>
+        <p className="ml-16">{`case 31: eventTypeDescription = '撤销订单'; break;`}</p>
+        <p className="ml-16">{`case 40: eventTypeDescription = '提现'; break;`}</p>
+        <p className="ml-16">{`default: eventTypeDescription = ''; break;`}</p>
+        <p className="ml-14">{`}`}</p>
+        <p className="ml-14">{``}</p>
+        <p className="ml-14">{`str += \`<div class="activity-time">{finalAllDate}</div>\`;`}</p>
+        <p className="ml-14">{`str += \`<div class="activity-detail">{typeName} - {eventTypeDescription}</div>\`;`}</p>
+        <p className="ml-14">{`str += \`<div class="activity-amount">{data.amount}</div>\`;`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-12">{`$("#w_his_purchase_loop").append(str);`}</p>
+        <p className="ml-10">{`}`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-6">{`},`}</p>
+        <p className="ml-6">{`error: function (e) {`}</p>
+        <p className="ml-8">{`console.log(e);`}</p>
+        <p className="ml-6">{`}`}</p>
+        <p className="ml-4">{`});`}</p>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// Recieve_DSFCIPS
+export function Recieve_DSFCIPS() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`// ทำการ GET ข้อมูลจำนวนคะแนนของโปรไฟล์`}</p>
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/profile/points',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`// ทำการประมวลผลข้อมูลที่ได้รับ`}</p>
+        <p className="ml-8">{`var amountDSF = data.result.debt;`}</p>
+        <p className="ml-8">{`console.log(amountDSF, '+++++++++++++++++=amountDSF==+++++++++++++++++++++');`}</p>
+        <p className="ml-8">{`if (amountDSF >= 0) {`}</p>
+        <p className="ml-10">{`// แสดงข้อความยืนยันการรับคูปองสุดท้าย`}</p>
+        <p className="ml-10">{`msgObj.show("确定领取剩余算力券吗？", function () {`}</p>
+        <p className="ml-12">{`loaderObj.show();`}</p>
+        <p className="ml-12">{`msgObj.unShow();`}</p>
+        <p className="ml-12">{`// ทำการส่งคำขอ POST ไปยังเซิร์ฟเวอร์`}</p>
+        <p className="ml-12">{`$.ajax({`}</p>
+        <p className="ml-14">{`type: 'POST',`}</p>
+        <p className="ml-14">{`url: API_SERVER + '/v1/debtSettlementFund/apply',`}</p>
+        <p className="ml-14">{`headers: {`}</p>
+        <p className="ml-16">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-14">{`},`}</p>
+        <p className="ml-14">{`data: JSON.stringify({`}</p>
+        <p className="ml-16">{`type: 30,`}</p>
+        <p className="ml-16">{`amount: amountDSF // ใช้ตัวแปร amount ที่อัพเดตแล้ว`}</p>
+        <p className="ml-14">{`}),`}</p>
+        <p className="ml-14">{`contentType: 'application/json',`}</p>
+        <p className="ml-14">{`async: true,`}</p>
+        <p className="ml-14">{`timeout: 100000,`}</p>
+        <p className="ml-14">{`success: function (data) {`}</p>
+        <p className="ml-16">{`loaderObj.unShow();`}</p>
+        <p className="ml-16">{`if (data.code == 0) {`}</p>
+        <p className="ml-18">{`msgPageObj.show('领取成功');`}</p>
+        <p className="ml-16">{`} else {`}</p>
+        <p className="ml-18">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-16">{`}`}</p>
+        <p className="ml-16">{`setTimeout(function () {`}</p>
+        <p className="ml-18">{`getAllPoints();`}</p>
+        <p className="ml-16">{`}, 1000);`}</p>
+        <p className="ml-14">{`},`}</p>
+        <p className="ml-14">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-16">{`loaderObj.unShow();`}</p>
+        <p className="ml-16">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-14">{`}`}</p>
+        <p className="ml-12">{`});`}</p>
+        <p className="ml-10">{`msgPageObj.unShow();`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`}`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getWallet
+export function GetWallet() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/wallet',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`// กำหนดค่าให้กับ HTML โดยใช้ข้อมูลที่ได้รับมา`}</p>
+        <p className="ml-8">{`$("#w_show_balance, #topup_money, #balanceRMB_summarize3").text(parseFloat(data.result[9].balance).toFixed(2));`}</p>
+        <p className="ml-8">{`$("#show_w_balance1,#balanceRMB_summarize3_2").text(parseFloat(data.result[0].balance).toFixed(2));`}</p>
+        <p className="ml-8">{`$("#show_w_balance2").text(parseFloat(data.result[1].balance).toFixed(2));`}</p>
+        <p className="ml-8">{`$("#show_w_balance3").text(parseFloat(data.result[6].balance).toFixed(2));`}</p>
+        <p className="ml-8">{`$("#show_w_balance4").text(parseFloat(data.result[3].balance).toFixed(2));`}</p>
+        <p className="ml-8">{`$("#show_w_balance5").text(parseFloat(data.result[4].balance).toFixed(2));`}</p>
+        <p className="ml-8">{`$("#show_w_balance61").text(parseFloat(data.result[5].balance).toFixed(2));`}</p>
+        <p className="ml-8">{`$("#show_w_balance_zlj1,#balanceRMB_summarize_zlj1").text(parseFloat(data.result[7].balance).toFixed(2));`}</p>
+        <p className="ml-8">{`$("#show_w_balance_zlj2").text(parseFloat(data.result[8].balance).toFixed(2));`}</p>
+        <p className="ml-8">{`// ประมวลผลข้อมูลเพื่อแสดงผล`}</p>
+        <p className="ml-8">{`var totalBalance = 0;`}</p>
+        <p className="ml-8">{`for (var i = 0; i < 8; i++) {`}</p>
+        <p className="ml-12">{`var currentBalance = parseFloat(data.result[i].balance);`}</p>
+        <p className="ml-12">{`totalBalance += currentBalance;`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-8">{`$("#show_w_balance").text(totalBalance.toFixed(2));`}</p>
+        <p className="ml-8">{`$("#show_earn_balance").text(totalBalance.toFixed(2)); // แสดงยอดเงินรวม`}</p>
+        <p className="ml-8">{`// ตรวจสอบประเภทและกำหนดข้อความที่เหมาะสม`}</p>
+        <p className="ml-8">{`if (type == 20) {`}</p>
+        <p className="ml-12">{`$("#earn_header_right_body").text("การถอนรายได้จากผลิตภัณฑ์");`}</p>
+        <p className="ml-12">{`$("#wallet_product_history_header_right_body, #wallet_product_detail_header_right_body").text("บันทึกการทำรายได้จากผลิตภัณฑ์");`}</p>
+        <p className="ml-12">{`$("#earn_show_balance").text(parseFloat(data.result[0].balance).toFixed(2));`}</p>
+        <p className="ml-8">{`} else if (type == 21) {`}</p>
+        <p className="ml-12">{`// กำหนดข้อความสำหรับการถอนรายได้จากการแนะนำ`}</p>
+        <p className="ml-12">{`// และบันทึกการทำรายได้จากการแนะนำ`}</p>
+        <p className="ml-12">{`$("#earn_header_right_body").text("การถอนรายได้จากการแนะนำ");`}</p>
+        <p className="ml-12">{`$("#wallet_product_history_header_right_body, #wallet_product_detail_header_right_body").text("บันทึกการทำรายได้จากการแนะนำ");`}</p>
+        <p className="ml-12">{`$("#earn_show_balance").text(parseFloat(data.result[1].balance).toFixed(2));`}</p>
+        <p className="ml-8">{`} else if (type == 26) {`}</p>
+        <p className="ml-12">{`// กำหนดข้อความสำหรับการรับรางวัลสมาชิก`}</p>
+        <p className="ml-12">{`$("#earn_header_right_body").text("การรับรางวัลระดับสมาชิก");`}</p>
+        <p className="ml-12">{`$("#wallet_product_history_header_right_body, #wallet_product_detail_header_right_body").text("บันทึกการรับรางวัลระดับสมาชิก");`}</p>
+        <p className="ml-12">{`$("#earn_show_balance").text(parseFloat(data.result[6].balance).toFixed(2));`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'))`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`})`}</p>
+      </div>
+    </div>
+  )
+}
+
+// getAllPoints
+export function GetAllPoints() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/profile/points',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`// ตรวจสอบสถานะการร้องขอ`}</p>
+        <p className="ml-8">{`if (data.code == 0) {`}</p>
+        <p className="ml-10">{`$("#activity_points").text(data.result.activity);`}</p>
+        <p className="ml-10">{`amountDSF = data.result.debt;`}</p>
+        <p className="ml-10">{`$("#w_show_balance2").html(amountDSF);`}</p>
+        <p className="ml-10">{`loadingBar((Number(data.result.activity) / Number(data.result.debtActivity) * 888));`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`loaderObj.unShow();`}</p>
+        <p className="ml-10">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// verified_wallet
+export function Verified_wallet() {
+  return (
+    <div className="ml-4 break-words">
+      <p>{`return new Promise(function (resolve, reject) {`}</p>
+      <div className="ml-4">
+        <p>{`var Token = localStorage.getItem('token');`}</p>
+        <p>{`var obj = JSON.parse(Token);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'GET',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/identity/check-image',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + obj.token`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`console.log(data);`}</p>
+        <p className="ml-8">{`if (data.result === true) {`}</p>
+        <p className="ml-10">{`console.log('อัปโหลดแล้ว+verified_wallet');`}</p>
+        <p className="ml-10">{`resolve(true);`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`console.log('ยังไม่ได้อัปโหลด+verified_wallet');`}</p>
+        <p className="ml-10">{`resolve(false);`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`console.error('การร้องขอล้มเหลว:', error);`}</p>
+        <p className="ml-8">{`reject(error);`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+      <p>{`);`}</p>
+    </div>
+  )
+}
+
+// getLimitWithdraw
+export function GetLimitWithdraw() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`var getToken = window.localStorage.getItem("token");`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <p>{``}</p>
+        <p>{`$.ajax({`}</p>
+        <p className="ml-4">{`type: 'get',`}</p>
+        <p className="ml-4">{`url: API_SERVER + '/v1/config/trans-limit',`}</p>
+        <p className="ml-4">{`headers: {`}</p>
+        <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`async: true,`}</p>
+        <p className="ml-4">{`timeout: 100000,`}</p>
+        <p className="ml-4">{`success: function (data) {`}</p>
+        <p className="ml-8">{`if (data.code == 0) {`}</p>
+        <p className="ml-10">{`var limitData = data.result.split(',');`}</p>
+        <p className="ml-10">{`earnObj.getLimitInput(limitData);`}</p>
+        <p className="ml-10">{`transferObj.setLimitInput(limitData);`}</p>
+        <p className="ml-8">{`} else {`}</p>
+        <p className="ml-10">{`loaderObj.unShow();`}</p>
+        <p className="ml-10">{`msgPageObj.show(getStatusCode(data.code));`}</p>
+        <p className="ml-8">{`}`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+        <p className="ml-8">{`loaderObj.unShow();`}</p>
+        <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
+        <p className="ml-4">{`},`}</p>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+// loopWithdraw
+export function LoopWithdraw() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`// รับ token จาก local storage และแปลงเป็น JSON`}</p>
+        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
+        <p>{`var token = JSON.parse(getToken);`}</p>
+        <div className="ml-2">
+          <p>{`$.ajax({`}</p>
+          <p className="ml-4">{`type: "get",`}</p>
+          <p className="ml-4">{`url: API_SERVER + '/v1/wallet/history?type=20&page=1&limit=100',`}</p>
+          <p className="ml-4">{`headers: {`}</p>
+          <p className="ml-6">{`'Authorization': 'Bearer ' + token.token,`}</p>
+          <p className="ml-4">{`},`}</p>
+          <p className="ml-4">{`contentType: "application/json",`}</p>
+          <p className="ml-4">{`dataType: "json",`}</p>
+          <p className="ml-4">{`async: true,`}</p>
+          <p className="ml-4">{`timeout: 100000,`}</p>
+          <p className="ml-4">{`success: function (data) {`}</p>
+          <p className="ml-8">{`if (data.code == 0) {`}</p>
+          <p className="ml-10">{`loaderObj.unShow();`}</p>
+          <p className="ml-10">{`var walletType_details = data.result.filter(data => data.walletType === type);`}</p>
+          <p className="ml-10">{`collect_walletType.push(walletType_details);`}</p>
+          <p className="ml-10">{`if (collect_walletType[0].length == 0) {`}</p>
+          <p className="ml-12">{`str += '<div style="height: 400px" class="flexCenter"><img src="./pic/icons/nodata_icons.png" style="width:110px;"></div>';`}</p>
+          <p className="ml-12">{`$("#loop_data_withdraw_history").html(str);`}</p>
+          <p className="ml-10">{`}`}</p>
+          <p className="ml-10">{`if (collect_walletType[0].length != 0) {`}</p>
+          <p className="ml-12">{`$.each(collect_walletType[0], function (index, data) {`}</p>
+          <p className="ml-14">{`var finalAllDate = moment(data.cdt).format("YYYY-MM-DD HH:mm:ss");`}</p>
+          <p className="ml-14">{`str += '<div style="margin-bottom:12px; width:95%; font-weight:bold;">';`}</p>
+          <p className="ml-14">{`str += ' <div style="display: flex;align-items:center;width: 90%;height: 55px;margin:0 auto; background: #ffffff; border-radius: 8px; box-shadow: 0px 5px 5px 0px #0B203914;">';`}</p>
+          <p className="ml-14">{`str += '  <span style="width: 10px;height: 55px;top: 0px;border-radius: 7px 0 0 7px; background:' + (data.type == 20 ? '#FA3939;' : '#60EB1F;') + '"></span>';`}</p>
+          <p className="ml-14">{`str += '  <div style="width:100%;display:flex;justify-content:space-between;padding:0 12px">';`}</p>
+          <p className="ml-14">{`str += '   <div style="display:flex;flex-direction:column;justify-content:space-between; gap:8px;">';`}</p>
+          <p className="ml-14">{`str += '<div style="display:flex; flex-direction:row;">';`}</p>
+          <p className="ml-14">{`str += '    <span style="width: auto px;height: 17px;top: 8px;font-size: 18px;line-height: 17px;display: flex;align-items: center;color: #1E232C;">提现</span>' + '<span style ="height: 17px;top: 8px;font-size: 12px;line-height: 17px;display: flex;align-items: center; margin-left: 5px; ' + (data.state == 40 ? 'color:#60EB1F;">已完成' : data.state == 10 ? 'color:#FA8642;">待定' : data.state == 30 ? 'color:#FA3939;">提现失败' : 'color:#0000;">失败' + '</span>');`}</p>
+          <p className="ml-14">{`str += '</div>';`}</p>
+          <p className="ml-14">{`str += '    <span style=" width: 140px;height: 12px;top: 32px;font-size: 14px;line-height: 12px;color: rgba(30, 35, 44, 0.5); margin-bottom 20px">' + finalAllDate + '</span>';`}</p>
+          <p className="ml-14">{`str += '   </div>';`}</p>
+          <p className="ml-14">{`str += '   <div style="display:flex;flex-direction:column;justify-content:center">';`}</p>
+          <p className="ml-14">{`str += '    <span  id="Ustd"style="width: auto;height: 22px;font-size: 18px;line-height: 22px;color: #1E232C;"><b >' + parseFloat(data.amount).toFixed(2) + ' 元</b></span>';`}</p>
+          <p className="ml-14">{`str += '   </div>';`}</p>
+          <p className="ml-14">{`str += '  </div>';`}</p>
+          <p className="ml-14">{`str += ' </div>';`}</p>
+          <p className="ml-14">{`str += '</div>';`}</p>
+          <p className="ml-14">{`str += '</div>';`}</p>
+          <p className="ml-12">{`});`}</p>
+          <p className="ml-12">{`$('#loop_data_withdraw_history').html(str);`}</p>
+          <p className="ml-12">{`myScroll = new IScroll('#scroller_withdraw_history', { probeType: 1, mouseWheel: true });`}</p>
+          <p className="ml-10">{`}`}</p>
+          <p className="ml-8">{`} else {`}</p>
+          <p className="ml-12">{`msgPageObj.show(getStatusCode(data.code))`}</p>
+          <p className="ml-8">{`}`}</p>
+          <p className="ml-4">{`}`}</p>
+          <p className="ml-4">{`error: function (xmlhttprequest, error) {`}</p>
+          <p className="ml-8">{`loaderObj.unShow();`}</p>
+          <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'))`}</p>
+          <p className="ml-8">{`cleanInput();`}</p>
+          <p className="ml-4">{`}`}</p>
+          <p>{`});`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}

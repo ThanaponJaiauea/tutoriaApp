@@ -12,7 +12,7 @@ const startProjecData = [
       },
     ],
   },
-];
+]
 
 const indexData = [
   {
@@ -125,7 +125,7 @@ const indexData = [
       },
     ],
   },
-];
+]
 
 const widgetData = [
   {
@@ -200,7 +200,7 @@ const widgetData = [
       },
     ],
   },
-];
+]
 
 const mainData = [
   {
@@ -215,7 +215,7 @@ const mainData = [
       },
     ],
   },
-];
+]
 
 const login = [
   {
@@ -266,7 +266,7 @@ const login = [
       },
     ],
   },
-];
+]
 
 const register = [
   {
@@ -293,13 +293,19 @@ const register = [
       },
     ],
   },
-];
+]
 
 const lang = [
   {
     key: "lang",
     label: "Lang.html",
     children: [
+      {
+        name: "Body",
+        type: "generalModel",
+        key: "bodyLang",
+        category: "langHtml",
+      },
       {
         name: "var NSLangArr",
         type: "generalModel",
@@ -338,7 +344,7 @@ const lang = [
       },
     ],
   },
-];
+]
 
 const bStyle = [
   {
@@ -353,13 +359,19 @@ const bStyle = [
       },
     ],
   },
-];
+]
 
 const level = [
   {
     key: "level",
     label: "Level.html",
     children: [
+      {
+        name: "Body",
+        type: "generalModel",
+        key: "bodyLevel",
+        category: "levelHtml",
+      },
       {
         name: "openTab()",
         type: "generalModel",
@@ -374,7 +386,7 @@ const level = [
       },
     ],
   },
-];
+]
 
 export {
   startProjecData,
@@ -386,4 +398,4 @@ export {
   lang,
   bStyle,
   level,
-};
+}

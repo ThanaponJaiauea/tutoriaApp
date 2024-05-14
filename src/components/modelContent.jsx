@@ -4,6 +4,7 @@ import MessageBoxTryit from "./tryitFunction/messageBoxTryit"
 import {FiChevronDown, FiChevronUp} from "react-icons/fi"
 import indexStartApp from "../pictures/indexStartApp.png"
 import {
+  AddFilesFunc,
   AddSlipPayment,
   Addda_talogger_addDate,
   Addda_talogger_createDevice,
@@ -11,8 +12,10 @@ import {
   AlertExample,
   AlertIndex,
   AlertWidget,
+  AllReadNotice,
   Base64,
   Body_longin,
+  BuyProduct,
   Cancel_order_getItemAll,
   Cancel_order_sentCancelOrder,
   ChangePasswordHtml,
@@ -58,27 +61,45 @@ import {
   EditAddress_deleteAddress,
   EditAddress_editAddress,
   EditAddress_getAddressID,
+  Enable2FA,
   Feedback,
+  FetchPrizes,
   FetchSliderConfigAndData_login,
   FetchSliderData_login,
   First,
   Forgotpass_forgotPass,
   Forgotpass_sendOTP_forgot,
   FunctionMessageBoxText,
+  Get2FA,
   Get2FATrade,
   Get2FAconvert_DSF,
   GetAbsTimeWidget,
+  GetAllPoints,
   GetAnnouncement,
   GetAnnouncement_view,
   GetAnnouncement_viewID,
+  GetBankAll,
+  GetChannels,
   GetFinancialAlipay,
   GetFinancialBank,
   GetFinancialPayments,
   GetHistory,
+  GetHistoryTransaction,
+  GetHistoryWithdraw,
   GetInstitution,
+  GetKfLink,
+  GetLimitWithdraw,
+  GetMyTeam_3,
+  GetProduct,
+  GetTransferHistory,
+  GetUserRoulette,
+  GetVoucherDaily,
   GetVoucherInvite,
+  GetVoucherTeam,
+  GetWallet,
   Getlevel,
   Getnewgroup,
+  Getnotifications,
   HeaderInitExampleScript,
   HeaderInitWidget,
   HistoryFunction,
@@ -122,6 +143,8 @@ import {
   LoginFun_login,
   Login_askDeviceIdFun,
   Login_checkLoginWithRefreshToken,
+  LoopWithdraw,
+  LuckyLeftData,
   MainHtmlBody,
   MainHtmlScriptInit,
   Main_checkIsLogin,
@@ -134,6 +157,7 @@ import {
   Main_refreshTokenFun,
   Main_unShowMenuPage,
   Main_updateLoginStatus,
+  MarkNotificationAsRead,
   MemberTier_createMemberTier,
   MemberTier_getMemberTier,
   MessagePageExampleScript,
@@ -185,8 +209,12 @@ import {
   Payment_method2_genQR,
   Payment_method2_start_stimer,
   Payment_method_selectPayment,
+  Peer_group,
   PostConvert,
   PostReceiveVouncher,
+  PostSelectedPrize,
+  PostTopUp,
+  PostTransder,
   PostWithdraw,
   Postconvert_DSFCIPS,
   ProductCart_confirmOrder,
@@ -198,6 +226,7 @@ import {
   Productdetail_checkLogin,
   Productdetail_confirmOrderBuy,
   Productdetail_getDetailProduct,
+  Profile,
   Profile_invite,
   PurchaseReport_createTableQuarter,
   PurchaseReport_createTableReport,
@@ -205,6 +234,7 @@ import {
   PurchaseReport_getSalesData,
   PurchaseReport_getSelectedMonthpurchase,
   PurchaseReport_showChart,
+  Recieve_DSFCIPS,
   Redeem_checkNoInput,
   Redeem_postRedeem,
   Redeem_redeemCheckToken,
@@ -239,9 +269,11 @@ import {
   Setting_account_updateAvatar,
   Setting_account_updateProfile,
   Setting_getQRcode,
+  ShowNews,
   Slider_cap_login,
   Start_call,
   Start_init,
+  Team,
   Topup_addSlipPayment,
   Topup_checkNoInput,
   Topup_topUpCheckToken,
@@ -256,6 +288,10 @@ import {
   UpdateSlipPayment,
   Update_order_scroller,
   Update_order_showOrder,
+  VerifiedImgAcc,
+  Verified_info,
+  Verified_name,
+  Verified_wallet,
   Verify2faTrade,
   Verify2faconvert_DSF,
   Vouncher_code_showVoucher,
@@ -344,6 +380,9 @@ export default function ModelContent({
   content2p1,
   content2p2,
   content2p3,
+  content2p4,
+  content2p5,
+  content2p6,
   content3,
   content3p1,
   content3p2,
@@ -357,20 +396,30 @@ export default function ModelContent({
   content4p3,
   content4p4,
   content4p5,
+  content4p6,
   content5,
   content5p1,
   content5p2,
   content5p3,
+  content5p4,
+  content5p5,
+  content5p6,
   content6,
   content6p1,
   content6p2,
   content6p3,
   content6p4,
   content6p5,
+  content6p6,
   content7,
   content7p1,
   content7p2,
   content7p3,
+  content7p4,
+  content7p5,
+  content7p6,
+  content7p7,
+  content7p8,
   content8,
   content8p1,
   content8p2,
@@ -652,6 +701,9 @@ export default function ModelContent({
                 {content2p1 && <p>{content2p1}</p>}
                 {content2p2 && <p>{content2p2}</p>}
                 {content2p3 && <p>{content2p3}</p>}
+                {content2p4 && <p>{content2p4}</p>}
+                {content2p5 && <p>{content2p5}</p>}
+                {content2p6 && <p>{content2p6}</p>}
                 {content3 && <p>{content3}</p>}
                 {content3p1 && <p>{content3p1}</p>}
                 {content3p3 && <p>{content3p3}</p>}
@@ -665,20 +717,30 @@ export default function ModelContent({
                 {content4p3 && <p>{content4p3}</p>}
                 {content4p4 && <p>{content4p4}</p>}
                 {content4p5 && <p>{content4p5}</p>}
+                {content4p6 && <p>{content4p6}</p>}
                 {content5 && <p>{content5}</p>}
                 {content5p1 && <p>{content5p1}</p>}
                 {content5p2 && <p>{content5p2}</p>}
                 {content5p3 && <p>{content5p3}</p>}
+                {content5p4 && <p>{content5p4}</p>}
+                {content5p5 && <p>{content5p5}</p>}
+                {content5p6 && <p>{content5p6}</p>}
                 {content6 && <p>{content6}</p>}
                 {content6p1 && <p>{content6p1}</p>}
                 {content6p2 && <p>{content6p2}</p>}
                 {content6p3 && <p>{content6p3}</p>}
                 {content6p4 && <p>{content6p4}</p>}
                 {content6p5 && <p>{content6p5}</p>}
+                {content6p6 && <p>{content6p6}</p>}
                 {content7 && <p>{content7}</p>}
                 {content7p1 && <p>{content7p1}</p>}
                 {content7p2 && <p>{content7p2}</p>}
                 {content7p3 && <p>{content7p3}</p>}
+                {content7p4 && <p>{content7p4}</p>}
+                {content7p5 && <p>{content7p5}</p>}
+                {content7p6 && <p>{content7p6}</p>}
+                {content7p7 && <p>{content7p7}</p>}
+                {content7p8 && <p>{content7p8}</p>}
                 {content8 && <p>{content8}</p>}
                 {content8p1 && <p>{content8p1}</p>}
                 {content8p2 && <p>{content8p2}</p>}
@@ -1155,6 +1217,50 @@ export default function ModelContent({
                 {selectedMenu === "postReceiveVouncher" && (
                   <PostReceiveVouncher />
                 )}
+                {selectedMenu === "fetchPrizes" && <FetchPrizes />}
+                {selectedMenu === "postSelectedPrize" && <PostSelectedPrize />}
+                {selectedMenu === "getUserRoulette" && <GetUserRoulette />}
+                {selectedMenu === "luckyLeftData" && <LuckyLeftData />}
+                {selectedMenu === "Peer_group" && <Peer_group />}
+                {selectedMenu === "getMyTeam_3" && <GetMyTeam_3 />}
+                {selectedMenu === "showNews" && <ShowNews />}
+                {selectedMenu === "allReadNotice" && <AllReadNotice />}
+                {selectedMenu === "markNotificationAsRead" && (
+                  <MarkNotificationAsRead />
+                )}
+                {selectedMenu === "Getnotifications" && <Getnotifications />}
+                {selectedMenu === "Profile" && <Profile />}
+                {selectedMenu === "Team" && <Team />}
+                {selectedMenu === "verified_name" && <Verified_name />}
+                {selectedMenu === "getVoucherDaily" && <GetVoucherDaily />}
+                {selectedMenu === "getKfLink" && <GetKfLink />}
+                {selectedMenu === "Enable2FA" && <Enable2FA />}
+                {selectedMenu === "get2FA" && <Get2FA />}
+                {selectedMenu === "BuyProduct" && <BuyProduct />}
+                {selectedMenu === "getVoucherTeam" && <GetVoucherTeam />}
+                {selectedMenu === "getChannels" && <GetChannels />}
+                {selectedMenu === "postTopUp" && <PostTopUp />}
+                {selectedMenu === "getBankAll" && <GetBankAll />}
+                {selectedMenu === "getProduct" && <GetProduct />}
+                {selectedMenu === "getHistoryTransaction" && (
+                  <GetHistoryTransaction />
+                )}
+                {selectedMenu === "GetTransferHistory" && (
+                  <GetTransferHistory />
+                )}
+                {selectedMenu === "postTransder" && <PostTransder />}
+                {selectedMenu === "AddFilesFunc" && <AddFilesFunc />}
+                {selectedMenu === "VerifiedImgAcc" && <VerifiedImgAcc />}
+                {selectedMenu === "Verified_info" && <Verified_info />}
+                {selectedMenu === "getHistoryWithdraw" && (
+                  <GetHistoryWithdraw />
+                )}
+                {selectedMenu === "Recieve_DSFCIPS" && <Recieve_DSFCIPS />}
+                {selectedMenu === "getWallet" && <GetWallet />}
+                {selectedMenu === "getAllPoints" && <GetAllPoints />}
+                {selectedMenu === "verified_wallet" && <Verified_wallet />}
+                {selectedMenu === "getLimitWithdraw" && <GetLimitWithdraw />}
+                {selectedMenu === "loopWithdraw" && <LoopWithdraw />}
                 <p className="ml-4">{`}`}</p>
                 <span className="text-[#A52A2A]"> &lt;script&gt;</span>
               </div>

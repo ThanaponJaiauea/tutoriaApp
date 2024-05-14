@@ -100,10 +100,12 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         return "setAllUILang()"
       case "NSLang":
         return "NSLang"
+      case "statusCodesArrLang":
+        return "var statusCodesArr"
       case "getStatusCode":
         return "getStatusCode(code)"
       case "openTabLevel":
-        return "openTabLevel(tabName)"
+        return "openTab(tabName)"
       case "getlevel":
         return "getlevel()"
       default:
@@ -593,7 +595,15 @@ const FormCintentModelStructure = ({selectedMenu}) => {
       <ModelContent
         headers="Solar App"
         headerName={getTitle()}
-        content="LoginFun_login"
+        content="-โค้ด HTML ซึ่งเป็นส่วนหนึ่งของหน้าเว็บหน้าล็อกอินของแอปพลิเคชัน มันประกอบไปด้วยองค์ประกอบต่างๆ เพื่อแสดงผลและให้ผู้ใช้ใส่ข้อมูลการล็อกอิน นี่คือโค้ด HTML ที่ประกอบด้วย"
+        content1={`1.ส่วนหัว`}
+        content1p1={`1.1.ประกอบด้วยภาพพื้นหลังและข้อความยินดีในการเข้าสู่ระบบ`}
+        content2={`2.ส่วนกลาง`}
+        content2p1={`2.1.ประกอบด้วยช่องกรอกข้อมูลสำหรับเบอร์โทรศัพท์และรหัสผ่าน`}
+        content2p2={`2.2.ปุ่มล็อกอิน`}
+        content3={`3.ส่วนล่าง`}
+        content3p1={`3.1.ประกอบด้วยลิงก์สำหรับการลงทะเบียนใหม่และเวอร์ชันของแอปพลิเคชัน`}
+        content4={`โค้ดนี้มีความสำคัญในการแสดงและจัดการหน้าล็อกอินของแอปพลิเคชัน ซึ่งเป็นส่วนสำคัญในกระบวนการยืนยันตัวตนและเข้าสู่ระบบของผู้ใช้`}
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheck={true}
@@ -607,7 +617,20 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         headers="Solar App"
         headerName={getTitle()}
         functionName={getTitle()}
-        content="fetchSliderConfigAndData"
+        content="ฟังก์ชัน fetchSliderConfigAndData นี้มีวัตถุประสงค์เพื่อดึงข้อมูลการกำหนดค่าสไลด์เดอร์และข้อมูลของสไลด์เดอร์"
+        content1="1.ทำการส่งคำขอ AJAX ไปยังเซิร์ฟเวอร์ที่ /v1/auth/validate/side-image-config เพื่อขอข้อมูลการกำหนดค่าของสไลด์เดอร์"
+        content2="2.เมื่อรับข้อมูลสำเร็จ ตรวจสอบค่า configData[0] และ configData[1] เพื่อดำเนินการต่อตามเงื่อนไขที่กำหนด:"
+        content3="3.ถ้า configData[0] เป็น 1 และ configData[1] เป็น 1: เรียกใช้ fetchSliderData เพื่อดึงข้อมูลสไลด์เดอร์"
+        content4="4.ถ้า configData[0] เป็น 0 และ configData[1] เป็น 1: ตรวจสอบค่า checkLoginR และดำเนินการต่อตามเงื่อนไขที่กำหนด"
+        content4p1={`4.1.ถ้า checkLoginR เป็น "register": เรียกใช้ registerFun`}
+        content4p2={`4.2.ถ้า checkLoginR เป็น "login": เรียกใช้ fetchSliderData`}
+        content5="5.ถ้า configData[0] เป็น 1 และ configData[1] เป็น 0: ตรวจสอบค่า checkLoginR และดำเนินการต่อตามเงื่อนไขที่กำหนด"
+        content5p1={`5.1.ถ้า checkLoginR เป็น "register": เรียกใช้ fetchSliderData`}
+        content5p2={`5.2.ถ้า checkLoginR เป็น "login": เรียกใช้ loginObj.loginFun`}
+        content6={`6.ถ้า configData[0] เป็น 0 และ configData[1] เป็น 0: ตรวจสอบค่า checkLoginR และดำเนินการต่อตามเงื่อนไขที่กำหนด:`}
+        content6p1={`6.1.ถ้า checkLoginR เป็น "register": เรียกใช้ registerFun และกำหนดค่า checkLoginR เป็น null`}
+        content6p2={`6.2.ถ้า checkLoginR เป็น "login": เรียกใช้ loginObj.loginFun และกำหนดค่า checkLoginR เป็น null`}
+        content7={`การดำเนินการเหล่านี้ทำให้สามารถดึงข้อมูลสไลด์เดอร์ตามการกำหนดค่าและสถานะการเข้าสู่ระบบของผู้ใช้ได้ตามที่ต้องการในแต่ละสถานการณ์ที่กำหนดไว้ในการกำหนดค่าของสไลด์เดอร์`}
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheckScript={true}
@@ -621,7 +644,16 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         headers="Solar App"
         headerName={getTitle()}
         functionName={getTitle()}
-        content="fetchSliderConfigAndData"
+        content="-ฟังก์ชัน fetchSliderData ใช้ในการดึงข้อมูลที่เกี่ยวข้องกับสไลด์เดอร์"
+        content1={`1.การตั้งค่าคุณสมบัติ CSS ของอิลิเมนต์ #sliderContainer เป็น "flex"`}
+        content2={`2.การปรับตำแหน่งซ้ายของอิลิเมนต์ fixedImage ไปที่ 0 พิกเซล`}
+        content3={`3.การส่งคำขอ AJAX ไปยัง URL ที่ระบุ (API_SERVER + "/v1/auth/validate/side-image") เพื่อดึงข้อมูลของสไลด์เดอร์`}
+        content4={`4.เมื่อดึงข้อมูลสำเร็จ, ฟังก์ชันจะดึงข้อมูลที่จำเป็นจากอ็อบเจ็กต์ sliderData`}
+        content4p1={`4.1.ดึงรูปบล็อก, รูปพื้นหลัง, พิกัด y และ ID จากอ็อบเจ็กต์ sliderData.result`}
+        content4p2={`4.2.คำนวณตำแหน่ง (y) ของรูปบล็อกต่อรูปพื้นหลัง`}
+        content4p3={`4.3.ปรับขนาดของอิลิเมนต์ .slider_container และอิลิเมนต์ #fixedImage โดยขึ้นอยู่กับข้อมูลที่ดึงมา`}
+        content4p4={`4.4.เรียกใช้ฟังก์ชัน captchachack โดยส่งรูปบล็อก, รูปพื้นหลัง, และพิกัด y เป็นพารามิเตอร์`}
+        content5={`5.หากเกิดข้อผิดพลาดขณะส่งคำขอ AJAX, จะทำการบันทึกข้อความผิดพลาดลงในคอนโซล`}
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheckScript={true}
@@ -635,7 +667,21 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         headers="Solar App"
         headerName={getTitle()}
         functionName={getTitle()}
-        content="slider_cap"
+        content="-ฟังก์ชั่น slider_cap() นี้เป็นส่วนหนึ่งของการจัดการการเลื่อนและการยืนยันตัวตนด้วยการลากภาพ (slider) ในหน้าล็อกอินของแอปพลิเคชัน"
+        content1={`1.เมื่อผู้ใช้เริ่มลากภาพ (mousedown หรือ touchstart) ฟังก์ชั่น startDrag() ถูกเรียกใช้`}
+        content1p1={`1.1.ตั้งค่า isDragging เป็น true เพื่อระบุว่ากำลังมีการลากภาพ`}
+        content1p2={`1.2.เพิ่มการฟังก์ชั่น drag() เพื่อติดตามการเคลื่อนไหวของเมาส์หรือสัมผัส`}
+        content1p3={`1.3.เพิ่มการฟังก์ชั่น stopDrag() เพื่อจับเมาส์หรือสัมผัสที่สิ้นสุด`}
+        content2={`2.ในฟังก์ชั่น drag() ตรวจสอบว่ากำลังมีการลาก (isDragging) หากใช่`}
+        content2p1={`2.1.คำนวณตำแหน่ง X ของเมาส์หรือสัมผัส`}
+        content2p2={`2.2.คำนวณขอบเขตของตำแหน่ง X ที่อนุญาตใน slider container`}
+        content2p3={`2.3.ปรับตำแหน่งใหม่ของ fixed image ให้อยู่ในขอบเขตที่กำหนดไว้`}
+        content3={`3.เมื่อผู้ใช้สิ้นสุดการลาก (mouseup หรือ touchend) ฟังก์ชั่น stopDrag() ถูกเรียกใช้`}
+        content3p1={`3.1.ตั้งค่า isDragging เป็น false เพื่อหยุดการลาก`}
+        content3p2={`3.2.ลบการฟังก์ชั่น drag() และ stopDrag() ออกจาก window เพื่อหยุดการติดตาม`}
+        content3p3={`3.3.คำนวณตำแหน่ง X ใหม่ของ fixed image เมื่อสิ้นสุดการลาก`}
+        content3p4={`3.4.ตรวจสอบสถานะของการเข้าสู่ระบบหรือการลงทะเบียนและเรียกใช้ฟังก์ชั่นที่เหมาะสม (registerFun() หรือ loginObj.loginFun())`}
+        content4={`โดยฟังก์ชั่นนี้เป็นส่วนหนึ่งของการเข้าสู่ระบบผ่านการยืนยันตัวตนที่เพิ่มความปลอดภัยและความสะดวกสบายให้แก่ผู้ใช้`}
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheckScript={true}
@@ -671,7 +717,14 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         headers="Solar App"
         headerName={getTitle()}
         functionName={getTitle()}
-        content="checkLoginStatusWithRefreshToken"
+        content="-ฟังก์ชัน checkLoginStatusWithRefreshToken ใช้ในการตรวจสอบสถานะการเข้าสู่ระบบโดยใช้ refresh token"
+        content1="1.ตรวจสอบว่าตัวแปร token มีค่าเป็น null หรือไม่ ถ้าเป็น null ก็จะสิ้นสุดการทำงานของฟังก์ชันโดยการส่งคืน undefined"
+        content2={`2.สร้างอ็อบเจ็กต์ mData ที่มีค่าเป็น {token: token.refresh} เพื่อใช้เป็นข้อมูลที่จะส่งไปยังเซิร์ฟเวอร์สำหรับการรีเฟรช token`}
+        content3={`3.ส่งคำขอ AJAX ไปยัง URL API_SERVER + "/v1/auth/refresh" โดยใช้เมธอด POST และส่งข้อมูลในรูปแบบ JSON`}
+        content4={`4.เมื่อคำขอสำเร็จ, ตรวจสอบว่าโค้ดการตอบสนอง (data.code) เป็น 0 หรือไม่`}
+        content4p1={`4.1.หากเป็น 0, หมายถึงการรีเฟรช token สำเร็จ จะทำการบันทึก token ใหม่ลงใน local storage และอัพเดตค่าของตัวแปร token`}
+        content4p2={`4.2.หากไม่เป็น 0, หมายถึงการรีเฟรช token ล้มเหลว`}
+        content5={`5.หากเกิดข้อผิดพลาดในขณะส่งคำขอ AJAX หรือรีเฟรช token ล้มเหลว, จะทำการบันทึกข้อความผิดพลาดลงในคอนโซล`}
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheckScript={true}
@@ -821,6 +874,20 @@ const FormCintentModelStructure = ({selectedMenu}) => {
       />
     ),
 
+    statusCodesArrLang: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="-statusCodesArrLang"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckVar={true}
+      />
+    ),
+
     getStatusCode: () => (
       <ModelContent
         headers="Solar App"
@@ -850,7 +917,7 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         content3="3.จากนั้นฟังก์ชันจะดึงอ็อบเจกต์ของลิงก์แท็บทั้งหมดที่มีคลาส 'tablinks' และลบคลาส 'actived' ที่มีอยู่"
         content4="4.ต่อมาฟังก์ชันจะแสดงแท็บที่ถูกเลือกโดยเพิ่มค่า display ให้เป็น 'block' และเพิ่มคลาส 'actived' เข้าไปในลิงก์แท็บที่เกี่ยวข้อง"
         content5="5.ดังนั้นแท็บที่ไม่ได้ถูกเลือกจะถูกซ่อนและลิงก์ที่ไม่ได้ถูกเลือกจะไม่มีคลาส 'actived' และแท็บที่ถูกเลือกจะแสดงผลและลิงก์ที่เกี่ยวข้องจะมีคลาส 'actived'"
-        functionName="openTab(tabName)"
+        functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheck={true}
@@ -878,7 +945,7 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         content7p2={`7.2.ถ้ารหัสคำขอเป็น 4090 แสดงว่ายังไม่ได้รับรางวัล ให้แสดงข้อความ "周奖励将于每周一自动激活，请您按时领取"`}
         content7p3={`7.3.ในกรณีอื่น ๆ, แสดงข้อความตามรหัสคำขอ`}
         content8={`และจบการทำงานของฟังก์ชัน คำสั่ง refresh ใช้สำหรับการอัพเดทตัวแปร myScroll ของ IScroll ที่ใช้ในการเลื่อนหน้าเพจ`}
-        functionName="openTab(tabName)"
+        functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
         htmlCheck={true}
