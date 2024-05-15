@@ -1558,34 +1558,6 @@ export function Addda_talogger_validateInput() {
   )
 }
 
-//AddDate
-export function Addda_talogger_addDate() {
-  return (
-    <div className="ml-4 flex flex-col gap-2 break-words">
-      <p> var intervalID = setInterval(addDate, 1000)</p>
-
-      <div>
-        <p>{`function addDate() {`}</p>
-        <p>var currentDate = new Date()</p>
-        <p>var year = currentDate.getFullYear()</p>
-        <p>var month = currentDate.getMonth() + 1</p>
-        <p>var date = currentDate.getDate()</p>
-        <p>var hours = currentDate.getHours()</p>
-        <p>var minutes = currentDate.getMinutes()</p>
-        <p>var seconds = currentDate.getSeconds()</p>
-        <p>{`month = month < 10 ? 0{month} : month`}</p>
-        <p>{`date = date < 10 ? 0{date} : date`}</p>
-        <p>{`hours = hours < 10 ? 0{hours} : hours`}</p>
-        <p>{`minutes = minutes < 10 ? 0{minutes} : minutes`}</p>
-        <p>{`seconds = seconds < 10 ? 0{seconds} : seconds`}</p>
-        <p>{`var formattedTime = {year}-{month}-{date} {hours}:{minutes}:{seconds}`}</p>
-        <p>$("#device_occurredtime").attr("placeholder", formattedTime)</p>
-        <p>{`}`}</p>
-      </div>
-    </div>
-  )
-}
-
 //CreateDevice
 export function Addda_talogger_createDevice() {
   return (
@@ -2567,50 +2539,6 @@ export function Confirm_order_getCodeDisCountMember() {
       <p className="ml-8">{`msgPageObj.show(NSLang('sys.serverError'));`}</p>
       <p className="ml-4">{`},`}</p>
       <p>{`});`}</p>
-    </div>
-  )
-}
-
-// calTotal
-export function Confirm_order_calTotal() {
-  return (
-    <div className="ml-4 flex flex-col gap-2 break-words">
-      <p>{`var discount = parseFloat($('#show_voucher_dis_order').text());`}</p>
-      <p>{`console.log(`}</p>
-      <p className="ml-4">{`{`}</p>
-      <p className="ml-8">{`"coins===>": SetCoins,`}</p>
-      <p className="ml-8">{`"VoucherDiscount===>": discount,`}</p>
-      <p className="ml-8">{`"MemberDisCount===>": MemberDis,`}</p>
-      <p className="ml-8">{`"TotalPay===>": payTotal,`}</p>
-      <p className="ml-8">{`"SetMemberDisCount===>": setStateIDMemberDis,`}</p>
-      <p className="ml-8">{`"SetVoucherDiscount===>": setStateIDVouncherDis,`}</p>
-      <p className="ml-8">{`"SetMethodPayment===>": checkStateMethodPayment`}</p>
-      <p className="ml-4">{`});`}</p>
-      <p>{`if (setStateIDMemberDis == true) {`}</p>
-      <p className="ml-4">{`var MemDis = ($('#member_status_discount_money').text());`}</p>
-      <p className="ml-4">{`var MemDisFromat = parseFloat(MemDis.replace(/,/g, '')); // Remove comma`}</p>
-      <p className="ml-4">{`MemberDis = MemDisFromat;`}</p>
-      <p>{`} else {`}</p>
-      <p className="ml-4">{`MemberDis = 0;`}</p>
-      <p>{`}`}</p>
-      <p>{`var totalPayment = payTotal - SetCoins - discount - MemberDis;`}</p>
-      <p>{`console.log(discount, MemberDis, "kkkk");`}</p>
-      <p>{`var formattedNumberDis = (discount + MemberDis).toLocaleString(undefined, {`}</p>
-      <p className="ml-4">{`minimumFractionDigits: 2,`}</p>
-      <p className="ml-4">{`maximumFractionDigits: 2`}</p>
-      <p>{`});`}</p>
-      <p>{`if (discount + MemberDis == 0) {`}</p>
-      <p className="ml-4">{`console.log("lkkfgsfsdf");`}</p>
-      <p className="ml-4">{`$('#show_total_discount').text("0");`}</p>
-      <p>{`} else {`}</p>
-      <p className="ml-4">{`$('#show_total_discount').text("-" + formattedNumberDis);`}</p>
-      <p>{`}`}</p>
-      <p>{`console.log("<<<======Totol Payment :" + totalPayment + "=====>>>");`}</p>
-      <p>{`var formattedNumber = totalPayment.toLocaleString(undefined, {`}</p>
-      <p className="ml-4">{`minimumFractionDigits: 2,`}</p>
-      <p className="ml-4">{`maximumFractionDigits: 2`}</p>
-      <p>{`});`}</p>
-      <p>{`$('#show_total_price_order').text(formattedNumber + ' ฿');`}</p>
     </div>
   )
 }
@@ -4271,6 +4199,311 @@ export function Lang_getStatusCode() {
 }
 
 // level.html
+
+//bodyLevel
+export function BodyLevel() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <pre class="whitespace-pre-wrap">
+          {`
+          <div class="menuPage bg-my" id="memberPage"
+          style="position: absolute; z-index: 10; background: #E3F5FF; background-repeat: no-repeat; background-size: cover;">
+          <div id="member_header">
+          </div>
+          <div style="height: 25px;"></div>
+          <div id="scroller_member">
+              <div id="member_body" style="width: 100%; display: flex; align-items: center;">
+      
+                  <swiper-container style=" width: 90%; margin:  0 auto ; position: relative;">
+                      <swiper-slide id="silver" space-between="20" slides-per-view="2.15"
+                          style="     margin-right: 20px;  height: 200px; width: 100%;color: #000;  width: 100%; border-radius: 8px; background: var(--Silver, linear-gradient(99deg, #AEAEAE 0%, #DBDBDB 23.96%, #E2E2E2 43.23%, #C9C9C9 60.42%, #E3E3E3 77.6%, #CCC 100%));box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10);">
+                          <div
+                              style="width: 90%; height: 20%; margin:  0 auto ; color: #fff; display: flex;  justify-content: space-between">
+                              <div style="display: flex;
+                              align-items: center;"> Silver <img style="height: 20px; width: 20px;    margin-left: 8px; "
+                                      id="icon_silver" alt=""></div>
+      
+                              <div class="see_more" style="font-size: 10px;display: flex;
+                              align-items: center;"> See more <img style="height: 20px; width: 20px;    margin-left: 8px; "
+                                      id="see_more_silver" alt=""></div>
+                          </div>
+                          <div
+                              style="height: 80%;margin: 0 auto; width: 90%; border-radius: 15px 15px 0px 0px; border: 2.55px solid rgba(255, 255, 255, 0.27);background: rgba(255, 255, 255, 0.90);box-shadow: 4px 0px 11.8px 1px rgba(201, 201, 201, 0.60), -4px 4px 11.8px 1px rgba(201, 201, 201, 0.60);">
+                              <div style="   height: 30%; width: 90%; font-size: 12px; margin: 0 auto;background: linear-gradient(99deg, #AEAEAE 0%, #C9C9C9 23.96%, #C9C9C9 47.92%, #E7E5E5 77.6%, #CCC 100%);
+                              background-clip: text; -webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+                                  Maintain level:</div>
+                              <div class="upgrade_information">
+                                  <div>Order</div>
+                                  <div>
+                                      <span class="SILVER">
+                                          20</span>/24
+                                  </div>
+                                  <div class="SILVER_stick">
+                                  </div>
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+                              <div class="upgrade_information">
+                                  <div>Order amount</div>
+                                  <div> <span class="SILVER">
+      
+                                          4500</span>/7500
+                                  </div>
+                                  <div class="SILVER_stick">
+                                  </div>
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+                              <div class="upgrade_information">
+                                  <div>Invitation codes</div>
+                                  <div> <span class="SILVER">
+      
+                                          20</span>/24
+                                  </div>
+                                  <div class="SILVER_stick">
+                                  </div>
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+                              <div class="upgrade_information">
+                                  <div>Electricity usage</div>
+                                  <div> <span class="SILVER">
+      
+                                          2300</span>/5000
+                                  </div>
+                                  <div class="SILVER_stick">
+                                  </div>
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+                              <div class="upgrade_information">
+                                  <div>check-in</div>
+                                  <div> <span class="SILVER">
+      
+                                          6</span>/30
+                                  </div>
+                                  <div class="SILVER_stick">
+                                  </div>
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+      
+                          </div>
+                      </swiper-slide>
+                      <div style="width: 10px;"></div>
+                      <swiper-slide id="gold"
+                          style=" height: 200px; color:  #000; border-radius: 8px;background: var(--goldz, linear-gradient(99deg, #FFCC7E 0%, #FFAE34 100%));box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10);">
+                          <div
+                              style="width: 90%; height: 20%; margin:  0 auto ; color: #fff; display: flex;  justify-content: space-between">
+                              <div style="display: flex;
+                          align-items: center;"> Gold <img style="height: 20px; width: 20px;    margin-left: 8px; " id="icon_gold"
+                                      alt=""></div>
+      
+                              <div class="see_more"  style="font-size: 10px;display: flex; 
+                          align-items: center;"> See more <img style="height: 20px; width: 20px;    margin-left: 8px; " id="see_more_gold"
+                                      alt=""></div>
+                          </div>
+                          <div
+                              style="height: 80%;margin: 0 auto; width: 90%; border-radius: 15px 15px 0px 0px; border: 2.55px solid rgba(255, 255, 255, 0.27);background: rgba(255, 255, 255, 0.90);box-shadow: 4px 0px 11.8px 1px rgba(201, 201, 201, 0.60), -4px 4px 11.8px 1px rgba(201, 201, 201, 0.60);">
+                              <div style="   
+                              height: 30%; width: 90%; font-size: 12px; margin: 0 auto; background: var(--goldz, linear-gradient(99deg, #FFCC7E 0%, #FFAE34 100%));background-clip: text;-webkit-background-clip: text;-webkit-text-fill-color: transparent; ">
+                                 Maintain level: </div> 
+                              <div class="upgrade_information">
+                                  <div>Order</div>
+                                  <div>
+                                      <span class="GOLD">
+                                          20</span>/24
+                                  </div>
+                                  <div class="GOLD_stick">
+                                  </div>
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+                              <div class="upgrade_information">
+                                  <div>Order amount</div>
+                                  <div><span class="GOLD">
+                                          4500</span>/7500
+                                  </div>
+                                  <div class="GOLD_stick"></div>
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+                              <div class="upgrade_information">
+                                  <div>Invitation codes</div>
+                                  <div>
+                                      <span class="GOLD">
+                                          20</span>/24
+                                  </div>
+                                  <div class="GOLD_stick"></div>
+      
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+                              <div class="upgrade_information">
+                                  <div>Electricity usage</div>
+                                  <div><span class="GOLD">
+                                          2300</span>/5000
+                                  </div>
+                                  <div class="GOLD_stick"></div>
+      
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+                              <div class="upgrade_information">
+                                  <div>check-in</div>
+                                  <div>
+                                      <span class="GOLD"">
+                                          6</span>/30
+                                  </div>
+                                  <div class=" GOLD_stick">
+                                  </div>
+                              </div>
+                              <div style="height: 10px;"></div>
+      
+                          </div>
+                      </swiper-slide>
+                      <swiper-slide id="platinum"
+                          style="height: 200px; color: #000; border-radius: 8px;background: var(--Platinum, linear-gradient(99deg, #EEEEEC 0%, #9D9D9D 19.27%, #ADADB2 39.06%, #767676 56.77%, #6E6E6E 82.29%, #C0C0C0 100%));box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10);">
+                          <div
+                              style="width: 90%; height: 20%; margin:  0 auto ; color: #fff; display: flex;  justify-content: space-between">
+                              <div style="display: flex;
+                      align-items: center;"> Platinum <img style="height: 20px; width: 20px;    margin-left: 8px; " id="icon_plat" alt="">
+                              </div>
+      
+                              <div  class="see_more" style="font-size: 10px;display: flex; 
+                      align-items: center;"> See more <img style="height: 20px; width: 20px;    margin-left: 8px; " id="see_more_plat"
+                                      alt=""></div>
+                          </div>
+                          <div
+                              style="height: 80%;margin: 0 auto; width: 90%; border-radius: 15px 15px 0px 0px; border: 2.55px solid rgba(255, 255, 255, 0.27);background: rgba(255, 255, 255, 0.90);box-shadow: 4px 0px 11.8px 1px rgba(201, 201, 201, 0.60), -4px 4px 11.8px 1px rgba(201, 201, 201, 0.60);">
+                              <div style="   height: 30%; width: 90%; font-size: 12px; margin: 0 auto;background: var(--Platinum, linear-gradient(99deg, #EEEEEC 0%, #9D9D9D 19.27%, #ADADB2 39.06%, #767676 56.77%, #6E6E6E 82.29%, #C0C0C0 100%));
+                              background-clip: text; -webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+                                  Maintain level:</div>
+                              <div class="upgrade_information">
+                                  <div>Order</div>
+                                  <div>
+                                      <span class="PLATINUM">
+                                          20</span>/24
+                                  </div>
+                                  <div class="PLATINUM_stick">
+                                  </div>
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+                              <div class="upgrade_information">
+                                  <div>Order amount</div>
+                                  <div><span class="PLATINUM">
+                                          4500</span>/7500
+                                  </div>
+                                  <div class="PLATINUM_stick"></div>
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+                              <div class="upgrade_information">
+                                  <div>Invitation codes</div>
+                                  <div>
+                                      <span class="PLATINUM">
+                                          20</span>/24
+                                  </div>
+                                  <div class="PLATINUM_stick"></div>
+      
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+                              <div class="upgrade_information">
+                                  <div>Electricity usage</div>
+                                  <div><span class="PLATINUM">
+                                          2300</span>/5000
+                                  </div>
+                                  <div class="PLATINUM_stick"></div>
+      
+      
+                              </div>
+                              <div style="height: 10px;"></div>
+                              <div class="upgrade_information">
+                                  <div>check-in</div>
+                                  <div>
+                                      <span class="PLATINUM"">
+                                      6</span>/30
+                              </div>
+                              <div class="PLATINUM_stick">
+                                  </div>
+                              </div>
+                              <div style="height: 10px;"></div>
+      
+                          </div>
+                      </swiper-slide>
+      
+                  </swiper-container>
+      
+              </div>
+              <div style="height: 40px;"></div>
+              <div
+                  style="position: relative; border-radius: 8px;background: #FFF; box-shadow:rgba(0, 0, 0, 0.24) 0px 4px 6px; width: 90%; margin:  0 auto; height: 200px;">
+                  <div
+                      style=" left: 50%;transform: translateX(-50%); position: absolute; bottom: 90%; border-radius: 8px; background: #3B78FE; height: 12px;box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10); display: flex;width: 40%; height: 40px; justify-content: center;align-items: center;gap: 10px;">
+                      <img style="height: 20px; width: 20px; margin-right: 5px; " id="yojo_conin" alt="">
+                      <div style="color: #FFF; font-size: 15px;">Yojo coin</div>
+      
+      
+                  </div>
+                  <div style="height: 40px;"></div>
+                  <div style="   height: 40px;  display: flex; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                      <div
+                          style=" display: flex;gap: 10px;width: 85%; font-size: 2.5vw; color: #9F9F9F; margin:  0 auto;  align-items: center; justify-content: space-between;">
+                          <div id="Classic" class="level tablinks" data-interval="Classic"
+                              onclick="memberObj.openTab('Classic')">Classic</div>
+                          <div id="Silver" class="level tablinks" data-interval="Silver"
+                              onclick="memberObj.openTab('Silver')">Silver</div>
+                          <div id="Gold" class="level tablinks" data-interval="Gold" onclick="memberObj.openTab('Gold')">Gold
+                          </div>
+                          <div id="Platinum" class="level tablinks" data-interval="Platinum"
+                              onclick="memberObj.openTab('Platinum')">Platinum</div>
+      
+                      </div>
+                  </div>
+                  <div id="ClassicTab" class="tabcontent">
+                      <div style="height: 20px;"></div>
+                      <div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> ClassicTab :</div>
+                      <div style="height: 10px;"></div>
+      
+                  </div>
+      
+                  <div id="SilverTab" class="tabcontent">
+                      <div style="height: 20px;"></div>
+                      <div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> SilverTab :</div>
+                      <div style="height: 10px;"></div>
+                  </div>
+      
+                  <div id="GoldTab" class="tabcontent">
+                      <div style="height: 20px;"></div>
+                      <div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> Benefit:</div>
+                      <div style="height: 10px;"></div>
+                      <ul style="color: #3B78FE; padding: 0;width: 75%;margin: 0 auto; font-size: 14px;">
+                          <li>10% discount code mininmum ฿700</li>
+                          <li>25% discount code mininmum ฿1,000</li>
+                          <li>30% discount code mininmum ฿1,500</li>
+                      </ul>
+                  </div>
+                  <div id="PlatinumTab" class="tabcontent">
+                      <div style="height: 20px;"></div>
+                      <div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> PlatinumTab :</div>
+                      <div style="height: 10px;"></div>
+                  </div>
+                  <!-- <hr style="    margin: 0 auto; width: 84%;"> -->
+      
+              </div>
+          </div>
+      
+      </div>
+          `}
+        </pre>
+      </div>
+    </div>
+  )
+}
+
 // openTab
 export function Level_openTab() {
   return (
@@ -9373,81 +9606,114 @@ export function Refund_previewImg_refund() {
 }
 
 // register.html
-//registerFun
-export function Register_registerFun() {
+//register var
+export function Register_var() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2 flex flex-col gap-4">
         <div>
-          <p>{`loaderObj.show();`}</p>
-          <p>{`var email = $("#regis_mail").val();`}</p>
-          <p>{`var OTP = $("#regis_mail_OTP").val();`}</p>
-          <p>{`var users = $("#UsersRegis").val();`}</p>
-          <p>{`var mobile = $("#mobileRegis").val();`}</p>
-          <p>{`var password = $("#r_password_user").val();`}</p>
-          <p>{`var inviteCode = $("#invite_Code_user").val();`}</p>
-          <p>{``}</p>
-          <p>{`var mData = {`}</p>
-          <p>{`    "email": email,`}</p>
-          <p>{`    "otp": OTP,`}</p>
-          <p>{`    "mobile": mobile,`}</p>
-          <p>{`    "name": users,`}</p>
-          <p>{`    "password": password,`}</p>
-          <p>{`    "inviteCode": inviteCode,`}</p>
-          <p>{`    "deviceId": null,`}</p>
-          <p>{`    "platform": null`}</p>
-          <p>{`}`}</p>
-          <p>{``}</p>
-          <p>{`$.ajax({`}</p>
-          <p>{`    type: "post",`}</p>
-          <p>{`    url: API_SERVER + "/v1/auth/signUp",`}</p>
-          <p>{`    data: JSON.stringify(mData),`}</p>
-          <p>{`    headers: {`}</p>
-          <p>{`        "Content-Type": "application/json",`}</p>
-          <p>{`    },`}</p>
-          <p>{`    dataType: "json",`}</p>
-          <p>{`    async: true,`}</p>
-          <p>{`    timeout: 100000,`}</p>
-          <p>{`    beforeSend: function (xmlhttprequest) {`}</p>
-          <p>{`    },`}</p>
-          <p>{`    success: function (data) {`}</p>
-          <p>{`        loaderObj.unShow();`}</p>
-          <p>{`        if (data.code == 0) {`}</p>
-          <p>{`            registerObj.cleanInput();`}</p>
-          <p>{`            msgObj4.show(('You have successfully registered an account'), function () {`}</p>
-          <p>{`                msgObj4.unShow();`}</p>
-          <p>{`                pageShow('loginPage')`}</p>
-          <p>{`            })`}</p>
-          <p>{`            $('.tryRegis').click(function () {`}</p>
-          <p>{`                msgPageObj.unShow();`}</p>
-          <p>{`            })`}</p>
-          <p>{`            setTimeout(function () {`}</p>
-          <p>{`                pageUnShow('registerPage');`}</p>
-          <p>{`            }, 1000)`}</p>
-          <p>{`        }`}</p>
-          <p>{`        else {`}</p>
-          <p>{`            msgPageObj.show(getStatusCode(data.code))`}</p>
-          <p>{`        }`}</p>
-          <p>{`    },`}</p>
-          <p>{`    error: function (xmlhttprequest, error) {`}</p>
-          <p>{`        console.log('error');`}</p>
-          <p>{`        loaderObj.unShow();`}</p>
-          <p>{`        msgPageObj.show(NSLang('sys.serverError'))`}</p>
-          <p>{`        cleanInput();`}</p>
-          <p>{`    },`}</p>
-          <p>{`    complete: function () {`}</p>
-          <p>{`    }`}</p>
-          <p>{`});`}</p>
-        </div>
+          <p>
+            var <span className="text-blue-600">userName</span> = $(
+            <span className="text-blue-600">"#username</span>").val();
+          </p>
+          <p>
+            var <span className="text-green-600">password</span> = $("
+            <span className="text-green-600">#password</span>").val();`
+          </p>
 
-        <div>
-          <p>{`function cleanInput() {`}</p>
-          <p>$("#mobileRegis").val('');</p>
-          <p>$("#r_password_user").val('');</p>
-          <p>$("#r_password_again_user").val('');</p>
-          <p>$("#inviteCode").val('');</p>
+          <p className="mt-5">
+            var <span className="text-red-600">mData</span> = {`{`}
+          </p>
+          <p>
+            <span className="text-[#A52A2A]">"userName"</span>:{" "}
+            <span className="text-blue-600">userName</span>,
+          </p>
+          <p>
+            {" "}
+            <span className="text-[#A52A2A]">"password"</span>:{" "}
+            <span className="text-green-600">password</span>,
+          </p>
           <p>{`}`}</p>
         </div>
+      </div>
+    </div>
+  )
+}
+
+//registerFun
+export function Register_registerFun() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`$.ajax({`}</p>
+        <div className="ml-2">
+          <p>{`type: "post",`}</p>
+          <p>{`url: API_SERVER + "/v1/auth/signUp",`}</p>
+          <p>
+            data: JSON.stringify(<span className="text-red-600">mData</span>),
+          </p>
+          <p>{`headers: {`}</p>
+          <div className="ml-2">
+            <p>{`"Content-Type": "application/json",`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`dataType: "json",`}</p>
+          <p>{`async: true,`}</p>
+          <p>{`timeout: 100000,`}</p>
+          <p>{`beforeSend: function (xmlhttprequest) {`}</p>
+          <div className="ml-2">
+            <p>{`// Do something before sending the request`}</p>
+          </div>
+          <p>{`},`}</p>
+          <p>{`success: function (data) {`}</p>
+          <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
+            <p>{`if (data.code == 0) {`}</p>
+            <div className="ml-2">
+              <p>{`registerObj.cleanInput();`}</p>
+              <p>{`msgObj4.show(('You have successfully registered an account'), function () {`}</p>
+              <div className="ml-2">
+                <p>{`msgObj4.unShow();`}</p>
+                <p>{`pageShow('loginPage')`}</p>
+              </div>
+              <p>{`})`}</p>
+              <p>{`$('.tryRegis').click(function () {`}</p>
+              <div className="ml-2">
+                <p>{`msgPageObj.unShow();`}</p>
+              </div>
+              <p>{`})`}</p>
+              <p>{`setTimeout(function () {`}</p>
+              <div className="ml-2">
+                <p>{`pageUnShow('registerPage');`}</p>
+              </div>
+              <p>{`}, 1000)`}</p>
+            </div>
+            <p>{`} else {`}</p>
+            <div className="ml-2">
+              <p>{`msgPageObj.show(getStatusCode(data.code))`}</p>
+            </div>
+          </div>
+          <p>{`},`}</p>
+        </div>
+        <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+//register cleanInput
+export function Register_cleanInput() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`function cleanInput() {`}</p>
+        <p className="ml-4">
+          $(" <span className="text-blue-600">#userName</span>").val('');
+        </p>
+        <p className="ml-4">
+          $("<span className="text-green-600">#password</span>").val('');
+        </p>
+        <p>{`}`}</p>
       </div>
     </div>
   )
@@ -13726,43 +13992,43 @@ export function Wallet_loadList() {
   )
 }
 
-//Index.html modelStructure
+// headIndex
 export function IndexHead() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2">
-        {`<meta charset="utf-8">`}
-        {`<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />`}
-        {`<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />`}
-        {`<meta http-equiv="Pragma" content="no-cache" />`}
-        {`<meta http-equiv="Expires" content="0" />`}
-        {`<link rel="shortcut icon" href="#" />`}
-        {`<link rel="stylesheet" href="js/spinnew.css?version=1.1.38" />`}
-        {`<link rel="stylesheet" href="css/login.css">`}
-        {`<link rel="stylesheet" href="css/main.css">`}
-        {`<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>`}
-        {`<link rel="stylesheet" href="css/quill.core.css?version=1.3.6" />`}
-        {`<link rel="stylesheet" href="css/quill.mention.min.css?version=3.1.0" />`}
-        {`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />`}
-        {`<script language="javascript" type="text/javascript" src="js/jquery.js?version=1.0.0.1"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/jquery.transit.js?version=1.0.0.1"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/base64.js"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/widget.js"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/wsFormat.js"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/iscroll-probe.js"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/pic.js?version=1.0.1"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/clipboard.min.js"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/spinnew.js?version=1.0.0.1"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/quill.min.js?version=1.3.6"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/quill.mention.min.js?version=3.1.0"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/sweetalert2.all.min.js"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/data.js"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/user.js"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/swiper.js"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/swiperSlide.js"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/echart.js"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/moment.js"></script>`}
-        {`<script language="javascript" type="text/javascript" src="js/QrCode.js"></script>`}
+        <p>{`<meta charset="utf-8">`}</p>
+        <p>{`<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />`}</p>
+        <p>{`<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />`}</p>
+        <p>{`<meta http-equiv="Pragma" content="no-cache" />`}</p>
+        <p>{`<meta http-equiv="Expires" content="0" />`}</p>
+        <p>{`<link rel="shortcut icon" href="#" />`}</p>
+        <p>{`<link rel="stylesheet" href="js/spinnew.css?version=1.1.38" />`}</p>
+        <p>{`<link rel="stylesheet" href="css/login.css">`}</p>
+        <p>{`<link rel="stylesheet" href="css/main.css">`}</p>
+        <p>{`<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>`}</p>
+        <p>{`<link rel="stylesheet" href="css/quill.core.css?version=1.3.6" />`}</p>
+        <p>{`<link rel="stylesheet" href="css/quill.mention.min.css?version=3.1.0" />`}</p>
+        <p>{`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/jquery.js?version=1.0.0.1"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/jquery.transit.js?version=1.0.0.1"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/base64.js"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/widget.js"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/wsFormat.js"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/iscroll-probe.js"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/pic.js?version=1.0.1"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/clipboard.min.js"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/spinnew.js?version=1.0.0.1"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/quill.min.js?version=1.3.6"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/quill.mention.min.js?version=3.1.0"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/sweetalert2.all.min.js"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/data.js"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/user.js"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/swiper.js"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/swiperSlide.js"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/echart.js"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/moment.js"></script>`}</p>
+        <p>{`<script language="javascript" type="text/javascript" src="js/QrCode.js"></script>`}</p>
       </div>
     </div>
   )
@@ -19031,6 +19297,668 @@ export function StatusCodesArrLang() {
           <p>{`"4032": { "en": "Invalid wallet address", "zh": "无效钱包地址", "th": "ที่อยู่กระเป๋าเงินไม่ถูกต้อง" },`}</p>
         </div>
         <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+// jQueryIntroduction
+export function JQueryIntroduction() {
+  return (
+    <div className="ml-4 break-words">
+      <p>{`<script>`}</p>
+      <div className="ml-4">
+        <p>{`<script src="jquery-3.7.1.min.js"></script>`}</p>
+      </div>
+      <p>{`</script>`}</p>
+    </div>
+  )
+}
+
+// bodyregister
+export function Bodyregister() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>
+          {" "}
+          &lt;div <span className="text-red-600">id="registerPage</span>{" "}
+          {`class="flexStart pageInit" style="z-index: 11;">`}
+        </p>
+        <div>
+          <div className="ml-6">
+            <p>{`<div style="display: flex;flex-direction: column;justify-content: space-between;height: auto;">`}</p>
+
+            <div className="ml-4">
+              <p>{`<div style="width: 100%; height: auto;">`}</p>
+              <p className="ml-4">{`<div style="display: lex;justify-content: center;width: 80%; margin: 0 auto;">`}</p>
+              <p className="ml-6">
+                &lt;input id=<span className="text-blue-600">"userName"</span>{" "}
+                {`style="padding: 5px 20px;border: 1px solid #DAE3ED;background-color: #fff;width: 80%; height: 45px;border-radius: 32px;padding-left: 58px;width: 100%;box-shadow: 0px 1px 2px 0px #0000000D;" type="text" placeholder="Username" />`}
+              </p>
+              <p className="ml-4">{`</div>`}</p>
+
+              <p className="ml-4 mt-6">{`<div style="display:flex;justify-content: center;width: 80%; margin: 0 auto;">`}</p>
+              <p className="ml-6">
+                {" "}
+                &lt;input id= <span className="text-green-600">
+                  "password"
+                </span>{" "}
+                {`style="padding: 5px 20px;border: 1px solid #DAE3ED;background-color: #fff;width: 80%; height: 45px;border-radius: 32px;padding-left: 58px;width: 100%;box-shadow: 0px 1px 2px 0px #0000000D;" type="text" placeholder="Password" />`}
+              </p>
+              <p className="ml-4">{`</div>`}</p>
+              <p>{`</div>`}</p>
+            </div>
+
+            <p>{`</div>`}</p>
+          </div>
+          <p>{`</div>`}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// styleBStyle
+export function StyleBStyle() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <pre class="whitespace-pre-wrap">
+          {`
+          <style type="text/css">
+          @import "css/home.css";
+          @import "css/shopping.css";
+      
+          body {
+              color: #000000;
+              font-family: "Arial,Helvetica,sans-serif";
+          }
+      
+          html,
+          body {
+              height: 100%;
+              margin: 0px;
+              padding: 0px;
+              overflow: hidden;
+              -webkit-touch-callout: none;
+              -webkit-user-select: none;
+          }
+      
+      
+          .bggAll {
+              background-image: url(https://static.meenmas.com/static/img/2023/03/754a69c1557f40f98973165e1109995e.png);
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-position: center;
+      
+      
+          }
+      
+      
+          *:not([class*="icon"]):not(.fa):not(.fas):not(i) {
+              font-family: "arial", "苹方-简" !important;
+          }
+      
+          input[type="button"],
+          input[type="submit"],
+          input[type="reset"] {
+              -webkit-appearance: none;
+          }
+      
+          input::-webkit-input-placeholder {
+              font-size: 12px;
+              color: #999999;
+          }
+      
+          ul {
+              list-style: none;
+              overflow: hidden;
+          }
+      
+          li {
+              list-style: none;
+          }
+      
+          textarea {
+              -webkit-appearance: none;
+          }
+      
+          .button {
+              border-radius: 0;
+          }
+      
+          input:focus,
+          textarea:focus {
+              outline: none;
+          }
+      
+          * {
+              -webkit-overflow-scrolling: touch;
+              -webkit-tap-highlight-color: transparent;
+          }
+      
+          input {
+              -webkit-user-select: auto;
+              /*webkit浏览器*/
+          }
+      
+          html {
+              -webkit-text-size-adjust: none;
+              -webkit-backface-visibility: hidden;
+          }
+      
+          .flexCenter {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+      
+      
+      
+          .flexCenterL {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+          }
+      
+          .flexCenterS {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+          }
+      
+          .flexCenterR {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+          }
+      
+          .flexAlignL {
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+          }
+      
+          .flexWordL {
+              display: flex;
+              align-items: flex-start;
+          }
+      
+      
+          .beflex {
+              display: flex;
+          }
+      
+      
+          .seColor {
+              width: 2.2em;
+              height: 2.2em;
+              border-radius: 50%;
+              display: inline-block;
+              border: 1px solid #888;
+          }
+      
+          .opColor {
+              display: flex;
+              text-align: left;
+              padding: 6px 14px;
+              border: 1px solid #888;
+              margin: 10px 10px 5px 0;
+              border-radius: 5px;
+              font-size: 4pt;
+          }
+      
+          .opgoColor {
+              display: flex;
+              text-align: left;
+              padding: 6px 14px;
+              border: 2px solid #ff6700;
+              margin: 10px 10px 5px 0;
+              border-radius: 5px;
+              font-size: 4pt;
+          }
+      
+          .padA {
+              padding: 0 2%;
+          }
+      
+          .padB {
+              padding: 0 5%;
+          }
+      
+      
+      
+      
+          .fbold {
+              font-weight: bold;
+          }
+      
+          .fontA {
+              color: #FFFFFF;
+          }
+      
+          .fontB {
+              color: #000000;
+          }
+      
+          .fontC {
+              color: #929292;
+          }
+      
+          .fontD {
+              color: #21BB7D;
+          }
+      
+          .fontD1 {
+              color: #b2b2b2;
+          }
+      
+      
+      
+          .fontE {
+              color: #F55D48;
+          }
+      
+          .fontF {
+              color: #606060;
+          }
+      
+          .fontG {
+              color: #BF8605;
+          }
+      
+          .fontH {
+              color: #999999;
+          }
+      
+          .fontI {
+              color: #f18c34;
+          }
+      
+          .fontJ {
+              color: #F4F4F4;
+          }
+      
+      
+      
+      
+      
+      
+      
+          .bgA {
+              background-color: #FFFFFF;
+          }
+      
+          .bgA90 {
+              background-color: #FFFFFFE6;
+          }
+      
+          .bgB {
+              background-color: #000000;
+          }
+      
+          .bgC {
+              background-color: #21BB7D;
+          }
+      
+          .sybgA {
+              background-color: #e5730a;
+          }
+      
+      
+          .bgCa {
+              background-color: #F55D48;
+          }
+      
+          .bgD {
+              background-color: #F4F4F4;
+          }
+      
+          .bgE {
+              background-color: #FF1F00;
+          }
+      
+          .bgF {
+              background-color: #606060;
+          }
+      
+          .bgG {
+              background-color: #cccccc;
+          }
+      
+          .bgH {
+              background-color: rgb(33, 187, 125, 0.3)
+          }
+      
+          .bgS {
+              background-color: #21BB7D19;
+          }
+      
+          .bgJ1 {
+              background-color: #f8c10e;
+          }
+      
+          .bgJ2 {
+              background-color: #f8500e;
+          }
+      
+          .btnLogin {
+              background-color: #f18c34;
+          }
+      
+          .btnBg {
+              background-color: #d8d8d8;
+          }
+      
+      
+      
+      
+      
+          .hide {
+              display: none;
+          }
+      
+          .show {
+              display: block;
+          }
+      
+      
+      
+      
+      
+      
+          /* 字体大小属性  */
+      
+          .fz10 {
+              font-size: 10px;
+          }
+      
+          .fz12 {
+              font-size: 0.75rem;
+          }
+      
+          .fz13 {
+              font-size: 0.8125rem;
+          }
+      
+          .fz14 {
+              font-size: 0.875rem;
+          }
+      
+          .fz15 {
+              font-size: 0.9rem;
+          }
+      
+          .fz16 {
+              font-size: 1rem;
+          }
+      
+          .fz18 {
+              font-size: 1.125rem;
+          }
+      
+          .fz20 {
+              font-size: 1.25rem;
+          }
+      
+          .fz22 {
+              font-size: 1.375rem;
+          }
+      
+          .fz24 {
+              font-size: 1.5rem;
+          }
+      
+          .fz26 {
+              font-size: 1.625rem;
+          }
+      
+          .fz28 {
+              font-size: 1.75rem;
+          }
+      
+          .fz30 {
+              font-size: 1.875rem;
+          }
+      
+          .fz32 {
+              font-size: 2rem;
+          }
+      
+      
+      
+      
+          /* 圆角属性 */
+      
+          .br3 {
+              border-radius: 35px;
+          }
+      
+          .br5 {
+              border-radius: 5px;
+          }
+      
+          .br8 {
+              border-radius: 8px;
+          }
+      
+          .br16 {
+              border-radius: 16px;
+          }
+      
+          .br20 {
+              border-radius: 20px;
+          }
+      
+          .br25 {
+              border-radius: 25px;
+          }
+      
+          .br30 {
+              border-radius: 30px;
+          }
+      
+      
+          
+      
+          .taL {
+              text-align: left;
+          }
+      
+          .taR {
+              text-align: right;
+          }
+      
+          .taC {
+              text-align: center;
+          }
+      
+          .borderA {
+              border: 1px #000000 solid;
+          }
+      
+          .borderB {
+              border: 1px #F4F4F4 solid;
+          }
+      
+          .borderC {
+              border: 1px #BF8605 solid;
+          }
+      
+          .syborder {
+              border: 2px #f55d48 solid;
+          }
+      
+          .borderD {
+              border: 1px #dedede solid;
+          }
+      
+          .btnA {
+              background-color: #21BB7D;
+              color: #FFFFFF;
+              text-align: center;
+          }
+      
+          .btnB {
+              background-color: #999999;
+              color: #FFFFFF;
+              text-align: center;
+          }
+      
+      
+      
+          .pageTop {
+              width: 100%;
+              height: 44px;
+              display: flex;
+              background-color: #FFFFFF;
+          }
+      
+          .pageTopBack {
+              width: 15%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+      
+          .pageTopTitle {
+              width: 70%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 14px;
+          }
+      
+          .pageTopBtn {
+              width: 15%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+      </style>
+      
+      
+      
+      <style type="text/css">
+          * {
+              padding: 0;
+              margin: 0;
+              list-style: none;
+              border: 0;
+          }
+      
+          .all {
+              /* width: 500px; */
+              width: 100vw;
+              height: 150px;
+              /* padding: 7px; */
+              /* border: 1px solid #ccc; */
+              /* margin: 100px auto; */
+              position: relative;
+          }
+      
+          .screen {
+              /* width: 500px; */
+              width: 100vw;
+              height: 150px;
+              overflow: hidden;
+              position: relative;
+          }
+      
+          .screen li {
+              width: 100vw;
+              height: 150px;
+              overflow: hidden;
+              float: left;
+          }
+      
+          .screen ul {
+              position: absolute;
+              left: 0;
+              top: 0px;
+              width: 3000px;
+          }
+      
+          .all ol {
+              position: absolute;
+              right: 10px;
+              bottom: 10px;
+              line-height: 20px;
+              text-align: center;
+          }
+      
+          .all ol li {
+              float: left;
+              width: 20px;
+              height: 20px;
+              background: #fff;
+              border: 1px solid #ccc;
+              margin-left: 10px;
+              cursor: pointer;
+          }
+      
+          .all ol li.current {
+              background: yellow;
+          }
+      
+          #arr {
+              display: none;
+          }
+      
+          #arr span {
+              width: 40px;
+              height: 40px;
+              position: absolute;
+              left: 5px;
+              top: 50%;
+              margin-top: -20px;
+              background: #000;
+              cursor: pointer;
+              line-height: 40px;
+              text-align: center;
+              font-weight: bold;
+              font-family: '黑体';
+              font-size: 30px;
+              color: #fff;
+              opacity: 0.3;
+              border: 1px solid #fff;
+          }
+      
+      
+          .fontStyle1 {
+      
+              box-sizing: border-box;
+              word-break: break-all;
+              border: #21bb7d;
+              border-style: solid;
+              border-width: 1px;
+      
+              border-radius: 5px;
+      
+      
+          }
+      
+          .fontStyle2 {
+      
+              box-sizing: border-box;
+              word-break: break-all;
+              border: #F55D48;
+              border-style: solid;
+              border-width: 1px;
+      
+              border-radius: 5px;
+      
+      
+          }
+      
+          #arr #right {
+              right: 5px;
+              left: auto;
+          }
+      </style>
+          `}
+        </pre>
       </div>
     </div>
   )

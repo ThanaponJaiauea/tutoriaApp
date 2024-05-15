@@ -15,6 +15,9 @@ const FormCintentModelStructure = ({selectedMenu}) => {
   const [openIndexBody, setOpenIndexBody] = useState(false)
 
   const [openIndexScript, setOpenIndexScript] = useState(false)
+  const [openWhatisRegisterBody, setOpenWhatisRegisterBody] = useState(false)
+  const [openWhatisRegisterScrit, setOpenWhatisRegisterScrit] = useState(false)
+  // console.log("openWhatisRegisterScrit", openWhatisRegisterScrit)
 
   const getTitle = () => {
     switch (selectedMenu) {
@@ -108,6 +111,12 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         return "openTab(tabName)"
       case "getlevel":
         return "getlevel()"
+      case "jQueryIntroduction":
+        return "jQueryIntroduction"
+      case "bodyLevel":
+        return "Body"
+      case "whatisRegister":
+        return "what is Register ?"
       default:
         return ""
     }
@@ -751,61 +760,26 @@ const FormCintentModelStructure = ({selectedMenu}) => {
       />
     ),
 
-    bodyregister: () => (
+    whatisRegister: () => (
       <ModelContent
-        headers="Solar App"
-        headerName={getTitle()}
-        content="bodyregister"
-        selectedMenu={selectedMenu}
-        widget="none"
-        htmlCheck={true}
-        headerHtml="home.html"
-        htmlCheckBody={true}
-      />
-    ),
-
-    registerFun: () => (
-      <ModelContent
-        headers="Solar App"
-        headerHtml="Register.html"
-        headerName={getTitle()}
-        content="-ฟังก์ชัน registerFun ใช้สำหรับลงทะเบียนผู้ใช้ใหม่ ดังนี้"
-        content1="1.ดึงค่าข้อมูลที่ผู้ใช้ป้อน เช่น อีเมล, OTP (รหัสยืนยันครั้งเดียว), ชื่อผู้ใช้, เบอร์โทรศัพท์มือถือ, รหัสผ่าน, และรหัสเชิญ"
-        content2="2.สร้างอ็อบเจ็กต์ข้อมูล (mData) ที่มีข้อมูลผู้ใช้เพื่อส่งไปยังเซิร์ฟเวอร์"
-        content3="3.ส่งคำขอ AJAX POST ไปยังเซิร์ฟเวอร์ที่ URL /v1/auth/signUp พร้อมกับข้อมูลผู้ใช้ในรูปแบบ JSON"
-        content4="4.จัดการกับการตอบกลับจากเซิร์ฟเวอร์"
-        content4p1="4.1.หากรหัสการตอบกลับเป็น 0 (หมายถึงสำเร็จ) จะแสดงข้อความสำเร็จ, ล้างช่องกรอกข้อมูล, และเปลี่ยนเส้นทางผู้ใช้ไปที่หน้าเข้าสู่ระบบหลังจากสักครู่"
-        content4p2="4.2.หากรหัสการตอบกลับไม่เท่ากับ 0, จะแสดงข้อความผิดพลาดขึ้นอยู่กับรหัสสถานะที่ได้รับ"
-        content5="5.จัดการกับข้อผิดพลาดที่อาจเกิดขึ้นในระหว่างคำขอ AJAX เช่น ข้อผิดพลาดจากเซิร์ฟเวอร์"
-        content6="6.กำหนดฟังก์ชันภายใน cleanInput เพื่อรีเซ็ตช่องกรอกข้อมูลหลังจากการลงทะเบียน"
+        headerHtml={getTitle()}
+        headersDescription={`คือ เป็นส่วนของหน้า "ลงทะเบียน" (registerPage) ในแอปพลิเคชัน หน้านี้ออกแบบมาเพื่อให้ผู้ใช้กรอกข้อมูลต่างๆ สำหรับการสร้างบัญชีใหม่ โดยจะมีโครงสร้างดังนี้ 1.<body>  2.<script>`}
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
-        htmlCheck={true}
-        htmlCheckScript={true}
-      />
-    ),
-
-    SendOTP: () => (
-      <ModelContent
-        headers="Solar App"
-        headerHtml="Register.html"
-        headerName={getTitle()}
-        content="-ฟังก์ชัน SendOTP ใช้สำหรับส่งรหัส OTP ไปยังอีเมลของผู้ใช้ ดังนี้"
-        content1="1.ดึงค่าอีเมลที่ผู้ใช้ป้อนในช่องกรอก"
-        content2="2.สร้างอ็อบเจ็กต์ข้อมูล (mData) ที่มีข้อมูลอีเมลและประเภท (type) เพื่อส่งไปยังเซิร์ฟเวอร์"
-        content3="3.ส่งคำขอ AJAX POST ไปยังเซิร์ฟเวอร์ที่ URL /v1/email-verification/send พร้อมกับข้อมูลในรูปแบบ JSON"
-        content4="4.จัดการกับการตอบกลับจากเซิร์ฟเวอร์"
-        content4p1="4.1.หากรหัสการตอบกลับเป็น 0 (หมายถึงสำเร็จ) จะแสดงข้อความสำเร็จและเริ่มนับถอยหลังเวลาต่อไป"
-        content4p2="4.2.หากรหัสการตอบกลับไม่เท่ากับ 0, จะแสดงข้อความผิดพลาดขึ้นอยู่กับรหัสสถานะที่ได้รับ"
-        content5="5.จัดการกับข้อผิดพลาดที่อาจเกิดขึ้นในระหว่างคำขอ AJAX เช่น ข้อผิดพลาดจากเซิร์ฟเวอร์"
-        content6="6.การนับถอยหลังเวลาจะทำงานโดยการเริ่มต้นฟังก์ชัน startCountdown ซึ่งจะเริ่มนับถอยหลังจากเวลาที่ได้รับจากเซิร์ฟเวอร์"
-        content7="7.เมื่อเวลานับถอยหลังสิ้นสุดลง ฟังก์ชัน OTPCountdown จะถูกเรียกเพื่อแสดงหน้าแบบฟอร์มให้ผู้ใช้ป้อน OTP อีกครั้งหรือคลิกที่ปุ่มส่ง OTP อีกครั้งหากต้องการส่งอีกครั้ง"
-        functionName={getTitle()}
-        selectedMenu={selectedMenu}
-        widget="none"
-        htmlCheck={true}
-        htmlCheckScript={true}
+        whatisRegisterBody={true}
+        whatisRegisterScript={true}
+        setOpenWhatisRegisterBody={() =>
+          setOpenWhatisRegisterBody(!openWhatisRegisterBody)
+        }
+        setOpenWhatisRegisterScrit={() =>
+          setOpenWhatisRegisterScrit(!openWhatisRegisterScrit)
+        }
+        openWhatisRegisterScrit={openWhatisRegisterScrit}
+        openWhatisRegisterBody={openWhatisRegisterBody}
+        whatisRegisterBodyCheck={true}
+        whatisRegisterScriptCheck={true}
+        exampleContent="exampleContent"
       />
     ),
 
@@ -879,7 +853,7 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         headers="Solar App"
         headerHtml="Lang.html"
         headerName={getTitle()}
-        content="-statusCodesArrLang"
+        content="-statusCodesArr ที่เก็บข้อมูลเกี่ยวกับสถานะของการร้องขอในแอปพลิเคชัน ข้อมูลเหล่านี้มีอยู่ในหลายภาษา (อังกฤษ, จีน และไทย) เพื่อรองรับการใช้งานในหลายภาษา"
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
@@ -903,6 +877,28 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         widget="none"
         htmlCheck={true}
         htmlCheckScript={true}
+      />
+    ),
+
+    bodyLevel: () => (
+      <ModelContent
+        headers="Solar App"
+        headerHtml="Lang.html"
+        headerName={getTitle()}
+        content="- HTML นี้เป็นโครงสร้างของหน้าเพจที่มีองค์ประกอบหลายอย่าง ประกอบด้วยการแสดงระดับสมาชิกในรูปแบบต่าง ๆ เช่น Silver, Gold, และ Platinum รวมถึงแท็บสำหรับการสลับไปมาระหว่างข้อมูลของแต่ละระดับสมาชิก นอกจากนี้ยังมีพื้นที่แสดงรายละเอียดเกี่ยวกับระดับสมาชิกต่าง ๆ และโครงสร้างแบบเลื่อน (swiper) สำหรับการแสดงบัตรสมาชิกแต่ละระดับ"
+        content1={`1.หน้าเพจนี้มีคอนเทนเนอร์หลัก (<div class="menuPage bg-my" id="memberPage">) สำหรับจัดการการแสดงผลของข้อมูลสมาชิก`}
+        content2={`2.ใช้ Swiper (<swiper-container>) เพื่อแสดงบัตรสมาชิกแบบเลื่อนได้ แต่ละบัตรจะแสดงระดับสมาชิก (Silver, Gold, Platinum)`}
+        content3={`3.บัตรสมาชิกแต่ละใบมีรายละเอียด เช่น จำนวนคำสั่งซื้อ, จำนวนเงิน, รหัสเชิญ, การใช้ไฟฟ้า, และการเช็คอิน`}
+        content4={`4.ส่วนล่างของหน้าเพจมีแท็บ (<div class="level tablinks">) สำหรับสลับการแสดงข้อมูลระดับสมาชิก (Classic, Silver, Gold, Platinum)`}
+        content5={`5.เมื่อคลิกที่แท็บ จะเรียกใช้ฟังก์ชัน memberObj.openTab() เพื่อแสดงเนื้อหาของแท็บที่เลือก`}
+        content6={`6.แต่ละแท็บจะแสดงรายละเอียดและสิทธิพิเศษที่แตกต่างกัน เช่น ส่วนลดสำหรับสมาชิก Gold`}
+        content7={`7.มีการใช้ CSS เพื่อการจัดวางและการออกแบบที่สวยงาม เช่น สีพื้นหลัง, ขอบ, และเงา`}
+        content8={`8.มีพื้นที่สำหรับแสดงเหรียญ Yojo coin ที่ด้านบนของคอนเทนเนอร์ส่วนล่าง`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckBody={true}
       />
     ),
 
@@ -950,6 +946,41 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         widget="none"
         htmlCheck={true}
         htmlCheckScript={true}
+      />
+    ),
+
+    jQueryIntroduction: () => (
+      <ModelContent
+        headers="jQuery Introduction"
+        headerName={getTitle()}
+        content="-The purpose of jQuery is to make it much easier to use JavaScript on your website"
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckVar={true}
+        htmlChecName="head"
+      />
+    ),
+
+    styleBStyle: () => (
+      <ModelContent
+        headers="jQuery Introduction"
+        headerName={getTitle()}
+        content="-styleBStyle มีการตั้งค่าหลากหลายสำหรับองค์ประกอบต่าง ๆ และเลย์เอาต์ เพื่อความเข้าใจที่ดียิ่งขึ้น นี่คือภาพรวมและจุดที่น่าสนใจ"
+        content1={`1.สไตล์ทั่วไป (Global Styles): รวมถึงสไตล์พื้นฐานสำหรับทั้งเอกสาร ซึ่งมีผลต่อ body, html และตัวเลือกทั่วไปหลายตัว`}
+        content2={`2.สีพื้นหลังและสีฟอนต์ (Background and Font Colors): มีการกำหนดคลาสหลายตัวสำหรับการตั้งค่าสีพื้นหลังและสีฟอนต์`}
+        content3={`3.การจัดวางแบบ Flexbox (Flexbox Layouts): คลาสสำหรับการจัดกึ่งกลางหรือการจัดแนวเนื้อหาด้วยการใช้ flexbox`}
+        content4={`4.องค์ประกอบฟอร์ม (Form Elements): สไตล์ที่กำหนดเองสำหรับ input, button และ textarea`}
+        content5={`5.ตัวอักษร (Typography): คลาสสำหรับกำหนดขนาดตัวอักษรและน้ำหนักตัวอักษร`}
+        content6={`6.ขอบและมุมโค้ง (Borders and Rounded Corners): คลาสสำหรับกำหนดขอบและรัศมีมุม`}
+        content7={`7.ยูทิลิตี้การมองเห็น (Visibility Utilities): คลาสสำหรับการแสดงหรือซ่อนองค์ประกอบ`}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        htmlCheck={true}
+        htmlCheckVar={true}
+        htmlChecName="script"
       />
     ),
   }

@@ -23,8 +23,7 @@ export default function NavbarEx({handleModelClick}) {
           handlelClickToTOp()
           handleModelClick(key.key)
         }}
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
+        defaultSelectedKeys={["AddDate"]}
         mode="inline"
         theme="light">
         {exData

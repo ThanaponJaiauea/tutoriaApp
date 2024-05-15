@@ -127,6 +127,21 @@ const indexData = [
   },
 ]
 
+const jQueryData = [
+  {
+    key: "jQuery",
+    label: "jQuery",
+    children: [
+      {
+        name: "jQuery Introduction",
+        type: "generalModel",
+        key: "jQueryIntroduction",
+        category: "indexHtml",
+      },
+    ],
+  },
+]
+
 const widgetData = [
   {
     key: "Widget",
@@ -229,22 +244,30 @@ const login = [
         category: "loginHtml",
       },
       {
-        name: "fetchSliderConfigAndData()",
+        name: "Slider",
         type: "generalModel",
-        key: "fetchSliderConfigAndData",
+        key: "SliderLogin",
         category: "loginHtml",
-      },
-      {
-        name: "fetchSliderData()",
-        type: "generalModel",
-        key: "fetchSliderData",
-        category: "loginHtml",
-      },
-      {
-        name: "slider_cap()",
-        type: "generalModel",
-        key: "slider_cap",
-        category: "loginHtml",
+        children: [
+          {
+            name: "fetchSliderConfigAndData()",
+            type: "generalModel",
+            key: "fetchSliderConfigAndData",
+            category: "SliderFun",
+          },
+          {
+            name: "fetchSliderData()",
+            type: "generalModel",
+            key: "fetchSliderData",
+            category: "SliderFun",
+          },
+          {
+            name: "slider_cap()",
+            type: "generalModel",
+            key: "slider_cap",
+            category: "SliderFun",
+          },
+        ],
       },
       {
         name: "loginFun()",
@@ -274,22 +297,9 @@ const register = [
     label: "Register.html",
     children: [
       {
-        name: "Body",
+        name: "What is Register?",
         type: "generalModel",
-        key: "bodyregister",
-        category: "registerHtml",
-      },
-      {
-        name: "registerFun()",
-        type: "generalModel",
-        key: "registerFun",
-        category: "registerHtml",
-      },
-      {
-        name: "SendOTP()",
-        type: "generalModel",
-        key: "SendOTP",
-        category: "registerHtml",
+        key: "whatisRegister",
       },
     ],
   },
@@ -300,12 +310,6 @@ const lang = [
     key: "lang",
     label: "Lang.html",
     children: [
-      {
-        name: "Body",
-        type: "generalModel",
-        key: "bodyLang",
-        category: "langHtml",
-      },
       {
         name: "var NSLangArr",
         type: "generalModel",
@@ -391,6 +395,7 @@ const level = [
 export {
   startProjecData,
   indexData,
+  jQueryData,
   widgetData,
   mainData,
   login,

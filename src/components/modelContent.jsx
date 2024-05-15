@@ -6,7 +6,6 @@ import indexStartApp from "../pictures/indexStartApp.png"
 import {
   AddFilesFunc,
   AddSlipPayment,
-  Addda_talogger_addDate,
   Addda_talogger_createDevice,
   Addda_talogger_validateInput,
   AlertExample,
@@ -14,7 +13,9 @@ import {
   AlertWidget,
   AllReadNotice,
   Base64,
+  BodyLevel,
   Body_longin,
+  Bodyregister,
   BuyProduct,
   Cancel_order_getItemAll,
   Cancel_order_sentCancelOrder,
@@ -32,7 +33,6 @@ import {
   Coins_getPointCoinsn,
   Configuration_con,
   Configuration_updateDevice,
-  Confirm_order_calTotal,
   Confirm_order_cleanDataDefualt,
   Confirm_order_getAddress,
   Confirm_order_getCodeDisCountMember,
@@ -131,6 +131,7 @@ import {
   IndexBodyScriptVar,
   IndexHead,
   IndexStyle,
+  JQueryIntroduction,
   Lang_getStatusCode,
   Lang_nsLang,
   Lang_setAllPageLang,
@@ -242,8 +243,10 @@ import {
   Refund_getData,
   Refund_previewImg_refund,
   Refund_sendRefund,
+  Register_cleanInput,
   Register_registerFun,
   Register_sendOTP,
+  Register_var,
   Reportdatalogger_chargePower,
   Reportdatalogger_chargePowerNOlogin,
   Reportdatalogger_chartFlowDay,
@@ -274,6 +277,7 @@ import {
   Start_call,
   Start_init,
   StatusCodesArrLang,
+  StyleBStyle,
   Team,
   Topup_addSlipPayment,
   Topup_checkNoInput,
@@ -321,12 +325,21 @@ import stepopen5 from "../pictures/stepopen5.png"
 import step6 from "../pictures/step6.png"
 import {Link} from "react-router-dom"
 import MainTryit from "./tryitFunction/mainTryit"
+import {
+  Addda_talogger_addDate,
+  BarLoading,
+  CalProgressBar,
+  CalTotal,
+  SubmitAddalipay,
+} from "./dataContents/FunctionDataTextEx"
+import RegisterTryit from "./tryitFunction/registerTryit"
 
 export default function ModelContent({
   htmlCheckScript,
   htmlCheckCall,
   htmlCheckBody,
   htmlCheckVar,
+  htmlChecName,
   setOpenMainBody,
   setOpenIndexHead,
   setOpenMainScript,
@@ -473,6 +486,15 @@ export default function ModelContent({
   mainCheck,
   scriptTitle,
   listIndex,
+  headersDescription,
+  setOpenWhatisRegisterBody,
+  setOpenWhatisRegisterScrit,
+  openWhatisRegisterScrit,
+  openWhatisRegisterBody,
+  whatisRegisterBody,
+  whatisRegisterScript,
+  whatisRegisterBodyCheck,
+  whatisRegisterScriptCheck,
 }) {
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
@@ -485,6 +507,7 @@ export default function ModelContent({
         <h1 className="text-[23px] font-bold">{headerHtml}</h1>
         {contentModelStructure && <p>{contentModelStructure}</p>}
         {stepContent && <p className="text-xl">{stepContent}</p>}
+        <p className="ml-2">{headersDescription}</p>
       </div>
 
       {/* Widget */}
@@ -825,7 +848,7 @@ export default function ModelContent({
                 {selectedMenu === "getCodeDisCountMember" && (
                   <Confirm_order_getCodeDisCountMember />
                 )}
-                {selectedMenu === "calTotal" && <Confirm_order_calTotal />}
+                {selectedMenu === "calTotal" && <CalTotal />}
                 {selectedMenu === "cleanDataDefualt" && (
                   <Confirm_order_cleanDataDefualt />
                 )}
@@ -1049,7 +1072,7 @@ export default function ModelContent({
                 {selectedMenu === "PreviewImg_refund" && (
                   <Refund_previewImg_refund />
                 )}
-                {selectedMenu === "registerFun" && <Register_registerFun />}
+
                 {selectedMenu === "SendOTP" && <Register_sendOTP />}
                 {selectedMenu === "CreateHTML" && (
                   <Reportdatalogger_createHTML />
@@ -1262,6 +1285,9 @@ export default function ModelContent({
                 {selectedMenu === "verified_wallet" && <Verified_wallet />}
                 {selectedMenu === "getLimitWithdraw" && <GetLimitWithdraw />}
                 {selectedMenu === "loopWithdraw" && <LoopWithdraw />}
+                {selectedMenu === "submitAddalipay" && <SubmitAddalipay />}
+                {selectedMenu === "BarLoading" && <BarLoading />}
+                {selectedMenu === "calProgressBar" && <CalProgressBar />}
                 <p className="ml-4">{`}`}</p>
                 <span className="text-[#A52A2A]"> &lt;script&gt;</span>
               </div>
@@ -1282,22 +1308,195 @@ export default function ModelContent({
               <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
                 <span className="text-[#A52A2A]">&lt;Body&gt;</span>
                 {selectedMenu === "bodyLogin" && <Body_longin />}
-                {selectedMenu === "bodyregister" && "bodyregister"}
+                {selectedMenu === "bodyLevel" && <BodyLevel />}
                 <span className="text-[#A52A2A]"> &lt;Body&gt;</span>
               </div>
             )}
 
             {htmlCheckVar === true && (
               <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
-                <span className="text-[#A52A2A]">&lt;Script&gt;</span>
+                <span className="text-[#A52A2A]">
+                  &lt;{htmlChecName ? htmlChecName : "Script"}&gt;
+                </span>
                 {selectedMenu === "nSLangArrLang" && <NSLangArrLang />}
                 {selectedMenu === "statusCodesArrLang" && (
                   <StatusCodesArrLang />
                 )}
-                <span className="text-[#A52A2A]"> &lt;Script&gt;</span>
+                {selectedMenu === "jQueryIntroduction" && (
+                  <JQueryIntroduction />
+                )}
+                {selectedMenu === "styleBStyle" && <StyleBStyle />}
+                <span className="text-[#A52A2A]">
+                  &lt;{htmlChecName ? htmlChecName : "Script"}&gt;
+                </span>
               </div>
             )}
           </div>
+        </div>
+      )}
+
+      {whatisRegisterBody && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button
+              onClick={setOpenWhatisRegisterBody}
+              className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">1.Body</h3>
+            </button>
+
+            <div className="mt-2">
+              <p>
+                คือ โครงสร้างของ html ที่แสดงผลเป็น from ui ให้ user
+                สามารถใส่ข้อความสำหรับ register ได้{" "}
+              </p>
+              <p>
+                1.โดยที่จะสร้าง id="registerPage" เพื่อให้ div
+                นี้แสดงผลตามที่เราต้องการ
+              </p>
+              <p>
+                2.เราสร้าง id <span className="text-blue-600">"userName"</span>,{" "}
+                <span className="text-green-600">"password"</span>{" "}
+                เพื่อเก็บค่าที่ user กรอกข้อมูลมา
+              </p>
+            </div>
+          </div>
+
+          <>
+            {whatisRegisterBodyCheck && (
+              <div className="w-full flex flex-col gap-4">
+                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                  <span className="text-[#A52A2A]">&lt;body&gt;</span>
+                  {selectedMenu === "whatisRegister" && <Bodyregister />}
+                  <span className="text-[#A52A2A]">&lt;/body&gt;</span>
+                </div>
+              </div>
+            )}
+          </>
+        </div>
+      )}
+
+      {whatisRegisterScript && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button
+              onClick={setOpenWhatisRegisterScrit}
+              className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">2.Script</h3>
+            </button>
+
+            <div className="mt-2">{content && <p>{content}</p>}</div>
+          </div>
+
+          <>
+            {whatisRegisterScriptCheck && (
+              <div className="w-full flex flex-col gap-4">
+                {/* step 1 */}
+                <div className="flex flex-col gap-2">
+                  <h1 className="font-bold text-xl">step 1</h1>
+                  <div>
+                    <p>
+                      1.เราต้องสร้างตัวแปร userName และ password
+                      เพื่อเก็บค่าที่เรากรอกใน input โดยไปเอาจาก id{" "}
+                      <span className="text-blue-600">#userName</span> และ{" "}
+                      <span className="text-green-600">#password</span>
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>
+                      2.เมื่อเราได้ค่าจากตัวแปรที่สร้างแล้ว
+                      เราต้องสร้างตัวแปรอีก 1 ตัว
+                      เพื่อนำตัวแปรนี้ส่งไปให้หลังบ้านผ่าน api โดยสร้าง mData
+                      ขี้นมาเป็น object ที่มีข้อมูล key กับ value
+                    </p>
+                    <p className="ml-2">
+                      2.1.key คือ{" "}
+                      <span className="text-[#A52A2A]">"userName"</span> และ
+                      vlue คือ ตัวแปร{" "}
+                      <span className="text-blue-600">userName</span>
+                    </p>
+                    <p className="ml-2">
+                      2.2.key คือ{" "}
+                      <span className="text-[#A52A2A]">"password"</span>และ vlue
+                      คือ ตัวแปร{" "}
+                      <span className="text-green-600">password</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                  <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                  <Register_var />
+                </div>
+
+                {/* step 2 */}
+                <div className="flex flex-col gap-2">
+                  <h1 className="font-bold text-xl">step 2</h1>
+                  <div>
+                    <p>
+                      1.ใช้ jQuery Ajax เพื่อทำการส่งข้อมูลผ่าน HTTP POST
+                      request ไปยังเซิร์ฟเวอร์ API ที่ URL API_SERVER +
+                      "/v1/auth/signUp" โดยมีข้อมูลที่ต้องการส่งเก็บอยู่ในตัวแปร{" "}
+                      <span className="text-red-600">mData</span>
+                    </p>
+                    <p>
+                      2.ถ้าเราส่งช้อมูลผ่านแล้วในหน้าจอจะแสดง popUp "You have
+                      successfully registered an account"
+                    </p>
+                    <p>
+                      3.แต่ถ้าเราส่งไปไม่ผ่านจะแสดง popUp
+                      msgPageObj.show(getStatusCode(data.code)
+                    </p>
+                  </div>
+                </div>
+
+                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                  <Register_registerFun />
+                </div>
+
+                {/* step 3 */}
+                <div className="flex flex-col gap-2">
+                  <h1 className="font-bold text-xl">step 3</h1>
+
+                  <div>
+                    <p>
+                      ฟังก์ชัน cleanInput() นี้ใช้สำหรับล้างค่าข้อมูลใน input
+                      fields ที่มี id เป็น{" "}
+                      <span className="text-blue-600">"userName"</span> และ{" "}
+                      <span className="text-green-600">"password"</span> โดยใช้
+                      jQuery เพื่อเข้าถึงและเปลี่ยนแปลงค่าของฟิลด์นั้นๆ
+                    </p>
+                    <p>
+                      1.$("<span className="text-blue-600">#userName</span>
+                      ").val('');: ใช้ jQuery เลือกฟิลด์ input ที่มี id เป็น{" "}
+                      <span className="text-blue-600">"userName"</span>{" "}
+                      และกำหนดค่าให้เป็นช่องว่าง นั่นคือลบข้อมูลในฟิลด์นี้
+                    </p>
+                    <p>
+                      2.$("<span className="text-green-600">#password</span>
+                      ").val('');: ใช้ jQuery เลือกฟิลด์ input ที่มี id เป็น{" "}
+                      <span className="text-green-600">"password"</span>{" "}
+                      และกำหนดค่าให้เป็นช่องว่าง นั่นคือลบข้อมูลในฟิลด์นี้
+                    </p>
+                    <p>
+                      ดังนั้น เมื่อฟังก์ชัน cleanInput() ถูกเรียก
+                      จะทำให้ข้อมูลใน input fields ที่มี id เป็น{" "}
+                      <span className="text-blue-600">"userName"</span>
+                      และ <span className="text-green-600">
+                        "password"
+                      </span>{" "}
+                      ถูกลบทิ้งทั้งหมด
+                      เพื่อให้ผู้ใช้งานกรอกข้อมูลใหม่ได้ในครั้งต่อไป
+                    </p>
+                  </div>
+                </div>
+
+                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                  <Register_cleanInput />
+                  <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+                </div>
+              </div>
+            )}
+          </>
         </div>
       )}
 
@@ -2153,6 +2352,8 @@ export default function ModelContent({
             {selectedMenu === "loader" && <LoaderTryit />}
             {selectedMenu === "messagePage" && <MessagePage />}
             {selectedMenu === "mainHtml" && <MainTryit />}
+            {selectedMenu === "mainHtml" && <MainTryit />}
+            {selectedMenu === "whatisRegister" && <RegisterTryit />}
           </div>
         </div>
       ) : null}

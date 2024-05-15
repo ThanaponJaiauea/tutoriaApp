@@ -5,6 +5,7 @@ import {Menu} from "antd"
 import {
   startProjecData,
   indexData,
+  jQueryData,
   widgetData,
   mainData,
   login,
@@ -18,6 +19,7 @@ export default function NavbarModelStructure({handleModelClick}) {
   const allData = [
     ...startProjecData,
     ...indexData,
+    ...jQueryData,
     ...widgetData,
     ...mainData,
     ...login,
@@ -95,7 +97,8 @@ export default function NavbarModelStructure({handleModelClick}) {
             title={menuItem.label}>
             {menuItem.children.map(
               (child) =>
-                child.key !== "scriptIndex" && (
+                child.key !== "scriptIndex" &&
+                child.key !== "SliderLogin" && (
                   <Menu.Item
                     key={child.key}
                     onClick={() => handleModelClick(child.key)}>
@@ -119,6 +122,24 @@ export default function NavbarModelStructure({handleModelClick}) {
                         key={child.key}
                         onClick={() => handleModelClick(child.key)}>
                         {child.name}
+                      </Menu.Item>
+                    ))}
+                </Menu.SubMenu>
+              )}
+
+            {/* Slider */}
+            {menuItem.key === "login" &&
+              menuItem.children.find((el) => el.key === "SliderLogin") && (
+                <Menu.SubMenu
+                  key={`SliderLogin_${menuItem.key}`}
+                  title="Slider">
+                  {menuItem.children
+                    .find((el) => el.key === "SliderLogin")
+                    .children.map((el) => (
+                      <Menu.Item
+                        key={el.key}
+                        onClick={() => handleModelClick(el.key)}>
+                        {el.name}
                       </Menu.Item>
                     ))}
                 </Menu.SubMenu>
