@@ -93,8 +93,6 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         return "askDeviceIdFun()"
       case "registerFun":
         return "registerFun()"
-      case "SendOTP":
-        return "SendOTP()"
       case "nSLangArrLang":
         return "var NSLangArr"
       case "setAllPageLang":

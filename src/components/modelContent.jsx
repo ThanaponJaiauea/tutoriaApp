@@ -489,8 +489,6 @@ export default function ModelContent({
   headersDescription,
   setOpenWhatisRegisterBody,
   setOpenWhatisRegisterScrit,
-  openWhatisRegisterScrit,
-  openWhatisRegisterBody,
   whatisRegisterBody,
   whatisRegisterScript,
   whatisRegisterBodyCheck,
@@ -1335,6 +1333,7 @@ export default function ModelContent({
         </div>
       )}
 
+      {/* Rejister */}
       {whatisRegisterBody && (
         <div className={`${CONTAINER_CLASSES}`}>
           <div className="w-full py-4">
@@ -1374,7 +1373,7 @@ export default function ModelContent({
           </>
         </div>
       )}
-
+      {/* Rejister */}
       {whatisRegisterScript && (
         <div className={`${CONTAINER_CLASSES}`}>
           <div className="w-full py-4">

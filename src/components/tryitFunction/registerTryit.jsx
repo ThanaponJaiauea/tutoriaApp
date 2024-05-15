@@ -11,7 +11,7 @@ export default function RegisterTryit() {
     userName: "",
     password: "",
   })
-  console.log("input", input)
+  //   console.log("input", input)
 
   const handleChangeInput = (e) => {
     setInput({...input, [e.target.name]: e.target.value})
@@ -39,7 +39,7 @@ export default function RegisterTryit() {
               <div className="relative w-[100%] h-[500px] bg-white">
                 <nav className="w-full h-[70px] bg-[#457BFF] flex justify-center items-center">
                   <div className={` w-[90%] flex justify-center items-center`}>
-                    <p className="text-white text-lg font-bold">Currnt Page</p>
+                    <p className="text-white text-lg font-bold">Rejister</p>
                   </div>
 
                   <button
