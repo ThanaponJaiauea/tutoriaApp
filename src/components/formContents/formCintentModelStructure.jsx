@@ -891,25 +891,6 @@ const FormCintentModelStructure = ({selectedMenu}) => {
       />
     ),
 
-    openTabLevel: () => (
-      <ModelContent
-        headers="Solar App"
-        headerHtml="Lang.html"
-        headerName={getTitle()}
-        content="-ฟังก์ชัน openTab() ใช้ในการแสดงแท็บที่ถูกเลือกโดยรับชื่อแท็บเป็นพารามิเตอร์ tabName และซ่อนแท็บที่ไม่ได้ถูกเลือก และแสดงแท็บที่ถูกเลือก"
-        content1="1.เริ่มต้นด้วยการรับชื่อแท็บที่ต้องการแสดงเป็นพารามิเตอร์ `tabName`"
-        content2="2.ฟังก์ชันจะดึงอ็อบเจกต์ของแท็บทั้งหมดที่มีคลาส 'tabcontent' และซ่อนทั้งหมด"
-        content3="3.จากนั้นฟังก์ชันจะดึงอ็อบเจกต์ของลิงก์แท็บทั้งหมดที่มีคลาส 'tablinks' และลบคลาส 'actived' ที่มีอยู่"
-        content4="4.ต่อมาฟังก์ชันจะแสดงแท็บที่ถูกเลือกโดยเพิ่มค่า display ให้เป็น 'block' และเพิ่มคลาส 'actived' เข้าไปในลิงก์แท็บที่เกี่ยวข้อง"
-        content5="5.ดังนั้นแท็บที่ไม่ได้ถูกเลือกจะถูกซ่อนและลิงก์ที่ไม่ได้ถูกเลือกจะไม่มีคลาส 'actived' และแท็บที่ถูกเลือกจะแสดงผลและลิงก์ที่เกี่ยวข้องจะมีคลาส 'actived'"
-        functionName={getTitle()}
-        selectedMenu={selectedMenu}
-        widget="none"
-        htmlCheck={true}
-        htmlCheckScript={true}
-      />
-    ),
-
     levelFull: () => (
       <ModelContent
         headers="Level"
@@ -918,6 +899,7 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         selectedMenu={selectedMenu}
         widget="none"
         howtoLevelBody={true}
+        howtoLevelScript={true}
       />
     ),
 

@@ -495,6 +495,7 @@ export default function ModelContent({
   howtoLoginBody,
   howtoLoginScrip,
   howtoLevelBody,
+  howtoLevelScript,
 }) {
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
@@ -908,7 +909,6 @@ export default function ModelContent({
                 {selectedMenu === "setAllUILang" && <Lang_setAllUILang />}
                 {selectedMenu === "NSLang" && <Lang_nsLang />}
                 {selectedMenu === "getStatusCode" && <Lang_getStatusCode />}
-                {selectedMenu === "openTabLevel" && <Level_openTab />}
                 {selectedMenu === "GetAddress" && (
                   <LocationAddress_getAddress />
                 )}
@@ -1682,6 +1682,28 @@ export default function ModelContent({
               <span className="text-[#A52A2A]">&lt;body&gt;</span>
               <BodyLevel />
               <span className="text-[#A52A2A]">&lt;/body&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {howtoLevelScript && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">2.Script</h3>
+            </button>
+
+            <div className="mt-2">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+               <Level_openTab />
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
             </div>
           </div>
         </div>

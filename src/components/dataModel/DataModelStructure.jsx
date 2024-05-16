@@ -359,16 +359,12 @@ const level = [
         category: "levelHtml",
       },
       {
-        name: "openTab()",
-        type: "generalModel",
-        key: "openTabLevel",
-        category: "levelHtml",
+        name: "swiper",
+        key: "swiper",
       },
       {
         name: "getlevel()",
-        type: "generalModel",
         key: "getlevel",
-        category: "levelHtml",
       },
     ],
   },

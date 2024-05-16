@@ -4401,7 +4401,8 @@ export function BodyLevel() {
 // openTab
 export function Level_openTab() {
   return (
-    <div className="ml-4 flex flex-col gap-4 break-words">
+    <div className="ml-4 flex flex-col break-words">
+      <p>{`this.openTab = function (tabName) {`}</p>
       <div className="ml-2">
         <p>{`var i;`}</p>
         <p>{`var tabcontent = document.getElementsByClassName("tabcontent");`}</p>
@@ -4415,6 +4416,7 @@ export function Level_openTab() {
         <p>{`document.getElementById(tabName + "Tab").style.display = "block";`}</p>
         <p>{`document.getElementById(tabName).classList.add("actived");`}</p>
       </div>
+      <p>{`}`}</p>
     </div>
   )
 }
