@@ -111,10 +111,10 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         return "getlevel()"
       case "jQueryIntroduction":
         return "jQueryIntroduction"
-      case "bodyLevel":
-        return "Body"
       case "whatisRegister":
         return "what is Register ?"
+      case "loginFull":
+        return "Login ?"
       default:
         return ""
     }
@@ -598,6 +598,18 @@ const FormCintentModelStructure = ({selectedMenu}) => {
       />
     ),
 
+    loginFull: () => (
+      <ModelContent
+        headers="How to Login ?"
+        headerName={getTitle()}
+        selectedMenu={selectedMenu}
+        howtoLoginBody={true}
+        howtoLoginScrip={true}
+        widget="none"
+        exampleContent="exampleContent"
+      />
+    ),
+
     bodyLogin: () => (
       <ModelContent
         headers="Solar App"
@@ -777,6 +789,7 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         openWhatisRegisterBody={openWhatisRegisterBody}
         whatisRegisterBodyCheck={true}
         whatisRegisterScriptCheck={true}
+        exampleScript={true}
         exampleContent="exampleContent"
       />
     ),
@@ -878,28 +891,6 @@ const FormCintentModelStructure = ({selectedMenu}) => {
       />
     ),
 
-    bodyLevel: () => (
-      <ModelContent
-        headers="Solar App"
-        headerHtml="Lang.html"
-        headerName={getTitle()}
-        content="- HTML นี้เป็นโครงสร้างของหน้าเพจที่มีองค์ประกอบหลายอย่าง ประกอบด้วยการแสดงระดับสมาชิกในรูปแบบต่าง ๆ เช่น Silver, Gold, และ Platinum รวมถึงแท็บสำหรับการสลับไปมาระหว่างข้อมูลของแต่ละระดับสมาชิก นอกจากนี้ยังมีพื้นที่แสดงรายละเอียดเกี่ยวกับระดับสมาชิกต่าง ๆ และโครงสร้างแบบเลื่อน (swiper) สำหรับการแสดงบัตรสมาชิกแต่ละระดับ"
-        content1={`1.หน้าเพจนี้มีคอนเทนเนอร์หลัก (<div class="menuPage bg-my" id="memberPage">) สำหรับจัดการการแสดงผลของข้อมูลสมาชิก`}
-        content2={`2.ใช้ Swiper (<swiper-container>) เพื่อแสดงบัตรสมาชิกแบบเลื่อนได้ แต่ละบัตรจะแสดงระดับสมาชิก (Silver, Gold, Platinum)`}
-        content3={`3.บัตรสมาชิกแต่ละใบมีรายละเอียด เช่น จำนวนคำสั่งซื้อ, จำนวนเงิน, รหัสเชิญ, การใช้ไฟฟ้า, และการเช็คอิน`}
-        content4={`4.ส่วนล่างของหน้าเพจมีแท็บ (<div class="level tablinks">) สำหรับสลับการแสดงข้อมูลระดับสมาชิก (Classic, Silver, Gold, Platinum)`}
-        content5={`5.เมื่อคลิกที่แท็บ จะเรียกใช้ฟังก์ชัน memberObj.openTab() เพื่อแสดงเนื้อหาของแท็บที่เลือก`}
-        content6={`6.แต่ละแท็บจะแสดงรายละเอียดและสิทธิพิเศษที่แตกต่างกัน เช่น ส่วนลดสำหรับสมาชิก Gold`}
-        content7={`7.มีการใช้ CSS เพื่อการจัดวางและการออกแบบที่สวยงาม เช่น สีพื้นหลัง, ขอบ, และเงา`}
-        content8={`8.มีพื้นที่สำหรับแสดงเหรียญ Yojo coin ที่ด้านบนของคอนเทนเนอร์ส่วนล่าง`}
-        functionName={getTitle()}
-        selectedMenu={selectedMenu}
-        widget="none"
-        htmlCheck={true}
-        htmlCheckBody={true}
-      />
-    ),
-
     openTabLevel: () => (
       <ModelContent
         headers="Solar App"
@@ -916,6 +907,17 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         widget="none"
         htmlCheck={true}
         htmlCheckScript={true}
+      />
+    ),
+
+    levelFull: () => (
+      <ModelContent
+        headers="Level"
+        headerName={getTitle()}
+        functionName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        howtoLevelBody={true}
       />
     ),
 

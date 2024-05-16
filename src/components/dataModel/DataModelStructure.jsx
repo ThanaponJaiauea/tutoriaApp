@@ -238,9 +238,9 @@ const login = [
     label: "Login.html",
     children: [
       {
-        name: "Body",
+        name: "Longin",
         type: "generalModel",
-        key: "bodyLogin",
+        key: "loginFull",
         category: "loginHtml",
       },
       {
@@ -269,24 +269,6 @@ const login = [
           },
         ],
       },
-      {
-        name: "loginFun()",
-        type: "generalModel",
-        key: "loginFun",
-        category: "loginHtml",
-      },
-      {
-        name: "checkLoginStatusWithRefreshToken()",
-        type: "generalModel",
-        key: "checkLoginStatusWithRefreshToken",
-        category: "loginHtml",
-      },
-      {
-        name: "askDeviceIdFun()",
-        type: "generalModel",
-        key: "askDeviceIdFun",
-        category: "loginHtml",
-      },
     ],
   },
 ]
@@ -297,7 +279,7 @@ const register = [
     label: "Register.html",
     children: [
       {
-        name: "What is Register?",
+        name: "Rejister",
         type: "generalModel",
         key: "whatisRegister",
       },
@@ -371,9 +353,9 @@ const level = [
     label: "Level.html",
     children: [
       {
-        name: "Body",
+        name: "Level",
         type: "generalModel",
-        key: "bodyLevel",
+        key: "levelFull",
         category: "levelHtml",
       },
       {

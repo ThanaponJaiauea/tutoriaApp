@@ -22,7 +22,6 @@ import {
   ChangePasswordHtml,
   CheckIn,
   CheckInBonus,
-  CheckLoginStatusWithRefreshToken,
   CheckMathCoupon,
   CheckPayMentMethod,
   CleanInput,
@@ -142,8 +141,9 @@ import {
   LoaderWidget,
   LocationAddress_getAddress,
   LoginFun_login,
-  Login_askDeviceIdFun,
+  LoginFun_login_var,
   Login_checkLoginWithRefreshToken,
+  Login_init,
   LoopWithdraw,
   LuckyLeftData,
   MainHtmlBody,
@@ -245,7 +245,6 @@ import {
   Refund_sendRefund,
   Register_cleanInput,
   Register_registerFun,
-  Register_sendOTP,
   Register_var,
   Reportdatalogger_chargePower,
   Reportdatalogger_chargePowerNOlogin,
@@ -488,11 +487,14 @@ export default function ModelContent({
   listIndex,
   headersDescription,
   setOpenWhatisRegisterBody,
-  setOpenWhatisRegisterScrit,
   whatisRegisterBody,
   whatisRegisterScript,
   whatisRegisterBodyCheck,
   whatisRegisterScriptCheck,
+  exampleScript,
+  howtoLoginBody,
+  howtoLoginScrip,
+  howtoLevelBody,
 }) {
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
@@ -913,7 +915,6 @@ export default function ModelContent({
                 {selectedMenu === "checkLoginWithRefreshToken" && (
                   <Login_checkLoginWithRefreshToken />
                 )}
-                {selectedMenu === "askDeviceIdFun" && <Login_askDeviceIdFun />}
                 {selectedMenu === "menuhome" && <Main_menuhome />}
                 {selectedMenu === "menumonitor" && <Main_menumonitor />}
                 {selectedMenu === "menuwallet" && <Main_menuwallet />}
@@ -1071,7 +1072,6 @@ export default function ModelContent({
                   <Refund_previewImg_refund />
                 )}
 
-                {selectedMenu === "SendOTP" && <Register_sendOTP />}
                 {selectedMenu === "CreateHTML" && (
                   <Reportdatalogger_createHTML />
                 )}
@@ -1189,9 +1189,6 @@ export default function ModelContent({
                 )}
                 {selectedMenu === "slider_cap" && <Slider_cap_login />}
                 {selectedMenu === "loginFun" && <LoginFun_login />}
-                {selectedMenu === "checkLoginStatusWithRefreshToken" && (
-                  <CheckLoginStatusWithRefreshToken />
-                )}
                 {selectedMenu === "cleanInput" && <CleanInput />}
                 {selectedMenu === "getFinancialAlipay" && (
                   <GetFinancialAlipay />
@@ -1305,8 +1302,7 @@ export default function ModelContent({
             {htmlCheckBody === true && (
               <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
                 <span className="text-[#A52A2A]">&lt;Body&gt;</span>
-                {selectedMenu === "bodyLogin" && <Body_longin />}
-                {selectedMenu === "bodyLevel" && <BodyLevel />}
+
                 <span className="text-[#A52A2A]"> &lt;Body&gt;</span>
               </div>
             )}
@@ -1377,9 +1373,7 @@ export default function ModelContent({
       {whatisRegisterScript && (
         <div className={`${CONTAINER_CLASSES}`}>
           <div className="w-full py-4">
-            <button
-              onClick={setOpenWhatisRegisterScrit}
-              className="w-full flex items-center justify-between">
+            <button className="w-full flex items-center justify-between">
               <h3 className="text-[23px] font-bold">2.Script</h3>
             </button>
 
@@ -1496,6 +1490,200 @@ export default function ModelContent({
               </div>
             )}
           </>
+        </div>
+      )}
+
+      {/* Lognin Body */}
+      {howtoLoginBody && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">1.Body</h3>
+            </button>
+
+            <div className="mt-2">
+              <p>
+                คือ โครงสร้างของ html ที่แสดงผลเป็น from ui ให้ user
+                สามารถใส่ข้อความสำหรับ Login ได้{" "}
+              </p>
+              <p>
+                1.โดยที่จะสร้าง id=
+                <span className="text-red-600">"loginPage"</span> เพื่อให้ div
+                นี้แสดงผลตามที่เราต้องการ
+              </p>
+              <p>
+                2.เราสร้าง id <span className="text-blue-600">"userName"</span>,{" "}
+                <span className="text-green-600">"password"</span>{" "}
+                เพื่อเก็บค่าที่ user ใส่ข้อมูลมา
+              </p>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;body&gt;</span>
+              <Body_longin />
+              <span className="text-[#A52A2A]">&lt;/body&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {howtoLoginScrip && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">2.Script</h3>
+            </button>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            {/* step 1 */}
+            <div className="flex flex-col gap-2">
+              <h1 className="font-bold text-xl">step 1</h1>
+              <div>
+                <p>
+                  1.เราต้องสร้างตัวแปร userName และ password
+                  เพื่อเก็บค่าที่เรากรอกใน input โดยไปเอาจาก id{" "}
+                  <span className="text-blue-600">#userName</span> และ{" "}
+                  <span className="text-green-600">#password</span>
+                </p>
+              </div>
+
+              <div>
+                <p>
+                  2.เมื่อเราได้ค่าจากตัวแปรที่สร้างแล้ว เราต้องสร้างตัวแปรอีก 1
+                  ตัว เพื่อนำตัวแปรนี้ส่งไปให้หลังบ้านผ่าน api โดยสร้าง mData
+                  ขี้นมาเป็น object ที่มีข้อมูล key กับ value
+                </p>
+                <p className="ml-2">
+                  2.1.key คือ <span className="text-[#A52A2A]">"userName"</span>{" "}
+                  และ vlue คือ ตัวแปร{" "}
+                  <span className="text-blue-600">userName</span>
+                </p>
+                <p className="ml-2">
+                  2.2.key คือ <span className="text-[#A52A2A]">"password"</span>
+                  และ vlue คือ ตัวแปร{" "}
+                  <span className="text-green-600">password</span>
+                </p>
+              </div>
+            </div>
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <LoginFun_login_var />
+            </div>
+
+            {/* step 2 */}
+            <div className="flex flex-col gap-2">
+              <h1 className="font-bold text-xl">step 2</h1>
+              <div>
+                <p>
+                  1.ใช้ jQuery Ajax เพื่อทำการส่งข้อมูลผ่าน HTTP POST request
+                  ไปยังเซิร์ฟเวอร์ API ที่ URL API_SERVER + "/v1/auth/login"
+                  โดยมีข้อมูลที่ต้องการส่งเก็บอยู่ในตัวแปร{" "}
+                  <span className="text-red-600">mData</span>
+                </p>
+                <p>
+                  2.ถ้า login สำเร็จเราสามารถเข้าไปทำที่โลจิคต่อได้ที่{" "}
+                  <span className="text-green-600">
+                    Do something on success
+                  </span>{" "}
+                  เช่น ในตัวอย่างได้มีการเรียกใช้ function cleanInput()
+                  เพื่อทำการล้างข้อมูล
+                </p>
+                <p>
+                  3.ถ้า login ไม่สำเร็จเราสามารถเข้าไปทำที่โลจิคต่อได้ที่{" "}
+                  <span className="text-red-600">Do something on error</span>{" "}
+                  เช่น อาจจะแสดง popUp แจ้งเตือน
+                </p>
+              </div>
+            </div>
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <LoginFun_login />
+            </div>
+
+            {/* step 3 */}
+            <div className="flex flex-col gap-2">
+              <h1 className="font-bold text-xl">step 3</h1>
+              <div>
+                <p>
+                  ฟังก์ชัน cleanInput() นี้ใช้สำหรับล้างค่าข้อมูลใน input fields
+                  ที่มี id เป็น{" "}
+                  <span className="text-blue-600">"userName"</span> และ{" "}
+                  <span className="text-green-600">"password"</span> โดยใช้
+                  jQuery เพื่อเข้าถึงและเปลี่ยนแปลงค่าของฟิลด์นั้นๆ
+                </p>
+                <p>
+                  1.$("<span className="text-blue-600">#userName</span>
+                  ").val('');: ใช้ jQuery เลือกฟิลด์ input ที่มี id เป็น{" "}
+                  <span className="text-blue-600">"userName"</span>{" "}
+                  และกำหนดค่าให้เป็นช่องว่าง นั่นคือลบข้อมูลในฟิลด์นี้
+                </p>
+                <p>
+                  2.$("<span className="text-green-600">#password</span>
+                  ").val('');: ใช้ jQuery เลือกฟิลด์ input ที่มี id เป็น{" "}
+                  <span className="text-green-600">"password"</span>{" "}
+                  และกำหนดค่าให้เป็นช่องว่าง นั่นคือลบข้อมูลในฟิลด์นี้
+                </p>
+                <p>
+                  ดังนั้น เมื่อฟังก์ชัน cleanInput() ถูกเรียก จะทำให้ข้อมูลใน
+                  input fields ที่มี id เป็น{" "}
+                  <span className="text-blue-600">"userName"</span>
+                  และ <span className="text-green-600">"password"</span>{" "}
+                  ถูกลบทิ้งทั้งหมด
+                  เพื่อให้ผู้ใช้งานกรอกข้อมูลใหม่ได้ในครั้งต่อไป
+                </p>
+              </div>
+            </div>
+
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <Register_cleanInput />
+            </div>
+
+            {/* step 4 */}
+            <div className="flex flex-col gap-2">
+              <h1 className="font-bold text-xl">step 4</h1>
+              <div>
+                <p>
+                  เราเรียกใช้ id{" "}
+                  <span className="text-yellow-600">#loginBtn</span> แล้วใช้
+                  method click เพื่อตอนที่เราคลิกให้ไปเรียกใช้{" "}
+                  <span className="text-yellow-600">loginFun()</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <Login_init />
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Level */}
+      {howtoLevelBody && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">1.Body</h3>
+            </button>
+
+            <div className="mt-2">
+              <p>
+                คือ โครงสร้างของ html ที่แสดงผลเป็น from ui ให้ user
+                สามารถใส่ข้อความสำหรับ Login ได้{" "}
+              </p>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;body&gt;</span>
+              <BodyLevel />
+              <span className="text-[#A52A2A]">&lt;/body&gt;</span>
+            </div>
+          </div>
         </div>
       )}
 
@@ -2317,29 +2505,31 @@ export default function ModelContent({
           ) : null}
 
           {/*Example script */}
-          <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg">
-            <span className="text-[#A52A2A]">&lt;script&gt;</span>
-            {selectedMenu === "messageBox" && <DivMessageBoxExampleCode />}
-            {selectedMenu === "alert" && <AlertExample />}
-            {selectedMenu === "pageInit" && <PageInitExampleScript />}
-            {selectedMenu === "headerInit" && <HeaderInitExampleScript />}
-            {selectedMenu === "pageShow" && <PageShowExampleScript />}
-            {selectedMenu === "pageUnShow" && <PageUnShowExampleScript />}
-            {selectedMenu === "loader" && <LoaderExampleScript />}
-            {selectedMenu === "messagePage" && <MessagePageExampleScript />}
-            {selectedMenu === "mainHtml" && (
-              <div>
-                <span className="text-[#0000CD]">
-                  this.
-                  <span className="text-red-600">{`menumonitor = function () {`}</span>
-                </span>
-                <Main_menumonitor />
-                <p className="text-red-600">{`}`}</p>
-              </div>
-            )}
+          {exampleScript ? null : (
+            <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              {selectedMenu === "messageBox" && <DivMessageBoxExampleCode />}
+              {selectedMenu === "alert" && <AlertExample />}
+              {selectedMenu === "pageInit" && <PageInitExampleScript />}
+              {selectedMenu === "headerInit" && <HeaderInitExampleScript />}
+              {selectedMenu === "pageShow" && <PageShowExampleScript />}
+              {selectedMenu === "pageUnShow" && <PageUnShowExampleScript />}
+              {selectedMenu === "loader" && <LoaderExampleScript />}
+              {selectedMenu === "messagePage" && <MessagePageExampleScript />}
+              {selectedMenu === "mainHtml" && (
+                <div>
+                  <span className="text-[#0000CD]">
+                    this.
+                    <span className="text-red-600">{`menumonitor = function () {`}</span>
+                  </span>
+                  <Main_menumonitor />
+                  <p className="text-red-600">{`}`}</p>
+                </div>
+              )}
 
-            <span className="text-[#A52A2A]">&lt;/script&gt;</span>
-          </div>
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          )}
 
           {/* open test */}
           <div className="w-full">
@@ -2352,7 +2542,12 @@ export default function ModelContent({
             {selectedMenu === "messagePage" && <MessagePage />}
             {selectedMenu === "mainHtml" && <MainTryit />}
             {selectedMenu === "mainHtml" && <MainTryit />}
-            {selectedMenu === "whatisRegister" && <RegisterTryit />}
+            {selectedMenu === "whatisRegister" && (
+              <RegisterTryit title="Rejister Page" />
+            )}
+            {selectedMenu === "loginFull" && (
+              <RegisterTryit title="Login Page" />
+            )}
           </div>
         </div>
       ) : null}

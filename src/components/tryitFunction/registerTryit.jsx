@@ -5,7 +5,7 @@ import Buttons from "../Buttons"
 import {IoClose} from "react-icons/io5"
 import {Drawer} from "antd"
 
-export default function RegisterTryit() {
+export default function RegisterTryit({title}) {
   const [openModal, setOpenModal] = useState(false)
   const [input, setInput] = useState({
     userName: "",
@@ -39,7 +39,7 @@ export default function RegisterTryit() {
               <div className="relative w-[100%] h-[500px] bg-white">
                 <nav className="w-full h-[70px] bg-[#457BFF] flex justify-center items-center">
                   <div className={` w-[90%] flex justify-center items-center`}>
-                    <p className="text-white text-lg font-bold">Rejister</p>
+                    <p className="text-white text-lg font-bold">{title}</p>
                   </div>
 
                   <button
@@ -95,7 +95,7 @@ export default function RegisterTryit() {
                 </form>
 
                 <div className="mt-5 w-[80%] m-auto">
-                  สว่นอันนี้จะเป็นการแสดงค่าของตัวแปรที่จะส่งไปหลังบ้าน
+                  ส่วนอันนี้จะเป็นการแสดงค่าของตัวแปรที่จะส่งไปหลังบ้าน
                   <p>
                     var <span className="text-red-600">mData</span> = {`{`}
                   </p>

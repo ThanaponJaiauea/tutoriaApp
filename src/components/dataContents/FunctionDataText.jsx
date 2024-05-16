@@ -4205,300 +4205,194 @@ export function BodyLevel() {
   return (
     <div className="ml-4 flex flex-col gap-4 break-words">
       <div className="ml-2">
-        <pre class="whitespace-pre-wrap">
-          {`
-          <div class="menuPage bg-my" id="memberPage"
-          style="position: absolute; z-index: 10; background: #E3F5FF; background-repeat: no-repeat; background-size: cover;">
-          <div id="member_header">
-          </div>
-          <div style="height: 25px;"></div>
-          <div id="scroller_member">
-              <div id="member_body" style="width: 100%; display: flex; align-items: center;">
-      
-                  <swiper-container style=" width: 90%; margin:  0 auto ; position: relative;">
-                      <swiper-slide id="silver" space-between="20" slides-per-view="2.15"
-                          style="     margin-right: 20px;  height: 200px; width: 100%;color: #000;  width: 100%; border-radius: 8px; background: var(--Silver, linear-gradient(99deg, #AEAEAE 0%, #DBDBDB 23.96%, #E2E2E2 43.23%, #C9C9C9 60.42%, #E3E3E3 77.6%, #CCC 100%));box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10);">
-                          <div
-                              style="width: 90%; height: 20%; margin:  0 auto ; color: #fff; display: flex;  justify-content: space-between">
-                              <div style="display: flex;
-                              align-items: center;"> Silver <img style="height: 20px; width: 20px;    margin-left: 8px; "
-                                      id="icon_silver" alt=""></div>
-      
-                              <div class="see_more" style="font-size: 10px;display: flex;
-                              align-items: center;"> See more <img style="height: 20px; width: 20px;    margin-left: 8px; "
-                                      id="see_more_silver" alt=""></div>
-                          </div>
-                          <div
-                              style="height: 80%;margin: 0 auto; width: 90%; border-radius: 15px 15px 0px 0px; border: 2.55px solid rgba(255, 255, 255, 0.27);background: rgba(255, 255, 255, 0.90);box-shadow: 4px 0px 11.8px 1px rgba(201, 201, 201, 0.60), -4px 4px 11.8px 1px rgba(201, 201, 201, 0.60);">
-                              <div style="   height: 30%; width: 90%; font-size: 12px; margin: 0 auto;background: linear-gradient(99deg, #AEAEAE 0%, #C9C9C9 23.96%, #C9C9C9 47.92%, #E7E5E5 77.6%, #CCC 100%);
-                              background-clip: text; -webkit-background-clip: text;-webkit-text-fill-color: transparent;">
-                                  Maintain level:</div>
-                              <div class="upgrade_information">
-                                  <div>Order</div>
-                                  <div>
-                                      <span class="SILVER">
-                                          20</span>/24
-                                  </div>
-                                  <div class="SILVER_stick">
-                                  </div>
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-                              <div class="upgrade_information">
-                                  <div>Order amount</div>
-                                  <div> <span class="SILVER">
-      
-                                          4500</span>/7500
-                                  </div>
-                                  <div class="SILVER_stick">
-                                  </div>
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-                              <div class="upgrade_information">
-                                  <div>Invitation codes</div>
-                                  <div> <span class="SILVER">
-      
-                                          20</span>/24
-                                  </div>
-                                  <div class="SILVER_stick">
-                                  </div>
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-                              <div class="upgrade_information">
-                                  <div>Electricity usage</div>
-                                  <div> <span class="SILVER">
-      
-                                          2300</span>/5000
-                                  </div>
-                                  <div class="SILVER_stick">
-                                  </div>
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-                              <div class="upgrade_information">
-                                  <div>check-in</div>
-                                  <div> <span class="SILVER">
-      
-                                          6</span>/30
-                                  </div>
-                                  <div class="SILVER_stick">
-                                  </div>
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-      
-                          </div>
-                      </swiper-slide>
-                      <div style="width: 10px;"></div>
-                      <swiper-slide id="gold"
-                          style=" height: 200px; color:  #000; border-radius: 8px;background: var(--goldz, linear-gradient(99deg, #FFCC7E 0%, #FFAE34 100%));box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10);">
-                          <div
-                              style="width: 90%; height: 20%; margin:  0 auto ; color: #fff; display: flex;  justify-content: space-between">
-                              <div style="display: flex;
-                          align-items: center;"> Gold <img style="height: 20px; width: 20px;    margin-left: 8px; " id="icon_gold"
-                                      alt=""></div>
-      
-                              <div class="see_more"  style="font-size: 10px;display: flex; 
-                          align-items: center;"> See more <img style="height: 20px; width: 20px;    margin-left: 8px; " id="see_more_gold"
-                                      alt=""></div>
-                          </div>
-                          <div
-                              style="height: 80%;margin: 0 auto; width: 90%; border-radius: 15px 15px 0px 0px; border: 2.55px solid rgba(255, 255, 255, 0.27);background: rgba(255, 255, 255, 0.90);box-shadow: 4px 0px 11.8px 1px rgba(201, 201, 201, 0.60), -4px 4px 11.8px 1px rgba(201, 201, 201, 0.60);">
-                              <div style="   
-                              height: 30%; width: 90%; font-size: 12px; margin: 0 auto; background: var(--goldz, linear-gradient(99deg, #FFCC7E 0%, #FFAE34 100%));background-clip: text;-webkit-background-clip: text;-webkit-text-fill-color: transparent; ">
-                                 Maintain level: </div> 
-                              <div class="upgrade_information">
-                                  <div>Order</div>
-                                  <div>
-                                      <span class="GOLD">
-                                          20</span>/24
-                                  </div>
-                                  <div class="GOLD_stick">
-                                  </div>
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-                              <div class="upgrade_information">
-                                  <div>Order amount</div>
-                                  <div><span class="GOLD">
-                                          4500</span>/7500
-                                  </div>
-                                  <div class="GOLD_stick"></div>
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-                              <div class="upgrade_information">
-                                  <div>Invitation codes</div>
-                                  <div>
-                                      <span class="GOLD">
-                                          20</span>/24
-                                  </div>
-                                  <div class="GOLD_stick"></div>
-      
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-                              <div class="upgrade_information">
-                                  <div>Electricity usage</div>
-                                  <div><span class="GOLD">
-                                          2300</span>/5000
-                                  </div>
-                                  <div class="GOLD_stick"></div>
-      
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-                              <div class="upgrade_information">
-                                  <div>check-in</div>
-                                  <div>
-                                      <span class="GOLD"">
-                                          6</span>/30
-                                  </div>
-                                  <div class=" GOLD_stick">
-                                  </div>
-                              </div>
-                              <div style="height: 10px;"></div>
-      
-                          </div>
-                      </swiper-slide>
-                      <swiper-slide id="platinum"
-                          style="height: 200px; color: #000; border-radius: 8px;background: var(--Platinum, linear-gradient(99deg, #EEEEEC 0%, #9D9D9D 19.27%, #ADADB2 39.06%, #767676 56.77%, #6E6E6E 82.29%, #C0C0C0 100%));box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10);">
-                          <div
-                              style="width: 90%; height: 20%; margin:  0 auto ; color: #fff; display: flex;  justify-content: space-between">
-                              <div style="display: flex;
-                      align-items: center;"> Platinum <img style="height: 20px; width: 20px;    margin-left: 8px; " id="icon_plat" alt="">
-                              </div>
-      
-                              <div  class="see_more" style="font-size: 10px;display: flex; 
-                      align-items: center;"> See more <img style="height: 20px; width: 20px;    margin-left: 8px; " id="see_more_plat"
-                                      alt=""></div>
-                          </div>
-                          <div
-                              style="height: 80%;margin: 0 auto; width: 90%; border-radius: 15px 15px 0px 0px; border: 2.55px solid rgba(255, 255, 255, 0.27);background: rgba(255, 255, 255, 0.90);box-shadow: 4px 0px 11.8px 1px rgba(201, 201, 201, 0.60), -4px 4px 11.8px 1px rgba(201, 201, 201, 0.60);">
-                              <div style="   height: 30%; width: 90%; font-size: 12px; margin: 0 auto;background: var(--Platinum, linear-gradient(99deg, #EEEEEC 0%, #9D9D9D 19.27%, #ADADB2 39.06%, #767676 56.77%, #6E6E6E 82.29%, #C0C0C0 100%));
-                              background-clip: text; -webkit-background-clip: text;-webkit-text-fill-color: transparent;">
-                                  Maintain level:</div>
-                              <div class="upgrade_information">
-                                  <div>Order</div>
-                                  <div>
-                                      <span class="PLATINUM">
-                                          20</span>/24
-                                  </div>
-                                  <div class="PLATINUM_stick">
-                                  </div>
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-                              <div class="upgrade_information">
-                                  <div>Order amount</div>
-                                  <div><span class="PLATINUM">
-                                          4500</span>/7500
-                                  </div>
-                                  <div class="PLATINUM_stick"></div>
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-                              <div class="upgrade_information">
-                                  <div>Invitation codes</div>
-                                  <div>
-                                      <span class="PLATINUM">
-                                          20</span>/24
-                                  </div>
-                                  <div class="PLATINUM_stick"></div>
-      
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-                              <div class="upgrade_information">
-                                  <div>Electricity usage</div>
-                                  <div><span class="PLATINUM">
-                                          2300</span>/5000
-                                  </div>
-                                  <div class="PLATINUM_stick"></div>
-      
-      
-                              </div>
-                              <div style="height: 10px;"></div>
-                              <div class="upgrade_information">
-                                  <div>check-in</div>
-                                  <div>
-                                      <span class="PLATINUM"">
-                                      6</span>/30
-                              </div>
-                              <div class="PLATINUM_stick">
-                                  </div>
-                              </div>
-                              <div style="height: 10px;"></div>
-      
-                          </div>
-                      </swiper-slide>
-      
-                  </swiper-container>
-      
+        <p>
+          &lt;div class="menuPage bg-my" id=
+          <span className="text-red-600">"memberPage"</span>{" "}
+          {`style="position: absolute; z-index: 10; background: #E3F5FF; background-repeat: no-repeat; background-size: cover;">`}
+        </p>
+
+        <div className="ml-5 mt-2">
+          <p>
+            &lt;div id=<span className="text-blue-600">"member_body"</span>{" "}
+            {`style="width: 100%; display: flex; align-items: center;">`}
+          </p>
+
+          <div className="ml-5">
+            <p>{`<swiper-container style=" width: 90%; margin:  0 auto ; position: relative;">`}</p>
+             {/* Silver */}
+            <p className="ml-5">{`<swiper-slide id="silver" space-between="20" slides-per-view="2.15" style="margin-right: 20px;  height: 200px; width: 100%;color: #000;  width: 100%; border-radius: 8px; background: var(--Silver, linear-gradient(99deg, #AEAEAE 0%, #DBDBDB 23.96%, #E2E2E2 43.23%, #C9C9C9 60.42%, #E3E3E3 77.6%, #CCC 100%));box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10);">`}</p>
+            <div className="ml-8">
+              <p>{`<div style="width: 90%; height: 20%; margin:  0 auto ; color: #fff; display: flex;  justify-content: space-between">`}</p>
+              <p className="ml-4">{`<div style="display: flex;align-items: center;"> Silver <img style="height: 20px; width: 20px;    margin-left: 8px; "id="icon_silver" alt=""></div>`}</p>
+              <p className="ml-4">{`<div class="see_more" style="font-size: 10px;display: flex;align-items: center;"> See more <img style="height: 20px; width: 20px;    margin-left: 8px; "id="see_more_silver" alt=""></div>`}</p>
+              <p>{`</div>`}</p>
+
+              <p>{`<div style="height: 80%;margin: 0 auto; width: 90%; border-radius: 15px 15px 0px 0px; border: 2.55px solid rgba(255, 255, 255, 0.27);background: rgba(255, 255, 255, 0.90);box-shadow: 4px 0px 11.8px 1px rgba(201, 201, 201, 0.60), -4px 4px 11.8px 1px rgba(201, 201, 201, 0.60);">`}</p>
+              <div className="ml-4">
+                <p>{`<div style="height: 30%; width: 90%; font-size: 12px; margin: 0 auto;background: linear-gradient(99deg, #AEAEAE 0%, #C9C9C9 23.96%, #C9C9C9 47.92%, #E7E5E5 77.6%, #CCC 100%); background-clip: text; -webkit-background-clip: text;-webkit-text-fill-color: transparent;">`}</p>
+                <p className="ml-4">Maintain level:</p>
+                <p>{`</div>`}</p>
+                <p className="mt-4">{`<div class="upgrade_information">`}</p>
+                <p className="ml-4">{`<div>Order</div>`}</p>
+                <p className="ml-4">{`<div>`}</p>
+                <p className="ml-8">{`<span class="SILVER">20</span>/24`}</p>
+                <p className="ml-4">{`</div>`}</p>
+                <p className="ml-4">{`<div class="SILVER_stick"></div>`}</p>
+                <p>{`</div`}</p>
+
+                <p className="mt-4">{`<div class="upgrade_information">`}</p>
+                <p className="ml-4">{`<div>Order amount</div>`}</p>
+                <p className="ml-4">{`<div>`}</p>
+                <p className="ml-8">{`<span class="SILVER">4500</span>/7500`}</p>
+                <p className="ml-4">{`</div>`}</p>
+                <p className="ml-4">{`<div class="SILVER_stick"></div>`}</p>
+                <p>{`</div`}</p>
+
+                <p className="mt-4">{`<div class="upgrade_information">`}</p>
+                <p className="ml-4">{`<div>Invitation code</div>`}</p>
+                <p className="ml-4">{`<div>`}</p>
+                <p className="ml-8">{`<span class="SILVER">20</span>/24`}</p>
+                <p className="ml-4">{`</div>`}</p>
+                <p className="ml-4">{`<div class="SILVER_stick"></div>`}</p>
+                <p>{`</div`}</p>
+
+                <p className="mt-4">{`<div class="upgrade_information">`}</p>
+                <p className="ml-4">{`<div>Electricity usage</div>`}</p>
+                <p className="ml-4">{`<div>`}</p>
+                <p className="ml-8">{`<span class="SILVER">2300</span>/5000`}</p>
+                <p className="ml-4">{`</div>`}</p>
+                <p className="ml-4">{`<div class="SILVER_stick"></div>`}</p>
+                <p>{`</div`}</p>
+
+                <p className="mt-4">{`<div class="upgrade_information">`}</p>
+                <p className="ml-4">{`<div>check-in</div>`}</p>
+                <p className="ml-4">{`<div>`}</p>
+                <p className="ml-8">{`<span class="SILVER">6</span>/30`}</p>
+                <p className="ml-4">{`</div>`}</p>
+                <p className="ml-4">{`<div class="SILVER_stick"></div>`}</p>
+                <p>{`</div`}</p>
               </div>
-              <div style="height: 40px;"></div>
-              <div
-                  style="position: relative; border-radius: 8px;background: #FFF; box-shadow:rgba(0, 0, 0, 0.24) 0px 4px 6px; width: 90%; margin:  0 auto; height: 200px;">
-                  <div
-                      style=" left: 50%;transform: translateX(-50%); position: absolute; bottom: 90%; border-radius: 8px; background: #3B78FE; height: 12px;box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10); display: flex;width: 40%; height: 40px; justify-content: center;align-items: center;gap: 10px;">
-                      <img style="height: 20px; width: 20px; margin-right: 5px; " id="yojo_conin" alt="">
-                      <div style="color: #FFF; font-size: 15px;">Yojo coin</div>
-      
-      
-                  </div>
-                  <div style="height: 40px;"></div>
-                  <div style="   height: 40px;  display: flex; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-                      <div
-                          style=" display: flex;gap: 10px;width: 85%; font-size: 2.5vw; color: #9F9F9F; margin:  0 auto;  align-items: center; justify-content: space-between;">
-                          <div id="Classic" class="level tablinks" data-interval="Classic"
-                              onclick="memberObj.openTab('Classic')">Classic</div>
-                          <div id="Silver" class="level tablinks" data-interval="Silver"
-                              onclick="memberObj.openTab('Silver')">Silver</div>
-                          <div id="Gold" class="level tablinks" data-interval="Gold" onclick="memberObj.openTab('Gold')">Gold
-                          </div>
-                          <div id="Platinum" class="level tablinks" data-interval="Platinum"
-                              onclick="memberObj.openTab('Platinum')">Platinum</div>
-      
-                      </div>
-                  </div>
-                  <div id="ClassicTab" class="tabcontent">
-                      <div style="height: 20px;"></div>
-                      <div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> ClassicTab :</div>
-                      <div style="height: 10px;"></div>
-      
-                  </div>
-      
-                  <div id="SilverTab" class="tabcontent">
-                      <div style="height: 20px;"></div>
-                      <div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> SilverTab :</div>
-                      <div style="height: 10px;"></div>
-                  </div>
-      
-                  <div id="GoldTab" class="tabcontent">
-                      <div style="height: 20px;"></div>
-                      <div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> Benefit:</div>
-                      <div style="height: 10px;"></div>
-                      <ul style="color: #3B78FE; padding: 0;width: 75%;margin: 0 auto; font-size: 14px;">
-                          <li>10% discount code mininmum ฿700</li>
-                          <li>25% discount code mininmum ฿1,000</li>
-                          <li>30% discount code mininmum ฿1,500</li>
-                      </ul>
-                  </div>
-                  <div id="PlatinumTab" class="tabcontent">
-                      <div style="height: 20px;"></div>
-                      <div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> PlatinumTab :</div>
-                      <div style="height: 10px;"></div>
-                  </div>
-                  <!-- <hr style="    margin: 0 auto; width: 84%;"> -->
-      
+              <p>{`</div>`}</p>
+            </div>
+            <p className="ml-5">{`</swiper-slide>`}</p>
+
+            {/* Gold */}
+            <p className="ml-5 mt-4">{`<swiper-slide id="gold" style=" height: 200px; color:  #000; border-radius: 8px;background: var(--goldz, linear-gradient(99deg, #FFCC7E 0%, #FFAE34 100%));box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10);">`}</p>
+            <div className="ml-8">
+              <p>{`<div style="width: 90%; height: 20%; margin:  0 auto ; color: #fff; display: flex;  justify-content: space-between">`}</p>
+              <p className="ml-4">{`<div style="display: flex; align-items: center;"> Gold <img style="height: 20px; width: 20px;    margin-left: 8px; " id="icon_gold"alt=""></div>`}</p>
+              <p className="ml-4">{`<div class="see_more"  style="font-size: 10px;display: flex; align-items: center;"> See more <img style="height: 20px; width: 20px;    margin-left: 8px; " id="see_more_gold"alt=""></div>`}</p>
+              <p>{`</div>`}</p>
+
+              <p>{`<div style="height: 80%;margin: 0 auto; width: 90%; border-radius: 15px 15px 0px 0px; border: 2.55px solid rgba(255, 255, 255, 0.27);background: rgba(255, 255, 255, 0.90);box-shadow: 4px 0px 11.8px 1px rgba(201, 201, 201, 0.60), -4px 4px 11.8px 1px rgba(201, 201, 201, 0.60);">`}</p>
+              <div className="ml-4">
+                <p>{`<div style="height: 30%; width: 90%; font-size: 12px; margin: 0 auto;background: linear-gradient(99deg, #AEAEAE 0%, #C9C9C9 23.96%, #C9C9C9 47.92%, #E7E5E5 77.6%, #CCC 100%); background-clip: text; -webkit-background-clip: text;-webkit-text-fill-color: transparent;">`}</p>
+                <p className="ml-4">Maintain level:</p>
+                <p>{`</div>`}</p>
+                <p className="mt-4">{`<div class="upgrade_information">`}</p>
+                <p className="ml-4">{`<div>Order</div>`}</p>
+                <p className="ml-4">{`<div>`}</p>
+                <p className="ml-8">{`<span class="SILVER">20</span>/24`}</p>
+                <p className="ml-4">{`</div>`}</p>
+                <p className="ml-4">{`<div class="GOLD_stick"></div>`}</p>
+                <p>{`</div`}</p>
+
+                <p className="mt-4">{`<div class="upgrade_information">`}</p>
+                <p className="ml-4">{`<div>Order amount</div>`}</p>
+                <p className="ml-4">{`<div>`}</p>
+                <p className="ml-8">{`<span class="SILVER">4500</span>/7500`}</p>
+                <p className="ml-4">{`</div>`}</p>
+                <p className="ml-4">{`<div class="GOLD_stick"></div>`}</p>
+                <p>{`</div`}</p>
+
+                <p className="mt-4">{`<div class="upgrade_information">`}</p>
+                <p className="ml-4">{`<div>Invitation codes</div>`}</p>
+                <p className="ml-4">{`<div>`}</p>
+                <p className="ml-8">{`<span class="SILVER">20</span>/24`}</p>
+                <p className="ml-4">{`</div>`}</p>
+                <p className="ml-4">{`<div class="GOLD_stick"></div>`}</p>
+                <p>{`</div`}</p>
+
+                <p className="mt-4">{`<div class="upgrade_information">`}</p>
+                <p className="ml-4">{`<div>Electricity usage</div>`}</p>
+                <p className="ml-4">{`<div>`}</p>
+                <p className="ml-8">{`<span class="SILVER">2300</span>/5000`}</p>
+                <p className="ml-4">{`</div>`}</p>
+                <p className="ml-4">{`<div class="GOLD_stick"></div>`}</p>
+                <p>{`</div`}</p>
+
+                <p className="mt-4">{`<div class="upgrade_information">`}</p>
+                <p className="ml-4">{`<div>check-in</div>`}</p>
+                <p className="ml-4">{`<div>`}</p>
+                <p className="ml-8">{`<span class="SILVER">6</span>/30`}</p>
+                <p className="ml-4">{`</div>`}</p>
+                <p className="ml-4">{`<div class="GOLD_stick"></div>`}</p>
+                <p>{`</div`}</p>
               </div>
+              <p>{`</div>`}</p>
+            </div>
+            <p className="ml-5">{`</swiper-slide>`}</p>
           </div>
-      
-      </div>
-          `}
-        </pre>
+        </div>
+
+        <div className="ml-5 mt-2">
+          <p>{`<div style="position: relative; border-radius: 8px;background: #FFF; box-shadow:rgba(0, 0, 0, 0.24) 0px 4px 6px; width: 90%; margin:  0 auto; height: 200px;">`}</p>
+          <div className="ml-5">
+            <p>{`<div style=" left: 50%;transform: translateX(-50%); position: absolute; bottom: 90%; border-radius: 8px; background: #3B78FE; height: 12px;box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10); display: flex;width: 40%; height: 40px; justify-content: center;align-items: center;gap: 10px;">`}</p>
+            <p className="ml-6">{`<img style="height: 20px; width: 20px; margin-right: 5px; " id="yojo_conin" alt="">`}</p>
+            <p className="ml-6">{`<div style="color: #FFF; font-size: 15px;">Yojo coin</div>`}</p>
+            <p>{`</div>`}</p>
+
+            <p>{`<div style="height: 40px;  display: flex; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">`}</p>
+            <div className="ml-5">
+              <p>{`<div style=" display: flex;gap: 10px;width: 85%; font-size: 2.5vw; color: #9F9F9F; margin:  0 auto;  align-items: center; justify-content: space-between;">`}</p>
+              <p className="ml-4">{`<div id="Classic" class="level tablinks" data-interval="Classic" onclick="memberObj.openTab('Classic')">`}</p>
+              <p className="ml-10">Classic</p>
+              <p className="ml-4">{`</div>`}</p>
+
+              <p className="ml-4 mt-4">{`<div id="Silver" class="level tablinks" data-interval="Silver" onclick="memberObj.openTab('Silver')">`}</p>
+              <p className="ml-10">Silver</p>
+              <p className="ml-4">{`</div>`}</p>
+
+              <p className="ml-4 mt-4">{`<div id="Platinum" class="level tablinks" data-interval="Platinum" onclick="memberObj.openTab('Platinum')">`}</p>
+              <p className="ml-10">Platinum</p>
+              <p className="ml-4">{`</div>`}</p>
+              <p>{`</div>`}</p>
+              <p>{`</div>`}</p>
+            </div>
+
+            <p className="mt-4">{`<div id="ClassicTab" class="tabcontent">`}</p>
+            <p className="ml-6">{`<div style="height: 20px;"></div>`}</p>
+            <p className="ml-6">{`<div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> ClassicTab :</div>`}</p>
+            <p className="ml-6">{`<div style="height: 10px;"></div>`}</p>
+            <p>{`</div>`}</p>
+
+            <p className="mt-4">{`<div id="SilverTab" class="tabcontent">`}</p>
+            <p className="ml-6">{`<div style="height: 20px;"></div>`}</p>
+            <p className="ml-6">{`<div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> SilverTab :</div>`}</p>
+            <p className="ml-6">{`<div style="height: 10px;"></div>`}</p>
+            <p>{`</div>`}</p>
+
+            <p className="mt-4">{`<div id="GoldTab" class="tabcontent">`}</p>
+            <p className="ml-6">{`<div style="height: 20px;"></div>`}</p>
+            <p className="ml-6">{`<div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> Benefit :</div>`}</p>
+            <p className="ml-6">{`<div style="height: 10px;"></div>`}</p>
+            <p className="ml-6">{`<ul style="color: #3B78FE; padding: 0;width: 75%;margin: 0 auto; font-size: 14px;">`}</p>
+            <p className="ml-10">{`<li>10% discount code mininmum ฿700</li>`}</p>
+            <p className="ml-10">{`<li>10% discount code mininmum ฿1,00</li>`}</p>
+            <p className="ml-10">{`<li>10% discount code mininmum ฿1,500</li>`}</p>
+            <p className="ml-6">{`</ul>`}</p>
+            <p>{`</div>`}</p>
+
+            <p className="mt-4">{`<div id="PlatinumTab" class="tabcontent">`}</p>
+            <p className="ml-6">{`<div style="height: 20px;"></div>`}</p>
+            <p className="ml-6">{`<div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> PlatinumTab :</div>`}</p>
+            <p className="ml-6">{`<div style="height: 10px;"></div>`}</p>
+            <p>{`</div>`}</p>
+          </div>
+          <p>{`</div>`}</p>
+        </div>
+        <p>{`}`}</p>
       </div>
     </div>
   )
@@ -4705,44 +4599,6 @@ export function Login_checkLoginWithRefreshToken() {
         <p className="ml-2">{`},`}</p>
         <p className="ml-2">{`complete: function () {},`}</p>
         <p>{`})`}</p>
-      </div>
-    </div>
-  )
-}
-
-//askDeviceIdFun
-export function Login_askDeviceIdFun() {
-  return (
-    <div className="ml-4 flex flex-col gap-4 break-words">
-      <div className="ml-2">
-        {`if (checkIsAndroid()) {`}
-        <div className="ml-2">
-          <p>{`setTimeout(function () {`}</p>
-          <p className="ml-2">{`callApp("ask_deviceId")`}</p>
-          <p>{`}, 1000)`}</p>
-          <p>{`setTimeout(function () {`}</p>
-          <p className="ml-2">{`callApp("ask_deviceId")`}</p>
-          <p>{`}, 3000)`}</p>
-          <p>{`setTimeout(function () {`}</p>
-          <p className="ml-2">{`callApp("ask_deviceId")`}</p>
-          <p>{`}, 5000)`}</p>
-          <p>{`setTimeout(function () {`}</p>
-          <p className="ml-2">{`callApp("ask_deviceId")`}</p>
-          <p>{`}, 7000)`}</p>
-          <p>{`setTimeout(function () {`}</p>
-          <p className="ml-2">{`callApp("ask_deviceId")`}</p>
-          <p>{`}, 9000)`}</p>
-          <p>{`setTimeout(function () {`}</p>
-          <p className="ml-2">{`callApp("ask_deviceId")`}</p>
-          <p>{`}, 11000)`}</p>
-          <p>{`setTimeout(function () {`}</p>
-          <p className="ml-2">{`callApp("ask_deviceId")`}</p>
-          <p>{`}, 13000)`}</p>
-          <p>{`setTimeout(function () {`}</p>
-          <p className="ml-2">{`callApp("ask_deviceId")`}</p>
-          <p>{`}, 15000)`}</p>
-        </div>
-        {`}`}
       </div>
     </div>
   )
@@ -9706,7 +9562,9 @@ export function Register_cleanInput() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2">
-        <p>{`function cleanInput() {`}</p>
+        <p>
+          function <span className="text-yellow-600">cleanInput</span>() {`{`}
+        </p>
         <p className="ml-4">
           $(" <span className="text-blue-600">#userName</span>").val('');
         </p>
@@ -14801,76 +14659,41 @@ export function Body_longin() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2">
-        {`<div id="loginPage" class="flexStart pageInit" style="z-index: 10">`}
-
-        <div className="ml-2 flex flex-col gap-5">
-          <div>
-            {`<imgsrc="./pic/bg.png" alt="" style=" position: absolute; width: 100%; height: 260px; overflow: hidden; z-index: -1;" />`}
+        <p>
+          &lt;div id=<span className="text-red-600">"loginPage"</span>{" "}
+          {`class="flexStart pageInit" style="z-index: 10">`}
+        </p>
+        <p>{`<div style="width:"100%";flex-direction:column;display:flex;justify-content:center;align-items:center>`}</p>
+        <div className="ml-2">
+          <p className="mt-2">{`<div style="display:flex;justify-content:center;width:80%;positon:relative;margin:0 auto">`}</p>
+          <div className="ml-2">
+            <p>{`<img id="login_username" />`}</p>
+            <p>
+              &lt;input id=<span className="text-blue-600">"userName"</span>{" "}
+              class="boxInput type="text" placeholder="User Name"{` />`}
+            </p>
           </div>
+          <p>{`</div>`}</p>
 
-          <div>{`<div style="height: 10%"></div>`}</div>
-
-          <div>
-            {`<div style="color: #fff; width: 100%" class="flexCenter">`}
-            <p>{`<div style=" width: 90%; height: 80px; display: flex; justify-content: space-between;">`}</p>
-            <p className="ml-4">{`<div>`}</p>
-            <p className="ml-6">{`<div>`}</p>
-            <p className="ml-10">{`<img id="back_tohome" alt="" style="height: 24px; width: 24px" />`}</p>
-            <p className="ml-6">{`</div>`}</p>
-            <p className="ml-4">{`</div>`}</p>
-            <p className="ml-4">{`<div style="height: 10%"></div>`}</p>
-            <p className="ml-4 mt-4">{`<div style="font-size: 22px; font-weight: 700; text-align: left" id="login_account">`}</p>
-            <p className="ml-6">Login your account</p>
-            <p className="ml-4">{`</div>`}</p>
-            <p className="ml-4">{`<div style="height: 10%"></div>`}</p>
-            <p className="ml-4 mt-4">{` <div style=" font-size: 12px; font-weight: 500; text-align: left; color: #ffffff99;" id="login_sys">`}</p>
-            <p className="ml-6">Login and look your solar energy system.</p>
-            <p className="ml-4">{`</div>`}</p>
+          <p className="mt-2">{`<div style="display:flex;justify-content:center;width:80%;positon:relative;margin:0 auto">`}</p>
+          <div className="ml-2">
+            <p>{`<img id="login_pass" />`}</p>
+            <p>
+              &lt;input id=<span className="text-green-600">"password"</span>{" "}
+              class="boxInput type="password" placeholder="password"{` />`}
+            </p>
           </div>
+          <p>{`</div>`}</p>
 
-          <div>{`<div style="height: 10%"></div>`}</div>
-
-          <div>
-            <p>{`<div style="height: 80%; border-radius: 40px 40px 0 0; background: #fff; position: relative;">`}</p>
-            <p className="ml-2">{`<div id="scroll_login" style="overflow: hidden; border-radius: 40px 40px 0 0;">`}</p>
-            <p className="ml-4">{`<div style="width: 100%; height: auto; background: #fff; border-radius: 40px 40px 0 0; flex-direction: column; position: relative;" class="flexSpac">`}</p>
-            <p className="ml-6">{`<div style="width: 100%; height: 100px;" class="flexCenter">`}</p>
-            <p className="ml-8">{`<img src="./pic/Frame.png" style="width: 180px; height: 76px;" />`}</p>
-            <p className="ml-6">{`</div>`}</p>
-            <p className="mt-4 ml-4">{`<div class="flexCenterColW100">`}</p>
-            <p className="ml-6">{`<div style="height: 20px;"></div>`}</p>
-            <p className="mt-2 ml-6">{`<div class="coverBoxInput">`}</p>
-            <p className="ml-8">{`<img id="login_phone" />`}</p>
-            <p className="ml-8">{`<input id="mobileLogin" class="boxInput" type="text" />`}</p>
-            <p className="ml-6">{`</div>`}</p>
-            <p className="ml-6">{`<div style="height: 15px;"></div>`}</p>
-            <p className="ml-6">{`<div class="coverBoxInput">`}</p>
-            <p className="ml-8">{`<img id="login_pass" />`}</p>
-            <p className="ml-8">{`<input id="password" class="boxInput" type="password" placeholder="Password" maxlength="20" />`}</p>
-            <p className="ml-8">{`<div class="flexEndRow80">`}</p>
-            <p className="ml-10">{`<img id="eyeiconclose_login" alt="eyeicon" />`}</p>
-            <p className="ml-8">{`</div>`}</p>
-            <p className="ml-6">{`</div>`}</p>
-            <p className="ml-6">{`<div style="display: flex; justify-content: space-between; margin: 15px; width: 80%; font-size: 12px;">`}</p>
-            <p className="ml-8">{`<div style="display: flex; align-items: center;">`}</p>
-            <p className="ml-10">{`<input type="checkbox" />`}</p>
-            <p className="ml-10">Remember me</p>
-            <p className="ml-8">{`</div>`}</p>
-            <p className="ml-8">{`<div id="forgotPass" style="color: #3b78fe;">`}</p>
-            <p className="ml-10">Forgot Password ?</p>
-            <p className="ml-8">{`</div>`}</p>
-            <p className="ml-6">{`</div>`}</p>
-            <p className="ml-4 mt-2">{`<div style="height: 30px;"></div>`}</p>
-            <p className="ml-8">{`<div id="loginBtn" class="btnComm">`}</p>
-            <p className="ml-10">Login</p>
-            <p className="ml-8">{`</div>`}</p>
-            <p className="ml-4">{`<div style="height: 10px;"></div>`}</p>
-            <p className="ml-4">{`</div>`}</p>
-            <p className="ml-2">{`</div>`}</p>
-            <p>{`</div>`}</p>
-          </div>
+          <p className="mt-4">
+            &lt;div id=<span className="text-yellow-600">"loginBtn"</span>{" "}
+            {`style="display: flex;justify-content: center;align-items: center;color: #ffffff;background-color: #3B78FE;font-weight: bold;width: 80%;height: 45px;border-radius: 32px;">`}
+          </p>
+          <p className="ml-6">{`Login`}</p>
+          <p>{`</div>`}</p>
         </div>
-        {`</div>`}
+        <p>{`</div>`}</p>
+        <p>{`</div>`}</p>
       </div>
     </div>
   )
@@ -15076,77 +14899,23 @@ export function Slider_cap_login() {
 }
 
 // loginFun login
-export function LoginFun_login() {
+export function LoginFun_login_var() {
   return (
     <div className="ml-4 break-words">
+      <p>{`function loginFun () {`}</p>
       <div className="ml-2">
-        <p>{`loaderObj.show();`}</p>
-        <p>{`var mData = {`}</p>
+        <p>
+          var <span className="text-red-600">mData</span> = {`{`}
+        </p>
         <div className="ml-2">
-          <p>{`"mobile": $("#mobileLogin").val(),`}</p>
-          <p>{`"password": $("#password").val(),`}</p>
-          <p>{`"vid": ImgId,`}</p>
-          <p>{`"x": parseInt(xPosition)`}</p>
-        </div>
-        <p>{`}`}</p>
-
-        <p>{`if (deviceId) {`}</p>
-        <div className="ml-2">
-          <p>{`mData = {`}</p>
-          <div className="ml-2">
-            <p>{`"mobile": $("#mobileLogin").val(),`}</p>
-            <p>{`"password": $("#password").val(),`}</p>
-            <p>{`"vid": ImgId,`}</p>
-            <p>{`"x": parseInt(xPosition)`}</p>
-          </div>
-          <p>{`}`}</p>
-        </div>
-
-        <p>{`$.ajax({`}</p>
-        <div className="ml-2">
-          <p>{`type: "post",`}</p>
-          <p>{`url: API_SERVER + "/v1/auth/login",`}</p>
-          <p>{`data: JSON.stringify(mData),`}</p>
-          <p>{`contentType: "application/json",`}</p>
-          <p>{`dataType: "json",`}</p>
-          <p>{`async: true,`}</p>
-          <p>{`timeout: 100000,`}</p>
-          <p>{`beforeSend: function (xmlhttprequest) {`}</p>
-          <div className="ml-2">
-            <p>{`// Do something before sending the request`}</p>
-          </div>
-          <p>{`},`}</p>
-          <p>{`success: function (data) {`}</p>
-          <div className="ml-2">
-            <p>{`loaderObj.unShow();`}</p>
-            <p>{`if (data.code == 0) {`}</p>
-            <div className="ml-2">
-              <p>{`// Do something on success`}</p>
-            </div>
-            <p>{`} else {`}</p>
-            <div className="ml-2">
-              <p>{`// Do something on error`}</p>
-            </div>
-          </div>
-          <p>{`},`}</p>
-          <p>{`error: function (xmlhttprequest, error) {`}</p>
-          <div className="ml-2">
-            <p>{`loaderObj.unShow();`}</p>
-            <p>{`// Handle error`}</p>
-          </div>
-          <p>{`},`}</p>
-          <p>{`complete: function () {`}</p>
-          <div className="ml-2">
-            <p>{`// Do something after request completes`}</p>
-          </div>
-          <p>{`}`}</p>
-        </div>
-        <p>{`});`}</p>
-
-        <p>{`function cleanInput() {`}</p>
-        <div className="ml-2">
-          <p>{`$("#username").val('');`}</p>
-          <p>{`$("#password").val('');`}</p>
+          <p>
+            <span className="text-blue-600">"username"</span>: $("
+            <span className="text-blue-600">#userName</span>").val(),
+          </p>
+          <p>
+            <span className="text-green-600">"usernam"</span>: $("
+            <span className="text-green-600">#passwrod</span>").val(),
+          </p>
         </div>
         <p>{`}`}</p>
       </div>
@@ -15154,66 +14923,69 @@ export function LoginFun_login() {
   )
 }
 
-// checkLoginStatusWithRefreshToken login
-export function CheckLoginStatusWithRefreshToken() {
+export function LoginFun_login() {
   return (
     <div className="ml-4 break-words">
-      <div className="ml-2">
-        <p>{`if (token == null) {`}</p>
-        <div className="ml-2">
-          <p>{`return;`}</p>
-        </div>
-
-        <p>{`var mData = { "token": token.refresh };`}</p>
-
+      <div>
         <p>{`$.ajax({`}</p>
         <div className="ml-2">
           <p>{`type: "post",`}</p>
-          <p>{`url: API_SERVER + "/v1/auth/refresh",`}</p>
-          <p>{`data: JSON.stringify(mData),`}</p>
+          <p>{`url: API_SERVER + "/v1/auth/login",`}</p>
+          <p>
+            data: JSON.stringify(<span className="text-red-600">mData</span>),
+          </p>
           <p>{`contentType: "application/json",`}</p>
           <p>{`dataType: "json",`}</p>
           <p>{`async: true,`}</p>
           <p>{`timeout: 100000,`}</p>
           <p>{`beforeSend: function (xmlhttprequest) {`}</p>
           <div className="ml-2">
-            <p>{`// Do something before sending the request`}</p>
+            <p>
+              <span className="text-green-600">
+                Do something before sending the request
+              </span>
+            </p>
+            <p className="text-yellow-600">cleanInput()</p>
           </div>
           <p>{`},`}</p>
           <p>{`success: function (data) {`}</p>
           <div className="ml-2">
+            <p>{`loaderObj.unShow();`}</p>
             <p>{`if (data.code == 0) {`}</p>
             <div className="ml-2">
-              <p>{`console.log('===>refresh success');`}</p>
-              <p>{`var tokenObj = data.result;`}</p>
-              <p>{`localStorage.setItem('token', JSON.stringify(tokenObj));`}</p>
-              <p>{`var tokenLocal = localStorage.getItem('token');`}</p>
-              <p>{`if (tokenLocal != null) {`}</p>
-              <div className="ml-2">
-                <p>{`token = JSON.parse(tokenLocal);`}</p>
-              </div>
-              <p>{`}`}</p>
-              <p>{`pageUnShow('loginPage');`}</p>
+              <p>
+                <span className="text-green-600">Do something on success</span>
+              </p>
             </div>
             <p>{`} else {`}</p>
             <div className="ml-2">
-              <p>{`console.log('===>refresh fail');`}</p>
+              <p>
+                <span className="text-red-600">Do something on error</span>
+              </p>
             </div>
-            <p>{`}`}</p>
           </div>
           <p>{`},`}</p>
-          <p>{`error: function (xmlhttprequest, error) {`}</p>
-          <div className="ml-2">
-            <p>{`console.log(error);`}</p>
-          </div>
-          <p>{`},`}</p>
-          <p>{`complete: function () {`}</p>
-          <div className="ml-2">
-            <p>{`// Do something after request completes`}</p>
-          </div>
-          <p>{`}`}</p>
         </div>
         <p>{`});`}</p>
+      </div>
+    </div>
+  )
+}
+
+export function Login_init() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`this.init = function () {`}</p>
+        <div className="ml-4">
+          <p>
+            $("<span className="text-yellow-600">#loginBtn</span>
+            ").click(function () {`{`}
+          </p>
+          <p className="ml-2 text-yellow-600">loginFun()</p>
+          <p>{`}`}</p>
+        </div>
+        <p>{`}`}</p>
       </div>
     </div>
   )
