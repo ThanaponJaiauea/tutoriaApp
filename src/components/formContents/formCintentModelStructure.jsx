@@ -3,7 +3,7 @@
 import {useState} from "react"
 import ModelContent from "../modelContent"
 
-const FormCintentModelStructure = ({selectedMenu}) => {
+const FormCintentModelStructure = ({selectedMenu, setSelectedMenu}) => {
   const [openMainBody, setOpenMainBody] = useState(false)
 
   const [openMainScript, setOpenMainScript] = useState(false)
@@ -93,6 +93,8 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         return "askDeviceIdFun()"
       case "registerFun":
         return "registerFun()"
+      case "langFull":
+        return "langFull()"
       case "nSLangArrLang":
         return "var NSLangArr"
       case "setAllPageLang":
@@ -101,10 +103,6 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         return "setAllUILang()"
       case "NSLang":
         return "NSLang"
-      case "statusCodesArrLang":
-        return "var statusCodesArr"
-      case "getStatusCode":
-        return "getStatusCode(code)"
       case "openTabLevel":
         return "openTab(tabName)"
       case "getlevel":
@@ -112,9 +110,11 @@ const FormCintentModelStructure = ({selectedMenu}) => {
       case "jQueryIntroduction":
         return "jQueryIntroduction"
       case "whatisRegister":
-        return "what is Register ?"
+        return "How to register ?"
       case "loginFull":
         return "Login ?"
+      case "swiper":
+        return "swiper ?"
       default:
         return ""
     }
@@ -607,6 +607,7 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         howtoLoginScrip={true}
         widget="none"
         exampleContent="exampleContent"
+        exampleScript="none"
       />
     ),
 
@@ -627,13 +628,12 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         widget="none"
         htmlCheck={true}
         headerHtml="home.html"
-        htmlCheckBody={true}
       />
     ),
 
     fetchSliderConfigAndData: () => (
       <ModelContent
-        headers="Solar App"
+        headers="Slider"
         headerName={getTitle()}
         functionName={getTitle()}
         content="ฟังก์ชัน fetchSliderConfigAndData นี้มีวัตถุประสงค์เพื่อดึงข้อมูลการกำหนดค่าสไลด์เดอร์และข้อมูลของสไลด์เดอร์"
@@ -654,13 +654,12 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         widget="none"
         htmlCheckScript={true}
         htmlCheck={true}
-        headerHtml="home.html"
       />
     ),
 
     fetchSliderData: () => (
       <ModelContent
-        headers="Solar App"
+      headers="Slider"
         headerName={getTitle()}
         functionName={getTitle()}
         content="-ฟังก์ชัน fetchSliderData ใช้ในการดึงข้อมูลที่เกี่ยวข้องกับสไลด์เดอร์"
@@ -677,13 +676,12 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         widget="none"
         htmlCheckScript={true}
         htmlCheck={true}
-        headerHtml="home.html"
       />
     ),
 
     slider_cap: () => (
       <ModelContent
-        headers="Solar App"
+      headers="Slider"
         headerName={getTitle()}
         functionName={getTitle()}
         content="-ฟังก์ชั่น slider_cap() นี้เป็นส่วนหนึ่งของการจัดการการเลื่อนและการยืนยันตัวตนด้วยการลากภาพ (slider) ในหน้าล็อกอินของแอปพลิเคชัน"
@@ -705,7 +703,6 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         widget="none"
         htmlCheckScript={true}
         htmlCheck={true}
-        headerHtml="home.html"
       />
     ),
 
@@ -772,9 +769,8 @@ const FormCintentModelStructure = ({selectedMenu}) => {
 
     whatisRegister: () => (
       <ModelContent
-        headerHtml={getTitle()}
+        headers={getTitle()}
         headersDescription={`คือ เป็นส่วนของหน้า "ลงทะเบียน" (registerPage) ในแอปพลิเคชัน หน้านี้ออกแบบมาเพื่อให้ผู้ใช้กรอกข้อมูลต่างๆ สำหรับการสร้างบัญชีใหม่ โดยจะมีโครงสร้างดังนี้ 1.<body>  2.<script>`}
-        functionName={getTitle()}
         selectedMenu={selectedMenu}
         widget="none"
         whatisRegisterBody={true}
@@ -794,6 +790,17 @@ const FormCintentModelStructure = ({selectedMenu}) => {
       />
     ),
 
+    langFull: () => (
+      <ModelContent
+        headers="Lang.html"
+        headerName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        howtoLangScript={true}
+        exampleContent="-ในตัวอย่างเรามีการใช้ popUp เพื่อให้เข้าได้ได้ง่ายขึ้น เราสามารถเรียกใช้ NSLang('getStart.start') ได้เลยแล้ว code จะทำการไปค้นหาที่เรา set คำนั้นไว้"
+      />
+    ),
+
     nSLangArrLang: () => (
       <ModelContent
         headers="Solar App"
@@ -804,23 +811,6 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         widget="none"
         htmlCheck={true}
         htmlCheckVar={true}
-      />
-    ),
-
-    setAllPageLang: () => (
-      <ModelContent
-        headers="Solar App"
-        headerHtml="Lang.html"
-        headerName={getTitle()}
-        content="-ฟังก์ชัน setAllPageLang ใช้ในการตั้งค่าภาษาสำหรับหน้าทั้งหมดในแอปพลิเคชัน โดยการเรียกใช้"
-        content1="1.ฟังก์ชัน setAllUILang สำหรับแต่ละหน้าดังนี้"
-        content2={`"getstart","login","forgotPass","register","main","cart","detail_product","homePage","setting","final"`}
-        content3="การเรียกใช้ setAllUILang จะเป็นการตั้งค่าภาษาสำหรับหน้านั้นๆ โดยทำการโหลดข้อมูลภาษาจากไฟล์หรือแหล่งข้อมูลที่กำหนดไว้ล่วงหน้าแล้วแล้วใช้ในการแสดงผลบนหน้าเว็บในภาษาที่ถูกต้องตามการตั้งค่า"
-        functionName={getTitle()}
-        selectedMenu={selectedMenu}
-        widget="none"
-        htmlCheck={true}
-        htmlCheckScript={true}
       />
     ),
 
@@ -859,38 +849,6 @@ const FormCintentModelStructure = ({selectedMenu}) => {
       />
     ),
 
-    statusCodesArrLang: () => (
-      <ModelContent
-        headers="Solar App"
-        headerHtml="Lang.html"
-        headerName={getTitle()}
-        content="-statusCodesArr ที่เก็บข้อมูลเกี่ยวกับสถานะของการร้องขอในแอปพลิเคชัน ข้อมูลเหล่านี้มีอยู่ในหลายภาษา (อังกฤษ, จีน และไทย) เพื่อรองรับการใช้งานในหลายภาษา"
-        functionName={getTitle()}
-        selectedMenu={selectedMenu}
-        widget="none"
-        htmlCheck={true}
-        htmlCheckVar={true}
-      />
-    ),
-
-    getStatusCode: () => (
-      <ModelContent
-        headers="Solar App"
-        headerHtml="Lang.html"
-        headerName={getTitle()}
-        content="-ฟังก์ชัน getStatusCode ใช้ในการค้นหาและคืนค่าข้อความสถานะจากตัวแปร statusCodesArr โดยใช้คีย์ code เพื่อค้นหาข้อความสถานะที่ต้องการแสดงผล หากไม่พบข้อความสถานะที่ต้องการหรือเกิดข้อผิดพลาดขณะค้นหา ฟังก์ชันจะคืนค่า thisCode เป็นค่าเริ่มต้นหรือค่าที่ส่งเข้ามาตามที่เกิดขึ้นในบริบทนั้นๆ ในการค้นหาข้อความสถานะ"
-        content1="1.ในบรรทัดแรกของฟังก์ชัน getStatusCode จะเก็บค่า code ที่ส่งเข้ามาในตัวแปร thisCode"
-        content2="2.จากนั้นฟังก์ชันจะพยายามค้นหาข้อความสถานะจากตัวแปร statusCodesArr โดยใช้คีย์ thisCode และ langCode ซึ่งเป็นตัวแปรที่ระบุภาษาที่ต้องการให้แสดงผล"
-        content3="3.หากพบข้อความสถานะที่ต้องการจะคืนค่าข้อความนั้น"
-        content4="4.หากไม่พบข้อความสถานะหรือเกิดข้อผิดพลาดขณะค้นหา ฟังก์ชันจะคืนค่า thisCode เป็นค่าเริ่มต้นหรือค่าที่ส่งเข้ามาตามที่เกิดขึ้นในบริบทนั้นๆ ในการค้นหาข้อความสถานะ"
-        functionName="getStatusCode(code)"
-        selectedMenu={selectedMenu}
-        widget="none"
-        htmlCheck={true}
-        htmlCheckScript={true}
-      />
-    ),
-
     levelFull: () => (
       <ModelContent
         headers="Level"
@@ -900,6 +858,23 @@ const FormCintentModelStructure = ({selectedMenu}) => {
         widget="none"
         howtoLevelBody={true}
         howtoLevelScript={true}
+        setSelectedMenu={setSelectedMenu}
+        exampleContent="ss"
+        exampleBody={true}
+        exampleScript={true}
+        exampleImage={true}
+      />
+    ),
+
+    swiper: () => (
+      <ModelContent
+        headers="swiper.js"
+        headerName={getTitle()}
+        selectedMenu={selectedMenu}
+        widget="none"
+        setSelectedMenu={setSelectedMenu}
+        swiperContent={true}
+    
       />
     ),
 

@@ -4,7 +4,7 @@ import {useState} from "react"
 import Buttons from "../Buttons"
 import {IoClose} from "react-icons/io5"
 
-export default function MessagePage() {
+export default function MessagePage({title}) {
   const [openModal, setOpenModal] = useState(false)
 
   return (
@@ -29,7 +29,7 @@ export default function MessagePage() {
                 </div>
 
                 <div className="w-full h-[50px] flex justify-center items-center">
-                  <p>messagePage</p>
+                  <p>{title ? title : "messagePage"}</p>
                 </div>
               </div>
             </div>

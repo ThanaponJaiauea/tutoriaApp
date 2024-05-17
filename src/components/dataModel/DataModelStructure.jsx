@@ -293,40 +293,9 @@ const lang = [
     label: "Lang.html",
     children: [
       {
-        name: "var NSLangArr",
+        name: "Lang",
         type: "generalModel",
-        key: "nSLangArrLang",
-        category: "langHtml",
-      },
-      {
-        name: "setAllPageLang()",
-        type: "generalModel",
-        key: "setAllPageLang",
-        category: "langHtml",
-      },
-      {
-        name: "setAllUILang()",
-        type: "generalModel",
-        key: "setAllUILang",
-        category: "langHtml",
-      },
-      {
-        name: "NSLang()",
-        type: "generalModel",
-        key: "NSLang",
-        category: "langHtml",
-      },
-      {
-        name: "var statusCodesArr",
-        type: "generalModel",
-        key: "statusCodesArrLang",
-        category: "langHtml",
-      },
-      {
-        name: "getStatusCode()",
-        type: "generalModel",
-        key: "getStatusCode",
-        category: "langHtml",
+        key: "langFull",
       },
     ],
   },
@@ -361,10 +330,6 @@ const level = [
       {
         name: "swiper",
         key: "swiper",
-      },
-      {
-        name: "getlevel()",
-        key: "getlevel",
       },
     ],
   },

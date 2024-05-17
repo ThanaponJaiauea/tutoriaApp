@@ -53,7 +53,7 @@ export default function HomePage() {
       {/* Right content  */}
       {/* Model structure  */}
       {selectedNavbar === "Model structure" && (
-        <FormCintentModelStructure selectedMenu={selectedMenu} />
+        <FormCintentModelStructure selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} />
       )}
 
       {/* Slip Function  */}

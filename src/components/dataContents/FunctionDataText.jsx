@@ -3858,18 +3858,16 @@ export function InCome_updateIncomeBeforeTaxes() {
 //setAllPageLang
 export function Lang_setAllPageLang() {
   return (
-    <div className="ml-4 flex flex-col gap-4 break-words">
+    <div className="ml-4 flex flex-col break-words">
+      <p>
+        function <span className="text-blue-600">setAllPageLang</span>() {`{`}
+      </p>
       <div className="ml-2">
-        <p>setAllUILang("getstart")</p>
-        <p>setAllUILang("login")</p>
-        <p>setAllUILang("forgotPass")</p>
-        <p>setAllUILang("register")</p>
-        <p>setAllUILang("main")</p>
-        <p>setAllUILang("cart")</p>
-        <p>setAllUILang("homePage")</p>
-        <p>setAllUILang("setting")</p>
-        <p>setAllUILang("final")</p>
+        <p>
+          <span className="text-yellow-600">setAllUILang</span>("register")
+        </p>
       </div>
+      <p>{`}`}</p>
     </div>
   )
 }
@@ -3877,44 +3875,25 @@ export function Lang_setAllPageLang() {
 //setAllUILang
 export function Lang_setAllUILang() {
   return (
-    <div className="ml-4 flex flex-col gap-4 break-words">
-      <div className="ml-2 flex flex-col gap-6">
+    <div className="ml-4 flex flex-col break-words">
+      <p>
+        function <span className="text-green-600">setAllUILang(page)</span>
+        {`{`}
+      </p>
+      <div className="ml-2 flex flex-col">
         <div>
           <p>{`$("#msgBtnOK").html(NSLang("sys.comfirm"))`}</p>
           <p>{`$("#msgBtnCancel").html(NSLang("sys.cancel"))`}</p>
         </div>
 
-        <div>
-          <p>{`switch (page) {`}</p>
-          <p className="ml-2">{`case "getstart":`}</p>
-          <p className="ml-4">{`$("#getStart").html(NSLang("getStart.start"))`}</p>
-          <p className="ml-4">{`break`}</p>
-          <p className="ml-2">{`case "login":`}</p>
-          <p className="ml-4">{`$("#welcome_back").html(NSLang("login.welcome_back"))`}</p>
-          <p className="ml-4">{`$("#sign_to_con").html(NSLang("login.signup"))`}</p>
-          <p className="ml-4">{`$("#mobileLogin").attr("placeholder", NSLang("login.mobileLogin"))`}</p>
-          <p className="ml-4">{`$("#password").attr("placeholder", NSLang("login.password1"))`}</p>
-          <p className="ml-4">{`$("#login_span1").html(NSLang("login.login_span1"))`}</p>
-          <p className="ml-4">{`$("#login_span2").html(NSLang("login.login_span2"))`}</p>
-          <p className="ml-4">{`$("#login_span3").html(NSLang("login.login_span3"))`}</p>
-          <p className="ml-4">{`$("#login_span4").html(NSLang("login.login_span4"))`}</p>
-          <p className="ml-4">{`$("#loginBtn").html(NSLang("login.login"))`}</p>
-          <p className="ml-4">{`$("#noAccount").html(NSLang("login.noAcc"))`}</p>
-          <p className="ml-4">{`$("#goRegisterBtn").html(NSLang("login.goRegister"))`}</p>
-          <p className="ml-4">{`$("#login_account").html(NSLang("login.account"))`}</p>
-          <p className="ml-4">{`$("#login_sys").html(NSLang("login.sys"))`}</p>
-          <p className="ml-4">{`$("#version").html(NSLang("login.version"))`}</p>
-          <p className="ml-4">{`$("#pop_user").html(NSLang("login.user"))`}</p>
-          <p className="ml-4">{`$("#show_lang").html(NSLang("login.lang"))`}</p>
-          <p className="ml-4">{`$("#login_or").html(NSLang("login.or"))`}</p>
-          <p className="ml-4">{`$("#login_face").html(NSLang("login.face"))`}</p>
-          <p className="ml-4">{`$("#login_google").html(NSLang("login.google"))`}</p>
-          <p className="ml-4">{`$("#login_apple").html(NSLang("login.apple"))`}</p>
-          <p className="ml-2">{`break`}</p>
-        </div>
-
-        <div>
-          <p>{`case "register":`}</p>
+        <p className="mt-4">
+          <span className="text-green-600">switch (page) </span>
+          {`{`}
+        </p>
+        <div className="ml-4">
+          <p>
+            case <span className="text-red-600">"register"</span>:
+          </p>
           <p className="ml-2">{`$("#mobileRegis").attr("placeholder", NSLang("forgot.phone"))`}</p>
           <p className="ml-2">{`$("#email_user").attr("placeholder", NSLang("register.email"))`}</p>
           <p className="ml-2">{`$("#r_password_user").attr("placeholder", NSLang("login.password1"))`}</p>
@@ -3932,113 +3911,9 @@ export function Lang_setAllUILang() {
           <p className="ml-2">{`$("#regis_mail_OTP").attr("placeholder", NSLang("forgot.otp"))`}</p>
           <p className="ml-2">{`break`}</p>
         </div>
-
-        <div>
-          <p>{`case "forgotPass":`}</p>
-          <p className="ml-2">{`$("#forgotPass_account").html(NSLang("forgot.forgot"))`}</p>
-          <p className="ml-2">{`$("#forgotPass_sys").html(NSLang("forgot.send"))`}</p>
-          <p className="ml-2">{`$("#forgotPass_enter_mail").html(NSLang("forgot.enter"))`}</p>
-          <p className="ml-2">{`$("#forgotPassBtn_ok").html(NSLang("forgot.OK"))`}</p>
-          <p className="ml-2">{`$("#emailforgotPass").html(NSLang("forgot.email"))`}</p>
-          <p className="ml-2">{`$("#emailforgotPass,#regis_mail").attr("placeholder", NSLang("forgot.email"))`}</p>
-          <p className="ml-2">{`$("#mobileOtp,#regis_mail_OTP").attr("placeholder", NSLang("forgot.otp"))`}</p>
-          <p className="ml-2">{`$("#mobileNewPass").attr("placeholder", NSLang("forgot.pass"))`}</p>
-          <p className="ml-2">{`$("#mobileConPass").attr("placeholder", NSLang("forgot.conPass"))`}</p>
-          <p className="ml-2">{`break`}</p>
-        </div>
-
-        <div>
-          <p>{`case "detail_product":`}</p>
-          <p className="ml-2">{`$("#price_detail_product").html(NSLang("productDetail.price"))`}</p>
-          <p className="ml-2">{`$("#Product_description").html(NSLang("productDetail.Product_description"))`}</p>
-          <p className="ml-2">{`$("#add_to_cart").html(NSLang("productDetail.add_to_cart"))`}</p>
-          <p className="ml-2">{`$("#add_cart").html(NSLang("productDetail.add_cart"))`}</p>
-          <p className="ml-2">{`$("#sold_out").html(NSLang("productDetail.discount"))`}</p>
-          <p className="ml-2">{`$("#detail_login").html(NSLang("productDetail.detail_login"))`}</p>
-          <p className="ml-2">{`break`}</p>
-        </div>
-
-        <div>
-          <p>{`case "homePage":`}</p>
-          <p className="ml-2">{`$("#loginhome").html(NSLang("home.loginhome"))`}</p>
-          <p className="ml-2">{`$("#portable").html(NSLang("home.portable"))`}</p>
-          <p className="ml-2">{`$("#movable").html(NSLang("home.movable"))`}</p>
-          <p className="ml-2">{`$("#inverter").html(NSLang("home.inverter"))`}</p>
-          <p className="ml-2">{`$("#solartitle").html(NSLang("home.solartitle"))`}</p>
-          <p className="ml-2">{`$(".price_home").html(NSLang("home.price_home"))`}</p>
-          <p className="ml-2">{`break`}</p>
-        </div>
-
-        <div>
-          <p>{`case "register_shop":`}</p>
-          <p className="ml-2">{`$("#alreadyAccShop").html(NSLang("register.acc"))`}</p>
-          <p className="ml-2">{`$("#loginNow3").html(NSLang("register.login"))`}</p>
-          <p className="ml-2">{`break`}</p>
-        </div>
-
-        <div>
-          <p>{`case "main":`}</p>
-          <p className="ml-2">{`$("#menuHomeSpan").html(NSLang("main.home"))`}</p>
-          <p className="ml-2">{`$("#menuTradeSpan").html(NSLang("main.trade"))`}</p>
-          <p className="ml-2">{`$("#menuwalletSpan").html(NSLang("main.wallet"))`}</p>
-          <p className="ml-2">{`$("#menuSettingSpan").html(NSLang("main.setting"))`}</p>
-          <p className="ml-2">{`$("#homeHeaderBody").html(NSLang("main.home"))`}</p>
-          <p className="ml-2">{`$("#tradeHeaderBody").html(NSLang("main.trade"))`}</p>
-          <p className="ml-2">{`$("#walletHeaderBody").html(NSLang("main.wallet"))`}</p>
-          <p className="ml-2">{`$("#settingHeaderBody").html(NSLang("main.setting"))`}</p>
-          <p className="ml-2">{`break`}</p>
-        </div>
-
-        <div>
-          <p>{`case "cart":`}</p>
-          <p className="ml-2">{`$("#productCart_header_right_body").html(NSLang("cart.head"))`}</p>
-          <p className="ml-2">{`$("#cart_item").html(NSLang("cart.item"))`}</p>
-          <p className="ml-2">{`$("#cart_total").html(NSLang("cart.total"))`}</p>
-          <p className="ml-2">{`$("#cart_buy").html(NSLang("cart.buy"))`}</p>
-          <p className="ml-2">{`$(".cart_quanlity").html(NSLang("cart.quantity"))`}</p>
-          <p className="ml-2">{`$("#cart_noItem").html(NSLang("cart.noitem"))`}</p>
-          <p className="ml-2">{`break`}</p>
-        </div>
-
-        <div>
-          <p>{`case "setting":`}</p>
-          <p className="ml-2">{`$("#setting_id").html(NSLang("setting.setting_id"))`}</p>
-          <p className="ml-2">{`$("#namee").html(NSLang("setting.name"))`}</p>
-          <p className="ml-2">{`$("#security").html(NSLang("setting.security"))`}</p>
-          <p className="ml-2">{`$("#order").html(NSLang("setting.order"))`}</p>
-          <p className="ml-2">{`$("#versionn").html(NSLang("setting.version"))`}</p>
-          <p className="ml-2">{`$("#language").html(NSLang("setting.language"))`}</p>
-          <p className="ml-2">{`$("#about").html(NSLang("setting.about"))`}</p>
-          <p className="ml-2">{`$("#service").html(NSLang("setting.service"))`}</p>
-          <p className="ml-2">{`$("#logout").html(NSLang("setting.logout"))`}</p>
-          <p className="ml-2">{`break`}</p>
-        </div>
-
-        <div>
-          <p>{`case "final":`}</p>
-          <p className="ml-2">{`$("#final_pay").html(NSLang("final.pay"))`}</p>
-          <p className="ml-2">{`$("#Copied").html(NSLang("final.copied"))`}</p>
-          <p className="ml-2">{`$("#final_total").html(NSLang("final.total"))`}</p>
-          <p className="ml-2">{`$("#final_order").html(NSLang("final.order"))`}</p>
-          <p className="ml-2">{`$("#final_amount").html(NSLang("final.amount"))`}</p>
-          <p className="ml-2">{`$("#final_payment").html(NSLang("final.payment"))`}</p>
-          <p className="ml-2">{`$("#final_acc_name").html(NSLang("final.acc_name"))`}</p>
-          <p className="ml-2">{`$("#final_acc_num").html(NSLang("final.acc_num"))`}</p>
-          <p className="ml-2">{`$("#final_des1").html(NSLang("final.des1"))`}</p>
-          <p className="ml-2">{`$("#final_des2").html(NSLang("final.des2"))`}</p>
-          <p className="ml-2">{`$("#final_des3").html(NSLang("final.des3"))`}</p>
-          <p className="ml-2">{`$("#final_des4").html(NSLang("final.des4"))`}</p>
-          <p className="ml-2">{`$("#final_des5").html(NSLang("final.des5"))`}</p>
-          <p className="ml-2">{`$("#final_des6").html(NSLang("final.des6"))`}</p>
-          <p className="ml-2">{`$("#final_des7").html(NSLang("final.des7"))`}</p>
-          <p className="ml-2">{`$("#confirm_buy").html(NSLang("final.buy"))`}</p>
-          <p className="ml-2">{`break`}</p>
-
-          <p>{`default:`}</p>
-          <p className="ml-2">{`{}`}</p>
-          <p className="ml-2">{`break`}</p>
-        </div>
+        <p>{`}`}</p>
       </div>
+      <p>{`}`}</p>
     </div>
   )
 }
@@ -4047,45 +3922,14 @@ export function Lang_setAllUILang() {
 export function NSLangArrLang() {
   return (
     <div className="ml-4 flex flex-col gap-4 break-words">
-      <div className="ml-2 flex flex-col gap-4">
+      <div className="ml-2 flex flex-col">
         <div>
-          <p>{`var NSLangArr = {`}</p>
+          <p>
+            var <span className="text-blue-600">NSLangArr</span> {`= {`}
+          </p>
         </div>
-
         <div>
           <p>{`"getStart.start": { "en": "Get start", "zh": "开始使用", "th": "เริ่มต้นใช้งาน", },`}</p>
-        </div>
-
-        <div>
-          <p>{`"login.welcome_back": { "zh": "欢迎您回来", "en": "Welcome back", "th": "ยินดีต้อนรับกลับมา" },`}</p>
-          <p>{`"login.signup": { "zh": "登录以继续", "en": "Please sign in to continue", "th": "กรุณาลงชื่อเข้าใช้เพื่อดำเนินการต่อ" },`}</p>
-          <p>{`"login.login": { "zh": "登录", "en": "Login", "th": "เข้าสู่ระบบ" },`}</p>
-          <p>{`"login.mobileLogin": { "zh": "用户名", "en": "Email", "th": "ชื่อผู้ใช้" },`}</p>
-          <p>{`"login.password1": { "zh": "密码", "en": "Password", "th": "รหัสผ่าน" },`}</p>
-          <p>{`"login.login_span1": { "zh": "记住密码", "en": "Remember password", "th": "จดจำรหัสผ่าน" },`}</p>
-          <p>{`"login.login_span2": { "zh": "忘记密码？", "en": "Forgot Password?", "th": "ลืมรหัสผ่าน?" },`}</p>
-          <p>{`"login.login_span3": { "zh": "及", "en": "and", "th": "และ" },`}</p>
-          <p>{`"login.login_span4": { "zh": "隐私条款", "en": "Privacy Policy", "th": "นโยบายความเป็นส่วนตัว" },`}</p>
-          <p>{`"login.noAcc": { "zh": "没有账号 ?", "en": "Don't have an account?", "th": "ยังไม่มีบัญชีใช่หรือไม่?" },`}</p>
-          <p>{`"login.goRegister": { "zh": "马上注册", "en": "Create a new account", "th": "ลงทะเบียนเดี๋ยวนี้" },`}</p>
-          <p>{`"login.policy": { "en": "Please confirm the privacy policy", "zh": "请确认隐私政策", "th": "กรุณายืนยันนโยบายความเป็นส่วนตัว", },`}</p>
-          <p>{`"login.password": { "en": "Please enter the login password", "zh": "请输入登陆密码", "th": "กรุณากรอกรหัสผ่านเข้าสู่ระบบ", },`}</p>
-          <p>{`"login.fill": { "en": "Please enter your email and password", "zh": "请输入您的用户名和密码", "th": "กรุณากรอกชื่อผู้ใช้และรหัสผ่านของคุณ", },`}</p>
-          <p>{`"login.mail": { "en": "Please enter your email", "zh": "请输入您的用户名", "th": "กรุณากรอกชื่อผู้ใช้ของคุณ", },`}</p>
-          <p>{`"login.account": { "en": "Login your account", "zh": "登录您的帐户", "th": "เข้าสู่บัญชีของคุณ", },`}</p>
-          <p>{`"login.sys": { "en": "Please log in to access your solar energy system.", "zh": "登录并查看您的太阳能系统。", "th": "เข้าสู่ระบบและดูระบบพลังงานแสงอาทิตย์ของคุณ", },`}</p>
-          <p>{`"login.version": { "en": "Version 1.0", "zh": "1.0 版本", "th": "เวอร์ชัน 1.0", },`}</p>
-          <p>{`"login.regiss": { "en": "You will register as", "zh": "您将注册为", "th": "คุณกำลังจะลงทะเบียนเป็น", },`}</p>
-          <p>{`"login.user": { "en": "User", "zh": "用户", "th": "ผู้ใช้", },`}</p>
-          <p>{`"login.lang": { "en": "EN", "zh": "ZH", "th": "TH", },`}</p>
-          <p>{`"login.or": { "en": "OR", "zh": "或者", "th": "หรือ", },`}</p>
-          <p>{`"login.face": { "en": "Login with Facebook", "zh": "使用 Facebook 登录", "th": "เข้าสู่ระบบด้วย Facebook", },`}</p>
-          <p>{`"login.google": { "en": "Login with Google", "zh": "使用 Google 登录", "th": "เข้าสู่ระบบด้วย Google", },`}</p>
-          <p>{`"login.apple": { "en": "Login with Apple ID", "zh": "使用 Apple ID 登录", "th": "เข้าสู่ระบบด้วย Apple ID", },`}</p>
-          <p>{`"login.noacc": { "en": "No account is associated with this app. Please try again.", "zh": "没有帐户与此应用程序关联。 请再试一次", "th": "ไม่มีบัญชีที่เชื่อมโยงกับแอพนี้ กรุณาลองอีกครั้ง", },`}</p>
-        </div>
-
-        <div>
           <p>{`"forgot.forgot": { "en": "Did you forgot your password?", "zh": "您忘记了密码吗？", "th": "คุณลืมรหัสผ่านใช่หรือไม่?" },`}</p>
           <p>{`"forgot.send": { "en": "Sending to your email to reset password", "zh": "发送至您的邮箱以重置密码", "th": "กำลังส่งไปยังอีเมลของคุณเพื่อตั้งค่ารหัสผ่านใหม่" },`}</p>
           <p>{`"forgot.enter": { "en": "Please enter your email", "zh": "请输入您的电子邮箱", "th": "กรุณากรอกอีเมล์ของคุณ" },`}</p>
@@ -4096,59 +3940,6 @@ export function NSLangArrLang() {
           <p>{`"forgot.pass": { "en": "New password", "zh": "新密码", "th": "รหัสผ่านใหม่" },`}</p>
           <p>{`"forgot.conPass": { "en": "Confirm new password", "zh": "确认密码", "th": "ยืนยันรหัสผ่าน" },`}</p>
         </div>
-
-        <div>
-          <p>{`"register.account": { "en": "Account ", "zh": "帐户 ", "th": "บัญชี " },`}</p>
-          <p>{`"register.account_create": { "en": "Create account to join with us.", "zh": "创建帐户加入我们。", "th": "สร้างบัญชีเพื่อเข้าร่วมกับเรา" },`}</p>
-          <p>{`"register.agree": { "en": "I agree with the terms and conditions", "zh": "我同意条款和条件", "th": "ฉันเห็นด้วยกับข้อกำหนดและเงื่อนไข" },`}</p>
-          <p>{`"register.user_user": { "en": "New", "zh": "用户", "th": "ผู้ใช้" },`}</p>
-          <p>{`"register.account_for": { "en": "Create ", "zh": "创建 ", "th": "สร้าง " },`}</p>
-          <p>{`"register.name": { "zh": "姓名", "en": "Realname", "th": "ชื่อ" },`}</p>
-          <p>{`"register.password1": { "zh": "重设密码", "en": "Confirm password", "th": "ตั้งค่ารหัสผ่านอีกครั้ง" },`}</p>
-          <p>{`"register.btn": { "zh": "创建新账户", "en": "Create Account", "th": "สร้างบัญชี" },`}</p>
-          <p>{`"register.acc": { "zh": "我已经有一个账户", "en": "I already have an account", "th": "ฉันมีบัญชีแล้ว" },`}</p>
-          <p>{`"register.login": { "zh": "登录", "en": "Log in", "th": "เข้าสู่ระบบ" },`}</p>
-          <p>{`"register.fill": { "en": "Please fill in all the required information", "zh": "请填写所有必填信息", "th": "กรุณากรอกข้อมูลให้ครบถ้วน" },`}</p>
-          <p>{`"register.digit": { "en": "Please enter your 11 digit phone number.", "zh": "请输入您的 11 位电话号码。", "th": "กรุณากรอกหมายเลขโทรศัพท์ 11 หลัก" },`}</p>
-          <p>{`"register.pass": { "en": "Please enter a password between 6 and 30 characters long and confirm the password to match", "zh": "请填写6到30个字符长度的密码，并确认密码匹配", "th": "กรุณากรอกรหัสผ่านที่มีความยาวระหว่าง 6 ถึง 30 ตัวอักษรและยืนยันรหัสผ่านให้ตรงกัน" },`}</p>
-          <p>{`"register.repass": { "en": "The password and confirmation password do not match", "zh": "密码和确认密码不一致", "th": "การป้อนรหัสผ่านและยืนยันรหัสผ่านไม่สอดคล้องกัน" },`}</p>
-          <p>{`"register.success": { "en": "You have successfully registered an account", "zh": "您已成功注册帐号", "th": "คุณได้ลงทะเบียนบัญชีเรียบร้อยแล้ว" },`}</p>
-          <p>{`"register.email": { "zh": "电子邮箱", "en": "Email", "th": "อีเมล" },`}</p>
-          <p>{`"register.invite": { "zh": "邀请码", "en": "Invitation code", "th": "รหัสเชิญ" }`}</p>
-        </div>
-
-        <div>
-          <p>{`"main.home": { "zh": "主页", "en": "Shop", "th": "ร้านค้า" },`}</p>
-          <p>{`"main.trade": { "zh": "贸易", "en": "Trade", "th": "ซื้อขาย" },`}</p>
-          <p>{`"main.wallet": { "zh": "钱包", "en": "Wallet", "th": "กระเป๋าเงิน" },`}</p>
-          <p>{`"main.setting": { "zh": "我的", "en": "Setting", "th": "ตั้งค่า" }`}</p>
-        </div>
-
-        <div>
-          <p>{`"product.login": { "zh": "您目前未登录。请登录以继续购买。", "en": "You are not currently logged in. Please log in to continue your purchase.", "th": "คุณยังไม่ได้เข้าสู่ระบบ โปรดเข้าสู่ระบบเพื่อดำเนินการซื้อสินค้า" },`}</p>
-        </div>
-
-        <div>
-          <p>{`"productDetail.price": { "zh": "价格", "en": "Price", "th": "ราคา" },`}</p>
-          <p>{`"productDetail.Product_description": { "zh": "产品描述", "en": "Product Description", "th": "รายละเอียดสินค้า" },`}</p>
-          <p>{`"productDetail.add_to_cart": { "zh": "加入购物车", "en": "Add to cart", "th": "เพิ่มใส่รถเข็น" },`}</p>
-          <p>{`"productDetail.add_cart": { "zh": "添加", "en": "Add", "th": "เพิ่ม" },`}</p>
-          <p>{`"productDetail.discount": { "zh": "打折", "en": "Discount", "th": "ลดราคา" },`}</p>
-          <p>{`"productDetail.detail_login": { "en": "Login", "zh": "登录", "th": "เข้าสู่ระบบ" },`}</p>
-          <p>{`"productDetail.Parameters": { "en": "Parameters", "zh": "参数", "th": "พารามิเตอร์" },`}</p>
-          <p>{`"productDetail.ItemNumber": { "en": "Item Number : ", "zh": " 商品编号: ", "th": "หมายเลขรายการสินค้า : " }`}</p>
-        </div>
-
-        <div>
-          <p>{`"cart.head": { "zh": "我的购物车", "en": "My Cart", "th": "รถเข็นของฉัน" },`}</p>
-          <p>{`"cart.item": { "zh": "购物车商品", "en": "Items in cart", "th": "รายการในรถเข็น" },`}</p>
-          <p>{`"cart.total": { "zh": "总共", "en": "Total", "th": "ทั้งหมด" },`}</p>
-          <p>{`"cart.buy": { "zh": "立即购买", "en": "Buy now", "th": "ซื้อตอนนี้" },`}</p>
-          <p>{`"cart.quantity": { "zh": "数量", "en": "Quantity", "th": "จำนวน" },`}</p>
-          <p>{`"cart.noitem": { "zh": "没有商品", "en": "No item", "th": "ไม่มีรายการสินค้า" },`}</p>
-          <p>{`"cart.select": { "zh": "请先选择商品", "en": " Please select a product first ", "th": "กรุณาเลือกสินค้าก่อน" }`}</p>
-        </div>
-
         <div>
           <p>{`}`}</p>
         </div>
@@ -4160,7 +3951,10 @@ export function NSLangArrLang() {
 // NSLang
 export function Lang_nsLang() {
   return (
-    <div className="ml-4 flex flex-col gap-4 break-words">
+    <div className="ml-4 flex flex-col break-words">
+      <p>
+        function <span className="text-yellow-600">NSLang</span>(inStr){`{`}
+      </p>
       <div className="ml-2">
         <p>{`try {`}</p>
         <p className="ml-2">{`var v = NSLangArr[inStr][langCode];`}</p>
@@ -4173,6 +3967,7 @@ export function Lang_nsLang() {
         <p className="ml-2">{`return inStr;`}</p>
         <p>{`}`}</p>
       </div>
+      <p>{`}`}</p>
     </div>
   )
 }
@@ -4182,7 +3977,9 @@ export function Lang_getStatusCode() {
   return (
     <div className="ml-4 flex flex-col gap-4 break-words">
       <div className="ml-2">
-        <p>{`var thisCode = code;`}</p>
+        <p>
+          var <span className="text-blue-600">thisCode</span> {`= code;`}
+        </p>
         <p>{`try {`}</p>
         <p className="ml-2">{`var v = statusCodesArr[thisCode][langCode];`}</p>
         <p className="ml-2">{`if (v != null) {`}</p>
@@ -4198,6 +3995,20 @@ export function Lang_getStatusCode() {
   )
 }
 
+export function Example_lang_script() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`msgObj.show(`}</p>
+        <p>
+          <span className="text-yellow-600">NSLang</span>("getStart.start")
+        </p>
+        <p>{`)`}</p>
+      </div>
+    </div>
+  )
+}
+
 // level.html
 
 //bodyLevel
@@ -4205,136 +4016,6 @@ export function BodyLevel() {
   return (
     <div className="ml-4 flex flex-col gap-4 break-words">
       <div className="ml-2">
-        <p>
-          &lt;div class="menuPage bg-my" id=
-          <span className="text-red-600">"memberPage"</span>{" "}
-          {`style="position: absolute; z-index: 10; background: #E3F5FF; background-repeat: no-repeat; background-size: cover;">`}
-        </p>
-
-        <div className="ml-5 mt-2">
-          <p>
-            &lt;div id=<span className="text-blue-600">"member_body"</span>{" "}
-            {`style="width: 100%; display: flex; align-items: center;">`}
-          </p>
-
-          <div className="ml-5">
-            <p>{`<swiper-container style=" width: 90%; margin:  0 auto ; position: relative;">`}</p>
-             {/* Silver */}
-            <p className="ml-5">{`<swiper-slide id="silver" space-between="20" slides-per-view="2.15" style="margin-right: 20px;  height: 200px; width: 100%;color: #000;  width: 100%; border-radius: 8px; background: var(--Silver, linear-gradient(99deg, #AEAEAE 0%, #DBDBDB 23.96%, #E2E2E2 43.23%, #C9C9C9 60.42%, #E3E3E3 77.6%, #CCC 100%));box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10);">`}</p>
-            <div className="ml-8">
-              <p>{`<div style="width: 90%; height: 20%; margin:  0 auto ; color: #fff; display: flex;  justify-content: space-between">`}</p>
-              <p className="ml-4">{`<div style="display: flex;align-items: center;"> Silver <img style="height: 20px; width: 20px;    margin-left: 8px; "id="icon_silver" alt=""></div>`}</p>
-              <p className="ml-4">{`<div class="see_more" style="font-size: 10px;display: flex;align-items: center;"> See more <img style="height: 20px; width: 20px;    margin-left: 8px; "id="see_more_silver" alt=""></div>`}</p>
-              <p>{`</div>`}</p>
-
-              <p>{`<div style="height: 80%;margin: 0 auto; width: 90%; border-radius: 15px 15px 0px 0px; border: 2.55px solid rgba(255, 255, 255, 0.27);background: rgba(255, 255, 255, 0.90);box-shadow: 4px 0px 11.8px 1px rgba(201, 201, 201, 0.60), -4px 4px 11.8px 1px rgba(201, 201, 201, 0.60);">`}</p>
-              <div className="ml-4">
-                <p>{`<div style="height: 30%; width: 90%; font-size: 12px; margin: 0 auto;background: linear-gradient(99deg, #AEAEAE 0%, #C9C9C9 23.96%, #C9C9C9 47.92%, #E7E5E5 77.6%, #CCC 100%); background-clip: text; -webkit-background-clip: text;-webkit-text-fill-color: transparent;">`}</p>
-                <p className="ml-4">Maintain level:</p>
-                <p>{`</div>`}</p>
-                <p className="mt-4">{`<div class="upgrade_information">`}</p>
-                <p className="ml-4">{`<div>Order</div>`}</p>
-                <p className="ml-4">{`<div>`}</p>
-                <p className="ml-8">{`<span class="SILVER">20</span>/24`}</p>
-                <p className="ml-4">{`</div>`}</p>
-                <p className="ml-4">{`<div class="SILVER_stick"></div>`}</p>
-                <p>{`</div`}</p>
-
-                <p className="mt-4">{`<div class="upgrade_information">`}</p>
-                <p className="ml-4">{`<div>Order amount</div>`}</p>
-                <p className="ml-4">{`<div>`}</p>
-                <p className="ml-8">{`<span class="SILVER">4500</span>/7500`}</p>
-                <p className="ml-4">{`</div>`}</p>
-                <p className="ml-4">{`<div class="SILVER_stick"></div>`}</p>
-                <p>{`</div`}</p>
-
-                <p className="mt-4">{`<div class="upgrade_information">`}</p>
-                <p className="ml-4">{`<div>Invitation code</div>`}</p>
-                <p className="ml-4">{`<div>`}</p>
-                <p className="ml-8">{`<span class="SILVER">20</span>/24`}</p>
-                <p className="ml-4">{`</div>`}</p>
-                <p className="ml-4">{`<div class="SILVER_stick"></div>`}</p>
-                <p>{`</div`}</p>
-
-                <p className="mt-4">{`<div class="upgrade_information">`}</p>
-                <p className="ml-4">{`<div>Electricity usage</div>`}</p>
-                <p className="ml-4">{`<div>`}</p>
-                <p className="ml-8">{`<span class="SILVER">2300</span>/5000`}</p>
-                <p className="ml-4">{`</div>`}</p>
-                <p className="ml-4">{`<div class="SILVER_stick"></div>`}</p>
-                <p>{`</div`}</p>
-
-                <p className="mt-4">{`<div class="upgrade_information">`}</p>
-                <p className="ml-4">{`<div>check-in</div>`}</p>
-                <p className="ml-4">{`<div>`}</p>
-                <p className="ml-8">{`<span class="SILVER">6</span>/30`}</p>
-                <p className="ml-4">{`</div>`}</p>
-                <p className="ml-4">{`<div class="SILVER_stick"></div>`}</p>
-                <p>{`</div`}</p>
-              </div>
-              <p>{`</div>`}</p>
-            </div>
-            <p className="ml-5">{`</swiper-slide>`}</p>
-
-            {/* Gold */}
-            <p className="ml-5 mt-4">{`<swiper-slide id="gold" style=" height: 200px; color:  #000; border-radius: 8px;background: var(--goldz, linear-gradient(99deg, #FFCC7E 0%, #FFAE34 100%));box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10);">`}</p>
-            <div className="ml-8">
-              <p>{`<div style="width: 90%; height: 20%; margin:  0 auto ; color: #fff; display: flex;  justify-content: space-between">`}</p>
-              <p className="ml-4">{`<div style="display: flex; align-items: center;"> Gold <img style="height: 20px; width: 20px;    margin-left: 8px; " id="icon_gold"alt=""></div>`}</p>
-              <p className="ml-4">{`<div class="see_more"  style="font-size: 10px;display: flex; align-items: center;"> See more <img style="height: 20px; width: 20px;    margin-left: 8px; " id="see_more_gold"alt=""></div>`}</p>
-              <p>{`</div>`}</p>
-
-              <p>{`<div style="height: 80%;margin: 0 auto; width: 90%; border-radius: 15px 15px 0px 0px; border: 2.55px solid rgba(255, 255, 255, 0.27);background: rgba(255, 255, 255, 0.90);box-shadow: 4px 0px 11.8px 1px rgba(201, 201, 201, 0.60), -4px 4px 11.8px 1px rgba(201, 201, 201, 0.60);">`}</p>
-              <div className="ml-4">
-                <p>{`<div style="height: 30%; width: 90%; font-size: 12px; margin: 0 auto;background: linear-gradient(99deg, #AEAEAE 0%, #C9C9C9 23.96%, #C9C9C9 47.92%, #E7E5E5 77.6%, #CCC 100%); background-clip: text; -webkit-background-clip: text;-webkit-text-fill-color: transparent;">`}</p>
-                <p className="ml-4">Maintain level:</p>
-                <p>{`</div>`}</p>
-                <p className="mt-4">{`<div class="upgrade_information">`}</p>
-                <p className="ml-4">{`<div>Order</div>`}</p>
-                <p className="ml-4">{`<div>`}</p>
-                <p className="ml-8">{`<span class="SILVER">20</span>/24`}</p>
-                <p className="ml-4">{`</div>`}</p>
-                <p className="ml-4">{`<div class="GOLD_stick"></div>`}</p>
-                <p>{`</div`}</p>
-
-                <p className="mt-4">{`<div class="upgrade_information">`}</p>
-                <p className="ml-4">{`<div>Order amount</div>`}</p>
-                <p className="ml-4">{`<div>`}</p>
-                <p className="ml-8">{`<span class="SILVER">4500</span>/7500`}</p>
-                <p className="ml-4">{`</div>`}</p>
-                <p className="ml-4">{`<div class="GOLD_stick"></div>`}</p>
-                <p>{`</div`}</p>
-
-                <p className="mt-4">{`<div class="upgrade_information">`}</p>
-                <p className="ml-4">{`<div>Invitation codes</div>`}</p>
-                <p className="ml-4">{`<div>`}</p>
-                <p className="ml-8">{`<span class="SILVER">20</span>/24`}</p>
-                <p className="ml-4">{`</div>`}</p>
-                <p className="ml-4">{`<div class="GOLD_stick"></div>`}</p>
-                <p>{`</div`}</p>
-
-                <p className="mt-4">{`<div class="upgrade_information">`}</p>
-                <p className="ml-4">{`<div>Electricity usage</div>`}</p>
-                <p className="ml-4">{`<div>`}</p>
-                <p className="ml-8">{`<span class="SILVER">2300</span>/5000`}</p>
-                <p className="ml-4">{`</div>`}</p>
-                <p className="ml-4">{`<div class="GOLD_stick"></div>`}</p>
-                <p>{`</div`}</p>
-
-                <p className="mt-4">{`<div class="upgrade_information">`}</p>
-                <p className="ml-4">{`<div>check-in</div>`}</p>
-                <p className="ml-4">{`<div>`}</p>
-                <p className="ml-8">{`<span class="SILVER">6</span>/30`}</p>
-                <p className="ml-4">{`</div>`}</p>
-                <p className="ml-4">{`<div class="GOLD_stick"></div>`}</p>
-                <p>{`</div`}</p>
-              </div>
-              <p>{`</div>`}</p>
-            </div>
-            <p className="ml-5">{`</swiper-slide>`}</p>
-          </div>
-        </div>
-
         <div className="ml-5 mt-2">
           <p>{`<div style="position: relative; border-radius: 8px;background: #FFF; box-shadow:rgba(0, 0, 0, 0.24) 0px 4px 6px; width: 90%; margin:  0 auto; height: 200px;">`}</p>
           <div className="ml-5">
@@ -4398,22 +4079,228 @@ export function BodyLevel() {
   )
 }
 
+export function BodyLevel_swiper_container() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>
+          &lt;div class="menuPage bg-my" id=
+          <span className="text-red-600">"memberPage"</span>{" "}
+          {`style="position: absolute; z-index: 10; background: #E3F5FF; background-repeat: no-repeat; background-size: cover;">`}
+        </p>
+
+        <div className="ml-5 mt-2">
+          <p>
+            &lt;div id=<span className="text-blue-600">"member_body"</span>{" "}
+            {`style="width: 100%; display: flex; align-items: center;">`}
+          </p>
+
+          <div className="ml-5">
+            <p className="text-pink-600">&lt;swiper-container&gt;</p>
+            <p className="ml-5 text-violet-500">&lt;swiper-slide&gt;</p>
+            <p className="ml-8 text-red-400">.......Item.......</p>
+            <p className="ml-5 text-violet-500">&lt;/swiper-slide&gt;</p>
+            <p className="text-pink-600">&lt;/swiper-container&gt;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export function BodyLevel_swiper_slide() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p className="ml-5 ">
+          <span className="text-violet-500">&lt;swiper-slide</span>{" "}
+          {`id="silver" space-between="20" slides-per-view="2.15" style="margin-right: 20px;  height: 200px; width: 100%;color: #000;  width: 100%; border-radius: 8px; background: var(--Silver, linear-gradient(99deg, #AEAEAE 0%, #DBDBDB 23.96%, #E2E2E2 43.23%, #C9C9C9 60.42%, #E3E3E3 77.6%, #CCC 100%));box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10);">`}
+        </p>
+        <div className="ml-8">
+          <p>{`<div style="width: 90%; height: 20%; margin:  0 auto ; color: #fff; display: flex;  justify-content: space-between">`}</p>
+          <p className="ml-4">{`<div style="display: flex;align-items: center;"> Silver <img style="height: 20px; width: 20px;    margin-left: 8px; "id="icon_silver" alt=""></div>`}</p>
+          <p className="ml-4">{`<div class="see_more" style="font-size: 10px;display: flex;align-items: center;"> See more <img style="height: 20px; width: 20px;    margin-left: 8px; "id="see_more_silver" alt=""></div>`}</p>
+          <p>{`</div>`}</p>
+
+          <p>{`<div style="height: 80%;margin: 0 auto; width: 90%; border-radius: 15px 15px 0px 0px; border: 2.55px solid rgba(255, 255, 255, 0.27);background: rgba(255, 255, 255, 0.90);box-shadow: 4px 0px 11.8px 1px rgba(201, 201, 201, 0.60), -4px 4px 11.8px 1px rgba(201, 201, 201, 0.60);">`}</p>
+          <div className="ml-4">
+            <p>{`<div style="height: 30%; width: 90%; font-size: 12px; margin: 0 auto;background: linear-gradient(99deg, #AEAEAE 0%, #C9C9C9 23.96%, #C9C9C9 47.92%, #E7E5E5 77.6%, #CCC 100%); background-clip: text; -webkit-background-clip: text;-webkit-text-fill-color: transparent;">`}</p>
+            <p className="ml-4">Maintain level:</p>
+            <p>{`</div>`}</p>
+            <p className="mt-4">{`<div class="upgrade_information">`}</p>
+            <p className="ml-4">{`<div>Order</div>`}</p>
+            <p className="ml-4">{`<div>`}</p>
+            <p className="ml-8">{`<span class="SILVER">20</span>/24`}</p>
+            <p className="ml-4">{`</div>`}</p>
+            <p className="ml-4">{`<div class="SILVER_stick"></div>`}</p>
+            <p>{`</div`}</p>
+          </div>
+          <p>{`</div>`}</p>
+        </div>
+        <p className="ml-5 text-violet-500">{`</swiper-slide>`}</p>
+      </div>
+    </div>
+  )
+}
+
+export function BodyLevel_content_manin() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <div className="ml-2">
+        <p>{`<div style="position: relative; border-radius: 8px;background: #FFF; box-shadow:rgba(0, 0, 0, 0.24) 0px 4px 6px; width: 90%; margin:  0 auto; height: 200px;">`}</p>
+      </div>
+    </div>
+  )
+}
+
+export function BodyLevel2() {
+  return (
+    <div className="ml-4 flex flex-col gap-4 break-words">
+      <p>{`<div style="position: relative; border-radius: 8px;background: #FFF; box-shadow:rgba(0, 0, 0, 0.24) 0px 4px 6px; width: 90%; margin:  0 auto; height: 200px;">`}</p>
+    </div>
+  )
+}
+
+export function BodyLevel3() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`<div style=" left: 50%;transform: translateX(-50%); position: absolute; bottom: 90%; border-radius: 8px; background: #3B78FE; height: 12px;box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10); display: flex;width: 40%; height: 40px; justify-content: center;align-items: center;gap: 10px;">`}</p>
+      <p className="ml-6">
+        {`<img style="height: 20px; width: 20px; margin-right: 5px;"`} id=
+        <span className="text-red-500">"yojo_conin"</span> alt=""&gt;
+      </p>
+      <p className="ml-6">{`<div style="color: #FFF; font-size: 15px;">Yojo coin</div>`}</p>
+      <p>{`</div>`}</p>
+    </div>
+  )
+}
+
+export function BodyLevel4() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p>{`<div style="height: 40px;  display: flex; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">`}</p>
+      <div className="ml-5">
+        <p>{`<div style=" display: flex;gap: 10px;width: 85%; font-size: 2.5vw; color: #9F9F9F; margin:  0 auto;  align-items: center; justify-content: space-between;">`}</p>
+        <p className="ml-4">
+          &lt;div id=<span className="text-red-600">"Classic"</span>{" "}
+          {`class="level tablinks" data-interval="Classic"`}onclick=
+          <span className="text-red-600">"memberObj.openTab</span>('
+          <span className="text-red-600">"Classic"</span>')"&gt;
+        </p>
+        <p className="ml-10">Classic</p>
+        <p className="ml-4">{`</div>`}</p>
+
+        <p className="ml-4 mt-4">
+          &lt;div id=<span className="text-stone-500">"Silver"</span>
+          {`class="level tablinks" data-interval="Silver"`}onclick=
+          <span className="text-red-600">"memberObj.openTab</span>('
+          <span className="text-stone-500">"Silver"</span>')"&gt;
+        </p>
+        <p className="ml-10">Silver</p>
+        <p className="ml-4">{`</div>`}</p>
+
+        <p className="ml-4 mt-4">
+          &lt;div id=<span className="text-green-600">"Platinum"</span>{" "}
+          {`class="level tablinks" data-interval="Platinum"`}onclick=
+          <span className="text-red-600">"memberObj.openTab</span>('
+          <span className="text-green-600">"Platinum"</span>')"&gt;
+        </p>
+        <p className="ml-10">Platinum</p>
+        <p className="ml-4">{`</div>`}</p>
+        <p>{`</div>`}</p>
+      </div>
+    </div>
+  )
+}
+
+export function BodyLevel5() {
+  return (
+    <div className="ml-4 flex flex-col gap-2 break-words">
+      <p className="mt-4">
+        &lt;div id=,<span className="text-red-600">"ClassicTab"</span> class=
+        <span className="text-red-600">"tabcontent"</span>&gt;
+      </p>
+      <p className="ml-6">{`<div style="height: 20px;"></div>`}</p>
+      <p className="ml-6">{`<div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> ClassicTab :</div>`}</p>
+      <p className="ml-6">{`<div style="height: 10px;"></div>`}</p>
+      <p>{`</div>`}</p>
+
+      <p className="mt-4">
+        &lt;div id=<span className="text-zinc-600">"SilverTab"</span> class=
+        <span className="text-red-600">"tabcontent"</span>&gt;
+      </p>
+      <p className="ml-6">{`<div style="height: 20px;"></div>`}</p>
+      <p className="ml-6">{`<div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> SilverTab :</div>`}</p>
+      <p className="ml-6">{`<div style="height: 10px;"></div>`}</p>
+      <p>{`</div>`}</p>
+
+      <p className="mt-4">
+        &lt;div id=,<span className="text-yellow-600">"GoldTab"</span> class=
+        <span className="text-red-600">"tabcontent"</span>&gt;
+      </p>
+      <p className="ml-6">{`<div style="height: 20px;"></div>`}</p>
+      <p className="ml-6">{`<div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> Benefit :</div>`}</p>
+      <p className="ml-6">{`<div style="height: 10px;"></div>`}</p>
+      <p className="ml-6">{`<ul style="color: #3B78FE; padding: 0;width: 75%;margin: 0 auto; font-size: 14px;">`}</p>
+      <p className="ml-10">{`<li>10% discount code mininmum ฿700</li>`}</p>
+      <p className="ml-10">{`<li>10% discount code mininmum ฿1,00</li>`}</p>
+      <p className="ml-10">{`<li>10% discount code mininmum ฿1,500</li>`}</p>
+      <p className="ml-6">{`</ul>`}</p>
+      <p>{`</div>`}</p>
+
+      <p className="mt-4">
+        &lt;div id=<span className="text-green-600">"PlatinumTab"</span> class=
+        <span className="text-red-600">"tabcontent"</span>&gt;
+      </p>
+      <p className="ml-6">{`<div style="height: 20px;"></div>`}</p>
+      <p className="ml-6">{`<div style="color: #9F9F9F; width: 80%; margin:  0 auto; "> PlatinumTab :</div>`}</p>
+      <p className="ml-6">{`<div style="height: 10px;"></div>`}</p>
+      <p>{`</div>`}</p>
+      <p>{`</div>`}</p>
+    </div>
+  )
+}
+
 // openTab
 export function Level_openTab() {
   return (
     <div className="ml-4 flex flex-col break-words">
-      <p>{`this.openTab = function (tabName) {`}</p>
+      <p>
+        <span className="text-red-600">this.openTab</span>
+        {`= function (tabName) {`}
+      </p>
       <div className="ml-2">
+        <p className="text-green-700 text-sm">
+          // ประกาศตัวแปร i เพื่อใช้ในลูป
+        </p>
         <p>{`var i;`}</p>
+        <p className="text-green-700 text-sm mt-2">
+          // รับทุกองค์ประกอบที่มีคลาส "tabcontent"
+        </p>
         <p>{`var tabcontent = document.getElementsByClassName("tabcontent");`}</p>
+        <p className="text-green-700 text-sm mt-2">
+          // ลูปผ่านทุกองค์ประกอบที่มีคลาส "tabcontent" และซ่อนเนื้อหาของพวกมัน
+        </p>
         <p>{`for (i = 0; i < tabcontent.length; i++) {`}</p>
         <p className="ml-2">{`tabcontent[i].style.display = "none";`}</p>
         <p>{`}`}</p>
+        <p className="text-green-700 text-sm mt-2">
+          // รับทุกองค์ประกอบที่มีคลาส "tablinks"
+        </p>
         <p>{`var tablinks = document.getElementsByClassName("tablinks");`}</p>
+        <p className="text-green-700 text-sm mt-2">
+          // ลูปผ่านทุกองค์ประกอบที่มีคลาส "tablinks" และลบคลาส "actived" ออก
+        </p>
         <p>{`for (i = 0; i < tablinks.length; i++) {`}</p>
         <p className="ml-2">{`tablinks[i].classList.remove("actived");`}</p>
         <p>{`}`}</p>
+        <p className="text-green-700 text-sm mt-2">
+          // แสดงเนื้อหาของแท็บที่ถูกเลือก โดยใช้ id "tabName + 'Tab'"
+        </p>
         <p>{`document.getElementById(tabName + "Tab").style.display = "block";`}</p>
+        <p className="text-green-700 text-sm mt-2">
+          // เพิ่มคลาส "actived" ให้กับปุ่มแท็บที่ถูกเลือ
+        </p>
         <p>{`document.getElementById(tabName).classList.add("actived");`}</p>
       </div>
       <p>{`}`}</p>
@@ -9468,6 +9355,10 @@ export function Refund_previewImg_refund() {
 export function Register_var() {
   return (
     <div className="ml-4 break-words">
+      <p>
+        <span className="text-yellow-600">this.registerFun </span>
+        {`= function () {`}
+      </p>
       <div className="ml-2 flex flex-col gap-4">
         <div>
           <p>
@@ -9555,6 +9446,7 @@ export function Register_registerFun() {
         </div>
         <p>{`});`}</p>
       </div>
+      <p>{`}`}</p>
     </div>
   )
 }
@@ -9573,6 +9465,20 @@ export function Register_cleanInput() {
         <p className="ml-4">
           $("<span className="text-green-600">#password</span>").val('');
         </p>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+export function Register_click_register() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>{`this.init = function () {`}</p>
+        <p className="ml-4">$(<span className="text-red-600">"#registerBtn_user"</span>).click(function () {`{`}</p>
+        <p className="ml-4 text-yellow-600">registerObj.registerFun();()</p>
+        <p className="ml-4">{`}`}</p>
         <p>{`}`}</p>
       </div>
     </div>
@@ -14987,7 +14893,7 @@ export function Login_init() {
           <p className="ml-2 text-yellow-600">loginFun()</p>
           <p>{`}`}</p>
         </div>
-        <p>{`}`}</p>
+        <p>{`})`}</p>
       </div>
     </div>
   )
@@ -15017,111 +14923,6 @@ export function GetStatusCodeLang() {
           <p>{`return thisCode;`}</p>
         </div>
         <p>{`}`}</p>
-      </div>
-    </div>
-  )
-}
-
-// getlevel
-export function Getlevel() {
-  return (
-    <div className="ml-4 break-words">
-      <div className="ml-2">
-        <p>{`this.getlevel = function () {`}</p>
-        <p>{`var getToken = window.localStorage.getItem('token');`}</p>
-        <p>{`var token = JSON.parse(getToken);`}</p>
-
-        <p>{`$.ajax({`}</p>
-        <div className="ml-2">
-          <p>{`type: 'get',`}</p>
-          <p>{`url: API_SERVER + '/v1/profile/cycle-voucher?type=40',`}</p>
-          <p>{`headers: {`}</p>
-          <div className="ml-2">
-            <p>{`'Authorization': 'Bearer ' + token.token,`}</p>
-          </div>
-          <p>{`},`}</p>
-          <p>{`async: true,`}</p>
-          <p>{`timeout: 100000,`}</p>
-          <p>{`success: function (data) {`}</p>
-          <div className="ml-2">
-            <p>{`$("#now_number").text(data.result.activeNumber);`}</p>
-            <p>{`$("#teamPerformance").text(data.result.performance);`}</p>
-
-            <p>{`var filteredItems = data.result.items.filter(item => item.state === 20);`}</p>
-            <p>{`itemsLevelArr = data.result.items;`}</p>
-            <p>{`var indexLevel = data.result.level;`}</p>
-
-            <p>{`console.log(indexLevel, '--------------------------------')`}</p>
-            <p>{`if (indexLevel === 0) {`}</p>
-            <div className="ml-2">
-              <p>{`$('.img_level11').attr('src', './pic/level/level0.png');`}</p>
-              <p>{`$('#profileLevel_All').attr('src', './pic/level/level0.png');`}</p>
-              <p>{`$("#level_number_header_name11").text('普通会员');`}</p>
-              <p>{`$("#level_number_header11").text('');`}</p>
-              <p>{`$("#level_number11").text('普通会员');`}</p>
-              <p>{`$("#sendPostData").css({ "visibility": "hidden" });`}</p>
-            </div>
-            <p>{`} else if (indexLevel === 1) {`}</p>
-            <div className="ml-2">
-              <p>{`$('.img_level11').attr('src', './pic/level/level1.png');`}</p>
-              <p>{`$('#profileLevel_All').attr('src', './pic/level/level1.png');`}</p>
-              <p>{`$("#level_number_header11").text('VIP1');`}</p>
-              <p>{`$("#level_number11").text('V1');`}</p>
-            </div>
-          </div>
-        </div>
-        <p>{`},`}</p>
-        <p>{`error: function (xmlhttprequest, error) {`}</p>
-        <div className="ml-2">
-          <p>{`loaderObj.unShow();`}</p>
-          <p>{`msgPageObj.show(NSLang('sys.serverError') + ': ' + error);`}</p>
-        </div>
-        <p>{`});`}</p>
-
-        <p>{`function sendPostData(filteredItems, indexLevel) {`}</p>
-        <div className="ml-2">
-          <p>{`var getToken = window.localStorage.getItem('token');`}</p>
-          <p>{`var token = JSON.parse(getToken);`}</p>
-          <p>{`if (itemsLevelArr == null) {`}</p>
-          <p>{` msgPageObj.show('领取失败，请重试！');`}</p>
-          <p>{`return;`}</p>
-          <p>{`}`}</p>
-          <p>{`var mLevelToPost = 0;`}</p>
-          <p>{`var mLevelToPost = 0;`}</p>
-        </div>
-        <p>{`}`}</p>
-        <p>{`for (var i = 0; i < itemsLevelArr.length; i++) {`}</p>
-        <p>{`if (itemsLevelArr[i].state != 30) {`}</p>
-        <p>{`mLevelToPost = itemsLevelArr[i].level;`}</p>
-        <p>{`break;`}</p>
-        <p>{`}`}</p>
-        <p>{`}`}</p>
-        <p>{`var postData = {`}</p>
-        <p>{`type: 40,`}</p>
-        <p>{`step: mLevelToPost`}</p>
-        <p>{`$.ajax({`}</p>
-        <p>{`type: 'post',`}</p>
-        <p>{`url: API_SERVER + '/v1/profile/cycle-voucher',`}</p>
-        <p>{`headers: {`}</p>
-        <p>{`'Authorization': 'Bearer ' + token.token,`}</p>
-        <p>{`},`}</p>
-        <p>{`data: JSON.stringify(postData),`}</p>
-        <p>{`contentType: 'application/json',`}</p>
-        <p>{`success: function (response) {`}</p>
-        <p>{`if (response.code === 4089) {`}</p>
-        <p>{`msgPageObj.show("周奖励不能重复领取！");`}</p>
-        <p>{`$("#sendPostData").css({ "background": "#918e8e", });`}</p>
-        <p>{`$("#sendPostData").off("click");`}</p>
-        <p>{`} else if (response.code === 4090) {`}</p>
-        <p>{`msgPageObj.show("周奖励将于每周一自动激活，请您按时领取");`}</p>
-        <p>{`} else if (response.code === 0) {`}</p>
-        <p>{`msgPageObj.show("恭喜你，领取成功！");`}</p>
-        <p>{`}`}</p>
-        <p>{`}`}</p>
-        <p>{`error: function (xmlhttprequest, error) {`}</p>
-        <p>{`console.error('POST request error:', error);`}</p>
-        <p>{`},`}</p>
-        <p>{`});`}</p>
       </div>
     </div>
   )
@@ -18948,7 +18749,9 @@ export function StatusCodesArrLang() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2">
-        <p>{`var statusCodesArr = {`}</p>
+        <p>
+          var <span className="text-blue-600">statusCodesArr</span> {`= {`}
+        </p>
         <div className="ml-2">
           <p>{`"0": { "en": "Success", "zh": "请求成功", "th": "สำเร็จ" },`}</p>
           <p>{`"2011": { "en": "Accepted", "zh": "请求已受理", "th": "ยอมรับแล้ว" },`}</p>
@@ -19019,6 +18822,12 @@ export function Bodyregister() {
               </p>
               <p className="ml-4">{`</div>`}</p>
               <p>{`</div>`}</p>
+
+              <p>
+                &lt;div id=
+                <span className="text-red-600">"registerBtn_user"</span>
+                class=<span className="text-blue-600">"btnComm"</span> {`style="font-size: 16px; font-weight: 700;color: #fff;letter-spacing: 2px;">Create Account</div>`}
+              </p>
             </div>
 
             <p>{`</div>`}</p>

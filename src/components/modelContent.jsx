@@ -3,6 +3,9 @@
 import MessageBoxTryit from "./tryitFunction/messageBoxTryit"
 import {FiChevronDown, FiChevronUp} from "react-icons/fi"
 import indexStartApp from "../pictures/indexStartApp.png"
+import langImage from "../pictures/levelmage.png"
+import swiperImage from "../pictures/swiperImageJS.png"
+import importSwiper from "../pictures/importtSwiper.png"
 import {
   AddFilesFunc,
   AddSlipPayment,
@@ -14,6 +17,12 @@ import {
   AllReadNotice,
   Base64,
   BodyLevel,
+  BodyLevel2,
+  BodyLevel3,
+  BodyLevel4,
+  BodyLevel5,
+  BodyLevel_swiper_container,
+  BodyLevel_swiper_slide,
   Body_longin,
   Bodyregister,
   BuyProduct,
@@ -61,6 +70,7 @@ import {
   EditAddress_editAddress,
   EditAddress_getAddressID,
   Enable2FA,
+  Example_lang_script,
   Feedback,
   FetchPrizes,
   FetchSliderConfigAndData_login,
@@ -96,7 +106,6 @@ import {
   GetVoucherInvite,
   GetVoucherTeam,
   GetWallet,
-  Getlevel,
   Getnewgroup,
   Getnotifications,
   HeaderInitExampleScript,
@@ -244,6 +253,7 @@ import {
   Refund_previewImg_refund,
   Refund_sendRefund,
   Register_cleanInput,
+  Register_click_register,
   Register_registerFun,
   Register_var,
   Reportdatalogger_chargePower,
@@ -336,7 +346,6 @@ import RegisterTryit from "./tryitFunction/registerTryit"
 export default function ModelContent({
   htmlCheckScript,
   htmlCheckCall,
-  htmlCheckBody,
   htmlCheckVar,
   htmlChecName,
   setOpenMainBody,
@@ -492,10 +501,14 @@ export default function ModelContent({
   whatisRegisterBodyCheck,
   whatisRegisterScriptCheck,
   exampleScript,
+  exampleImage,
   howtoLoginBody,
   howtoLoginScrip,
   howtoLevelBody,
   howtoLevelScript,
+  setSelectedMenu,
+  howtoLangScript,
+  swiperContent
 }) {
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
@@ -905,10 +918,6 @@ export default function ModelContent({
                 {selectedMenu === "updateIncomeBeforeTaxes" && (
                   <InCome_updateIncomeBeforeTaxes />
                 )}
-                {selectedMenu === "setAllPageLang" && <Lang_setAllPageLang />}
-                {selectedMenu === "setAllUILang" && <Lang_setAllUILang />}
-                {selectedMenu === "NSLang" && <Lang_nsLang />}
-                {selectedMenu === "getStatusCode" && <Lang_getStatusCode />}
                 {selectedMenu === "GetAddress" && (
                   <LocationAddress_getAddress />
                 )}
@@ -1180,7 +1189,6 @@ export default function ModelContent({
                   <Wallet_get_dataTransaction />
                 )}
                 {selectedMenu === "loadList" && <Wallet_loadList />}
-                {selectedMenu === "getlevel" && <Getlevel />}
                 {selectedMenu === "fetchSliderConfigAndData" && (
                   <FetchSliderConfigAndData_login />
                 )}
@@ -1299,23 +1307,11 @@ export default function ModelContent({
               </div>
             )}
 
-            {htmlCheckBody === true && (
-              <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
-                <span className="text-[#A52A2A]">&lt;Body&gt;</span>
-
-                <span className="text-[#A52A2A]"> &lt;Body&gt;</span>
-              </div>
-            )}
-
             {htmlCheckVar === true && (
               <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
                 <span className="text-[#A52A2A]">
                   &lt;{htmlChecName ? htmlChecName : "Script"}&gt;
                 </span>
-                {selectedMenu === "nSLangArrLang" && <NSLangArrLang />}
-                {selectedMenu === "statusCodesArrLang" && (
-                  <StatusCodesArrLang />
-                )}
                 {selectedMenu === "jQueryIntroduction" && (
                   <JQueryIntroduction />
                 )}
@@ -1485,6 +1481,25 @@ export default function ModelContent({
 
                 <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
                   <Register_cleanInput />
+                  <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+                </div>
+
+                {/* step 4 */}
+                <div className="flex flex-col gap-2">
+                  <h1 className="font-bold text-xl">step 4</h1>
+
+                  <div>
+                    <p>
+                      เราเรียกใช้ id{" "}
+                      <span className="text-red-600">#registerBtn_user</span>{" "}
+                      แล้วใช้ method click เพื่อตอนที่เราคลิกให้ไปเรียกใช้{" "}
+                      <span className="text-yellow-600">registerFun</span>()
+                    </p>
+                  </div>
+                </div>
+
+                <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                  <Register_click_register />
                   <span className="text-[#A52A2A]">&lt;/script&gt;</span>
                 </div>
               </div>
@@ -1671,16 +1686,137 @@ export default function ModelContent({
 
             <div className="mt-2">
               <p>
-                คือ โครงสร้างของ html ที่แสดงผลเป็น from ui ให้ user
-                สามารถใส่ข้อความสำหรับ Login ได้{" "}
+                -นี้เป็นการสร้าง UI ของเว็บไซต์โดยใช้ HTML และ CSS
+                เพื่อแสดงข้อมูลสมาชิกในรูปแบบของ swiper slide
+                ซึ่งประกอบด้วยสามระดับสมาชิก คือ Silver, Gold และ Platinum
+                โดยแต่ละระดับจะแสดงข้อมูลที่คล้ายกันแต่มีการออกแบบสีและสไตล์ที่แตกต่างกันตามระดับของสมาชิก
               </p>
             </div>
           </div>
 
           <div className="w-full flex flex-col gap-4">
+            {/* step 1 */}
+            <div className="flex flex-col gap-2">
+              <h1 className="font-bold text-xl">step 1</h1>
+              <div className="flex items-center gap-4">
+                <p>
+                  1.ในหน้าของ Level ได้มีการใช้ ไลบรารี Swiper.js
+                  สามารถกดไปอ่านรายละเอียดเพิ่มได้ที่
+                </p>
+                <button
+                  onClick={() => setSelectedMenu("swiper")}
+                  type="button"
+                  className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:outline-none font-medium rounded-lg text-sm p-2 text-center ">
+                  อ่านต่อ
+                </button>
+              </div>
+
+              <div className="ml-2">
+                <p>
+                  1.1. &lt;div id=
+                  <span className="text-blue-600">"member_body"</span>&gt; :
+                  เป็น container หลักที่มีสไตล์การแสดงผลแบบ flex
+                  เพื่อให้ลูกที่อยู่ภายในจัดเรียงอยู่ตรงกลางในแนวนอน
+                </p>
+                <p>
+                  1.2.
+                  <span className="text-pink-600">
+                    &lt;swiper-container&gt;
+                  </span>
+                  : เป็น container สำหรับ swiper ซึ่งเป็น library
+                  ที่ใช้สำหรับการสร้าง slide โดยกำหนดความกว้างและตำแหน่ง
+                </p>
+              </div>
+            </div>
+
             <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
               <span className="text-[#A52A2A]">&lt;body&gt;</span>
-              <BodyLevel />
+              <BodyLevel_swiper_container />
+            </div>
+
+            <div className="ml-2">
+              <p>
+                1.3.
+                <span className="text-violet-500">&lt;swiper-slide&gt;</span>:
+                เป็น element ที่ใช้สำหรับแต่ละ slide โดยมีสาม slide (Silver,
+                Gold, Platinum)
+              </p>
+            </div>
+
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <BodyLevel_swiper_slide />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <h1 className="font-bold text-xl">step 2</h1>
+              <div className="flex flex-col gap-2">
+                <p>1.Container หลัก</p>
+                <p className="ml-2">
+                  1.1.Container หลักนี้มีสไตล์ที่กำหนดให้เป็นกล่องที่มีมุมโค้ง
+                  พื้นหลังสีขาว และมีเงา
+                </p>
+                <p className="ml-2">
+                  1.2.กำหนดความกว้าง 90% ของหน้าจอและความสูง 200px
+                  และจัดกึ่งกลางโดยใช้ margin
+                </p>
+              </div>
+            </div>
+
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <BodyLevel2 />
+            </div>
+
+            <div>
+              <p>2.แถบ Yojo coin</p>
+              <p>{`2.1.เป็นแถบสีฟ้าขนาดเล็กที่มีข้อความ "Yojo coin" และไอคอน`}</p>
+              <p>{`2.2.ใช้ flexbox เพื่อจัดเรียงปุ่มแท็บให้อยู่ในแถวเดียวกันและจัดตำแหน่งให้มีช่องว่างระหว่างกัน (gap: 10px)`}</p>
+              <p>
+                2.3.ปุ่มแท็บแต่ละปุ่มมีการตั้งค่า onclick เพื่อเรียกใช้ฟังก์ชัน
+                JavaScript{" "}
+                <span className="text-red-600">memberObj.openTab()</span>
+              </p>
+            </div>
+
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <BodyLevel3 />
+            </div>
+
+            <div>
+              <p>3.แถบเมนูแท็บ</p>
+              <p className="ml-2">
+                3.1.แถบนี้ประกอบด้วยปุ่มแท็บสี่ปุ่ม: Classic, Silver, Gold,
+                Platinum
+              </p>
+              <p className="ml-2">
+                3.2.ใช้ flexbox
+                เพื่อจัดเรียงปุ่มแท็บให้อยู่ในแถวเดียวกันและจัดตำแหน่งให้มีช่องว่างระหว่างกัน
+                (gap: 10px)
+              </p>
+              <p className="ml-2">
+                3.3.ปุ่มแท็บแต่ละปุ่มมีการตั้งค่า onclick เพื่อเรียกใช้ฟังก์ชัน
+                JavaScript{" "}
+                <span className="text-red-600">memberObj.openTab()</span>
+              </p>
+            </div>
+
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <BodyLevel4 />
+            </div>
+
+            <div>
+              <p>4.เนื้อหาแท็บ</p>
+              <p className="ml-2">
+                4.1.เนื้อหาแต่ละแท็บจะถูกซ่อนหรือแสดงตามแท็บที่ถูกเลือก
+              </p>
+              <p className="ml-2">
+                4.2.ใช้ id เพื่อระบุแท็บที่เกี่ยวข้องและใช้ class=
+                <span className="text-red-600">"tabcontent"</span>{" "}
+                เพื่อจัดการสไตล์และการแสดงผล
+              </p>
+            </div>
+
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <BodyLevel5 />
               <span className="text-[#A52A2A]">&lt;/body&gt;</span>
             </div>
           </div>
@@ -1695,15 +1831,153 @@ export default function ModelContent({
             </button>
 
             <div className="mt-2">
-              <p>-</p>
+              <p>
+                -ทำหน้าที่ในการจัดการการแสดงผลของแท็บ
+                โดยทำงานเมื่อมีการเลือกแท็บใหม่
+                โค้ดนี้จะซ่อนเนื้อหาของทุกแท็บและแสดงเฉพาะเนื้อหาของแท็บที่ถูกเลือก
+                รวมทั้งปรับสไตล์ของปุ่มแท็บเพื่อเน้นแท็บที่ถูกเลือกในขณะนั้น
+              </p>
+              <p>การทำงานของโค้ด</p>
             </div>
           </div>
 
           <div className="w-full flex flex-col gap-4">
             <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
               <span className="text-[#A52A2A]">&lt;script&gt;</span>
-               <Level_openTab />
+              <Level_openTab />
               <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Lang */}
+      {howtoLangScript && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">1.Script</h3>
+            </button>
+
+            <div className="mt-2">
+              <p>
+                ตัวแปร <span className="text-blue-600">NSLangArr</span>{" "}
+                ได้เก็บข้อความในภาษาต่าง ๆ สำหรับข้อความที่ใช้ในหน้าเว็บ
+                โดยข้อความจะแยกตามคีย์ที่กำหนด{" "}
+              </p>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <span className="text-[#A52A2A]">&lt;script&gt;</span>
+              <NSLangArrLang />
+            </div>
+
+            <div>
+              <p>
+                ฟังก์ชันนี้เรียกฟังก์ชัน{" "}
+                <span className="text-blue-600">setAllUILang</span> และส่งค่า
+                "register" เป็นพารามิเตอร์
+                เพื่อระบุว่าเราต้องการตั้งค่าภาษาสำหรับหน้า register:
+              </p>
+            </div>
+
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <Lang_setAllPageLang />
+            </div>
+
+            <div>
+              <p>
+                ฟังก์ชันนี้{" "}
+                <span className="text-green-600">setAllUILang(page)</span>{" "}
+                ใช้สำหรับตั้งค่าข้อความใน UI ของหน้าเว็บตามภาษาที่กำหนด
+                โดยใช้คีย์จาก <span className="text-blue-600">NSLangArr</span>{" "}
+                และตั้งค่าให้กับองค์ประกอบในหน้าเว็บผ่าน jQuery
+              </p>
+            </div>
+
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <Lang_setAllUILang />
+            </div>
+
+            <div>
+              <p>
+                ฟังก์ชันนี้ใช้สำหรับดึงข้อความที่แปลแล้วตามคีย์ที่ระบุจาก{" "}
+                <span className="text-yellow-600">NSLangArr</span>{" "}
+                โดยจะดึงข้อความตามรหัสภาษาที่กำหนดในตัวแปร langCode
+              </p>
+            </div>
+
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <Lang_nsLang />
+            </div>
+
+            <div>
+              <p>
+                ตัวแปรนี้{" "}
+                <span className="text-blue-600">statusCodesArrLang</span>{" "}
+                เก็บข้อความที่แปลแล้วสำหรับรหัสสถานะต่าง ๆ
+                โดยแยกตามคีย์ของรหัสสถานะ
+              </p>
+            </div>
+
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <StatusCodesArrLang />
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+
+            <div>
+              <p>
+                โค้ดนี้แปลรหัสสถานะเป็นข้อความตามภาษาที่กำหนด โดยใช้{" "}
+                <span className="text-blue-600">thisCode</span> และ langCode:
+              </p>
+              <p>
+                โค้ดนี้ช่วยให้สามารถแปลรหัสสถานะเป็นข้อความในภาษาต่าง ๆ
+                ได้อย่างง่ายดาย
+                โดยการจัดเก็บข้อความแปลในวัตถุและใช้ฟังก์ชันเพื่อดึงข้อความที่ตรงกับรหัสสถานะและภาษาที่กำหนด
+                พร้อมทั้งมีการจัดการข้อผิดพลาดในกรณีที่ไม่พบข้อความแปลหรือเกิดข้อผิดพลาดในกระบวนการดึงข้อความ
+              </p>
+            </div>
+
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <Lang_getStatusCode />
+              <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* swiper */}
+      {swiperContent && (
+        <div className={`${CONTAINER_CLASSES}`}>
+          <div className="w-full py-4">
+            <button className="w-full flex items-center justify-between">
+              <h3 className="text-[23px] font-bold">1.Swiper.js</h3>
+            </button>
+
+            <div className="mt-2">
+              <p>
+              swiper.js เป็นไฟล์ JavaScript ของไลบรารี Swiper ซึ่งเป็นไลบรารีที่ใช้สำหรับสร้างสไลด์โชว์หรือแกลเลอรีภาพที่มีความยืดหยุ่นสูงและรองรับการใช้งานบนอุปกรณ์มือถือและเดสก์ท็อป ไลบรารีนี้มีคุณสมบัติต่าง ๆ ที่ช่วยให้การสร้างสไลด์โชว์เป็นเรื่องง่ายและมีประสิทธิภาพ เช่น การสนับสนุนการสัมผัส (touch support), การเลื่อนแบบไร้รอยต่อ, และเอฟเฟกต์การเปลี่ยนภาพที่หลากหลาย
+              </p>
+              สามารถกดดูรายละเอียดได้ที่ <Link to="https://swiperjs.com/" target="_blank" className="text-blue-600 hover:underline">https://swiperjs.com/</Link>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <img src={swiperImage} />
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <h3 className="text-[23px] font-bold">2.Import Swiper</h3>
+            <p className="ml-4">ได้ทำการนำเข้า file swiper.js ใน file index.html เพื่อให้ทุกหน้าสามารถใช้ swiper.js ได้</p>
+          </div>
+
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+              <img src={importSwiper} />
             </div>
           </div>
         </div>
@@ -2520,6 +2794,7 @@ export default function ModelContent({
                     <p className="text-red-600">{`}`}</p>
                   </div>
                 )}
+                {selectedMenu === "levelFull" && <BodyLevel />}
               </div>
 
               <span className="text-[#A52A2A]">&lt;/body&gt;</span>
@@ -2538,6 +2813,7 @@ export default function ModelContent({
               {selectedMenu === "pageUnShow" && <PageUnShowExampleScript />}
               {selectedMenu === "loader" && <LoaderExampleScript />}
               {selectedMenu === "messagePage" && <MessagePageExampleScript />}
+              {selectedMenu === "langFull" && <Example_lang_script />}
               {selectedMenu === "mainHtml" && (
                 <div>
                   <span className="text-[#0000CD]">
@@ -2553,6 +2829,17 @@ export default function ModelContent({
             </div>
           )}
 
+          {exampleImage && (
+            <div>
+              {selectedMenu === "levelFull" && (
+                <div className="mt-4 flex flex-col justify-center items-center gap-4">
+                  <p className="text-lg underline">รูปตัวอย่างการแดสงผล</p>
+                  <img src={langImage} className="w-[300px] cursor-pointer"/>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* open test */}
           <div className="w-full">
             {selectedMenu === "messageBox" && <MessageBoxTryit />}
@@ -2563,12 +2850,15 @@ export default function ModelContent({
             {selectedMenu === "loader" && <LoaderTryit />}
             {selectedMenu === "messagePage" && <MessagePage />}
             {selectedMenu === "mainHtml" && <MainTryit />}
-            {selectedMenu === "mainHtml" && <MainTryit />}
             {selectedMenu === "whatisRegister" && (
               <RegisterTryit title="Rejister Page" />
             )}
             {selectedMenu === "loginFull" && (
               <RegisterTryit title="Login Page" />
+            )}
+
+            {selectedMenu === "langFull" && (
+              <MessagePage title="เริ่มต้นใช้งาน" />
             )}
           </div>
         </div>
