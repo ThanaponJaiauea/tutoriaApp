@@ -859,7 +859,7 @@ const FormCintentModelStructure = ({selectedMenu, setSelectedMenu}) => {
         howtoLevelBody={true}
         howtoLevelScript={true}
         setSelectedMenu={setSelectedMenu}
-        exampleContent="ss"
+        exampleContent="exampleContent"
         exampleBody={true}
         exampleScript={true}
         exampleImage={true}
