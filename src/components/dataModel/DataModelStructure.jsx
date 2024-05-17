@@ -238,7 +238,7 @@ const login = [
     label: "Login.html",
     children: [
       {
-        name: "Longin",
+        name: "Login",
         type: "generalModel",
         key: "loginFull",
         category: "loginHtml",
@@ -279,7 +279,7 @@ const register = [
     label: "Register.html",
     children: [
       {
-        name: "Rejister",
+        name: "Register",
         type: "generalModel",
         key: "whatisRegister",
       },
