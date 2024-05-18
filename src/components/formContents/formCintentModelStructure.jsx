@@ -3,7 +3,11 @@
 import {useState} from "react"
 import ModelContent from "../modelContent"
 
-const FormCintentModelStructure = ({selectedMenu, setSelectedMenu,prevMenuBeforeUpdate}) => {
+const FormCintentModelStructure = ({
+  selectedMenu,
+  setSelectedMenu,
+  prevMenuBeforeUpdate,
+}) => {
   const [openMainBody, setOpenMainBody] = useState(false)
   const [openMainScript, setOpenMainScript] = useState(false)
 
@@ -119,6 +123,9 @@ const FormCintentModelStructure = ({selectedMenu, setSelectedMenu,prevMenuBefore
         functionName="alert()"
         indexContext="Index.html creates a body and applies the alert() function to the created body."
         exampleContent={`Used to enter desired parameters such as alertObj.show("paramiter")`}
+        prevMenuBeforeUpdate={prevMenuBeforeUpdate}
+        icon={true}
+        setSelectedMenu={setSelectedMenu}
       />
     ),
 

@@ -496,13 +496,15 @@ export default function ModelContent({
     <div className="w-full py-4">
       {/* Header */}
       <div className="w-[96%] m-auto flex flex-col gap-2">
-        {prevMenuBeforeUpdate === "levelFull" && icon && (
+        {(prevMenuBeforeUpdate === "levelFull" ||
+          (prevMenuBeforeUpdate === "scriptIndex" && icon)) && (
           <button
             onClick={() => setSelectedMenu(prevMenuBeforeUpdate)}
             className="text-2xl bg-red-200 w-[40px] h-[40px] p-2 rounded-full flex items-center justify-center">
             <IoMdArrowRoundBack />
           </button>
         )}
+
         <h1 className="text-[30px] font-bold">{headers}</h1>
         <h1 className="text-[23px] font-bold">{headerHtml}</h1>
         {contentModelStructure && <p>{contentModelStructure}</p>}
