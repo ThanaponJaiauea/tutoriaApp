@@ -512,7 +512,7 @@ export default function ModelContent({
         <p className="ml-2">{headersDescription}</p>
       </div>
 
-      {/* Widget */}
+      {/* Widgetss */}
       {widget === "none" ? null : (
         <div className={`${CONTAINER_CLASSES}`}>
           <div className="w-full py-4">
