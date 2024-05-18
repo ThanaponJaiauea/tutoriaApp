@@ -9476,7 +9476,10 @@ export function Register_click_register() {
     <div className="ml-4 break-words">
       <div className="ml-2">
         <p>{`this.init = function () {`}</p>
-        <p className="ml-4">$(<span className="text-red-600">"#registerBtn_user"</span>).click(function () {`{`}</p>
+        <p className="ml-4">
+          $(<span className="text-red-600">"#registerBtn_user"</span>
+          ).click(function () {`{`}
+        </p>
         <p className="ml-4 text-yellow-600">registerObj.registerFun();()</p>
         <p className="ml-4">{`}`}</p>
         <p>{`}`}</p>
@@ -13784,292 +13787,494 @@ export function IndexStyle() {
   )
 }
 
-// Index body full
-export function IndexBodyFull() {
+// Index body
+export function MessageBox() {
   return (
     <div className="ml-4 break-words">
-      <div className="ml-2 flex flex-col gap-6">
-        <div>{`<div id="root" class="font-medium"></div>`}</div>
-
-        {/* messageBox */}
-        <div>
-          <p>{`<div id="messageBox">`}</p>
-          <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}</p>
-          <p className="ml-4">{`<div id="messageBoxBg" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
-          <p className="ml-4">{`</div>`}</p>
-          <p className="ml-4 mt-2">{`<div id="messageBoxBodyBg"`}</p>
-          <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
-          <p className="ml-10">{`<div id="messageBoxBody"`}</p>
-          <p className="ml-12">{`style="background-color: #f7f7f7;border-radius: 15px;box-shadow: 0px 0px 5px 5px rgb(0, 0, 0,0.2);">`}</p>
-          <p className="ml-12">{`<div style="height: 20px;"></div>`}</p>
-          <p className="ml-12">{`<div id="msgContent"`}</p>
-          <p className="ml-16">{`style="text-align: center;width: 80%;height: 140px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
+      <div className="ml-2">
+        <p>
+          &lt;div id=<span className="text-red-600">"messageBox"</span>{" "}
+          {`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}
+        </p>
+        <p className="ml-4"></p>
+        <p className="ml-4">{`<div id="messageBoxBg" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
+        <p className="ml-4">{`</div>`}</p>
+        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg"</span></p>
+        <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+        <p className="ml-10">{`<div id="messageBoxBody"`}</p>
+        <p className="ml-12">{`style="background-color: #f7f7f7;border-radius: 15px;box-shadow: 0px 0px 5px 5px rgb(0, 0, 0,0.2);">`}</p>
+        <p className="ml-12">{`<div style="height: 20px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div id=<span className="text-blue-600">"msgContent"</span>
+            {`style="text-align: center;width: 80%;height: 140px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+          </p>
           <p className="ml-16">Content</p>
           <p className="ml-12">{`</div`}</p>
+        </div>
+        <div className="mt-4">
           <p className="ml-12">{`<div style="width: 100%;height:30px;display: flex;justify-content: center;align-items: center;margin-top: 3px;">`}</p>
-          <p className="ml-16">{`<div id="msgBtnOK" style="width:100%;height:45px;background-color:#ff5b5a;border-radius:0px 0px 0px 5px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
+          <p className="ml-16">
+            &lt;div id=<span className="text-green-600">"msgBtnOK"</span>{" "}
+            {`style="width:100%;height:45px;background-color:#ff5b5a;border-radius:0px 0px 0px 5px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}
+          </p>
           <p className="ml-16">{`确认</div>`}</p>
           <p className="ml-16">{`<div style="background-color:#868686;width:2px"></div>`}</p>
-          <p className="ml-16">{`<div id="msgBtnCancel" style="width:100%;height:45px;background-color:#ededed;border-radius: 0px 0px 5px 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+          <p className="ml-16 mt-4">
+            &lt;div id=<span className="text-green-600">"msgBtnCancel"</span>{" "}
+            {`style="width:100%;height:45px;background-color:#ededed;border-radius: 0px 0px 5px 0px;display: flex;justify-content: center;align-items: center;">`}
+          </p>
           <p className="ml-16">{`取消</div>`}</p>
           <p className="ml-16">{`</div>`}</p>
           <p className="ml-12">{`</div>`}</p>
-          <p>{`</div>`}</p>
         </div>
+        <p>{`</div>`}</p>
+      </div>
+    </div>
+  )
+}
 
-        {/* messageBox3 */}
-        <div>
-          <p>{`<div id="messageBox3">`}</p>
-          <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}</p>
-          <p className="ml-4">{`<div id="messageBoxBg3" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
-          <p className="ml-4">{`</div>`}</p>
-          <p className="ml-4 mt-2">{`<div id="messageBoxBodyBg3"`}</p>
-          <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
-          <p className="ml-10">{`<div id="messageBoxBody3"`}</p>
-          <p className="ml-12">{`style=" display: flex;flex-direction: column; background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
-          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-12">{`<div`}</p>
-          <p className="ml-16">{`style="width: 100%; display: flex;     justify-content: center; flex-direction: column; align-items: center;">`}</p>
-          <p className="ml-16">Are you sure ?</p>
-          <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div id="msgContent3"`}</p>
-          <p className="ml-16">{`style=" font-size: 14px; color:#9F9F9F ; text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto; ">`}</p>
+export function MessageBox2() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>
+          &lt;div id=<span className="text-red-600">"messageBox2"</span>{" "}
+          {`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}
+        </p>
+        <p className="ml-4">{`<div id="messageBoxBg2" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
+        <p className="ml-4">{`</div>`}</p>
+        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg2"</span></p>
+        <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+        <p className="ml-10">{`<div id="messageBoxBody2"`}</p>
+        <p className="ml-12">{`style="background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
+        <p className="ml-12">{`<div style="height: 20px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div id=<span className="text-blue-600">"msgContent2"</span>
+            {` style="text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto; font-weight: bold;">`}
+          </p>
           <p className="ml-16">Content</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-12">{`<div`}</p>
-          <p className="ml-16">{`style="margin-bottom:10px; width: 100%; display: flex;justify-content: center;align-items: center; flex-direction: row; gap: 10px;">`}</p>
-          <p className="ml-16">{`<div id="msgBtnOK3"`}</p>
-          <p className="ml-20">{`style=" border-radius: 8px; width:30%;height:35px;background-color:#FD9B40;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
-          <p className="ml-20">{`<span style="font-size: 12px;">`}</p>
-          <p className="ml-20">{`OK`}</p>
-          <p className="ml-20">{`</span>`}</p>
-          <p className="ml-16">{`</div>`}</p>
-          <p className="ml-16">{`<div id="msgBtnCancel3"`}</p>
-          <p className="ml-20">{`style=" border-radius: 8px; font-size: 12px;width:30%;height:35px;background-color:#C6C6C6;border-radius: 8px;display: flex;justify-content: center;align-items: center; color: #ffffff;">`}</p>
-          <p className="ml-20">Cancel</p>
-          <p className="ml-16">{`</div>`}</p>
-          <p className="ml-12">{`</div>`}</p>
-          <p>{`</div>`}</p>
         </div>
-
-        {/* messageBox4 */}
-        <div>
-          <p>{`<div id="messageBox4">`}</p>
-          <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}</p>
-          <p className="ml-4">{`<div id="messageBoxBg4" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
-          <p className="ml-4">{`</div>`}</p>
-          <p className="ml-4 mt-2">{`<div id="messageBoxBodyBg4"`}</p>
-          <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
-          <p className="ml-10">{`<div id="messageBoxBody4"`}</p>
-          <p className="ml-12">{`style="display: flex;flex-direction: column; background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
+        <div className="mt-4">
+          <p className="ml-12">{`<div style="width: 100%;height:100px;display: flex;justify-content: center;align-items: center; flex-direction: column; gap: 10px;">`}</p>
+          <p className="ml-16">
+            &lt;div id=<span className="text-green-600">"msgBtnOK2"</span>
+            {` style="width:70%;height:45px;background-color:#3B78FE;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}
+          </p>
+          <p className="ml-16">
+            <span id="pop_user">User</span>
+          </p>
+          <p className="ml-16">{`</div>`}</p>
+          <p className="ml-16">{`</div>`}</p>
           <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-12">{`<div>`}</p>
-          <p className="ml-16">{`<img id="success_alert" style="width: 50px; ">`}</p>
-          <p className="ml-16">{`<img id="success_alert_buttom" style="width: 50px; ">`}</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div`}</p>
-          <p className="ml-16">{`style="font-size: 28px; color:#53BD49 ; text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
-          <p className="ml-16">Successful!</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div id="msgContent4"`}</p>
-          <p className="ml-16">{`style="font-size: 14px; color:#9F9F9F ; text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
+        </div>
+        <p>{`</div>`}</p>
+      </div>
+    </div>
+  )
+}
+
+export function MessageBox3() {
+  return (
+    <div className="ml-4 break-words">
+<div className="ml-2">
+  <p>div id=<span className="text-red-600">"messageBox3"</span>{`>`}</p>
+  <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;"`}</p>
+  <p className="ml-4">{`<div id="messageBoxBg3" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
+  <p className="ml-4">{`</div>`}</p>
+  <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg3"</span></p>
+  <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+  <p className="ml-10">{`<div id="messageBoxBody3"`}</p>
+  <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
+  <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+  <div className="mt-4">
+    <p className="ml-12">&lt;div {`style="width: 100%;display: flex;justify-content: center;flex-direction: column;align-items: center;">`}</p>
+    <p className="ml-16">{`<img id="are_you_sure" style="width: 50px;">`}</p>
+    <p className="ml-16">{`<img id="are_you_sure_buttom" style="width: 50px;">`}</p>
+    <p className="ml-12">{`</div>`}</p>
+  </div>
+  <p className="ml-12 mt-2">&lt;div {`id="messageBoxBodyHead3" style="font-size: 28px;color:#FD9B40;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
+  <p className="ml-16">Are you sure ?</p>
+  <p className="ml-12">{`</div>`}</p>
+  <div className="mt-4">
+    <p className="ml-12">&lt;div id=<span className="text-blue-600">"msgContent3"</span> {`style="font-size: 14px;color:#9F9F9F;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
+    <p className="ml-16">Content</p>
+    <p className="ml-12">{`</div>`}</p>
+  </div>
+  <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+  <div className="mt-4">
+    <p className="ml-12">&lt;div {`style="margin-bottom:10px;width: 100%;display: flex;justify-content: center;align-items: center;flex-direction: row;gap: 10px;">`}</p>
+    <p className="ml-16">&lt;div id=<span className="text-green-600">"msgBtnOK3"</span> {`style="border-radius: 8px;width:30%;height:35px;background-color:#FD9B40;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
+    <p className="ml-16">&lt;span {`style="font-size: 12px;">`}</p>
+    <p className="ml-20">OK</p>
+    <p className="ml-16">{`</span>`}</p>
+    <p className="ml-16">{`</div>`}</p>
+    <p className="ml-16">&lt;div id=<span className="text-green-600">"msgBtnCancel3"</span> {`style="border-radius: 8px;font-size: 12px;width:30%;height:35px;background-color:#C6C6C6;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
+    <p className="ml-16">Cancel</p>
+    <p className="ml-16">{`</div>`}</p>
+    <p className="ml-12">{`</div>`}</p>
+  </div>
+  <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+  <p className="ml-10">{`</div>`}</p>
+  <p className="ml-8">{`</div>`}</p>
+  <p className="ml-4">{`</div>`}</p>
+</div>
+
+    </div>
+  )
+}
+
+export function MessageBox4() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>
+          &lt;div id=<span className="text-red-600">"messageBox4"</span>{" "}
+          {`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}
+        </p>
+        <p className="ml-4">{`<div id="messageBoxBg4" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
+        <p className="ml-4">{`</div>`}</p>
+        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg4"</span></p>
+        <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+        <p className="ml-10">{`<div id="messageBoxBody4"`}</p>
+        <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div{" "}
+            {`style="width: 100%;display: flex;justify-content: center;flex-direction: column;align-items: center;">`}
+          </p>
+          <p className="ml-16">{`<img id="success_alert" style="width: 50px;">`}</p>
+          <p className="ml-16">{`<img id="success_alert_buttom" style="width: 50px;">`}</p>
+          <p className="ml-12">{`</div>`}</p>
+        </div>
+        <p className="ml-12 mt-2">
+          &lt;div{" "}
+          {`style="font-size: 28px;color:#53BD49;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+        </p>
+        <p className="ml-16">Successful!</p>
+        <p className="ml-12">{`</div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div id=<span className="text-blue-600">"msgContent4"</span>{" "}
+            {`style="font-size: 14px;color:#9F9F9F;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+          </p>
           <p className="ml-16">Content</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-12">{`<div`}</p>
-          <p className="ml-16">{`style="margin-bottom:10px; width: 100%; display: flex;justify-content: center;align-items: center; flex-direction: row; gap: 10px;">`}</p>
-          <p className="ml-16">{`<div id="msgBtnOK4"`}</p>
-          <p className="ml-20">{`style="border-radius: 8px; width:35%;height:30px;background-color:#53BD49;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
-          <p className="ml-20">{`<span style="font-size: 12px;">OK</span>`}</p>
+        </div>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div{" "}
+            {`style="margin-bottom:10px;width: 100%;display: flex;justify-content: center;align-items: center;flex-direction: row;gap: 10px;">`}
+          </p>
+          <p className="ml-16">
+            &lt;div id=<span className="text-green-600">"msgBtnOK4"</span>{" "}
+            {`style="border-radius: 8px;width:35%;height:30px;background-color:#53BD49;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}
+          </p>
+          <p className="ml-16">&lt;span {`style="font-size: 12px;">`}</p>
+          <p className="ml-20">OK</p>
+          <p className="ml-16">{`</span>`}</p>
           <p className="ml-16">{`</div>`}</p>
           <p className="ml-12">{`</div>`}</p>
-          <p>{`</div>`}</p>
         </div>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <p className="ml-10">{`</div>`}</p>
+        <p className="ml-8">{`</div>`}</p>
+        <p className="ml-4">{`</div>`}</p>
+      </div>
+    </div>
+  )
+}
 
-        {/* messageBox5 */}
-        <div>
-          <p>{`<div id="messageBox5">`}</p>
-          <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}</p>
-          <p className="ml-4">{`<div id="messageBoxBg5" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
-          <p className="ml-4">{`</div>`}</p>
-          <p className="ml-4 mt-2">{`<div id="messageBoxBodyBg5"`}</p>
-          <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
-          <p className="ml-10">{`<div id="messageBoxBody5"`}</p>
-          <p className="ml-12">{`style="display: flex;flex-direction: column; background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
-          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-12">{`<div>`}</p>
-          <p className="ml-16">{`<img id="error_alert" style="width: 50px; ">`}</p>
-          <p className="ml-16">{`<img id="error_alert_buttom" style="width: 50px; ">`}</p>
+export function MessageBox5() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>
+          &lt;div id=<span className="text-red-600">"messageBox5"</span>{" "}
+          {`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}
+        </p>
+        <p className="ml-4">{`<div id="messageBoxBg5" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
+        <p className="ml-4">{`</div>`}</p>
+        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg5"</span></p>
+        <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+        <p className="ml-10">{`<div id="messageBoxBody5"`}</p>
+        <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div{" "}
+            {`style="width: 100%;display: flex;justify-content: center;flex-direction: column;align-items: center;">`}
+          </p>
+          <p className="ml-16">{`<img id="error_alert" style="width: 50px;">`}</p>
+          <p className="ml-16">{`<img id="error_alert_buttom" style="width: 50px;">`}</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div`}</p>
-          <p className="ml-16">{`style="font-size: 28px; color:#FF5247 ; text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
-          <p className="ml-16">Error!</p>
-          <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div id="msgContent5"`}</p>
-          <p className="ml-16">{`style="font-size: 14px; color:#9F9F9F ; text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
+        </div>
+        <p className="ml-12 mt-2">
+          &lt;div{" "}
+          {`style="font-size: 28px;color:#FF5247;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+        </p>
+        <p className="ml-16">Error!</p>
+        <p className="ml-12">{`</div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div id=<span className="text-blue-600">"msgContent5"</span>{" "}
+            {`style="font-size: 14px;color:#9F9F9F;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+          </p>
           <p className="ml-16">Content</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-12">{`<div`}</p>
-          <p className="ml-16">{`style="margin-bottom:10px; width: 100%; display: flex;justify-content: center;align-items: center; flex-direction: row; gap: 10px;">`}</p>
-          <p className="ml-16">{`<div id="msgBtnOK5"`}</p>
-          <p className="ml-20">{`style="border-radius: 8px; width:50%;height:35px;background-color:#FF5247;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
-          <p className="ml-20">{`<span style="font-size: 12px;">Try again</span>`}</p>
+        </div>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div{" "}
+            {`style="margin-bottom:10px;width: 100%;display: flex;justify-content: center;align-items: center;flex-direction: row;gap: 10px;">`}
+          </p>
+          <p className="ml-16">
+            &lt;div id=<span className="text-green-600">"msgBtnOK5"</span>{" "}
+            {`style="border-radius: 8px;width:50%;height:35px;background-color:#FF5247;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}
+          </p>
+          <p className="ml-16">&lt;span {`style="font-size: 12px;">`}</p>
+          <p className="ml-20">Try again</p>
+          <p className="ml-16">{`</span>`}</p>
           <p className="ml-16">{`</div>`}</p>
           <p className="ml-12">{`</div>`}</p>
-          <p>{`</div>`}</p>
         </div>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <p className="ml-10">{`</div>`}</p>
+        <p className="ml-8">{`</div>`}</p>
+        <p className="ml-4">{`</div>`}</p>
+      </div>
+    </div>
+  )
+}
 
-        {/* messageBox6 */}
-        <div>
-          <p>{`<div id="messageBox6">`}</p>
-          <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}</p>
-          <p className="ml-4">{`<div id="messageBoxBg6" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
-          <p className="ml-4">{`</div>`}</p>
-          <p className="ml-4 mt-2">{`<div id="messageBoxBodyBg6"`}</p>
-          <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
-          <p className="ml-10">{`<div id="messageBoxBody6"`}</p>
-          <p className="ml-12">{`style="display: flex;flex-direction: column; background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
-          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-12">{`<div>`}</p>
-          <p className="ml-16">{`<img id="warning_alert" style="width: 50px; ">`}</p>
-          <p className="ml-16">{`<img id="warning_alert_buttom" style="width: 50px; ">`}</p>
+export function MessageBox6() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>
+          &lt;div id=<span className="text-red-600">"messageBox6"</span>{" "}
+          {`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}
+        </p>
+        <p className="ml-4">{`<div id="messageBoxBg6" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
+        <p className="ml-4">{`</div>`}</p>
+        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg6"</span></p>
+        <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+        <p className="ml-10">{`<div id="messageBoxBody6"`}</p>
+        <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div{" "}
+            {`style="width: 100%;display: flex;justify-content: center;flex-direction: column;align-items: center;">`}
+          </p>
+          <p className="ml-16">{`<img id="warning_alert" style="width: 50px;">`}</p>
+          <p className="ml-16">{`<img id="warning_alert_buttom" style="width: 50px;">`}</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div`}</p>
-          <p className="ml-16">{`style="font-size: 28px; color:#FD9B40 ; text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
-          <p className="ml-16">Warning</p>
-          <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div id="msgContent6"`}</p>
-          <p className="ml-16">{`style="font-size: 14px; color:#9F9F9F ; text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
+        </div>
+        <p className="ml-12 mt-2">
+          &lt;div{" "}
+          {`style="font-size: 28px;color:#FD9B40;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+        </p>
+        <p className="ml-16">Warning</p>
+        <p className="ml-12">{`</div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div id=<span className="text-blue-600">"msgContent6"</span>{" "}
+            {`style="font-size: 14px;color:#9F9F9F;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+          </p>
           <p className="ml-16">Content</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-12">{`<div`}</p>
-          <p className="ml-16">{`style="margin-bottom:10px; width: 100%; display: flex;justify-content: center;align-items: center; flex-direction: row; gap: 10px;">`}</p>
-          <p className="ml-16">{`<div id="msgBtnOK6"`}</p>
-          <p className="ml-20">{`style="border-radius: 8px; width:50%;height:35px;background-color:#FD9B40;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
-          <p className="ml-20">{`<span style="font-size: 12px;">OK</span>`}</p>
+        </div>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div{" "}
+            {`style="margin-bottom:10px;width: 100%;display: flex;justify-content: center;align-items: center;flex-direction: row;gap: 10px;">`}
+          </p>
+          <p className="ml-16">
+            &lt;div id=<span className="text-green-600">"msgBtnOK6"</span>{" "}
+            {`style="border-radius: 8px;width:50%;height:35px;background-color:#FD9B40;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}
+          </p>
+          <p className="ml-16">&lt;span {`style="font-size: 12px;">`}</p>
+          <p className="ml-20">OK</p>
+          <p className="ml-16">{`</span>`}</p>
           <p className="ml-16">{`</div>`}</p>
           <p className="ml-12">{`</div>`}</p>
-          <p>{`</div>`}</p>
         </div>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <p className="ml-10">{`</div>`}</p>
+        <p className="ml-8">{`</div>`}</p>
+        <p className="ml-4">{`</div>`}</p>
+      </div>
+    </div>
+  )
+}
 
-        {/* messageBox7 */}
-        <div>
-          <p>{`<div id="messageBox7">`}</p>
-          <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}</p>
-          <p className="ml-4">{`<div id="messageBoxBg7" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
-          <p className="ml-4">{`</div>`}</p>
-          <p className="ml-4 mt-2">{`<div id="messageBoxBodyBg7"`}</p>
-          <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
-          <p className="ml-10">{`<div id="messageBoxBody7"`}</p>
-          <p className="ml-12">{`style="display: flex;flex-direction: column; background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
-          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-12">{`<div>`}</p>
-          <p className="ml-16">{`<img id="success_alert7" style="width: 50px; ">`}</p>
-          <p className="ml-16">{`<img id="success_alert_buttom7" style="width: 50px; ">`}</p>
+export function MessageBox7() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>
+          &lt;div id=<span className="text-red-600">"messageBox7"</span>{" "}
+          {`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}
+        </p>
+        <p className="ml-4">{`<div id="messageBoxBg7" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
+        <p className="ml-4">{`</div>`}</p>
+        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg7"</span></p>
+        <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+        <p className="ml-10">{`<div id="messageBoxBody7"`}</p>
+        <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div{" "}
+            {`style="width: 100%;display: flex;justify-content: center;flex-direction: column;align-items: center;">`}
+          </p>
+          <p className="ml-16">{`<img id="success_alert7" style="width: 50px;">`}</p>
+          <p className="ml-16">{`<img id="success_alert_buttom7" style="width: 50px;">`}</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div`}</p>
-          <p className="ml-16">{`style="font-size: 28px; color:#53BD49 ; text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
-          <p className="ml-16">Successful!</p>
-          <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div id="msgContent7"`}</p>
-          <p className="ml-16">{`style="font-size: 14px; color:#9F9F9F ; text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
+        </div>
+        <p className="ml-12 mt-2">
+          &lt;div{" "}
+          {`style="font-size: 28px;color:#53BD49;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+        </p>
+        <p className="ml-16">Successful!</p>
+        <p className="ml-12">{`</div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div id=<span className="text-blue-600">"msgContent7"</span>{" "}
+            {`style="font-size: 14px;color:#9F9F9F;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+          </p>
           <p className="ml-16">Content</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-12">{`<div`}</p>
-          <p className="ml-16">{`style="margin-bottom:10px; width: 100%; display: flex;justify-content: center;align-items: center; flex-direction: row; gap: 10px;">`}</p>
-          <p className="ml-16">{`<div id="msgBtnOK7"`}</p>
-          <p className="ml-20">{`style="border-radius: 8px; width:35%;height:30px;background-color:#53BD49;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
-          <p className="ml-20">{`<span style="font-size: 12px;">Submit</span>`}</p>
+        </div>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div{" "}
+            {`style="margin-bottom:10px;width: 100%;display: flex;justify-content: center;align-items: center;flex-direction: row;gap: 10px;">`}
+          </p>
+          <p className="ml-16">
+            &lt;div id=<span className="text-green-600">"msgBtnOK7"</span>{" "}
+            {`style="border-radius: 8px;width:35%;height:30px;background-color:#53BD49;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}
+          </p>
+          <p className="ml-16">&lt;span {`style="font-size: 12px;">`}</p>
+          <p className="ml-20">Submit</p>
+          <p className="ml-16">{`</span>`}</p>
           <p className="ml-16">{`</div>`}</p>
           <p className="ml-12">{`</div>`}</p>
-          <p>{`</div>`}</p>
         </div>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <p className="ml-10">{`</div>`}</p>
+        <p className="ml-8">{`</div>`}</p>
+        <p className="ml-4">{`</div>`}</p>
+      </div>
+    </div>
+  )
+}
 
-        {/* messageBox8 */}
-        <div>
-          <p>{`<div id="messageBox8">`}</p>
-          <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}</p>
-          <p className="ml-4">{`<div id="messageBoxBg8" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
-          <p className="ml-4">{`</div>`}</p>
-          <p className="ml-4 mt-2">{`<div id="messageBoxBodyBg8"`}</p>
-          <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
-          <p className="ml-10">{`<div id="messageBoxBody8"`}</p>
-          <p className="ml-12">{`style="display: flex;flex-direction: column; background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
-          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-12">{`<div>`}</p>
-          <p className="ml-16">{`<img class="are_you_sure" style="width: 50px; ">`}</p>
-          <p className="ml-16">{`<img id="are_you_sure_buttom" style="width: 50px; ">`}</p>
+export function MessageBox8() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>
+          &lt;div id=<span className="text-red-600">"messageBox8"</span>{" "}
+          {`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}
+        </p>
+        <p className="ml-4">{`<div id="messageBoxBg8" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
+        <p className="ml-4">{`</div>`}</p>
+        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg8"</span></p>
+        <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+        <p className="ml-10">{`<div id="messageBoxBody8"`}</p>
+        <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div{" "}
+            {`style="width: 100%;display: flex;justify-content: center;flex-direction: column;align-items: center;">`}
+          </p>
+          <p className="ml-16">{`<img class="are_you_sure" style="width: 50px;">`}</p>
+          <p className="ml-16">{`<img id="are_you_sure_buttom" style="width: 50px;">`}</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div id="messageBoxBodyHead8"`}</p>
-          <p className="ml-16">{`style="font-size: 27px; color:#FD9B40 ; text-align: center;width: 80%;height: 45px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
-          <p className="ml-16">Are you sure ?</p>
-          <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div id="msgContent8"`}</p>
-          <p className="ml-16">{`style="font-size: 14px; color:#9F9F9F ; text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
+        </div>
+        <p className="ml-12 mt-2">
+          &lt;div{" "}
+          {`id="messageBoxBodyHead8" style="font-size: 27px;color:#FD9B40;text-align: center;width: 80%;height: 45px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+        </p>
+        <p className="ml-16">Are you sure ?</p>
+        <p className="ml-12">{`</div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div id=<span className="text-blue-600">"msgContent8"</span>{" "}
+            {`style="font-size: 14px;color:#9F9F9F;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+          </p>
           <p className="ml-16">Content</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-12">{`<div`}</p>
-          <p className="ml-16">{`style="margin-bottom:10px; width: 100%; display: flex;justify-content: center;align-items: center; flex-direction: row; gap: 10px;">`}</p>
-          <p className="ml-16">{`<div id="msgBtnOK8"`}</p>
-          <p className="ml-20">{`style="border-radius: 8px; width:30%;height:35px;background-color:#FD9B40;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
-          <p className="ml-20">{`<span style="font-size: 12px;">Confirm</span>`}</p>
-          <p className="ml-16">{`</div>`}</p>
-          <p className="ml-16">{`<div id="msgBtnCancel8"`}</p>
-          <p className="ml-20">{`style="border-radius: 8px; font-size: 12px; width:30%;height:35px;background-color:#C6C6C6;border-radius: 8px;display: flex;justify-content: center;align-items: center; color: #ffffff;">`}</p>
-          <p className="ml-20">Cancel</p>
-          <p className="ml-16">{`</div>`}</p>
-          <p className="ml-12">{`</div>`}</p>
-          <p>{`</div>`}</p>
         </div>
-
-        {/* messagePage */}
-        <div>
-          <p>{`<div id="messagePage">`}</p>
-          <p className="ml-4">{`style="z-index: 996;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}</p>
-          <p className="ml-4">{`<div id="messagePageBg"`}</p>
-          <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;background-color: #000;opacity: 0.5;">`}</p>
-          <p className="ml-4">{`</div>`}</p>
-          <p className="ml-4 mt-2">{`<div id="messagePageBodyBg"`}</p>
-          <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
-          <p className="ml-10">{`<div id="messagePageBody"`}</p>
-          <p className="ml-12">{`style="background-color: #ffffff;border-radius: 15px; box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
-          <p className="ml-12">{`<div style="height: 30px; display: flex; justify-content: flex-end; width: 98%;">`}</p>
-          <p className="ml-16">{`<div id="msgPageBtnClose"`}</p>
-          <p className="ml-20">{`style="display: flex;justify-content: center;align-items: center;width: 30px;height: 100%;">`}</p>
-          <p className="ml-20">{`<div style="margin-top: 10px; display: flex; width: 98%; justify-content: flex-end;">`}</p>
-          <p className="ml-24">{`<img id="close_messagebox" alt="" style="height: 24px;  top: 5px;">`}</p>
-          <p className="ml-20">{`</div>`}</p>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div{" "}
+            {`style="margin-bottom:10px;width: 100%;display: flex;justify-content: center;align-items: center;flex-direction: row;gap: 10px;">`}
+          </p>
+          <p className="ml-16">
+            &lt;div id=<span className="text-green-600">"msgBtnOK8"</span>{" "}
+            {`style="border-radius: 8px;width:30%;height:35px;background-color:#FD9B40;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}
+          </p>
+          <p className="ml-16">&lt;span {`style="font-size: 12px;">`}</p>
+          <p className="ml-20">Confirm</p>
+          <p className="ml-16">{`</span>`}</p>
+          <p className="ml-16">{`</div>`}</p>
+          <p className="ml-16">
+            &lt;div id=<span className="text-green-600">"msgBtnCancel8"</span>{" "}
+            {`style="border-radius: 8px;font-size: 12px;width:30%;height:35px;background-color:#C6C6C6;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}
+          </p>
+          <p className="ml-16">Cancel</p>
           <p className="ml-16">{`</div>`}</p>
           <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div style="width: 100%; height: 160px; display: flex; justify-content: center; align-items: center;">`}</p>
-          <p className="ml-16">{`<span id="msgPageContent" style="width: 85%; text-align: center;"></span>`}</p>
-          <p className="ml-12">{`</div>`}</p>
-          <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-          <p className="ml-4">{`</div>`}</p>
-          <p>{`</div>`}</p>
         </div>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <p className="ml-10">{`</div>`}</p>
+        <p className="ml-8">{`</div>`}</p>
+        <p className="ml-4">{`</div>`}</p>
+      </div>
+    </div>
+  )
+}
 
-        {/* alert */}
-        <div>
-          <p>{`<div id="alert"
-        style="display: none;z-index: 998;position: absolute;left: 0px;top: 0px;background-color: #000000;opacity: 0.9;justify-content: center;align-items: center;">`}</p>
-          <p className="ml-2">{`<div id="alertMsg"
-            style="display: flex;justify-content: center;align-items: center;background-color: #cccccc;border-radius: 20px;padding: 10px;">`}</p>
-          <p>{`</div>`}</p>
-          <p className="ml-2">{`</div>`}</p>
-        </div>
+export function Index_alert() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>
+        &lt;div id=<span className="text-red-600">"alert"</span>{" "}
+        {`style="display: none;z-index: 998;position: absolute;left: 0px;top: 0px;background-color: #000000;opacity: 0.9;justify-content: center;align-items: center;">`}
+        </p>
+        <p className="ml-4"></p>
+        <p className="ml-4">{`<div id="alertMsg"`}</p>
+        <p className="ml-8">{`style="display: flex;justify-content: center;align-items: center;background-color: #cccccc;border-radius: 20px;padding: 10px;">`}</p>
+        <p className="ml-4">{`</div>`}</p>
+        <p className="ml-2">{`</div>`}</p>
+      </div>
+    </div>
+  )
+}
 
-        {/* loader */}
-        <div>
-          <p>{`<div id="loader"
-        style="display: none;z-index: 999;position: absolute;left: 0px;top: 0px;background-color: #000000;opacity: 0.4;justify-content: center;align-items: center;">`}</p>
-          <p>{`</div>`}</p>
-        </div>
+export function Index_loader() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+        <p>
+        &lt;div id=<span className="text-red-600">"loader"</span>{" "}{`style="display: none;z-index: 999;position: absolute;left: 0px;top: 0px;background-color: #000000;opacity: 0.4;justify-content: center;align-items: center;">`}
+        </p>
+        <p className="ml-2">{`</div>`}</p>
       </div>
     </div>
   )
@@ -14097,45 +14302,70 @@ export function IndexBodyScriptVar() {
           <p>{`var h = $(window).height();`}</p>
           <p>{`var headH = 70;`}</p>
           <p>{`var menuH = 60;`}</p>
-          <p>{`var alertObj = new alert();`}</p>
-          <p>{`alertObj.init();`}</p>
-          <p>{`var loaderObj = new loader();`}</p>
-          <p>{`loaderObj.init();`}</p>
-          <p>{`var msgObj = new messageBox();`}</p>
-          <p>{`msgObj.init();`}</p>
-          <p>{`var msgObj2 = new messageBox2();`}</p>
-          <p>{`msgObj2.init();`}</p>
-          <p>{`var msgObj3 = new messageBox3();`}</p>
-          <p>{`msgObj3.init(); //msgObj3 are you sure`}</p>
-          <p>{`var msgObj4 = new messageBox4();`}</p>
-          <p>{`msgObj4.init(); //msgObj4 success`}</p>
-          <p>{`var msgObj5 = new messageBox5();`}</p>
-          <p>{`msgObj5.init(); //msgObj5 error`}</p>
-          <p>{`var msgObj6 = new messageBox6();`}</p>
-          <p>{`msgObj6.init(); //msgObj6 warning`}</p>
-          <p>{`var msgObjSub = new messageBox7();`}</p>
-          <p>{`msgObjSub.init(); // msgObjSub warning`}</p>
-          <p>{`var msgObjTran = new messageBox8();`}</p>
-          <p>{`msgObjTran.init(); //msgObj3 are you sure transfer`}</p>
-          <p>{`var msgPageObj = new messagePage();`}</p>
-          <p>{`msgPageObj.init();`}</p>
         </div>
+      </div>
+    </div>
+  )
+}
 
-        {/* var if */}
+export function IndexBodyScriptVar2() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2">
+          <p className="mt-2">{`var alertObj = new alert();`}</p>
+          <p>{`alertObj.init();`}</p>
+          <p className="mt-2">{`var loaderObj = new loader();`}</p>
+          <p>{`loaderObj.init();`}</p>
+          <p className="mt-2">{`var msgObj = new messageBox();`}</p>
+          <p>{`msgObj.init();`}</p>
+          <p className="mt-2">{`var msgObj2 = new messageBox2();`}</p>
+          <p>{`msgObj2.init();`}</p>
+          <p className="mt-2">{`var msgObj3 = new messageBox3();`}</p>
+          <p>{`msgObj3.init();`}</p>
+          <p className="mt-2">{`var msgObj4 = new messageBox4();`}</p>
+          <p>{`msgObj4.init()`}</p>
+          <p className="mt-2">{`var msgObj5 = new messageBox5();`}</p>
+          <p>{`msgObj5.init();`}</p>
+          <p className="mt-2">{`var msgObj6 = new messageBox6();`}</p>
+          <p>{`msgObj6.init();`}</p>
+          <p className="mt-2">{`var msgObjSub = new messageBox7();`}</p>
+          <p>{`msgObjSub.init();`}</p>
+          <p className="mt-2">{`var msgObjTran = new messageBox8();`}</p>
+          <p>{`msgObjTran.init();`}</p>
+          <p className="mt-2">{`var msgPageObj = new messagePage();`}</p>
+          <p>{`msgPageObj.init();`}</p>
+      </div>
+    </div>
+  )
+}
+
+export function IndexBodyScriptVar3() {
+  let langs = <span className="text-green-600">lang</span>
+  let themeChanges = <span className="text-blue-600">themeChange</span>
+  let getFonts  = <span className="text-yellow-600">getFont</span>
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2 flex flex-col gap-8">
         <div>
           <div>
-            <p>{`var lang = localStorage.getItem('Language');`}</p>
-            <p>{`if (lang === '' || lang === null) {`}</p>
+            <span className="text-red-600 text-sm">---อ่านค่าภาษาจาก local storage และเก็บไว้ในตัวแปร lang---</span>
+            <p>var {langs} {`= localStorage.getItem('Language');`}</p>
+            <span className="text-red-600 text-sm">---ตรวจสอบว่าค่าภาษามีค่าว่างหรือไม่ได้ถูกกำหนด (null)---</span>
+            <p>if ({langs} === '' || {langs} === null) {`{`}</p>
+            <span className="text-red-600 text-sm">--- กำหนดค่าภาษาใน local storage เป็น "en" (ภาษาอังกฤษ) ในกรณีที่ค่าภาษายังไม่ถูกกำหนด---</span>
             <p>&nbsp;&nbsp;{`localStorage.setItem('Language', 'en');`}</p>
+            <span className="text-red-600 text-sm">---กำหนดค่าภาษาในตัวแปร langCode เป็น "en" (ภาษาอังกฤษ)---</span>
             <p>&nbsp;&nbsp;{`langCode = 'en';`}</p>
             <p>{`}`}</p>
-            <p>{`if (lang !== null) {`}</p>
-            <p>&nbsp;&nbsp;{`langCode = lang;`}</p>
+            <span className="text-red-600 text-sm">---ตรวจสอบว่าค่าภาษาไม่เป็นค่าว่าง (null)---</span>
+            <p>if ({langs}{" "} !== null) {`{`}</p>
+            <span className="text-red-600 text-sm">---กำหนดค่าภาษาในตัวแปร langCode เป็นค่าที่อ่านได้จาก local storage---</span>
+            <p>&nbsp;&nbsp;langCode = {langs};</p>
             <p>{`}`}</p>
           </div>
           <div>
-            <p>{`var themeChange = localStorage.getItem('Theme');`}</p>
-            <p>{`if (themeChange === '' || themeChange === null || themeChange === 'theme-default') {`}</p>
+            <p>var {themeChanges} {`= localStorage.getItem('Theme');`}</p>
+            <p>if ({themeChanges} === '' || {themeChanges} === null || {themeChanges} === 'theme-default') {`{`}</p>
             <p>
               &nbsp;&nbsp;{`localStorage.setItem('Theme', 'theme-default');`}
             </p>
@@ -14146,20 +14376,33 @@ export function IndexBodyScriptVar() {
             <p>{`}`}</p>
           </div>
           <div>
-            <p>{`var getFont = localStorage.getItem('Font-size');`}</p>
-            <p>{`if (getFont === '' || getFont === null) {`}</p>
+            <p>var {getFonts} {`= localStorage.getItem('Font-size');`}</p>
+            <p>if ({getFonts} === '' || {getFonts} === null) {`{`}</p>
             <p>&nbsp;&nbsp;{`localStorage.setItem('Font-size', 'medium');`}</p>
             <p>
               &nbsp;&nbsp;{`$('body').removeClass().addClass("font-medium");`}
             </p>
             <p>{`}`}</p>
           </div>
-          <div>
-            <p>{`var mResObj = new resObj("res.json");`}</p>
-            <p>{`mResObj.setSuccessFun(startApp);`}</p>
-            <p>{`mResObj.setErrorFun(errorApp);`}</p>
-            <p>{`mResObj.init();`}</p>
-            <p>{`mResObj.load();`}</p>
+
+      
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export function IndexBodyScriptVar4() {
+  return (
+    <div className="ml-4 break-words">
+      <div className="ml-2 flex flex-col gap-8">
+      <div>
+          <div className="mt-3">
+            <p>var <span className="text-yellow-600">mResObj</span> = new <span className="text-red-600">resObj</span>("res.json");`</p>
+            <p><span className="text-yellow-600">mResObj</span>.setSuccessFun(startApp);</p>
+            <p><span className="text-yellow-600">mResObj</span>.setErrorFun(errorApp);</p>
+            <p><span className="text-yellow-600">mResObj</span>.init();</p>
+            <p><span className="text-yellow-600">mResObj</span>.load();</p>
           </div>
         </div>
       </div>
@@ -14168,7 +14411,7 @@ export function IndexBodyScriptVar() {
 }
 
 // Index Script startApp
-export function IndexBodyScriptStartApp() {
+export function IndexScriptStartApp() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2">
@@ -14249,99 +14492,6 @@ export function IndexBodyScriptStartApp() {
   )
 }
 
-// Index Script errorApp
-export function IndexBodyScriptErrorApp() {
-  return (
-    <div className="ml-4 break-words">
-      <div className="ml-2">
-        <span className="text-red-600">{`function errorApp() {`}</span>
-        console.log("load error");
-        <span className="text-red-600">{`}`}</span>
-      </div>
-    </div>
-  )
-}
-
-// Index Script onBackPressed
-export function IndexBodyScriptOnBackPressed() {
-  return (
-    <div className="ml-4 break-words">
-      <div className="ml-2">
-        <span className="text-red-600">{`function onBackPressed() {`}</span>
-        <p>{`console.log('========>');`}</p>
-        <span className="text-red-600">{`}`}</span>
-      </div>
-    </div>
-  )
-}
-
-// Index Script setKeyboardHeight
-export function IndexBodyScriptSetKeyboardHeight() {
-  return (
-    <div className="ml-4 break-words">
-      <div className="ml-2">
-        <span className="text-red-600">{`function setKeyboardHeight(mH) {`}</span>
-        <p>{`chatRoomObj.setKeyboardHeight(mH);`}</p>
-        <span className="text-red-600">{`}`}</span>
-      </div>
-    </div>
-  )
-}
-
-// Index Script setDeviceId
-export function IndexBodyScriptSetDeviceId() {
-  return (
-    <div className="ml-4 break-words">
-      <div className="ml-2">
-        <span className="text-red-600">{`function setDeviceId(mDeviceId, mPlatform) {`}</span>
-        <p>{`deviceId = mDeviceId;`}</p>
-        <p>{`platform = mPlatform;`}</p>
-        <span className="text-red-600">{`}`}</span>
-      </div>
-    </div>
-  )
-}
-
-// Index Script appComeback
-export function IndexBodyScriptAppComeback() {
-  return (
-    <div className="ml-4 break-words">
-      <div className="ml-2">
-        <span className="text-red-600">{`function appComeback() {`}</span>
-        <p>{`var t = new Date();`}</p>
-        <p>{`console.log("i'm back !" + t.getTime());`}</p>
-        <span className="text-red-600">{`}`}</span>
-      </div>
-    </div>
-  )
-}
-
-// Index Script openAgreement
-export function IndexBodyScripOpenAgreement() {
-  return (
-    <div className="ml-4 break-words">
-      <div className="ml-2">
-        <span className="text-red-600">{`function openAgreement() {`}</span>
-        <p>{`pageShow('agreementPage');`}</p>
-        <span className="text-red-600">{`}`}</span>
-      </div>
-    </div>
-  )
-}
-
-// Index Script openPrivacy
-export function IndexBodyScripOpenPrivacy() {
-  return (
-    <div className="ml-4 break-words">
-      <div className="ml-2">
-        <span className="text-red-600">{`function openPrivacy() {`}</span>
-        <p>{`pageShow('privacyPage');`}</p>
-        <span className="text-red-600">{`}`}</span>
-      </div>
-    </div>
-  )
-}
-
 // Index Script firstStartFun
 export function IndexBodyScripFirstStartFun() {
   return (
@@ -14361,69 +14511,6 @@ export function IndexBodyScripFirstStartFun() {
   )
 }
 
-// Index Script firstCheckToken
-export function IndexBodyScripFirstCheckToken() {
-  return (
-    <div className="ml-4 break-words">
-      <div className="ml-2">
-        <span className="text-red-600">{`function firstStartFun() {`}</span>
-        <div className="ml-2">
-          {`if (token == null) {`}
-          <div className="ml-2">
-            {`pageShow("loginPage");`}
-            {`return;`}
-          </div>
-          {`}`}
-          <div className="ml-2">
-            {`var mData = { "token": token.refresh };`}
-          </div>
-          <div className="ml-2">
-            {`$.ajax({`}
-            <div className="ml-2">
-              {`type: "post",`}
-              {`url: API_SERVER + "/v1/auth/refresh",`}
-              {`data: JSON.stringify(mData),`}
-              {`contentType: "application/json",`}
-              {`dataType: "json",`}
-              {`async: true,`}
-              {`timeout: 100000,`}
-              {`beforeSend: function (xmlhttprequest) {`}
-              <div className="ml-2">{`// ทำงานก่อนการส่งคำขอ`}</div>
-              {`},`}
-              {`success: function (data) {`}
-              <div className="ml-2">
-                {`if (data.code == 0) {`}
-                <div className="ml-2">
-                  {`var tokenObj = data.result;`}
-                  {`localStorage.setItem('token', JSON.stringify(tokenObj));`}
-                  {`getLocalToken();`}
-                </div>
-                {`} else {`}
-                <div className="ml-2">
-                  {`if (data.code == 4002) {`}
-                  <div className="ml-2">{`pageShow("loginPage");`}</div>
-                  {`}`}
-                </div>
-                {`}`}
-                {`mainObj.menuhome();`}
-              </div>
-              {`},`}
-              {`error: function (xmlhttprequest, error) {`}
-              <div className="ml-2">{`console.log(error);`}</div>
-              {`},`}
-              {`complete: function () {`}
-              <div className="ml-2">{`// ทำงานหลังจากส่งคำขอเสร็จสิ้น`}</div>
-              {`},`}
-            </div>
-            {`});`}
-          </div>
-        </div>
-
-        <span className="text-red-600">{`}`}</span>
-      </div>
-    </div>
-  )
-}
 
 // Main Html body
 export function MainHtmlBody() {
@@ -18826,7 +18913,8 @@ export function Bodyregister() {
               <p>
                 &lt;div id=
                 <span className="text-red-600">"registerBtn_user"</span>
-                class=<span className="text-blue-600">"btnComm"</span> {`style="font-size: 16px; font-weight: 700;color: #fff;letter-spacing: 2px;">Create Account</div>`}
+                class=<span className="text-blue-600">"btnComm"</span>{" "}
+                {`style="font-size: 16px; font-weight: 700;color: #fff;letter-spacing: 2px;">Create Account</div>`}
               </p>
             </div>
 

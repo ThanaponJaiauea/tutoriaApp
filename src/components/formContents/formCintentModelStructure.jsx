@@ -3,21 +3,9 @@
 import {useState} from "react"
 import ModelContent from "../modelContent"
 
-const FormCintentModelStructure = ({selectedMenu, setSelectedMenu}) => {
+const FormCintentModelStructure = ({selectedMenu, setSelectedMenu,prevMenuBeforeUpdate}) => {
   const [openMainBody, setOpenMainBody] = useState(false)
-
   const [openMainScript, setOpenMainScript] = useState(false)
-
-  const [openIndexHead, setOpenIndexHead] = useState(true)
-
-  const [openIndexStyle, setOpenIndexStyle] = useState(false)
-
-  const [openIndexBody, setOpenIndexBody] = useState(false)
-
-  const [openIndexScript, setOpenIndexScript] = useState(false)
-  const [openWhatisRegisterBody, setOpenWhatisRegisterBody] = useState(false)
-  const [openWhatisRegisterScrit, setOpenWhatisRegisterScrit] = useState(false)
-  // console.log("openWhatisRegisterScrit", openWhatisRegisterScrit)
 
   const getTitle = () => {
     switch (selectedMenu) {
@@ -305,29 +293,6 @@ const FormCintentModelStructure = ({selectedMenu, setSelectedMenu}) => {
       />
     ),
 
-    indexHtml: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        indexStructureContext="-Index.html จะเป็นหน้าที่สำหรับการแสดงผลของหน้าเว็บไซต์ app สามารถไปดูอธิบายเพิ่มตามหัวข้อได้ที่ Dropdown"
-        setOpenIndexHead={() => setOpenIndexHead(!openIndexHead)}
-        setOpenIndexStyle={() => setOpenIndexStyle(!openIndexStyle)}
-        setOpenIndexBody={() => setOpenIndexBody(!openIndexBody)}
-        setOpenIndexScript={() => setOpenIndexScript(!openIndexScript)}
-        openIndexHead={openIndexHead}
-        openIndexStyle={openIndexStyle}
-        openIndexBody={openIndexBody}
-        openIndexScript={openIndexScript}
-        widget="none"
-        indexHead={true}
-        indexStyle={true}
-        indexBody={true}
-        indexScript={true}
-        listIndex={true}
-      />
-    ),
-
     IndexHowToUse: () => (
       <ModelContent
         headers="Model Structure"
@@ -347,8 +312,6 @@ const FormCintentModelStructure = ({selectedMenu, setSelectedMenu}) => {
         selectedMenu={selectedMenu}
         widget="none"
         indexHead={true}
-        setOpenIndexHead={() => setOpenIndexHead(!openIndexHead)}
-        openIndexHead={openIndexHead}
         content={`<head> เป็นส่วนหัวของเอกสาร HTML ซึ่งมีการกำหนดคุณสมบัติต่าง ๆ ของหน้าเว็บไซต์ จะมีการกำหนดดังนี้`}
         content1={`1.กำหนดการเข้ารหัสของหน้าเว็บไซต์ให้เป็น utf-8`}
         content2={`2.กำหนด viewport เพื่อให้หน้าเว็บไซต์สามารถปรับขนาดและซูมได้บนอุปกรณ์ต่าง ๆ`}
@@ -367,18 +330,18 @@ const FormCintentModelStructure = ({selectedMenu, setSelectedMenu}) => {
         headerHtml="Index Script"
         selectedMenu={selectedMenu}
         indexBody={true}
-        setOpenIndexBody={() => setOpenIndexBody(!openIndexBody)}
-        openIndexStyle={openIndexStyle}
-        scriptListExplainsHeader={getTitle()}
         widget="none"
-        scriptListExplains={true}
-        openIndexBody={openIndexBody}
-        content="เป็นส่วนหนึ่งของ HTML ซึ่งใช้ในการสร้างองค์ประกอบต่าง ๆ ที่จะแสดงในหน้าเว็บไซต์หรือแอพพลิเคชัน เช่น กล่องข้อความแจ้งเตือนหรือโมดัลเพื่อกระทำบางอย่าง เพื่อสื่อสารข้อมูลหรือสถานะต่าง ๆ กับผู้ใช้"
-        content1={`1.<div id="root" class="font-medium"></div>: ตัวแปร root ซึ่งอาจใช้เป็นจุดเริ่มต้นของแอพพลิเคชันหรือหน้าเว็บไซต์ มีคลาส font-medium ที่อาจจะใช้สำหรับการกำหนดรูปแบบตัวอักษร`}
-        content2={`2.<div id="messageBox" ...>: กล่องข้อความแจ้งเตือนหลายแบบ ที่มีหลายรูปแบบและปรับแต่งตามรายละเอียดต่าง ๆ ของแต่ละรายการ เช่น พื้นหลัง ขนาด ข้อความ เป็นต้น`}
-        content3={`3.<div id="messagePage" ...>: หน้าเว็บข้อความแจ้งเตือนที่แสดงโดยการเปิดหน้าใหม่ที่มีพื้นหลังสีขาว มีรูปแบบและขนาดข้อความที่แตกต่างจากกล่องข้อความแจ้งเตือน`}
-        content4={`4.<div id="alert" ...>: กล่องข้อความแจ้งเตือนที่แสดงที่ขอบหน้าจอ พื้นหลังสีดำทึบ ที่ใช้สำหรับการแจ้งเตือนเหตุการณ์หรือข้อความที่สำคัญโดยไม่ขัดจังหวะการทำงานของผู้ใช้`}
-        content5={`5.<div id="loader" ...>: กล่องสำหรับแสดงสถานะการโหลดข้อมูลหรือการประมวลผล ที่มักจะแสดงเป็นไอคอนหมุนเวลาที่ระบบกำลังประมวลผลข้อมูล`}
+        content="ในหน้าของ Index.html ส่วนของ <body> จะเป็นการสร้าง ui popUp ต่างๆ เช่น messageBox,messageBox2,messageBox3,messageBox4,messageBox5,messageBox6,messageBox7,messageBox8,alert,loader"
+      />
+    ),
+
+    scriptIndex: () => (
+      <ModelContent
+        headers="Model Structure"
+        headerHtml="Index Script"
+        selectedMenu={selectedMenu}
+        widget="none"
+        indexScript={true}
       />
     ),
 
@@ -388,11 +351,7 @@ const FormCintentModelStructure = ({selectedMenu, setSelectedMenu}) => {
         headerHtml="Index Script"
         selectedMenu={selectedMenu}
         indexStyle={true}
-        setOpenIndexStyle={() => setOpenIndexStyle(!openIndexStyle)}
-        openIndexStyle={openIndexStyle}
-        scriptListExplainsHeader={getTitle()}
         widget="none"
-        openIndexHead={openIndexHead}
         content="CSS (Cascading Style Sheets) ซึ่งใช้สำหรับการส่งคำสั่งการแสดงผลให้กับเว็บไซต์หรือเอกสาร HTML เพื่อปรับแต่งรูปแบบการแสดงผลของเนื้อหาบนหน้าเว็บหรือเอกสารนั้นๆ
         ในโค้ดนี้มีการกำหนดคลาสหลายคลาสเพื่อใช้ในการจัดการแสดงผลขององค์ประกอบต่างๆ โดยคลาสที่ถูกกำหนดมีลักษณะการจัดการแสดงผลดังนี้"
         content1="1.flexCenter: จัดการแสดงผลโดยให้องค์ประกอบอยู่ตรงกลางทั้งแนวนอนและแนวตั้ง"
@@ -402,168 +361,6 @@ const FormCintentModelStructure = ({selectedMenu, setSelectedMenu}) => {
         content5="5.flexBottom: จัดการแสดงผลโดยให้องค์ประกอบอยู่ทางด้านล่าง"
         content6="6.flexSpac: จัดการแสดงผลโดยให้องค์ประกอบแบ่งระยะห่างระหว่างกันอย่างเท่าๆ กันทั้งแนวนอนและแนวตั้ง"
         content8="นอกจากนี้ยังมีคลาสที่ลงท้ายด้วย _c ซึ่งหมายถึงการจัดการแสดงผลโดยเปลี่ยนแปลงทิศทางของการแสดงผลเป็นแนวตั้ง (column) โดยเพิ่มคำสั่ง flex-direction: column; เข้าไป เพื่อให้องค์ประกอบแสดงผลเรียงลำดับตามแนวตั้งแทนที่จะเรียงตามแนวนอน"
-      />
-    ),
-
-    var: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        widget="none"
-        scriptTitle={getTitle()}
-        styleVarIndex={true}
-        content="เป็นส่วนหนึ่งของโปรแกรม JavaScript ที่เรียกใช้ในส่วนของเว็บแอปพลิเคชัน โดยมีหน้าที่ต่าง ๆ อาทิเช่นการกำหนดค่าตัวแปร, เรียกใช้งานคลาส, การจัดการกับ local storage, และการโหลดข้อมูลและการจัดการกับการโหลดข้อมูลด้วย Ajax request ดังนี้"
-        content1="1.กำหนดค่าตัวแปร"
-        content1p1="1.1.API_SERVER: กำหนด URL ของเซิร์ฟเวอร์ API"
-        content1p2="1.2.WS_SERVER: กำหนด URL ของเซิร์ฟเวอร์ WebSocket"
-        content1p3="1.3.token, deviceId, platform: ตัวแปรสำหรับเก็บข้อมูล token, deviceId, และ platform ตามลำดับ โดยให้ค่าเริ่มต้นเป็น null"
-        content1p4="1.4.refreshTokenTimer, heartBeatTimer, heartBeatTimeStamp: ตัวแปรสำหรับจัดการเวลาหรือการตรวจสอบการเชื่อมต่อ และจัดการการส่ง heartbeat ไปยังเซิร์ฟเวอร์ โดยให้ค่าเริ่มต้นเป็น null"
-        content1p5="1.5.langCode: ตัวแปรสำหรับเก็บรหัสภาษา โดยให้ค่าเริ่มต้นเป็น undefined"
-        content1p6="1.6.TIMEOUT: ตัวแปรสำหรับกำหนดเวลา timeout ในการส่ง request โดยให้ค่าเริ่มต้นเป็น 10000 (มิลลิวินาที)"
-        content1p7="1.7.PAGETIMEOUT: ตัวแปรสำหรับกำหนดเวลาที่ใช้ในการเปลี่ยนหน้า โดยให้ค่าเริ่มต้นเป็น 300 (มิลลิวินาที)"
-        content1p8="1.8.w, h: ตัวแปรสำหรับเก็บความกว้างและความสูงของหน้าต่างเบราว์เซอร์"
-        content2="2.เรียกใช้งานคลาส"
-        content2p1={`2.1.alertObj, loaderObj, msgObj, msgObj2, msgObj3, msgObj4, msgObj5, msgObj6, msgObjSub, msgObjTran, msgPageObj: สร้างอ็อบเจกต์ของคลาส alert, loader, messageBox, messageBox2, messageBox3, messageBox4, messageBox5, messageBox6, messageBox7, messageBox8, และ messagePage ตามลำดับ และเรียกเมทอด init() เพื่อเริ่มต้นใช้งาน`}
-        content3="3.การตรวจสอบและการกำหนดค่า local storage"
-        content3p1="3.1.ตรวจสอบค่าภาษาและกำหนดให้ในกรณีที่ไม่มีค่าภาษาถูกเก็บไว้หรือเป็นค่าว่าง โดยกำหนดภาษาใหม่เป็น 'en'"
-        content3p2="3.2.ตรวจสอบค่าธีมและกำหนดให้ในกรณีที่ไม่มีค่าธีมถูกเก็บไว้หรือเป็นค่าว่าง หรือเป็นธีมเริ่มต้น โดยกำหนดธีมใหม่เป็น 'theme-default' และปรับคลาสของ #root"
-        content3p3="3.3.ตรวจสอบค่าขนาดฟอนต์และกำหนดให้ในกรณีที่ไม่มีค่าขนาดฟอนต์ถูกเก็บไว้หรือเป็นค่าว่าง หรือเป็นขนาดฟอนต์เริ่มต้น โดยกำหนดขนาดฟอนต์ใหม่เป็น 'medium' และปรับคลาสของ body"
-        content4="4.การโหลดข้อมูลและการจัดการกับการโหลดข้อมูลด้วย Ajax request"
-        content4p1={`4.1.สร้างอ็อบเจกต์ของคลาส resObj และกำหนดชื่อไฟล์ที่ใช้ในการโหลดข้อมูลไว้ที่ "res.json"`}
-        content4p2={`4.2.กำหนดเมทอดที่จะเรียกเมื่อโหลดข้อมูลสำเร็จเป็น startApp() และเมื่อเกิดข้อผิดพลาดในการโหลดข้อมูลเป็น errorApp() และเริ่มเรียกใช้งานอ็อบเจกต์ resObj และโหลดข้อมูลด้วยเมทอด load()`}
-        content5="โดยทั้งหมดนี้เป็นการเริ่มต้นที่เรียกใช้ในแอปพลิเคชัน และอาจมีการเพิ่มหรือเปลี่ยนแปลงต่อมาตามความต้องการของโปรแกรมได้ตามปกติ"
-      />
-    ),
-
-    startApp: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        widget="none"
-        scriptTitle={getTitle()}
-        styleStartAppIndex={true}
-        content={`ฟังก์ชัน startApp() นี้มีหน้าที่เริ่มต้นแอปพลิเคชันโดยการแสดงหน้า HTML ต่าง ๆ ที่ได้รับการกำหนดไว้ในออบเจกต์ mResObj บน element ที่มี id เป็น "root" โดยการเรียกใช้งานเมทอด showHtml() ของ mResObj ตามลำดับที่กำหนดไว้ในโค้ด`}
-      />
-    ),
-
-    errorApp: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        widget="none"
-        scriptTitle={getTitle()}
-        styleErrorAppIndex={true}
-        content={`ฟังก์ชัน errorApp() นี้เป็นฟังก์ชันที่เรียกใช้เมื่อมีข้อผิดพลาดเกิดขึ้นในการโหลดแอปพลิเคชัน โดยมีการแสดงข้อความ "load error" ในคอนโซลของเบราว์เซอร์ด้วยคำสั่ง console.log() ซึ่งมีไวยากรณ์ง่ายและชัดเจนแสดงถึงการแจ้งเตือนข้อผิดพลาดที่เกิดขึ้นในโปรแกรม JavaScript ที่กำลังทำงานในเบราว์เซอร์ โดยไม่มีการเข้าถึง UI หรือการแสดงผลใด ๆ ในส่วนของเว็บแอปพลิเคชัน เพราะฟังก์ชันนี้เป็นเพียงการแสดงข้อความในคอนโซลเท่านั้น`}
-      />
-    ),
-
-    onBackPressed: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        widget="none"
-        scriptTitle={getTitle()}
-        styleOnBackPressedIndex={true}
-        content={`ฟังก์ชัน onBackPressed() นั้นเป็นฟังก์ชันที่ถูกเรียกเมื่อผู้ใช้กดปุ่ม "Back" บนอุปกรณ์ของพวกเขา เช่น ปุ่ม "Back" บนอุปกรณ์มือถือหรือบนเครื่องคอมพิวเตอร์ เมื่อมีการเรียกใช้ฟังก์ชันนี้ มันจะแสดงข้อความ '========>' ในคอนโซลเพื่อแสดงว่าฟังก์ชันถูกเรียกใช้งานสำเร็จแล้ว เพื่อให้ผู้พัฒนาได้ทราบว่าการกดปุ่ม "Back" ได้ถูกตรวจจับได้และฟังก์ชันถูกเรียกใช้งานตามที่คาดหวัง ซึ่งฟังก์ชันนี้ไม่มีผลกระทบต่อส่วนต่อประสบการณ์ของผู้ใช้ในเว็บแอปพลิเคชันเนื่องจากมันไม่มีการแสดงผลใด ๆ ที่สามารถมองเห็นได้ในส่วนของผู้ใช้`}
-      />
-    ),
-
-    setKeyboardHeight: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        widget="none"
-        scriptTitle={getTitle()}
-        styleSetKeyboardHeightIndex={true}
-        content="ฟังก์ชัน setKeyboardHeight(mH) นั้นใช้เพื่อตั้งค่าความสูงของแป้นพิมพ์และส่งค่าความสูงนั้นไปยังอ็อบเจกต์ chatRoomObj เพื่อให้สามารถปรับแต่งการแสดงผลหรือพฤติกรรมของอินเทอร์เฟซของห้องแชทได้ตามที่ต้องการ เช่น การเลื่อนเนื้อหาขึ้นหรือลงเพื่อให้ทำงานได้ดีกับแป้นพิมพ์ที่ปรับขึ้นมา การเรียกใช้ฟังก์ชันนี้ด้วยการส่งค่าความสูงของแป้นพิมพ์ mH ที่ต้องการตั้งค่าให้กับ chatRoomObj ในที่นี้อาจจะใช้เพื่อปรับตั้งค่าการแสดงผลหรือการปรับเปลี่ยนขนาดขององค์ประกอบอื่น ๆ ในห้องแชทให้เหมาะสมกับความสูงของแป้นพิมพ์ที่เปลี่ยนแปลงล่าสุด"
-      />
-    ),
-
-    setDeviceId: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        widget="none"
-        scriptTitle={getTitle()}
-        styleSetDeviceIdIndex={true}
-        content={`ฟังก์ชัน setDeviceId(mDeviceId, mPlatform) ใช้ในการกำหนดค่า deviceId และ platform ซึ่งเป็นตัวแปรที่ใช้เก็บข้อมูลเกี่ยวกับอุปกรณ์ที่ใช้งาน โดยฟังก์ชันนี้รับค่า mDeviceId และ mPlatform เพื่อกำหนดค่าให้กับตัวแปร deviceId และ platform ตามลำดับที่รับมา เมื่อค่าถูกกำหนดให้แล้ว ฟังก์ชันนี้จะทำหน้าที่เก็บข้อมูลเหล่านี้เพื่อนำไปใช้งานในการสื่อสารหรือประมวลผลข้อมูลต่อไปในแอปพลิเคชัน`}
-      />
-    ),
-
-    appComeback: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        widget="none"
-        scriptTitle={getTitle()}
-        styleAppComebackIndex={true}
-        content={`appComeback() เป็นฟังก์ชันที่ถูกเรียกเมื่อแอปพลิเคชันกลับมาทำงานหลังจากที่ออกจากพื้นหลังไปชั่วคราว เช่น เมื่อผู้ใช้กดปุ่ม Home แล้วกลับมาที่แอป หรือเมื่อหน้าต่างแอปถูกเปิดขึ้นมาอีกครั้งหลังจากถูกซ่อนไว้ ในฟังก์ชันนี้มีการทำงานดังนี้`}
-        content1="1.สร้างตัวแปร t เพื่อเก็บข้อมูลวันที่และเวลาปัจจุบันโดยใช้ new Date() เพื่อสร้างอ็อบเจ็กต์ Date ใหม่"
-        content2={`2.แสดงข้อความ "i'm back !" พร้อมกับเวลาปัจจุบันที่ได้รับจาก t.getTime() ผ่านฟังก์ชัน console.log()`}
-        content3={`3.ฟังก์ชัน checkLoginStatusWithRefreshToken() ถูกคอมเมนต์ออกไว้ อาจเป็นการเตรียมใช้งานสำหรับตรวจสอบสถานะการเข้าสู่ระบบของผู้ใช้ด้วย Refresh Token หลังจากที่แอปพลิเคชันกลับมาทำงานใหม่`}
-      />
-    ),
-
-    openAgreement: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        widget="none"
-        scriptTitle={getTitle()}
-        styleOpenAgreementIndex={true}
-        content="-openAgreement() เป็นฟังก์ชันที่ใช้ในการเปิดหน้า โดยใช้ฟังก์ชัน pageShow โดยส่ง id agreementPage"
-      />
-    ),
-
-    openPrivacy: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        scriptTitle={getTitle()}
-        widget="none"
-        styleOpenPrivacytIndex={true}
-        content="-openPrivacy() เป็นฟังก์ชันที่ใช้ในการเปิดหน้า โดยใช้ฟังก์ชัน pageShow โดยส่ง id privacyPage"
-      />
-    ),
-
-    firstStartFun: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        scriptTitle={getTitle()}
-        widget="none"
-        styleFirstStartFunIndex={true}
-        content="-firstStartFun() เป็นฟังก์ชันที่ถูกเรียกเมื่อแอปพลิเคชันเริ่มทำงานครั้งแรก ฟังก์ชันนี้มีการทำงานดังนี้"
-        content1="1.ตรวจสอบว่าแอปพลิเคชันทำงานบนแพลตฟอร์ม Android หรือไม่ โดยใช้ฟังก์ชัน checkIsAndroid() ถ้าไม่ใช่ จะสิ้นสุดการทำงานของฟังก์ชันนี้ทันทีและไม่ดำเนินการต่อ"
-        content2="2.ตรวจสอบว่าผู้ใช้เคยเปิดใช้งานแอปพลิเคชันครั้งแรกหรือยัง โดยตรวจสอบค่าใน Local Storage ที่ชื่อ isFirst"
-        content3="3.ถ้าผู้ใช้ยังไม่เคยเปิดใช้งานแอปพลิเคชันครั้งแรก (ค่าใน Local Storage เป็น null หรือ undefined) ฟังก์ชันจะเรียกใช้ pageShow('firstStartPage') เพื่อแสดงหน้า firstStartPage ซึ่งอาจเป็นหน้าที่ให้ข้อมูลหรือแนะนำการใช้งานแอปพลิเคชันในครั้งแรก"
-      />
-    ),
-
-    firstCheckToken: () => (
-      <ModelContent
-        headers="Model Structure"
-        headerHtml="Index Script"
-        selectedMenu={selectedMenu}
-        widget="none"
-        styleFirstCheckTokenIndex={true}
-        scriptTitle={getTitle()}
-        content="-firstCheckToken() เป็นฟังก์ชันที่ใช้ในการตรวจสอบ token ของผู้ใช้ครั้งแรกเมื่อเข้าสู่ระบบ โดยมีขั้นตอนการทำงานดังนี้"
-        content1={`1.ตรวจสอบว่า token ของผู้ใช้มีค่าเป็น null หรือไม่ ถ้าเป็น null ฟังก์ชันจะเรียกใช้ pageShow("loginPage") เพื่อแสดงหน้า login และจะสิ้นสุดการทำงานของฟังก์ชันนี้`}
-        content2="2.สร้างข้อมูลที่จะส่งไปยังเซิร์ฟเวอร์เพื่อขอ token ใหม่ โดยมีรูปแบบเป็น JSON และประกอบด้วย token refresh"
-        content3="3.ทำการส่งข้อมูลไปยังเซิร์ฟเวอร์ผ่าน Ajax request"
-        content4={`4.ในส่วนของ success callback จะตรวจสอบ response ที่ได้รับ ถ้ามีการตอบกลับด้วย code 0 จะทำการอัปเดต token ใน local storage และเรียกใช้ getLocalToken() เพื่ออ่าน token ใหม่ แต่ถ้า code ไม่เท่ากับ 0 แล้วมี code เป็น 4002 จะเรียกใช้ pageShow("loginPage") เพื่อให้ผู้ใช้ทำการ login ใหม่`}
-        content5="5.ในกรณีที่เกิด error จะแสดงข้อผิดพลาดทางคอนโซลด้วย console.log(error) และจะไม่มีการดำเนินการต่อในฟังก์ชันนี้หลังจากนั้น"
       />
     ),
 
@@ -659,7 +456,7 @@ const FormCintentModelStructure = ({selectedMenu, setSelectedMenu}) => {
 
     fetchSliderData: () => (
       <ModelContent
-      headers="Slider"
+        headers="Slider"
         headerName={getTitle()}
         functionName={getTitle()}
         content="-ฟังก์ชัน fetchSliderData ใช้ในการดึงข้อมูลที่เกี่ยวข้องกับสไลด์เดอร์"
@@ -681,7 +478,7 @@ const FormCintentModelStructure = ({selectedMenu, setSelectedMenu}) => {
 
     slider_cap: () => (
       <ModelContent
-      headers="Slider"
+        headers="Slider"
         headerName={getTitle()}
         functionName={getTitle()}
         content="-ฟังก์ชั่น slider_cap() นี้เป็นส่วนหนึ่งของการจัดการการเลื่อนและการยืนยันตัวตนด้วยการลากภาพ (slider) ในหน้าล็อกอินของแอปพลิเคชัน"
@@ -775,14 +572,6 @@ const FormCintentModelStructure = ({selectedMenu, setSelectedMenu}) => {
         widget="none"
         whatisRegisterBody={true}
         whatisRegisterScript={true}
-        setOpenWhatisRegisterBody={() =>
-          setOpenWhatisRegisterBody(!openWhatisRegisterBody)
-        }
-        setOpenWhatisRegisterScrit={() =>
-          setOpenWhatisRegisterScrit(!openWhatisRegisterScrit)
-        }
-        openWhatisRegisterScrit={openWhatisRegisterScrit}
-        openWhatisRegisterBody={openWhatisRegisterBody}
         whatisRegisterBodyCheck={true}
         whatisRegisterScriptCheck={true}
         exampleScript={true}
@@ -874,7 +663,8 @@ const FormCintentModelStructure = ({selectedMenu, setSelectedMenu}) => {
         widget="none"
         setSelectedMenu={setSelectedMenu}
         swiperContent={true}
-    
+        prevMenuBeforeUpdate={prevMenuBeforeUpdate}
+        icon={true}
       />
     ),
 

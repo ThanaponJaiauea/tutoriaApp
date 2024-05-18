@@ -20,12 +20,6 @@ const indexData = [
     label: "index",
     children: [
       {
-        name: "index.html",
-        type: "generalModel",
-        key: "indexHtml",
-        category: "indexHtml",
-      },
-      {
         name: "head",
         type: "generalModel",
         key: "headIndex",
@@ -48,74 +42,6 @@ const indexData = [
         type: "generalModel",
         key: "scriptIndex",
         category: "indexHtml",
-        children: [
-          {
-            name: "var",
-            type: "generalModel",
-            key: "var",
-            category: "script_dropdown_list",
-          },
-          {
-            name: "startApp",
-            type: "generalModel",
-            key: "startApp",
-            category: "script_dropdown_list",
-          },
-          {
-            name: "errorApp",
-            type: "generalModel",
-            key: "errorApp",
-            category: "script_dropdown_list",
-          },
-          {
-            name: "onBackPressed",
-            type: "generalModel",
-            key: "onBackPressed",
-            category: "script_dropdown_list",
-          },
-          {
-            name: "setKeyboardHeight",
-            type: "generalModel",
-            key: "setKeyboardHeight",
-            category: "script_dropdown_list",
-          },
-          {
-            name: "setDeviceId",
-            type: "generalModel",
-            key: "setDeviceId",
-            category: "script_dropdown_list",
-          },
-          {
-            name: "appComeback",
-            type: "generalModel",
-            key: "appComeback",
-            category: "script_dropdown_list",
-          },
-          {
-            name: "openAgreement",
-            type: "generalModel",
-            key: "openAgreement",
-            category: "script_dropdown_list",
-          },
-          {
-            name: "openPrivacy",
-            type: "generalModel",
-            key: "openPrivacy",
-            category: "script_dropdown_list",
-          },
-          {
-            name: "firstStartFun",
-            type: "generalModel",
-            key: "firstStartFun",
-            category: "script_dropdown_list",
-          },
-          {
-            name: "firstCheckToken",
-            type: "generalModel",
-            key: "firstCheckToken",
-            category: "script_dropdown_list",
-          },
-        ],
       },
       {
         name: "How To Use?",
@@ -222,6 +148,12 @@ const mainData = [
     key: "main",
     label: "Main.html",
     children: [
+      {
+        name: "main",
+        type: "generalModel",
+        key: "mainFull",
+        category: "mainHtml",
+      },
       {
         name: "main.html",
         type: "generalModel",

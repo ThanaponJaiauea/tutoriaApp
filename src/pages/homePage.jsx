@@ -16,10 +16,14 @@ export default function HomePage() {
     setOpenDrawer,
     selectedMenu,
     setSelectedMenu,
+    prevMenuBeforeUpdate
   } = useSelectedNavbar()
 
   // console.log("selectedNavbar", selectedNavbar)
+  console.log("----------------------------------------");
   console.log("selectedMenu", selectedMenu)
+  console.log("prevMenuBeforeUpdate",prevMenuBeforeUpdate);
+  console.log("----------------------------------------");
 
   const handleModelClick = (menu) => {
     setSelectedMenu(menu)
@@ -53,7 +57,7 @@ export default function HomePage() {
       {/* Right content  */}
       {/* Model structure  */}
       {selectedNavbar === "Model structure" && (
-        <FormCintentModelStructure selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} />
+        <FormCintentModelStructure selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} prevMenuBeforeUpdate={prevMenuBeforeUpdate}/>
       )}
 
       {/* Slip Function  */}

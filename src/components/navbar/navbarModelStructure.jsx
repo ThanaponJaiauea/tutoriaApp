@@ -97,7 +97,6 @@ export default function NavbarModelStructure({handleModelClick}) {
             title={menuItem.label}>
             {menuItem.children.map(
               (child) =>
-                child.key !== "scriptIndex" &&
                 child.key !== "SliderLogin" && (
                   <Menu.Item
                     key={child.key}
@@ -106,26 +105,6 @@ export default function NavbarModelStructure({handleModelClick}) {
                   </Menu.Item>
                 )
             )}
-
-            {/* Script */}
-            {menuItem.key === "index" &&
-              menuItem.children.find(
-                (child) => child.key === "scriptIndex"
-              ) && (
-                <Menu.SubMenu
-                  key="script"
-                  title="Script">
-                  {menuItem.children
-                    .find((child) => child.key === "scriptIndex")
-                    .children.map((child) => (
-                      <Menu.Item
-                        key={child.key}
-                        onClick={() => handleModelClick(child.key)}>
-                        {child.name}
-                      </Menu.Item>
-                    ))}
-                </Menu.SubMenu>
-              )}
 
             {/* Slider */}
             {menuItem.key === "login" &&
