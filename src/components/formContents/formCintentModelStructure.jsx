@@ -672,7 +672,7 @@ const FormCintentModelStructure = ({
         setSelectedMenu={setSelectedMenu}
         swiperContent={true}
         prevMenuBeforeUpdate={prevMenuBeforeUpdate}
-        icon={true}
+        iconSwiper={true}
       />
     ),
 

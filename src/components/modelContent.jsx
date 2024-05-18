@@ -488,6 +488,7 @@ export default function ModelContent({
   swiperContent,
   prevMenuBeforeUpdate,
   icon,
+  iconSwiper,
 }) {
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
@@ -496,8 +497,15 @@ export default function ModelContent({
     <div className="w-full py-4">
       {/* Header */}
       <div className="w-[96%] m-auto flex flex-col gap-2">
-        {(prevMenuBeforeUpdate === "levelFull" ||
-          (prevMenuBeforeUpdate === "scriptIndex" && icon)) && (
+        {prevMenuBeforeUpdate === "scriptIndex" && icon && (
+          <button
+            onClick={() => setSelectedMenu(prevMenuBeforeUpdate)}
+            className="text-2xl bg-red-200 w-[40px] h-[40px] p-2 rounded-full flex items-center justify-center">
+            <IoMdArrowRoundBack />
+          </button>
+        )}
+
+        {prevMenuBeforeUpdate === "levelFull" && iconSwiper && (
           <button
             onClick={() => setSelectedMenu(prevMenuBeforeUpdate)}
             className="text-2xl bg-red-200 w-[40px] h-[40px] p-2 rounded-full flex items-center justify-center">
