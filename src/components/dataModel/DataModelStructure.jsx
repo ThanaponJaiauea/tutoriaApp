@@ -74,6 +74,12 @@ const widgetData = [
     label: "Widget",
     children: [
       {
+        name: "showHtml()",
+        type: "generalModel",
+        key: "showHtml",
+        category: "widgetJs",
+      },
+      {
         name: "alert()",
         type: "generalModel",
         key: "alert",
@@ -83,6 +89,47 @@ const widgetData = [
         name: "messageBox()",
         type: "generalModel",
         key: "messageBox",
+        category: "widgetJs",
+      },
+      {
+        name: "messageBox2()",
+        type: "generalModel",
+        key: "messageBox2",
+        category: "widgetJs",
+      },
+      {
+        name: "messageBox3()",
+        type: "generalModel",
+        key: "messageBox3",
+        category: "widgetJs",
+      },
+      {
+        name: "messageBox4()",
+        type: "generalModel",
+        key: "messageBox4",
+        category: "widgetJs",
+      },
+      {
+        name: "messageBox5()",
+        type: "generalModel",
+        key: "messageBox5",
+        category: "widgetJs",
+      },
+      {
+        name: "messageBox6()",
+        type: "generalModel",
+        key: "messageBox6",
+        category: "widgetJs",
+      },
+      {
+        name: "messageBox7()",
+        type: "generalModel",
+        key: "messageBox7",
+        category: "widgetJs",
+      }, {
+        name: "messageBox8()",
+        type: "generalModel",
+        key: "messageBox8",
         category: "widgetJs",
       },
       {

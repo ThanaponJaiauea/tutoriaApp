@@ -2227,7 +2227,7 @@ export default function ModelContent({
               </p>
 
               <button
-                onClick={() => setSelectedMenu("alert")}
+                onClick={() => setSelectedMenu("resObj")}
                 type="button"
                 className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:outline-none font-medium rounded-lg text-sm p-2 text-center ">
                 อ่านต่อ

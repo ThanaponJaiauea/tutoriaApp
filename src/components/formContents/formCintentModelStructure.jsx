@@ -340,6 +340,7 @@ const FormCintentModelStructure = ({selectedMenu, setSelectedMenu,prevMenuBefore
         headers="Model Structure"
         headerHtml="Index Script"
         selectedMenu={selectedMenu}
+        setSelectedMenu={setSelectedMenu}
         widget="none"
         indexScript={true}
       />
