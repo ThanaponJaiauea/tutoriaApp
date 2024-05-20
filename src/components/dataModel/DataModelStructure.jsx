@@ -53,21 +53,6 @@ const indexData = [
   },
 ]
 
-const jQueryData = [
-  {
-    key: "jQuery",
-    label: "jQuery",
-    children: [
-      {
-        name: "jQuery Introduction",
-        type: "generalModel",
-        key: "jQueryIntroduction",
-        category: "indexHtml",
-      },
-    ],
-  },
-]
-
 const widgetData = [
   {
     key: "Widget",
@@ -78,115 +63,98 @@ const widgetData = [
         type: "generalModel",
         key: "alert",
         category: "widgetJs",
-    },
-    {
-        name: "document.addEventListener()",
+      },
+      {
+        name: "isPassive()",
         type: "generalModel",
-        key: "documentAddEventListener",
+        key: "isPassive",
         category: "widgetJs",
-    },
-    {
-        name: "getAbsTime()",
-        type: "generalModel",
-        key: "getAbsTime",
-        category: "widgetJs",
-    },
-    {
+      },
+      {
         name: "headerInit()",
         type: "generalModel",
         key: "headerInit",
         category: "widgetJs",
-    },
-    {
+      },
+      {
         name: "loader()",
         type: "generalModel",
         key: "loader",
         category: "widgetJs",
-    },
-    {
-        name: "messageBox()",
+      },
+      {
+        name: "messageBox",
         type: "generalModel",
-        key: "messageBox",
-        category: "widgetJs",
-    },
-    {
-        name: "messageBox2()",
-        type: "generalModel",
-        key: "messageBox2",
-        category: "widgetJs",
-    },
-    {
-        name: "messageBox3()",
-        type: "generalModel",
-        key: "messageBox3",
-        category: "widgetJs",
-    },
-    {
-        name: "messageBox4()",
-        type: "generalModel",
-        key: "messageBox4",
-        category: "widgetJs",
-    },
-    {
-        name: "messageBox5()",
-        type: "generalModel",
-        key: "messageBox5",
-        category: "widgetJs",
-    },
-    {
-        name: "messageBox6()",
-        type: "generalModel",
-        key: "messageBox6",
-        category: "widgetJs",
-    },
-    {
-        name: "messageBox7()",
-        type: "generalModel",
-        key: "messageBox7",
-        category: "widgetJs",
-    },
-    {
-        name: "messageBox8()",
-        type: "generalModel",
-        key: "messageBox8",
-        category: "widgetJs",
-    },
-    {
+        key: "messageBoxs",
+        children: [
+          {
+            name: "messageBox()",
+            type: "generalModel",
+            key: "messageBox",
+            category: "widgetJs",
+          },
+          {
+            name: "messageBox2()",
+            type: "generalModel",
+            key: "messageBox2",
+            category: "widgetJs",
+          },
+          {
+            name: "messageBox3()",
+            type: "generalModel",
+            key: "messageBox3",
+            category: "widgetJs",
+          },
+          {
+            name: "messageBox4()",
+            type: "generalModel",
+            key: "messageBox4",
+            category: "widgetJs",
+          },
+          {
+            name: "messageBox5()",
+            type: "generalModel",
+            key: "messageBox5",
+            category: "widgetJs",
+          },
+          {
+            name: "messageBox6()",
+            type: "generalModel",
+            key: "messageBox6",
+            category: "widgetJs",
+          },
+        ],
+      },
+      {
         name: "messagePage()",
         type: "generalModel",
         key: "messagePage",
         category: "widgetJs",
-    },
-    {
+      },
+      {
         name: "pageInit()",
         type: "generalModel",
         key: "pageInit",
         category: "widgetJs",
-    },
-    {
+      },
+      {
         name: "pageShow()",
         type: "generalModel",
         key: "pageShow",
         category: "widgetJs",
-    },
-    {
+      },
+      {
         name: "pageUnShow()",
         type: "generalModel",
         key: "pageUnShow",
         category: "widgetJs",
-    },
-    {
-        name: "resObj()",
-        type: "generalModel",
-        key: "resObj",
-        category: "widgetJs",
-    },
-    {
+      },
+      {
         name: "showHtml()",
         type: "generalModel",
         key: "showHtml",
         category: "widgetJs",
-    }
+      },
     ],
   },
 ]
@@ -318,7 +286,6 @@ const level = [
 export {
   startProjecData,
   indexData,
-  jQueryData,
   widgetData,
   mainData,
   login,

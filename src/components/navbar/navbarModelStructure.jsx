@@ -5,7 +5,6 @@ import {Menu} from "antd"
 import {
   startProjecData,
   indexData,
-  jQueryData,
   widgetData,
   mainData,
   login,
@@ -19,7 +18,6 @@ export default function NavbarModelStructure({handleModelClick}) {
   const allData = [
     ...startProjecData,
     ...indexData,
-    ...jQueryData,
     ...widgetData,
     ...mainData,
     ...login,
@@ -97,7 +95,8 @@ export default function NavbarModelStructure({handleModelClick}) {
             title={menuItem.label}>
             {menuItem.children.map(
               (child) =>
-                child.key !== "SliderLogin" && (
+                child.key !== "SliderLogin" &&
+                child.key !== "messageBoxs" && (
                   <Menu.Item
                     key={child.key}
                     onClick={() => handleModelClick(child.key)}>
@@ -105,6 +104,24 @@ export default function NavbarModelStructure({handleModelClick}) {
                   </Menu.Item>
                 )
             )}
+
+            {/* messageBox */}
+            {menuItem.key === "Widget" &&
+              menuItem.children.find((el) => el.key === "messageBoxs") && (
+                <Menu.SubMenu
+                  key={`messageBoxs_${menuItem.key}`}
+                  title="messageBox">
+                  {menuItem.children
+                    .find((el) => el.key === "messageBoxs")
+                    .children.map((el) => (
+                      <Menu.Item
+                        key={el.key}
+                        onClick={() => handleModelClick(el.key)}>
+                        {el.name}
+                      </Menu.Item>
+                    ))}
+                </Menu.SubMenu>
+              )}
 
             {/* Slider */}
             {menuItem.key === "login" &&

@@ -1,460 +1,1189 @@
 /** @format */
 
-// MessageBox() Widget
-export function FunctionMessageBoxText() {
+//Widget messageBox
+export function Widget_messageBox_init() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="break-words ml-6">
       {/* init */}
-      <div className="px-4">
-        <p>{`this.init = function () {`}</p>
-        <p>{`$("#messageBox").css({`}</p>
-        <p>{`display: "none",`}</p>
-        <p>{`width: $(window).width(),`}</p>
-        <p>{`height: $(window).height(),`}</p>
-        <p className="ml-5">{`})`}</p>
-        <p>{`}`}</p>
+      <p>
+        <span className="text-green-600">this.init</span>
+        {`= function () {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#messageBox"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`display: "none",`}</p>
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBg"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $("<span className="text-red-600">#messageBoxBody"</span>)
+          {`.css({width: $(window).width() * 0.75, height: "200px"})`}
+        </p>
       </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
 
-      {/* show */}
-      <div className="px-4 break-words">
-        <p>{`this.show = function (msgContent, cancelFun) {`}</p>
-        <p>{`$("#messagePage").css({display: "flex", left: 0})`}</p>
-        <p>{`$("#msgPageContent")`}</p>
-        <p>{`$("#msgPageBtnClose").unbind()`}</p>
-        <p>{`$("#msgPageBtnClose").click(function () {`}</p>
-        <p className="ml-5">{`if (cancelFun) {`}</p>
-        <p className="ml-5">{`cancelFun()`}</p>
-        <p className="ml-5">{`}`}</p>
-        <p className="ml-5">{`msgPageObj.unShow()`}</p>
-        <p className="ml-5">{`})`}</p>
-        <p className="ml-5">{`$("#messagePageBody").unbind()`}</p>
-        <p className="ml-5">{`$("#messagePageBody").click(function (event) {`}</p>
-        <p className="ml-5">{`event.stopPropagation()`}</p>
-        <p className="ml-5">{`})`}</p>
-        <p>{`}`}</p>
+export function Widget_messageBox_show() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-indigo-600">this.show</span>
+        {`= function (msgContent, okFun, cancelFun, unshow) {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $("<span className="text-red-600">#messageBox</span>")
+          {`.css({display: "flex", left: 0})`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgContent"</span>)
+          {`.html(msgContent)`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnCancel"</span>){`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnOK"</span>){`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnOK"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (okFun) {`}</p>
+          <div className="ml-2">
+            <p>{`okFun()`}</p>
+          </div>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnCancel"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (cancelFun) {`}</p>
+          <div className="ml-2">
+            <p>{`cancelFun()`}</p>
+          </div>
+          <p>{`msgObj.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
       </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
 
-      {/* unShow */}
+export function Widget_messageBox_unShow() {
+  return (
+    <div className="flex flex-col">
       <div className="px-4">
-        <p>{`this.unShow = function () {`}</p>
-        <p>{`$("#messagePage").css({display: "none"})`}</p>
+        <p>
+          <span className="text-pink-600">this.unShow</span>
+          {`= function () {`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messagePage"</span>)
+          {`.css({display: "none"})`}
+        </p>
         <p>{`}`}</p>
       </div>
     </div>
   )
 }
 
-//Index MessageBox Body
-export function DivMessageBox() {
+//Index MessageBox exampleCode script
+export function MessageBox_exampleCode_script({msgObj, messageBox}) {
   return (
     <div className="px-4 break-words">
-      <p>{`<div id="messageBox">`}</p>
-      <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;">`}</p>
-      <p className="ml-4">{`<div id="messageBoxBg" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
-      <p className="ml-4">{`</div>`}</p>
-      <p className="ml-4 mt-2">{`<div id="messageBoxBodyBg"`}</p>
-      <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
-      <p className="ml-10">{`<div id="messageBoxBody"`}</p>
-      <p className="ml-12">{`style="background-color: #f7f7f7;border-radius: 15px;box-shadow: 0px 0px 5px 5px rgb(0, 0, 0,0.2);">`}</p>
-      <p className="ml-12">{`<div style="height: 20px;"></div>`}</p>
-      <p className="ml-12">{`<div id="msgContent"`}</p>
-      <p className="ml-16">{`style="text-align: center;width: 80%;height: 140px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
-      <p className="ml-16">Content</p>
-      <p className="ml-12">{`</div`}</p>
-      <p className="ml-12">{`<div style="width: 100%;height:30px;display: flex;justify-content: center;align-items: center;margin-top: 3px;">`}</p>
-      <p className="ml-16">{`<div id="msgBtnOK" style="width:100%;height:45px;background-color:#ff5b5a;border-radius:0px 0px 0px 5px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
-      <p className="ml-16">{`确认</div>`}</p>
-      <p className="ml-16">{`<div style="background-color:#868686;width:2px"></div>`}</p>
-      <p className="ml-16">{`<div id="msgBtnCancel" style="width:100%;height:45px;background-color:#ededed;border-radius: 0px 0px 5px 0px;display: flex;justify-content: center;align-items: center;">`}</p>
-      <p className="ml-16">{`取消</div>`}</p>
-      <p className="ml-16">{`</div>`}</p>
-      <p className="ml-12">{`</div>`}</p>
-      <p>{`</div>`}</p>
+      <p>
+        <span className="text-blue-600">{msgObj}</span>(
+        <span className="text-red-600">{messageBox}</span>)
+      </p>
     </div>
   )
 }
 
-//Index MessageBox Script
-export function DivMessageBoxScript() {
+//Widget MessageBox2
+export function Widget_messageBox2_init() {
   return (
-    <div className="px-4">
-      <p>{`var msgObj = new messageBox();`}</p>
-      <p>{`msgObj.init();`}</p>
+    <div className="break-words ml-6">
+      {/* init */}
+      <p>
+        <span className="text-green-600">this.init</span>
+        {`= function () {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#messageBox2"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`display: "none",`}</p>
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBox2"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBox2"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBox2"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width() * 0.75,`}</p>
+          <p>{`height: "200px",`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+      <p>{`}`}</p>
     </div>
   )
 }
 
-//Index MessageBox exampleCode
-export function DivMessageBoxExampleCode() {
+export function Widget_messageBox2_show() {
   return (
-    <div className="px-4 break-words">
-      <p>{` msgObj.show("messageBox()"), function () {`}</p>
-      <p>{`pageUnShow("reportPage")`}</p>
-      <p>{`pageShow("loginPage")")`}</p>
-      <p>{`$("#setting_Datalogger_nologin").css({ "display": "none" });")")`}</p>
-      <p>{`msgObj.unShow();`}</p>
-      <p>{`})`}</p>
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-indigo-600">this.show</span>
+        {`= function (msgContent, okFun, cancelFun, unshow) {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#messageBox2"</span>)
+          {`.css({display: "flex", left: 0})`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgContent2"</span>)
+          {`.html(msgContent)`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnCancel2"</span>){`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnOK2"</span>){`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnOK2"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (okFun) {`}</p>
+          <div className="ml-2">
+            <p>{`okFun()`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnCancel2"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (cancelFun) {`}</p>
+          <div className="ml-2">
+            <p>{`cancelFun()`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`msgObj2.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg2"</span>)
+          {`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg2"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (unshow) {`}</p>
+          <div className="ml-2">
+            <p>{`unshow()`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`msgObj2.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+    </div>
+  )
+}
+
+export function Widget_messageBox2_unShow() {
+  return (
+    <div className="flex flex-col">
+      <div className="px-4">
+        <p>
+          <span className="text-pink-600">this.unShow</span>
+          {`= function () {`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messagePage2"</span>)
+          {`.css({display: "none"})`}
+        </p>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+
+
+//Widget MessageBox3
+export function Widget_messageBox3_init() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-green-600">this.init</span>
+        {`= function () {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#messageBox3"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`display: "none",`}</p>
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBg3"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg3"</span>)
+          {`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBody3"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width() * 0.75,`}</p>
+          <p>{`height: "200px",`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
+
+export function Widget_messageBox3_show() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-indigo-600">this.show</span>
+        {`= function (msgContent, okFun, cancelFun, unshow) {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#messageBox3"</span>)
+          {`.css({display: "flex", left: 0})`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgContent3"</span>)
+          {`.html(msgContent)`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnCancel3"</span>){`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnOK3"</span>){`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnOK3"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (okFun) {`}</p>
+          <div className="ml-2">
+            <p>{`okFun()`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnCancel3"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (cancelFun) {`}</p>
+          <div className="ml-2">
+            <p>{`cancelFun()`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`msgObj3.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg3"</span>)
+          {`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg3"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (unshow) {`}</p>
+          <div className="ml-2">
+            <p>{`unshow()`}</p>
+          </div>
+          <p>{`}`}</p>
+          <p>{`msgObj3.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+
+        <p>
+          $(<span className="text-red-600">"#messageBoxBody3"</span>)
+          {`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBody3"</span>)
+          {`.click(function (event) {`}
+        </p>
+        <div className="ml-2">
+          <p>{`event.stopPropagation()`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
+
+export function Widget_messageBox3_unShow() {
+  return (
+    <div className="flex flex-col">
+      <div className="px-4">
+        <p>
+          <span className="text-pink-600">this.unShow</span>
+          {`= function () {`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messagePage3"</span>)
+          {`.css({display: "none"})`}
+        </p>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+
+//Widget MessageBox4
+export function Widget_messageBox4_init() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-green-600">this.init</span>
+        {`= function () {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#messageBox4"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`display: "none",`}</p>
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBg4"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg4"</span>)
+          {`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBody4"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width() * 0.75,`}</p>
+          <p>{`height: "230px",`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
+
+export function Widget_messageBox4_show() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-indigo-600">this.show</span>
+        {`= function (msgContent, okFun, cancelFun, unshow) {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#messageBox4"</span>)
+          {`.css({display: "flex", left: 0})`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgContent4"</span>)
+          {`.html(msgContent)`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnCancel4"</span>){`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnOK4"</span>){`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnOK4"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (okFun) {`}</p>
+          <div className="ml-2">
+            <p>{`okFun()`}</p>
+          </div>
+          <p>{`msgObj4.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnCancel4"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (cancelFun) {`}</p>
+          <div className="ml-2">
+            <p>{`cancelFun()`}</p>
+          </div>
+          <p>{`msgObj4.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg4"</span>)
+          {`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg4"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (unshow) {`}</p>
+          <div className="ml-2">
+            <p>{`unshow()`}</p>
+          </div>
+          <p>{`msgObj4.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+
+        <p>
+          $(<span className="text-red-600">"#messageBoxBody4"</span>)
+          {`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBody4"</span>)
+          {`.click(function (event) {`}
+        </p>
+        <div className="ml-2">
+          <p>{`event.stopPropagation()`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
+
+export function Widget_messageBox4_unShow() {
+  return (
+    <div className="flex flex-col">
+      <div className="px-4">
+        <p>
+          <span className="text-pink-600">this.unShow</span>
+          {`= function () {`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messagePage4"</span>)
+          {`.css({display: "none"})`}
+        </p>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+//Widget MessageBox5
+export function Widget_messageBox5_init() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-green-600">this.init</span>
+        {`= function () {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#messageBox5"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`display: "none",`}</p>
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBg5"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg5"</span>)
+          {`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBody5"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width() * 0.75,`}</p>
+          <p>{`height: "200px",`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
+
+export function Widget_messageBox5_show() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-indigo-600">this.show</span>
+        {`= function (msgContent, okFun, cancelFun, unshow) {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#messageBox5"</span>)
+          {`.css({display: "flex", left: 0})`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgContent5"</span>)
+          {`.html(msgContent)`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnCancel5"</span>){`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnOK5"</span>){`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnOK5"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (okFun) {`}</p>
+          <div className="ml-2">
+            <p>{`okFun()`}</p>
+          </div>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnCancel5"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (cancelFun) {`}</p>
+          <div className="ml-2">
+            <p>{`cancelFun()`}</p>
+          </div>
+          <p>{`msgObj5.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg5"</span>)
+          {`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg5"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (unshow) {`}</p>
+          <div className="ml-2">
+            <p>{`unshow()`}</p>
+          </div>
+          <p>{`msgObj5.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+
+        <p>
+          $(<span className="text-red-600">"#messageBoxBody5"</span>)
+          {`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBody5"</span>)
+          {`.click(function (event) {`}
+        </p>
+        <div className="ml-2">
+          <p>{`event.stopPropagation()`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
+
+export function Widget_messageBox5_unShow() {
+  return (
+    <div className="flex flex-col">
+      <div className="px-4">
+        <p>
+          <span className="text-pink-600">this.unShow</span>
+          {`= function () {`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messagePage5"</span>)
+          {`.css({display: "none"})`}
+        </p>
+        <p>{`}`}</p>
+      </div>
+    </div>
+  )
+}
+
+//Widget MessageBox6
+export function Widget_messageBox6_init() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-green-600">this.init</span>
+        {`= function () {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#messageBox6"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`display: "none",`}</p>
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBg6"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg6"</span>)
+          {`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBody6"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width() * 0.75,`}</p>
+          <p>{`height: "200px",`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
+
+export function Widget_messageBox6_show() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-indigo-600">this.show</span>
+        {`= function (msgContent, okFun, cancelFun, unshow) {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#messageBox6"</span>)
+          {`.css({display: "flex", left: 0})`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgContent6"</span>)
+          {`.html(msgContent)`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnCancel6"</span>){`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnOK6"</span>){`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnOK6"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (okFun) {`}</p>
+          <div className="ml-2">
+            <p>{`okFun()`}</p>
+          </div>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#msgBtnCancel6"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (cancelFun) {`}</p>
+          <div className="ml-2">
+            <p>{`cancelFun()`}</p>
+          </div>
+          <p>{`msgObj6.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg6"</span>)
+          {`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBodyBg6"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (unshow) {`}</p>
+          <div className="ml-2">
+            <p>{`unshow()`}</p>
+          </div>
+          <p>{`msgObj6.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+
+        <p>
+          $(<span className="text-red-600">"#messageBoxBody6"</span>)
+          {`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messageBoxBody6"</span>)
+          {`.click(function (event) {`}
+        </p>
+        <div className="ml-2">
+          <p>{`event.stopPropagation()`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
+
+export function Widget_messageBox6_unShow() {
+  return (
+    <div className="flex flex-col">
+      <div className="px-4">
+        <p>
+          <span className="text-pink-600">this.unShow</span>
+          {`= function () {`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messagePage6"</span>)
+          {`.css({display: "none"})`}
+        </p>
+        <p>{`}`}</p>
+      </div>
     </div>
   )
 }
 
 // alert() Widget.js
-export function AlertWidget() {
+export function AlertWidget_init() {
   return (
-    <div className="flex flex-col gap-4">
-      {/* init */}
-      <div className="px-4">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">init</span>
-        </span>{" "}
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-green-600">this.init</span>
         {`= function () {`}
-        <p>{`$("#alert").css({`}</p>
-        <p>{`display: "none",`}</p>
-        <p>{`width: $(window).width(),`}</p>
-        <p>{`height: $(window).height(),`}</p>
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#alert"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`display: "none",`}</p>
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+        </div>
         <p>{`})`}</p>
-        <p>{`$("#alert").click(function () {`}</p>
-        <p>{`$("#alert").css({display: "none"})`}</p>
+        <p>
+          $(<span className="text-red-600">"#alert"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>
+            $(<span className="text-red-600">"#alert"</span>)
+            {`.css({display: "none"})`}
+          </p>
+        </div>
         <p>{`})`}</p>
-        <p>{`}`}</p>
       </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
 
-      {/* show */}
-      <div className="px-4">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">show</span>
-        </span>{" "}
+export function AlertWidget_show() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-indigo-600">this.show</span>
         {`= function (msg) {`}
-        <p>{`$("#alertMsg").html(msg)`}</p>
-        <p>{`$("#alert").css({display: "flex"})`}</p>
-        <p>{`}`}</p>
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#alertMsg"</span>){`.html(msg)`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#alert"</span>)
+          {`.css({display: "flex"})`}
+        </p>
       </div>
-
-      {/* unShow */}
-      <div className="px-4">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">unShow</span>
-        </span>{" "}
-        {`= function () {`}
-        <p>{`$("#alert").css({display: "none"})`}</p>
-        <p>{`}`}</p>
-      </div>
-
-      {/* unShowAlert */}
-      <div className="px-4">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">unShowAlert</span>
-        </span>{" "}
-        {`= function () {`}
-        <p>{`$("#alert").css({display: "none"}`}</p>
-        <p>{`$("$("#alertMsg").html("")"}`}</p>
-        <p>{`}`}</p>
-      </div>
+      <p>{`}`}</p>
     </div>
   )
 }
 
-// alert() Index Body
-export function AlertIndex() {
+export function AlertWidget_unShow() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col">
       <div className="px-4">
-        <p>{`<div id="alert" style="display: none;z-index: 998;position: absolute;left: 0px;top: 0px;background-color: #000000;opacity: 0.9;justify-content: center;align-items: center;">`}</p>
-        <p className="ml-4">{`<div id="alertMsg" style="display: flex;justify-content: center;align-items: center;background-color: #cccccc;border-radius: 20px;padding: 10px;">`}</p>
-        <p className="ml-4">{`</div>`}</p>
-        <p>{`</div>`}</p>
+        <p>
+          <span className="text-pink-600">this.unShow</span>
+          {`= function () {`}
+        </p>
+        <div className="ml-2">
+          <p>
+            $(<span className="text-red-600">"#alert"</span>)
+            {`.css({display: "none"})`}
+          </p>
+        </div>
+        <p>{`}`}</p>
       </div>
     </div>
   )
 }
-
-//Index Alert Script
-export function AlertScript() {
-  return (
-    <div className="px-4">
-      <p>{`var alertObj = new alert();`}</p>
-      <p>{`alertObj.init();`}</p>
-    </div>
-  )
-}
-
-// alert Example
+//Index MessageBox6 exampleCode script
 export function AlertExample() {
   return (
-    <div className="px-4">
-      <p>{`alertObj.show("close")`}</p>
-      <p>{` setTimeout(() => {
-        alertObj.unShow()
-      }, 500);`}</p>
+    <div className="px-4 break-words">
+      <p>
+        <span className="text-blue-600">alertObj.show</span>(
+        <span className="text-red-600">"alert"</span>)
+      </p>
     </div>
   )
 }
 
-// resObj Widget.js
-export function ResObjWidget() {
+// messagePage Widget
+export function MessagePage_init() {
   return (
-    <div className="px-4">
+    <div className="break-words ml-6">
       <p>
-        <span className="text-[#0000CD]">var</span> {`resUrl = "res.json"`}
-      </p>
-
-      <p>
-        <span className="text-[#0000CD]">var</span> {`resData = null`}
-      </p>
-
-      <p>
-        <span className="text-[#0000CD]">var</span> {`base64 = new Base64()`}
-      </p>
-
-      <p>
-        <span className="text-[#0000CD]">var</span> {`successFun = null`}
-      </p>
-
-      <p>
-        <span className="text-[#0000CD]">var</span> {`errorFun = null`}
-      </p>
-
-      {/* this.init */}
-      <div className="mt-2">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">init</span>
-        </span>{" "}
+        <span className="text-green-600">this.init</span>
         {`= function () {`}
-        <p className="ml-4"> {`if (mResUrl) {`}</p>
-        <p className="ml-4"> {`resUrl = mResUrl`}</p>
-        <p className="ml-4"> {`}`}</p>
-        <p> {`}`}</p>
-      </div>
-
-      {/* this.setSuccessFun */}
-      <div className="mt-2">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">setSuccessFun</span>
-        </span>{" "}
-        {`= function (mSuccessFun) {`}
-        <p className="ml-4"> {`if (mSuccessFun) {`}</p>
-        <p className="ml-4"> {`successFun = mSuccessFun`}</p>
-        <p className="ml-4"> {`}`}</p>
-        <p> {`}`}</p>
-      </div>
-
-      {/* this.setErrorFun */}
-      <div className="mt-2">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">setErrorFun</span>
-        </span>{" "}
-        {`= function (mErrorFun) {`}
-        <p className="ml-4"> {`if (mErrorFun) {`}</p>
-        <p className="ml-4"> {`errorFun = mErrorFun`}</p>
-        <p className="ml-4"> {`}`}</p>
-        <p> {`}`}</p>
-      </div>
-
-      {/* this.load */}
-      <div className="mt-2">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">load</span>
-        </span>{" "}
-        {`= function () {`}
-        <p className="ml-8">{`$.ajax({`}</p>
-        <p className="ml-12">{`type: "get",`}</p>
-        <p className="ml-12">{`url: resUrl,`}</p>
-        <p className="ml-12">{`contentType: "charset=utf-8",`}</p>
-        <p className="ml-12">{`data: "",`}</p>
-        <p className="ml-12">{`async: true,`}</p>
-        <p className="ml-12">{`timeout: 60000,`}</p>
-        <p className="ml-12">{`beforeSend: function (xmlhttprequest) {},`}</p>
-        <p className="ml-12">{`success: function (data) {`}</p>
-        <p className="ml-16">{`resData = data`}</p>
-        <p className="ml-16">{`if (successFun) {`}</p>
-        <p className="ml-20">{`successFun()`}</p>
-        <p className="ml-16">{`}`}</p>
-        <p className="ml-12">{`},`}</p>
-        <p className="ml-12">{`error: function (xmlhttprequest, error) {`}</p>
-        <p className="ml-16">{`if (errorFun) {`}</p>
-        <p className="ml-20">{`errorFun()`}</p>
-        <p className="ml-16">{`}`}</p>
-        <p className="ml-12">{`},`}</p>
-        <p className="ml-12">{`complete: function () {},`}</p>
-        <p className="ml-8">{`})`}</p>
-        <p>{`}`}</p>
-      </div>
-
-      {/* this.getResData */}
-      <div className="mt-2">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">getResData</span>
-        </span>{" "}
-        {`= function () {`}
-        <p className="ml-4">{`return resData`}</p>
-        <p> {`}`}</p>
-      </div>
-
-      {/* this.showHtml */}
-      <div className="mt-2">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">showHtml</span>
-        </span>{" "}
-        {`= function (path,divId) {`}
-        <p className="ml-4">{`if (resData != null) {`}</p>
-        <p className="ml-6">{`var resStr = String(resData[path])`}</p>
-        <p className="ml-6">{`$("#" + divId).append(base64.decode(resStr))`}</p>
-        <p className="ml-4">{`}`}</p>
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#alert"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>
+            $(<span className="text-red-600">"#messagePage"</span>){`.css({`}
+          </p>
+          <div className="ml-2">
+            <p>{`display: "none",`}</p>
+            <p>{`width: $(window).width(),`}</p>
+            <p>{`height: $(window).height(),`}</p>
+          </div>
+          <p>{`})`}</p>
+          <p>
+            $(<span className="text-red-600">"#messagePageBg"</span>){`.css({`}
+          </p>
+          <div className="ml-2">
+            <p>{`width: $(window).width(),`}</p>
+            <p>{`height: $(window).height(),`}</p>
+          </div>
+          <p>{`})`}</p>
+          <p>
+            $(<span className="text-red-600">"#messagePageBodyBg"</span>)
+            {`.css({`}
+          </p>
+          <div className="ml-2">
+            <p>{`width: $(window).width(),`}</p>
+            <p>{`height: $(window).height(),`}</p>
+          </div>
+          <p>{`})`}</p>
+          <p>
+            $(<span className="text-red-600">"#messagePageBody"</span>)
+            {`.css({`}
+          </p>
+          <div className="ml-2">
+            <p>{`width: $(window).width() * 0.75,`}</p>
+            <p>{`height: "auto",`}</p>
+            <p>{`"max-height": "300px",`}</p>
+          </div>
+          <p>{`})`}</p>
+        </div>
         <p>{`}`}</p>
       </div>
     </div>
   )
 }
 
-// base64
-export function Base64() {
+export function MessagePage_show() {
   return (
-    <div className="w-full flex flex-col gap-4">
-      <p className="ml-4">{`function Base64() {`}</p>
-      <p className="ml-8">
-        {`
-            (_keyStr ="BACDEFGHegfxy9z123456780+/=")
-          `}
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-indigo-600">this.show</span>
+        {`= function (msg) {`}
       </p>
-      <p className="ml-8">{`// public method for encoding`}</p>
-      <p className="ml-8">{`this.encode = function (input) {`}</p>
-      <p className="ml-12">{`var output = ""`}</p>
-      <p className="ml-12">{`var chr1, chr2, chr3, enc1, enc2, enc3, enc4`}</p>
-      <p className="ml-12">{`var i = 0`}</p>
-      <p className="ml-12">{`input = _utf8_encode(input)`}</p>
-      <p className="ml-12">{`while (i < input.length) {`}</p>
-      <p className="ml-16">{`chr1 = input.charCodeAt(i++)`}</p>
-      <p className="ml-16">{`chr2 = input.charCodeAt(i++)`}</p>
-      <p className="ml-16">{`chr3 = input.charCodeAt(i++)`}</p>
-      <p className="ml-16">{`enc1 = chr1 >> 2`}</p>
-      <p className="ml-16">{`enc2 = ((chr1 & 3) << 4) | (chr2 >> 4)`}</p>
-      <p className="ml-16">{`enc3 = ((chr2 & 15) << 2) | (chr3 >> 6)`}</p>
-      <p className="ml-16">{`enc4 = chr3 & 63`}</p>
-      <p className="ml-16">{`if (isNaN(chr2)) {`}</p>
-      <p className="ml-20">{`enc3 = enc4 = 64`}</p>
-      <p className="ml-16">{`} else if (isNaN(chr3)) {`}</p>
-      <p className="ml-20">{`enc4 = 64`}</p>
-      <p className="ml-16">{`}`}</p>
-      <p className="ml-16">{`output =`}</p>
-      <p className="ml-16">
-        {`output + _keyStr.charAt(enc1) + _keyStr.charAt(enc2) + _keyStr.charAt(enc3) + _keyStr.charAt(enc4)`}
-      </p>
-      <p className="ml-12">{`}`}</p>
-      <p className="ml-12">{`return output`}</p>
-      <p className="ml-8">{`}`}</p>
-      <p className="ml-8">{`// public method for decoding`}</p>
-      <p className="ml-8">{`this.decode = function (input) {`}</p>
-      <p className="ml-12">{`var output = ""`}</p>
-      <p className="ml-12">{`var chr1, chr2, chr3`}</p>
-      <p className="ml-12">{`var enc1, enc2, enc3, enc4`}</p>
-      <p className="ml-12">{`var i = 0`}</p>
-      <p className="ml-12">
-        {`input = input.replace(/[^A-Za-z0-9\\+\\/\\=]/g, "")`}
-      </p>
-      <p className="ml-12">{`while (i < input.length) {`}</p>
-      <p className="ml-16">{`enc1 = _keyStr.indexOf(input.charAt(i++))`}</p>
-      <p className="ml-16">{`enc2 = _keyStr.indexOf(input.charAt(i++))`}</p>
-      <p className="ml-16">{`enc3 = _keyStr.indexOf(input.charAt(i++))`}</p>
-      <p className="ml-16">{`enc4 = _keyStr.indexOf(input.charAt(i++))`}</p>
-      <p className="ml-16">{`chr1 = (enc1 << 2) | (enc2 >> 4)`}</p>
-      <p className="ml-16">{`chr2 = ((enc2 & 15) << 4) | (enc3 >> 2)`}</p>
-      <p className="ml-16">{`chr3 = ((enc3 & 3) << 6) | enc4`}</p>
-      <p className="ml-16">{`output = output + String.fromCharCode(chr1)`}</p>
-      <p className="ml-16">{`if (enc3 != 64) {`}</p>
-      <p className="ml-20">{`output = output + String.fromCharCode(chr2)`}</p>
-      <p className="ml-16">{`}`}</p>
-      <p className="ml-16">{`if (enc4 != 64) {`}</p>
-      <p className="ml-20">{`output = output + String.fromCharCode(chr3)`}</p>
-      <p className="ml-16">{`}`}</p>
-      <p className="ml-12">{`}`}</p>
-      <p className="ml-12">{`output = _utf8_decode(output)`}</p>
-      <p className="ml-12">{`return output`}</p>
-      <p className="ml-8">{`}`}</p>
-      <p className="ml-8">{`// private method for UTF-8 encoding`}</p>
-      <p className="ml-8">{`_utf8_encode = function (string) {`}</p>
-      <p className="ml-12">{`string = string.replace(/\\r\\n/g, "\\n")`}</p>
-      <p className="ml-12">{`var utftext = ""`}</p>
-      <p className="ml-12">{`for (var n = 0; n < string.length; n++) {`}</p>
-      <p className="ml-16">{`var c = string.charCodeAt(n)`}</p>
-      <p className="ml-16">{`if (c < 128) {`}</p>
-      <p className="ml-20">{`utftext += String.fromCharCode(c)`}</p>
-      <p className="ml-16">{`} else if (c > 127 && c < 2048) {`}</p>
-      <p className="ml-20">
-        {`utftext += String.fromCharCode((c >> 6) | 192)`}
-      </p>
-      <p className="ml-20">
-        {`utftext += String.fromCharCode((c & 63) | 128)`}
-      </p>
-      <p className="ml-16">{`} else {`}</p>
-      <p className="ml-20">
-        {`utftext += String.fromCharCode((c >> 12) | 224)`}
-      </p>
-      <p className="ml-20">
-        {`utftext += String.fromCharCode(((c >> 6) & 63) | 128)`}
-      </p>
-      <p className="ml-20">
-        {`utftext += String.fromCharCode((c & 63) | 128)`}
-      </p>
-      <p className="ml-16">{`}`}</p>
-      <p className="ml-12">{`}`}</p>
-      <p className="ml-12">{`return utftext`}</p>
-      <p className="ml-8">{`}`}</p>
-      <p className="ml-8">{`// private method for UTF-8 decoding`}</p>
-      <p className="ml-8">{`_utf8_decode = function (utftext) {`}</p>
-      <p className="ml-12">{`var string = ""`}</p>
-      <p className="ml-12">{`var i = 0`}</p>
-      <p className="ml-12">{`var c = (c1 = c2 = 0)`}</p>
-      <p className="ml-12">{`while (i < utftext.length) {`}</p>
-      <p className="ml-16">{`c = utftext.charCodeAt(i)`}</p>
-      <p className="ml-16">{`if (c < 128) {`}</p>
-      <p className="ml-20">{`string += String.fromCharCode(c)`}</p>
-      <p className="ml-20">{`i++`}</p>
-      <p className="ml-16">{`} else if (c > 191 && c < 224) {`}</p>
-      <p className="ml-20">{`c2 = utftext.charCodeAt(i + 1)`}</p>
-      <p className="ml-20">
-        {`string += String.fromCharCode(((c & 31) << 6) | (c2 & 63))`}
-      </p>
-      <p className="ml-20">{`i += 2`}</p>
-      <p className="ml-16">{`} else {`}</p>
-      <p className="ml-20">{`c2 = utftext.charCodeAt(i + 1)`}</p>
-      <p className="ml-20">{`c3 = utftext.charCodeAt(i + 2)`}</p>
-      <p className="ml-20">
-        {`string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63))`}
-      </p>
-      <p className="ml-20">{`i += 3`}</p>
-      <p className="ml-16">{`}`}</p>
-      <p className="ml-12">{`}`}</p>
-      <p className="ml-12">{`return string`}</p>
-      <p className="ml-8">{`}`}</p>
-      <p className="ml-4">{`}`}</p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#messagePage"</span>)
+          {`.css({display: "flex", left: 0})`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgPageContent"</span>)
+          {`.html(msgContent)`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgPageBtnClose"</span>)
+          {`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#msgPageBtnClose"</span>)
+          {`.click(function ()`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (cancelFun) {`}</p>
+          <div className="ml-2">
+            <p>{`cancelFun()`}</p>
+          </div>
+          <p>{`msgPageObj.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messagePageBodyBg"</span>)
+          {`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messagePageBodyBg"</span>)
+          {`.click(function () {`}
+        </p>
+        <div className="ml-2">
+          <p>{`if (cancelFun) {`}</p>
+          <div className="ml-2">
+            <p>{`cancelFun()`}</p>
+          </div>
+          <p>{`msgPageObj.unShow()`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          $(<span className="text-red-600">"#messagePageBody"</span>)
+          {`.unbind()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#messagePageBody"</span>)
+          {`.click(function (event) {`}
+        </p>
+        <div className="ml-2">
+          <p>{`console.log("lll")`}</p>
+          <p>{`event.stopPropagation()`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+      <p>{`}`}</p>
     </div>
   )
 }
 
-// resObj Index.html script
-export function ResObjIndexScript() {
+export function MessagePage_unShow() {
   return (
-    <div className="px-4">
-      <p>{`var mResObj = new resObj("res.json");`}</p>
-      <p>{`mResObj.setSuccessFun(startApp);`}</p>
-      <p>{`mResObj.setErrorFun(errorApp);`}</p>
-      <p>{` mResObj.init();`}</p>
-      <p>{` mResObj.load();`}</p>
-      {/* startApp */}
-      <div className="mt-2">
-        <p className="ml-4">{`function startApp() {`}</p>
-        <p className="ml-8">{`mResObj.showHtml("page.html", "root");`}</p>
-        <p className="ml-8">{`mainObj.checkIsLogin();`}</p>
-        <p className="ml-8">{`setAllPageLang();`}</p>
-        <p className="ml-8">{`firstStartFun();`}</p>
-        <p className="ml-4">{`}`}</p>
+    <div className="flex flex-col">
+      <div className="px-4">
+        <p>
+          <span className="text-pink-600">this.unShow</span>
+          {`= function () {`}
+        </p>
+        <div className="ml-2">
+          <p>
+            $(<span className="text-red-600">"#messagePage"</span>)
+            {`.css({display: "none"})`}
+          </p>
+        </div>
+        <p>{`}`}</p>
       </div>
-      {/* errorApp */}
-      <div className="mt-2">
-        <p className="ml-4">{`function errorApp() {`}</p>
-        <p className="ml-8">{`console.log("load error");`}</p>
-        <p className="ml-4">{`}`}</p>
+    </div>
+  )
+}
+
+// showHtml Widget
+export function Widget_showHtml() {
+  return (
+    <div className="break-words ml-6">
+      <p>this.showHtml = function (path, divId) {`{`}</p>
+      <div className="ml-2">
+        <p>if (resData != null) {`{`}</p>
+        <p className="ml-4">
+          var <span className="text-blue-600">resStr</span> =
+          String(resData[path])
+        </p>
+        <p className="ml-4">
+          $("#" + <span className="text-red-600">divId</span>
+          ).append(base64.decode(<span className="text-blue-600">resStr</span>))
+        </p>
+        <p>{`}`}</p>
       </div>
+      <p>{`}`}</p>
+    </div>
+  )
+}
+
+//showHtml  Example script
+export function ShowHtml_example_script() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-blue-600">mResObj</span>.
+        <span className="text-green-600">showHtml</span>("home.html", "root");
+      </p>
+    </div>
+  )
+}
+
+// addEventListener
+export function Widget_addEventListener() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-blue-600">document</span>.
+        <span className="text-green-600">addEventListener</span>
+        {`(`}
+      </p>
+      <div className="ml-2">
+        <p>"touchmove",</p>
+        <p>{`function (e) {`}</p>
+        <p>{`e.preventDefault()},isPassive() ? {capture: false, passive: false} : false`}</p>
+      </div>
+      <p>{`)`}</p>
+    </div>
+  )
+}
+
+// isPassive
+export function Widget_isPassive() {
+  return (
+    <div className="break-words ml-6 mt-4">
+      <p>
+        function <span className="text-blue-600">isPassive</span>(){`{`}
+      </p>
+      <div className="ml-2">
+        <p>
+          var <span className="text-yellow-600">supportsPassiveOption</span>
+          {`= false`}
+        </p>
+        <p>{`try {`}</p>
+        <div className="ml-2">
+          <p>
+            <span className="text-green-600">addEventListener</span>
+            {`(`}
+          </p>
+          <div className="ml-2">
+            <p>{`"test",`}</p>
+            <p>{`null,`}</p>
+            <p>{`Object.defineProperty({}, "passive", {`}</p>
+            <div className="ml-2">
+              <p>{`get: function () {`}</p>
+              <div className="ml-2">
+                <p>{`supportsPassiveOption = true`}</p>
+              </div>
+              <p>{`},`}</p>
+            </div>
+            <p>{`})`}</p>
+          </div>
+          <p>{`)`}</p>
+        </div>
+        <p>{`} catch (e) {}`}</p>
+        <p>
+          return <span className="text-yellow-600">supportsPassiveOption</span>
+        </p>
+      </div>
+      <p>{`}`}</p>
     </div>
   )
 }
@@ -463,13 +1192,18 @@ export function ResObjIndexScript() {
 export function PageInit() {
   return (
     <div className="px-4">
-      <p className="ml-4">{`$("#" + pageId).css({`}</p>
-      <p className="ml-4">{`width: w,`}</p>
-      <p className="ml-4">{`height: h,`}</p>
-      <p className="ml-4">{`position: "absolute",`}</p>
-      <p className="ml-4">{`left: -1.0 * w,`}</p>
-      <p className="ml-4">{`top: 0,`}</p>
-      <p className="ml-4">{`})`}</p>
+      <div className="ml-2">
+        <p>{`$("#" + pageId).css({`}</p>
+        <div className="ml-2">
+          <p>{`width: w,`}</p>
+          <p>{`height: h,`}</p>
+          <p>{`position: "absolute",`}</p>
+          <p>{`left: -1.0 * w,`}</p>
+          <p>{`top: 0,`}</p>
+        </div>
+        <p>{`})`}</p>
+      </div>
+      <p>{`}`}</p>
     </div>
   )
 }
@@ -488,12 +1222,10 @@ export function PageInitExampleBody() {
 export function PageInitExampleScript() {
   return (
     <div className="px-4">
-      <p className="text-[#0000CD]">
-        this.<span className="text-[#e3d786]">init</span>
-      </p>{" "}
-      {`= function () {`}
-      <p className="ml-8">{`pageInit("name_page");`}</p>
-      <p className="ml-4">{`}`}</p>
+      <p ml-4>
+        <span className="text-blue-600">pageInit</span>(
+        <span className="text-red-600">"pageName"</span>)
+      </p>
     </div>
   )
 }
@@ -501,44 +1233,60 @@ export function PageInitExampleScript() {
 // HeaderInit Widget
 export function HeaderInitWidget() {
   return (
-    <div className="w-full px-4">
+    <div className="break-words ml-6 mt-4">
       <p>
-        <span className="text-[#0000CD]">var</span> {` str =`}
+        function <span className="text-blue-600">headerInit</span>(pageId,
+        titleName, backFun){`{`}
       </p>
-      <p>{`'<div id="' +`}</p>
-      <p>{`pageId +`}</p>
-      <p>{`'_header_left" style="display:flex;justify-content: center;align-items: center;"><img class="back_arrow" style="width: 24px; height:24px;"></div>'`}</p>
-      <p>{`str = str + '<div id="' + pageId + '_header_right" style="display: flex;">'`}</p>
-      <p className="mt-1">{`str =`}</p>
-      <p>{`str +`}</p>
-      <p>{`'<div id="' +`}</p>
-      <p>{`pageId +`}</p>
-      <p>{`'_header_right_body" style="justify-content: center;align-items: center;display: flex;font-size: 18px;font-weight:700">' +`}</p>
-      <p>{`titleName +`}</p>
-      <p>{`"</div>"`}</p>
-      <p>{`str = str + '<div id="' + pageId + '_header_right_right"></div></div>'`}</p>
-      <p className="mt-1">{`$("#" + pageId + "_header").html(str)`}</p>
-      <p className="mt-2">{`$("#" + pageId + "_header").css({`}</p>
-      <p>{`height: headH,`}</p>
-      <p>{`width: "100%",`}</p>
-      <p>{`display: "flex",`}</p>
-      <p>{`background: "rgb(59, 120, 254)",`}</p>
-      <p>{`})`}</p>
-      <p>{`$("#" + pageId + "_header_left").css({height: headH, width: headH})`}</p>
-      <p>{`$("#" + pageId + "_header_right").css({height: headH, width: w - headH})`}</p>
-      <p>{`$("#" + pageId + "_header_right_body").css({`}</p>
-      <p>{`height: headH,`}</p>
-      <p>{`width: w - 2 * headH,`}</p>
-      <p>{`color: "#fff",`}</p>
-      <p>{`})`}</p>
-      <p className="mt-1">{`$("#" + pageId + "_header_right_right").css({height: headH, width: headH})`}</p>
-      <p className="mt-2">{`$("$("#" + pageId + "_header_left").click(function () {`}</p>
-      <p>{`$("pageUnShow(pageId + "Page")`}</p>
-      <p>{`if (backFun != null) {`}</p>
-      <p>{`backFun()`}</p>
+      <div className="ml-2">
+        <p>{`var str =`}</p>
+        <div className="ml-2">
+          <p>{`'<div id="' +`}</p>
+          <p>{`pageId +`}</p>
+          <p>{`'_header_left" style="display:flex;justify-content: center;align-items: center;"><img class="back_arrow" style="width: 24px; height:24px;"></div>'`}</p>
+        </div>
+        <p>{`str = str + '<div id="' + pageId + '_header_right" style="display: flex;">'`}</p>
+        <p>{`str = str +`}</p>
+        <div className="ml-2">
+          <p>{`'<div id="' +`}</p>
+          <p>{`pageId +`}</p>
+          <p>{`'_header_right_body" style="justify-content: center;align-items: center;display: flex;font-size: 18px;font-weight:700">' +`}</p>
+          <p>{`titleName +`}</p>
+          <p>{`"</div>"`}</p>
+        </div>
+        <p>{`str = str + '<div id="' + pageId + '_header_right_right"></div></div>'`}</p>
+        <p>{`$("#" + pageId + "_header").html(str)`}</p>
+        <p>{`$("#" + pageId + "_header").css({`}</p>
+        <div className="ml-2">
+          <p>{`height: headH,`}</p>
+          <p>{`width: "100%",`}</p>
+          <p>{`display: "flex",`}</p>
+          <p>{`background: "rgb(59, 120, 254)",`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>{`$("#" + pageId + "_header_left").css({height: headH, width: headH})`}</p>
+        <p>{`$("#" + pageId + "_header_right").css({height: headH, width: w - headH})`}</p>
+        <p>{`$("#" + pageId + "_header_right_body").css({`}</p>
+        <div className="ml-2">
+          <p>{`height: headH,`}</p>
+          <p>{`width: w - 2 * headH,`}</p>
+          <p>{`color: "#fff",`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>{`$("#" + pageId + "_header_right_right").css({height: headH, width: headH})`}</p>
+        <p>{`$("#" + pageId + "_header_left").click(function () {`}</p>
+        <div className="ml-2">
+          <p>{`pageUnShow(pageId + "Page")`}</p>
+          <p>{`if (backFun != null) {`}</p>
+          <div className="ml-2">
+            <p>{`backFun()`}</p>
+          </div>
+          <p>{`}`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>{`$(".back_arrow").attr("src", picRes["arrow_back.png"])`}</p>
+      </div>
       <p>{`}`}</p>
-      <p>{`})`}</p>
-      <p className="mt-1">{`$(".back_arrow").attr("src", picRes["arrow_back.png"])`}</p>
     </div>
   )
 }
@@ -547,12 +1295,17 @@ export function HeaderInitWidget() {
 export function HeaderInitExampleScript() {
   return (
     <div className="w-full break-words">
-      <span className="text-[#0000CD]">
-        this.<span className="text-[#e3d786]">init</span>
-      </span>{" "}
-      {`= function () {`}
-      <p className="full">{`headerInit("name_page","HeaderInitPage");`}</p>
-      <p className="ml-4">{`}`}</p>
+      <div className="ml-4">
+        <span className="text-[#0000CD]">
+          this.<span className="text-[#e3d786]">init</span>
+        </span>{" "}
+        {`= function () {`}
+        <p className="full">
+          <span className="text-blue-600 ml-4">headerInit</span>
+          {`("name_page","HeaderInitPage");`}
+        </p>
+        <p>{`}`}</p>
+      </div>
     </div>
   )
 }
@@ -561,7 +1314,11 @@ export function HeaderInitExampleScript() {
 export function PageShowWidget() {
   return (
     <div>
-      <p className="ml-8">{`$("#" + pageId).transition({x: w,},PAGETIMEOUT)`}</p>
+      <p className="ml-6">
+        $("#" + <span className="text-red-600">pageId</span>)
+        {`.transition({x: w,},PAGETIMEOUT)`}
+      </p>
+      <p>{`}`}</p>
     </div>
   )
 }
@@ -570,8 +1327,8 @@ export function PageShowWidget() {
 export function PageShowExampleBody() {
   return (
     <div>
-      <p>{`<div id="currentPage">`}</p>
-      <p className="ml-4">current Page</p>
+      <p>{`<div id="pageId">`}</p>
+      <p className="ml-4">pageId</p>
       <p>{`</div>`}</p>
     </div>
   )
@@ -581,12 +1338,12 @@ export function PageShowExampleBody() {
 export function PageShowExampleScript() {
   return (
     <div className="w-full flex flex-col flex-wrap">
-      <span className="text-[#0000CD]">
-        this.<span className="text-[#e3d786]">init</span>
-      </span>{" "}
-      {`= function () {`}
-      <p className="full">{`pageShow("go_next_page");`}</p>
-      <p className="ml-4">{`}`}</p>
+      <div className="ml-4">
+        <p className="ml-4">
+          <span className="text-red-600">pageShow</span>
+          {`("pageId");`}
+        </p>
+      </div>
     </div>
   )
 }
@@ -595,7 +1352,11 @@ export function PageShowExampleScript() {
 export function PageUnShowWidget() {
   return (
     <div>
-      <p className="ml-8">{`$("#" + pageId).transition({x: 0,},PAGETIMEOUT)`}</p>
+      <p className="ml-8">
+        $("#" + <span className="text-red-600">pageId</span>)
+        {`.transition({x: 0,},PAGETIMEOUT)`}
+      </p>
+      <p>{`}`}</p>
     </div>
   )
 }
@@ -620,142 +1381,117 @@ export function PageUnShowExampleBody() {
 export function PageUnShowExampleScript() {
   return (
     <div className="w-full flex flex-col flex-wrap">
-      <span className="text-[#0000CD]">
-        this.<span className="text-[#e3d786]">init</span>
-      </span>{" "}
-      {`= function () {`}
-      <p className="ml-4">{`$("#forgotPass").click(function () {`}</p>
-      <p className="ml-4">pageShow("forgotPassPage")</p>
-      <p className="ml-4">pageUnShow("loginPage")</p>
-      <p className="ml-4">{`}`}</p>
-      <p>{`}`}</p>
+      <p className="ml-4">
+        <span className="text-blue-600">pageUnShow</span>("pageId")
+      </p>
     </div>
   )
 }
 
-//pageUnShow Widget
-export function DocumentAddEventListenerWidget() {
+//loader
+export function LoaderWidget_var() {
   return (
-    <div className="flex flex-col gap-4">
-      <div className="ml-8">
-        <p>document.addEventListener(</p>
-        <p>"touchmove",(</p>
-        <p>{`function (e) {`}</p>
-        <p>{`e.preventDefault()`}</p>
-        <p>{`},`}</p>
-        <p>{`isPassive() ? {capture: false, passive: false} : false
-`}</p>
-        <p>)</p>
+    <div className="break-words ml-6">
+      <p>
+        var <span className="text-green-600">opts</span>
+        {`= {`}
+      </p>
+      <div className="ml-2">
+        <p>{`lines: 16, // The number of lines to draw`}</p>
+        <p>{`length: 20, // The length of each line`}</p>
+        <p>{`width: 13, // The line thickness`}</p>
+        <p>{`radius: 37, // The radius of the inner circle`}</p>
+        <p>{`scale: 0.3, // Scales overall size of the spinner`}</p>
+        <p>{`corners: 1, // Corner roundness (0..1)`}</p>
+        <p>{`speed: 0.5, // Rounds per second`}</p>
+        <p>{`rotate: 0, // The rotation offset`}</p>
+        <p>{`animation: "spinner-line-fade-default", // The CSS animation name for the lines`}</p>
+        <p>{`direction: 1, // 1: clockwise, -1: counterclockwise`}</p>
+        <p>{`color: "#ffffff", // CSS color or array of colors`}</p>
+        <p>{`fadeColor: "transparent", // CSS color or array of colors`}</p>
+        <p>{`top: "50%", // Top position relative to parent`}</p>
+        <p>{`left: "50%", // Left position relative to parent`}</p>
+        <p>{`shadow: "0 0 1px transparent", // Box-shadow for the lines`}</p>
+        <p>{`zIndex: 2000000000, // The z-index (defaults to 2e9)`}</p>
+        <p>{`className: "spinner", // The CSS class to assign to the spinner`}</p>
+        <p>{`position: "absolute", // Element positioning`}</p>
       </div>
+      <p>{`}`}</p>
+      <p className="mt-2">
+        var <span className="text-green-600">spiner</span>
+        {`= null`}
+      </p>
+    </div>
+  )
+}
 
-      <div className="ml-8">
-        <p>{`function isPassive() {`}</p>
-        <p className="ml-4">{`var supportsPassiveOption = false`}</p>
-        <p className="ml-4">{`try {`}</p>
-        <p className="ml-4">{`addEventListener(`}</p>
-        <p className="ml-4">{`"test",null,`}</p>
-        <p className="ml-4">{`Object.defineProperty({}, "passive", {`}</p>
-        <p className="ml-4">{`get: function () {`}</p>
-        <p className="ml-4">{`supportsPassiveOption = true`}</p>
-        <p className="ml-4">{` }, })`}</p>
-        <p className="ml-4">)</p>
-        <p className="ml-4">{`} catch (e) {}`}</p>
-        <p className="ml-4">{`return supportsPassiveOption`}</p>
-        <p>{`}`}</p>
+export function LoaderWidget_init() {
+  return (
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-green-600">this.init</span>
+        {`= function () {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#loader"</span>){`.css({`}
+        </p>
+        <div className="ml-2">
+          <p>{`width: $(window).width(),`}</p>
+          <p>{`height: $(window).height(),`}</p>
+          <p>{`display: "none",`}</p>
+        </div>
+        <p>{`})`}</p>
+        <p>
+          <span className="text-green-600">spiner</span> {`= new Spinner`}(
+          <span className="text-green-600">opts</span>)
+        </p>
       </div>
-    </div>
-  )
-}
-
-//GetAbsTimeWidget Widget
-export function GetAbsTimeWidget() {
-  return (
-    <div className="w-full break-words">
-      <p>{`try {`}</p>
-      <p>{`if (time.toString().length == 10) {`}</p>
-      <p className="ml-4">time = time * 1000</p>
-      <p>{`}`}</p>
-      <p>var currentZoneTime = new Date(time)</p>
-      <p>var currentZoneHours = currentZoneTime.getHours()</p>
-      <p>var offsetZone = currentZoneTime.getTimezoneOffset() / 60</p>
-
-      <p className="mt-4">{`if (offsetZone > 0) {`}</p>
-      <p>offsetZone = offsetZone + 8</p>
-      <p>currentZoneTime.setHours(currentZoneHours - offsetZone )</p>
-      <p>{`} else {`}</p>
-      <p>offsetZone += 8</p>
-      <p>currentZoneTime.setHours(currentZoneHours + offsetZone)</p>
-      <p>return currentZoneTime</p>
-      <p>{`} catch (e) { throw e }`}</p>
       <p>{`}`}</p>
     </div>
   )
 }
 
-//Loader Widget
-export function LoaderWidget() {
+export function LoaderWidget_show() {
   return (
-    <div>
-      <p>{`var opts = {`}</p>
-      <p>{`lines: 16, `}</p>
-      <p>{`length: 20,`}</p>
-      <p>{`width: 13,`}</p>
-      <p>{`radius: 37,`}</p>
-      <p>{`scale: 0.3,`}</p>
-      <p>{`corners: 1,`}</p>
-      <p>{`speed: 0.5,`}</p>
-      <p>{`rotate: 0,`}</p>
-      <p>{`animation: "spinner-line-fade-default",`}</p>
-      <p>{`direction: 1,`}</p>
-      <p>{`color: "#ffffff",`}</p>
-      <p>{`fadeColor: "transparent",`}</p>
-      <p>{`top: "50%",`}</p>
-      <p>{`left: "50%",`}</p>
-      <p>{`shadow: "0 0 1px transparent",`}</p>
-      <p>{`zIndex: 2000000000,`}</p>
-      <p>{`className: "spinner",`}</p>
-      <p>{`position: "absolute",`}</p>
-      <p>{`}`}</p>
-      <p>{`var spiner = null`}</p>
-      <p>{`this.init = function () {`}</p>
-      <p>{`$("#loader").css({`}</p>
-      <p>{`width: $(window).width(),`}</p>
-      <p>{`height: $(window).height(),`}</p>
-      <p>{`display: "none",`}</p>
-      <p>{`})`}</p>
-      <p>{`spiner = new Spinner(opts)`}</p>
-      <p>{`}`}</p>
-      <p>{`this.show = function () {`}</p>
-      <p>{`$("#loader").css({display: "block"})`}</p>
-      <p>{`spiner.spin(document.getElementById`}</p>
-      <p>("loader")</p>
-      <p>{`}`}</p>
-      <p>{`this.unShow = function () {`}</p>
-      <p>{`spiner.spin()`}</p>
-      <p>{`$("#loader").css({display: "none"})`}</p>
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-indigo-600">this.show</span>
+        {`= function (msgContent, okFun, cancelFun, unshow) {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          $(<span className="text-red-600">"#loader"</span>)
+          {`.css({display: "block"})`}
+        </p>
+        <p>
+          <span className="text-green-600">spiner</span>
+          {`.spin(document.getElementById("loader"))`}
+        </p>
+      </div>
       <p>{`}`}</p>
     </div>
   )
 }
 
-//Loader  Index Body
-export function LoaderIndexBody() {
+export function LoaderWidget_unShow() {
   return (
-    <div className="ml-4 break-words">
-      <p>{`<div id="loader"`}</p>
-      <p className="ml-4">{`style="display: none;z-index: 999;position: absolute;left: 0px;top: 0px;background-color: #000000;opacity: 0.4;justify-content: center;align-items: center;">
-`}</p>
-      <p>{`</div>`}</p>
-    </div>
-  )
-}
-
-//Loader  Index Script
-export function LoaderIndexScript() {
-  return (
-    <div>
-      <p>var loaderObj = new loader();</p>
-      <p>msgObj.init();</p>
+    <div className="break-words ml-6">
+      <p>
+        <span className="text-pink-600">this.unShow</span>
+        {`= function () {`}
+      </p>
+      <div className="ml-2">
+        <p>
+          <span className="text-green-600">spiner</span>
+          {`.spin()`}
+        </p>
+        <p>
+          $(<span className="text-red-600">"#loader"</span>)
+          {`.css({display: "none"})`}
+        </p>
+      </div>
+      <p>{`}`}</p>
     </div>
   )
 }
@@ -764,74 +1500,9 @@ export function LoaderIndexScript() {
 export function LoaderExampleScript() {
   return (
     <div>
-      <p>loaderObj.show();</p>
-    </div>
-  )
-}
-
-// messagePage Widget
-export function MessagePageWidget() {
-  return (
-    <div className="flex flex-col gap-2 break-words">
-      {/* this.init */}
-      <div className="ml-2">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">init</span>
-        </span>
-        {`= function () {`}
-
-        <p className="ml-2">{`$("#messagePage").css({`}</p>
-        <p className="ml-2">{`display: "none",`}</p>
-        <p className="ml-2">{`width: $(window).width(),`}</p>
-        <p className="ml-2">{`height: $(window).height(),`}</p>
-        <p>{`})`}</p>
-      </div>
-
-      {/* this.show */}
-      <div className="ml-2">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">show</span>
-        </span>
-        {`= function (msgContent, cancelFun) {`}
-
-        <p className="ml-2">{`$("#messagePage").css({`}</p>
-        <p className="ml-4">{`display: "flex", left: 0`}</p>
-        <p className="ml-4">{`})`}</p>
-        <p className="ml-2">{`$("#msgPageContent").html(msgContent)`}</p>
-        <p className="ml-2">{`$("#msgPageBtnClose").unbind()`}</p>
-        <p className="ml-2">{`$("#msgPageBtnClose").click(function () {`}</p>
-        <p className="ml-4">{`if (cancelFun) {`}</p>
-        <p className="ml-6">{`cancelFun()`}</p>
-        <p className="ml-4">{`}`}</p>
-        <p className="ml-4">{`msgPageObj.unShow()`}</p>
-        <p className="ml-2">{`})`}</p>
-        <p className="ml-2">{`$("#messagePageBodyBg").unbind()`}</p>
-        <p className="ml-2">{`$("#messagePageBodyBg").click(function () {`}</p>
-        <p className="ml-4">{`if (cancelFun) {`}</p>
-        <p className="ml-6">{`cancelFun()`}</p>
-        <p className="ml-4">{`}`}</p>
-        <p className="ml-4">{`msgPageObj.unShow()`}</p>
-        <p className="ml-2">{`})`}</p>
-        <p className="ml-2">{`$("#messagePageBody").unbind()`}</p>
-        <p className="ml-2">{`$("#messagePageBody").click(function (event) {`}</p>
-        <p className="ml-4">{`console.log("lll")`}</p>
-        <p className="ml-4">{`event.stopPropagation()`}</p>
-        <p className="ml-2">{`})`}</p>
-        <p>{`}`}</p>
-      </div>
-
-      {/* this.unShow */}
-      <div className="ml-2">
-        <span className="text-[#0000CD]">
-          this.<span className="text-[#e3d786]">unShow</span>
-        </span>
-        {`= function () {`}
-
-        <p className="ml-2">{`$("#messagePage").css({`}</p>
-        <p className="ml-4">{`display: "none"`}</p>
-        <p className="ml-2">{`})`}</p>
-        <p>{`}`}</p>
-      </div>
+      <p className="ml-4">
+        <span className="text-blue-600">loaderObj</span>.show();
+      </p>
     </div>
   )
 }
@@ -881,7 +1552,9 @@ export function MessagePageIndexScript() {
 export function MessagePageExampleScript() {
   return (
     <div className="ml-4">
-      <p>msgPageObj.show("messagePage")</p>
+      <p>
+        <span className="text-red-600">msgPageObj</span>.show("messagePage")
+      </p>
     </div>
   )
 }
@@ -13799,7 +14472,9 @@ export function MessageBox() {
         <p className="ml-4"></p>
         <p className="ml-4">{`<div id="messageBoxBg" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
         <p className="ml-4">{`</div>`}</p>
-        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg"</span></p>
+        <p className="ml-4 mt-2">
+          &lt;div id=<span className="text-red-600">"messageBoxBodyBg"</span>
+        </p>
         <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
         <p className="ml-10">{`<div id="messageBoxBody"`}</p>
         <p className="ml-12">{`style="background-color: #f7f7f7;border-radius: 15px;box-shadow: 0px 0px 5px 5px rgb(0, 0, 0,0.2);">`}</p>
@@ -13844,7 +14519,9 @@ export function MessageBox2() {
         </p>
         <p className="ml-4">{`<div id="messageBoxBg2" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
         <p className="ml-4">{`</div>`}</p>
-        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg2"</span></p>
+        <p className="ml-4 mt-2">
+          &lt;div id=<span className="text-red-600">"messageBoxBodyBg2"</span>
+        </p>
         <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
         <p className="ml-10">{`<div id="messageBoxBody2"`}</p>
         <p className="ml-12">{`style="background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
@@ -13881,49 +14558,71 @@ export function MessageBox2() {
 export function MessageBox3() {
   return (
     <div className="ml-4 break-words">
-<div className="ml-2">
-  <p>div id=<span className="text-red-600">"messageBox3"</span>{`>`}</p>
-  <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;"`}</p>
-  <p className="ml-4">{`<div id="messageBoxBg3" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
-  <p className="ml-4">{`</div>`}</p>
-  <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg3"</span></p>
-  <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
-  <p className="ml-10">{`<div id="messageBoxBody3"`}</p>
-  <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
-  <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-  <div className="mt-4">
-    <p className="ml-12">&lt;div {`style="width: 100%;display: flex;justify-content: center;flex-direction: column;align-items: center;">`}</p>
-    <p className="ml-16">{`<img id="are_you_sure" style="width: 50px;">`}</p>
-    <p className="ml-16">{`<img id="are_you_sure_buttom" style="width: 50px;">`}</p>
-    <p className="ml-12">{`</div>`}</p>
-  </div>
-  <p className="ml-12 mt-2">&lt;div {`id="messageBoxBodyHead3" style="font-size: 28px;color:#FD9B40;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
-  <p className="ml-16">Are you sure ?</p>
-  <p className="ml-12">{`</div>`}</p>
-  <div className="mt-4">
-    <p className="ml-12">&lt;div id=<span className="text-blue-600">"msgContent3"</span> {`style="font-size: 14px;color:#9F9F9F;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}</p>
-    <p className="ml-16">Content</p>
-    <p className="ml-12">{`</div>`}</p>
-  </div>
-  <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-  <div className="mt-4">
-    <p className="ml-12">&lt;div {`style="margin-bottom:10px;width: 100%;display: flex;justify-content: center;align-items: center;flex-direction: row;gap: 10px;">`}</p>
-    <p className="ml-16">&lt;div id=<span className="text-green-600">"msgBtnOK3"</span> {`style="border-radius: 8px;width:30%;height:35px;background-color:#FD9B40;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
-    <p className="ml-16">&lt;span {`style="font-size: 12px;">`}</p>
-    <p className="ml-20">OK</p>
-    <p className="ml-16">{`</span>`}</p>
-    <p className="ml-16">{`</div>`}</p>
-    <p className="ml-16">&lt;div id=<span className="text-green-600">"msgBtnCancel3"</span> {`style="border-radius: 8px;font-size: 12px;width:30%;height:35px;background-color:#C6C6C6;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}</p>
-    <p className="ml-16">Cancel</p>
-    <p className="ml-16">{`</div>`}</p>
-    <p className="ml-12">{`</div>`}</p>
-  </div>
-  <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
-  <p className="ml-10">{`</div>`}</p>
-  <p className="ml-8">{`</div>`}</p>
-  <p className="ml-4">{`</div>`}</p>
-</div>
-
+      <div className="ml-2">
+        <p>
+          div id=<span className="text-red-600">"messageBox3"</span>
+          {`>`}
+        </p>
+        <p className="ml-4">{`style="z-index: 997;position: absolute;left: 0px;top: 0px;display: none;width: 1px;height: 1px;"`}</p>
+        <p className="ml-4">{`<div id="messageBoxBg3" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
+        <p className="ml-4">{`</div>`}</p>
+        <p className="ml-4 mt-2">
+          &lt;div id=<span className="text-red-600">"messageBoxBodyBg3"</span>
+        </p>
+        <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
+        <p className="ml-10">{`<div id="messageBoxBody3"`}</p>
+        <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div{" "}
+            {`style="width: 100%;display: flex;justify-content: center;flex-direction: column;align-items: center;">`}
+          </p>
+          <p className="ml-16">{`<img id="are_you_sure" style="width: 50px;">`}</p>
+          <p className="ml-16">{`<img id="are_you_sure_buttom" style="width: 50px;">`}</p>
+          <p className="ml-12">{`</div>`}</p>
+        </div>
+        <p className="ml-12 mt-2">
+          &lt;div{" "}
+          {`id="messageBoxBodyHead3" style="font-size: 28px;color:#FD9B40;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+        </p>
+        <p className="ml-16">Are you sure ?</p>
+        <p className="ml-12">{`</div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div id=<span className="text-blue-600">"msgContent3"</span>{" "}
+            {`style="font-size: 14px;color:#9F9F9F;text-align: center;width: 80%;height: 40px;display: flex;justify-content: center;align-items: center;margin: auto;">`}
+          </p>
+          <p className="ml-16">Content</p>
+          <p className="ml-12">{`</div>`}</p>
+        </div>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <div className="mt-4">
+          <p className="ml-12">
+            &lt;div{" "}
+            {`style="margin-bottom:10px;width: 100%;display: flex;justify-content: center;align-items: center;flex-direction: row;gap: 10px;">`}
+          </p>
+          <p className="ml-16">
+            &lt;div id=<span className="text-green-600">"msgBtnOK3"</span>{" "}
+            {`style="border-radius: 8px;width:30%;height:35px;background-color:#FD9B40;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}
+          </p>
+          <p className="ml-16">&lt;span {`style="font-size: 12px;">`}</p>
+          <p className="ml-20">OK</p>
+          <p className="ml-16">{`</span>`}</p>
+          <p className="ml-16">{`</div>`}</p>
+          <p className="ml-16">
+            &lt;div id=<span className="text-green-600">"msgBtnCancel3"</span>{" "}
+            {`style="border-radius: 8px;font-size: 12px;width:30%;height:35px;background-color:#C6C6C6;border-radius:8px;display: flex;justify-content: center;align-items: center;color: #ffffff;">`}
+          </p>
+          <p className="ml-16">Cancel</p>
+          <p className="ml-16">{`</div>`}</p>
+          <p className="ml-12">{`</div>`}</p>
+        </div>
+        <p className="ml-12">{`<div style="height: 10px;"></div>`}</p>
+        <p className="ml-10">{`</div>`}</p>
+        <p className="ml-8">{`</div>`}</p>
+        <p className="ml-4">{`</div>`}</p>
+      </div>
     </div>
   )
 }
@@ -13938,7 +14637,9 @@ export function MessageBox4() {
         </p>
         <p className="ml-4">{`<div id="messageBoxBg4" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
         <p className="ml-4">{`</div>`}</p>
-        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg4"</span></p>
+        <p className="ml-4 mt-2">
+          &lt;div id=<span className="text-red-600">"messageBoxBodyBg4"</span>
+        </p>
         <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
         <p className="ml-10">{`<div id="messageBoxBody4"`}</p>
         <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
@@ -14001,7 +14702,9 @@ export function MessageBox5() {
         </p>
         <p className="ml-4">{`<div id="messageBoxBg5" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
         <p className="ml-4">{`</div>`}</p>
-        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg5"</span></p>
+        <p className="ml-4 mt-2">
+          &lt;div id=<span className="text-red-600">"messageBoxBodyBg5"</span>
+        </p>
         <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
         <p className="ml-10">{`<div id="messageBoxBody5"`}</p>
         <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
@@ -14064,7 +14767,9 @@ export function MessageBox6() {
         </p>
         <p className="ml-4">{`<div id="messageBoxBg6" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
         <p className="ml-4">{`</div>`}</p>
-        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg6"</span></p>
+        <p className="ml-4 mt-2">
+          &lt;div id=<span className="text-red-600">"messageBoxBodyBg6"</span>
+        </p>
         <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
         <p className="ml-10">{`<div id="messageBoxBody6"`}</p>
         <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
@@ -14127,7 +14832,9 @@ export function MessageBox7() {
         </p>
         <p className="ml-4">{`<div id="messageBoxBg7" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
         <p className="ml-4">{`</div>`}</p>
-        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg7"</span></p>
+        <p className="ml-4 mt-2">
+          &lt;div id=<span className="text-red-600">"messageBoxBodyBg7"</span>
+        </p>
         <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
         <p className="ml-10">{`<div id="messageBoxBody7"`}</p>
         <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
@@ -14190,7 +14897,9 @@ export function MessageBox8() {
         </p>
         <p className="ml-4">{`<div id="messageBoxBg8" style="position: absolute;left: 0px;top: 0px;background-color: #ffffff;opacity: 0.5;">`}</p>
         <p className="ml-4">{`</div>`}</p>
-        <p className="ml-4 mt-2">&lt;div id=<span className="text-red-600">"messageBoxBodyBg8"</span></p>
+        <p className="ml-4 mt-2">
+          &lt;div id=<span className="text-red-600">"messageBoxBodyBg8"</span>
+        </p>
         <p className="ml-8">{`style="position: absolute;left: 0px;top: 0px;display: flex;justify-content: center;align-items: center;">`}</p>
         <p className="ml-10">{`<div id="messageBoxBody8"`}</p>
         <p className="ml-12">{`style="display: flex;flex-direction: column;background-color: #ffffff;border-radius: 15px;box-shadow: 4px 4px 10px 0px #00000029;">`}</p>
@@ -14254,8 +14963,8 @@ export function Index_alert() {
     <div className="ml-4 break-words">
       <div className="ml-2">
         <p>
-        &lt;div id=<span className="text-red-600">"alert"</span>{" "}
-        {`style="display: none;z-index: 998;position: absolute;left: 0px;top: 0px;background-color: #000000;opacity: 0.9;justify-content: center;align-items: center;">`}
+          &lt;div id=<span className="text-red-600">"alert"</span>{" "}
+          {`style="display: none;z-index: 998;position: absolute;left: 0px;top: 0px;background-color: #000000;opacity: 0.9;justify-content: center;align-items: center;">`}
         </p>
         <p className="ml-4"></p>
         <p className="ml-4">{`<div id="alertMsg"`}</p>
@@ -14272,7 +14981,8 @@ export function Index_loader() {
     <div className="ml-4 break-words">
       <div className="ml-2">
         <p>
-        &lt;div id=<span className="text-red-600">"loader"</span>{" "}{`style="display: none;z-index: 999;position: absolute;left: 0px;top: 0px;background-color: #000000;opacity: 0.4;justify-content: center;align-items: center;">`}
+          &lt;div id=<span className="text-red-600">"loader"</span>{" "}
+          {`style="display: none;z-index: 999;position: absolute;left: 0px;top: 0px;background-color: #000000;opacity: 0.4;justify-content: center;align-items: center;">`}
         </p>
         <p className="ml-2">{`</div>`}</p>
       </div>
@@ -14312,28 +15022,28 @@ export function IndexBodyScriptVar2() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2">
-          <p className="mt-2">{`var alertObj = new alert();`}</p>
-          <p>{`alertObj.init();`}</p>
-          <p className="mt-2">{`var loaderObj = new loader();`}</p>
-          <p>{`loaderObj.init();`}</p>
-          <p className="mt-2">{`var msgObj = new messageBox();`}</p>
-          <p>{`msgObj.init();`}</p>
-          <p className="mt-2">{`var msgObj2 = new messageBox2();`}</p>
-          <p>{`msgObj2.init();`}</p>
-          <p className="mt-2">{`var msgObj3 = new messageBox3();`}</p>
-          <p>{`msgObj3.init();`}</p>
-          <p className="mt-2">{`var msgObj4 = new messageBox4();`}</p>
-          <p>{`msgObj4.init()`}</p>
-          <p className="mt-2">{`var msgObj5 = new messageBox5();`}</p>
-          <p>{`msgObj5.init();`}</p>
-          <p className="mt-2">{`var msgObj6 = new messageBox6();`}</p>
-          <p>{`msgObj6.init();`}</p>
-          <p className="mt-2">{`var msgObjSub = new messageBox7();`}</p>
-          <p>{`msgObjSub.init();`}</p>
-          <p className="mt-2">{`var msgObjTran = new messageBox8();`}</p>
-          <p>{`msgObjTran.init();`}</p>
-          <p className="mt-2">{`var msgPageObj = new messagePage();`}</p>
-          <p>{`msgPageObj.init();`}</p>
+        <p className="mt-2">{`var alertObj = new alert();`}</p>
+        <p>{`alertObj.init();`}</p>
+        <p className="mt-2">{`var loaderObj = new loader();`}</p>
+        <p>{`loaderObj.init();`}</p>
+        <p className="mt-2">{`var msgObj = new messageBox();`}</p>
+        <p>{`msgObj.init();`}</p>
+        <p className="mt-2">{`var msgObj2 = new messageBox2();`}</p>
+        <p>{`msgObj2.init();`}</p>
+        <p className="mt-2">{`var msgObj3 = new messageBox3();`}</p>
+        <p>{`msgObj3.init();`}</p>
+        <p className="mt-2">{`var msgObj4 = new messageBox4();`}</p>
+        <p>{`msgObj4.init()`}</p>
+        <p className="mt-2">{`var msgObj5 = new messageBox5();`}</p>
+        <p>{`msgObj5.init();`}</p>
+        <p className="mt-2">{`var msgObj6 = new messageBox6();`}</p>
+        <p>{`msgObj6.init();`}</p>
+        <p className="mt-2">{`var msgObjSub = new messageBox7();`}</p>
+        <p>{`msgObjSub.init();`}</p>
+        <p className="mt-2">{`var msgObjTran = new messageBox8();`}</p>
+        <p>{`msgObjTran.init();`}</p>
+        <p className="mt-2">{`var msgPageObj = new messagePage();`}</p>
+        <p>{`msgPageObj.init();`}</p>
       </div>
     </div>
   )
@@ -14342,30 +15052,55 @@ export function IndexBodyScriptVar2() {
 export function IndexBodyScriptVar3() {
   let langs = <span className="text-green-600">lang</span>
   let themeChanges = <span className="text-blue-600">themeChange</span>
-  let getFonts  = <span className="text-yellow-600">getFont</span>
+  let getFonts = <span className="text-yellow-600">getFont</span>
   return (
     <div className="ml-4 break-words">
       <div className="ml-2 flex flex-col gap-8">
         <div>
           <div>
-            <span className="text-red-600 text-sm">---อ่านค่าภาษาจาก local storage และเก็บไว้ในตัวแปร lang---</span>
-            <p>var {langs} {`= localStorage.getItem('Language');`}</p>
-            <span className="text-red-600 text-sm">---ตรวจสอบว่าค่าภาษามีค่าว่างหรือไม่ได้ถูกกำหนด (null)---</span>
-            <p>if ({langs} === '' || {langs} === null) {`{`}</p>
-            <span className="text-red-600 text-sm">--- กำหนดค่าภาษาใน local storage เป็น "en" (ภาษาอังกฤษ) ในกรณีที่ค่าภาษายังไม่ถูกกำหนด---</span>
+            <span className="text-red-600 text-sm">
+              ---อ่านค่าภาษาจาก local storage และเก็บไว้ในตัวแปร lang---
+            </span>
+            <p>
+              var {langs} {`= localStorage.getItem('Language');`}
+            </p>
+            <span className="text-red-600 text-sm">
+              ---ตรวจสอบว่าค่าภาษามีค่าว่างหรือไม่ได้ถูกกำหนด (null)---
+            </span>
+            <p>
+              if ({langs} === '' || {langs} === null) {`{`}
+            </p>
+            <span className="text-red-600 text-sm">
+              --- กำหนดค่าภาษาใน local storage เป็น "en" (ภาษาอังกฤษ)
+              ในกรณีที่ค่าภาษายังไม่ถูกกำหนด---
+            </span>
             <p>&nbsp;&nbsp;{`localStorage.setItem('Language', 'en');`}</p>
-            <span className="text-red-600 text-sm">---กำหนดค่าภาษาในตัวแปร langCode เป็น "en" (ภาษาอังกฤษ)---</span>
+            <span className="text-red-600 text-sm">
+              ---กำหนดค่าภาษาในตัวแปร langCode เป็น "en" (ภาษาอังกฤษ)---
+            </span>
             <p>&nbsp;&nbsp;{`langCode = 'en';`}</p>
             <p>{`}`}</p>
-            <span className="text-red-600 text-sm">---ตรวจสอบว่าค่าภาษาไม่เป็นค่าว่าง (null)---</span>
-            <p>if ({langs}{" "} !== null) {`{`}</p>
-            <span className="text-red-600 text-sm">---กำหนดค่าภาษาในตัวแปร langCode เป็นค่าที่อ่านได้จาก local storage---</span>
+            <span className="text-red-600 text-sm">
+              ---ตรวจสอบว่าค่าภาษาไม่เป็นค่าว่าง (null)---
+            </span>
+            <p>
+              if ({langs} !== null) {`{`}
+            </p>
+            <span className="text-red-600 text-sm">
+              ---กำหนดค่าภาษาในตัวแปร langCode เป็นค่าที่อ่านได้จาก local
+              storage---
+            </span>
             <p>&nbsp;&nbsp;langCode = {langs};</p>
             <p>{`}`}</p>
           </div>
           <div>
-            <p>var {themeChanges} {`= localStorage.getItem('Theme');`}</p>
-            <p>if ({themeChanges} === '' || {themeChanges} === null || {themeChanges} === 'theme-default') {`{`}</p>
+            <p>
+              var {themeChanges} {`= localStorage.getItem('Theme');`}
+            </p>
+            <p>
+              if ({themeChanges} === '' || {themeChanges} === null ||{" "}
+              {themeChanges} === 'theme-default') {`{`}
+            </p>
             <p>
               &nbsp;&nbsp;{`localStorage.setItem('Theme', 'theme-default');`}
             </p>
@@ -14376,16 +15111,18 @@ export function IndexBodyScriptVar3() {
             <p>{`}`}</p>
           </div>
           <div>
-            <p>var {getFonts} {`= localStorage.getItem('Font-size');`}</p>
-            <p>if ({getFonts} === '' || {getFonts} === null) {`{`}</p>
+            <p>
+              var {getFonts} {`= localStorage.getItem('Font-size');`}
+            </p>
+            <p>
+              if ({getFonts} === '' || {getFonts} === null) {`{`}
+            </p>
             <p>&nbsp;&nbsp;{`localStorage.setItem('Font-size', 'medium');`}</p>
             <p>
               &nbsp;&nbsp;{`$('body').removeClass().addClass("font-medium");`}
             </p>
             <p>{`}`}</p>
           </div>
-
-      
         </div>
       </div>
     </div>
@@ -14396,13 +15133,26 @@ export function IndexBodyScriptVar4() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2 flex flex-col gap-8">
-      <div>
+        <div>
           <div className="mt-3">
-            <p>var <span className="text-yellow-600">mResObj</span> = new <span className="text-red-600">resObj</span>("res.json");`</p>
-            <p><span className="text-yellow-600">mResObj</span>.setSuccessFun(startApp);</p>
-            <p><span className="text-yellow-600">mResObj</span>.setErrorFun(errorApp);</p>
-            <p><span className="text-yellow-600">mResObj</span>.init();</p>
-            <p><span className="text-yellow-600">mResObj</span>.load();</p>
+            <p>
+              var <span className="text-yellow-600">mResObj</span> = new{" "}
+              <span className="text-red-600">resObj</span>("res.json");`
+            </p>
+            <p>
+              <span className="text-yellow-600">mResObj</span>
+              .setSuccessFun(startApp);
+            </p>
+            <p>
+              <span className="text-yellow-600">mResObj</span>
+              .setErrorFun(errorApp);
+            </p>
+            <p>
+              <span className="text-yellow-600">mResObj</span>.init();
+            </p>
+            <p>
+              <span className="text-yellow-600">mResObj</span>.load();
+            </p>
           </div>
         </div>
       </div>
@@ -14510,7 +15260,6 @@ export function IndexBodyScripFirstStartFun() {
     </div>
   )
 }
-
 
 // Main Html body
 export function MainHtmlBody() {

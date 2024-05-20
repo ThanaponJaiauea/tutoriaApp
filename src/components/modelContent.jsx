@@ -13,10 +13,7 @@ import {
   Addda_talogger_createDevice,
   Addda_talogger_validateInput,
   AlertExample,
-  AlertIndex,
-  AlertWidget,
   AllReadNotice,
-  Base64,
   BodyLevel,
   BodyLevel2,
   BodyLevel3,
@@ -64,9 +61,6 @@ import {
   Distributor_PreviewImg2,
   Distributor_createDistributor,
   Distributor_distributorFun,
-  DivMessageBox,
-  DivMessageBoxExampleCode,
-  DocumentAddEventListenerWidget,
   EditAddress_deleteAddress,
   EditAddress_editAddress,
   EditAddress_getAddressID,
@@ -79,11 +73,9 @@ import {
   First,
   Forgotpass_forgotPass,
   Forgotpass_sendOTP_forgot,
-  FunctionMessageBoxText,
   Get2FA,
   Get2FATrade,
   Get2FAconvert_DSF,
-  GetAbsTimeWidget,
   GetAllPoints,
   GetAnnouncement,
   GetAnnouncement_view,
@@ -143,8 +135,6 @@ import {
   Lang_setAllUILang,
   Level_openTab,
   LoaderExampleScript,
-  LoaderIndexBody,
-  LoaderWidget,
   LocationAddress_getAddress,
   LoginFun_login,
   LoginFun_login_var,
@@ -176,8 +166,6 @@ import {
   MessageBox7,
   MessageBox8,
   MessagePageExampleScript,
-  MessagePageIndexBody,
-  MessagePageWidget,
   Monitor_getBill,
   Monitor_getDataMonitor,
   Monitor_getSelectedDay,
@@ -276,7 +264,6 @@ import {
   Reportdatalogger_getSelectedDate,
   Reportdatalogger_openTabreport,
   Reportdatalogger_openTabreportCart,
-  ResObjWidget,
   SendMessage,
   SettingOrder_getAll,
   SettingOrder_scroller,
@@ -318,12 +305,44 @@ import {
   Wallet_get_dataTransaction,
   Wallet_loadList,
   Wallet_walletCheckToken,
+  Widget_messageBox2_init,
+  Widget_messageBox2_show,
+  Widget_messageBox2_unShow,
+  Widget_messageBox3_init,
+  Widget_messageBox3_show,
+  Widget_messageBox3_unShow,
+  Widget_messageBox4_init,
+  Widget_messageBox4_show,
+  Widget_messageBox5_show,
+  Widget_messageBox5_unShow,
+  Widget_messageBox4_unShow,
+  Widget_messageBox5_init,
+  Widget_messageBox6_init,
+  Widget_messageBox6_show,
+  Widget_messageBox6_unShow,
+  AlertWidget_init,
+  AlertWidget_show,
+  AlertWidget_unShow,
+  Widget_addEventListener,
+  Widget_isPassive,
+  LoaderWidget_var,
+  LoaderWidget_init,
+  LoaderWidget_show,
+  LoaderWidget_unShow,
+  MessagePage_init,
+  MessagePage_show,
+  MessagePage_unShow,
+  Widget_showHtml,
+  ShowHtml_example_script,
+  Widget_messageBox_init,
+  Widget_messageBox_show,
+  Widget_messageBox_unShow,
+  MessageBox_exampleCode_script,
 } from "./dataContents/FunctionDataText"
 
 import AlertTryit from "./tryitFunction/alertTryit"
 import HeaderInitTryit from "./tryitFunction/headerInitTryit"
 import PageShowTryit from "./tryitFunction/pageShowTryit"
-import PageUnShowTryit from "./tryitFunction/pageUnShowTryit"
 import LoaderTryit from "./tryitFunction/loaderTryit"
 import MessagePage from "./tryitFunction/messagePageTryit"
 import step1 from "../pictures/step1.png"
@@ -347,6 +366,11 @@ import {
   SubmitAddalipay,
 } from "./dataContents/FunctionDataTextEx"
 import RegisterTryit from "./tryitFunction/registerTryit"
+import MessageBox2Tryit from "./tryitFunction/messageBox2Tryit"
+import MessageBox3Tryit from "./tryitFunction/messageBox3Tryit"
+import MessageBox4Tryit from "./tryitFunction/messageBox4Tryit"
+import MessageBox5Tryit from "./tryitFunction/messageBox5Tryit"
+import MessageBox6Tryit from "./tryitFunction/messageBox6Tryit"
 
 export default function ModelContent({
   htmlCheckScript,
@@ -360,7 +384,6 @@ export default function ModelContent({
   headerName,
   selectedMenu,
   functionName,
-  indexContext,
   widget,
   widgetContent,
   widgetContent1,
@@ -441,28 +464,9 @@ export default function ModelContent({
   content10,
   content11,
   content12,
-  base64,
-  base64Context,
-  base64Context0,
-  base64Context1,
-  base64Context1p1,
-  base64Context1p2,
-  base64Context1p3,
-  base64Context1p4,
-  base64Context1p5,
-  base64Context2,
-  base64Context2p1,
-  base64Context2p2,
-  base64Context2p3,
-  base64Contextend,
   indexHead,
   indexStyle,
   indexScript,
-  indexContext1,
-  indexContext2,
-  indexContext3,
-  indexContext4,
-  indexContext5,
   indexBody,
   htmlCheck,
   headerHtml,
@@ -489,6 +493,20 @@ export default function ModelContent({
   prevMenuBeforeUpdate,
   icon,
   iconSwiper,
+  widgetInit,
+  widgetVar,
+  widgetVarContten,
+  widgetVarContten1,
+  widgetVarScript,
+  widgetInitContent,
+  widgetShowContent,
+  widgetUnShowContent,
+  widgetShow,
+  widgetUnShow,
+  widgetFunction,
+  widgetFunctionContent1,
+  widgetFunctionContent2,
+  widgetFunctionContent3,
 }) {
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
@@ -531,30 +549,157 @@ export default function ModelContent({
             <p className="mt-2">{widgetContent3}</p>
             <p className="mt-2">{widgetContent4}</p>
           </div>
-
-          <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
-            <span className="text-[#A52A2A]">&lt;script&gt;</span>
-            <p className="ml-4">
-              <span className="text-[#0000CD]">function</span>{" "}
-              {`${functionName} {`}
-            </p>
-
-            {selectedMenu === "messageBox" && <FunctionMessageBoxText />}
-            {selectedMenu === "alert" && <AlertWidget />}
-            {selectedMenu === "resObj" && <ResObjWidget />}
-            {selectedMenu === "pageInit" && <PageInit />}
-            {selectedMenu === "headerInit" && <HeaderInitWidget />}
-            {selectedMenu === "pageShow" && <PageShowWidget />}
-            {selectedMenu === "pageUnShow" && <PageUnShowWidget />}
-            {selectedMenu === "documentAddEventListener" && (
-              <DocumentAddEventListenerWidget />
+          
+          <div className="flex flex-col gap-4">
+            {widgetVarContten && (
+              <div>
+                <p>{widgetVarContten1}</p>
+              </div>
             )}
-            {selectedMenu === "getAbsTime" && <GetAbsTimeWidget />}
-            {selectedMenu === "loader" && <LoaderWidget />}
-            {selectedMenu === "messagePage" && <MessagePageWidget />}
 
-            <p>{`}`}</p>
-            <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+            {/* var */}
+            {widgetVar && (
+              <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
+                <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                <p className="ml-4">
+                  <span className="text-[#0000CD]">function</span>{" "}
+                  <span className="text-blue-600">{`${functionName} {`}</span>
+                </p>
+
+                {selectedMenu === "loader" && <LoaderWidget_var />}
+                {selectedMenu === "pageInit" && <PageInit />}
+                {selectedMenu === "pageShow" && <PageShowWidget />}
+                {selectedMenu === "pageUnShow" && <PageUnShowWidget />}
+                {selectedMenu === "showHtml" && <Widget_showHtml />}
+
+                {widgetVarScript && (
+                  <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+                )}
+              </div>
+            )}
+
+            {widgetInit && (
+              <div>
+                <h1 className="font-bold text-xl">
+                  Step 1 <span className="text-green-600">init</span>
+                </h1>
+                <p>{widgetInitContent}</p>
+              </div>
+            )}
+
+            {/* init */}
+            {widgetInit && (
+              <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
+                {widgetVar ? null : (
+                  <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                )}
+
+                {widgetVar ? null : (
+                  <p className="ml-4">
+                    <span className="text-[#0000CD]">function</span>{" "}
+                    <span className="text-blue-600">{`${functionName} {`}</span>
+                  </p>
+                )}
+                {selectedMenu === "messageBox" && <Widget_messageBox_init />}
+                {selectedMenu === "messageBox2" && <Widget_messageBox2_init />}
+                {selectedMenu === "messageBox3" && <Widget_messageBox3_init />}
+                {selectedMenu === "messageBox4" && <Widget_messageBox4_init />}
+                {selectedMenu === "messageBox5" && <Widget_messageBox5_init />}
+                {selectedMenu === "messageBox6" && <Widget_messageBox6_init />}
+                {selectedMenu === "alert" && <AlertWidget_init />}
+                {selectedMenu === "loader" && <LoaderWidget_init />}
+                {selectedMenu === "messagePage" && <MessagePage_init />}
+              </div>
+            )}
+            {widgetShow && (
+              <div>
+                <h1 className="font-bold text-xl">
+                  Step 2 <span className="text-indigo-600">show</span>
+                </h1>
+                <p>{widgetShowContent}</p>
+              </div>
+            )}
+
+            {/* show */}
+            {widgetShow && (
+              <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
+                {selectedMenu === "messageBox" && <Widget_messageBox_show />}
+                {selectedMenu === "messageBox2" && <Widget_messageBox2_show />}
+                {selectedMenu === "messageBox3" && <Widget_messageBox3_show />}
+                {selectedMenu === "messageBox4" && <Widget_messageBox4_show />}
+                {selectedMenu === "messageBox5" && <Widget_messageBox5_show />}
+                {selectedMenu === "messageBox6" && <Widget_messageBox6_show />}
+                {selectedMenu === "alert" && <AlertWidget_show />}
+                {selectedMenu === "loader" && <LoaderWidget_show />}
+                {selectedMenu === "messagePage" && <MessagePage_show />}
+              </div>
+            )}
+
+            {widgetUnShow && (
+              <div>
+                <h1 className="font-bold text-xl">
+                  Step 3 <span className="text-pink-600">unShow</span>
+                </h1>
+                <p>{widgetUnShowContent}</p>
+              </div>
+            )}
+
+            {/* unShow */}
+            {widgetUnShow && (
+              <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
+                {selectedMenu === "messageBox" && (
+                  <Widget_messageBox_unShow />
+                )}
+                {selectedMenu === "messageBox2" && (
+                  <Widget_messageBox2_unShow />
+                )}
+                {selectedMenu === "messageBox3" && (
+                  <Widget_messageBox3_unShow />
+                )}
+                {selectedMenu === "messageBox4" && (
+                  <Widget_messageBox4_unShow />
+                )}
+                {selectedMenu === "messageBox5" && (
+                  <Widget_messageBox5_unShow />
+                )}
+                {selectedMenu === "messageBox6" && (
+                  <Widget_messageBox6_unShow />
+                )}
+                {selectedMenu === "alert" && <AlertWidget_unShow />}
+                {selectedMenu === "loader" && <LoaderWidget_unShow />}
+                {selectedMenu === "messagePage" && <MessagePage_unShow />}
+                <p>{`}`}</p>
+                <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+              </div>
+            )}
+
+            {widgetFunction && (
+              <div className="flex flex-col gap-4">
+                <div>
+                  <p>{widgetFunctionContent1}</p>
+                </div>
+
+                <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
+                  <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                  {selectedMenu === "isPassive" && <Widget_addEventListener />}
+                  {selectedMenu === "headerInit" && <HeaderInitWidget />}
+                </div>
+
+                <div>
+                  <p>{widgetFunctionContent2}</p>
+                </div>
+
+                <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
+                  {selectedMenu === "isPassive" && <Widget_isPassive />}
+                  <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <h1 className="font-bold text-lg">สรุป</h1>
+                  <p>{widgetFunctionContent3}</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -1991,60 +2136,6 @@ export default function ModelContent({
         </div>
       )}
 
-      {/* base64.js */}
-      {base64 ? (
-        <div className={`${CONTAINER_CLASSES}`}>
-          <div className="w-full  py-4">
-            <h3 className="text-[23px] font-bold">base64.js</h3>
-            <p className="text-base">{base64Context}</p>
-            <p className="text-base mt-2">{base64Context0}</p>
-            <p className="text-base mt-1">{base64Context1}</p>
-            <p className="text-base ml-4">{base64Context1p1}</p>
-            <p className="text-base ml-4">{base64Context1p2}</p>
-            <p className="text-base ml-4">{base64Context1p3}</p>
-            <p className="text-base ml-4">{base64Context1p4}</p>
-            <p className="text-base ml-4">{base64Context1p5}</p>
-            <p className="text-base mt-1">{base64Context2}</p>
-            <p className="text-base ml-4">{base64Context2p1}</p>
-            <p className="text-base ml-4">{base64Context2p2}</p>
-            <p className="text-base ml-4">{base64Context2p3}</p>
-            <p className="text-base">{base64Contextend}</p>
-          </div>
-
-          <div className="w-full flex flex-col gap-4">
-            <div className="bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-              <Base64 />
-            </div>
-          </div>
-        </div>
-      ) : null}
-
-      {/* Index */}
-      {indexContext && (
-        <div className={`${CONTAINER_CLASSES}`}>
-          <div className="py-4">
-            <h3 className="text-[23px] font-bold">Index.html</h3>
-            <p className="text-lg">{indexContext}</p>
-            <p className="text-base mt-1">{indexContext1}</p>
-            <p className="text-base mt-1">{indexContext2}</p>
-            <p className="text-base mt-1">{indexContext3}</p>
-            <p className="text-base mt-1">{indexContext4}</p>
-            <p className="text-base mt-1">{indexContext5}</p>
-          </div>
-
-          <div className="w-full flex flex-col gap-4">
-            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-              <span className="text-[#A52A2A]">&lt;body&gt;</span>
-              {selectedMenu === "messageBox" && <DivMessageBox />}
-              {selectedMenu === "alert" && <AlertIndex />}
-              {selectedMenu === "loader" && <LoaderIndexBody />}
-              {selectedMenu === "messagePage" && <MessagePageIndexBody />}
-              <span className="text-[#A52A2A]">&lt;/body&gt;</span>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Index script List Explains */}
       {/* Index Head */}
       {indexHead && (
@@ -2509,7 +2600,6 @@ export default function ModelContent({
               <div className="ml-4">
                 {selectedMenu === "pageInit" && <PageInitExampleBody />}
                 {selectedMenu === "headerInit" && <PageInitExampleBody />}
-                {selectedMenu === "pageShow" && <PageShowExampleBody />}
                 {selectedMenu === "pageUnShow" && <PageUnShowExampleBody />}
                 {selectedMenu === "mainHtml" && (
                   <div>
@@ -2538,6 +2628,7 @@ export default function ModelContent({
                   </div>
                 )}
                 {selectedMenu === "levelFull" && <BodyLevel />}
+                {selectedMenu === "pageShow" && <PageShowExampleBody />}
               </div>
 
               <span className="text-[#A52A2A]">&lt;/body&gt;</span>
@@ -2545,10 +2636,9 @@ export default function ModelContent({
           ) : null}
 
           {/*Example script */}
-          {exampleScript ? null : (
+          {exampleScript && (
             <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg">
               <span className="text-[#A52A2A]">&lt;script&gt;</span>
-              {selectedMenu === "messageBox" && <DivMessageBoxExampleCode />}
               {selectedMenu === "alert" && <AlertExample />}
               {selectedMenu === "pageInit" && <PageInitExampleScript />}
               {selectedMenu === "headerInit" && <HeaderInitExampleScript />}
@@ -2567,6 +2657,25 @@ export default function ModelContent({
                   <p className="text-red-600">{`}`}</p>
                 </div>
               )}
+                {selectedMenu === "messageBox" && (
+                <MessageBox_exampleCode_script msgObj="msgObj.show" messageBox="messageBox"/>
+              )}
+              {selectedMenu === "messageBox2" && (
+                <MessageBox_exampleCode_script msgObj="msgObj.show" messageBox="messageBox2"/>
+              )}
+              {selectedMenu === "messageBox3" && (
+                <MessageBox_exampleCode_script msgObj="msgObj.show" messageBox="messageBox3"/>
+              )}
+              {selectedMenu === "messageBox4" && (
+                <MessageBox_exampleCode_script msgObj="msgObj.show" messageBox="messageBox4"/>
+              )}
+              {selectedMenu === "messageBox5" && (
+                 <MessageBox_exampleCode_script msgObj="msgObj.show" messageBox="messageBox5"/>
+              )}
+              {selectedMenu === "messageBox6" && (
+                <MessageBox_exampleCode_script msgObj="msgObj.show" messageBox="messageBox5"/>
+              )}
+              {selectedMenu === "showHtml" && <ShowHtml_example_script />}
 
               <span className="text-[#A52A2A]">&lt;/script&gt;</span>
             </div>
@@ -2589,10 +2698,15 @@ export default function ModelContent({
           {/* open test */}
           <div className="w-full">
             {selectedMenu === "messageBox" && <MessageBoxTryit />}
+            {selectedMenu === "messageBox2" && <MessageBox2Tryit />}
+            {selectedMenu === "messageBox3" && <MessageBox3Tryit />}
+            {selectedMenu === "messageBox4" && <MessageBox4Tryit />}
+            {selectedMenu === "messageBox5" && <MessageBox5Tryit />}
+            {selectedMenu === "messageBox6" && <MessageBox6Tryit />}
             {selectedMenu === "alert" && <AlertTryit />}
             {selectedMenu === "headerInit" && <HeaderInitTryit />}
             {selectedMenu === "pageShow" && <PageShowTryit />}
-            {selectedMenu === "pageUnShow" && <PageUnShowTryit />}
+            {/* {selectedMenu === "pageUnShow" && <PageUnShowTryit />} */}
             {selectedMenu === "loader" && <LoaderTryit />}
             {selectedMenu === "messagePage" && <MessagePage />}
             {selectedMenu === "mainHtml" && <MainTryit />}

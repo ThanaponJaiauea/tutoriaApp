@@ -17,29 +17,25 @@ export default function MessageBoxTryit() {
     <>
       {messageBoxVisible && (
         <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
-          <div
-            id="messageBox"
-            className="z-50 bg-white rounded-lg shadow-lg w-3/4 h-96 flex flex-col justify-center items-center">
-            <div className="w-4/5 h-4/5 flex justify-center items-center">
-              messageBox()
+          <div className="z-50 bg-white rounded-lg shadow-lg w-1/4 h-96 flex flex-col justify-between items-center">
+            <div className="w-full h-full flex justify-center items-center">
+              <p>messageBox()</p>
             </div>
 
-            <div className="w-full h-12 flex justify-center items-center mt-3">
-              <div
+            <div className="w-full h-12 flex justify-center items-center">
+              <button
                 className="w-1/2 h-full bg-red-600 rounded-l-lg flex justify-center items-center text-white"
                 onClick={handleCloseMessageBox}>
                 Confirm
-              </div>
+              </button>
 
-              <div className="w-px bg-gray-700"></div>
 
-              <div
+              <button
                 className="w-1/2 h-full bg-gray-300 rounded-r-lg flex justify-center items-center"
                 onClick={handleCloseMessageBox}>
                 Cancel
-              </div>
+              </button>
             </div>
-            <div className="h-10"></div>
           </div>
         </div>
       )}
