@@ -7,7 +7,7 @@ export default function AlertTryit() {
   const [openModal, setOpneModal] = useState(false)
   return (
     <>
-      <Buttons onClick={() => setOpneModal(!openModal)} />
+      <Buttons onClick={() => setOpneModal(!openModal)} title="open alertObj.show!"/>
 
       {openModal && (
         <div

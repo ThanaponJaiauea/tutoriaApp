@@ -40,7 +40,7 @@ export default function MessageBoxTryit() {
         </div>
       )}
 
-      <Buttons onClick={handleOpenMessageBox} />
+      <Buttons onClick={handleOpenMessageBox} title="open msgObj.show!"/>
     </>
   )
 }

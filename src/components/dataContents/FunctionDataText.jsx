@@ -120,7 +120,7 @@ export function MessageBox_exampleCode_script({msgObj, messageBox}) {
     <div className="px-4 break-words">
       <p>
         <span className="text-blue-600">{msgObj}</span>(
-        <span className="text-red-600">{messageBox}</span>)
+        <span className="text-red-600">"{messageBox}"</span>)
       </p>
     </div>
   )
@@ -942,7 +942,7 @@ export function AlertExample() {
   return (
     <div className="px-4 break-words">
       <p>
-        <span className="text-blue-600">alertObj.show</span>(
+        <span className="text-blue-600">alertObj</span>.<span className="text-yellow-600">show</span>(
         <span className="text-red-600">"alert"</span>)
       </p>
     </div>
@@ -1501,7 +1501,7 @@ export function LoaderExampleScript() {
   return (
     <div>
       <p className="ml-4">
-        <span className="text-blue-600">loaderObj</span>.show();
+        <span className="text-blue-600">loaderObj</span>.<span className="text-yellow-600">show</span>();
       </p>
     </div>
   )
@@ -1553,7 +1553,7 @@ export function MessagePageExampleScript() {
   return (
     <div className="ml-4">
       <p>
-        <span className="text-red-600">msgPageObj</span>.show("messagePage")
+        <span className="text-red-600">msgPageObj</span>.show(<span className="text-red-600">"messagePage"</span>)
       </p>
     </div>
   )
@@ -15018,36 +15018,106 @@ export function IndexBodyScriptVar() {
   )
 }
 
-export function IndexBodyScriptVar2() {
+export function IndexBodyScriptVar2_alertObj() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2">
-        <p className="mt-2">{`var alertObj = new alert();`}</p>
-        <p>{`alertObj.init();`}</p>
-        <p className="mt-2">{`var loaderObj = new loader();`}</p>
-        <p>{`loaderObj.init();`}</p>
-        <p className="mt-2">{`var msgObj = new messageBox();`}</p>
-        <p>{`msgObj.init();`}</p>
-        <p className="mt-2">{`var msgObj2 = new messageBox2();`}</p>
-        <p>{`msgObj2.init();`}</p>
-        <p className="mt-2">{`var msgObj3 = new messageBox3();`}</p>
-        <p>{`msgObj3.init();`}</p>
-        <p className="mt-2">{`var msgObj4 = new messageBox4();`}</p>
-        <p>{`msgObj4.init()`}</p>
-        <p className="mt-2">{`var msgObj5 = new messageBox5();`}</p>
-        <p>{`msgObj5.init();`}</p>
-        <p className="mt-2">{`var msgObj6 = new messageBox6();`}</p>
-        <p>{`msgObj6.init();`}</p>
-        <p className="mt-2">{`var msgObjSub = new messageBox7();`}</p>
-        <p>{`msgObjSub.init();`}</p>
-        <p className="mt-2">{`var msgObjTran = new messageBox8();`}</p>
-        <p>{`msgObjTran.init();`}</p>
-        <p className="mt-2">{`var msgPageObj = new messagePage();`}</p>
-        <p>{`msgPageObj.init();`}</p>
+        <p className="mt-2">var <span className="text-blue-600">alertObj</span> = new <span className="text-red-600">alert</span>();</p>
+        <p><span className="text-blue-600">alertObj</span>.<span className="text-yellow-600">init</span>();</p>
       </div>
     </div>
   )
 }
+
+export function IndexBodyScriptVar2_msgObj() {
+  return (
+    <div className="ml-4 break-words">
+         <div className="ml-2">
+        <p className="mt-2">var <span className="text-blue-600">msgObj</span> = new <span className="text-red-600">messageBox</span>();</p>
+        <p><span className="text-blue-600">msgObj</span>.<span className="text-yellow-600">init</span>();</p>
+      </div>
+    </div>
+  )
+}
+
+export function IndexBodyScriptVar2_msgObj2() {
+  return (
+    <div className="ml-4 break-words">
+         <div className="ml-2">
+        <p className="mt-2">var <span className="text-blue-600">msgObj2</span> = new <span className="text-red-600">messageBox2</span>();</p>
+        <p><span className="text-blue-600">msgObj2</span>.<span className="text-yellow-600">init</span>();</p>
+      </div>
+    </div>
+  )
+}
+
+export function IndexBodyScriptVar2_msgObj3() {
+  return (
+    <div className="ml-4 break-words">
+         <div className="ml-2">
+        <p className="mt-2">var <span className="text-blue-600">msgObj3</span> = new <span className="text-red-600">messageBox3</span>();</p>
+        <p><span className="text-blue-600">msgObj3</span>.<span className="text-yellow-600">init</span>();</p>
+      </div>
+    </div>
+  )
+}
+
+export function IndexBodyScriptVar2_msgObj4() {
+  return (
+    <div className="ml-4 break-words">
+         <div className="ml-2">
+        <p className="mt-2">var <span className="text-blue-600">msgObj4</span> = new <span className="text-red-600">messageBox4</span>();</p>
+        <p><span className="text-blue-600">msgObj4</span>.<span className="text-yellow-600">init</span>();</p>
+      </div>
+    </div>
+  )
+}
+
+export function IndexBodyScriptVar2_msgObj5() {
+  return (
+    <div className="ml-4 break-words">
+         <div className="ml-2">
+        <p className="mt-2">var <span className="text-blue-600">msgObj5</span> = new <span className="text-red-600">messageBox5</span>();</p>
+        <p><span className="text-blue-600">msgObj5</span>.<span className="text-yellow-600">init</span>();</p>
+      </div>
+    </div>
+  )
+}
+
+export function IndexBodyScriptVar2_msgObj6() {
+  return (
+    <div className="ml-4 break-words">
+         <div className="ml-2">
+        <p className="mt-2">var <span className="text-blue-600">msgObj6</span> = new <span className="text-red-600">messageBox6</span>();</p>
+        <p><span className="text-blue-600">msgObj6</span>.<span className="text-yellow-600">init</span>();</p>
+      </div>
+    </div>
+  )
+}
+
+export function IndexBodyScriptVar2_loaderObj() {
+  return (
+    <div className="ml-4 break-words">
+         <div className="ml-2">
+        <p className="mt-2">var <span className="text-blue-600">loaderObj</span> = new <span className="text-red-600">loader</span>();</p>
+        <p><span className="text-blue-600">loaderObj</span>.<span className="text-yellow-600">init</span>();</p>
+      </div>
+    </div>
+  )
+}
+
+export function IndexBodyScriptVar2_msgPageObj() {
+  return (
+    <div className="ml-4 break-words">
+         <div className="ml-2">
+        <p className="mt-2">var <span className="text-blue-600">msgPageObj</span> = new <span className="text-red-600">messagePage</span>();</p>
+        <p><span className="text-blue-600">msgPageObj</span>.<span className="text-yellow-600">init</span>();</p>
+      </div>
+    </div>
+  )
+}
+
+
 
 export function IndexBodyScriptVar3() {
   let langs = <span className="text-green-600">lang</span>
@@ -15165,78 +15235,9 @@ export function IndexScriptStartApp() {
   return (
     <div className="ml-4 break-words">
       <div className="ml-2">
-        <span className="text-red-600">{`function startApp() {`}</span>
-        <div className="ml-2">
-          <p>{`mResObj.showHtml("lang.html", "root");`}</p>
-          <p>{`mResObj.showHtml("main.html", "root");`}</p>
-          <p>{`mResObj.showHtml("start.html", "root");`}</p>
-          <p>{`mResObj.showHtml("productdetail.html", "root");`}</p>
-          <p>{`mResObj.showHtml("productCart.html", "root");`}</p>
-          <p>{`mResObj.showHtml("confirm_order.html", "root");`}</p>
-          <p>{`mResObj.showHtml("payment_method.html", "root");`}</p>
-          <p>{`mResObj.showHtml("vouncher_code.html", "root");`}</p>
-          <p>{`mResObj.showHtml("tracking.html", "root");`}</p>
-          <p>{`mResObj.showHtml("cancel_order.html", "root");`}</p>
-          <p>{`mResObj.showHtml("refund.html", "root");`}</p>
-          <p>{`mResObj.showHtml("historyItem.html", "root");`}</p>
-          <p>{`mResObj.showHtml("login.html", "root");`}</p>
-          <p>{`mResObj.showHtml("forgotpass.html", "root");`}</p>
-          <p>{`mResObj.showHtml("register.html", "root");`}</p>
-          <p>{`mResObj.showHtml("locationAddress.html", "root");`}</p>
-          <p>{`mResObj.showHtml("edit_address.html", "root");`}</p>
-          <p>{`mResObj.showHtml("new_address.html", "root");`}</p>
-          <p>{`mResObj.showHtml("static.html", "root");`}</p>
-          <p>{`mResObj.showHtml("purchaseReport.html", "root");`}</p>
-          <p>{`mResObj.showHtml("inCome.html", "root");`}</p>
-          <p>{`mResObj.showHtml("paymentStatistic.html", "root");`}</p>
-          <p>{`mResObj.showHtml("profit_margin.html", "root");`}</p>
-          <p>{`mResObj.showHtml("data_customer.html", "root");`}</p>
-          <p>{`mResObj.showHtml("data_customer_details.html", "root");`}</p>
-          <p>{`mResObj.showHtml("customer.html", "root");`}</p>
-          <p>{`mResObj.showHtml("coins.html", "root");`}</p>
-          <p>{`mResObj.showHtml("redeem.html", "root");`}</p>
-          <p>{`mResObj.showHtml("transaction.html", "root");`}</p>
-          <p>{`mResObj.showHtml("coin_history.html", "root");`}</p>
-          <p>{`mResObj.showHtml("coins_detail.html", "root");`}</p>
-          <p>{`mResObj.showHtml("topup.html", "root");`}</p>
-          <p>{`mResObj.showHtml("promptpay.html", "root");`}</p>
-          <p>{`mResObj.showHtml("mobile_bank.html", "root");`}</p>
-          <p>{`mResObj.showHtml("credit_card.html", "root");`}</p>
-          <p>{`mResObj.showHtml("transfer.html", "root");`}</p>
-          <p>{`mResObj.showHtml("update_order.html", "root");`}</p>
-          <p>{`mResObj.showHtml("setting_account.html", "root");`}</p>
-          <p>{`mResObj.showHtml("setting_security.html", "root");`}</p>
-          <p>{`mResObj.showHtml("setting_about.html", "root");`}</p>
-          <p>{`mResObj.showHtml("setting_version.html", "root");`}</p>
-          <p>{`mResObj.showHtml("setting_lang.html", "root");`}</p>
-          <p>{`mResObj.showHtml("setting_invite.html", "root");`}</p>
-          <p>{`mResObj.showHtml("notification.html", "root");`}</p>
-          <p>{`mResObj.showHtml("adddatalogger.html", "root");`}</p>
-          <p>{`mResObj.showHtml("deletedatalogger.html", "root");`}</p>
-          <p>{`mResObj.showHtml("reportdatalogger.html", "root");`}</p>
-          <p>{`mResObj.showHtml("level.html", "root");`}</p>
-          <p>{`mResObj.showHtml("detailseemore.html", "root");`}</p>
-          <p>{`mResObj.showHtml("memberTier.html", "root");`}</p>
-          <p>{`mResObj.showHtml("changepassword.html", "root");`}</p>
-          <p>{`mResObj.showHtml("order_info.html", "root");`}</p>
-          <p>{`mResObj.showHtml("setting_order.html", "root");`}</p>
-          <p>{`mResObj.showHtml("order_state_10.html", "root");`}</p>
-          <p>{`mResObj.showHtml("payment_method2.html", "root");`}</p>
-          <p>{`mResObj.showHtml("order_state_ship.html", "root");`}</p>
-          <p>{`mResObj.showHtml("register_shop.html", "root");`}</p>
-          <p>{`mResObj.showHtml("order_info_waitRceive.html", "root");`}</p>
-          <p>{`mResObj.showHtml("order_info_received.html", "root");`}</p>
-          <p>{`mResObj.showHtml("order_info_cancel.html", "root");`}</p>
-          <p>{`mResObj.showHtml("order_info_cancel_refund.html", "root");`}</p>
-          <p>{`mResObj.showHtml("settingService.html", "root");`}</p>
-          <p>{`mResObj.showHtml("my_devices.html", "root");`}</p>
-          <p>{`mResObj.showHtml("Configuration.html", "root");`}</p>
-          <p>{`mResObj.showHtml("distributor.html", "root");`}</p>
-          <p>{`mainObj.checkIsLogin();`}</p>
-          <p>{`setAllPageLang();`}</p>
-          <p>{`firstStartFun();`}</p>
-        </div>
-        <span className="text-red-600">{`}`}</span>
+        <p>function<span className="text-red-600">{` startApp() `}</span>{`{}`}</p>
+          <p><span className="text-yellow-600 ml-2">mResObj</span>.<span className="text-blue-600">showHtml</span>("home.html", "root");</p>
+        <p>{`}`}</p>
       </div>
     </div>
   )

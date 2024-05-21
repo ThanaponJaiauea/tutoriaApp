@@ -120,7 +120,6 @@ import {
   InCome_updateIncomeBeforeTaxes,
   IndexBodyScripFirstStartFun,
   IndexBodyScriptVar,
-  IndexBodyScriptVar2,
   IndexBodyScriptVar3,
   IndexBodyScriptVar4,
   IndexHead,
@@ -338,6 +337,15 @@ import {
   Widget_messageBox_show,
   Widget_messageBox_unShow,
   MessageBox_exampleCode_script,
+  IndexBodyScriptVar2_alertObj,
+  IndexBodyScriptVar2_loaderObj,
+  IndexBodyScriptVar2_msgObj,
+  IndexBodyScriptVar2_msgObj2,
+  IndexBodyScriptVar2_msgObj3,
+  IndexBodyScriptVar2_msgObj4,
+  IndexBodyScriptVar2_msgObj5,
+  IndexBodyScriptVar2_msgObj6,
+  IndexBodyScriptVar2_msgPageObj,
 } from "./dataContents/FunctionDataText"
 
 import AlertTryit from "./tryitFunction/alertTryit"
@@ -491,7 +499,7 @@ export default function ModelContent({
   howtoLangScript,
   swiperContent,
   prevMenuBeforeUpdate,
-  icon,
+  iconAlert,
   iconSwiper,
   widgetInit,
   widgetVar,
@@ -507,6 +515,7 @@ export default function ModelContent({
   widgetFunctionContent1,
   widgetFunctionContent2,
   widgetFunctionContent3,
+  handlelClickToTOp
 }) {
   const CONTAINER_CLASSES =
     "w-[96%] bg-[#E7E9EB] m-auto rounded-lg py-[8px] px-[20px] mt-5"
@@ -515,9 +524,9 @@ export default function ModelContent({
     <div className="w-full py-4">
       {/* Header */}
       <div className="w-[96%] m-auto flex flex-col gap-2">
-        {prevMenuBeforeUpdate === "scriptIndex" && icon && (
+        {prevMenuBeforeUpdate === "scriptIndex" && iconAlert && (
           <button
-            onClick={() => setSelectedMenu(prevMenuBeforeUpdate)}
+            onClick={() => handlelClickToTOp()}
             className="text-2xl bg-red-200 w-[40px] h-[40px] p-2 rounded-full flex items-center justify-center">
             <IoMdArrowRoundBack />
           </button>
@@ -549,7 +558,7 @@ export default function ModelContent({
             <p className="mt-2">{widgetContent3}</p>
             <p className="mt-2">{widgetContent4}</p>
           </div>
-          
+
           <div className="flex flex-col gap-4">
             {widgetVarContten && (
               <div>
@@ -647,9 +656,7 @@ export default function ModelContent({
             {/* unShow */}
             {widgetUnShow && (
               <div className="w-full bg-[#ffff] flex flex-col p-2 rounded-lg">
-                {selectedMenu === "messageBox" && (
-                  <Widget_messageBox_unShow />
-                )}
+                {selectedMenu === "messageBox" && <Widget_messageBox_unShow />}
                 {selectedMenu === "messageBox2" && (
                   <Widget_messageBox2_unShow />
                 )}
@@ -2261,10 +2268,8 @@ export default function ModelContent({
       {/* Index Script */}
       {indexScript && (
         <div className={`${CONTAINER_CLASSES}`}>
-          <div className="w-full py-4">
-            <button className="w-full flex items-center justify-between">
-              <h3 className="text-[23px] font-bold">Script</h3>
-            </button>
+          <div className="w-full flex items-center justify-between py-4">
+            <h3 className="text-[23px] font-bold">Script</h3>
           </div>
 
           <div className="w-full flex flex-col gap-4">
@@ -2283,25 +2288,434 @@ export default function ModelContent({
               </div>
             </div>
 
-            <div className="flex items-center gap-2 mt-2 flex-wrap">
-              <p>
-                เป็นการสร้างอ็อบเจกต์และเรียกใช้เมทอด init() ของแต่ละอ็อบเจกต์
-                เพื่อเตรียมการใช้งานในแต่ละอ็อบเจกต์ โดย
-                ฟังก์ชันที่เรียกมาจากหน้า widget.js
-                สามารถกดไปดูรายละเอียดเพิ่มได้ที่
-              </p>
+            {/* alertObj */}
+            <div className="border-2 border-b-black p-2">
+              <h1 className="text-xl font-bold">
+                1.Var <span className="text-blue-600">alertObj</span>{" "}
+              </h1>
+              <div className="flex items-center gap-2 mt-2 flex-wrap">
+                <p>
+                  เป็นการสร้างอ็อบเจกต์และเรียกใช้เมทอด init() ของแต่ละอ็อบเจกต์
+                  เพื่อเตรียมการใช้งานในแต่ละอ็อบเจกต์ โดย
+                  ฟังก์ชันที่เรียกมาจากหน้า{" "}
+                  <span className="text-red-600">alert</span> widget.js
+                </p>
+                สามารถกดไปดูรายละเอียดเพิ่มได้ที่ :
+                <span
+                  onClick={() => setSelectedMenu("alert")}
+                  className="mb-2 cursor-pointer text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:outline-none font-medium rounded-lg text-sm p-2 text-center ">
+                  อ่านต่อ
+                </span>
+              </div>
 
-              <button
-                onClick={() => setSelectedMenu("alert")}
-                type="button"
-                className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:outline-none font-medium rounded-lg text-sm p-2 text-center ">
-                อ่านต่อ
-              </button>
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <div className="flex flex-col gap-6">
+                  <IndexBodyScriptVar2_alertObj />
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <p>
+                  วิธีใช้เราสามารถเรียกใช้{" "}
+                  <span className="text-blue-600">alertObj</span>.
+                  <span className="text-yellow-600">show</span>(
+                  <span className="text-red-600">"ส่งพารามิเตอร์"</span>) ได้เลย
+                </p>
+              </div>
+              {/* ho to use */}
+              <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg mt-4">
+                <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                <AlertExample />
+                <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+              </div>
+
+              <div className="mt-4">
+                <AlertTryit />
+              </div>
             </div>
 
-            <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
-              <div className="flex flex-col gap-6">
-                <IndexBodyScriptVar2 />
+            {/* loaderObj */}
+            <div className="border-2 border-b-black p-2">
+              <h1 className="text-xl font-bold">
+                2.Var <span className="text-blue-600">loaderObj</span>{" "}
+              </h1>
+              <div className="flex items-center gap-2 mt-2 flex-wrap">
+                <p>
+                  เป็นการสร้างอ็อบเจกต์และเรียกใช้เมทอด init() ของแต่ละอ็อบเจกต์
+                  เพื่อเตรียมการใช้งานในแต่ละอ็อบเจกต์ โดย
+                  ฟังก์ชันที่เรียกมาจากหน้า{" "}
+                  <span className="text-red-600">loader</span> widget.js
+                </p>
+                สามารถกดไปดูรายละเอียดเพิ่มได้ที่ :
+                <span
+                  onClick={() => setSelectedMenu("alert")}
+                  className="mb-2 cursor-pointer text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:outline-none font-medium rounded-lg text-sm p-2 text-center ">
+                  อ่านต่อ
+                </span>
+              </div>
+
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <div className="flex flex-col gap-6">
+                  <IndexBodyScriptVar2_loaderObj />
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <p>
+                  วิธีใช้เราสามารถเรียกใช้{" "}
+                  <span className="text-blue-600">loaderObj</span>.
+                  <span className="text-yellow-600">show</span>() ได้เลย
+                </p>
+              </div>
+              {/* ho to use */}
+              <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg mt-4">
+                <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                <LoaderExampleScript />
+                <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+              </div>
+
+              <div className="mt-4">
+                <LoaderTryit />
+              </div>
+            </div>
+
+            {/* msgObj */}
+            <div className="border-2 border-b-black p-2">
+              <h1 className="text-xl font-bold">
+                3.Var <span className="text-blue-600">msgObj</span>{" "}
+              </h1>
+              <div className="flex items-center gap-2 mt-2 flex-wrap">
+                <p>
+                  เป็นการสร้างอ็อบเจกต์และเรียกใช้เมทอด init() ของแต่ละอ็อบเจกต์
+                  เพื่อเตรียมการใช้งานในแต่ละอ็อบเจกต์ โดย
+                  ฟังก์ชันที่เรียกมาจากหน้า{" "}
+                  <span className="text-red-600">messageBox</span> widget.js
+                </p>
+                สามารถกดไปดูรายละเอียดเพิ่มได้ที่ :
+                <span
+                  onClick={() => setSelectedMenu("alert")}
+                  className="mb-2 cursor-pointer text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:outline-none font-medium rounded-lg text-sm p-2 text-center ">
+                  อ่านต่อ
+                </span>
+              </div>
+
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <div className="flex flex-col gap-6">
+                  <IndexBodyScriptVar2_msgObj />
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <p>
+                  วิธีใช้เราสามารถเรียกใช้{" "}
+                  <span className="text-blue-600">msgObj </span>.
+                  <span className="text-yellow-600">show</span>(
+                  <span className="text-red-600">"ส่งพารามิเตอร์"</span>) ได้เลย
+                </p>
+              </div>
+              {/* ho to use */}
+              <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg mt-4">
+                <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                <MessageBox_exampleCode_script
+                  msgObj="msgObj.show"
+                  messageBox="messageBox"
+                />
+                <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+              </div>
+
+              <div className="mt-4">
+                <MessageBoxTryit />
+              </div>
+            </div>
+
+            {/* msgObj2 */}
+            <div className="border-2 border-b-black p-2">
+              <h1 className="text-xl font-bold">
+                4.Var <span className="text-blue-600">msgObj2</span>{" "}
+              </h1>
+              <div className="flex items-center gap-2 mt-2 flex-wrap">
+                <p>
+                  เป็นการสร้างอ็อบเจกต์และเรียกใช้เมทอด init() ของแต่ละอ็อบเจกต์
+                  เพื่อเตรียมการใช้งานในแต่ละอ็อบเจกต์ โดย
+                  ฟังก์ชันที่เรียกมาจากหน้า{" "}
+                  <span className="text-red-600">messageBox2</span> widget.js
+                </p>
+                สามารถกดไปดูรายละเอียดเพิ่มได้ที่ :
+                <span
+                  onClick={() => setSelectedMenu("alert")}
+                  className="mb-2 cursor-pointer text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:outline-none font-medium rounded-lg text-sm p-2 text-center ">
+                  อ่านต่อ
+                </span>
+              </div>
+
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <div className="flex flex-col gap-6">
+                  <IndexBodyScriptVar2_msgObj2 />
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <p>
+                  วิธีใช้เราสามารถเรียกใช้{" "}
+                  <span className="text-blue-600">msgObj2</span>.
+                  <span className="text-yellow-600">show</span>(
+                  <span className="text-red-600">"ส่งพารามิเตอร์"</span>) ได้เลย
+                </p>
+              </div>
+              {/* ho to use */}
+              <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg mt-4">
+                <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                <MessageBox_exampleCode_script
+                  msgObj="msgObj2.show"
+                  messageBox="messageBox2"
+                />
+                <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+              </div>
+
+              <div className="mt-4">
+                <MessageBox2Tryit />
+              </div>
+            </div>
+
+            {/* msgObj3 */}
+            <div className="border-2 border-b-black p-2">
+              <h1 className="text-xl font-bold">
+                5.Var <span className="text-blue-600">msgObj3</span>{" "}
+              </h1>
+              <div className="flex items-center gap-2 mt-2 flex-wrap">
+                <p>
+                  เป็นการสร้างอ็อบเจกต์และเรียกใช้เมทอด init() ของแต่ละอ็อบเจกต์
+                  เพื่อเตรียมการใช้งานในแต่ละอ็อบเจกต์ โดย
+                  ฟังก์ชันที่เรียกมาจากหน้า{" "}
+                  <span className="text-red-600">messageBox3</span> widget.js
+                </p>
+                สามารถกดไปดูรายละเอียดเพิ่มได้ที่ :
+                <span
+                  onClick={() => setSelectedMenu("alert")}
+                  className="mb-2 cursor-pointer text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:outline-none font-medium rounded-lg text-sm p-2 text-center ">
+                  อ่านต่อ
+                </span>
+              </div>
+
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <div className="flex flex-col gap-6">
+                  <IndexBodyScriptVar2_msgObj3 />
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <p>
+                  วิธีใช้เราสามารถเรียกใช้{" "}
+                  <span className="text-blue-600">msgObj3</span>.
+                  <span className="text-yellow-600">show</span>(
+                  <span className="text-red-600">"ส่งพารามิเตอร์"</span>) ได้เลย
+                </p>
+              </div>
+              {/* ho to use */}
+              <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg mt-4">
+                <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                <MessageBox_exampleCode_script
+                  msgObj="msgObj3.show"
+                  messageBox="messageBox3"
+                />
+                <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+              </div>
+
+              <div className="mt-4">
+                <MessageBox3Tryit />
+              </div>
+            </div>
+
+            {/* msgObj4 */}
+            <div className="border-2 border-b-black p-2">
+              <h1 className="text-xl font-bold">
+                6.Var <span className="text-blue-600">msgObj4</span>{" "}
+              </h1>
+              <div className="flex items-center gap-2 mt-2 flex-wrap">
+                <p>
+                  เป็นการสร้างอ็อบเจกต์และเรียกใช้เมทอด init() ของแต่ละอ็อบเจกต์
+                  เพื่อเตรียมการใช้งานในแต่ละอ็อบเจกต์ โดย
+                  ฟังก์ชันที่เรียกมาจากหน้า{" "}
+                  <span className="text-red-600">messageBox4</span> widget.js
+                </p>
+                สามารถกดไปดูรายละเอียดเพิ่มได้ที่ :
+                <span
+                  onClick={() => setSelectedMenu("alert")}
+                  className="mb-2 cursor-pointer text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:outline-none font-medium rounded-lg text-sm p-2 text-center ">
+                  อ่านต่อ
+                </span>
+              </div>
+
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <div className="flex flex-col gap-6">
+                  <IndexBodyScriptVar2_msgObj4 />
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <p>
+                  วิธีใช้เราสามารถเรียกใช้{" "}
+                  <span className="text-blue-600">msgObj4</span>.
+                  <span className="text-yellow-600">show</span>(
+                  <span className="text-red-600">"ส่งพารามิเตอร์"</span>) ได้เลย
+                </p>
+              </div>
+              {/* ho to use */}
+              <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg mt-4">
+                <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                <MessageBox_exampleCode_script
+                  msgObj="msgObj4.show"
+                  messageBox="messageBox4"
+                />
+                <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+              </div>
+
+              <div className="mt-4">
+                <MessageBox4Tryit />
+              </div>
+            </div>
+
+            {/* msgObj5 */}
+            <div className="border-2 border-b-black p-2">
+              <h1 className="text-xl font-bold">
+                6.Var <span className="text-blue-600">msgObj5</span>{" "}
+              </h1>
+              <div className="flex items-center gap-2 mt-2 flex-wrap">
+                <p>
+                  เป็นการสร้างอ็อบเจกต์และเรียกใช้เมทอด init() ของแต่ละอ็อบเจกต์
+                  เพื่อเตรียมการใช้งานในแต่ละอ็อบเจกต์ โดย
+                  ฟังก์ชันที่เรียกมาจากหน้า{" "}
+                  <span className="text-red-600">messageBox5</span> widget.js
+                </p>
+                สามารถกดไปดูรายละเอียดเพิ่มได้ที่ :
+                <span
+                  onClick={() => setSelectedMenu("alert")}
+                  className="mb-2 cursor-pointer text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:outline-none font-medium rounded-lg text-sm p-2 text-center ">
+                  อ่านต่อ
+                </span>
+              </div>
+
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <div className="flex flex-col gap-6">
+                  <IndexBodyScriptVar2_msgObj5 />
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <p>
+                  วิธีใช้เราสามารถเรียกใช้{" "}
+                  <span className="text-blue-600">msgObj5</span>.
+                  <span className="text-yellow-600">show</span>(
+                  <span className="text-red-600">"ส่งพารามิเตอร์"</span>) ได้เลย
+                </p>
+              </div>
+              {/* ho to use */}
+              <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg mt-4">
+                <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                <MessageBox_exampleCode_script
+                  msgObj="msgObj5.show"
+                  messageBox="messageBox5"
+                />
+                <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+              </div>
+
+              <div className="mt-4">
+                <MessageBox5Tryit />
+              </div>
+            </div>
+
+            {/* msgObj6 */}
+            <div className="border-2 border-b-black p-2">
+              <h1 className="text-xl font-bold">
+                7.Var <span className="text-blue-600">msgObj6</span>{" "}
+              </h1>
+              <div className="flex items-center gap-2 mt-2 flex-wrap">
+                <p>
+                  เป็นการสร้างอ็อบเจกต์และเรียกใช้เมทอด init() ของแต่ละอ็อบเจกต์
+                  เพื่อเตรียมการใช้งานในแต่ละอ็อบเจกต์ โดย
+                  ฟังก์ชันที่เรียกมาจากหน้า{" "}
+                  <span className="text-red-600">messageBox6</span> widget.js
+                </p>
+                สามารถกดไปดูรายละเอียดเพิ่มได้ที่ :
+                <span
+                  onClick={() => setSelectedMenu("alert")}
+                  className="mb-2 cursor-pointer text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:outline-none font-medium rounded-lg text-sm p-2 text-center ">
+                  อ่านต่อ
+                </span>
+              </div>
+
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <div className="flex flex-col gap-6">
+                  <IndexBodyScriptVar2_msgObj6 />
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <p>
+                  วิธีใช้เราสามารถเรียกใช้{" "}
+                  <span className="text-blue-600">msgObj6</span>.
+                  <span className="text-yellow-600">show</span>(
+                  <span className="text-red-600">"ส่งพารามิเตอร์"</span>) ได้เลย
+                </p>
+              </div>
+              {/* ho to use */}
+              <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg mt-4">
+                <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                <MessageBox_exampleCode_script
+                  msgObj="msgObj6.show"
+                  messageBox="messageBox6"
+                />
+                <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+              </div>
+
+              <div className="mt-4">
+                <MessageBox6Tryit />
+              </div>
+            </div>
+
+            {/* msgPageObj */}
+            <div className="border-2 border-b-black p-2">
+              <h1 className="text-xl font-bold">
+                7.Var <span className="text-blue-600">msgPageObj </span>{" "}
+              </h1>
+              <div className="flex items-center gap-2 mt-2 flex-wrap">
+                <p>
+                  เป็นการสร้างอ็อบเจกต์และเรียกใช้เมทอด init() ของแต่ละอ็อบเจกต์
+                  เพื่อเตรียมการใช้งานในแต่ละอ็อบเจกต์ โดย
+                  ฟังก์ชันที่เรียกมาจากหน้า{" "}
+                  <span className="text-red-600">messagePage</span> widget.js
+                </p>
+                สามารถกดไปดูรายละเอียดเพิ่มได้ที่ :
+                <span
+                  onClick={() => setSelectedMenu("alert")}
+                  className="mb-2 cursor-pointer text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:outline-none font-medium rounded-lg text-sm p-2 text-center ">
+                  อ่านต่อ
+                </span>
+              </div>
+
+              <div className="w-full bg-[#ffff] flex flex-col gap-2 p-2 rounded-lg">
+                <div className="flex flex-col gap-6">
+                  <IndexBodyScriptVar2_msgPageObj />
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <p>
+                  วิธีใช้เราสามารถเรียกใช้{" "}
+                  <span className="text-blue-600">msgObj6</span>.
+                  <span className="text-yellow-600">show</span>(
+                  <span className="text-red-600">"ส่งพารามิเตอร์"</span>) ได้เลย
+                </p>
+              </div>
+              {/* ho to use */}
+              <div className=" bg-[#ffff] flex flex-col p-2 rounded-lg mt-4">
+                <span className="text-[#A52A2A]">&lt;script&gt;</span>
+                <MessagePageExampleScript />
+                <span className="text-[#A52A2A]">&lt;/script&gt;</span>
+              </div>
+
+              <div className="mt-4">
+                <MessagePage />
               </div>
             </div>
 
@@ -2657,23 +3071,41 @@ export default function ModelContent({
                   <p className="text-red-600">{`}`}</p>
                 </div>
               )}
-                {selectedMenu === "messageBox" && (
-                <MessageBox_exampleCode_script msgObj="msgObj.show" messageBox="messageBox"/>
+              {selectedMenu === "messageBox" && (
+                <MessageBox_exampleCode_script
+                  msgObj="msgObj.show"
+                  messageBox="messageBox"
+                />
               )}
               {selectedMenu === "messageBox2" && (
-                <MessageBox_exampleCode_script msgObj="msgObj.show" messageBox="messageBox2"/>
+                <MessageBox_exampleCode_script
+                  msgObj="msgObj.show"
+                  messageBox="messageBox2"
+                />
               )}
               {selectedMenu === "messageBox3" && (
-                <MessageBox_exampleCode_script msgObj="msgObj.show" messageBox="messageBox3"/>
+                <MessageBox_exampleCode_script
+                  msgObj="msgObj.show"
+                  messageBox="messageBox3"
+                />
               )}
               {selectedMenu === "messageBox4" && (
-                <MessageBox_exampleCode_script msgObj="msgObj.show" messageBox="messageBox4"/>
+                <MessageBox_exampleCode_script
+                  msgObj="msgObj.show"
+                  messageBox="messageBox4"
+                />
               )}
               {selectedMenu === "messageBox5" && (
-                 <MessageBox_exampleCode_script msgObj="msgObj.show" messageBox="messageBox5"/>
+                <MessageBox_exampleCode_script
+                  msgObj="msgObj.show"
+                  messageBox="messageBox5"
+                />
               )}
               {selectedMenu === "messageBox6" && (
-                <MessageBox_exampleCode_script msgObj="msgObj.show" messageBox="messageBox5"/>
+                <MessageBox_exampleCode_script
+                  msgObj="msgObj.show"
+                  messageBox="messageBox5"
+                />
               )}
               {selectedMenu === "showHtml" && <ShowHtml_example_script />}
 
@@ -2706,7 +3138,7 @@ export default function ModelContent({
             {selectedMenu === "alert" && <AlertTryit />}
             {selectedMenu === "headerInit" && <HeaderInitTryit />}
             {selectedMenu === "pageShow" && <PageShowTryit />}
-            {/* {selectedMenu === "pageUnShow" && <PageUnShowTryit />} */}
+            {selectedMenu === "pageUnShow" && <PageUnShowTryit />}
             {selectedMenu === "loader" && <LoaderTryit />}
             {selectedMenu === "messagePage" && <MessagePage />}
             {selectedMenu === "mainHtml" && <MainTryit />}

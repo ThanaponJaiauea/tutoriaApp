@@ -20,10 +20,10 @@ export default function HomePage() {
   } = useSelectedNavbar()
 
   // console.log("selectedNavbar", selectedNavbar)
-  // console.log("----------------------------------------");
+  console.log("----------------------------------------");
   console.log("selectedMenu", selectedMenu)
-  // console.log("prevMenuBeforeUpdate",prevMenuBeforeUpdate);
-  // console.log("----------------------------------------");
+  console.log("prevMenuBeforeUpdate",prevMenuBeforeUpdate);
+  console.log("----------------------------------------");
 
   const handleModelClick = (menu) => {
     setSelectedMenu(menu)

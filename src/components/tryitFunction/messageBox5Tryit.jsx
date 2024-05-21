@@ -36,7 +36,7 @@ export default function MessageBox5Tryit() {
         </div>
       )}
 
-      <Buttons onClick={() => setOpen(!open)} />
+      <Buttons onClick={() => setOpen(!open)} title="open msgObj5.show!"/>
     </>
   )
 }

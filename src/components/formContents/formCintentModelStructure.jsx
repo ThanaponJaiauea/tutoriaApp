@@ -10,6 +10,19 @@ const FormCintentModelStructure = ({
 }) => {
   const [openMainBody, setOpenMainBody] = useState(false)
   const [openMainScript, setOpenMainScript] = useState(false)
+  const handlelClickToTOp = () => {
+    setSelectedMenu(prevMenuBeforeUpdate)
+    
+    const scrollStep = () => {
+      if (window.pageYOffset === 0) {
+        return
+      }
+
+      window.scrollTo(0, window.pageYOffset - 20)
+      requestAnimationFrame(scrollStep)
+    }
+    requestAnimationFrame(scrollStep)
+  }
 
   const getTitle = () => {
     switch (selectedMenu) {
@@ -120,6 +133,10 @@ const FormCintentModelStructure = ({
         functionName={getTitle()}
         selectedMenu={selectedMenu}
         exampleContent="exampleContent"
+        prevMenuBeforeUpdate={prevMenuBeforeUpdate}
+        setSelectedMenu={setSelectedMenu}
+        iconAlert={true}
+        handlelClickToTOp={handlelClickToTOp}
         widgetInit={true}
         widgetShow={true}
         widgetUnShow={true}

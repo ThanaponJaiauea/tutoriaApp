@@ -9,7 +9,7 @@ export default function MessagePage({title}) {
 
   return (
     <>
-      <Buttons onClick={() => setOpenModal(!openModal)} />
+      <Buttons onClick={() => setOpenModal(!openModal)} title="open msgPageObj.show"/>
 
       {openModal && (
         <>

@@ -9,7 +9,7 @@ export default function LoaderTryit() {
 
   return (
     <>
-      <Buttons onClick={() => setOpenModal(!openModal)} />
+      <Buttons onClick={() => setOpenModal(!openModal)} title="open loaderObj.show!" />
 
       {openModal && (
         <>
